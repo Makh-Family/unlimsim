@@ -48,7 +48,8 @@ gulp.task('scripts', function() {
 		'node_modules/imask/dist/imask.js',
 		'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
 		'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
-		'app/js/main.js', // Always at the end
+		'app/js/main.js',
+		'app/js/index.js',
 	])
 	.pipe(concat('main.js'))
 	// .pipe(uglify()) // Minify js (opt.)
@@ -82,8 +83,8 @@ gulp.task('img', gulp.parallel('img1x', 'img2x'));
 
 // Watch changes
 gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
-	gulp.watch(['app/js/main.js'], gulp.parallel('scripts'));
+	gulp.watch('app/sass/**/*', gulp.parallel('styles'));
+	gulp.watch('app/js/**/*.js', gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 	// gulp.watch('app/img/_src/**/*', gulp.parallel('img')); // GraphicsMagick watching image sources if allowed.
 });
