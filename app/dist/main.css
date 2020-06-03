@@ -12766,6 +12766,14 @@ div.last-tab .right-item .under-text button {
   min-height: 600px !important;
 }
 
+.section-tab .carousel .inner {
+  top: -10px !important;
+}
+
+.section-tab .carousel3 .inner {
+  top: -10px !important;
+}
+
 .section-tab .carousel2 .inner {
   top: -20px !important;
 }
