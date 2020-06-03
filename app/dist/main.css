@@ -11207,6 +11207,10 @@ strong {
   border-bottom-right-radius: 0.5rem !important;
 }
 
+.koko-round {
+  border-radius: 10px !important;
+}
+
 .test-bos {
   /* line 27, bootstrap-select.scss */
   /* line 32, bootstrap-select.scss */

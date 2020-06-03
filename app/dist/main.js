@@ -23691,7 +23691,7 @@ if (query == 'thankyou') {
                   : '';
               var drop =
                   '<div class="btn-group bootstrap-select' + showTick + inputGroup + '">' +
-                  '<button type="button" class="' + this.options.styleBase + ' dropdown-toggle rounded-pill" data-toggle="dropdown"' + autofocus + ' role="button">' +
+                  '<button type="button" class="' + this.options.styleBase + ' dropdown-toggle koko-round" data-toggle="dropdown"' + autofocus + ' role="button">' +
                   '<span class="filter-option pull-left"></span> <i class="fas fa-angle-down"></i>' +
                   '<span class="bs-caret">' +
                   this.options.template.caret +
