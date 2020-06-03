@@ -12844,7 +12844,7 @@ div.last-tab .right-item .under-text button {
 .section-tab .indicators {
   width: 100%;
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   z-index: 4;
   padding: 0;
   margin-bottom: 0;
