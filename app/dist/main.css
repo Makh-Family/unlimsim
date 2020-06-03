@@ -11829,8 +11829,8 @@ strong {
 
 .li-bas span {
   position: absolute;
-  left: 120%;
-  top: 30%;
+  left: 80%;
+  top: 23%;
   color: white !important;
   transform: scale(1.1);
   background-color: #b70105 !important;
