@@ -23556,7 +23556,7 @@ if (query == 'thankyou') {
           tickIcon: 'fa-check',
           showTick: false,
           template: {
-              caret: '<span class="caret">  </span>',
+              caret: '<span class="caret"> &#11206; </span>',
           },
           maxOptions: false,
           mobile: false,
@@ -23692,8 +23692,8 @@ if (query == 'thankyou') {
               var drop =
                   '<div class="btn-group bootstrap-select' + showTick + inputGroup + '">' +
                   '<button type="button" class="' + this.options.styleBase + ' dropdown-toggle koko-round" data-toggle="dropdown"' + autofocus + ' role="button">' +
-                  '<span class="filter-option pull-left"></span> <i class="fas fa-angle-down"></i>' +
-                  '<span class="bs-caret">' +
+                  '<span class="filter-option pull-left"></span>  ' +
+                  '<span class="bs-caret"> ' +
                   this.options.template.caret +
                   '</span>' +
                   '</button>' +
