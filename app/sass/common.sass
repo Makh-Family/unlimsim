@@ -90,11 +90,12 @@ h1, h2, h3, h4, h5, h6
 	font-weight: bold
 	text-decoration: none
 	border: 1px solid #FFF
-	// transition: all 0.2s 0.2s ease
+	transition: all 0.2s linear
 	&:hover
-		color: $accent
+		color: #fff
+		background-color: #d40000
 		text-decoration: none
-		box-shadow: 0 5px 10px rgba(0,0,0,0.16)
+		// box-shadow: 0 5px 10px rgba(0,0,0,0.16)
 
 .search-btn, .user-btn
 	width: 20px
@@ -824,7 +825,7 @@ b, strong
 
 // Additional SASS
 .navbar-brand
-	margin-right: 2rem
+	margin-right: 1rem
 	img
 		width: 150px
 		height: auto
@@ -834,7 +835,7 @@ b, strong
 	cursor: pointer
 
 .ml-2rem
-	margin-left: 2rem
+	margin-left: 1.6rem
 .ml-6rem
 	margin-left: 6.25rem
 .mt-12px
@@ -848,6 +849,8 @@ b, strong
 .mb-44px
 	margin-bottom: 44px
 
+.w-22
+	width: 22px!important
 .w-38
 	width: 38%!important
 .mw-190
