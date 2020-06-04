@@ -1939,11 +1939,6 @@ pre code {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.form-control::-webkit-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
-
 .form-control::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
@@ -4710,12 +4705,10 @@ input[type="button"].btn-block {
 
 @media (min-width: 576px) {
   .card-columns {
-    -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
-    -webkit-column-gap: 1.25rem;
-       -moz-column-gap: 1.25rem;
-            column-gap: 1.25rem;
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
     orphans: 1;
     widows: 1;
   }
@@ -9802,10 +9795,6 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-::-webkit-input-placeholder {
-  color: #FFF;
-}
-
 ::-moz-placeholder {
   color: #FFF;
 }
@@ -9923,10 +9912,6 @@ h1, h2, h3, h4, h5, h6 {
   background-position: 10px 10px;
 }
 
-.unlim-search::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
 .unlim-search::-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -10004,10 +9989,6 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   letter-spacing: 1px;
   color: #fff;
-}
-
-.search-block .search-form input::-webkit-input-placeholder {
-  color: #ffcccc;
 }
 
 .search-block .search-form input::-moz-placeholder {
@@ -10783,10 +10764,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
 }
 
-.map-filter-input::-webkit-input-placeholder {
-  color: #707070;
-}
-
 .map-filter-input::-moz-placeholder {
   color: #707070;
 }
@@ -10956,10 +10933,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 12px !important;
 }
 
-.login-form-block form input::-webkit-input-placeholder {
-  color: #aaa;
-}
-
 .login-form-block form input::-moz-placeholder {
   color: #aaa;
 }
@@ -11033,7 +11006,7 @@ strong {
 }
 
 .navbar-brand {
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .navbar-brand img {
@@ -11048,7 +11021,7 @@ strong {
 }
 
 .ml-2rem {
-  margin-left: 2rem;
+  margin-left: 1.6rem;
 }
 
 .ml-6rem {
@@ -11234,17 +11207,623 @@ strong {
   border-bottom-right-radius: 0.5rem !important;
 }
 
-#country-select,
-#region-select {
+.koko-round {
+  border-radius: 10px !important;
+}
+
+.nav-px-12 {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.bs-select-wrapper {
+  /* line 27, bootstrap-select.scss */
+  /* line 32, bootstrap-select.scss */
+  /* line 37, bootstrap-select.scss */
+  /* line 43, bootstrap-select.scss */
+  /* line 48, bootstrap-select.scss */
+  /* line 56, bootstrap-select.scss */
+  /* line 67, bootstrap-select.scss */
+  /* line 77, bootstrap-select.scss */
+  /* line 82, bootstrap-select.scss */
+  /* line 86, bootstrap-select.scss */
+  /* line 90, bootstrap-select.scss */
+  /* line 97, bootstrap-select.scss */
+  /* line 102, bootstrap-select.scss */
+  /* line 106, bootstrap-select.scss */
+  /* line 110, bootstrap-select.scss */
+  /* line 119, bootstrap-select.scss */
+  /* line 130, bootstrap-select.scss */
+  /* line 135, bootstrap-select.scss */
+  /* line 141, bootstrap-select.scss */
+  /* line 145, bootstrap-select.scss */
+  /* line 155, bootstrap-select.scss */
+  /* line 159, bootstrap-select.scss */
+  /* line 163, bootstrap-select.scss */
+  /* line 168, bootstrap-select.scss */
+  /* line 173, bootstrap-select.scss */
+  /* line 180, bootstrap-select.scss */
+  /* line 187, bootstrap-select.scss */
+  /* line 196, bootstrap-select.scss */
+  /* line 201, bootstrap-select.scss */
+  /* line 205, bootstrap-select.scss */
+  /* line 216, bootstrap-select.scss */
+  /* line 221, bootstrap-select.scss */
+  /* line 225, bootstrap-select.scss */
+  /* line 229, bootstrap-select.scss */
+  /* line 233, bootstrap-select.scss */
+  /* line 236, bootstrap-select.scss */
+  /* line 241, bootstrap-select.scss */
+  /* line 245, bootstrap-select.scss */
+  /* line 250, bootstrap-select.scss */
+  /* line 257, bootstrap-select.scss */
+  /* line 261, bootstrap-select.scss */
+  /* line 266, bootstrap-select.scss */
+  /* line 282, bootstrap-select.scss */
+  /* line 290, bootstrap-select.scss */
+  /* line 294, bootstrap-select.scss */
+  /* line 302, bootstrap-select.scss */
+  /* line 309, bootstrap-select.scss */
+  /* line 380, bootstrap-select.scss */
+  /* line 386, bootstrap-select.scss */
+  /* line 390, bootstrap-select.scss */
+  /* line 395, bootstrap-select.scss */
+  /* line 400, bootstrap-select.scss */
+  /* line 406, bootstrap-select.scss */
+  /* line 410, bootstrap-select.scss */
+  /* line 417, bootstrap-select.scss */
+}
+
+.bs-select-wrapper .fa-angle-down {
+  color: black !important;
+}
+
+.bs-select-wrapper .svg-inline--fa {
   display: none;
 }
 
-.mt--40 {
-  margin-top: -40px;
+.bs-select-wrapper select.bs-select-hidden,
+.bs-select-wrapper select.selectpicker {
+  display: none !important;
 }
 
-.mt--30 {
-  margin-top: -30px;
+.bs-select-wrapper .bootstrap-select.btn-group > .dropdown-toggle {
+  height: 100%;
+}
+
+.bs-select-wrapper .bootstrap-select > .dropdown-toggle {
+  width: 100%;
+  padding-right: 25px;
+  z-index: 1;
+}
+
+.bs-select-wrapper .bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bs-select-wrapper .bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.bs-select-wrapper .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bs-select-wrapper .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+  color: #383737;
+}
+
+.bs-select-wrapper .bootstrap-select > select {
+  position: absolute !important;
+  bottom: 0;
+  left: 50%;
+  display: block !important;
+  width: 0.5px !important;
+  height: 100% !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  border: none;
+}
+
+.bs-select-wrapper .bootstrap-select > select.mobile-device {
+  top: 0;
+  left: 0;
+  display: block !important;
+  width: 100% !important;
+  z-index: 2;
+}
+
+.bs-select-wrapper .has-error .bootstrap-select .dropdown-toggle,
+.bs-select-wrapper .error .bootstrap-select .dropdown-toggle {
+  border-color: #b94a48;
+}
+
+.bs-select-wrapper .bootstrap-select.fit-width {
+  width: auto !important;
+}
+
+.bs-select-wrapper .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 220px;
+}
+
+.bs-select-wrapper .bootstrap-select.form-control {
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+  box-shadow: 0px 3px 6px rgba(31, 30, 30, 0.161);
+}
+
+.bs-select-wrapper .bootstrap-select.form-control:not([class*="col-"]) {
+  width: 100%;
+}
+
+.bs-select-wrapper .bootstrap-select.form-control.input-group-btn {
+  z-index: auto;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group:not(.input-group-btn),
+.bs-select-wrapper .bootstrap-select.btn-group[class*="col-"] {
+  float: none;
+  display: inline-block;
+  margin-left: 0;
+  border-radius: 20px;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.dropdown-menu-right,
+.bs-select-wrapper .bootstrap-select.btn-group[class*="col-"].dropdown-menu-right,
+.bs-select-wrapper .row .bootstrap-select.btn-group[class*="col-"].dropdown-menu-right {
+  float: right;
+}
+
+.bs-select-wrapper .form-inline .bootstrap-select.btn-group,
+.bs-select-wrapper .form-horizontal .bootstrap-select.btn-group,
+.bs-select-wrapper .form-group .bootstrap-select.btn-group {
+  margin-bottom: 0;
+}
+
+.bs-select-wrapper .form-group-lg .bootstrap-select.btn-group.form-control,
+.bs-select-wrapper .form-group-sm .bootstrap-select.btn-group.form-control {
+  padding: 0;
+}
+
+.bs-select-wrapper .form-group-lg .bootstrap-select.btn-group.form-control .dropdown-toggle,
+.bs-select-wrapper .form-group-sm .bootstrap-select.btn-group.form-control .dropdown-toggle {
+  height: 100%;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.bs-select-wrapper .form-inline .bootstrap-select.btn-group .form-control {
+  width: 100%;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.disabled,
+.bs-select-wrapper .bootstrap-select.btn-group > .disabled {
+  cursor: not-allowed;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.disabled:focus,
+.bs-select-wrapper .bootstrap-select.btn-group > .disabled:focus {
+  outline: none !important;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.bs-container {
+  position: absolute;
+  height: 0 !important;
+  padding: 0 !important;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.bs-container .dropdown-menu {
+  z-index: 1060;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-toggle .caret {
+  position: absolute;
+  top: 20%;
+  right: 12px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group[class*="col-"] .dropdown-toggle {
+  width: 100%;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu.inner {
+  display: block;
+  position: static;
+  float: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item.active small,
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item.active:hover {
+  color: #fff;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item.disabled a {
+  cursor: not-allowed;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item.hidden {
+  display: none;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner {
+  display: block;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner.opt {
+  position: relative;
+  padding-left: 2.25em;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner span.check-mark {
+  display: none;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner span.text {
+  display: inline-block;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item small {
+  padding-left: 0.5em;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu .dropdown-item .span.check-mark {
+  display: none;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu .dropdown-item .span.text {
+  display: inline-block;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu .notify {
+  position: absolute;
+  bottom: 5px;
+  width: 96%;
+  margin: 0 2%;
+  min-height: 26px;
+  padding: 3px 5px;
+  background: whitesmoke;
+  border: 1px solid #e3e3e3;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+  opacity: 0.9;
+  box-sizing: border-box;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group .no-results {
+  padding: 3px;
+  background: #f5f5f5;
+  margin: 0 5px;
+  white-space: nowrap;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.fit-width .dropdown-toggle .filter-option {
+  position: static;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.fit-width .dropdown-toggle .caret {
+  position: static;
+  top: auto;
+  margin-top: -1px;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.show-tick .dropdown-menu a.selected span.dropdown-item-inner span.check-mark {
+  position: absolute;
+  display: inline-block;
+  right: 15px;
+  margin-top: 5px;
+}
+
+.bs-select-wrapper .bootstrap-select .dropdown-menu .dropdown-item.selected {
+  outline-color: #f8f9fa;
+  color: #fff;
+  background-color: #007bff;
+}
+
+.bs-select-wrapper .bootstrap-select .dropdown-menu .dropdown-header .text {
+  color: #d40000;
+}
+
+.bs-select-wrapper .bootstrap-select.btn-group.show-tick .dropdown-menu a a span.text {
+  margin-right: 34px;
+}
+
+.bs-select-wrapper .bootstrap-select.dropup > .dropdown-toggle::after {
+  display: none !important;
+}
+
+.bs-select-wrapper .bs-searchbox,
+.bs-select-wrapper .bs-actionsbox,
+.bs-select-wrapper .bs-donebutton {
+  padding: 4px 8px;
+  padding-bottom: 8px;
+}
+
+.bs-select-wrapper .bs-actionsbox {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bs-select-wrapper .bs-actionsbox .btn-group button {
+  width: 50%;
+}
+
+.bs-select-wrapper .bs-donebutton {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bs-select-wrapper .bs-donebutton .btn-group button {
+  width: 100%;
+}
+
+.bs-select-wrapper .bs-searchbox + .bs-actionsbox {
+  padding: 0 8px 4px;
+}
+
+.bs-select-wrapper .bs-searchbox .form-control {
+  margin-bottom: 0;
+  width: 100%;
+  float: none;
+}
+
+.bs-select-wrapper .input-group .bs-searchbox .form-control {
+  width: 100%;
+}
+
+.li-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.sel-box-last select {
+  display: none !important;
+}
+
+.sel-box-last .dropdown-select {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+  background-color: #fff;
+  border-radius: 6px;
+  border: solid 1px #eee;
+  box-shadow: 0px 2px 5px 0px rgba(155, 155, 155, 0.5);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  height: 42px;
+  line-height: 40px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  width: auto;
+}
+
+.sel-box-last .dropdown-select:focus {
+  background-color: #fff;
+}
+
+.sel-box-last .dropdown-select:hover {
+  background-color: #fff;
+}
+
+.sel-box-last .dropdown-select:active,
+.sel-box-last .dropdown-select.open {
+  background-color: #fff !important;
+  border-color: #bbb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) inset;
+}
+
+.sel-box-last .dropdown-select:after {
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #777;
+  transform: origin(50% 20%);
+  transition: all 0.125s ease-in-out;
+  content: '';
+  display: block;
+  margin-top: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.sel-box-last .dropdown-select.open:after {
+  transform: rotate(-180deg);
+}
+
+.sel-box-last .dropdown-select.open .list {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sel-box-last .dropdown-select.open .option {
+  cursor: pointer;
+}
+
+.sel-box-last .dropdown-select.wide {
+  width: 100%;
+}
+
+.sel-box-last .dropdown-select.wide .list {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.sel-box-last .dropdown-select .list {
+  box-sizing: border-box;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  transform: scale(0.75);
+  transform-origin: 50% 0;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.09);
+  background-color: #fff;
+  border-radius: 6px;
+  margin-top: 4px;
+  padding: 3px 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  max-height: 250px;
+  overflow: auto;
+  border: 1px solid #ddd;
+}
+
+.sel-box-last .dropdown-select .list:hover .option:not(:hover) {
+  background-color: transparent !important;
+}
+
+.sel-box-last .dropdown-select .dd-search {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.sel-box-last .dropdown-select .dd-searchbox {
+  width: 90%;
+  border: 1px solid #999;
+  border-color: #999;
+  border-radius: 4px !important;
+  outline: none;
+}
+
+.sel-box-last .dropdown-select .list ul {
+  padding: 0;
+}
+
+.sel-box-last .dropdown-select .option {
+  cursor: default;
+  font-weight: 400;
+  line-height: 40px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 29px;
+  text-align: left;
+  transition: all 0.2s;
+  list-style: none;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.sel-box-last .dropdown-select .option:hover,
+.sel-box-last .dropdown-select .option:focus {
+  background-color: #f6f6f6 !important;
+}
+
+.sel-box-last .dropdown-select .option.selected {
+  font-weight: 600;
+  color: #12cbc4;
+}
+
+.sel-box-last .dropdown-select .option.selected:focus {
+  background: #f6f6f6;
+}
+
+.sel-box-last .dropdown-select a {
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.sel-box-last .dropdown-select a:hover {
+  color: #666;
+}
+
+.link-basket .badge-pill {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.link-basket > span {
+  color: white !important;
+  font-size: 90%;
+  background-color: #b70105 !important;
+  border: 1px solid white;
+}
+
+.link-user {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transition: all 0.2s linear;
+}
+
+.link-user:hover {
+  border: 1.5px solid white;
+}
+
+.ni-li,
+.search-btn {
+  transition: all 0.1s linear;
+}
+
+.ni-li:hover,
+.search-btn:hover {
+  transform: scale(1.1);
+}
+
+.carousel-caption .carousel-title h1 {
+  font-size: 45px !important;
+}
+
+#search-results {
+  display: none;
+}
+
+#country-select,
+#region-select {
+  display: none;
 }
 
 .rotate--45 {
@@ -11333,7 +11912,7 @@ strong {
 
 .map-filter-input {
   border: none !important;
-  box-shadow: 0px 3px 6px #00000029;
+  box-shadow: 0px 3px 6px rgba(31, 30, 30, 0.161);
   background: #FFFFFF 0% 0% no-repeat padding-box;
 }
 
@@ -11352,11 +11931,7 @@ strong {
   width: 25px;
   height: 1.5px;
   background-color: #fff;
-  top: 0;
-}
-
-input, select, textarea {
-  border-radius: 20px !important;
+  top: 3px;
 }
 
 li.let {
@@ -11395,13 +11970,21 @@ li.let {
   align-content: center;
 }
 
+.under-nav .container ul li {
+  transition: all 0.1s linear;
+}
+
 .under-nav .container ul li a {
   font-size: 13px;
 }
 
+.under-nav .container ul li:hover {
+  transform: scale(1.1) !important;
+}
+
 div.last-tab .left-item .inner-box h5 {
   color: white;
-  font-weight: 600;
+  font-weight: 400;
   padding: 0;
   margin: 0;
   font-size: 18px;
@@ -11471,8 +12054,6 @@ div.last-tab .right-item {
 div.last-tab .right-item fieldset {
   width: 300px;
   float: right;
-  padding: 20px;
-  border: 2px solid #FFFFFF;
   border-radius: 20px;
 }
 
@@ -11483,11 +12064,12 @@ div.last-tab .right-item fieldset {
 }
 
 div.last-tab .right-item fieldset legend {
+  font-size: 18px;
   margin-left: 20px;
   width: 150px;
   padding: 5px;
   color: white;
-  font-weight: bolder;
+  font-weight: 400;
 }
 
 div.last-tab .right-item fieldset .top-two {
@@ -11520,6 +12102,10 @@ div.last-tab .right-item fieldset .top-one {
   align-items: center;
   align-content: center;
   justify-content: space-around;
+}
+
+div.last-tab .right-item fieldset .top-one .right-form {
+  border-left: 2px solid wheat;
 }
 
 div.last-tab .right-item fieldset .top-one .form-check {
@@ -11566,10 +12152,42 @@ div.last-tab .right-item fieldset .top-one .form-check input {
 div.last-tab .right-item fieldset .top-one .form-check label {
   color: white;
   font-weight: 600;
+  position: relative;
 }
 
 div.last-tab .right-item fieldset .top-one .form-check label:hover {
   cursor: pointer;
+}
+
+div.last-tab .right-item fieldset .top-one .form-check label span.pop {
+  position: absolute;
+  right: -20%;
+  bottom: 80%;
+  font-size: 0.8em;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transition: all 0.2s linear;
+}
+
+div.last-tab .right-item fieldset .top-one .form-check label span.pop a {
+  transition: all 0.2s linear;
+  color: #fff;
+  text-decoration: none;
+}
+
+div.last-tab .right-item fieldset .top-one .form-check label span.pop:hover {
+  background-color: #fff;
+}
+
+div.last-tab .right-item fieldset .top-one .form-check label span.pop:hover a {
+  color: black !important;
 }
 
 div.last-tab .right-item .under-text {
@@ -11676,20 +12294,20 @@ div.last-tab .right-item .under-text button {
 
 .section-tab .tab_content {
   background: transparent linear-gradient(180deg, #FF0000 0%, #800000 100%) 0% 0% no-repeat padding-box;
-  box-shadow: 0px 5px 6px #00000029;
+  box-shadow: 0px 5px 6px rgba(8, 8, 8, 0.161);
 }
 
 .section-tab .tab_content .bg-img {
   width: 100%;
   height: 100%;
-  background-image: url("../img/src/Mask.png");
+  background-image: url("../img/Map1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .section-tab .tab_content .bg-img .bg-text-img {
-  background-image: url("../img/src/text.png");
+  background-image: none;
   background-repeat: no-repeat;
   background-size: 25% auto;
   background-position: 85% 70%;
@@ -11717,6 +12335,7 @@ div.last-tab .right-item .under-text button {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   border: 1px solid grey;
+  background-color: #f7f7f7;
   border-bottom: none;
   height: 55px;
   display: flex;
@@ -11810,6 +12429,7 @@ div.last-tab .right-item .under-text button {
   top: 0;
   left: 0;
   padding-left: 23px;
+  border-radius: 20px !important;
 }
 
 .section-tab .wrapper div.top-header div.sel-box .map-item-1 span.close {
@@ -12049,7 +12669,14 @@ div.last-tab .right-item .under-text button {
   justify-content: space-between;
 }
 
-.section-tab .wrapper div.top-header div.select-box ul.nav li.nav-item a.nav-link {
+.section-tab .wrapper div.top-header div.select-box ul.nav li.nav-item.active > .nav-link,
+.section-tab .wrapper div.top-header div.select-box ul.nav li.nav-item > .nav-link:hover {
+  color: white !important;
+  background-color: #d40000;
+  border: 2px solid white;
+}
+
+.section-tab .wrapper div.top-header div.select-box ul.nav li.nav-item > .nav-link {
   padding: 5px 30px;
   color: red !important;
   background-color: #fff;
@@ -12059,14 +12686,8 @@ div.last-tab .right-item .under-text button {
   transition: all 0.2s linear;
 }
 
-.section-tab .wrapper div.top-header div.select-box ul.nav li.nav-item a.nav-link:hover {
-  color: white !important;
-  background-color: #d40000;
-  border: 2px solid white;
-}
-
 @media all and (max-width: 992px) {
-  .section-tab .wrapper div.top-header div.select-box ul.nav li.nav-item a.nav-link {
+  .section-tab .wrapper div.top-header div.select-box ul.nav li.nav-item > .nav-link {
     margin: 5px 0;
   }
 }
@@ -12076,12 +12697,28 @@ div.last-tab .right-item .under-text button {
 .section-tab .carousel3 {
   width: 100%;
   position: relative;
-  padding-top: 42px;
+  padding: 30px 0 !important;
   overflow: hidden;
-  min-height: 625px !important;
+  min-height: 600px !important;
 }
 
-.section-tab .inner {
+.section-tab .carousel .inner.tab-inner {
+  top: -10px !important;
+}
+
+.section-tab .carousel3 .inner.tab-inner {
+  top: -10px !important;
+}
+
+.section-tab .carousel2 .inner.tab-inner {
+  top: -20px !important;
+}
+
+.section-tab .carousel2 .indicators {
+  bottom: 8px !important;
+}
+
+.section-tab .inner.tab-inner {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -12091,17 +12728,17 @@ div.last-tab .right-item .under-text button {
   overflow-y: hidden;
 }
 
-.section-tab .inner::-webkit-scrollbar {
+.section-tab .inner.tab-inner::-webkit-scrollbar {
   width: 1em;
   height: 0 !important;
 }
 
-.section-tab .inner::-webkit-scrollbar-track {
+.section-tab .inner.tab-inner::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
 }
 
-.section-tab .inner::-webkit-scrollbar-thumb {
+.section-tab .inner.tab-inner::-webkit-scrollbar-thumb {
   background-color: transparent;
   outline: 1px solid transparent;
 }
@@ -12163,7 +12800,7 @@ div.last-tab .right-item .under-text button {
 .section-tab .indicators {
   width: 100%;
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   z-index: 4;
   padding: 0;
   margin-bottom: 0;
@@ -12247,7 +12884,7 @@ div.last-tab .right-item .under-text button {
 .section-tab .slide div.item {
   width: 300px;
   height: 480px;
-  background: transparent linear-gradient(180deg, #878787D6 0%, #060606E8 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, rgba(136, 135, 135, 0.839) 0%, rgba(10, 10, 10, 0.91) 100%) 0% 0% no-repeat padding-box;
   border-radius: 20px;
   display: flex;
   flex-direction: column;

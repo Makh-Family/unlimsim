@@ -22875,15 +22875,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /******/ });
 !function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.bootstrapValidate=e():t.bootstrapValidate=e()}(this,function(){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=20)}([function(t,e,n){var r=n(4),o=n(22),u=n(23),i="[object Null]",f="[object Undefined]",c=r?r.toStringTag:void 0;t.exports=function(t){return null==t?void 0===t?f:i:c&&c in Object(t)?o(t):u(t)}},function(t,e){t.exports=function(t){return null!=t&&"object"==typeof t}},function(t,e,n){var r=n(3);t.exports=function(t){return null==t?"":r(t)}},function(t,e,n){var r=n(4),o=n(33),u=n(7),i=n(11),f=1/0,c=r?r.prototype:void 0,s=c?c.toString:void 0;t.exports=function t(e){if("string"==typeof e)return e;if(u(e))return o(e,t)+"";if(i(e))return s?s.call(e):"";var n=e+"";return"0"==n&&1/e==-f?"-0":n}},function(t,e,n){var r=n(5).Symbol;t.exports=r},function(t,e,n){var r=n(10),o="object"==typeof self&&self&&self.Object===Object&&self,u=r||o||Function("return this")();t.exports=u},function(t,e){t.exports=function(t){var e=typeof t;return null!=t&&("object"==e||"function"==e)}},function(t,e){var n=Array.isArray;t.exports=n},function(t,e,n){var r=n(35);t.exports=function(t){var e=r(t),n=e%1;return e==e?n?e-n:e:0}},function(t,e,n){var r=n(0),o=n(6),u="[object AsyncFunction]",i="[object Function]",f="[object GeneratorFunction]",c="[object Proxy]";t.exports=function(t){if(!o(t))return!1;var e=r(t);return e==i||e==f||e==u||e==c}},function(t,e,n){(function(e){var n="object"==typeof e&&e&&e.Object===Object&&e;t.exports=n}).call(this,n(21))},function(t,e,n){var r=n(0),o=n(1),u="[object Symbol]";t.exports=function(t){return"symbol"==typeof t||o(t)&&r(t)==u}},function(t,e,n){var r=n(6),o=n(11),u=NaN,i=/^\s+|\s+$/g,f=/^[-+]0x[0-9a-f]+$/i,c=/^0b[01]+$/i,s=/^0o[0-7]+$/i,a=parseInt;t.exports=function(t){if("number"==typeof t)return t;if(o(t))return u;if(r(t)){var e="function"==typeof t.valueOf?t.valueOf():t;t=r(e)?e+"":e}if("string"!=typeof t)return 0===t?t:+t;t=t.replace(i,"");var n=c.test(t);return n||s.test(t)?a(t.slice(2),n?2:8):f.test(t)?u:+t}},function(t,e){t.exports=function(t,e,n){return t==t&&(void 0!==n&&(t=t<=n?t:n),void 0!==e&&(t=t>=e?t:e)),t}},function(t,e,n){var r=n(40);t.exports=function(t,e,n){var o=t.length;return n=void 0===n?o:n,!e&&n>=o?t:r(t,e,n)}},function(t,e,n){var r=n(42),o=n(43),u=n(44);t.exports=function(t,e,n){return e==e?u(t,e,n):r(t,o,n)}},function(t,e,n){var r=n(46),o=n(17),u=n(47);t.exports=function(t){return o(t)?u(t):r(t)}},function(t,e){var n=RegExp("[\\u200d\\ud800-\\udfff\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff\\ufe0e\\ufe0f]");t.exports=function(t){return n.test(t)}},function(t,e,n){var r=n(12);t.exports=function(t){return function(e,n){return"string"==typeof e&&"string"==typeof n||(e=r(e),n=r(n)),t(e,n)}}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),t.exports={CLASS_ERROR:"is-invalid",ELEMENT_HELP_BLOCK:"div",CLASS_HELP_BLOCK:"invalid-feedback",SEPARATOR_RULE:"|",SEPARATOR_OPTION:":",LISTENER:"input"},e.default=t.exports},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=c(n(9)),o=c(n(24)),u=c(n(30)),i=c(n(62)),f=n(19);function c(t){return t&&t.__esModule?t:{default:t}}t.exports=function(t,e,n){(0,o.default)([t]).forEach(function(t){(t=t.nodeType?t:document.querySelector(t)).addEventListener(f.LISTENER,function(){e.split(f.SEPARATOR_RULE).forEach(function(e){var o=e.split(f.SEPARATOR_OPTION),c=o.shift(),s=o.pop();"regex"===c&&(o=[o.join(f.SEPARATOR_OPTION)]);var a=u.default[c].apply(u.default,[t].concat(function(t){if(Array.isArray(t)){for(var e=0,n=Array(t.length);e<t.length;e++)n[e]=t[e];return n}return Array.from(t)}(o)));(0,i.default)(t,c,a,s),(0,r.default)(n)&&n(a)})})})},e.default=t.exports},function(t,e){var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(t){"object"==typeof window&&(n=window)}t.exports=n},function(t,e,n){var r=n(4),o=Object.prototype,u=o.hasOwnProperty,i=o.toString,f=r?r.toStringTag:void 0;t.exports=function(t){var e=u.call(t,f),n=t[f];try{t[f]=void 0;var r=!0}catch(t){}var o=i.call(t);return r&&(e?t[f]=n:delete t[f]),o}},function(t,e){var n=Object.prototype.toString;t.exports=function(t){return n.call(t)}},function(t,e,n){var r=n(25);t.exports=function(t){return null!=t&&t.length?r(t,1):[]}},function(t,e,n){var r=n(26),o=n(27);t.exports=function t(e,n,u,i,f){var c=-1,s=e.length;for(u||(u=o),f||(f=[]);++c<s;){var a=e[c];n>0&&u(a)?n>1?t(a,n-1,u,i,f):r(f,a):i||(f[f.length]=a)}return f}},function(t,e){t.exports=function(t,e){for(var n=-1,r=e.length,o=t.length;++n<r;)t[o+n]=e[n];return t}},function(t,e,n){var r=n(4),o=n(28),u=n(7),i=r?r.isConcatSpreadable:void 0;t.exports=function(t){return u(t)||o(t)||!!(i&&t&&t[i])}},function(t,e,n){var r=n(29),o=n(1),u=Object.prototype,i=u.hasOwnProperty,f=u.propertyIsEnumerable,c=r(function(){return arguments}())?r:function(t){return o(t)&&i.call(t,"callee")&&!f.call(t,"callee")};t.exports=c},function(t,e,n){var r=n(0),o=n(1),u="[object Arguments]";t.exports=function(t){return o(t)&&r(t)==u}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=v(n(31)),o=v(n(32)),u=v(n(34)),i=v(n(36)),f=v(n(37)),c=v(n(38)),s=v(n(39)),a=v(n(48)),l=v(n(59)),p=v(n(60)),d=v(n(61));function v(t){return t&&t.__esModule?t:{default:t}}t.exports={min:function(t,e){return(0,l.default)(t.value.length,(0,o.default)(e))},max:function(t,e){return(0,p.default)(t.value.length,(0,o.default)(e))},email:function(t){return new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(t.value)},required:function(t){return t.value.length&&t.value.length>0},url:function(t){return new RegExp(/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[\/?#]\S*)?$/i).test(t.value)},integer:function(t){return(0,u.default)(Number(t.value))},numeric:function(t){return(0,r.default)(Number(t.value))},alphanum:function(t){return new RegExp(/^[a-z0-9]+$/i).test(t.value)},ISO8601:function(t){return new RegExp(/^\d{4}-([0]\d|1[0-2])-([0-2]\d|3[01])$/).test(t.value)},regex:function(t,e){return new RegExp(e).test(t.value)},divisible:function(t,e){var n=!1,o=Number(t.value);return(0,r.default)(o)&&(n="0"===new d.default(o).mod(new d.default(Number(e))).toString()),n},contains:function(t,e){return-1!==t.value.indexOf(e)},startsWith:function(t,e){return(0,f.default)(t.value,e)},endsWith:function(t,e){return(0,c.default)(t.value,e)},matches:function(t,e){var n=e;return void 0===n.nodeType&&(n=document.querySelector(e)),t.value===n.value},alpha:function(t){return(0,i.default)(t.value)&&new RegExp(/^[a-z]+$/i).test(t.value)},inArray:function(t,e){var n=(0,s.default)(t.value);return-1!==(0,a.default)((0,s.default)(e,"whitespace()"),",").indexOf(n)}},e.default=t.exports},function(t,e,n){var r=n(5).isFinite;t.exports=function(t){return"number"==typeof t&&r(t)}},function(t,e,n){var r=n(5),o=n(2),u=/^\s+/,i=r.parseInt;t.exports=function(t,e,n){return n||null==e?e=0:e&&(e=+e),i(o(t).replace(u,""),e||0)}},function(t,e){t.exports=function(t,e){for(var n=-1,r=null==t?0:t.length,o=Array(r);++n<r;)o[n]=e(t[n],n,t);return o}},function(t,e,n){var r=n(8);t.exports=function(t){return"number"==typeof t&&t==r(t)}},function(t,e,n){var r=n(12),o=1/0,u=1.7976931348623157e308;t.exports=function(t){return t?(t=r(t))===o||t===-o?(t<0?-1:1)*u:t==t?t:0:0===t?t:0}},function(t,e,n){var r=n(0),o=n(7),u=n(1),i="[object String]";t.exports=function(t){return"string"==typeof t||!o(t)&&u(t)&&r(t)==i}},function(t,e,n){var r=n(13),o=n(3),u=n(8),i=n(2);t.exports=function(t,e,n){return t=i(t),n=null==n?0:r(u(n),0,t.length),e=o(e),t.slice(n,n+e.length)==e}},function(t,e,n){var r=n(13),o=n(3),u=n(8),i=n(2);t.exports=function(t,e,n){t=i(t),e=o(e);var f=t.length,c=n=void 0===n?f:r(u(n),0,f);return(n-=e.length)>=0&&t.slice(n,c)==e}},function(t,e,n){var r=n(3),o=n(14),u=n(41),i=n(45),f=n(16),c=n(2),s=/^\s+|\s+$/g;t.exports=function(t,e,n){if((t=c(t))&&(n||void 0===e))return t.replace(s,"");if(!t||!(e=r(e)))return t;var a=f(t),l=f(e),p=i(a,l),d=u(a,l)+1;return o(a,p,d).join("")}},function(t,e){t.exports=function(t,e,n){var r=-1,o=t.length;e<0&&(e=-e>o?0:o+e),(n=n>o?o:n)<0&&(n+=o),o=e>n?0:n-e>>>0,e>>>=0;for(var u=Array(o);++r<o;)u[r]=t[r+e];return u}},function(t,e,n){var r=n(15);t.exports=function(t,e){for(var n=t.length;n--&&r(e,t[n],0)>-1;);return n}},function(t,e){t.exports=function(t,e,n,r){for(var o=t.length,u=n+(r?1:-1);r?u--:++u<o;)if(e(t[u],u,t))return u;return-1}},function(t,e){t.exports=function(t){return t!=t}},function(t,e){t.exports=function(t,e,n){for(var r=n-1,o=t.length;++r<o;)if(t[r]===e)return r;return-1}},function(t,e,n){var r=n(15);t.exports=function(t,e){for(var n=-1,o=t.length;++n<o&&r(e,t[n],0)>-1;);return n}},function(t,e){t.exports=function(t){return t.split("")}},function(t,e){var n="[\\ud800-\\udfff]",r="[\\u0300-\\u036f\\ufe20-\\ufe2f\\u20d0-\\u20ff]",o="\\ud83c[\\udffb-\\udfff]",u="[^\\ud800-\\udfff]",i="(?:\\ud83c[\\udde6-\\uddff]){2}",f="[\\ud800-\\udbff][\\udc00-\\udfff]",c="(?:"+r+"|"+o+")"+"?",s="[\\ufe0e\\ufe0f]?"+c+("(?:\\u200d(?:"+[u,i,f].join("|")+")[\\ufe0e\\ufe0f]?"+c+")*"),a="(?:"+[u+r+"?",r,i,f,n].join("|")+")",l=RegExp(o+"(?="+o+")|"+a+s,"g");t.exports=function(t){return t.match(l)||[]}},function(t,e,n){var r=n(3),o=n(14),u=n(17),i=n(49),f=n(54),c=n(16),s=n(2),a=4294967295;t.exports=function(t,e,n){return n&&"number"!=typeof n&&i(t,e,n)&&(e=n=void 0),(n=void 0===n?a:n>>>0)?(t=s(t))&&("string"==typeof e||null!=e&&!f(e))&&!(e=r(e))&&u(t)?o(c(t),0,n):t.split(e,n):[]}},function(t,e,n){var r=n(50),o=n(51),u=n(53),i=n(6);t.exports=function(t,e,n){if(!i(n))return!1;var f=typeof e;return!!("number"==f?o(n)&&u(e,n.length):"string"==f&&e in n)&&r(n[e],t)}},function(t,e){t.exports=function(t,e){return t===e||t!=t&&e!=e}},function(t,e,n){var r=n(9),o=n(52);t.exports=function(t){return null!=t&&o(t.length)&&!r(t)}},function(t,e){var n=9007199254740991;t.exports=function(t){return"number"==typeof t&&t>-1&&t%1==0&&t<=n}},function(t,e){var n=9007199254740991,r=/^(?:0|[1-9]\d*)$/;t.exports=function(t,e){var o=typeof t;return!!(e=null==e?n:e)&&("number"==o||"symbol"!=o&&r.test(t))&&t>-1&&t%1==0&&t<e}},function(t,e,n){var r=n(55),o=n(56),u=n(57),i=u&&u.isRegExp,f=i?o(i):r;t.exports=f},function(t,e,n){var r=n(0),o=n(1),u="[object RegExp]";t.exports=function(t){return o(t)&&r(t)==u}},function(t,e){t.exports=function(t){return function(e){return t(e)}}},function(t,e,n){(function(t){var r=n(10),o=e&&!e.nodeType&&e,u=o&&"object"==typeof t&&t&&!t.nodeType&&t,i=u&&u.exports===o&&r.process,f=function(){try{var t=u&&u.require&&u.require("util").types;return t||i&&i.binding&&i.binding("util")}catch(t){}}();t.exports=f}).call(this,n(58)(t))},function(t,e){t.exports=function(t){return t.webpackPolyfill||(t.deprecate=function(){},t.paths=[],t.children||(t.children=[]),Object.defineProperty(t,"loaded",{enumerable:!0,get:function(){return t.l}}),Object.defineProperty(t,"id",{enumerable:!0,get:function(){return t.i}}),t.webpackPolyfill=1),t}},function(t,e,n){var r=n(18)(function(t,e){return t>=e});t.exports=r},function(t,e,n){var r=n(18)(function(t,e){return t<=e});t.exports=r},function(t,e,n){var r;!function(o){"use strict";var u,i=20,f=1,c=1e6,s=-7,a=21,l="[big.js] ",p=l+"Invalid ",d=p+"decimal places",v=p+"rounding mode",h={},g=void 0,x=/^-?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i;function b(t,e,n,r){var o=t.c,u=t.e+e+1;if(u<o.length){if(1===n)r=o[u]>=5;else if(2===n)r=o[u]>5||5==o[u]&&(r||u<0||o[u+1]!==g||1&o[u-1]);else if(3===n)r=r||!!o[0];else if(r=!1,0!==n)throw Error(v);if(u<1)o.length=1,r?(t.e=-e,o[0]=1):o[0]=t.e=0;else{if(o.length=u--,r)for(;++o[u]>9;)o[u]=0,u--||(++t.e,o.unshift(1));for(u=o.length;!o[--u];)o.pop()}}else if(n<0||n>3||n!==~~n)throw Error(v);return t}function y(t,e,n,r){var o,u,i=t.constructor,f=!t.c[0];if(n!==g){if(n!==~~n||n<(3==e)||n>c)throw Error(3==e?p+"precision":d);for(n=r-(t=new i(t)).e,t.c.length>++r&&b(t,n,i.RM),2==e&&(r=t.e+n+1);t.c.length<r;)t.c.push(0)}if(o=t.e,n=(u=t.c.join("")).length,2!=e&&(1==e||3==e&&r<=o||o<=i.NE||o>=i.PE))u=u.charAt(0)+(n>1?"."+u.slice(1):"")+(o<0?"e":"e+")+o;else if(o<0){for(;++o;)u="0"+u;u="0."+u}else if(o>0)if(++o>n)for(o-=n;o--;)u+="0";else o<n&&(u=u.slice(0,o)+"."+u.slice(o));else n>1&&(u=u.charAt(0)+"."+u.slice(1));return t.s<0&&(!f||4==e)?"-"+u:u}h.abs=function(){var t=new this.constructor(this);return t.s=1,t},h.cmp=function(t){var e,n=this,r=n.c,o=(t=new n.constructor(t)).c,u=n.s,i=t.s,f=n.e,c=t.e;if(!r[0]||!o[0])return r[0]?u:o[0]?-i:0;if(u!=i)return u;if(e=u<0,f!=c)return f>c^e?1:-1;for(i=(f=r.length)<(c=o.length)?f:c,u=-1;++u<i;)if(r[u]!=o[u])return r[u]>o[u]^e?1:-1;return f==c?0:f>c^e?1:-1},h.div=function(t){var e=this,n=e.constructor,r=e.c,o=(t=new n(t)).c,u=e.s==t.s?1:-1,i=n.DP;if(i!==~~i||i<0||i>c)throw Error(d);if(!o[0])throw Error("[big.js] Division by zero");if(!r[0])return new n(0*u);var f,s,a,l,p,v=o.slice(),h=f=o.length,x=r.length,y=r.slice(0,f),m=y.length,E=t,w=E.c=[],j=0,O=i+(E.e=e.e-t.e)+1;for(E.s=u,u=O<0?0:O,v.unshift(0);m++<f;)y.push(0);do{for(a=0;a<10;a++){if(f!=(m=y.length))l=f>m?1:-1;else for(p=-1,l=0;++p<f;)if(o[p]!=y[p]){l=o[p]>y[p]?1:-1;break}if(!(l<0))break;for(s=m==f?o:v;m;){if(y[--m]<s[m]){for(p=m;p&&!y[--p];)y[p]=9;--y[p],y[m]+=10}y[m]-=s[m]}for(;!y[0];)y.shift()}w[j++]=l?a:++a,y[0]&&l?y[m]=r[h]||0:y=[r[h]]}while((h++<x||y[0]!==g)&&u--);return w[0]||1==j||(w.shift(),E.e--),j>O&&b(E,i,n.RM,y[0]!==g),E},h.eq=function(t){return!this.cmp(t)},h.gt=function(t){return this.cmp(t)>0},h.gte=function(t){return this.cmp(t)>-1},h.lt=function(t){return this.cmp(t)<0},h.lte=function(t){return this.cmp(t)<1},h.minus=h.sub=function(t){var e,n,r,o,u=this,i=u.constructor,f=u.s,c=(t=new i(t)).s;if(f!=c)return t.s=-c,u.plus(t);var s=u.c.slice(),a=u.e,l=t.c,p=t.e;if(!s[0]||!l[0])return l[0]?(t.s=-c,t):new i(s[0]?u:0);if(f=a-p){for((o=f<0)?(f=-f,r=s):(p=a,r=l),r.reverse(),c=f;c--;)r.push(0);r.reverse()}else for(n=((o=s.length<l.length)?s:l).length,f=c=0;c<n;c++)if(s[c]!=l[c]){o=s[c]<l[c];break}if(o&&(r=s,s=l,l=r,t.s=-t.s),(c=(n=l.length)-(e=s.length))>0)for(;c--;)s[e++]=0;for(c=e;n>f;){if(s[--n]<l[n]){for(e=n;e&&!s[--e];)s[e]=9;--s[e],s[n]+=10}s[n]-=l[n]}for(;0===s[--c];)s.pop();for(;0===s[0];)s.shift(),--p;return s[0]||(t.s=1,s=[p=0]),t.c=s,t.e=p,t},h.mod=function(t){var e,n=this,r=n.constructor,o=n.s,u=(t=new r(t)).s;if(!t.c[0])throw Error("[big.js] Division by zero");return n.s=t.s=1,e=1==t.cmp(n),n.s=o,t.s=u,e?new r(n):(o=r.DP,u=r.RM,r.DP=r.RM=0,n=n.div(t),r.DP=o,r.RM=u,this.minus(n.times(t)))},h.plus=h.add=function(t){var e,n=this,r=n.constructor,o=n.s,u=(t=new r(t)).s;if(o!=u)return t.s=-u,n.minus(t);var i=n.e,f=n.c,c=t.e,s=t.c;if(!f[0]||!s[0])return s[0]?t:new r(f[0]?n:0*o);if(f=f.slice(),o=i-c){for(o>0?(c=i,e=s):(o=-o,e=f),e.reverse();o--;)e.push(0);e.reverse()}for(f.length-s.length<0&&(e=s,s=f,f=e),o=s.length,u=0;o;f[o]%=10)u=(f[--o]=f[o]+s[o]+u)/10|0;for(u&&(f.unshift(u),++c),o=f.length;0===f[--o];)f.pop();return t.c=f,t.e=c,t},h.pow=function(t){var e=this,n=new e.constructor(1),r=n,o=t<0;if(t!==~~t||t<-1e6||t>1e6)throw Error(p+"exponent");for(o&&(t=-t);1&t&&(r=r.times(e)),t>>=1;)e=e.times(e);return o?n.div(r):r},h.round=function(t,e){var n=this.constructor;if(t===g)t=0;else if(t!==~~t||t<-c||t>c)throw Error(d);return b(new n(this),t,e===g?n.RM:e)},h.sqrt=function(){var t,e,n,r=this,o=r.constructor,u=r.s,i=r.e,f=new o(.5);if(!r.c[0])return new o(r);if(u<0)throw Error(l+"No square root");0===(u=Math.sqrt(r+""))||u===1/0?((e=r.c.join("")).length+i&1||(e+="0"),i=((i+1)/2|0)-(i<0||1&i),t=new o(((u=Math.sqrt(e))==1/0?"1e":(u=u.toExponential()).slice(0,u.indexOf("e")+1))+i)):t=new o(u),i=t.e+(o.DP+=4);do{n=t,t=f.times(n.plus(r.div(n)))}while(n.c.slice(0,i).join("")!==t.c.slice(0,i).join(""));return b(t,o.DP-=4,o.RM)},h.times=h.mul=function(t){var e,n=this,r=n.constructor,o=n.c,u=(t=new r(t)).c,i=o.length,f=u.length,c=n.e,s=t.e;if(t.s=n.s==t.s?1:-1,!o[0]||!u[0])return new r(0*t.s);for(t.e=c+s,i<f&&(e=o,o=u,u=e,s=i,i=f,f=s),e=new Array(s=i+f);s--;)e[s]=0;for(c=f;c--;){for(f=0,s=i+c;s>c;)f=e[s]+u[c]*o[s-c-1]+f,e[s--]=f%10,f=f/10|0;e[s]=(e[s]+f)%10}for(f?++t.e:e.shift(),c=e.length;!e[--c];)e.pop();return t.c=e,t},h.toExponential=function(t){return y(this,1,t,t)},h.toFixed=function(t){return y(this,2,t,this.e+t)},h.toPrecision=function(t){return y(this,3,t,t-1)},h.toString=function(){return y(this)},h.valueOf=h.toJSON=function(){return y(this,4)},(u=function t(){function e(n){var r=this;if(!(r instanceof e))return n===g?t():new e(n);n instanceof e?(r.s=n.s,r.e=n.e,r.c=n.c.slice()):function(t,e){var n,r,o;if(0===e&&1/e<0)e="-0";else if(!x.test(e+=""))throw Error(p+"number");for(t.s="-"==e.charAt(0)?(e=e.slice(1),-1):1,(n=e.indexOf("."))>-1&&(e=e.replace(".","")),(r=e.search(/e/i))>0?(n<0&&(n=r),n+=+e.slice(r+1),e=e.substring(0,r)):n<0&&(n=e.length),o=e.length,r=0;r<o&&"0"==e.charAt(r);)++r;if(r==o)t.c=[t.e=0];else{for(;o>0&&"0"==e.charAt(--o););for(t.e=n-r-1,t.c=[],n=0;r<=o;)t.c[n++]=+e.charAt(r++)}}(r,n),r.constructor=e}return e.prototype=h,e.DP=i,e.RM=f,e.NE=s,e.PE=a,e.version="5.2.2",e}()).default=u.Big=u,void 0===(r=function(){return u}.call(e,n,e,t))||(t.exports=r)}()},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(19);t.exports=function(t,e,n,o){var u="has-error-"+e,i=(t.closest(".form-group")||t.parentNode).querySelector("."+u);n?i&&(t.classList.remove(r.CLASS_ERROR),i.style.display="none"):(i?(i.innerHTML=o,i.style.display="inline-block"):(i=document.createElement(r.ELEMENT_HELP_BLOCK),t.parentNode.appendChild(i),i.style.display="inline-block",i.classList.add(r.CLASS_HELP_BLOCK,u),i.innerHTML=o),t.classList.contains(r.CLASS_ERROR)||t.classList.add(r.CLASS_ERROR))},e.default=t.exports}])});
-$(function() {
+$(function () {
 	// Enable tooltips everywhere
 	$('[data-toggle="tooltip"]').tooltip()
 
 	// iMask for phone fields
 	IMask(document.getElementById('phone_number'), {
 		mask: '+{7} (000) 000-00-00',
-		lazy: false,  // make placeholder always visible
-		placeholderChar: '_'     // defaults to '_'
+		lazy: false, // make placeholder always visible
+		placeholderChar: '_' // defaults to '_'
 	});
 
 	// Required & Optional Fields
@@ -22906,12 +22906,11 @@ $(function() {
 				isFormValid = false;
 			}
 		}
-		
+
 		if (isFormValid) {
 			$('.img-filter').css('filter', 'grayscale(0)');
 			$('.img-filter').css('opacity', '1');
-		}
-		else {
+		} else {
 			$('.img-filter').css('filter', 'grayscale(1)');
 			$('.img-filter').css('opacity', '0.5');
 		}
@@ -22924,7 +22923,7 @@ $(function() {
  */
 var hash = window.location.hash;
 
-if (hash && hash != '#' && hash.length > 3) {	
+if (hash && hash != '#' && hash.length > 3) {
 	var target = $(hash);
 
 	if (target.length) {
@@ -22938,11 +22937,11 @@ if (hash && hash != '#' && hash.length > 3) {
 /**
  * When link clicked, navigate to element smoothly
  */
-$("a[href^='#']:not([href='#'])").click(function(e) {
+$("a[href^='#']:not([href='#'])").click(function (e) {
 	e.preventDefault();
 	var target = this.hash;
 
-	if (target) { 
+	if (target) {
 		$('html, body').animate({
 			scrollTop: $(target).offset().top - 100
 		}, 500, 'swing');
@@ -22951,8 +22950,10 @@ $("a[href^='#']:not([href='#'])").click(function(e) {
 
 
 // scroll to top on press footer logo
-$('.footer-logo').click(function() {
-	$("html, body").animate({ scrollTop: 0 }, "slow");
+$('.footer-logo').click(function () {
+	$("html, body").animate({
+		scrollTop: 0
+	}, "slow");
 });
 
 
@@ -22982,7 +22983,7 @@ var loadCountryList = function (selectedContinent) {
 		countries.sort();
 
 		var options = [];
-		$.each(countries, function(key, val) {
+		$.each(countries, function (key, val) {
 			options.push("<option value='" + key + "'>" + val + "</option>");
 		});
 
@@ -22995,34 +22996,54 @@ var loadCountryList = function (selectedContinent) {
 // Load first continent when page loads
 loadCountryList('All');
 
-$('#continent-list').children().click(function(){
+$('#continent-list').children().click(function () {
 	var selectedContinent = $(this).text();
-	// console.log('Selected continent: ', selectedContinent);
 
-	$(this).siblings().removeClass('active');	
+	$(this).siblings().removeClass('active');
 	$(this).addClass('active');
 
 	loadCountryList(selectedContinent);
 });
 
+var region_texts = $('.region-text').map(function () {
+	return $(this).text();
+}).get();
+
+$('#region-list').children('li').click(function (e) {
+	e.preventDefault();
+
+	$(this).siblings().removeClass('active');
+	$(this).addClass('active');
+
+	var selectedRegion = $(this).find('a').data('value');
+
+	if (selectedRegion == '*') {
+		$('.region-text').each(function(index) {
+			return $(this).html(region_texts[index]);
+		});
+	}
+	else {
+		$('.region-text').html(selectedRegion);
+	}
+});
+
 
 var priceList = {
 	1: 25, // 1 Gb => $25
-	2: 50, 
-	3: 70, 
-	4: 80, 
+	2: 50,
+	3: 70,
+	4: 80,
 	5: 85
 };
 
-var changeTarifPrice = function(val, obj) {
+var changeTarifPrice = function (val, obj) {
 	val = val.replace(/[^0-9]/g, ''); // remove all chars except numbers
 
 	var price = 0;
 
 	if (val > 0 && val <= 5) {
 		price = priceList[val];
-	}
-	else if(val > 5 && val <= 100) {
+	} else if (val > 5 && val <= 100) {
 		price = 85 + 17 * (val - 5);
 	}
 
@@ -23030,14 +23051,13 @@ var changeTarifPrice = function(val, obj) {
 
 	if (price) {
 		obj.closest('.ptw').find('.buy-link').removeClass('disabled');
-	} 
-	else {
+	} else {
 		obj.closest('.ptw').find('.buy-link').addClass('disabled');
 	}
 }
 
 // Changing value of price
-$('.tarif').keyup(function() {
+$('.tarif').keyup(function () {
 	var $this = $(this);
 	changeTarifPrice($this.val(), $this); // value in GB
 });
@@ -23045,24 +23065,24 @@ $('.tarif').keyup(function() {
 // Search box autocomplete
 $('.tarif').autoComplete({
 	minLength: 1,
-    resolverSettings: {
-        url: '../data/tarif-amount.json'
-    }
+	resolverSettings: {
+		url: '../data/tarif-amount.json'
+	}
 }).on('autocomplete.select', function (evt, item) {
 	changeTarifPrice(item, $(this)); // value in GB
 });
 
-$(".tarif").blur(function() {
+$(".tarif").blur(function () {
 	var this$ = $(this);
 
 	setTimeout(function () {
 		if (this$.val() && !this$.val().includes('GB')) {
 			this$.val(this$.val() + ' GB');
 		}
-    }, 100);
+	}, 100);
 });
 
-$('.toggle-ios').click(function(){
+$('.toggle-ios').click(function () {
 	$(this).toggleClass('active');
 	$('.toggle-android').removeClass('active');
 
@@ -23070,7 +23090,7 @@ $('.toggle-ios').click(function(){
 	$('#instruction-android').hide();
 });
 
-$('.toggle-android').click(function(){
+$('.toggle-android').click(function () {
 	$(this).toggleClass('active');
 	$('.toggle-ios').removeClass('active');
 
@@ -23078,7 +23098,7 @@ $('.toggle-android').click(function(){
 	$('#instruction-ios').hide();
 });
 
-$('.close-instructions').click(function(e) {
+$('.close-instructions').click(function (e) {
 	e.preventDefault();
 
 	$('.toggle-android').removeClass('active');
@@ -23089,7 +23109,7 @@ $('.close-instructions').click(function(e) {
 });
 
 
-$('#no_periods_select').on("change", function(){
+$('#no_periods_select').on("change", function () {
 	var index = $(this).val();
 	var price = index * 30;
 
@@ -23102,12 +23122,12 @@ $('#no_periods_select').on("change", function(){
 
 
 // Search block
-$('.search-btn').click(function(){
+$('.search-btn').click(function () {
 	$('.search-block').css("left", "0");
 	$('#search-input').focus();
 })
 
-$('.search-close').click(function(){
+$('.search-close').click(function () {
 	$('.search-block').css("left", "100%")
 })
 
@@ -23115,61 +23135,137 @@ $('.search-close').click(function(){
 // 
 var degree = 180;
 
-$('#table-toggler').click(function(){
+$('#table-toggler').click(function () {
 	$('#dashboard-table').slideToggle("slow");
-	$('.arrow').css("transform", "rotate(" + degree +"deg)")
+	$('.arrow').css("transform", "rotate(" + degree + "deg)")
 	degree += 180;
 });
 
-$('#edit-button').click(function() {
+$('#edit-button').click(function () {
 	$('#contact-information').slideToggle();
 	$('#dashboard-container').toggleClass('filter-gray');
 
 	$('#dashboard-table').hide(); // this is optional
 });
 
-$('#submit-button').click(function(e) {
+$('#submit-button').click(function (e) {
 	e.preventDefault();
 
 	// scroll to top
-	$('html, body').animate({ scrollTop: 0 }, 400, 'swing');
+	$('html, body').animate({
+		scrollTop: 0
+	}, 400, 'swing');
 
 	$('#contact-information').slideUp();
 	$('#dashboard-container').removeClass('filter-gray');
 });
 
+/**
+ * START COUNTRY PLAN
+ */
 
-$('.map-country-list').children('li').click(function(){
-	$('#chosen_country').val($(this).text())
+var select_counter = 0;
+
+function rotateSelectIcon() {
+	if (select_counter % 2 == 0) {
+		$(".select-icon").css({
+			'transform': 'rotateZ(180deg)'
+		});
+
+	} else {
+		$(".select-icon").css({
+			'transform': 'rotateZ(0deg)'
+		});
+	}
+
+	select_counter++;
+}
+
+$('#chosen_country').focus(function () {
+	$(".under-select").show();
+	rotateSelectIcon();
+});
+
+$(".select-icon").click(function (e) {
+	$(".under-select").toggle();
+
+	rotateSelectIcon();
+});
+
+$('#map-coverage').on('click', 'li', function () {
+	var selected_country = $(this).text();
+	$('#chosen_country').val(selected_country)
+
+	if (selected_country.length > 10) {
+		selected_country = $.trim(selected_country).substring(0, 8) + "...";
+	}
+
+	$('.country_text').html(selected_country)
 	$('.map-country-list').children('li').removeClass('active')
 	$(this).addClass('active')
+
+	$(".under-select").hide()
+	rotateSelectIcon();
 });
+
+// Get list of countries from html
+var list_of_countries = $('.map-country-list li').not('.let').map(function () {
+	return $(this).text();
+}).get();
+
+$('#chosen_country').keyup(function () {
+	var typed_val = $(this).val().toUpperCase();
+	var $results = $('#search-results').empty();
+
+	// If typed value is null
+	if (!typed_val) {
+		$('.map-country-list').show();
+		$results.hide();
+
+		return;
+	}
+
+	// Hide list of countries in alphabetical order
+	$('.map-country-list').hide();
+
+	list_of_countries.forEach(function (country) {
+		if (country.startsWith(typed_val)) {
+			$results.append('<li>' + country + '</li>');
+		}
+	});
+
+	// Show search results
+	$results.show();
+});
+
+/**
+ * END OF COUNTRY PLAN
+ */
 
 
 // Update progress bar
-$('#progress-bar').css('width', function() {
-    return $(this).data('value') + "%";
+$('#progress-bar').css('width', function () {
+	return $(this).data('value') + "%";
 });
 
 // Reference link on press question mark in form input
-$('.input-inline-icon').click(function() {
+$('.input-inline-icon').click(function () {
 	var url = $(this).data("url");
 	window.open(url, '_blank');
 });
 
 
 // Read a page's GET URL variables and return them as an associative array.
-function getUrlParams()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
+function getUrlParams() {
+	var vars = [],
+		hash;
+	var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+	for (var i = 0; i < hashes.length; i++) {
+		hash = hashes[i].split('=');
+		vars.push(hash[0]);
+		vars[hash[0]] = hash[1];
+	}
+	return vars;
 }
 
 // If query parameter has been provided, display overlay pop-up
@@ -23179,689 +23275,2615 @@ if (query == 'thankyou') {
 	$(".backdrop-image").prependTo("body");
 	$(".backdrop-overlay").prependTo("body");
 }
-function create_custom_dropdowns() {
-  $("select.co-sel").each(function (i, select) {
-    if (!$(this).next().hasClass("dropdown-select")) {
-      $(this).after(
-        '<div class="dropdown-select wide ' +
-        ($(this).attr("class") || "") +
-        '" tabindex="0"><span class="current"></span><div class="list"><ul></ul></div></div>'
-      );
-      var dropdown = $(this).next();
-      var options = $(select).find("option");
-      var selected = $(this).find("option:selected");
-      dropdown
-        .find(".current")
-        .html(selected.data("display-text") || selected.text());
-      options.each(function (j, o) {
-        var display = $(o).data("display-text") || "";
-        dropdown
-          .find("ul")
-          .append(
-            '<li class="option ' +
-            ($(o).is(":selected") ? "selected" : "") +
-            '" data-value="' +
-            $(o).val() +
-            '" data-display-text="' +
-            display +
-            '">' +
-            $(o).text() +
-            "</li>"
-          );
-      });
-    }
-  });
+/*!
+ * Bootstrap-select v1.12.13 (https://github.com/heimrichhannot/bootstrap-select)
+ *
+ * Copyright 2013-2017 bootstrap-select
+ * Licensed under MIT (https://github.com/heimrichhannot/bootstrap-select/LICENSE)
+ */
 
-  $(".dropdown-select ul").before(
-    '<div class="dd-search"><input id="txtSearchValue" autocomplete="off" onkeyup="filter()" class="dd-searchbox" type="text"></div>'
-  );
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module unless amdModuleId is set
+        define(['jquery'], function (a0) {
+            return (factory(a0));
+        });
+    } else if (typeof module === 'object' && module.exports) {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory(require('jquery'));
+    } else {
+        factory(root['jQuery']);
+    }
+}(this, function (jQuery) {
+
+    (function ($) {
+        'use strict';
+
+        //<editor-fold desc="Shims">
+        if (!String.prototype.includes) {
+            (function () {
+                'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
+                var toString = {}.toString;
+                var defineProperty = (function () {
+                    // IE 8 only supports `Object.defineProperty` on DOM elements
+                    try {
+                        var object = {};
+                        var $defineProperty = Object.defineProperty;
+                        var result = $defineProperty(object, object, object) && $defineProperty;
+                    } catch (error) {}
+                    return result;
+                }());
+                var indexOf = ''.indexOf;
+                var includes = function (search) {
+                    if (this == null) {
+                        throw new TypeError();
+                    }
+                    var string = String(this);
+                    if (search && toString.call(search) == '[object RegExp]') {
+                        throw new TypeError();
+                    }
+                    var stringLength = string.length;
+                    var searchString = String(search);
+                    var searchLength = searchString.length;
+                    var position = arguments.length > 1 ? arguments[1] : undefined;
+                    // `ToInteger`
+                    var pos = position ? Number(position) : 0;
+                    if (pos != pos) { // better `isNaN`
+                        pos = 0;
+                    }
+                    var start = Math.min(Math.max(pos, 0), stringLength);
+                    // Avoid the `indexOf` call if no match is possible
+                    if (searchLength + start > stringLength) {
+                        return false;
+                    }
+                    return indexOf.call(string, searchString, pos) != -1;
+                };
+                if (defineProperty) {
+                    defineProperty(String.prototype, 'includes', {
+                        'value': includes,
+                        'configurable': true,
+                        'writable': true,
+                    });
+                } else {
+                    String.prototype.includes = includes;
+                }
+            }());
+        }
+
+        if (!String.prototype.startsWith) {
+            (function () {
+                'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
+                var defineProperty = (function () {
+                    // IE 8 only supports `Object.defineProperty` on DOM elements
+                    try {
+                        var object = {};
+                        var $defineProperty = Object.defineProperty;
+                        var result = $defineProperty(object, object, object) && $defineProperty;
+                    } catch (error) {}
+                    return result;
+                }());
+                var toString = {}.toString;
+                var startsWith = function (search) {
+                    if (this == null) {
+                        throw new TypeError();
+                    }
+                    var string = String(this);
+                    if (search && toString.call(search) == '[object RegExp]') {
+                        throw new TypeError();
+                    }
+                    var stringLength = string.length;
+                    var searchString = String(search);
+                    var searchLength = searchString.length;
+                    var position = arguments.length > 1 ? arguments[1] : undefined;
+                    // `ToInteger`
+                    var pos = position ? Number(position) : 0;
+                    if (pos != pos) { // better `isNaN`
+                        pos = 0;
+                    }
+                    var start = Math.min(Math.max(pos, 0), stringLength);
+                    // Avoid the `indexOf` call if no match is possible
+                    if (searchLength + start > stringLength) {
+                        return false;
+                    }
+                    var index = -1;
+                    while (++index < searchLength) {
+                        if (string.charCodeAt(start + index) != searchString.charCodeAt(index)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                };
+                if (defineProperty) {
+                    defineProperty(String.prototype, 'startsWith', {
+                        'value': startsWith,
+                        'configurable': true,
+                        'writable': true,
+                    });
+                } else {
+                    String.prototype.startsWith = startsWith;
+                }
+            }());
+        }
+
+        if (!Object.keys) {
+            Object.keys = function (
+                o, // object
+                k, // key
+                r // result array
+            ) {
+                // initialize object and result
+                r = [];
+                // iterate over object keys
+                for (k in o)
+                    // fill result array with non-prototypical keys
+                    r.hasOwnProperty.call(o, k) && r.push(k);
+                // return result
+                return r;
+            };
+        }
+
+        // set data-selected on select element if the value has been programmatically selected
+        // prior to initialization of bootstrap-select
+        // * consider removing or replacing an alternative method *
+        var valHooks = {
+            useDefault: false,
+            _set: $.valHooks.select.set,
+        };
+
+        $.valHooks.select.set = function (elem, value) {
+            if (value && !valHooks.useDefault) $(elem).data('selected', true);
+
+            return valHooks._set.apply(this, arguments);
+        };
+
+        var changed_arguments = null;
+        $.fn.triggerNative = function (eventName) {
+            var el = this[0],
+                event;
+
+            if (el.dispatchEvent) { // for modern browsers & IE9+
+                if (typeof Event === 'function') {
+                    // For modern browsers
+                    event = new Event(eventName, {
+                        bubbles: true,
+                    });
+                } else {
+                    // For IE since it doesn't support Event constructor
+                    event = document.createEvent('Event');
+                    event.initEvent(eventName, true, false);
+                }
+
+                el.dispatchEvent(event);
+            } else if (el.fireEvent) { // for IE8
+                event = document.createEventObject();
+                event.eventType = eventName;
+                el.fireEvent('on' + eventName, event);
+            } else {
+                // fall back to jQuery.trigger
+                this.trigger(eventName);
+            }
+        };
+        //</editor-fold>
+
+        // Case insensitive contains search
+        $.expr.pseudos.icontains = function (obj, index, meta) {
+            var $obj = $(obj).find('span.dropdown-item-inner');
+            var haystack = ($obj.data('tokens') || $obj.text()).toString().toUpperCase();
+            return haystack.includes(meta[3].toUpperCase());
+        };
+
+        // Case insensitive begins search
+        $.expr.pseudos.ibegins = function (obj, index, meta) {
+            var $obj = $(obj).find('span.dropdown-item-inner');
+            var haystack = ($obj.data('tokens') || $obj.text()).toString().toUpperCase();
+            return haystack.startsWith(meta[3].toUpperCase());
+        };
+
+        // Case and accent insensitive contains search
+        $.expr.pseudos.aicontains = function (obj, index, meta) {
+            var $obj = $(obj).find('span.dropdown-item-inner');
+            var haystack = ($obj.data('tokens') || $obj.data('normalizedText') || $obj.text()).toString().toUpperCase();
+            return haystack.includes(meta[3].toUpperCase());
+        };
+
+        // Case and accent insensitive begins search
+        $.expr.pseudos.aibegins = function (obj, index, meta) {
+            var $obj = $(obj).find('span.dropdown-item-inner');
+            var haystack = ($obj.data('tokens') || $obj.data('normalizedText') || $obj.text()).toString().toUpperCase();
+            return haystack.startsWith(meta[3].toUpperCase());
+        };
+
+        /**
+         * Remove all diatrics from the given text.
+         * @access private
+         * @param {String} text
+         * @returns {String}
+         */
+        function normalizeToBase(text) {
+            var rExps = [{
+                    re: /[\xC0-\xC6]/g,
+                    ch: 'A'
+                },
+                {
+                    re: /[\xE0-\xE6]/g,
+                    ch: 'a'
+                },
+                {
+                    re: /[\xC8-\xCB]/g,
+                    ch: 'E'
+                },
+                {
+                    re: /[\xE8-\xEB]/g,
+                    ch: 'e'
+                },
+                {
+                    re: /[\xCC-\xCF]/g,
+                    ch: 'I'
+                },
+                {
+                    re: /[\xEC-\xEF]/g,
+                    ch: 'i'
+                },
+                {
+                    re: /[\xD2-\xD6]/g,
+                    ch: 'O'
+                },
+                {
+                    re: /[\xF2-\xF6]/g,
+                    ch: 'o'
+                },
+                {
+                    re: /[\xD9-\xDC]/g,
+                    ch: 'U'
+                },
+                {
+                    re: /[\xF9-\xFC]/g,
+                    ch: 'u'
+                },
+                {
+                    re: /[\xC7-\xE7]/g,
+                    ch: 'c'
+                },
+                {
+                    re: /[\xD1]/g,
+                    ch: 'N'
+                },
+                {
+                    re: /[\xF1]/g,
+                    ch: 'n'
+                },
+            ];
+            $.each(rExps, function () {
+                text = text ? text.replace(this.re, this.ch) : '';
+            });
+            return text;
+        }
+
+        // List of HTML entities for escaping.
+        var escapeMap = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            '\'': '&#x27;',
+            '`': '&#x60;',
+        };
+
+        var unescapeMap = {
+            '&amp;': '&',
+            '&lt;': '<',
+            '&gt;': '>',
+            '&quot;': '"',
+            '&#x27;': '\'',
+            '&#x60;': '`',
+        };
+
+        // Functions for escaping and unescaping strings to/from HTML interpolation.
+        var createEscaper = function (map) {
+            var escaper = function (match) {
+                return map[match];
+            };
+            // Regexes for identifying a key that needs to be escaped.
+            var source = '(?:' + Object.keys(map).join('|') + ')';
+            var testRegexp = RegExp(source);
+            var replaceRegexp = RegExp(source, 'g');
+            return function (string) {
+                string = string == null ? '' : '' + string;
+                return testRegexp.test(string) ? string.replace(replaceRegexp, escaper) : string;
+            };
+        };
+
+        var htmlEscape = createEscaper(escapeMap);
+        var htmlUnescape = createEscaper(unescapeMap);
+
+        var Selectpicker = function (element, options) {
+            // bootstrap-select has been initialized - revert valHooks.select.set back to its original function
+            if (!valHooks.useDefault) {
+                $.valHooks.select.set = valHooks._set;
+                valHooks.useDefault = true;
+            }
+
+            this.$element = $(element);
+            this.$newElement = null;
+            this.$button = null;
+            this.$menu = null;
+            this.$lis = null;
+            this.options = options;
+
+            // If we have no title yet, try to pull it from the html title attribute (jQuery doesnt' pick it up as it's not a
+            // data-attribute)
+            if (this.options.title === null) {
+                this.options.title = this.$element.attr('title');
+            }
+
+            // Format window padding
+            var winPad = this.options.windowPadding;
+            if (typeof winPad === 'number') {
+                this.options.windowPadding = [winPad, winPad, winPad, winPad];
+            }
+
+            //Expose public methods
+            this.val = Selectpicker.prototype.val;
+            this.render = Selectpicker.prototype.render;
+            this.refresh = Selectpicker.prototype.refresh;
+            this.setStyle = Selectpicker.prototype.setStyle;
+            this.selectAll = Selectpicker.prototype.selectAll;
+            this.deselectAll = Selectpicker.prototype.deselectAll;
+            this.destroy = Selectpicker.prototype.destroy;
+            this.remove = Selectpicker.prototype.remove;
+            this.show = Selectpicker.prototype.show;
+            this.hide = Selectpicker.prototype.hide;
+
+            this.init();
+        };
+
+        Selectpicker.VERSION = '1.12.2';
+
+        // part of this is duplicated in i18n/defaults-en_US.js. Make sure to update both.
+        Selectpicker.DEFAULTS = {
+            noneSelectedText: 'Nothing selected',
+            noneResultsText: 'No results matched {0}',
+            countSelectedText: function (numSelected, numTotal) {
+                return (numSelected == 1) ? '{0} item selected' : '{0} items selected';
+            },
+            maxOptionsText: function (numAll, numGroup) {
+                return [
+                    (numAll == 1) ? 'Limit reached ({n} item max)' : 'Limit reached ({n} items max)',
+                    (numGroup == 1) ? 'Group limit reached ({n} item max)' : 'Group limit reached ({n} items max)',
+                ];
+            },
+            selectAllText: 'Select All',
+            deselectAllText: 'Deselect All',
+            doneButton: false,
+            doneButtonText: 'Close',
+            multipleSeparator: ', ',
+            styleBase: 'btn',
+            style: 'btn-default btn-light', // bootstrap4: btn-default replaced by btn-light
+            size: 'auto',
+            title: null,
+            selectedTextFormat: 'values',
+            width: false,
+            container: false,
+            hideDisabled: false,
+            showSubtext: false,
+            showIcon: true,
+            showContent: true,
+            dropupAuto: true,
+            header: false,
+            liveSearch: false,
+            liveSearchPlaceholder: null,
+            liveSearchNormalize: false,
+            liveSearchStyle: 'contains',
+            actionsBox: false,
+            iconBase: 'fa',
+            tickIcon: 'fa-check',
+            showTick: false,
+            template: {
+                caret: '<img src="./img/icons/arrow-down.svg" width="12" style="vertical-align: super;">',
+            },
+            maxOptions: false,
+            mobile: false,
+            selectOnTab: false,
+            dropdownAlignRight: false,
+            windowPadding: 0,
+        };
+
+        Selectpicker.prototype = {
+
+            constructor: Selectpicker,
+
+            init: function () {
+                var that = this,
+                    id = this.$element.attr('id');
+
+                this.$element.addClass('bs-select-hidden');
+
+                // store originalIndex (key) and newIndex (value) in this.liObj for fast accessibility
+                // allows us to do this.$lis.eq(that.liObj[index]) instead of this.$lis.filter('[data-original-index="' + index + '"]')
+                this.liObj = {};
+                this.multiple = this.$element.prop('multiple');
+                this.autofocus = this.$element.prop('autofocus');
+                this.$newElement = this.createView();
+                this.$element.after(this.$newElement).appendTo(this.$newElement);
+                this.$button = this.$newElement.children('button');
+                this.$menu = this.$newElement.children('.dropdown-menu');
+                this.$menuInner = this.$menu.children('.inner');
+                this.$searchbox = this.$menu.find('input');
+
+                this.$element.removeClass('bs-select-hidden');
+
+                if (this.options.dropdownAlignRight === true) this.$menu.addClass('dropdown-menu-right');
+
+                if (typeof id !== 'undefined') {
+                    this.$button.attr('data-id', id);
+                    $('label[for="' + id + '"]').click(function (e) {
+                        e.preventDefault();
+                        that.$button.focus();
+                    });
+                }
+
+                this.checkDisabled();
+                this.clickListener();
+                if (this.options.liveSearch) this.liveSearchListener();
+                this.render();
+                this.setStyle();
+                this.setWidth();
+                if (this.options.container) this.selectPosition();
+                this.$menu.data('this', this);
+                this.$newElement.data('this', this);
+                if (this.options.mobile) this.mobile();
+
+                this.$newElement.on({
+                    'hide.bs.dropdown': function (e) {
+                        that.$menuInner.attr('aria-expanded', false);
+                        that.$element.trigger('hide.bs.select', e);
+                    },
+                    'hidden.bs.dropdown': function (e) {
+                        that.$element.trigger('hidden.bs.select', e);
+                    },
+                    'show.bs.dropdown': function (e) {
+                        that.$menuInner.attr('aria-expanded', true);
+                        that.$element.trigger('show.bs.select', e);
+                    },
+                    'shown.bs.dropdown': function (e) {
+                        that.$element.trigger('shown.bs.select', e);
+                    },
+                });
+
+                if (that.$element[0].hasAttribute('required')) {
+                    this.$element.on('invalid', function () {
+                        that.$button.addClass('bs-invalid').focus();
+
+                        that.$element.on({
+                            'focus.bs.select': function () {
+                                that.$button.focus();
+                                that.$element.off('focus.bs.select');
+                            },
+                            'shown.bs.select': function () {
+                                that.$element.val(that.$element.val()) // set the value to hide the validation message in Chrome when menu is opened
+                                    .off('shown.bs.select');
+                            },
+                            'rendered.bs.select': function () {
+                                // if select is no longer invalid, remove the bs-invalid class
+                                if (this.validity.valid) that.$button.removeClass('bs-invalid');
+                                that.$element.off('rendered.bs.select');
+                            },
+                        });
+                    });
+                }
+
+                setTimeout(function () {
+                    that.$element.trigger('loaded.bs.select');
+                });
+            },
+
+            createDropdown: function () {
+                // Options
+                // If we are multiple or showTick option is set, then add the show-tick class
+                var showTick = (this.multiple || this.options.showTick) ? ' show-tick' : '',
+                    inputGroup = this.$element.parent().hasClass('input-group') ? ' input-group-btn' : '',
+                    autofocus = this.autofocus ? ' autofocus' : '';
+                // Elements
+                var header = this.options.header ? '<div class="popover-title"><button type="button" class="close" aria-hidden="true">&times;</button>' + this.options.header + '</div>' : '';
+                var searchbox = this.options.liveSearch ?
+                    '<div class="bs-searchbox">' +
+                    '<input type="text" class="form-control" autocomplete="off"' +
+                    (null === this.options.liveSearchPlaceholder ? '' : ' placeholder="' + htmlEscape(this.options.liveSearchPlaceholder) + '"') + ' role="textbox" aria-label="Search">' +
+                    '</div>' :
+                    '';
+                var actionsbox = this.multiple && this.options.actionsBox ?
+                    '<div class="bs-actionsbox">' +
+                    '<div class="btn-group btn-group-sm btn-block">' +
+                    '<button type="button" class="actions-btn bs-select-all btn btn-default btn-light">' +
+                    this.options.selectAllText +
+                    '</button>' +
+                    '<button type="button" class="actions-btn bs-deselect-all btn btn-default btn-light">' +
+                    this.options.deselectAllText +
+                    '</button>' +
+                    '</div>' +
+                    '</div>' :
+                    '';
+                var donebutton = this.multiple && this.options.doneButton ?
+                    '<div class="bs-donebutton">' +
+                    '<div class="btn-group btn-block">' +
+                    '<button type="button" class="btn btn-sm btn-default btn-light">' +
+                    this.options.doneButtonText +
+                    '</button>' +
+                    '</div>' +
+                    '</div>' :
+                    '';
+                var drop =
+                    '<div class="btn-group bootstrap-select' + showTick + inputGroup + '">' +
+                    '<button type="button" class="' + this.options.styleBase + ' dropdown-toggle koko-round" data-toggle="dropdown"' + autofocus + ' role="button">' +
+                    '<span class="filter-option pull-left"></span>  ' +
+                    '<span class="bs-caret"> ' +
+                    this.options.template.caret +
+                    '</span>' +
+                    '</button>' +
+                    '<div class="dropdown-menu open" role="combobox">' +
+                    header +
+                    searchbox +
+                    actionsbox +
+                    '<div class="dropdown-menu inner" role="listbox" aria-expanded="false">' +
+                    '</div>' +
+                    donebutton +
+                    '</div>' +
+                    '</div>';
+
+                return $(drop);
+            },
+
+            createView: function () {
+                var $drop = this.createDropdown(),
+                    li = this.createLi();
+
+                $drop.find('div.inner')[0].innerHTML = li;
+                return $drop;
+            },
+
+            reloadLi: function () {
+                // rebuild
+                var li = this.createLi();
+                this.$menuInner[0].innerHTML = li;
+            },
+
+            createLi: function () {
+                var that = this,
+                    _li = [],
+                    optID = 0,
+                    titleOption = document.createElement('option'),
+                    liIndex = -1; // increment liIndex whenever a new <li> element is created to ensure liObj is correct
+
+                // Helper functions
+                /**
+                 * @param content
+                 * @param [index]
+                 * @param [classes]
+                 * @param [optgroup]
+                 * @returns {string}
+                 */
+                var generateA = function (content, index, classes, optgroup) {
+                    classes = 'dropdown-item ' + (classes || '');
+                    return '<a tabindex="0"' +
+                        ((typeof classes !== 'undefined' && '' !== classes) ? ' class="' + classes + '"' : '') +
+                        ((typeof index !== 'undefined' && null !== index) ? ' data-original-index="' + index + '"' : '') +
+                        ((typeof optgroup !== 'undefined' && null !== optgroup) ? 'data-optgroup="' + optgroup + '"' : '') +
+                        '>' + content + '</a>';
+                };
+
+                var generateDiv = function (content, classes, optgroup) {
+                    return '<div' +
+                        ((typeof classes !== 'undefined' && '' !== classes) ? ' class="' + classes + '"' : '') +
+                        ((typeof optgroup !== 'undefined' && null !== optgroup) ? ' data-optgroup="' + optgroup + '"' : '') +
+                        '>' + content + '</div>';
+                };
+
+                /**
+                 * @param text
+                 * @param [classes]
+                 * @param [inline]
+                 * @param [tokens]
+                 * @returns {string}
+                 */
+                var generateSpan = function (text, classes, inline, tokens) {
+                    // support bootstrap v4: http://v4-alpha.getbootstrap.com/components/dropdowns/#single-button-dropdowns
+                    classes = 'dropdown-item-inner ' + (classes || '');
+                    return '<span' +
+                        (typeof classes !== 'undefined' ? ' class="' + classes + '"' : '') +
+                        (inline ? ' style="' + inline + '"' : '') +
+                        (that.options.liveSearchNormalize ? ' data-normalized-text="' + normalizeToBase(htmlEscape($(text).html())) + '"' : '') +
+                        (typeof tokens !== 'undefined' || tokens !== null ? ' data-tokens="' + tokens + '"' : '') +
+                        ' role="option">' + text +
+                        '<span class="' + that.options.iconBase + ' ' + that.options.tickIcon + ' check-mark"></span>' +
+                        '</span>';
+                };
+
+                if (this.options.title && !this.multiple) {
+                    // this option doesn't create a new <li> element, but does add a new option, so liIndex is decreased
+                    // since liObj is recalculated on every refresh, liIndex needs to be decreased even if the titleOption is already appended
+                    liIndex--;
+
+                    if (!this.$element.find('.bs-title-option').length) {
+                        // Use native JS to prepend option (faster)
+                        var element = this.$element[0];
+                        titleOption.className = 'bs-title-option';
+                        titleOption.innerHTML = this.options.title;
+                        titleOption.value = '';
+                        element.insertBefore(titleOption, element.firstChild);
+                        // Check if selected or data-selected attribute is already set on an option. If not, select the titleOption option.
+                        // the selected item may have been changed by user or programmatically before the bootstrap select plugin runs,
+                        // if so, the select will have the data-selected attribute
+                        var $opt = $(element.options[element.selectedIndex]);
+                        if ($opt.attr('selected') === undefined && this.$element.data('selected') === undefined) {
+                            titleOption.selected = true;
+                        }
+                    }
+                }
+
+                var $selectOptions = this.$element.find('option');
+
+                $selectOptions.each(function (index) {
+                    var $this = $(this);
+
+                    liIndex++;
+
+                    if ($this.hasClass('bs-title-option')) return;
+
+                    // Get the class and text for the option
+                    var optionClass = this.className || '',
+                        inline = htmlEscape(this.style.cssText),
+                        text = $this.data('content') ? $this.data('content') : $this.html(),
+                        tokens = $this.data('tokens') ? $this.data('tokens') : null,
+                        subtext = typeof $this.data('subtext') !== 'undefined' ? '<small class="text-muted">' + $this.data('subtext') + '</small>' : '',
+                        icon = typeof $this.data('icon') !== 'undefined' ? '<span class="' + that.options.iconBase + ' ' + $this.data('icon') + '"></span> ' : '',
+                        $parent = $this.parent(),
+                        isOptgroup = $parent[0].tagName === 'OPTGROUP',
+                        isOptgroupDisabled = isOptgroup && $parent[0].disabled,
+                        isDisabled = this.disabled || isOptgroupDisabled,
+                        prevHiddenIndex;
+
+                    if (icon !== '' && isDisabled) {
+                        icon = '<span>' + icon + '</span>';
+                    }
+
+                    if (that.options.hideDisabled && (isDisabled && !isOptgroup || isOptgroupDisabled)) {
+                        // set prevHiddenIndex - the index of the first hidden option in a group of hidden options
+                        // used to determine whether or not a divider should be placed after an optgroup if there are
+                        // hidden options between the optgroup and the first visible option
+                        prevHiddenIndex = $this.data('prevHiddenIndex');
+                        $this.next().data('prevHiddenIndex', (prevHiddenIndex !== undefined ? prevHiddenIndex : index));
+
+                        liIndex--;
+                        return;
+                    }
+
+                    if (!$this.data('content')) {
+                        // Prepend any icon and append any subtext to the main text.
+                        text = icon + '<span class="text">' + text + subtext + '</span>';
+                    }
+
+                    if (isOptgroup && $this.data('divider') !== true) {
+                        if (that.options.hideDisabled && isDisabled) {
+                            if ($parent.data('allOptionsDisabled') === undefined) {
+                                var $options = $parent.children();
+                                $parent.data('allOptionsDisabled', $options.filter(':disabled').length === $options.length);
+                            }
+
+                            if ($parent.data('allOptionsDisabled')) {
+                                liIndex--;
+                                return;
+                            }
+                        }
+
+                        var optGroupClass = ' ' + $parent[0].className || '';
+
+                        if ($this.index() === 0) { // Is it the first option of the optgroup?
+                            optID += 1;
+
+                            // Get the opt group label
+                            var label = $parent[0].label,
+                                labelSubtext = typeof $parent.data('subtext') !== 'undefined' ? '<small class="text-muted">' + $parent.data('subtext') + '</small>' : '',
+                                labelIcon = $parent.data('icon') ? '<span class="' + that.options.iconBase + ' ' + $parent.data('icon') + '"></span> ' : '';
+
+                            label = labelIcon + '<span class="text">' + htmlEscape(label) + labelSubtext + '</span>';
+
+                            if (index !== 0 && _li.length > 0) { // Is it NOT the first option of the select && are there elements in the dropdown?
+                                liIndex++;
+                                _li.push(generateDiv('', 'dropdown-divider', optID + 'div'));
+                            }
+                            liIndex++;
+                            _li.push(generateDiv(label, 'dropdown-header' + optGroupClass, optID));
+                        }
+
+                        if (that.options.hideDisabled && isDisabled) {
+                            liIndex--;
+                            return;
+                        }
+
+                        _li.push(generateA(generateSpan(text, 'opt ' + optionClass + optGroupClass, inline, tokens), index, '', optID));
+                    } else if ($this.data('divider') === true) {
+                        _li.push(generateDiv('', 'dropdown-divider', optID + 'div'));
+                    } else if ($this.data('hidden') === true) {
+                        // set prevHiddenIndex - the index of the first hidden option in a group of hidden options
+                        // used to determine whether or not a divider should be placed after an optgroup if there are
+                        // hidden options between the optgroup and the first visible option
+                        prevHiddenIndex = $this.data('prevHiddenIndex');
+                        $this.next().data('prevHiddenIndex', (prevHiddenIndex !== undefined ? prevHiddenIndex : index));
+
+                        _li.push(generateA(generateSpan(text, optionClass, inline, tokens), index, 'hidden is-hidden'));
+                    } else {
+                        var showDivider = this.previousElementSibling && this.previousElementSibling.tagName === 'OPTGROUP';
+
+                        // if previous element is not an optgroup and hideDisabled is true
+                        if (!showDivider && that.options.hideDisabled) {
+                            prevHiddenIndex = $this.data('prevHiddenIndex');
+
+                            if (prevHiddenIndex !== undefined) {
+                                // select the element **before** the first hidden element in the group
+                                var prevHidden = $selectOptions.eq(prevHiddenIndex)[0].previousElementSibling;
+
+                                if (prevHidden && prevHidden.tagName === 'OPTGROUP' && !prevHidden.disabled) {
+                                    showDivider = true;
+                                }
+                            }
+                        }
+
+                        if (showDivider) {
+                            liIndex++;
+                            _li.push(generateDiv('', 'dropdown-divider', optID + 'div'));
+                        }
+                        _li.push(generateA(generateSpan(text, optionClass, inline, tokens), index));
+                    }
+
+                    that.liObj[index] = liIndex;
+                });
+
+                //If we are not multiple, we don't have a selected item, and we don't have a title, select the first element so something is set in the button
+                if (!this.multiple && this.$element.find('option:selected').length === 0 && !this.options.title) {
+                    this.$element.find('option').eq(0).prop('selected', true).attr('selected', 'selected');
+                }
+
+                return _li.join('');
+            },
+
+            findLis: function () {
+                if (this.$lis == null) this.$lis = this.$menu.find('a, .dropdown-header, .dropdown-divider');
+                return this.$lis;
+            },
+
+            /**
+             * @param [updateLi] defaults to true
+             */
+            render: function (updateLi) {
+                var that = this,
+                    notDisabled,
+                    $selectOptions = this.$element.find('option');
+
+                //Update the LI to match the SELECT
+                if (updateLi !== false) {
+                    $selectOptions.each(function (index) {
+                        var $lis = that.findLis().eq(that.liObj[index]);
+
+                        that.setDisabled(index, this.disabled || this.parentNode.tagName === 'OPTGROUP' && this.parentNode.disabled, $lis);
+                        that.setSelected(index, this.selected, $lis);
+                    });
+                }
+
+                this.togglePlaceholder();
+
+                this.tabIndex();
+
+                var selectedItems = $selectOptions.map(function () {
+                    if (this.selected) {
+                        if (that.options.hideDisabled && (this.disabled || this.parentNode.tagName === 'OPTGROUP' && this.parentNode.disabled)) return;
+
+                        var $this = $(this),
+                            icon = $this.data('icon') && that.options.showIcon ? '<i class="' + that.options.iconBase + ' ' + $this.data('icon') + '"></i> ' : '',
+                            subtext;
+
+                        if (that.options.showSubtext && $this.data('subtext') && !that.multiple) {
+                            subtext = ' <small class="text-muted">' + $this.data('subtext') + '</small>';
+                        } else {
+                            subtext = '';
+                        }
+                        if (typeof $this.attr('title') !== 'undefined') {
+                            return $this.attr('title');
+                        } else if ($this.data('content') && that.options.showContent) {
+                            return $this.data('content').toString();
+                        } else {
+                            return icon + $this.html() + subtext;
+                        }
+                    }
+                }).toArray();
+
+                //Fixes issue in IE10 occurring when no default option is selected and at least one option is disabled
+                //Convert all the values into a comma delimited string
+                var title = !this.multiple ? selectedItems[0] : selectedItems.join(this.options.multipleSeparator);
+
+                //If this is multi select, and the selectText type is count, the show 1 of 2 selected etc..
+                if (this.multiple && this.options.selectedTextFormat.indexOf('count') > -1) {
+                    var max = this.options.selectedTextFormat.split('>');
+                    if ((max.length > 1 && selectedItems.length > max[1]) || (max.length == 1 && selectedItems.length >= 2)) {
+                        notDisabled = this.options.hideDisabled ? ', [disabled]' : '';
+                        var totalCount = $selectOptions.not('[data-divider="true"], [data-hidden="true"]' + notDisabled).length,
+                            tr8nText = (typeof this.options.countSelectedText === 'function') ? this.options.countSelectedText(selectedItems.length, totalCount) : this.options.countSelectedText;
+                        title = tr8nText.replace('{0}', selectedItems.length.toString()).replace('{1}', totalCount.toString());
+                    }
+                }
+
+                if (this.options.title == undefined) {
+                    this.options.title = this.$element.attr('title');
+                }
+
+                if (this.options.selectedTextFormat == 'static') {
+                    title = this.options.title;
+                }
+
+                //If we dont have a title, then use the default, or if nothing is set at all, use the not selected text
+                if (!title) {
+                    title = typeof this.options.title !== 'undefined' ? this.options.title : this.options.noneSelectedText;
+                }
+
+                //strip all HTML tags and trim the result, then unescape any escaped tags
+                this.$button.attr('title', htmlUnescape($.trim(title.replace(/<[^>]*>?/g, ''))));
+                this.$button.children('.filter-option').html(title);
+
+                this.$element.trigger('rendered.bs.select');
+            },
+
+            /**
+             * @param [style]
+             * @param [status]
+             */
+            setStyle: function (style, status) {
+                if (this.$element.attr('class')) {
+                    this.$newElement.addClass(this.$element.attr('class').replace(/selectpicker|mobile-device|bs-select-hidden|validate\[.*\]/gi, ''));
+                }
+
+                var buttonClass = style ? style : this.options.style;
+
+                if (status == 'add') {
+                    this.$button.addClass(buttonClass);
+                } else if (status == 'remove') {
+                    this.$button.removeClass(buttonClass);
+                } else {
+                    this.$button.removeClass(this.options.style);
+                    this.$button.addClass(buttonClass);
+                }
+            },
+            updatePosition: function () {
+                // this fixes https://github.com/heimrichhannot/bootstrap-select/issues/4
+                var event = this.$menu.get(0).ownerDocument.createEvent('HTMLEvents');
+                event.initEvent('resize', true, false);
+                this.$menu.get(0).ownerDocument.dispatchEvent(event);
+            },
+            liHeight: function (refresh) {
+                if (!refresh && (this.options.size === false || this.sizeInfo)) return;
+
+                var newElement = document.createElement('div'),
+                    menu = document.createElement('div'),
+                    menuInner = document.createElement('ul'),
+                    divider = document.createElement('a'),
+                    li = document.createElement('a'),
+                    a = document.createElement('span'),
+                    text = document.createElement('span'),
+                    header = this.options.header && this.$menu.find('.popover-title').length > 0 ? this.$menu.find('.popover-title')[0].cloneNode(true) : null,
+                    search = this.options.liveSearch ? document.createElement('div') : null,
+                    actions = this.options.actionsBox && this.multiple && this.$menu.find('.bs-actionsbox').length > 0 ? this.$menu.find('.bs-actionsbox')[0].cloneNode(true) : null,
+                    doneButton = this.options.doneButton && this.multiple && this.$menu.find('.bs-donebutton').length > 0 ? this.$menu.find('.bs-donebutton')[0].cloneNode(true) : null;
+
+                text.className = 'text';
+                newElement.className = this.$menu[0].parentNode.className + ' show open'; // bootstrap 4 requires show instead of open
+                menu.className = 'dropdown-menu open show';
+                menuInner.className = 'dropdown-menu inner';
+                divider.className = 'dropdown-divider';
+                a.className = 'dropdown-item-inner';
+
+                text.appendChild(document.createTextNode('Inner text'));
+
+                a.appendChild(text);
+                li.appendChild(a);
+                menuInner.appendChild(li);
+                menuInner.appendChild(divider);
+                if (header) menu.appendChild(header);
+                if (search) {
+                    var input = document.createElement('input');
+                    search.className = 'bs-searchbox';
+                    input.className = 'form-control';
+                    search.appendChild(input);
+                    menu.appendChild(search);
+                }
+                if (actions) menu.appendChild(actions);
+                menu.appendChild(menuInner);
+                if (doneButton) menu.appendChild(doneButton);
+                newElement.appendChild(menu);
+
+                document.body.appendChild(newElement);
+
+                var liHeight = a.offsetHeight,
+                    headerHeight = header ? header.offsetHeight : 0,
+                    searchHeight = search ? search.offsetHeight : 0,
+                    actionsHeight = actions ? actions.offsetHeight : 0,
+                    doneButtonHeight = doneButton ? doneButton.offsetHeight : 0,
+                    dividerHeight = $(divider).outerHeight(true),
+                    // fall back to jQuery if getComputedStyle is not supported
+                    menuStyle = typeof getComputedStyle === 'function' ? getComputedStyle(menu) : false,
+                    $menu = menuStyle ? null : $(menu),
+                    menuPadding = {
+                        vert: parseInt(menuStyle ? menuStyle.paddingTop : $menu.css('paddingTop')) +
+                            parseInt(menuStyle ? menuStyle.paddingBottom : $menu.css('paddingBottom')) +
+                            parseInt(menuStyle ? menuStyle.borderTopWidth : $menu.css('borderTopWidth')) +
+                            parseInt(menuStyle ? menuStyle.borderBottomWidth : $menu.css('borderBottomWidth')),
+                        horiz: parseInt(menuStyle ? menuStyle.paddingLeft : $menu.css('paddingLeft')) +
+                            parseInt(menuStyle ? menuStyle.paddingRight : $menu.css('paddingRight')) +
+                            parseInt(menuStyle ? menuStyle.borderLeftWidth : $menu.css('borderLeftWidth')) +
+                            parseInt(menuStyle ? menuStyle.borderRightWidth : $menu.css('borderRightWidth')),
+                    },
+                    menuExtras = {
+                        vert: menuPadding.vert +
+                            parseInt(menuStyle ? menuStyle.marginTop : $menu.css('marginTop')) +
+                            parseInt(menuStyle ? menuStyle.marginBottom : $menu.css('marginBottom')) + 2,
+                        horiz: menuPadding.horiz +
+                            parseInt(menuStyle ? menuStyle.marginLeft : $menu.css('marginLeft')) +
+                            parseInt(menuStyle ? menuStyle.marginRight : $menu.css('marginRight')) + 2,
+                    };
+
+                document.body.removeChild(newElement);
+
+                this.sizeInfo = {
+                    liHeight: liHeight,
+                    headerHeight: headerHeight,
+                    searchHeight: searchHeight,
+                    actionsHeight: actionsHeight,
+                    doneButtonHeight: doneButtonHeight,
+                    dividerHeight: dividerHeight,
+                    menuPadding: menuPadding,
+                    menuExtras: menuExtras,
+                };
+            },
+
+            setSize: function () {
+                this.findLis();
+                this.liHeight();
+
+                if (this.options.header) this.$menu.css('padding-top', 0);
+                if (this.options.size === false) return;
+
+                var that = this,
+                    $menu = this.$menu,
+                    $menuInner = this.$menuInner,
+                    $window = $(window),
+                    selectHeight = this.$newElement[0].offsetHeight,
+                    selectWidth = this.$newElement[0].offsetWidth,
+                    liHeight = this.sizeInfo['liHeight'],
+                    headerHeight = this.sizeInfo['headerHeight'],
+                    searchHeight = this.sizeInfo['searchHeight'],
+                    actionsHeight = this.sizeInfo['actionsHeight'],
+                    doneButtonHeight = this.sizeInfo['doneButtonHeight'],
+                    divHeight = this.sizeInfo['dividerHeight'],
+                    menuPadding = this.sizeInfo['menuPadding'],
+                    menuExtras = this.sizeInfo['menuExtras'],
+                    notDisabled = this.options.hideDisabled ? '.disabled' : '',
+                    menuHeight,
+                    menuWidth,
+                    getHeight,
+                    getWidth,
+                    selectOffsetTop,
+                    selectOffsetBot,
+                    selectOffsetLeft,
+                    selectOffsetRight,
+                    getPos = function () {
+                        var pos = that.$newElement.offset(),
+                            $container = $(that.options.container),
+                            containerPos;
+
+                        if (that.options.container && !$container.is('body')) {
+                            containerPos = $container.offset();
+                            containerPos.top += parseInt($container.css('borderTopWidth'));
+                            containerPos.left += parseInt($container.css('borderLeftWidth'));
+                        } else {
+                            containerPos = {
+                                top: 0,
+                                left: 0
+                            };
+                        }
+
+                        var winPad = that.options.windowPadding;
+                        selectOffsetTop = pos.top - containerPos.top - $window.scrollTop();
+                        selectOffsetBot = $window.height() - selectOffsetTop - selectHeight - containerPos.top - winPad[2];
+                        selectOffsetLeft = pos.left - containerPos.left - $window.scrollLeft();
+                        selectOffsetRight = $window.width() - selectOffsetLeft - selectWidth - containerPos.left - winPad[1];
+                        selectOffsetTop -= winPad[0];
+                        selectOffsetLeft -= winPad[3];
+                    };
+
+                getPos();
+
+                if (this.options.size === 'auto') {
+                    var getSize = function () {
+                        var minHeight,
+                            hasClass = function (className, include) {
+                                return function (element) {
+                                    if (include) {
+                                        return (element.classList ? element.classList.contains(className) : $(element).hasClass(className));
+                                    } else {
+                                        return !(element.classList ? element.classList.contains(className) : $(element).hasClass(className));
+                                    }
+                                };
+                            },
+                            lis = that.$menuInner[0].getElementsByTagName('a'),
+                            lisVisible = Array.prototype.filter ? Array.prototype.filter.call(lis, hasClass('d-none', false)) : that.$lis.not('.d-none'),
+                            optGroup = Array.prototype.filter ? Array.prototype.filter.call(lisVisible, hasClass('dropdown-header', true)) : lisVisible.filter('.dropdown-header');
+
+                        getPos();
+                        menuHeight = selectOffsetBot - menuExtras.vert;
+                        menuWidth = selectOffsetRight - menuExtras.horiz;
+
+                        if (that.options.container) {
+                            if (!$menu.data('height')) $menu.data('height', $menu.height());
+                            getHeight = $menu.data('height');
+
+                            if (!$menu.data('width')) $menu.data('width', $menu.width());
+                            getWidth = $menu.data('width');
+                        } else {
+                            getHeight = $menu.height();
+                            getWidth = $menu.width();
+                        }
+
+                        if (that.options.dropupAuto) {
+                            that.$newElement.toggleClass('dropup', selectOffsetTop > selectOffsetBot && (menuHeight - menuExtras.vert) < getHeight);
+                        }
+
+                        if (that.$newElement.hasClass('dropup')) {
+                            menuHeight = selectOffsetTop - menuExtras.vert;
+                        }
+
+                        if (that.options.dropdownAlignRight === 'auto') {
+                            $menu.toggleClass('dropdown-menu-right', selectOffsetLeft > selectOffsetRight && (menuWidth - menuExtras.horiz) < (getWidth - selectWidth));
+                        }
+
+                        if ((lisVisible.length + optGroup.length) > 3) {
+                            minHeight = liHeight * 3 + menuExtras.vert - 2;
+                        } else {
+                            minHeight = 0;
+                        }
+
+                        $menu.css({
+                            'max-height': menuHeight + 'px',
+                            'overflow': 'hidden',
+                            'min-height': minHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight + 'px',
+                        });
+                        $menuInner.css({
+                            'max-height': menuHeight - headerHeight - searchHeight - actionsHeight - doneButtonHeight - menuPadding.vert + 'px',
+                            'overflow-y': 'auto',
+                            'min-height': Math.max(minHeight - menuPadding.vert, 0) + 'px',
+                        });
+                    };
+                    getSize();
+                    this.$searchbox.off('input.getSize propertychange.getSize').on('input.getSize propertychange.getSize', getSize);
+                    $window.off('resize.getSize scroll.getSize').on('resize.getSize scroll.getSize', getSize);
+                } else if (this.options.size && this.options.size != 'auto' && this.$lis.not(notDisabled).length > this.options.size) {
+                    var optIndex = this.$lis.not('.dropdown-divider').not(notDisabled).children().slice(0, this.options.size).last().parent().index(),
+                        divLength = this.$lis.slice(0, optIndex + 1).filter('.dropdown-divider').length;
+                    menuHeight = liHeight * this.options.size + divLength * divHeight + menuPadding.vert;
+
+                    if (that.options.container) {
+                        if (!$menu.data('height')) $menu.data('height', $menu.height());
+                        getHeight = $menu.data('height');
+                    } else {
+                        getHeight = $menu.height();
+                    }
+
+                    if (that.options.dropupAuto) {
+                        //noinspection JSUnusedAssignment
+                        this.$newElement.toggleClass('dropup', selectOffsetTop > selectOffsetBot && (menuHeight - menuExtras.vert) < getHeight);
+                    }
+                    $menu.css({
+                        'max-height': menuHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight + 'px',
+                        'overflow': 'hidden',
+                        'min-height': '',
+                    });
+                    $menuInner.css({
+                        'max-height': menuHeight - menuPadding.vert + 'px',
+                        'overflow-y': 'auto',
+                        'min-height': '',
+                    });
+                }
+            },
+
+            setWidth: function () {
+                if (this.options.width === 'auto') {
+                    this.$menu.css('min-width', '0');
+
+                    // Get correct width if element is hidden
+                    var $selectClone = this.$menu.parent().clone().appendTo('body'),
+                        $selectClone2 = this.options.container ? this.$newElement.clone().appendTo('body') : $selectClone,
+                        ulWidth = $selectClone.children('.dropdown-menu').outerWidth(),
+                        btnWidth = $selectClone2.css('width', 'auto').children('button').outerWidth();
+
+                    $selectClone.remove();
+                    $selectClone2.remove();
+
+                    // Set width to whatever's larger, button title or longest option
+                    this.$newElement.css('width', Math.max(ulWidth, btnWidth) + 'px');
+                } else if (this.options.width === 'fit') {
+                    // Remove inline min-width so width can be changed from 'auto'
+                    this.$menu.css('min-width', '');
+                    this.$newElement.css('width', '').addClass('fit-width');
+                } else if (this.options.width) {
+                    // Remove inline min-width so width can be changed from 'auto'
+                    this.$menu.css('min-width', '');
+                    this.$newElement.css('width', this.options.width);
+                } else {
+                    // Remove inline min-width/width so width can be changed
+                    this.$menu.css('min-width', '');
+                    this.$newElement.css('width', '');
+                }
+                // Remove fit-width class if width is changed programmatically
+                if (this.$newElement.hasClass('fit-width') && this.options.width !== 'fit') {
+                    this.$newElement.removeClass('fit-width');
+                }
+            },
+
+            selectPosition: function () {
+                this.$bsContainer = $('<div class="bs-container" />');
+
+                var that = this,
+                    $container = $(this.options.container),
+                    pos,
+                    containerPos,
+                    actualHeight,
+                    getPlacement = function ($element) {
+                        that.$bsContainer.addClass($element.attr('class').replace(/form-control|fit-width/gi, '')).toggleClass('dropup', $element.hasClass('dropup'));
+                        pos = $element.offset();
+
+                        if (!$container.is('body')) {
+                            containerPos = $container.offset();
+                            containerPos.top += parseInt($container.css('borderTopWidth')) - $container.scrollTop();
+                            containerPos.left += parseInt($container.css('borderLeftWidth')) - $container.scrollLeft();
+                        } else {
+                            containerPos = {
+                                top: 0,
+                                left: 0
+                            };
+                        }
+
+                        actualHeight = $element.hasClass('dropup') ? 0 : $element[0].offsetHeight;
+
+                        that.$bsContainer.css({
+                            'top': pos.top - containerPos.top + actualHeight,
+                            'left': pos.left - containerPos.left,
+                            'width': $element[0].offsetWidth,
+                        });
+                    };
+
+                this.$button.on('click', function () {
+                    var $this = $(this);
+
+                    if (that.isDisabled()) {
+                        return;
+                    }
+
+                    getPlacement(that.$newElement);
+
+                    that.$bsContainer.appendTo(that.options.container).toggleClass('open', !$this.hasClass('open')).append(that.$menu);
+                });
+
+                $(window).on('resize scroll', function () {
+                    getPlacement(that.$newElement);
+                });
+
+                this.$element.on('hide.bs.select', function () {
+                    that.$menu.data('height', that.$menu.height());
+                    that.$bsContainer.detach();
+                });
+            },
+
+            /**
+             * @param {number} index - the index of the option that is being changed
+             * @param {boolean} selected - true if the option is being selected, false if being deselected
+             * @param {JQuery} $lis - the 'li' element that is being modified
+             */
+            setSelected: function (index, selected, $lis) {
+                if (!$lis) {
+                    this.togglePlaceholder(); // check if setSelected is being called by changing the value of the select
+                    $lis = this.findLis().eq(this.liObj[index]);
+                }
+
+                $lis.toggleClass('selected', selected).find('span.dropdown-item-inner').attr('aria-selected', selected);
+            },
+
+            /**
+             * @param {number} index - the index of the option that is being disabled
+             * @param {boolean} disabled - true if the option is being disabled, false if being enabled
+             * @param {JQuery} $lis - the 'li' element that is being modified
+             */
+            setDisabled: function (index, disabled, $lis) {
+                if (!$lis) {
+                    $lis = this.findLis().eq(this.liObj[index]);
+                }
+
+                if (disabled) {
+                    $lis.addClass('disabled').children('span.dropdown-item-inner').attr('href', '#').attr('tabindex', -1).attr('aria-disabled', true);
+                } else {
+                    $lis.removeClass('disabled').children('span.dropdown-item-inner').removeAttr('href').attr('tabindex', 0).attr('aria-disabled', false);
+                }
+            },
+
+            isDisabled: function () {
+                return this.$element[0].disabled;
+            },
+
+            checkDisabled: function () {
+                var that = this;
+
+                if (this.isDisabled()) {
+                    this.$newElement.addClass('disabled');
+                    this.$button.addClass('disabled').attr('tabindex', -1).attr('aria-disabled', true);
+                } else {
+                    if (this.$button.hasClass('disabled')) {
+                        this.$newElement.removeClass('disabled');
+                        this.$button.removeClass('disabled').attr('aria-disabled', false);
+                    }
+
+                    if (this.$button.attr('tabindex') == -1 && !this.$element.data('tabindex')) {
+                        this.$button.removeAttr('tabindex');
+                    }
+                }
+
+                this.$button.click(function () {
+                    return !that.isDisabled();
+                });
+            },
+
+            togglePlaceholder: function () {
+                var value = this.$element.val();
+                this.$button.toggleClass('bs-placeholder', value === null || value === '' || (value.constructor === Array && value.length === 0));
+            },
+
+            tabIndex: function () {
+                if (this.$element.data('tabindex') !== this.$element.attr('tabindex') &&
+                    (this.$element.attr('tabindex') !== -98 && this.$element.attr('tabindex') !== '-98')) {
+                    this.$element.data('tabindex', this.$element.attr('tabindex'));
+                    this.$button.attr('tabindex', this.$element.data('tabindex'));
+                }
+
+                this.$element.attr('tabindex', -98);
+            },
+
+            clickListener: function () {
+                var that = this,
+                    $document = $(document);
+
+                $document.data('spaceSelect', false);
+
+                this.$button.on('keyup', function (e) {
+                    if (/(32)/.test(e.keyCode.toString(10)) && $document.data('spaceSelect')) {
+                        e.preventDefault();
+                        $document.data('spaceSelect', false);
+                    }
+                });
+
+                this.$button.on('click', function () {
+                    that.setSize();
+                });
+
+                this.$element.on('shown.bs.select', function () {
+                    if (!that.options.liveSearch && !that.multiple) {
+                        that.$menuInner.find('a.selected').focus();
+                    } else if (!that.multiple) {
+                        var selectedIndex = that.liObj[that.$element[0].selectedIndex];
+
+                        if (typeof selectedIndex !== 'number' || that.options.size === false) return;
+
+                        // scroll to selected option
+                        var offset = that.$lis.eq(selectedIndex)[0].offsetTop - that.$menuInner[0].offsetTop;
+                        offset = offset - that.$menuInner[0].offsetHeight / 2 + that.sizeInfo.liHeight / 2;
+                        that.$menuInner[0].scrollTop = offset;
+                    }
+                });
+
+                this.$menuInner.on('click', 'a', function (e) {
+                    var $this = $(this).find('span.dropdown-item-inner'),
+                        clickedIndex = $this.parent().data('originalIndex'),
+                        prevValue = that.$element.val(),
+                        prevIndex = that.$element.prop('selectedIndex'),
+                        triggerChange = true;
+
+                    // Don't close on multi choice menu
+                    if (that.multiple && that.options.maxOptions !== 1) {
+                        e.stopPropagation();
+                    }
+
+                    e.preventDefault();
+
+                    //Don't run if we have been disabled
+                    if (!that.isDisabled() && !$this.parent().hasClass('disabled')) {
+                        var $options = that.$element.find('option'),
+                            $option = $options.eq(clickedIndex),
+                            state = $option.prop('selected'),
+                            $optgroup = $option.parent('optgroup'),
+                            maxOptions = that.options.maxOptions,
+                            maxOptionsGrp = $optgroup.data('maxOptions') || false;
+
+                        if (!that.multiple) { // Deselect all others if not multi select box
+                            $options.prop('selected', false);
+                            $option.prop('selected', true);
+                            that.$menuInner.find('.selected').removeClass('selected').find('span.dropdown-item-inner').attr('aria-selected', false);
+                            that.setSelected(clickedIndex, true);
+                        } else { // Toggle the one we have chosen if we are multi select.
+                            $option.prop('selected', !state);
+                            that.setSelected(clickedIndex, !state);
+                            $this.blur();
+
+                            if (maxOptions !== false || maxOptionsGrp !== false) {
+                                var maxReached = maxOptions < $options.filter(':selected').length,
+                                    maxReachedGrp = maxOptionsGrp < $optgroup.find('option:selected').length;
+
+                                if ((maxOptions && maxReached) || (maxOptionsGrp && maxReachedGrp)) {
+                                    if (maxOptions && maxOptions == 1) {
+                                        $options.prop('selected', false);
+                                        $option.prop('selected', true);
+                                        that.$menuInner.find('.selected').removeClass('selected');
+                                        that.setSelected(clickedIndex, true);
+                                    } else if (maxOptionsGrp && maxOptionsGrp == 1) {
+                                        $optgroup.find('option:selected').prop('selected', false);
+                                        $option.prop('selected', true);
+                                        var optgroupID = $this.parent().data('optgroup');
+                                        that.$menuInner.find('[data-optgroup="' + optgroupID + '"]').removeClass('selected');
+                                        that.setSelected(clickedIndex, true);
+                                    } else {
+                                        var maxOptionsText = typeof that.options.maxOptionsText === 'string' ? [that.options.maxOptionsText, that.options.maxOptionsText] : that.options.maxOptionsText,
+                                            maxOptionsArr = typeof maxOptionsText === 'function' ? maxOptionsText(maxOptions, maxOptionsGrp) : maxOptionsText,
+                                            maxTxt = maxOptionsArr[0].replace('{n}', maxOptions),
+                                            maxTxtGrp = maxOptionsArr[1].replace('{n}', maxOptionsGrp),
+                                            $notify = $('<div class="notify"></div>');
+                                        // If {var} is set in array, replace it
+                                        /** @deprecated */
+                                        if (maxOptionsArr[2]) {
+                                            maxTxt = maxTxt.replace('{var}', maxOptionsArr[2][maxOptions > 1 ? 0 : 1]);
+                                            maxTxtGrp = maxTxtGrp.replace('{var}', maxOptionsArr[2][maxOptionsGrp > 1 ? 0 : 1]);
+                                        }
+
+                                        $option.prop('selected', false);
+
+                                        that.$menu.append($notify);
+
+                                        if (maxOptions && maxReached) {
+                                            $notify.append($('<div>' + maxTxt + '</div>'));
+                                            triggerChange = false;
+                                            that.$element.trigger('maxReached.bs.select');
+                                        }
+
+                                        if (maxOptionsGrp && maxReachedGrp) {
+                                            $notify.append($('<div>' + maxTxtGrp + '</div>'));
+                                            triggerChange = false;
+                                            that.$element.trigger('maxReachedGrp.bs.select');
+                                        }
+
+                                        setTimeout(function () {
+                                            that.setSelected(clickedIndex, false);
+                                        }, 10);
+
+                                        $notify.delay(750).fadeOut(300, function () {
+                                            $(this).remove();
+                                        });
+                                    }
+                                }
+                            }
+                        }
+
+                        if (!that.multiple || (that.multiple && that.options.maxOptions === 1)) {
+                            that.$button.focus();
+                        } else if (that.options.liveSearch) {
+                            that.$searchbox.focus();
+                        }
+
+                        // Trigger select 'change'
+                        if (triggerChange) {
+                            if ((prevValue != that.$element.val() && that.multiple) || (prevIndex != that.$element.prop('selectedIndex') && !that.multiple)) {
+                                // $option.prop('selected') is current option state (selected/unselected). state is previous option state.
+                                changed_arguments = [clickedIndex, $option.prop('selected'), state];
+                                that.$element.triggerNative('change');
+                            }
+                        }
+                    }
+                });
+
+                this.$menu.on('click', 'a.disabled span.dropdown-item-inner , .popover-title, .popover-title :not(.close)', function (e) {
+                    if (e.currentTarget == this) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (that.options.liveSearch && !$(e.target).hasClass('close')) {
+                            that.$searchbox.focus();
+                        } else {
+                            that.$button.focus();
+                        }
+                    }
+                });
+
+                this.$menuInner.on('click', '.dropdown-divider, .dropdown-header', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (that.options.liveSearch) {
+                        that.$searchbox.focus();
+                    } else {
+                        that.$button.focus();
+                    }
+                });
+
+                this.$menu.on('click', '.popover-title .close', function () {
+                    that.$button.click();
+                });
+
+                this.$searchbox.on('click', function (e) {
+                    e.stopPropagation();
+                });
+
+                this.$menu.on('click', '.actions-btn', function (e) {
+                    if (that.options.liveSearch) {
+                        that.$searchbox.focus();
+                    } else {
+                        that.$button.focus();
+                    }
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    if ($(this).hasClass('bs-select-all')) {
+                        that.selectAll();
+                    } else {
+                        that.deselectAll();
+                    }
+                });
+
+                this.$element.change(function () {
+                    that.render(false);
+                    that.$element.trigger('changed.bs.select', changed_arguments);
+                    changed_arguments = null;
+                });
+            },
+
+            liveSearchListener: function () {
+                var that = this,
+                    $no_results = $('<li class="no-results"></li>');
+
+                this.$button.on('click.dropdown.data-api', function () {
+                    that.$menuInner.find('.active').removeClass('active');
+                    if (!!that.$searchbox.val()) {
+                        that.$searchbox.val('');
+                        that.$lis.not('.is-hidden').removeClass('d-none');
+                        if (!!$no_results.parent().length) $no_results.remove();
+                    }
+                    if (!that.multiple) that.$menuInner.find('.selected').addClass('active');
+                    setTimeout(function () {
+                        that.$searchbox.focus();
+                    }, 10);
+                });
+
+                this.$searchbox.on('click.dropdown.data-api focus.dropdown.data-api touchend.dropdown.data-api', function (e) {
+                    e.stopPropagation();
+                });
+
+                this.$searchbox.on('input propertychange', function () {
+                    that.$lis.not('.is-hidden').removeClass('d-none');
+                    that.$lis.filter('.active').removeClass('active');
+                    $no_results.remove();
+
+                    if (that.$searchbox.val()) {
+                        var $searchBase = that.$lis.not('.is-hidden, .dropdown-divider, .dropdown-header'),
+                            $hideItems;
+
+                        if (that.options.liveSearchNormalize) {
+                            $hideItems = $searchBase.not(':a' + that._searchStyle() + '("' + normalizeToBase(that.$searchbox.val()) + '")');
+                        } else {
+                            $hideItems = $searchBase.not(':' + that._searchStyle() + '("' + that.$searchbox.val() + '")');
+                        }
+
+                        if ($hideItems.length === $searchBase.length) {
+                            $no_results.html(that.options.noneResultsText.replace('{0}', '"' + htmlEscape(that.$searchbox.val()) + '"'));
+                            that.$menuInner.append($no_results);
+                            that.$lis.addClass('d-none');
+                        } else {
+                            $hideItems.addClass('d-none');
+
+                            var $lisVisible = that.$lis.not('.d-none'),
+                                $foundDiv;
+
+                            // hide divider if first or last visible, or if followed by another divider
+                            $lisVisible.each(function (index) {
+                                var $this = $(this);
+
+                                if ($this.hasClass('dropdown-divider')) {
+                                    if ($foundDiv === undefined) {
+                                        $this.addClass('d-none');
+                                    } else {
+                                        if ($foundDiv) $foundDiv.addClass('d-none');
+                                        $foundDiv = $this;
+                                    }
+                                } else if ($this.hasClass('dropdown-header') && $lisVisible.eq(index + 1).data('optgroup') !== $this.data('optgroup')) {
+                                    $this.addClass('d-none');
+                                } else {
+                                    $foundDiv = null;
+                                }
+                            });
+                            if ($foundDiv) $foundDiv.addClass('d-none');
+
+                            $searchBase.not('.d-none').first().addClass('active');
+                            that.$menuInner.scrollTop(0);
+                        }
+
+                        that.updatePosition();
+                    }
+                });
+            },
+
+            _searchStyle: function () {
+                var styles = {
+                    begins: 'ibegins',
+                    startsWith: 'ibegins',
+                };
+
+                return styles[this.options.liveSearchStyle] || 'icontains';
+            },
+
+            val: function (value) {
+                if (typeof value !== 'undefined') {
+                    this.$element.val(value);
+                    this.render();
+
+                    return this.$element;
+                } else {
+                    return this.$element.val();
+                }
+            },
+
+            changeAll: function (status) {
+                if (!this.multiple) return;
+                if (typeof status === 'undefined') status = true;
+
+                this.findLis();
+
+                var $options = this.$element.find('option'),
+                    $lisVisible = this.$lis.not('.dropdown-divider, .dropdown-header, .disabled, .d-none'),
+                    lisVisLen = $lisVisible.length,
+                    selectedOptions = [];
+
+                if (status) {
+                    if ($lisVisible.filter('.selected').length === $lisVisible.length) return;
+                } else {
+                    if ($lisVisible.filter('.selected').length === 0) return;
+                }
+
+                $lisVisible.toggleClass('selected', status);
+
+                for (var i = 0; i < lisVisLen; i++) {
+                    var origIndex = $lisVisible[i].getAttribute('data-original-index');
+                    selectedOptions[selectedOptions.length] = $options.eq(origIndex)[0];
+                }
+
+                $(selectedOptions).prop('selected', status);
+
+                this.render(false);
+
+                this.togglePlaceholder();
+
+                this.$element.triggerNative('change');
+            },
+
+            selectAll: function () {
+                return this.changeAll(true);
+            },
+
+            deselectAll: function () {
+                return this.changeAll(false);
+            },
+
+            toggle: function (e) {
+                e = e || window.event;
+
+                if (e) e.stopPropagation();
+
+                this.$button.trigger('click');
+            },
+
+            keydown: function (e) {
+                var $this = $(this),
+                    $parent = $this.is('input') ? $this.parent().parent() : $this.parent(),
+                    $items,
+                    that = $parent.data('this'),
+                    index,
+                    prevIndex,
+                    isActive,
+                    selector = ':not(.disabled, .d-none, .dropdown-header, .dropdown-divider)',
+                    keyCodeMap = {
+                        32: ' ',
+                        48: '0',
+                        49: '1',
+                        50: '2',
+                        51: '3',
+                        52: '4',
+                        53: '5',
+                        54: '6',
+                        55: '7',
+                        56: '8',
+                        57: '9',
+                        59: ';',
+                        65: 'a',
+                        66: 'b',
+                        67: 'c',
+                        68: 'd',
+                        69: 'e',
+                        70: 'f',
+                        71: 'g',
+                        72: 'h',
+                        73: 'i',
+                        74: 'j',
+                        75: 'k',
+                        76: 'l',
+                        77: 'm',
+                        78: 'n',
+                        79: 'o',
+                        80: 'p',
+                        81: 'q',
+                        82: 'r',
+                        83: 's',
+                        84: 't',
+                        85: 'u',
+                        86: 'v',
+                        87: 'w',
+                        88: 'x',
+                        89: 'y',
+                        90: 'z',
+                        96: '0',
+                        97: '1',
+                        98: '2',
+                        99: '3',
+                        100: '4',
+                        101: '5',
+                        102: '6',
+                        103: '7',
+                        104: '8',
+                        105: '9',
+                    };
+
+                isActive = that.$newElement.hasClass('open') || that.$newElement.hasClass('show');
+
+                if (!isActive && (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode >= 96 && e.keyCode <= 105 || e.keyCode >= 65 && e.keyCode <= 90)) {
+                    if (!that.options.container) {
+                        that.setSize();
+                        that.$menu.parent().addClass('open show');
+                        isActive = true;
+                    } else {
+                        that.$button.trigger('click');
+                    }
+                    that.$searchbox.focus();
+                    return;
+                }
+
+                if (that.options.liveSearch) {
+                    if (/(^9$|27)/.test(e.keyCode.toString(10)) && isActive) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        that.$menuInner.click();
+                        that.$button.focus();
+                    }
+                }
+
+                if (/(38|40)/.test(e.keyCode.toString(10))) {
+                    $items = that.$lis.filter(selector);
+                    if (!$items.length) return;
+
+                    if (!that.options.liveSearch) {
+                        index = $items.index($items.filter(':focus'));
+                    } else {
+                        index = $items.index($items.filter('.active'));
+                    }
+
+                    prevIndex = that.$menuInner.data('prevIndex');
+
+                    if (e.keyCode == 38) {
+                        if ((that.options.liveSearch || index == prevIndex) && index != -1) index--;
+                        if (index < 0) index += $items.length;
+                    } else if (e.keyCode == 40) {
+                        if (that.options.liveSearch || index == prevIndex) index++;
+                        index = index % $items.length;
+                    }
+
+                    that.$menuInner.data('prevIndex', index);
+
+                    if (!that.options.liveSearch) {
+                        $items.eq(index).focus();
+                    } else {
+                        e.preventDefault();
+                        if (!$this.hasClass('dropdown-toggle')) {
+                            $items.removeClass('active').eq(index).addClass('active').children('span.dropdown-item-inner').focus();
+                            $this.focus();
+                        }
+                    }
+
+                } else if (!$this.is('input')) {
+                    var keyIndex = [],
+                        count,
+                        prevKey;
+
+                    $items = that.$lis.filter(selector);
+                    $items.each(function (i) {
+                        if ($.trim($(this).children('span.dropdown-item-inner').text().toLowerCase()).substring(0, 1) == keyCodeMap[e.keyCode]) {
+                            keyIndex.push(i);
+                        }
+                    });
+
+                    count = $(document).data('keycount');
+                    count++;
+                    $(document).data('keycount', count);
+
+                    prevKey = $.trim($(':focus').text().toLowerCase()).substring(0, 1);
+
+                    if (prevKey != keyCodeMap[e.keyCode]) {
+                        count = 1;
+                        $(document).data('keycount', count);
+                    } else if (count >= keyIndex.length) {
+                        $(document).data('keycount', 0);
+                        if (count > keyIndex.length) count = 1;
+                    }
+
+                    $items.eq(keyIndex[count - 1]).children('span.dropdown-item-inner').focus();
+                }
+
+                // Select focused option if "Enter", "Spacebar" or "Tab" (when selectOnTab is true) are pressed inside the menu.
+                if ((/(13|32)/.test(e.keyCode.toString(10)) || (/(^9$)/.test(e.keyCode.toString(10)) && that.options.selectOnTab)) && isActive) {
+                    if (!/(32)/.test(e.keyCode.toString(10))) e.preventDefault();
+                    if (!that.options.liveSearch) {
+                        var elem = $(':focus');
+                        elem.click();
+                        // Bring back focus for multiselects
+                        elem.focus();
+                        // Prevent screen from scrolling if the user hit the spacebar
+                        e.preventDefault();
+                        // Fixes spacebar selection of dropdown items in FF & IE
+                        $(document).data('spaceSelect', true);
+                    } else if (!/(32)/.test(e.keyCode.toString(10))) {
+                        that.$menuInner.find('a.active').click();
+                        $this.focus();
+                    }
+                    $(document).data('keycount', 0);
+                }
+
+                if ((/(^9$|27)/.test(e.keyCode.toString(10)) && isActive && (that.multiple || that.options.liveSearch)) || (/(27)/.test(e.keyCode.toString(10)) && !isActive)) {
+                    that.$menu.parent().removeClass('open');
+                    if (that.options.container) that.$newElement.removeClass('open');
+                    that.$button.focus();
+                }
+            },
+
+            mobile: function () {
+                this.$element.addClass('mobile-device');
+            },
+
+            refresh: function () {
+                this.$lis = null;
+                this.liObj = {};
+                this.reloadLi();
+                this.render();
+                this.checkDisabled();
+                this.liHeight(true);
+                this.setStyle();
+                this.setWidth();
+                if (this.$lis) this.$searchbox.trigger('propertychange');
+
+                this.$element.trigger('refreshed.bs.select');
+            },
+
+            hide: function () {
+                this.$newElement.hide();
+            },
+
+            show: function () {
+                this.$newElement.show();
+            },
+
+            remove: function () {
+                this.$newElement.remove();
+                this.$element.remove();
+            },
+
+            destroy: function () {
+                this.$newElement.before(this.$element).remove();
+
+                if (this.$bsContainer) {
+                    this.$bsContainer.remove();
+                } else {
+                    this.$menu.remove();
+                }
+
+                this.$element.off('.bs.select').removeData('selectpicker').removeClass('bs-select-hidden selectpicker');
+            },
+        };
+
+        // SELECTPICKER PLUGIN DEFINITION
+        // ==============================
+        function Plugin(option) {
+            // get the args of the outer function..
+            var args = arguments;
+            // The arguments of the function are explicitly re-defined from the argument list, because the shift causes them
+            // to get lost/corrupted in android 2.3 and IE9 #715 #775
+            var _option = option;
+
+            [].shift.apply(args);
+
+            var value;
+            var chain = this.each(function () {
+                var $this = $(this);
+                if ($this.is('select')) {
+                    var data = $this.data('selectpicker'),
+                        options = typeof _option == 'object' && _option;
+
+                    if (!data) {
+                        var config = $.extend({}, Selectpicker.DEFAULTS, $.fn.selectpicker.defaults || {}, $this.data(), options);
+                        config.template = $.extend({}, Selectpicker.DEFAULTS.template, ($.fn.selectpicker.defaults ? $.fn.selectpicker.defaults.template : {}), $this.data().template, options.template);
+                        $this.data('selectpicker', (data = new Selectpicker(this, config)));
+                    } else if (options) {
+                        for (var i in options) {
+                            if (options.hasOwnProperty(i)) {
+                                data.options[i] = options[i];
+                            }
+                        }
+                    }
+
+                    if (typeof _option == 'string') {
+                        if (data[_option] instanceof Function) {
+                            value = data[_option].apply(data, args);
+                        } else {
+                            value = data.options[_option];
+                        }
+                    }
+                }
+            });
+
+            if (typeof value !== 'undefined') {
+                //noinspection JSUnusedAssignment
+                return value;
+            } else {
+                return chain;
+            }
+        }
+
+        var old = $.fn.selectpicker;
+        $.fn.selectpicker = Plugin;
+        $.fn.selectpicker.Constructor = Selectpicker;
+
+        // SELECTPICKER NO CONFLICT
+        // ========================
+        $.fn.selectpicker.noConflict = function () {
+            $.fn.selectpicker = old;
+            return this;
+        };
+
+        $(document).data('keycount', 0).on('keydown.bs.select', '.bootstrap-select [data-toggle=dropdown], .bootstrap-select [role="listbox"], .bs-searchbox input', Selectpicker.prototype.keydown).on('focusin.modal', '.bootstrap-select [data-toggle=dropdown], .bootstrap-select [role="listbox"], .bs-searchbox input', function (e) {
+            e.stopPropagation();
+        });
+
+        // SELECTPICKER DATA-API
+        // =====================
+        $(window).on('load.bs.select.data-api', function () {
+            $('.selectpicker').each(function () {
+                var $selectpicker = $(this);
+                Plugin.call($selectpicker, $selectpicker.data());
+            });
+        });
+    })(jQuery);
+
+}));
+
+///////// CUSTOM STYLE
+
+function create_custom_dropdowns() {
+    $("select.co-sel").each(function (i, select) {
+        if (!$(this).next().hasClass("dropdown-select")) {
+            $(this).after(
+                '<div class="dropdown-select wide ' +
+                ($(this).attr("class") || "") +
+                '" tabindex="0"><span class="current"></span><div class="list"><ul></ul></div></div>'
+            );
+            var dropdown = $(this).next();
+            var options = $(select).find("option");
+            var selected = $(this).find("option:selected");
+            dropdown
+                .find(".current")
+                .html(selected.data("display-text") || selected.text());
+            options.each(function (j, o) {
+                var display = $(o).data("display-text") || "";
+                dropdown
+                    .find("ul")
+                    .append(
+                        '<li class="option ' +
+                        ($(o).is(":selected") ? "selected" : "") +
+                        '" data-value="' +
+                        $(o).val() +
+                        '" data-display-text="' +
+                        display +
+                        '">' +
+                        $(o).text() +
+                        "</li>"
+                    );
+            });
+        }
+    });
+
+    $(".dropdown-select ul").before(
+        '<div class="dd-search"><input id="txtSearchValue" autocomplete="off" onkeyup="filter()" class="dd-searchbox" type="text"></div>'
+    );
 }
 
 $(document).on("click", ".dropdown-select", function (event) {
-  if ($(event.target).hasClass("dd-searchbox")) {
-    return;
-  }
-  $(".dropdown-select").not($(this)).removeClass("open");
-  $(this).toggleClass("open");
-  if ($(this).hasClass("open")) {
-    $(this).find(".option").attr("tabindex", 0);
-    $(this).find(".selected").focus();
-  } else {
-    $(this).find(".option").removeAttr("tabindex");
-    $(this).focus();
-  }
+    if ($(event.target).hasClass("dd-searchbox")) {
+        return;
+    }
+    $(".dropdown-select").not($(this)).removeClass("open");
+    $(this).toggleClass("open");
+    if ($(this).hasClass("open")) {
+        $(this).find(".option").attr("tabindex", 0);
+        $(this).find(".selected").focus();
+    } else {
+        $(this).find(".option").removeAttr("tabindex");
+        $(this).focus();
+    }
 });
 
 $(document).on("click", function (event) {
-  if ($(event.target).closest(".dropdown-select").length === 0) {
-    $(".dropdown-select").removeClass("open");
-    $(".dropdown-select .option").removeAttr("tabindex");
-  }
-  event.stopPropagation();
+    if ($(event.target).closest(".dropdown-select").length === 0) {
+        $(".dropdown-select").removeClass("open");
+        $(".dropdown-select .option").removeAttr("tabindex");
+    }
+    event.stopPropagation();
 });
 
 function filter() {
-  var valThis = $("#txtSearchValue").val();
-  $(".dropdown-select ul > li").each(function () {
-    var text = $(this).text();
-    text.toLowerCase().indexOf(valThis.toLowerCase()) > -1 ?
-      $(this).show() :
-      $(this).hide();
-  });
+    var valThis = $("#txtSearchValue").val();
+    $(".dropdown-select ul > li").each(function () {
+        var text = $(this).text();
+        text.toLowerCase().indexOf(valThis.toLowerCase()) > -1 ?
+            $(this).show() :
+            $(this).hide();
+    });
 }
 
 $(document).on("click", ".dropdown-select .option", function (event) {
-  $(this).closest(".list").find(".selected").removeClass("selected");
-  $(this).addClass("selected");
-  var text = $(this).data("display-text") || $(this).text();
-  $(this).closest(".dropdown-select").find(".current").text(text);
-  $(this)
-    .closest(".dropdown-select")
-    .prev("select")
-    .val($(this).data("value"))
-    .trigger("change");
+    $(this).closest(".list").find(".selected").removeClass("selected");
+    $(this).addClass("selected");
+    var text = $(this).data("display-text") || $(this).text();
+    $(this).closest(".dropdown-select").find(".current").text(text);
+    $(this)
+        .closest(".dropdown-select")
+        .prev("select")
+        .val($(this).data("value"))
+        .trigger("change");
 });
 
 $(document).on("keydown", ".dropdown-select", function (event) {
-  var focused_option = $(
-    $(this).find(".list .option:focus")[0] ||
-    $(this).find(".list .option.selected")[0]
-  );
-
-  if (event.keyCode == 13) {
-    if ($(this).hasClass("open")) {
-      focused_option.trigger("click");
-    } else {
-      $(this).trigger("click");
-    }
-    return false;
-  } else if (event.keyCode == 40) {
-    if (!$(this).hasClass("open")) {
-      $(this).trigger("click");
-    } else {
-      focused_option.next().focus();
-    }
-    return false;
-  } else if (event.keyCode == 38) {
-    if (!$(this).hasClass("open")) {
-      $(this).trigger("click");
-    } else {
-      var focused_option = $(
+    var focused_option = $(
         $(this).find(".list .option:focus")[0] ||
         $(this).find(".list .option.selected")[0]
-      );
-      focused_option.prev().focus();
-    }
-    return false;
-    // Esc
-  } else if (event.keyCode == 27) {
-    if ($(this).hasClass("open")) {
-      $(this).trigger("click");
-    }
-    return false;
-  }
-});
+    );
 
-$(document).ready(function () {
-  create_custom_dropdowns();
-});
-
-$(document).ready(function () {
-  $(".wrapper-tab .tab")
-    .click(function () {
-      $(".wrapper-tab .tab")
-        .removeClass("active")
-        .eq($(this).index())
-        .addClass("active");
-      $(".tab_item").hide().eq($(this).index()).fadeIn();
-    })
-    .eq(0)
-    .addClass("active");
-
-  $(".drop-down-btn").hover(function () {
-    $(".under-nav").slideDown();
-  });
-
-  $(".under-nav").mouseleave(function () {
-    $(this).slideUp();
-  });
-
-  // scswdcvswvcsvr
-
-
-
-  var select_counter = 0;
-
-  $(".select-icon").click(function (e) {
-
-    $(".under-select").toggle();
-
-    if (select_counter % 2 == 0) {
-      $(this).css({
-        'transform': 'rotateZ(180deg)'
-      });
-
-    } else {
-      $(this).css({
-        'transform': 'rotateZ(0deg)'
-      });
-    }
-
-    select_counter++;
-  });
-
-
-
-  $('.prev1').click(function (e) {
-    $('.arrow-left').trigger("click");
-  });
-
-  $('.next1').click(function (e) {
-    $('.arrow-right').trigger("click");
-  });
-
-  $('.prev2').click(function (e) {
-    $('.arrow-left2').trigger("click");
-  });
-
-  $('.next2').click(function (e) {
-    $('.arrow-right2').trigger("click");
-  });
-
-  $('.prev3').click(function (e) {
-    $('.arrow-left3').trigger("click");
-  });
-
-  $('.next3').click(function (e) {
-    $('.arrow-right3').trigger("click");
-  });
-
-
-
-  $('.link-basket').hover(function () {
-    $(this).children("img").attr("src", "img/icons/basket-hover.svg");
-
-  }, function () {
-    $(this).children("img").attr("src", "img/icons/basket.svg");
-  });
-
-  // $('.link-user').hover(function () {
-  //   $(this).children("img").attr("src", "img/icons/user-outlined.png");
-
-  // }, function () {
-  //   $(this).children("img").attr("src", "img/icons/user.svg");
-  // });
-
-
-  $("#switch-location").change(function () {
-
-    $('#region-select').hide();
-    $('#country-select').hide();
-
-    if (this.value == 'region') {
-      $('#region-select').show();
-    }
-    else if (this.value == 'country') {
-      $('#country-select').show();
-    }
-
-    console.log(this.value);
-  });
-
-  /*
-   * We trigger the factory() function is different
-   * ways to support modular JavaScript libraries. See
-   * the 'Wrapping Up' section of the tutorial for
-   * more information
-   *
-   */
-  (function (factory) {
-    if (typeof define === "function" && define.amd) {
-      define(["jquery"], factory);
-    } else if (typeof exports !== "undefined") {
-      module.exports = factory(require("jquery"));
-    } else {
-      factory(jQuery);
-    }
-  })(function ($) {
-    /*
-     * We define Zippy as a variable of type ‘function’.
-     * Here, we use an anonymous function to ensure
-     * that the logic inside the function is executed immediately.
-     *
-     */
-    var Zippy = (function (element, settings) {
-      var instanceUid = 0;
-
-      /*
-       * The constructor function for Zippy
-       *
-       */
-      function _Zippy(element, settings) {
-        this.defaults = {
-          slideDuration: "10000",
-          speed: 10000,
-          arrowRight: ".arrow-right",
-          arrowLeft: ".arrow-left",
-        };
-
-        // We create a new property to hold our default settings after they
-        // have been merged with user supplied settings
-        this.settings = $.extend({}, this, this.defaults, settings);
-
-        // This object holds values that will change as the plugin operates
-        this.initials = {
-          currSlide: 0,
-          $currSlide: null,
-          totalSlides: false,
-          csstransitions: false,
-        };
-
-        // Attaches the properties of this.initials as direct properties of Zippy
-        $.extend(this, this.initials);
-
-        // Here we'll hold a reference to the DOM element passed in
-        // by the $.each function when this plugin was instantiated
-        this.$el = $(element);
-
-        // Ensure that the value of 'this' always references Zippy
-        this.changeSlide = $.proxy(this.changeSlide, this);
-
-        // We'll call our initiator function to get things rolling!
-        this.init();
-
-        // A little bit of metadata about the instantiated object
-        // This property will be incremented everytime a new Zippy carousel is created
-        // It provides each carousel with a unique ID
-        this.instanceUid = instanceUid++;
-      }
-
-      return _Zippy;
-    })();
-
-    /**
-     * Called once per instance
-     * Calls starter methods and associate the '.zippy-carousel' class
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.init = function () {
-      //Test to see if cssanimations are available
-      this.csstransitionsTest();
-      // Add a class so we can style our carousel
-      this.$el.addClass("zippy-carousel");
-      // Build out any DOM elements needed for the plugin to run
-      // Eg, we'll create an indicator dot for every slide in the carousel
-      this.build();
-      // Eg. Let the user click next/prev arrows or indicator dots
-      this.events();
-      // Bind any events we'll need for the carousel to function
-      this.activate();
-      // Start the timer loop to control progression to the next slide
-      this.initTimer();
-    };
-
-    /**
-     * Appropriated out of Modernizr v2.8.3
-     * Creates a new DOM element and tests existence of properties on it's
-     * Style object to see if CSSTransitions are available
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.csstransitionsTest = function () {
-      var elem = document.createElement("modernizr");
-      //A list of properties to test for
-      var props = [
-        "transition",
-        "WebkitTransition",
-        "MozTransition",
-        "OTransition",
-        "msTransition",
-      ];
-      //Iterate through our new element's Style property to see if these properties exist
-      for (var i in props) {
-        var prop = props[i];
-        var result = elem.style[prop] !== undefined ? prop : false;
-        if (result) {
-          this.csstransitions = result;
-          break;
+    if (event.keyCode == 13) {
+        if ($(this).hasClass("open")) {
+            focused_option.trigger("click");
+        } else {
+            $(this).trigger("click");
         }
-      }
-    };
+        return false;
+    } else if (event.keyCode == 40) {
+        if (!$(this).hasClass("open")) {
+            $(this).trigger("click");
+        } else {
+            focused_option.next().focus();
+        }
+        return false;
+    } else if (event.keyCode == 38) {
+        if (!$(this).hasClass("open")) {
+            $(this).trigger("click");
+        } else {
+            var focused_option = $(
+                $(this).find(".list .option:focus")[0] ||
+                $(this).find(".list .option.selected")[0]
+            );
+            focused_option.prev().focus();
+        }
+        return false;
+        // Esc
+    } else if (event.keyCode == 27) {
+        if ($(this).hasClass("open")) {
+            $(this).trigger("click");
+        }
+        return false;
+    }
+});
 
-    /**
-     * Add the CSSTransition duration to the DOM Object's Style property
-     * We trigger this function just before we want the slides to animate
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.addCSSDuration = function () {
-      var _ = this;
-      this.$el.find(".slide").each(function () {
-        this.style[_.csstransitions + "Duration"] = _.settings.speed + "ms";
-      });
-    };
+$(document).ready(function () {
+    create_custom_dropdowns();
+});
 
-    /**
-     * Remove the CSSTransition duration from the DOM Object's style property
-     * We trigger this function just after the slides have animated
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.removeCSSDuration = function () {
-      var _ = this;
-      this.$el.find(".slide").each(function () {
-        this.style[_.csstransitions + "Duration"] = "";
-      });
-    };
-
-    /**
-     * Creates a list of indicators based on the amount of slides
-     * @params void
-     * @returns void
-     *
-     */
-
-    Zippy.prototype.build = function () {
-      var $indicators = this.$el
-        .append('<ul class="indicators" >')
-        .find(".indicators");
-      this.totalSlides = this.$el.find(".slide").length;
-      for (var i = 0; i < this.totalSlides; i++)
-        $indicators.append("<li data-index=" + i + ">");
-    };
-
-    /**
-     * Activates the first slide
-     * Activates the first indicator
-     * @params void
-     * @returns void
-     *
-     */
-
-    Zippy.prototype.activate = function () {
-      this.$currSlide = this.$el.find(".slide").eq(0);
-      this.$el.find(".indicators li").eq(0).addClass("active");
-    };
-
-    /**
-     * Associate event handlers to events
-     * For arrow events, we send the placement of the next slide to the handler
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.events = function () {
-      $("body")
-        .on(
-          "click",
-          this.settings.arrowRight, {
-            direction: "right"
-          },
-          this.changeSlide
-        )
-        .on(
-          "click",
-          this.settings.arrowLeft, {
-            direction: "left"
-          },
-          this.changeSlide
-        )
-        .on("click", ".indicators li", this.changeSlide);
-    };
-
-    /**
-     * TIMER
-     * Resets the timer
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.clearTimer = function () {
-      if (this.timer) clearInterval(this.timer);
-    };
-
-    /**
-     * TIMER
-     * Initialise the timer
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.initTimer = function () {
-      this.timer = setInterval(this.changeSlide, this.settings.slideDuration);
-    };
-
-    /**
-     * TIMER
-     * Start the timer
-     * Reset the throttle to allow changeSlide to be executable
-     * @params void
-     * @returns void
-     *
-     */
-    Zippy.prototype.startTimer = function () {
-      this.initTimer();
-      this.throttle = false;
-    };
-
-    /**
-     * MAIN LOGIC HANDLER
-     * Triggers a set of subfunctions to carry out the animation
-     * @params	object	event
-     * @returns void
-     *
-     */
-    Zippy.prototype.changeSlide = function (e) {
-      //Ensure that animations are triggered one at a time
-      if (this.throttle) return;
-      this.throttle = true;
-
-      //Stop the timer as the animation is getting carried out
-      this.clearTimer();
-
-      // Returns the animation direction (left or right)
-      var direction = this._direction(e);
-
-      // Selects the next slide
-      var animate = this._next(e, direction);
-      if (!animate) return;
-
-      //Active the next slide to scroll into view
-      var $nextSlide = this.$el
-        .find(".slide")
-        .eq(this.currSlide)
-        .addClass(direction + " active");
-
-      if (!this.csstransitions) {
-        this._jsAnimation($nextSlide, direction);
-      } else {
-        this._cssAnimation($nextSlide, direction);
-      }
-    };
-
-    /**
-     * Returns the animation direction, right or left
-     * @params	object	event
-     * @returns strong	animation direction
-     *
-     */
-    Zippy.prototype._direction = function (e) {
-      var direction;
-
-      // Default to forward movement
-      if (typeof e !== "undefined") {
-        direction = typeof e.data === "undefined" ? "right" : e.data.direction;
-      } else {
-        direction = "right";
-      }
-      return direction;
-    };
-
-    /**
-     * Updates our plugin with the next slide number
-     * @params	object	event
-     * @params	string	animation direction
-     * @returns boolean continue to animate?
-     *
-     */
-    Zippy.prototype._next = function (e, direction) {
-      // If the event was triggered by a slide indicator, we store the data-index value of that indicator
-      var index =
-        typeof e !== "undefined" ? $(e.currentTarget).data("index") : undefined;
-
-      //Logic for determining the next slide
-      switch (true) {
-        //If the event was triggered by an indicator, we set the next slide based on index
-        case typeof index !== "undefined":
-          if (this.currSlide == index) {
-            this.startTimer();
-            return false;
-          }
-          this.currSlide = index;
-          break;
-        case direction == "right" && this.currSlide < this.totalSlides - 1:
-          this.currSlide++;
-          break;
-        case direction == "right":
-          this.currSlide = 0;
-          break;
-        case direction == "left" && this.currSlide === 0:
-          this.currSlide = this.totalSlides - 1;
-          break;
-        case direction == "left":
-          this.currSlide--;
-          break;
-      }
-      return true;
-    };
-
-    /**
-     * Executes the animation via CSS transitions
-     * @params	object	Jquery object the next slide to slide into view
-     * @params	string	animation direction
-     * @returns void
-     *
-     */
-    Zippy.prototype._cssAnimation = function ($nextSlide, direction) {
-      //Init CSS transitions
-      setTimeout(
-        function () {
-          this.$el.addClass("transition");
-          this.addCSSDuration();
-          this.$currSlide.addClass("shift-" + direction);
-        }.bind(this),
-        100
-      );
-
-      //CSS Animation Callback
-      //After the animation has played out, remove CSS transitions
-      //Remove unnecessary classes
-      //Start timer
-      setTimeout(
-        function () {
-          this.$el.removeClass("transition");
-          this.removeCSSDuration();
-          this.$currSlide.removeClass("active shift-left shift-right");
-          this.$currSlide = $nextSlide.removeClass(direction);
-          this._updateIndicators();
-          this.startTimer();
-        }.bind(this),
-        100 + this.settings.speed
-      );
-    };
-
-    /**
-     * Executes the animation via JS transitions
-     * @params	object	Jquery object the next slide to slide into view
-     * @params	string	animation direction
-     * @returns void
-     *
-     */
-    Zippy.prototype._jsAnimation = function ($nextSlide, direction) {
-      //Cache this reference for use inside animate functions
-      var _ = this;
-
-      // See CSS for explanation of .js-reset-left
-      if (direction == "right") _.$currSlide.addClass("js-reset-left");
-
-      var animation = {};
-      animation[direction] = "0%";
-
-      var animationPrev = {};
-      animationPrev[direction] = "100%";
-
-      //Animation: Current slide
-      this.$currSlide.animate(animationPrev, this.settings.speed);
-
-      //Animation: Next slide
-      $nextSlide.animate(animation, this.settings.speed, "swing", function () {
-        //Get rid of any JS animation residue
-        _.$currSlide.removeClass("active js-reset-left").attr("style", "");
-        //Cache the next slide after classes and inline styles have been removed
-        _.$currSlide = $nextSlide.removeClass(direction).attr("style", "");
-        _._updateIndicators();
-        _.startTimer();
-      });
-    };
-
-    /**
-     * Ensures the slide indicators are pointing to the currently active slide
-     * @params	void
-     * @returns	void
-     *
-     */
-    Zippy.prototype._updateIndicators = function () {
-      this.$el
-        .find(".indicators li")
-        .removeClass("active")
-        .eq(this.currSlide)
+$(document).ready(function () {
+    $(".wrapper-tab .tab")
+        .click(function () {
+            $(".wrapper-tab .tab")
+                .removeClass("active")
+                .eq($(this).index())
+                .addClass("active");
+            $(".tab_item").hide().eq($(this).index()).fadeIn();
+        })
+        .eq(0)
         .addClass("active");
-    };
 
-    /**
-     * Initialize the plugin once for each DOM object passed to jQuery
-     * @params	object	options object
-     * @returns void
+    $(".drop-down-btn").hover(function () {
+        $(".under-nav").slideDown();
+    });
+
+    $(".under-nav").mouseleave(function () {
+        $(this).slideUp();
+    });
+    
+
+    // NEW STYLE
+
+    $('.tab1').click(function (e) {
+        e.preventDefault();
+
+        $('.bg-img').css({
+            "background-image": "url('img/Map1.png')"
+        });
+        $('.bg-text-img').css({
+            "background-image": "none"
+        });
+    });
+
+    $('.tab2').click(function (e) {
+        e.preventDefault();
+
+        $('.bg-img').css({
+            "background-image": "url('img/Map2.png')"
+        });
+        $('.bg-text-img').css({
+            "background-image": "none"
+        });
+    });
+
+    $('.tab3').click(function (e) {
+        e.preventDefault();
+
+        $('.bg-img').css({
+            "background-image": "url('img/Map3.png')"
+        });
+        $('.bg-text-img').css({
+            "background-image": "none"
+        });
+    });
+
+    $('.tab4').click(function (e) {
+        e.preventDefault();
+
+        $('.bg-img').css({
+            "background-image": "url('img/Mask.png')"
+        });
+        $('.bg-text-img').css({
+            "background-image": "url('img/icons/text.png')"
+        });
+    });
+
+
+    $('.prev1').click(function (e) {
+        $('.arrow-left').trigger("click");
+    });
+
+    $('.next1').click(function (e) {
+        $('.arrow-right').trigger("click");
+    });
+
+    $('.prev2').click(function (e) {
+        $('.arrow-left2').trigger("click");
+    });
+
+    $('.next2').click(function (e) {
+        $('.arrow-right2').trigger("click");
+    });
+
+    $('.prev3').click(function (e) {
+        $('.arrow-left3').trigger("click");
+    });
+
+    $('.next3').click(function (e) {
+        $('.arrow-right3').trigger("click");
+    });
+
+
+
+    $('.link-basket').hover(function () {
+        $(this).children("img").attr("src", "img/icons/basket-hover.svg");
+
+    }, function () {
+        $(this).children("img").attr("src", "img/icons/basket.svg");
+    });
+
+    // $('.link-user').hover(function () {
+    //   $(this).children("img").attr("src", "img/icons/user-outlined.png");
+
+    // }, function () {
+    //   $(this).children("img").attr("src", "img/icons/user.svg");
+    // });
+
+
+    $("#switch-location").change(function () {
+
+        $('#region-select').hide();
+        $('#country-select').hide();
+
+        if (this.value == 'region') {
+            $('#region-select').show();
+        } else if (this.value == 'country') {
+            $('#country-select').show();
+        }
+
+        // console.log(this.value);
+    });
+
+    /*
+     * We trigger the factory() function is different
+     * ways to support modular JavaScript libraries. See
+     * the 'Wrapping Up' section of the tutorial for
+     * more information
      *
      */
-    $.fn.Zippy = function (options) {
-      return this.each(function (index, el) {
-        el.Zippy = new Zippy(el, options);
-      });
+    (function (factory) {
+        if (typeof define === "function" && define.amd) {
+            define(["jquery"], factory);
+        } else if (typeof exports !== "undefined") {
+            module.exports = factory(require("jquery"));
+        } else {
+            factory(jQuery);
+        }
+    })(function ($) {
+        /*
+         * We define Zippy as a variable of type ‘function’.
+         * Here, we use an anonymous function to ensure
+         * that the logic inside the function is executed immediately.
+         *
+         */
+        var Zippy = (function (element, settings) {
+            var instanceUid = 0;
+
+            /*
+             * The constructor function for Zippy
+             *
+             */
+            function _Zippy(element, settings) {
+                this.defaults = {
+                    slideDuration: "10000",
+                    speed: 10000,
+                    arrowRight: ".arrow-right",
+                    arrowLeft: ".arrow-left",
+                };
+
+                // We create a new property to hold our default settings after they
+                // have been merged with user supplied settings
+                this.settings = $.extend({}, this, this.defaults, settings);
+
+                // This object holds values that will change as the plugin operates
+                this.initials = {
+                    currSlide: 0,
+                    $currSlide: null,
+                    totalSlides: false,
+                    csstransitions: false,
+                };
+
+                // Attaches the properties of this.initials as direct properties of Zippy
+                $.extend(this, this.initials);
+
+                // Here we'll hold a reference to the DOM element passed in
+                // by the $.each function when this plugin was instantiated
+                this.$el = $(element);
+
+                // Ensure that the value of 'this' always references Zippy
+                this.changeSlide = $.proxy(this.changeSlide, this);
+
+                // We'll call our initiator function to get things rolling!
+                this.init();
+
+                // A little bit of metadata about the instantiated object
+                // This property will be incremented everytime a new Zippy carousel is created
+                // It provides each carousel with a unique ID
+                this.instanceUid = instanceUid++;
+            }
+
+            return _Zippy;
+        })();
+
+        /**
+         * Called once per instance
+         * Calls starter methods and associate the '.zippy-carousel' class
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.init = function () {
+            //Test to see if cssanimations are available
+            this.csstransitionsTest();
+            // Add a class so we can style our carousel
+            this.$el.addClass("zippy-carousel");
+            // Build out any DOM elements needed for the plugin to run
+            // Eg, we'll create an indicator dot for every slide in the carousel
+            this.build();
+            // Eg. Let the user click next/prev arrows or indicator dots
+            this.events();
+            // Bind any events we'll need for the carousel to function
+            this.activate();
+            // Start the timer loop to control progression to the next slide
+            this.initTimer();
+        };
+
+        /**
+         * Appropriated out of Modernizr v2.8.3
+         * Creates a new DOM element and tests existence of properties on it's
+         * Style object to see if CSSTransitions are available
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.csstransitionsTest = function () {
+            var elem = document.createElement("modernizr");
+            //A list of properties to test for
+            var props = [
+                "transition",
+                "WebkitTransition",
+                "MozTransition",
+                "OTransition",
+                "msTransition",
+            ];
+            //Iterate through our new element's Style property to see if these properties exist
+            for (var i in props) {
+                var prop = props[i];
+                var result = elem.style[prop] !== undefined ? prop : false;
+                if (result) {
+                    this.csstransitions = result;
+                    break;
+                }
+            }
+        };
+
+        /**
+         * Add the CSSTransition duration to the DOM Object's Style property
+         * We trigger this function just before we want the slides to animate
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.addCSSDuration = function () {
+            var _ = this;
+            this.$el.find(".slide").each(function () {
+                this.style[_.csstransitions + "Duration"] = _.settings.speed + "ms";
+            });
+        };
+
+        /**
+         * Remove the CSSTransition duration from the DOM Object's style property
+         * We trigger this function just after the slides have animated
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.removeCSSDuration = function () {
+            var _ = this;
+            this.$el.find(".slide").each(function () {
+                this.style[_.csstransitions + "Duration"] = "";
+            });
+        };
+
+        /**
+         * Creates a list of indicators based on the amount of slides
+         * @params void
+         * @returns void
+         *
+         */
+
+        Zippy.prototype.build = function () {
+            var $indicators = this.$el
+                .append('<ul class="indicators" >')
+                .find(".indicators");
+            this.totalSlides = this.$el.find(".slide").length;
+            for (var i = 0; i < this.totalSlides; i++)
+                $indicators.append("<li data-index=" + i + ">");
+        };
+
+        /**
+         * Activates the first slide
+         * Activates the first indicator
+         * @params void
+         * @returns void
+         *
+         */
+
+        Zippy.prototype.activate = function () {
+            this.$currSlide = this.$el.find(".slide").eq(0);
+            this.$el.find(".indicators li").eq(0).addClass("active");
+        };
+
+        /**
+         * Associate event handlers to events
+         * For arrow events, we send the placement of the next slide to the handler
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.events = function () {
+            $("body")
+                .on(
+                    "click",
+                    this.settings.arrowRight, {
+                        direction: "right"
+                    },
+                    this.changeSlide
+                )
+                .on(
+                    "click",
+                    this.settings.arrowLeft, {
+                        direction: "left"
+                    },
+                    this.changeSlide
+                )
+                .on("click", ".indicators li", this.changeSlide);
+        };
+
+        /**
+         * TIMER
+         * Resets the timer
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.clearTimer = function () {
+            if (this.timer) clearInterval(this.timer);
+        };
+
+        /**
+         * TIMER
+         * Initialise the timer
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.initTimer = function () {
+            this.timer = setInterval(this.changeSlide, this.settings.slideDuration);
+        };
+
+        /**
+         * TIMER
+         * Start the timer
+         * Reset the throttle to allow changeSlide to be executable
+         * @params void
+         * @returns void
+         *
+         */
+        Zippy.prototype.startTimer = function () {
+            this.initTimer();
+            this.throttle = false;
+        };
+
+        /**
+         * MAIN LOGIC HANDLER
+         * Triggers a set of subfunctions to carry out the animation
+         * @params	object	event
+         * @returns void
+         *
+         */
+        Zippy.prototype.changeSlide = function (e) {
+            //Ensure that animations are triggered one at a time
+            if (this.throttle) return;
+            this.throttle = true;
+
+            //Stop the timer as the animation is getting carried out
+            this.clearTimer();
+
+            // Returns the animation direction (left or right)
+            var direction = this._direction(e);
+
+            // Selects the next slide
+            var animate = this._next(e, direction);
+            if (!animate) return;
+
+            //Active the next slide to scroll into view
+            var $nextSlide = this.$el
+                .find(".slide")
+                .eq(this.currSlide)
+                .addClass(direction + " active");
+
+            if (!this.csstransitions) {
+                this._jsAnimation($nextSlide, direction);
+            } else {
+                this._cssAnimation($nextSlide, direction);
+            }
+        };
+
+        /**
+         * Returns the animation direction, right or left
+         * @params	object	event
+         * @returns strong	animation direction
+         *
+         */
+        Zippy.prototype._direction = function (e) {
+            var direction;
+
+            // Default to forward movement
+            if (typeof e !== "undefined") {
+                direction = typeof e.data === "undefined" ? "right" : e.data.direction;
+            } else {
+                direction = "right";
+            }
+            return direction;
+        };
+
+        /**
+         * Updates our plugin with the next slide number
+         * @params	object	event
+         * @params	string	animation direction
+         * @returns boolean continue to animate?
+         *
+         */
+        Zippy.prototype._next = function (e, direction) {
+            // If the event was triggered by a slide indicator, we store the data-index value of that indicator
+            var index =
+                typeof e !== "undefined" ? $(e.currentTarget).data("index") : undefined;
+
+            //Logic for determining the next slide
+            switch (true) {
+                //If the event was triggered by an indicator, we set the next slide based on index
+                case typeof index !== "undefined":
+                    if (this.currSlide == index) {
+                        this.startTimer();
+                        return false;
+                    }
+                    this.currSlide = index;
+                    break;
+                case direction == "right" && this.currSlide < this.totalSlides - 1:
+                    this.currSlide++;
+                    break;
+                case direction == "right":
+                    this.currSlide = 0;
+                    break;
+                case direction == "left" && this.currSlide === 0:
+                    this.currSlide = this.totalSlides - 1;
+                    break;
+                case direction == "left":
+                    this.currSlide--;
+                    break;
+            }
+            return true;
+        };
+
+        /**
+         * Executes the animation via CSS transitions
+         * @params	object	Jquery object the next slide to slide into view
+         * @params	string	animation direction
+         * @returns void
+         *
+         */
+        Zippy.prototype._cssAnimation = function ($nextSlide, direction) {
+            //Init CSS transitions
+            setTimeout(
+                function () {
+                    this.$el.addClass("transition");
+                    this.addCSSDuration();
+                    this.$currSlide.addClass("shift-" + direction);
+                }.bind(this),
+                100
+            );
+
+            //CSS Animation Callback
+            //After the animation has played out, remove CSS transitions
+            //Remove unnecessary classes
+            //Start timer
+            setTimeout(
+                function () {
+                    this.$el.removeClass("transition");
+                    this.removeCSSDuration();
+                    this.$currSlide.removeClass("active shift-left shift-right");
+                    this.$currSlide = $nextSlide.removeClass(direction);
+                    this._updateIndicators();
+                    this.startTimer();
+                }.bind(this),
+                100 + this.settings.speed
+            );
+        };
+
+        /**
+         * Executes the animation via JS transitions
+         * @params	object	Jquery object the next slide to slide into view
+         * @params	string	animation direction
+         * @returns void
+         *
+         */
+        Zippy.prototype._jsAnimation = function ($nextSlide, direction) {
+            //Cache this reference for use inside animate functions
+            var _ = this;
+
+            // See CSS for explanation of .js-reset-left
+            if (direction == "right") _.$currSlide.addClass("js-reset-left");
+
+            var animation = {};
+            animation[direction] = "0%";
+
+            var animationPrev = {};
+            animationPrev[direction] = "100%";
+
+            //Animation: Current slide
+            this.$currSlide.animate(animationPrev, this.settings.speed);
+
+            //Animation: Next slide
+            $nextSlide.animate(animation, this.settings.speed, "swing", function () {
+                //Get rid of any JS animation residue
+                _.$currSlide.removeClass("active js-reset-left").attr("style", "");
+                //Cache the next slide after classes and inline styles have been removed
+                _.$currSlide = $nextSlide.removeClass(direction).attr("style", "");
+                _._updateIndicators();
+                _.startTimer();
+            });
+        };
+
+        /**
+         * Ensures the slide indicators are pointing to the currently active slide
+         * @params	void
+         * @returns	void
+         *
+         */
+        Zippy.prototype._updateIndicators = function () {
+            this.$el
+                .find(".indicators li")
+                .removeClass("active")
+                .eq(this.currSlide)
+                .addClass("active");
+        };
+
+        /**
+         * Initialize the plugin once for each DOM object passed to jQuery
+         * @params	object	options object
+         * @returns void
+         *
+         */
+        $.fn.Zippy = function (options) {
+            return this.each(function (index, el) {
+                el.Zippy = new Zippy(el, options);
+            });
+        };
+    });
+
+    // Custom options for the carousel
+    var args = {
+        arrowRight: ".arrow-right", //A jQuery reference to the right arrow
+        arrowLeft: ".arrow-left", //A jQuery reference to the left arrow
+        speed: 1000, //The speed of the animation (milliseconds)
+        slideDuration: 100000000000000, //The amount of time between animations (milliseconds)
     };
-  });
 
-  // Custom options for the carousel
-  var args = {
-    arrowRight: ".arrow-right", //A jQuery reference to the right arrow
-    arrowLeft: ".arrow-left", //A jQuery reference to the left arrow
-    speed: 1000, //The speed of the animation (milliseconds)
-    slideDuration: 100000000000000, //The amount of time between animations (milliseconds)
-  };
+    $(".carousel").Zippy(args);
 
-  $(".carousel").Zippy(args);
+    // wfwefwefwef
+    var args2 = {
+        arrowRight: ".arrow-right2", //A jQuery reference to the right arrow
+        arrowLeft: ".arrow-left2", //A jQuery reference to the left arrow
+        speed: 1000, //The speed of the animation (milliseconds)
+        slideDuration: 100000000000000, //The amount of time between animations (milliseconds)
+    };
 
-  // wfwefwefwef
-  var args2 = {
-    arrowRight: ".arrow-right2", //A jQuery reference to the right arrow
-    arrowLeft: ".arrow-left2", //A jQuery reference to the left arrow
-    speed: 1000, //The speed of the animation (milliseconds)
-    slideDuration: 100000000000000, //The amount of time between animations (milliseconds)
-  };
+    $(".carousel2").Zippy(args2);
 
-  $(".carousel2").Zippy(args2);
+    var args3 = {
+        arrowRight: ".arrow-right3", //A jQuery reference to the right arrow
+        arrowLeft: ".arrow-left3", //A jQuery reference to the left arrow
+        speed: 1000, //The speed of the animation (milliseconds)
+        slideDuration: 100000000000000, //The amount of time between animations (milliseconds)
+    };
 
-  var args3 = {
-    arrowRight: ".arrow-right3", //A jQuery reference to the right arrow
-    arrowLeft: ".arrow-left3", //A jQuery reference to the left arrow
-    speed: 1000, //The speed of the animation (milliseconds)
-    slideDuration: 100000000000000, //The amount of time between animations (milliseconds)
-  };
-
-  $(".carousel3").Zippy(args3);
+    $(".carousel3").Zippy(args3);
 });
