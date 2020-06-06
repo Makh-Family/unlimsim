@@ -1903,6 +1903,68 @@
 
 ///////// CUSTOM STYLE
 
+function filterInt(value) {
+    if (/^[-+]?(\d+|Infinity)$/.test(value)) {
+        return Number(value)
+    } else {
+        return NaN
+    }
+}
+
+/**
+ * Get list of Gb and Balance from html
+ */
+var listOfGb = $('#enter-gb').find('option').map(function () {
+    return filterInt($(this).val());
+}).get();
+
+var listOfBalance = $('#enter-balance').find('option').map(function () {
+    return filterInt($(this).val());
+}).get();
+
+
+/**
+ * Add custom option when live search doesn't match
+ */
+$('#enter-gb').on('keyup', 'input', function () {
+    var val = filterInt($(this).val());
+
+    if (val >= 1 && val <= 100 && !listOfGb.includes(val)) {
+        console.log('GB: ', val);
+
+        $('option[_custom_gb="true"]').remove();
+
+        var $option = $('<option/>').attr({
+            value: val,
+            _custom_gb: true
+        }).html(val + ' Gb');
+
+        $('#enter-gb select')
+            .append($option)
+            .selectpicker('refresh');
+    }
+});
+
+$('#enter-balance').on('keyup', 'input', function() {
+    var val = filterInt($(this).val());
+
+    if (val >= 1 && val <= 10000 && !listOfBalance.includes(val)) {
+        console.log('BALANCE: ', val);
+
+        $('option[_custom_balance="true"]').remove();
+
+        var $option = $('<option/>').attr({
+            value: val,
+            _custom_balance: true
+        }).html(val + ' $');
+
+        $('#enter-balance select')
+            .append($option)
+            .selectpicker('refresh');
+    }
+});
+
+
 function create_custom_dropdowns() {
     $("select.co-sel").each(function (i, select) {
         if (!$(this).next().hasClass("dropdown-select")) {
@@ -2049,7 +2111,7 @@ $(document).ready(function () {
     $(".under-nav").mouseleave(function () {
         $(this).slideUp();
     });
-    
+
 
     // NEW STYLE
 

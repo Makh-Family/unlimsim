@@ -23164,31 +23164,23 @@ $('#submit-button').click(function (e) {
  * START COUNTRY PLAN
  */
 
-var select_counter = 0;
-
 function rotateSelectIcon() {
-	if (select_counter % 2 == 0) {
-		$(".select-icon").css({
-			'transform': 'rotateZ(180deg)'
-		});
+	var degree = 0;
 
-	} else {
-		$(".select-icon").css({
-			'transform': 'rotateZ(0deg)'
-		});
-	}
+	degree = $(".under-select").hasClass('open') ? 180 : 0;
 
-	select_counter++;
+	$(".select-icon").css({
+		'transform': `rotateZ(${degree}deg)`
+	});
 }
 
 $('#chosen_country').focus(function () {
-	$(".under-select").show();
+	$(".under-select").addClass('open');
 	rotateSelectIcon();
 });
 
-$(".select-icon").click(function (e) {
-	$(".under-select").toggle();
-
+$("#country-toggle-btn").click(function (e) {
+	$(".under-select").toggleClass('open');
 	rotateSelectIcon();
 });
 
@@ -23204,7 +23196,7 @@ $('#map-coverage').on('click', 'li', function () {
 	$('.map-country-list').children('li').removeClass('active')
 	$(this).addClass('active')
 
-	$(".under-select").hide()
+	$(".under-select").removeClass('open');
 	rotateSelectIcon();
 });
 
@@ -25180,6 +25172,68 @@ if (query == 'thankyou') {
 
 ///////// CUSTOM STYLE
 
+function filterInt(value) {
+    if (/^[-+]?(\d+|Infinity)$/.test(value)) {
+        return Number(value)
+    } else {
+        return NaN
+    }
+}
+
+/**
+ * Get list of Gb and Balance from html
+ */
+var listOfGb = $('#enter-gb').find('option').map(function () {
+    return filterInt($(this).val());
+}).get();
+
+var listOfBalance = $('#enter-balance').find('option').map(function () {
+    return filterInt($(this).val());
+}).get();
+
+
+/**
+ * Add custom option when live search doesn't match
+ */
+$('#enter-gb').on('keyup', 'input', function () {
+    var val = filterInt($(this).val());
+
+    if (val >= 1 && val <= 100 && !listOfGb.includes(val)) {
+        console.log('GB: ', val);
+
+        $('option[_custom_gb="true"]').remove();
+
+        var $option = $('<option/>').attr({
+            value: val,
+            _custom_gb: true
+        }).html(val + ' Gb');
+
+        $('#enter-gb select')
+            .append($option)
+            .selectpicker('refresh');
+    }
+});
+
+$('#enter-balance').on('keyup', 'input', function() {
+    var val = filterInt($(this).val());
+
+    if (val >= 1 && val <= 10000 && !listOfBalance.includes(val)) {
+        console.log('BALANCE: ', val);
+
+        $('option[_custom_balance="true"]').remove();
+
+        var $option = $('<option/>').attr({
+            value: val,
+            _custom_balance: true
+        }).html(val + ' $');
+
+        $('#enter-balance select')
+            .append($option)
+            .selectpicker('refresh');
+    }
+});
+
+
 function create_custom_dropdowns() {
     $("select.co-sel").each(function (i, select) {
         if (!$(this).next().hasClass("dropdown-select")) {
@@ -25326,7 +25380,7 @@ $(document).ready(function () {
     $(".under-nav").mouseleave(function () {
         $(this).slideUp();
     });
-    
+
 
     // NEW STYLE
 

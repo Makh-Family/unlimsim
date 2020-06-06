@@ -287,31 +287,23 @@ $('#submit-button').click(function (e) {
  * START COUNTRY PLAN
  */
 
-var select_counter = 0;
-
 function rotateSelectIcon() {
-	if (select_counter % 2 == 0) {
-		$(".select-icon").css({
-			'transform': 'rotateZ(180deg)'
-		});
+	var degree = 0;
 
-	} else {
-		$(".select-icon").css({
-			'transform': 'rotateZ(0deg)'
-		});
-	}
+	degree = $(".under-select").hasClass('open') ? 180 : 0;
 
-	select_counter++;
+	$(".select-icon").css({
+		'transform': `rotateZ(${degree}deg)`
+	});
 }
 
 $('#chosen_country').focus(function () {
-	$(".under-select").show();
+	$(".under-select").addClass('open');
 	rotateSelectIcon();
 });
 
-$(".select-icon").click(function (e) {
-	$(".under-select").toggle();
-
+$("#country-toggle-btn").click(function (e) {
+	$(".under-select").toggleClass('open');
 	rotateSelectIcon();
 });
 
@@ -327,7 +319,7 @@ $('#map-coverage').on('click', 'li', function () {
 	$('.map-country-list').children('li').removeClass('active')
 	$(this).addClass('active')
 
-	$(".under-select").hide()
+	$(".under-select").removeClass('open');
 	rotateSelectIcon();
 });
 

@@ -629,7 +629,7 @@
                       <div class="sel-box my-4">
                         <div class="map-item-1 w-100">
                           <input type="text" class="map-filter-input w-100" id="chosen_country" placeholder="Enter the name of country or select from list" autocomplete="off" />
-                          <span class="close">
+                          <span class="close" id="country-toggle-btn">
                             <i class="fas fa-angle-down select-icon"></i>
                           </span>
                         </div>
@@ -1014,16 +1014,16 @@
                               <img src="img/icons/icon1.png" alt="icon1" width="85" height="50" />
                             </div>
 
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper">
-                              <select class="form-control form-control-xs selectpicker" id="switch-location" name="location" data-title="Select location" data-width="100%">
+                            <div class="col-sm-4 bs-select-wrapper">
+                              <select class="form-control selectpicker" id="switch-location" name="location" data-title="Select location" data-width="100%" data-dropup-auto="false">
                                 <option value="world">Worldwide</option>
                                 <option value="region">Region</option>
                                 <option value="country">Country</option>
                               </select>
                             </div>
 
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper" id="region-select">
-                              <select class="form-control form-control-xs selectpicker" name="region" data-title="Select region" data-width="100%">
+                            <div class="col-sm-4 bs-select-wrapper" id="region-select">
+                              <select class="form-control selectpicker" name="region" data-title="Select region" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Select region</option> -->
                                 <option value="">Asia</option>
                                 <option value="">Australia</option>
@@ -1034,9 +1034,9 @@
                               </select>
                             </div>
 
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper" id="country-select">
+                            <div class="col-sm-4 bs-select-wrapper" id="country-select">
                               <!-- data-size="500" -->
-                              <select class="form-control form-control-xs selectpicker" name="country" data-live-search="true" data-title="Select country" data-width="100%">
+                              <select class="form-control selectpicker" name="country" data-live-search="true" data-live-search-style="startsWith" data-title="Select country" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Select country</option> -->
                                 <optgroup label="A">
                                   <option>ALBANIA</option>
@@ -1288,8 +1288,9 @@
                             <div class="col-sm-2 d-flex justify-content-center align-items-center">
                               <img src="img/icons/icon2.png" alt="icon1" width="30" height="30" />
                             </div>
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper">
-                              <select class="form-control form-control-xs selectpicker" name="gb" data-live-search="true" data-title="Enter Gb" data-width="100%">
+
+                            <div class="col-sm-4 bs-select-wrapper" id="enter-gb">
+                              <select class="form-control selectpicker" name="gb" data-live-search="true" data-live-search-placeholder="Custom Gb" data-live-search-style="startsWith" data-title="Enter Gb" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Enter Gb</option> -->
                                 <option value="1">1 Gb</option>
                                 <option value="3">3 Gb</option>
@@ -1304,8 +1305,9 @@
                                 <option value="100">100 Gb</option>
                               </select>
                             </div>
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper">
-                              <select class="form-control form-control-xs selectpicker" name="period" data-title="Enter period" data-width="100%">
+                            
+                            <div class="col-sm-4 bs-select-wrapper">
+                              <select class="form-control selectpicker" name="period" data-title="Enter period" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Enter period</option> -->
                                 <option value="1">1 day</option>
                                 <option value="7">7 days</option>
@@ -1329,8 +1331,8 @@
                             <div class="col-sm-2 d-flex justify-content-center align-items-center">
                               <img src="img/icons/icon5.png" alt="icon1" width="42" height="35" />
                             </div>
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper">
-                              <select class="form-control form-control-xs selectpicker" name="balance" data-live-search="true" data-title="Enter Balance $" data-width="100%">
+                            <div class="col-sm-4 bs-select-wrapper" id="enter-balance">
+                              <select class="form-control selectpicker" name="balance" data-live-search="true" data-live-search-placeholder="Custom Balance" data-live-search-style="startsWith" data-title="Enter Balance $" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Enter Balance $</option> -->
                                 <option value="1">1 $</option>
                                 <option value="3">3 $</option>
@@ -1345,8 +1347,8 @@
                                 <option value="100">100 $</option>
                               </select>
                             </div>
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper">
-                              <select class="form-control form-control-xs selectpicker" name="period" data-title="Enter period" data-width="100%">
+                            <div class="col-sm-4 bs-select-wrapper">
+                              <select class="form-control selectpicker" name="period" data-title="Enter period" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Enter period</option> -->
                                 <option value="1">1 day</option>
                                 <option value="7">7 days</option>
@@ -1370,9 +1372,9 @@
                             <div class="col-sm-2 d-flex justify-content-center align-items-center">
                               <img src="img/icons/icon3.png" alt="icon1" width="56" height="56" />
                             </div>
-                            <div class="col-sm-4 sel-box-last bs-select-wrapper">
+                            <div class="col-sm-4 bs-select-wrapper">
                               <!-- data-size="7" -->
-                              <select class="form-control form-control-xs selectpicker" name="" data-title="Enter period" data-width="100%">
+                              <select class="form-control selectpicker" name="" data-title="Enter period" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Enter period</option> -->
                                 <option value="1">1 month</option>
                                 <option value="3">3 month</option>
@@ -1398,7 +1400,7 @@
                             </div>
                             <div class="col-sm-4 bs-select-wrapper">
                               <!-- data-size="7" -->
-                              <select class="form-control form-control-xs selectpicker" name="" data-title="Enter period" data-width="100%">
+                              <select class="form-control selectpicker" name="" data-title="Enter period" data-width="100%" data-dropup-auto="false">
                                 <!-- <option selected>Enter period</option> -->
                                 <option value="1">1 month</option>
                                 <option value="3">3 month</option>
