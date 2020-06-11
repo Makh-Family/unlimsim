@@ -26044,6 +26044,7 @@ $(document).ready(function () {
 	
 		if (selectedRegion == '*') {
 			$('.region-text').each(function(index) {
+				console.log($(this).text())
 				return $(this).html(region_texts[index]);
 			});
 		}
@@ -26311,10 +26312,10 @@ $(document).ready(function () {
 	if (elCardSlider.length) {
 		elCardSlider.slick({
 			arrows:true,
-			slidesToShow: 3,
-			slidesToScroll: 1,
 			dots: true,
+			slidesToShow: 3,
 			dotsClass: 'js-cards-indicators',
+			infinite: false,
 			responsive: [
 				{
 					breakpoint: 1022,
@@ -26326,7 +26327,13 @@ $(document).ready(function () {
 					breakpoint: 770,
 					settings: {
 						slidesToShow: 1,
-						arrows:false
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow:1,
+						arrows: false
 					}
 				}
 			]

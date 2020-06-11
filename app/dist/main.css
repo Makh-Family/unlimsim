@@ -11883,7 +11883,7 @@ li.let {
 }
 
 .under-nav .container {
-  padding-left: 190px;
+  padding-left: 207px;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
 }
@@ -12932,7 +12932,7 @@ div.last-tab .right-item .under-text button {
   height: 40px;
   line-height: 1.8;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   background-color: transparent;
   border: 2px solid white;
   display: flex;
@@ -13404,7 +13404,7 @@ div.last-tab .right-item .under-text button {
   padding-top: 40px;
 }
 
-.tab_item-2 .line {
+.tab_item-2 .line.my-2 {
   margin: 0;
 }
 
@@ -13523,6 +13523,13 @@ div.last-tab .right-item .under-text button {
   .last-text p {
     position: static !important;
     width: auto !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section-tab .wrapper-tab .tabs .container .tab p {
+    width: 70px;
+    margin: 0 auto;
   }
 }
 
