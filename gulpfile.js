@@ -1,18 +1,18 @@
 
-const   gulp          = require('gulp'),
-		sass          = require('gulp-sass'),
-		browserSync   = require('browser-sync'),
-		concat        = require('gulp-concat'),
-		uglify        = require('gulp-uglify'),
-		cleancss      = require('gulp-clean-css'),
-		// rename        = require('gulp-rename'),
-		autoprefixer  = require('gulp-autoprefixer'),
-		notify        = require('gulp-notify');
-		// gutil         = require('gulp-util' ),
-		// rsync         = require('gulp-rsync'),
-		// imageResize   = require('gulp-image-resize'),
-		// imagemin      = require('gulp-imagemin'),
-		// del           = require('del');
+const gulp          = require('gulp'),
+			sass          = require('gulp-sass'),
+			browserSync   = require('browser-sync'),
+			concat        = require('gulp-concat'),
+			uglify        = require('gulp-uglify'),
+			cleancss      = require('gulp-clean-css'),
+			// rename        = require('gulp-rename'),
+			autoprefixer  = require('gulp-autoprefixer'),
+			notify        = require('gulp-notify');
+			// gutil         = require('gulp-util' ),
+			// rsync         = require('gulp-rsync'),
+			// imageResize   = require('gulp-image-resize'),
+			// imagemin      = require('gulp-imagemin'),
+			// del           = require('del');
 
 
 
@@ -48,6 +48,7 @@ gulp.task('scripts', function() {
 		'node_modules/imask/dist/imask.js',
 		'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
 		'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
+		'node_modules/slick-carousel/slick/slick.js',
 		'app/js/main.js',
 		'app/js/index.js',
 	])
