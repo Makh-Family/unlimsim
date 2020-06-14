@@ -2104,9 +2104,18 @@ $(document).ready(function () {
         })
         .eq(0)
         .addClass("active");
+    
+    // $(window).resize(function() {
+    //     if ($(window).width <= 996 ) {
+    //         $('.navbar-toggler').attr('data-target','')
+    //     } else {
+    //         $('.navbar-toggler').attr('data-target','navbarSupportedContent')
+    //     }
+    // })
 
-    if ($(window).width() > 1000) {
-        $(".drop-down-btn").hover(function () {
+    if ($(window).width() > 992) {
+        $(".drop-down-btn").hover(function (e) {
+            e.preventDefault()
             $(".under-nav").slideDown();
         });
     
@@ -2115,10 +2124,13 @@ $(document).ready(function () {
         });
     } else {
         $(".drop-down-btn").click(function () {
-            $(".under-nav").slideToggle();
+            $(this).children('.nav').slideToggle();
         });
+
         $('.navbar-toggler').click(function() {
-            $(".under-nav").slideUp();
+            $('.navbar-collapse').toggleClass('navbar-collapse--active')
+            $(".nav-link.nav").slideUp();
+            $('body').toggleClass('overflow-hidden');
         });
     }
 
