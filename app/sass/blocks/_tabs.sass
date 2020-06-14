@@ -1,0 +1,89 @@
+@media screen and ( max-width: 450px )
+  .tabs
+    overflow-x: scroll
+
+  .inner-tabs-wrapper
+    width: 600px
+  #region-list
+    display: flex
+    flex-direction: column
+    position: relative
+    .nav-item
+      width: 100%
+      position: relative
+      opacity: 0
+      pointer-events: none
+      transition: 0.3s ease
+
+      &:last-child
+        background: #fff
+        border-bottom-right-radius: 15px
+        border-bottom-left-radius: 15px
+        padding-bottom: 10px
+
+        a
+          border-bottom-right-radius: 30px
+          border-bottom-left-radius: 30px
+      @for $i from 2 through 8
+        &:nth-child(#{$i})
+          position: absolute
+          z-index: 2000
+          top: $i*100%-100%
+          left: 0
+          
+      a
+        margin: 0
+        border-radius: 0
+        padding: 0.5rem 1rem
+        font-weight: normal
+        font-size: 14px !important
+        color: #000 !important
+
+        &:hover
+          background-color: #fff
+          color: red !important
+          
+      &.nav-item--show
+        opacity: 1
+        pointer-events: unset
+      
+        
+      &.active
+        position: relative
+        opacity: 1
+        pointer-events: unset
+        transition: 0
+
+        &::after
+          content: ''
+          transition: 0.3s
+          display: block
+          width: 25px
+          height: 25px
+          display: block
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          right: 10px
+          background-size: contain
+          background-repeat: no-repeat
+          background-position: center center
+          opacity: 0.5
+          background-image: url("../img/icons/arrow-down-svg.svg")
+
+        a
+          border-radius: 30px
+          padding: .5rem .75rem
+          background: #fff
+          color: #000 !important
+          font-size: 1rem
+      
+      &.nav-item--clicked
+        background: #fff
+        border-top-right-radius: 30px
+        border-top-left-radius: 30px
+
+        &::after
+          transform: translateY(-50%) rotateX(180deg)
+
+      
