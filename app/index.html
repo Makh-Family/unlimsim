@@ -72,7 +72,7 @@
     </div>
 
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -102,10 +102,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mt-4">
           <li class="nav-item drop-down-btn ni-li">
-            <a class="nav-link nav-px-12" href="#">
+            <a class="nav-link nav-px-12">
               <span class="line-top"></span> PLANS
               <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
             </a>
+            <ul class="nav">
+              <li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
+                <a href="#section-tab" class="nav-link">Worldwide Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
+                <a href="#section-tab" class="nav-link">Region Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
+                <a href="#section-tab" class="nav-link">Country Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
+                <a href="#section-tab" class="nav-link">Personal Plans</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item ni-li">
             <a class="nav-link nav-px-12" href="#country-data">
@@ -226,7 +240,7 @@
   <div class="section-tab my-5" id="section-tab">
     <div class="wrapper-tab">
       <div class="tabs">
-        <div class="container">
+        <div class="container inner-tabs-wrapper">
           <span class="tab tab1">
             <div class="line line-one"></div>
             <p>Worldwide Plan</p>
@@ -413,6 +427,9 @@
                       <div class="select-box mt-4">
                         <ul class="nav" id="region-list">
                           <li class="nav-item active">
+                            <a href="#" class="nav-link" data-value="*"> ALL </a>
+                          </li>
+                          <li class="nav-item">
                             <a href="#" class="nav-link" data-value="*"> ALL </a>
                           </li>
                           <li class="nav-item">
