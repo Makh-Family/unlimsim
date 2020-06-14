@@ -1,0 +1,62 @@
+.nav-item.drop-down-btn
+  .nav
+    display: none
+
+.overflow-hidden
+  overflow: hidden
+
+@media screen and ( max-width: 992px )
+  .navbar-toggler
+    z-index: 2000
+  .under-nav
+    display: none !important
+  .navbar-collapse.collapse
+    display: block
+    z-index: 1999
+    padding-top: 40px
+    padding-bottom: 20px
+    background: rgba(178, 0, 0, 0.8)
+    position: fixed
+    top: 0
+    left: 0
+    width: 300px
+    height: 100vh
+    overflow-y: scroll
+    transform: translateX(-100%)
+    transition: 0.3s ease
+
+    &.navbar-collapse--active
+      transform: translateY(0)
+
+    .nav-item 
+      padding-left: 40px
+
+      .dropdown-menu
+        padding: 0
+        background: transparent
+        border: none
+        .dropdown-item
+          color: white
+
+      &.ml-2rem
+        padding: 0
+        .unlim-btn
+          border-radius: 0
+          width: 100%
+          display: block
+          padding-left: 40px
+          color: white
+          border-left: none
+          border-right: none
+          background: transparent
+          &:hover
+            background: white
+            color: #d40000
+    .nav-link
+      font-size: 15px
+
+  
+
+  .nav-item.drop-down-btn
+    .nav
+      display: block
