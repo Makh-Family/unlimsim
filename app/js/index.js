@@ -2100,6 +2100,7 @@ $(document).ready(function () {
                 .eq($(this).index())
                 .addClass("active");
             $('.navbar-collapse').removeClass('navbar-collapse--active')
+            $('.navbar-overlay').removeClass('navbar-overlay--active');
             $(".tab_item").hide().eq($(this).index()).fadeIn();
             $('.js-card-wrapper').slick('refresh');
         })
