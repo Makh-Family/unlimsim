@@ -1,6 +1,15 @@
 .nav-item-mobile
   display: none
 
+@media (max-width: 992px)
+  .section-tab .wrapper-tab .tabs .container .tab
+    div.line
+      // margin: 0 !important
+    p 
+      text-align: center
+      font-size: 14px
+
+
 @media screen and ( max-width: 450px )
   .nav-item-mobile
     display: block
@@ -16,6 +25,8 @@
     .line 
       height: 2px !important
       width: 25px !important
+      // &:::before
+        
   #region-list
     display: flex
     flex-direction: column

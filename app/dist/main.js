@@ -26340,7 +26340,7 @@ $(document).ready(function () {
 			infinite: false,
 			responsive: [
 				{
-					breakpoint: 1022,
+					breakpoint: 992,
 					settings: {
 						slidesToShow: 2
 					}
