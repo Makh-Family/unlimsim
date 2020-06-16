@@ -13536,7 +13536,7 @@ div.last-tab .right-item .under-text button {
 @media screen and (max-width: 450px) {
   .js-carousel-item img {
     display: block;
-    height: 300px;
+    height: 250px;
     -o-object-fit: cover;
        object-fit: cover;
     -o-object-position: 33% 50%;
