@@ -28563,7 +28563,7 @@ $(document).ready(function () {
             "background-image": "url('img/icons/text.png')"
         });
         $('.tabs').animate({
-            scrollLeft: 250
+            scrollLeft: 450
         },300)
     });
 
