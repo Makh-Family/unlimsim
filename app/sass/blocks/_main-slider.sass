@@ -149,7 +149,7 @@
 	.under-nav .container ul
 		justify-content: space-around
 	.ni-li:hover, .search-btn:hover
-    transform: scale(1)
+		transform: scale(1)
 	.nav-px-12 
 		padding-left: 0 !important
 	.bg-text-img
@@ -182,6 +182,7 @@
 		p
 			width: 110px !important
 			top: -30px !important
+
 
 	.slider-caption
 		h1
@@ -217,7 +218,7 @@
 		.slick-prev
 			left: 5px
 
-@media screen and ( max-width: 574px )
+@media screen and ( max-width: 575px )
 	div.last-tab .right-item .under-text
 		flex-direction: column
 		align-items: center
@@ -239,6 +240,7 @@
 		p
 			position: static !important
 			width: auto !important
+			text-align: center
 
 @media screen and ( max-width: 450px )
 	.js-carousel-item
@@ -246,10 +248,12 @@
 			display: block
 			height: 300px
 			object-fit: cover
+			object-position: 33% 50%
 
-	.slider-caption 
-    z-index: 1000
-    top: 62%
+	.slider-caption
+		z-index: 1000
+		top: 62%
+		left: 55%
 
 @media screen and ( max-width: 410px )
 	.slider-caption
