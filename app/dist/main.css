@@ -13417,7 +13417,7 @@ div.last-tab .right-item .under-text button {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1020px) {
   .under-nav .container ul {
     justify-content: space-around;
   }
@@ -13529,7 +13529,6 @@ div.last-tab .right-item .under-text button {
   .last-text p {
     position: static !important;
     width: auto !important;
-    text-align: center;
   }
 }
 
@@ -13570,6 +13569,13 @@ div.last-tab .right-item .under-text button {
 
 .nav-item-mobile {
   display: none;
+}
+
+@media (max-width: 992px) {
+  .section-tab .wrapper-tab .tabs .container .tab p {
+    text-align: center;
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 450px) {
