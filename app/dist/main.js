@@ -28472,19 +28472,13 @@ $(document).ready(function () {
                 .removeClass("active")
                 .eq($(this).index())
                 .addClass("active");
+            $('.navbar-collapse').removeClass('navbar-collapse--active')
             $(".tab_item").hide().eq($(this).index()).fadeIn();
             $('.js-card-wrapper').slick('refresh');
         })
         .eq(0)
         .addClass("active");
     
-    // $(window).resize(function() {
-    //     if ($(window).width <= 996 ) {
-    //         $('.navbar-toggler').attr('data-target','')
-    //     } else {
-    //         $('.navbar-toggler').attr('data-target','navbarSupportedContent')
-    //     }
-    // })
 
     if ($(window).width() > 992) {
         $(".drop-down-btn").hover(function (e) {
@@ -28498,12 +28492,18 @@ $(document).ready(function () {
     } else {
         $(".drop-down-btn").click(function () {
             $(this).children('.nav').slideToggle();
+            $(this).toggleClass('nav-link--active');
         });
 
         $('.navbar-toggler').click(function() {
             $('.navbar-collapse').toggleClass('navbar-collapse--active')
-            $(".nav-link.nav").slideUp();
-            $('body').toggleClass('overflow-hidden');
+            $('.drop-down-btn').children('.nav').slideUp();
+            $('.navbar-overlay').toggleClass('navbar-overlay--active');
+            $('.drop-down-btn').removeClass('nav-link--active')
+        });
+        $('.navbar-overlay').click(function() {
+            $('.navbar-collapse').removeClass('navbar-collapse--active');
+            $(this).removeClass('navbar-overlay--active');
         });
     }
 
@@ -28520,6 +28520,9 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.tabs').animate({
+            scrollLeft: 0
+        },300)
     });
 
     $('.tab2').click(function (e) {
@@ -28531,6 +28534,9 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.tabs').animate({
+            scrollLeft: 120
+        },300)
     });
 
     $('.tab3').click(function (e) {
@@ -28542,6 +28548,9 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.tabs').animate({
+            scrollLeft: 200
+        },300)
     });
 
     $('.tab4').click(function (e) {
@@ -28553,6 +28562,9 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "url('img/icons/text.png')"
         });
+        $('.tabs').animate({
+            scrollLeft: 250
+        },300)
     });
 
 
