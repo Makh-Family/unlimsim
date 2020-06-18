@@ -28536,7 +28536,7 @@ $(document).ready(function () {
             "background-image": "none"
         });
         $('.tabs').animate({
-            scrollLeft: 120
+            scrollLeft: 80
         },300)
     });
 
