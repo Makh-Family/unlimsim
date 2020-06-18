@@ -1,31 +1,81 @@
 .nav-item-mobile
   display: none
 
+.btn-group.bootstrap-select
+    .dropdown-menu.open.show
+      max-width: 300px
+      overflow-x: hidden !important
+      text-overflow: ellipsis
+      white-space: nowrap
+      .text
+        width: 100%
+        overflow-x: hidden !important
+        text-overflow: ellipsis
+        white-space: nowrap
+
+.bs-select-wrapper .bootstrap-select.btn-group .dropdown-menu a.dropdown-item span.dropdown-item-inner.opt
+  padding-left: 15px
+
+.tab
+  white-space: nowrap
+  padding: 10px 40px
+  width: unset !important
+  height: auto !important
+
+.section-tab .wrapper-tab .tabs .container .tab
+  div.line
+    margin: 0 0 1px 0 !important
 @media (max-width: 992px)
-  .section-tab .wrapper-tab .tabs .container .tab
-    div.line
-      // margin: 0 !important
+  .tab
+    padding: 10px 30px
     p 
       text-align: center
       font-size: 14px
 
+@media screen and ( max-width: 620px ) 
+  .tab
+    width: unset !important
+    white-space: nowrap
+    padding: 5px 15px !important
+  .btn-group.bootstrap-select
+    .dropdown-menu.open.show
+      max-width: 260px
 
-@media screen and ( max-width: 450px )
-  .nav-item-mobile
-    display: block
+  
+  
+
+@media screen and ( max-width: 475px )
+  .btn-group.bootstrap-select
+    .dropdown-menu.open.show
+      width: 100%
   .tabs
     overflow-x: scroll
-
+    height: auto !important
   .inner-tabs-wrapper
-    width: 600px
+    justify-content: unset !important
+    width: auto
     padding: 0
     height: 40px
-  .tab
-    height: auto !important
+    margin: 0 auto
+  .right-span
+    overflow: hidden
+    .text.region-text
+      overflow: hidden
+      display: block !important
+      text-overflow: ellipsis
+      white-space: nowrap
+      // font-size: 20px !important
+  .nav-item-mobile
+    display: block
+
     .line 
       height: 2px !important
       width: 25px !important
-      // &:::before
+  
+  .section-tab .wrapper-tab .tabs .container .tab
+    div.line
+      height: 2px !important
+      width: 25px !important
         
   #region-list
     display: flex
