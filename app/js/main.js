@@ -1,4 +1,6 @@
 $(document).ready(function () {
+	const elCardSlider = $('.js-card-wrapper');
+	const elMainSlider = $('.js-carousel-inner');
 	$(function () {
 		// Enable tooltips everywhere
 		
@@ -431,7 +433,6 @@ $(document).ready(function () {
 	//SLIDER////
 
 
-	const elMainSlider = $('.js-carousel-inner');
 	if (elMainSlider.length) {
 		elMainSlider.slick({
 			arrows: false,
@@ -440,7 +441,7 @@ $(document).ready(function () {
 		});
 	}
 
-	const elCardSlider = $('.js-card-wrapper');
+	
 	
 	if (elCardSlider.length) {
 		elCardSlider.slick({

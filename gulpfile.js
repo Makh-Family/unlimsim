@@ -45,25 +45,25 @@ gulp.task('styles', function() {
 // JS
 gulp.task('scripts', function() {
 	return gulp.src([
-		'node_modules/jquery/dist/jquery.min.js',
-		'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+		'node_modules/jquery/dist/jquery.js',
+		'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
 		'node_modules/imask/dist/imask.js',
-		'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js',
+		'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
 		'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
-		'node_modules/slick-carousel/slick/slick.min.js',
+		'node_modules/slick-carousel/slick/slick.js',
 		'app/js/main.js',
 		'app/js/index.js',
 	])
 	.pipe(babel({
 		presets: ['@babel/env'],
 		ignore: [
-			'node_modules/jquery/dist/jquery.min.js',
-			'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+			'node_modules/jquery/dist/jquery.js',
+			'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
 			'node_modules/imask/dist/imask.js',
-			'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.min.js',
+			'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
 			'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
+			'node_modules/slick-carousel/slick/slick.js',
 			'app/js/index.js',
-			'node_modules/slick-carousel/slick/slick.min.js'
 		]
 	}))
 	.pipe(concat('main.js'))
