@@ -336,6 +336,7 @@ $(document).ready(function () {
 	});
 	
 	$("#country-toggle-btn").click(function (e) {
+		$(this).toggleClass('open');
 		$(".under-select").toggleClass('open');
 		rotateSelectIcon();
 	});
