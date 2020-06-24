@@ -2149,6 +2149,7 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        showCountries("*")
         $('.tabs').animate({
             scrollLeft: 0
         },300)
