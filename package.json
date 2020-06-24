@@ -10,20 +10,13 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.10.0",
-<<<<<<< HEAD
 		"@babel/preset-env": "^7.10.3",
-=======
-		"@babel/preset-env": "^7.10.0",
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 		"browser-sync": "^2.26.7",
 		"del": "^5.1.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-babel": "^8.0.0",
-<<<<<<< HEAD
 		"gulp-babel-minify": "^0.5.1",
-=======
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 		"gulp-clean-css": "^4.3.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-image-resize": "^0.13.1",
@@ -43,13 +36,7 @@
 		"bootstrap-select": "^1.13.17",
 		"bootstrap-validate": "^2.2.0",
 		"imask": "^6.0.5",
-<<<<<<< HEAD
 		"jquery": "^3.5.0",
-		"readable-stream": "^3.6.0",
-		"slick-carousel": "^1.8.1",
-		"uglify-js": "^3.10.0"
-=======
-		"jquery": "^3.5.0"
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
+		"slick-carousel": "^1.8.1"
 	}
 }

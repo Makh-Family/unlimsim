@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 const gulp          = require('gulp'),
 			sass          = require('gulp-sass'),
 			browserSync   = require('browser-sync'),
@@ -16,22 +15,6 @@ const gulp          = require('gulp'),
 			// imageResize   = require('gulp-image-resize'),
 			// imagemin      = require('gulp-imagemin'),
 			// del           = require('del');
-=======
-const   gulp          = require('gulp'),
-		sass          = require('gulp-sass'),
-		browserSync   = require('browser-sync'),
-		concat        = require('gulp-concat'),
-		uglify        = require('gulp-uglify'),
-		cleancss      = require('gulp-clean-css'),
-		// rename        = require('gulp-rename'),
-		autoprefixer  = require('gulp-autoprefixer'),
-		notify        = require('gulp-notify');
-		// gutil         = require('gulp-util' ),
-		// rsync         = require('gulp-rsync'),
-		// imageResize   = require('gulp-image-resize'),
-		// imagemin      = require('gulp-imagemin'),
-		// del           = require('del');
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 
 
 
@@ -52,11 +35,7 @@ gulp.task('browser-sync', function() {
 // Sass|Scss Styles
 gulp.task('styles', function() {
 	return gulp.src('app/sass/main.sass')
-<<<<<<< HEAD
 	.pipe(sass({ outputStyle: 'compressed' }).on("error", notify.onError()))
-=======
-	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 	.pipe(autoprefixer())
 	// .pipe(cleancss()) // Opt., comment out when debugging
 	.pipe(gulp.dest('app/dist'))
@@ -71,7 +50,6 @@ gulp.task('scripts', function() {
 		'node_modules/imask/dist/imask.js',
 		'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
 		'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
-<<<<<<< HEAD
 		'node_modules/slick-carousel/slick/slick.js',
 		'app/js/main.js',
 		'app/js/index.js',
@@ -88,11 +66,6 @@ gulp.task('scripts', function() {
 	// 		'app/js/index.js',
 	// 	]
 	// }))
-=======
-		'app/js/main.js',
-		'app/js/index.js',
-	])
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 	.pipe(concat('main.js'))
 	// .pipe(uglify()) // Minify js (opt.)
 	.pipe(gulp.dest('app/dist'))
@@ -117,17 +90,12 @@ gulp.task('img2x', function() {
 // HTML Live Reload
 gulp.task('code', function() {
 	return gulp.src('app/*.html')
-<<<<<<< HEAD
 		.pipe(browserSync.reload({ stream: true }))
-=======
-	.pipe(browserSync.reload({ stream: true }))
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 });
 
 // Img Processing Task for Gulp 4
 gulp.task('img', gulp.parallel('img1x', 'img2x'));
 
-<<<<<<< HEAD
 // gulp.task('compress', function () {
 //   return pipeline(
 // 		gulp.src('./app/dist/main.js'),
@@ -136,8 +104,6 @@ gulp.task('img', gulp.parallel('img1x', 'img2x'));
 //   );
 // });
 
-=======
->>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 // Watch changes
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*', gulp.parallel('styles'));
