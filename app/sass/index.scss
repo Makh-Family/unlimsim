@@ -15,7 +15,10 @@
 
     .svg-inline--fa {
         display: none;
+<<<<<<< HEAD
         transition: 0.3s ease;
+=======
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
     }
 
     /* line 27, bootstrap-select.scss */
@@ -817,12 +820,22 @@
 
 
 
+<<<<<<< HEAD
+=======
+.map-filter div[class^="map-item-"] {
+    margin-right: 0 !important;
+    border-radius: 20px !important;
+}
+
+
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 .map-filter-input {
     border: none !important;
     box-shadow: 0px 3px 6px rgba(31, 30, 30, 0.161);
     background: #FFFFFF 0% 0% no-repeat padding-box;
 }
 
+<<<<<<< HEAD
 .map-country-list {
     li {
         overflow: hidden;
@@ -831,6 +844,8 @@
     }
 }
 
+=======
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
 .nav-link {
     position: relative;
 
@@ -877,12 +892,20 @@ li.let {
     position: absolute;
     top: 100%;
     width: 100%;
+<<<<<<< HEAD
+=======
+    height: 40px;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
     left: 0;
     background-color: rgb(212, 0, 0);
     display: none;
 
     .container {
+<<<<<<< HEAD
         padding-left: 207px;
+=======
+        padding-left: 190px;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
 
@@ -895,6 +918,10 @@ li.let {
             width: 100%;
             height: 100%;
             display: flex;
+<<<<<<< HEAD
+=======
+            justify-content: flex-start;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
             align-items: center;
             align-content: center;
 
@@ -1363,7 +1390,10 @@ div.last-tab {
                 width: 62px;
                 height: 2px;
                 background-color: white;
+<<<<<<< HEAD
                 margin-bottom: 25px !important;
+=======
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
             }
 
             div.sel-box {
@@ -1373,9 +1403,17 @@ div.last-tab {
                     position: relative;
 
                     input {
+<<<<<<< HEAD
                         position: relative;
                         z-index: 99;
                         width: 100%;
+=======
+                        position: absolute;
+                        z-index: 99;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
                         padding-left: 23px;
                         border-radius: 20px !important;
                     }
@@ -1397,8 +1435,12 @@ div.last-tab {
                 }
 
                 .under-select.open {
+<<<<<<< HEAD
                     opacity: 1;
                     pointer-events: unset;
+=======
+                    display: block;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
                 }
 
                 .under-select {
@@ -1409,12 +1451,20 @@ div.last-tab {
                     width: 100%;
                     left: 0;
                     // height: 70px;
+<<<<<<< HEAD
                     border-radius: 20px;
                     z-index: 9;
                     background-color: white;
                     transition: 0.3s ease;
                     opacity: 0;
                     pointer-events: none;
+=======
+                    display: none;
+                    border-radius: 20px;
+                    z-index: 9;
+                    background-color: white;
+
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
                     div.row {
                         height: 500px;
                         margin: 0 !important;
@@ -1697,6 +1747,12 @@ div.last-tab {
     .inner.tab-inner {
         width: 100%;
         height: 100%;
+<<<<<<< HEAD
+=======
+        position: absolute;
+        top: 0;
+        left: 0;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
         overflow-x: auto;
         overflow-y: hidden;
 
@@ -1728,6 +1784,13 @@ div.last-tab {
     .slide {
         width: 100%;
         height: 100%;
+<<<<<<< HEAD
+=======
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
         z-index: 1;
         opacity: 0;
     }
@@ -1909,8 +1972,12 @@ div.last-tab {
 
 
         div.item {
+<<<<<<< HEAD
             box-sizing: border-box;
             max-width: 300px;
+=======
+            width: 300px;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
             height: 480px;
 
             @media all and (max-width:992px) {
@@ -2025,8 +2092,12 @@ div.last-tab {
                 width: 150px;
                 height: 40px;
                 line-height: 1.8;
+<<<<<<< HEAD
                 margin: 0 auto;
                 margin-bottom: 25px;
+=======
+                margin-bottom: 10px;
+>>>>>>> 4edf7116d2cb0e7059e3a95776b59f5ddeafdbea
                 background-color: transparent;
                 border: 2px solid white;
                 display: flex;
