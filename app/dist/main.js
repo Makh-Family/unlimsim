@@ -26001,7 +26001,7 @@ $(document).ready(function () {
 	 */
 	var loadCountryList = function (selectedContinent) {
 		// get data
-		$.getJSON("./../data/countries.json", function (data) {
+		$.getJSON("../data/countries.json", function (data) {
 			var countries = data.find(function (element) {
 				return element.continent == selectedContinent;
 			}).countries;
@@ -26404,7 +26404,7 @@ function showCountries(continent) {
 	continent = continent === "N. AMERICA" ? "North America" : continent === "S. AMERICA" ? "South America" : continent; 
 	const filePath = continent === "*" ? 'worldwide' : `regions/${continent.replace(' ','').toLowerCase()}`;
 	
-	$.getJSON("./../data/countries.json", function (data) {
+	$.getJSON("../data/countries.json", function (data) {
 		if(continent === '*') {
 			countries = [...data[data.length - 1].countries];
 		} else {
