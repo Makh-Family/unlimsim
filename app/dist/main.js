@@ -25887,6 +25887,380 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 }));
 
+const countriesData = [
+	{
+			"continent": "Africa",
+			"countries": [
+					"Algeria",
+					"Burkina Faso",
+					"Cameroon",
+					"Chad",
+					"Congo",
+					"Congo Dem Rep",
+					"Cote d'Ivoire (Ivory Coast)",
+					"Egypt",
+					"Ethiopia",
+					"Gabon",
+					"Ghana",
+					"Guinea",
+					"Kenya",
+					"Madagascar",
+					"Malawi",
+					"Morocco",
+					"Mozambique",
+					"Namibia",
+					"Nigeria",
+					"Rwanda",
+					"Senegal",
+					"South Africa",
+					"Tanzania",
+					"Tunisia",
+					"Uganda",
+					"Zambia",
+					"Zimbabwe"
+			]
+	},
+	{
+			"continent": "Asia",
+			"countries": [
+					"Bahrain",
+					"Bangladesh",
+					"Brunei",
+					"Cambodia",
+					"China",
+					"Hong Kong",
+					"India",
+					"Indonesia",
+					"Iran",
+					"Israel",
+					"Japan",
+					"Jordan",
+					"Kazakhstan",
+					"Kuwait",
+					"Kyrgyzstan",
+					"Laos",
+					"Macau",
+					"Malaysia",
+					"Mongolia",
+					"Myanmar",
+					"Nepal",
+					"Oman",
+					"Pakistan",
+					"Palestine",
+					"Philippines",
+					"Qatar",
+					"Saudi Arabia",
+					"Singapore",
+					"South Korea",
+					"Sri Lanka",
+					"Taiwan",
+					"Tajikistan",
+					"Thailand",
+					"Turkey",
+					"United Arab Emirates",
+					"Uzbekistan",
+					"Vietnam"
+			]
+	},
+	{
+			"continent": "Europe",
+			"countries": [
+					"Albania",
+					"Armenia",
+					"Austria",
+					"Azerbaijan",
+					"Belarus",
+					"Belgium",
+					"Bosnia & Herzegovina",
+					"Bulgaria",
+					"Croatia",
+					"Cyprus",
+					"Czech Republic",
+					"Denmark",
+					"Estonia",
+					"Faroe Islands",
+					"Finland",
+					"France",
+					"Georgia",
+					"Germany",
+					"Gibraltar",
+					"Greece",
+					"Hungary",
+					"Iceland",
+					"Ireland",
+					"Italy",
+					"Jersey Island",
+					"Latvia",
+					"Liechtenstein",
+					"Lithuania",
+					"Luxembourg",
+					"Macedonia",
+					"Malta",
+					"Moldova",
+					"Montenegro",
+					"Netherlands",
+					"Northern Ireland",
+					"Norway",
+					"Poland",
+					"Portugal",
+					"Romania",
+					"Russian Federation",
+					"Scotland",
+					"Serbia",
+					"Slovakia",
+					"Slovenia",
+					"Spain",
+					"Sweden",
+					"Switzerland",
+					"Ukraine",
+					"United Kingdom",
+					"Wales"
+			]
+	},
+	{
+			"continent": "Oceania",
+			"countries": [
+					"Australia",
+					"Fiji",
+					"New Zealand",
+					"Papua New Guinea"
+			]
+	},
+	{
+			"continent": "North America",
+			"countries": [
+					"Anguilla",
+					"Antigua And Barbuda",
+					"Barbados",
+					"Belize",
+					"Canada",
+					"Cayman Islands",
+					"Costa Rica",
+					"Dominica",
+					"El Salvador",
+					"Greenland",
+					"Grenada",
+					"Guadeloupe",
+					"Haiti",
+					"Hawaii - USA",
+					"Honduras",
+					"Jamaica",
+					"Martinique",
+					"Mexico",
+					"Montserrat",
+					"Nicaragua",
+					"Panama",
+					"Saint Kitts & Nevis",
+					"Saint Martin(French)",
+					"Sint Maarten(Dutch)",
+					"St Barthelemy",
+					"St Lucia",
+					"St Vincent And the Grenadines",
+					"Trinidad And Tobago",
+					"Turks & Caicos Islands",
+					"United States",
+					"Virgin Islands British",
+					"Virgin Islands U.S"
+			]
+	},
+	{
+			"continent": "South America",
+			"countries": [
+					"Brazil",
+					"Chile",
+					"Colombia",
+					"Curacao",
+					"Ecuador",
+					"French Guiana",
+					"Guyana",
+					"Nauru",
+					"Netherlands Antilles",
+					"Paraguay",
+					"Peru",
+					"Suriname",
+					"Tonga",
+					"Uruguay",
+					"Vanuatu",
+					"Venezuela"
+			]
+	},
+	{
+			"continent": "All",
+			"countries": [
+					"Algeria",
+					"Burkina Faso",
+					"Cameroon",
+					"Chad",
+					"Congo",
+					"Congo Dem Rep",
+					"Cote d'Ivoire (Ivory Coast)",
+					"Egypt",
+					"Ethiopia",
+					"Gabon",
+					"Ghana",
+					"Guinea",
+					"Kenya",
+					"Madagascar",
+					"Malawi",
+					"Morocco",
+					"Mozambique",
+					"Namibia",
+					"Nigeria",
+					"Rwanda",
+					"Senegal",
+					"South Africa",
+					"Tanzania",
+					"Tunisia",
+					"Uganda",
+					"Zambia",
+					"Zimbabwe",
+
+					"Bahrain",
+					"Bangladesh",
+					"Brunei",
+					"Cambodia",
+					"China",
+					"Hong Kong",
+					"India",
+					"Indonesia",
+					"Iran",
+					"Israel",
+					"Japan",
+					"Jordan",
+					"Kazakhstan",
+					"Kuwait",
+					"Kyrgyzstan",
+					"Laos",
+					"Macau",
+					"Malaysia",
+					"Mongolia",
+					"Myanmar",
+					"Nepal",
+					"Oman",
+					"Pakistan",
+					"Palestine",
+					"Philippines",
+					"Qatar",
+					"Saudi Arabia",
+					"Singapore",
+					"South Korea",
+					"Sri Lanka",
+					"Taiwan",
+					"Tajikistan",
+					"Thailand",
+					"Turkey",
+					"United Arab Emirates",
+					"Uzbekistan",
+					"Vietnam",
+
+					"Albania",
+					"Armenia",
+					"Austria",
+					"Azerbaijan",
+					"Belarus",
+					"Belgium",
+					"Bosnia & Herzegovina",
+					"Bulgaria",
+					"Croatia",
+					"Cyprus",
+					"Czech Republic",
+					"Denmark",
+					"Estonia",
+					"Faroe Islands",
+					"Finland",
+					"France",
+					"Georgia",
+					"Germany",
+					"Gibraltar",
+					"Greece",
+					"Hungary",
+					"Iceland",
+					"Ireland",
+					"Italy",
+					"Jersey Island",
+					"Latvia",
+					"Liechtenstein",
+					"Lithuania",
+					"Luxembourg",
+					"Macedonia",
+					"Malta",
+					"Moldova",
+					"Montenegro",
+					"Netherlands",
+					"Northern Ireland",
+					"Norway",
+					"Poland",
+					"Portugal",
+					"Romania",
+					"Russian Federation",
+					"Scotland",
+					"Serbia",
+					"Slovakia",
+					"Slovenia",
+					"Spain",
+					"Sweden",
+					"Switzerland",
+					"Ukraine",
+					"United Kingdom",
+					"Wales",
+
+					"Australia",
+					"Fiji",
+					"New Zealand",
+					"Papua New Guinea",
+
+					"Anguilla",
+					"Antigua And Barbuda",
+					"Barbados",
+					"Belize",
+					"Canada",
+					"Cayman Islands",
+					"Costa Rica",
+					"Dominica",
+					"El Salvador",
+					"Greenland",
+					"Grenada",
+					"Guadeloupe",
+					"Haiti",
+					"Hawaii - USA",
+					"Honduras",
+					"Jamaica",
+					"Martinique",
+					"Mexico",
+					"Montserrat",
+					"Nicaragua",
+					"Panama",
+					"Saint Kitts & Nevis",
+					"Saint Martin(French)",
+					"Sint Maarten(Dutch)",
+					"St Barthelemy",
+					"St Lucia",
+					"St Vincent And the Grenadines",
+					"Trinidad And Tobago",
+					"Turks & Caicos Islands",
+					"United States",
+					"Virgin Islands British",
+					"Virgin Islands U.S",
+
+					"Brazil",
+					"Chile",
+					"Colombia",
+					"Curacao",
+					"Ecuador",
+					"French Guiana",
+					"Guyana",
+					"Nauru",
+					"Netherlands Antilles",
+					"Paraguay",
+					"Peru",
+					"Suriname",
+					"Tonga",
+					"Uruguay",
+					"Vanuatu",
+					"Venezuela"
+			]
+	}
+]
 $(document).ready(function () {
 	const elCardSlider = $('.js-card-wrapper');
 	const elMainSlider = $('.js-carousel-inner');
@@ -26000,24 +26374,21 @@ $(document).ready(function () {
 	 * Get countries of selected continent
 	 */
 	var loadCountryList = function (selectedContinent) {
-		// get data
-		$.getJSON("../data/countries.json", function (data) {
-			var countries = data.find(function (element) {
-				return element.continent == selectedContinent;
-			}).countries;
-	
-			// Sort countries in alphabetical order
-			countries.sort();
-	
-			var options = [];
-			$.each(countries, function (key, val) {
-				options.push("<option value='" + key + "'>" + val + "</option>");
-			});
-	
-			$("#countries-list")
-				.empty()
-				.append(options.join(""));
+		var countries = countriesData.find(function (element) {
+			return element.continent == selectedContinent;
+		}).countries;
+
+		// Sort countries in alphabetical order
+		countries.sort();
+
+		var options = [];
+		$.each(countries, function (key, val) {
+			options.push("<option value='" + key + "'>" + val + "</option>");
 		});
+
+		$("#countries-list")
+			.empty()
+			.append(options.join(""));
 	}
 	
 	// Load first continent when page loads
@@ -26404,28 +26775,27 @@ function showCountries(continent) {
 	continent = continent === "N. AMERICA" ? "North America" : continent === "S. AMERICA" ? "South America" : continent; 
 	const filePath = continent === "*" ? 'worldwide' : `regions/${continent.replace(' ','').toLowerCase()}`;
 	
-	$.getJSON("../data/countries.json", function (data) {
-		if(continent === '*') {
-			countries = [...data[data.length - 1].countries];
-		} else {
-			countries = data.filter(function(f) {
-				if (continent.toUpperCase() === f.continent.toUpperCase()) {
-					return f.countries;
-				}
-			})[0].countries;
-		}
-		countries.sort();
+	
+	if(continent === '*') {
+		countries = [...countriesData[countriesData.length - 1].countries];
+	} else {
+		countries = countriesData.filter(function(f) {
+			if (continent.toUpperCase() === f.continent.toUpperCase()) {
+				return f.countries;
+			}
+		})[0].countries;
+	}
+	countries.sort();
 
-		elCountriesBox.html('');
-		let readyHtml = '';
-		
-		// console.log(countries + 'wefw');
-		countries.forEach(function(country) {
-			const template = `<li><img src="img/${filePath}/${country.replace('\'','').split(' ').join('')}_m.png" width="25" height="17" alt=""><span>${country.toLowerCase()}</span></li>`
-			readyHtml += template;
-		});
-		elCountriesBox.html(readyHtml);
+	elCountriesBox.html('');
+	let readyHtml = '';
+	
+	// console.log(countries + 'wefw');
+	countries.forEach(function(country) {
+		const template = `<li><img src="img/${filePath}/${country.replace('\'','').split(' ').join('')}_m.png" width="25" height="17" alt=""><span>${country.toLowerCase()}</span></li>`
+		readyHtml += template;
 	});
+	elCountriesBox.html(readyHtml);
 }
 /*!
  * Bootstrap-select v1.12.13 (https://github.com/heimrichhannot/bootstrap-select)
