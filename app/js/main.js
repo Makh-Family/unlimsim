@@ -27,7 +27,7 @@ $(document).ready(function () {
 			bootstrapValidate('#email', 'email:Please enter a valid email.');
 			bootstrapValidate('#repeat_password', 'matches:#password:Password confirmation does not match.');
 		} catch (error) {
-			console.log(error)
+			console.log(error);
 		}
 	
 	
