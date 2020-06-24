@@ -13955,7 +13955,7 @@ div.last-tab .right-item .under-text button {
 
 .map-bg {
   width: 100%;
-  background-image: url("./../../img/src/world-wide.png");
+  background-image: url("./../img/src/world-wide.png");
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center center;
