@@ -1,7 +1,33 @@
 .nav-item-mobile
   display: none
 
+.top-header
+  .inner-top
+    display: flex
+    align-items: center
+    justify-content: space-between
+  
 
+.world-wide-text-wrapper
+  display: inline-flex !important
+  flex-direction: row !important
+  margin-bottom: 32px
+  align-items: center
+  cursor: pointer
+  transition: 0.3s ease
+
+  &:hover
+
+
+  img
+    margin-right: 5px
+  h4
+    margin-right: 5px
+    margin-bottom: 0
+    font-size: 18px
+    i
+      color: #fff
+      font-weight: normal
 
 .sel-box
   .close
@@ -42,6 +68,13 @@
     p 
       text-align: center
       font-size: 14px
+
+@media screen and ( max-width: 768px )
+  .tab_item-2
+    .world-wide-text-wrapper
+      .map-icon
+        display: none
+
 
 @media screen and ( max-width: 620px ) 
   .tab

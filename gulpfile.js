@@ -35,7 +35,7 @@ gulp.task('browser-sync', function() {
 // Sass|Scss Styles
 gulp.task('styles', function() {
 	return gulp.src('app/sass/main.sass')
-	.pipe(sass({ outputStyle: 'compressed' }).on("error", notify.onError()))
+	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 	.pipe(autoprefixer())
 	// .pipe(cleancss()) // Opt., comment out when debugging
 	.pipe(gulp.dest('app/dist'))

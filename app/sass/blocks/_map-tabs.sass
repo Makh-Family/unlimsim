@@ -1,0 +1,106 @@
+  
+.tab_content-map
+  border-bottom: 1px solid #919196
+
+.map-bg
+  // min-height: 40px
+  width: 100%
+  background-image: url("./../../img/src/world-wide.png")
+  background-color: #fff
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: contain
+  padding-bottom: 50px
+
+.mab-bg__title
+  padding-top: 40px
+  margin-bottom: 30px
+  display: flex
+  flex-direction: column
+  align-items: center
+  h3
+    font-size: 24px
+
+  span
+    display: block
+    margin-bottom: 5px
+    width: 40px
+    height: 2px
+    background-color: #ff0000
+
+.countries-box
+  border: 1px solid #707070
+  border-right: none
+  border-left: none
+  display: flex
+  flex-wrap: wrap
+  padding: 25px 15px 10px 15px
+  overflow-y: auto
+  list-style-type: none
+  width: 660px
+  max-height: 400px
+  margin: 0 auto
+  background: #fff
+  img
+    margin-right: 10px
+    object-fit: cover
+  li
+    margin-bottom: 15px
+    width: calc( (660px - 39px) / 3)
+    font-size: 16px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    padding-right: 10px
+    span
+      text-transform: capitalize
+  
+  scrollbar-width: thin
+
+  &::-webkit-scrollbar
+    width: 9px
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: grey
+    outline: 1px solid transparent
+
+
+
+@media screen and ( max-width: 1670px )
+  .countries-box
+    width: 540px
+    li
+      width: calc( (540px - 39px) / 3)
+      font-size: 14px
+    img
+      width: 22px
+      height: 15px
+
+
+@media screen and ( max-width: 850px )
+  .countries-box
+    width: 420px
+    li
+      width: calc( (420px - 40px) / 2)
+      // font-size: 14px
+    // img
+    //   width: 22px
+    //   height: 15px
+
+// @media screen and ( max-width: 768px )
+
+@media screen and ( max-width: 650px )
+  .countries-box
+    width: 70%
+    li
+      width: 100%
+    scrollbar-width: thin
+
+    &::-webkit-scrollbar
+      width: 3px
+
+    &::-webkit-scrollbar-thumb
+      border-radius: 10px
+      background-color: grey
+      outline: 1px solid transparent

@@ -174,12 +174,20 @@ $(document).ready(function () {
 	
 		if (selectedRegion == '*') {
 			$('.region-text').each(function(index) {
-				console.log($(this).text())
 				return $(this).html(region_texts[index]);
+			});
+			showCountries('*')
+			$('.map-bg').css({
+				"background-image": "url('img/src/all-map.png')"
 			});
 		}
 		else {
 			$('.region-text').html(selectedRegion);
+			console.log(selectedRegion);
+			showCountries(selectedRegion)
+			$('.map-bg').css({
+				"background-image": `url('img/src/${selectedRegion.split(' ').join('').toLowerCase()}-map.png')`
+			});
 		}
 	});
 	
@@ -481,5 +489,52 @@ $(document).ready(function () {
 		});
 	}
 
+
+	/////MAP TAPS////////////
+
+
+
+	const elMapRedirectBox = $('.world-wide-text-wrapper');
+	
+	elMapRedirectBox.click(function() {
+		const topOffset = $('.tab_content-map').offset().top;
+		$("html, body").animate({
+			scrollTop: topOffset - 100
+		}, "slow");
+	});
+
+	showCountries('*');
+
+
+
 });
 
+function showCountries(continent) {
+	const elCountriesBox = $('.countries-box');
+	let countries = [];
+	continent = continent === "N. AMERICA" ? "North America" : continent === "S. AMERICA" ? "South America" : continent; 
+	const filePath = continent === "*" ? 'worldwide' : `regions/${continent.replace(' ','').toLowerCase()}`;
+	
+	$.getJSON("../data/countries.json", function (data) {
+		if(continent === '*') {
+			countries = [...data[data.length - 1].countries];
+		} else {
+			countries = data.filter(function(f) {
+				if (continent.toUpperCase() === f.continent.toUpperCase()) {
+					return f.countries;
+				}
+			})[0].countries;
+		}
+		countries.sort();
+
+		elCountriesBox.html('');
+		let readyHtml = '';
+		
+		// console.log(countries + 'wefw');
+		countries.forEach(function(country) {
+			const template = `<li><img src="img/${filePath}/${country.replace('\'','').split(' ').join('')}_m.png" width="25" height="17" alt=""><span>${country.toLowerCase()}</span></li>`
+			readyHtml += template;
+		});
+		elCountriesBox.html(readyHtml);
+	});
+}

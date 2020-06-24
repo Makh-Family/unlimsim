@@ -2141,6 +2141,7 @@ $(document).ready(function () {
 
     $('.tab1').click(function (e) {
         e.preventDefault();
+        $('.tab_content-map').show();
 
         $('.bg-img').css({
             "background-image": "url('img/Map1.png')"
@@ -2156,8 +2157,12 @@ $(document).ready(function () {
     $('.tab2').click(function (e) {
         e.preventDefault();
 
+        $('.tab_content-map').show();
         $('.bg-img').css({
             "background-image": "url('img/Map2.png')"
+        });
+        $('.map-bg').css({
+            "background-image": "url('img/src/all-map.png')"
         });
         $('.bg-text-img').css({
             "background-image": "none"
@@ -2176,6 +2181,7 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.tab_content-map').hide();
         $('.tabs').animate({
             scrollLeft: 200
         },300)
@@ -2184,6 +2190,7 @@ $(document).ready(function () {
     $('.tab4').click(function (e) {
         e.preventDefault();
 
+        $('.tab_content-map').hide();
         $('.bg-img').css({
             "background-image": "url('img/Mask.png')"
         });
