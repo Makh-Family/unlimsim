@@ -2149,6 +2149,7 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        showCountries("*")
         $('.tabs').animate({
             scrollLeft: 0
         },300)
@@ -2181,6 +2182,7 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.tab_content-map').hide();
         $('.tabs').animate({
             scrollLeft: 200
         },300)
