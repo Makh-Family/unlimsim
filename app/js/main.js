@@ -179,6 +179,28 @@ $(document).ready(function () {
 		else {
 			$('.region-text').html(selectedRegion);
 		}
+	
+	
+		// Validate the form
+		$('#buy-form').on("change", function () {
+			var isFormValid = true;
+	
+			for (var i = 0; i < requiredFields.length; i++) {
+				const selector = requiredFields[i];
+	
+				if (!$(selector).val()) { // if empty
+					isFormValid = false;
+				}
+			}
+	
+			if (isFormValid) {
+				$('.img-filter').css('filter', 'grayscale(0)');
+				$('.img-filter').css('opacity', '1');
+			} else {
+				$('.img-filter').css('filter', 'grayscale(1)');
+				$('.img-filter').css('opacity', '0.5');
+			}
+		});
 	});
 	
 	

@@ -423,9 +423,17 @@
                 <div class="tab_item tab_item-2">
                   <div class="wrapper">
                     <div class="top-header pt-4">
-                      <h3 style="font-size: 20px;">PLEASE SELECT THE REGION</h3>
-                      <span class="my-2 line"></span>
-
+                      <div class="inner-top">
+                        <div>
+                          <h3 style="font-size: 20px;">PLEASE SELECT THE REGION</h3>
+                          <span class="my-2 line"></span>
+                        </div>
+                        <div class="world-wide-text-wrapper">
+                          <img width="60" height="35" class="map-icon" src="img/icons/world-icon.png" alt="world-icon">
+                          <h4><i>Included Countries</i></h4>
+                          <img src="img/icons/arrow-down.png" width="12" height="8" alt="arrow-down">
+                        </div>
+                      </div>
                       <div class="select-box mt-4">
                         <ul class="nav" id="region-list">
                           <li class="nav-item active">
@@ -435,7 +443,7 @@
                             <a href="#" class="nav-link" data-value="*"> ALL </a>
                           </li>
                           <li class="nav-item">
-                            <a href="#" class="nav-link" data-value="ASSIA"> ASSIA </a>
+                            <a href="#" class="nav-link" data-value="ASIA"> ASIA </a>
                           </li>
                           <li class="nav-item">
                             <a href="#" class="nav-link" data-value="AFRICA"> AFRICA </a>
@@ -1447,6 +1455,19 @@
           </div>
         </div>
       </div>
+      <div class="tab_content-map">
+        <div class="map-bg">
+          <div class="container">
+            <div class="mab-bg__title">
+              <span></span>
+              <h3>Included Countries</h3>
+            </div>
+            <ul class="countries-box" data-continent = "*">
+              
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1866,7 +1887,6 @@
   </div>
   <!-- Modal end -->
 
-  <!-- Font Awesome -->
  
   <!-- JS Files -->
   <script src="./dist/main.js"></script>
