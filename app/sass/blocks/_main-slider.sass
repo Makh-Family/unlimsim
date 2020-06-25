@@ -1,0 +1,272 @@
+.js-carousel-item
+	position: relative
+
+.slider-caption
+	position: absolute
+	z-index: 1000
+	top: 50%
+	left: 50%
+	color: white
+	transform: translateY(-30%)
+	h1
+		font-size: 52px
+
+.red-element
+	display: block
+	width: 60px
+	height: 5px
+	background-color: red
+	padding-bottom: 0
+	margin-bottom: 15px
+
+.js-carousel-indicators
+	position: absolute
+	left: 50%
+	bottom: 30px
+	transform: translateX(-50%)
+	margin: 0
+	list-style-type: none
+	padding: 0
+	display: flex
+	li
+		button
+			border: none
+			outline: none
+			font-size: 0
+			display: block
+			width: 50px
+			height: 4px
+			margin-right: 10px
+			margin-left: 10px
+			opacity: 0.5
+	.slick-active
+		button
+			background-color: red
+			opacity: 1
+
+
+
+.js-carousel
+	width: 100%
+	position: relative
+	padding: 60px 0
+	.inner
+		overflow: unset !important
+	.slick-slide
+		margin-right: 5px
+		margin-left: 5px
+	.slick-slide > div
+		display: flex
+		align-items: center
+		justify-content: center
+
+.js-card-wrapper
+	.slick-list
+		padding: 0 2px
+	.item
+		outline: none
+	.slick-slide
+		outline: none
+			
+	.slick-next
+		display: block
+		width: 25px
+		height: 25px
+		background-image: url("./../img/icons/arrow-right.png")
+		background-position: center center
+		background-size: contain
+		background-repeat: no-repeat
+		position: absolute
+		background-color: transparent
+		right: -5%
+		z-index: 2000
+		font-size: 0
+		padding: 0
+		border: none
+		outline: none
+	.slick-prev
+		outline: none
+		display: block
+		width: 25px
+		height: 25px
+		background-image: url("./../img/icons/arrow-left.png")
+		background-position: center center
+		background-size: contain
+		background-repeat: no-repeat
+		padding: 0
+		background-color: transparent
+		border: none
+		font-size: 0
+		position: absolute
+		left: -5%
+		z-index: 2000
+	
+
+.js-cards-indicators
+	position: absolute
+	left: 50%
+	bottom: -40px
+	transform: translateX(-50%)
+	margin: 0
+	list-style-type: none
+	padding: 0
+	display: flex
+	li
+		button
+			border: none
+			outline: none
+			font-size: 0
+			display: block
+			width: 15px
+			height: 15px
+			border-radius: 50%
+			border: 1px solid white
+			background: transparent
+			margin: 0 5px
+			padding: 0
+	.slick-active
+		button
+			background-color: #fff
+
+
+.tab_item-2,
+.tab_item-3
+	.js-carousel
+		padding-top: 40px
+
+.tab_item-2
+	.line.my-2
+		margin: 0
+
+
+@media screen and ( max-width: 1200px )
+	.slider-caption
+		transform: translateY(-50%)
+		h1
+			font-size: 52px
+
+@media screen and ( max-width: 1020px )
+	.under-nav .container ul
+		justify-content: space-around
+	.ni-li:hover, .search-btn:hover
+		transform: scale(1)
+	.nav-px-12 
+		padding-left: 0 !important
+	.bg-text-img
+		background-image: none !important
+	.tab_item-4
+		.right-item,.left-item
+			width: 100%
+			margin: 0 auto
+	.last-tab
+		flex-direction: column
+
+	.js-card-wrapper
+		.slick-list
+			padding: 0
+		.item
+			margin: 0 !important
+	.slider-caption
+		h1
+			font-size: 45px
+
+@media screen and ( max-width: 768px )
+	.section-tab .wrapper div.top-header div.select-box
+		margin: 0 !important
+	div.map-item-1
+		margin: 0
+
+	div.last-tab .right-item .under-text
+		margin: 10px auto
+	.last-text
+		p
+			width: 110px !important
+			top: -30px !important
+			text-align: center
+
+
+	.slider-caption
+		h1
+			font-size: 35px
+	.red-element
+		height: 2px
+		width: 40px
+		margin-bottom: 10px
+	.js-carousel-indicators
+		bottom: 20px
+		li
+			button
+				width: 30px
+				height: 3px
+				margin-right: 10px
+				margin-left: 10px
+				opacity: 0.5
+		.slick-active
+			button
+				background-color: red
+				opacity: 1
+
+@media screen and ( max-width: 625px )
+	.last-text
+		p
+			width: auto !important
+	.slider-caption
+		h1
+			font-size: 25px
+	.js-card-wrapper
+		.slick-next
+			right: 5px
+		.slick-prev
+			left: 5px
+
+@media screen and ( max-width: 575px )
+	div.last-tab .right-item .under-text
+		flex-direction: column
+		align-items: center
+		h3
+			margin-bottom: 20px
+		button
+			margin: 0
+	.map-filter-input
+		padding-right: 50px
+	.item-box 
+		.row
+			padding-bottom: 20px
+			border-bottom: 1px solid rgba(256, 256,256, 0.2)
+	.bs-select-wrapper
+		margin-bottom: 10px
+	.col-sm-2.d-flex.justify-content-center.align-items-center
+		display: none !important
+	.last-text
+		p
+			position: static !important
+			width: auto !important
+
+@media screen and ( max-width: 450px )
+	.js-carousel-item
+		img
+			display: block
+			height: 280px
+			object-fit: cover
+			object-position: 33% 50%
+
+	.slider-caption
+		z-index: 1000
+		top: 68%
+		left: 58%
+
+@media screen and ( max-width: 410px )
+	.slider-caption
+		h1
+			font-size: 18px
+			line-height: 1.3
+	
+	.js-card-wrapper
+		.slick-next
+			right: -8px
+		.slick-prev
+			left: -8px
+
+@media screen and ( max-width: 330px )
+	.section-tab .slide div.item .top1 span.right-span
+		margin-left: 4px
