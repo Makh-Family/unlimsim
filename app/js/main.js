@@ -521,7 +521,7 @@ $(document).ready(function () {
 	$('#region-list').children('li').click(function (e) {
 		e.preventDefault();
 		
-		if ($(window).width() > 450) {
+		if ($(window).width() > 475) {
 			$(this).siblings().removeClass('active');
 			$(this).addClass('active');
 		} else {
@@ -558,6 +558,11 @@ $(document).ready(function () {
 			$('.map-bg').css({
 				"background-image": `url('img/src/${selectedRegion.split(' ').join('').toLowerCase()}-map.png')`
 			});
+			if (selectedRegion == "OCEANIA") {
+				$('.map-bg').addClass('map-bg--oceania');
+			} else {
+				$('.map-bg').removeClass('map-bg--oceania');
+			}
 		}
 	});
 	

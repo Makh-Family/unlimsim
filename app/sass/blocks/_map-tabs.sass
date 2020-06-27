@@ -1,14 +1,14 @@
   
 .tab_content-map
   border-bottom: 1px solid #919196
-
+  box-shadow: inset 0 8px 9px -8px rgba(0,0,0,0.7);
+  background-color: #fff
 .map-bg
   // min-height: 40px
   width: 100%
   background-image: url("./../img/src/world-wide.png")
-  background-color: #fff
   background-repeat: no-repeat
-  background-position: center center
+  background-position: center right
   background-size: contain
   padding-bottom: 50px
 
@@ -52,6 +52,12 @@
     text-overflow: ellipsis
     white-space: nowrap
     padding-right: 10px
+    transition: 0.3s ease
+    border-bottom: 1px solid transparent
+    &:hover,&:focus
+      // font-weight: bold
+      border-bottom: 1px solid #ff0000
+      color: #ff0000
     span
       text-transform: capitalize
   
@@ -95,6 +101,7 @@
     width: 70%
     li
       width: 100%
+
     scrollbar-width: thin
 
     &::-webkit-scrollbar
@@ -104,3 +111,12 @@
       border-radius: 10px
       background-color: grey
       outline: 1px solid transparent
+
+@media screen and ( max-width: 475px )
+  .countries-box
+    background: transparent
+  .map-bg
+    background-position: left 50px top 135px
+    background-size: 275%
+  .map-bg--oceania
+    background-position: left 50px top 20px

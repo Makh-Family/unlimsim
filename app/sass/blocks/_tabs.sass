@@ -1,21 +1,35 @@
 .nav-item-mobile
   display: none
-
+.tab_content
+  // box-shadow: 0 8px 6px rgba(0, 0, 0, 0.16)
 .top-header
   .inner-top
     display: flex
     align-items: center
     justify-content: space-between
-  
 
+.section-tab .tab_content .tab_item-2 .wrapper
+  .top-header
+    .line
+      margin-bottom: 0 !important  
+    .world-wide-text-wrapper
+      margin: 0
+    .select-box
+      margin-top: 30px !important
+    .inner-top
+      h3
+        font-size: 20px
+
+    
 .world-wide-text-wrapper
   display: inline-flex !important
   flex-direction: row !important
-  margin-bottom: 32px
+  margin-top: 20px
+  margin-bottom: 22px
   align-items: center
   cursor: pointer
   transition: 0.3s ease
-
+  padding: 0 !important
   &:hover
 
 
@@ -72,7 +86,7 @@
 @media screen and ( max-width: 768px )
   .tab_item-2
     .world-wide-text-wrapper
-      .map-icon
+      h4
         display: none
 
 
@@ -89,6 +103,11 @@
   
 
 @media screen and ( max-width: 475px )
+  .section-tab .tab_content .tab_item-2 .wrapper .top-header
+    .inner-top
+      h3
+        font-size: 16px
+
   .btn-group.bootstrap-select
     .dropdown-menu.open.show
       width: 100%
