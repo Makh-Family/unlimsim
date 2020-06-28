@@ -2149,6 +2149,8 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.map-bg').removeAttr('style');
+        $('.map-bg').removeClass().addClass('map-bg');
         showCountries("*")
         $('.tabs').animate({
             scrollLeft: 0

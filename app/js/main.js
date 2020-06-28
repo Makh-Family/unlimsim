@@ -528,21 +528,21 @@ $(document).ready(function () {
 			if (e.target.matches('.nav-item.active .nav-link') || e.target.matches('.nav-item.active')) {
 				$(this).toggleClass('nav-item--clicked');
 				$(this).siblings().toggleClass('nav-item--show');
-				} else {
-					const thisClone = $(this).clone(true);
-					$('.nav-item.active').before(this)
-					$('.nav-item.active').remove();
-					$('#region-list').children('li').first().removeClass('nav-item--show').addClass('active');
-					$('#region-list').append(thisClone);
-					$(this).removeClass('nav-item--clicked');
-					$(this).siblings().removeClass('nav-item--show');
+			} else {
+				const text = $(this).find('a').text();
+				
+				// $(this).toggleClass('nav-item--clicked');
+				$('.nav-item.active .nav-link').text(text);
+				$('.nav-item.active').removeClass('nav-item--clicked');
+				$('#region-list').children('li').first().removeClass('nav-item--show').addClass('active');
+				// $('#region-list').append(thisClone);
+				$(this).removeClass('nav-item--show');
+				$(this).siblings().removeClass('nav-item--show');
 			}
 		}
 
 		
-		
 		var selectedRegion = $(this).find('a').data('value');
-	
 		if (selectedRegion == '*') {
 			$('.region-text').each(function(index) {
 				return $(this).html(region_texts[index]);
@@ -558,11 +558,7 @@ $(document).ready(function () {
 			$('.map-bg').css({
 				"background-image": `url('img/src/${selectedRegion.split(' ').join('').toLowerCase()}-map.png')`
 			});
-			if (selectedRegion == "OCEANIA") {
-				$('.map-bg').addClass('map-bg--oceania');
-			} else {
-				$('.map-bg').removeClass('map-bg--oceania');
-			}
+			$('.map-bg').removeClass().addClass(`map-bg map-bg--${selectedRegion.toLowerCase().replace('. ','')}`);
 		}
 	});
 	

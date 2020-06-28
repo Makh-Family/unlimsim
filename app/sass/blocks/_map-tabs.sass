@@ -8,9 +8,10 @@
   width: 100%
   background-image: url("./../img/src/world-wide.png")
   background-repeat: no-repeat
-  background-position: center right
+  background-position: center center
   background-size: contain
   padding-bottom: 50px
+
 
 .mab-bg__title
   padding-top: 40px
@@ -40,7 +41,7 @@
   width: 660px
   max-height: 400px
   margin: 0 auto
-  background: #fff
+  background: transparent
   img
     margin-right: 10px
     object-fit: cover
@@ -55,8 +56,6 @@
     transition: 0.3s ease
     border-bottom: 1px solid transparent
     &:hover,&:focus
-      // font-weight: bold
-      border-bottom: 1px solid #ff0000
       color: #ff0000
     span
       text-transform: capitalize
@@ -113,10 +112,15 @@
       outline: 1px solid transparent
 
 @media screen and ( max-width: 475px )
-  .countries-box
-    background: transparent
   .map-bg
-    background-position: left 50px top 135px
+    background-position: left -5% center
     background-size: 275%
   .map-bg--oceania
-    background-position: left 50px top 20px
+    background-position: left -12% center
+  .map-bg--africa,
+  .map-bg--asia
+    background-position: left -9% center
+  .map-bg--namerica
+    background-position: left -7% center
+  .map-bg--samerica
+    background-position: left -13% center
