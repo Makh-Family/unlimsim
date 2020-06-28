@@ -548,17 +548,17 @@ $(document).ready(function () {
 				return $(this).html(region_texts[index]);
 			});
 			showCountries('*')
-			$('.map-bg').css({
+			$('.map-bg-box').css({
 				"background-image": "url('img/src/all-map.png')"
 			});
 		}
 		else {
 			$('.region-text').html(selectedRegion);
 			showCountries(selectedRegion)
-			$('.map-bg').css({
+			$('.map-bg-box').css({
 				"background-image": `url('img/src/${selectedRegion.split(' ').join('').toLowerCase()}-map.png')`
 			});
-			$('.map-bg').removeClass().addClass(`map-bg map-bg--${selectedRegion.toLowerCase().replace('. ','')}`);
+			$('.map-bg-box').removeClass().addClass(`map-bg-box map-bg-box--${selectedRegion.toLowerCase().replace('. ','')}`);
 		}
 	});
 	

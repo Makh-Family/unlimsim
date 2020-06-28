@@ -2149,8 +2149,8 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
-        $('.map-bg').removeAttr('style');
-        $('.map-bg').removeClass().addClass('map-bg');
+        $('.map-bg-box').removeAttr('style');
+        $('.map-bg-box').removeClass().addClass('map-bg-box');
         showCountries("*")
         $('.tabs').animate({
             scrollLeft: 0
@@ -2164,7 +2164,7 @@ $(document).ready(function () {
         $('.bg-img').css({
             "background-image": "url('img/Map2.png')"
         });
-        $('.map-bg').css({
+        $('.map-bg-box').css({
             "background-image": "url('img/src/all-map.png')"
         });
         $('.bg-text-img').css({
