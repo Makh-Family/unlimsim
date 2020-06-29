@@ -543,25 +543,32 @@ $(document).ready(function () {
 
 		
 		var selectedRegion = $(this).find('a').data('value');
-		if (selectedRegion == '*') {
+		if ($(window).width() > 650) {
+			setMapBackground(selectedRegion,'.map-bg-box','map-bg-box','');
+		} else {
+			setMapBackground(selectedRegion,'.countries-box','countries-box','-m');
+		}
+	});
+	
+	function setMapBackground(region,boxSelector,initialClass,suffix) {
+		if (region == '*') {
 			$('.region-text').each(function(index) {
 				return $(this).html(region_texts[index]);
 			});
 			showCountries('*')
-			$('.map-bg-box').css({
-				"background-image": "url('img/src/all-map.png')"
+			$(boxSelector).css({
+				"background-image": `url('img/src/all-map${suffix}.png')` 
 			});
 		}
 		else {
-			$('.region-text').html(selectedRegion);
-			showCountries(selectedRegion)
-			$('.map-bg-box').css({
-				"background-image": `url('img/src/${selectedRegion.split(' ').join('').toLowerCase()}-map.png')`
+			$('.region-text').html(region);
+			showCountries(region)
+			$(boxSelector).css({
+				"background-image": `url('img/src/${region.split(' ').join('').toLowerCase()}-map${suffix}.png')`
 			});
-			$('.map-bg-box').removeClass().addClass(`map-bg-box map-bg-box--${selectedRegion.toLowerCase().replace('. ','')}`);
+			$(boxSelector).removeClass().addClass(`${initialClass} map-bg-box--${region.toLowerCase().replace('. ','')}`);
 		}
-	});
-	
+	}
 	
 	var priceList = {
 		1: 25, // 1 Gb => $25

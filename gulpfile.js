@@ -54,20 +54,20 @@ gulp.task('scripts', function() {
 		'app/js/main.js',
 		'app/js/index.js',
 	])
-	.pipe(babel({
-		presets: ['@babel/env'],
-		ignore: [
-			'node_modules/jquery/dist/jquery.js',
-			'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-			'node_modules/imask/dist/imask.js',
-			'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
-			'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
-			'node_modules/slick-carousel/slick/slick.js',
-			'app/js/index.js',
-		]
-	}))
+	// .pipe(babel({
+	// 	presets: ['@babel/env'],
+	// 	ignore: [
+	// 		'node_modules/jquery/dist/jquery.js',
+	// 		'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+	// 		'node_modules/imask/dist/imask.js',
+	// 		'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
+	// 		'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
+	// 		'node_modules/slick-carousel/slick/slick.js',
+	// 		'app/js/index.js',
+	// 	]
+	// }))
 	.pipe(concat('main.js'))
-	.pipe(uglify()) // Minify js (opt.)
+	// .pipe(uglify()) // Minify js (opt.)
 	.pipe(gulp.dest('app/dist'))
 	.pipe(browserSync.reload({ stream: true }))
 });

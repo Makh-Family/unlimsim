@@ -2151,6 +2151,8 @@ $(document).ready(function () {
         });
         $('.map-bg-box').removeAttr('style');
         $('.map-bg-box').removeClass().addClass('map-bg-box');
+        $('.countries-box').removeAttr('style');
+        $('.countries-box').removeClass().addClass('countries-box');
         showCountries("*")
         $('.tabs').animate({
             scrollLeft: 0
@@ -2164,9 +2166,15 @@ $(document).ready(function () {
         $('.bg-img').css({
             "background-image": "url('img/Map2.png')"
         });
-        $('.map-bg-box').css({
-            "background-image": "url('img/src/all-map.png')"
-        });
+        if ($(window).width() > 650) {
+            $('.map-bg-box').css({
+                "background-image": "url('img/src/all-map.png')"
+            });
+        } else {
+            $('.countries-box').css({
+                "background-image": "url('img/src/all-map-m.png')"
+            });
+        }
         $('.bg-text-img').css({
             "background-image": "none"
         });
