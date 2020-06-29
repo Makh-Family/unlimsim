@@ -1,5 +1,56 @@
 .nav-item-mobile
   display: none
+.tab_content
+  // box-shadow: 0 8px 6px rgba(0, 0, 0, 0.16)
+.top-header
+  .inner-top
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.section-tab .tab_content .tab_item-2 .wrapper
+  .top-header
+    .line
+      margin-bottom: 0 !important  
+    .world-wide-text-wrapper
+      margin: 0
+    .select-box
+      margin-top: 30px !important
+    .inner-top
+      h3
+        font-size: 20px
+
+    
+.world-wide-text-wrapper
+  display: inline-flex !important
+  flex-direction: row !important
+  margin-top: 20px
+  margin-bottom: 22px
+  align-items: center
+  cursor: pointer
+  transition: 0.3s ease
+  padding: 0 !important
+  &:hover
+
+
+  img
+    margin-right: 5px
+  h4
+    margin-right: 5px
+    margin-bottom: 0
+    font-size: 18px
+    i
+      color: #fff
+      font-weight: normal
+
+.sel-box
+  .close
+    display: flex
+    margin-right: -6px
+    transition: 0.3s ease
+    &.open
+      transform: rotate(180deg)
+
 
 .btn-group.bootstrap-select
     .dropdown-menu.open.show
@@ -32,6 +83,13 @@
       text-align: center
       font-size: 14px
 
+@media screen and ( max-width: 768px )
+  .tab_item-2
+    .world-wide-text-wrapper
+      h4
+        display: none
+
+
 @media screen and ( max-width: 620px ) 
   .tab
     width: unset !important
@@ -45,6 +103,11 @@
   
 
 @media screen and ( max-width: 475px )
+  .section-tab .tab_content .tab_item-2 .wrapper .top-header
+    .inner-top
+      h3
+        font-size: 16px
+
   .btn-group.bootstrap-select
     .dropdown-menu.open.show
       width: 100%
@@ -161,6 +224,6 @@
           box-shadow: 0px 3px 6px rgba(31, 30, 30, 0.161)
 
         &::after
-          transform: translateY(-50%) rotateX(180deg)
+          transform: translateY(-50%) rotate(180deg)
 
       

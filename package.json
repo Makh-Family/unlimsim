@@ -37,8 +37,6 @@
 		"bootstrap-validate": "^2.2.0",
 		"imask": "^6.0.5",
 		"jquery": "^3.5.0",
-		"readable-stream": "^3.6.0",
-		"slick-carousel": "^1.8.1",
-		"uglify-js": "^3.10.0"
+		"slick-carousel": "^1.8.1"
 	}
 }

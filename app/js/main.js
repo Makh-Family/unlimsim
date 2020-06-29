@@ -1,4 +1,380 @@
+const countriesData = [
+	{
+			"continent": "Africa",
+			"countries": [
+					"Algeria",
+					"Burkina Faso",
+					"Cameroon",
+					"Chad",
+					"Congo",
+					"Congo Dem Rep",
+					"Cote d'Ivoire (Ivory Coast)",
+					"Egypt",
+					"Ethiopia",
+					"Gabon",
+					"Ghana",
+					"Guinea",
+					"Kenya",
+					"Madagascar",
+					"Malawi",
+					"Morocco",
+					"Mozambique",
+					"Namibia",
+					"Nigeria",
+					"Rwanda",
+					"Senegal",
+					"South Africa",
+					"Tanzania",
+					"Tunisia",
+					"Uganda",
+					"Zambia",
+					"Zimbabwe"
+			]
+	},
+	{
+			"continent": "Asia",
+			"countries": [
+					"Bahrain",
+					"Bangladesh",
+					"Brunei",
+					"Cambodia",
+					"China",
+					"Hong Kong",
+					"India",
+					"Indonesia",
+					"Iran",
+					"Israel",
+					"Japan",
+					"Jordan",
+					"Kazakhstan",
+					"Kuwait",
+					"Kyrgyzstan",
+					"Laos",
+					"Macau",
+					"Malaysia",
+					"Mongolia",
+					"Myanmar",
+					"Nepal",
+					"Oman",
+					"Pakistan",
+					"Palestine",
+					"Philippines",
+					"Qatar",
+					"Saudi Arabia",
+					"Singapore",
+					"South Korea",
+					"Sri Lanka",
+					"Taiwan",
+					"Tajikistan",
+					"Thailand",
+					"Turkey",
+					"United Arab Emirates",
+					"Uzbekistan",
+					"Vietnam"
+			]
+	},
+	{
+			"continent": "Europe",
+			"countries": [
+					"Albania",
+					"Armenia",
+					"Austria",
+					"Azerbaijan",
+					"Belarus",
+					"Belgium",
+					"Bosnia & Herzegovina",
+					"Bulgaria",
+					"Croatia",
+					"Cyprus",
+					"Czech Republic",
+					"Denmark",
+					"Estonia",
+					"Faroe Islands",
+					"Finland",
+					"France",
+					"Georgia",
+					"Germany",
+					"Gibraltar",
+					"Greece",
+					"Hungary",
+					"Iceland",
+					"Ireland",
+					"Italy",
+					"Jersey Island",
+					"Latvia",
+					"Liechtenstein",
+					"Lithuania",
+					"Luxembourg",
+					"Macedonia",
+					"Malta",
+					"Moldova",
+					"Montenegro",
+					"Netherlands",
+					"Northern Ireland",
+					"Norway",
+					"Poland",
+					"Portugal",
+					"Romania",
+					"Russian Federation",
+					"Scotland",
+					"Serbia",
+					"Slovakia",
+					"Slovenia",
+					"Spain",
+					"Sweden",
+					"Switzerland",
+					"Ukraine",
+					"United Kingdom",
+					"Wales"
+			]
+	},
+	{
+			"continent": "Oceania",
+			"countries": [
+					"Australia",
+					"Fiji",
+					"New Zealand",
+					"Papua New Guinea"
+			]
+	},
+	{
+			"continent": "North America",
+			"countries": [
+					"Anguilla",
+					"Antigua And Barbuda",
+					"Barbados",
+					"Belize",
+					"Canada",
+					"Cayman Islands",
+					"Costa Rica",
+					"Dominica",
+					"El Salvador",
+					"Greenland",
+					"Grenada",
+					"Guadeloupe",
+					"Haiti",
+					"Hawaii - USA",
+					"Honduras",
+					"Jamaica",
+					"Martinique",
+					"Mexico",
+					"Montserrat",
+					"Nicaragua",
+					"Panama",
+					"Saint Kitts & Nevis",
+					"Saint Martin(French)",
+					"Sint Maarten(Dutch)",
+					"St Barthelemy",
+					"St Lucia",
+					"St Vincent And the Grenadines",
+					"Trinidad And Tobago",
+					"Turks & Caicos Islands",
+					"United States",
+					"Virgin Islands British",
+					"Virgin Islands U.S"
+			]
+	},
+	{
+			"continent": "South America",
+			"countries": [
+					"Brazil",
+					"Chile",
+					"Colombia",
+					"Curacao",
+					"Ecuador",
+					"French Guiana",
+					"Guyana",
+					"Nauru",
+					"Netherlands Antilles",
+					"Paraguay",
+					"Peru",
+					"Suriname",
+					"Tonga",
+					"Uruguay",
+					"Vanuatu",
+					"Venezuela"
+			]
+	},
+	{
+			"continent": "All",
+			"countries": [
+					"Algeria",
+					"Burkina Faso",
+					"Cameroon",
+					"Chad",
+					"Congo",
+					"Congo Dem Rep",
+					"Cote d'Ivoire (Ivory Coast)",
+					"Egypt",
+					"Ethiopia",
+					"Gabon",
+					"Ghana",
+					"Guinea",
+					"Kenya",
+					"Madagascar",
+					"Malawi",
+					"Morocco",
+					"Mozambique",
+					"Namibia",
+					"Nigeria",
+					"Rwanda",
+					"Senegal",
+					"South Africa",
+					"Tanzania",
+					"Tunisia",
+					"Uganda",
+					"Zambia",
+					"Zimbabwe",
+
+					"Bahrain",
+					"Bangladesh",
+					"Brunei",
+					"Cambodia",
+					"China",
+					"Hong Kong",
+					"India",
+					"Indonesia",
+					"Iran",
+					"Israel",
+					"Japan",
+					"Jordan",
+					"Kazakhstan",
+					"Kuwait",
+					"Kyrgyzstan",
+					"Laos",
+					"Macau",
+					"Malaysia",
+					"Mongolia",
+					"Myanmar",
+					"Nepal",
+					"Oman",
+					"Pakistan",
+					"Palestine",
+					"Philippines",
+					"Qatar",
+					"Saudi Arabia",
+					"Singapore",
+					"South Korea",
+					"Sri Lanka",
+					"Taiwan",
+					"Tajikistan",
+					"Thailand",
+					"Turkey",
+					"United Arab Emirates",
+					"Uzbekistan",
+					"Vietnam",
+
+					"Albania",
+					"Armenia",
+					"Austria",
+					"Azerbaijan",
+					"Belarus",
+					"Belgium",
+					"Bosnia & Herzegovina",
+					"Bulgaria",
+					"Croatia",
+					"Cyprus",
+					"Czech Republic",
+					"Denmark",
+					"Estonia",
+					"Faroe Islands",
+					"Finland",
+					"France",
+					"Georgia",
+					"Germany",
+					"Gibraltar",
+					"Greece",
+					"Hungary",
+					"Iceland",
+					"Ireland",
+					"Italy",
+					"Jersey Island",
+					"Latvia",
+					"Liechtenstein",
+					"Lithuania",
+					"Luxembourg",
+					"Macedonia",
+					"Malta",
+					"Moldova",
+					"Montenegro",
+					"Netherlands",
+					"Northern Ireland",
+					"Norway",
+					"Poland",
+					"Portugal",
+					"Romania",
+					"Russian Federation",
+					"Scotland",
+					"Serbia",
+					"Slovakia",
+					"Slovenia",
+					"Spain",
+					"Sweden",
+					"Switzerland",
+					"Ukraine",
+					"United Kingdom",
+					"Wales",
+
+					"Australia",
+					"Fiji",
+					"New Zealand",
+					"Papua New Guinea",
+
+					"Anguilla",
+					"Antigua And Barbuda",
+					"Barbados",
+					"Belize",
+					"Canada",
+					"Cayman Islands",
+					"Costa Rica",
+					"Dominica",
+					"El Salvador",
+					"Greenland",
+					"Grenada",
+					"Guadeloupe",
+					"Haiti",
+					"Hawaii - USA",
+					"Honduras",
+					"Jamaica",
+					"Martinique",
+					"Mexico",
+					"Montserrat",
+					"Nicaragua",
+					"Panama",
+					"Saint Kitts & Nevis",
+					"Saint Martin(French)",
+					"Sint Maarten(Dutch)",
+					"St Barthelemy",
+					"St Lucia",
+					"St Vincent And the Grenadines",
+					"Trinidad And Tobago",
+					"Turks & Caicos Islands",
+					"United States",
+					"Virgin Islands British",
+					"Virgin Islands U.S",
+
+					"Brazil",
+					"Chile",
+					"Colombia",
+					"Curacao",
+					"Ecuador",
+					"French Guiana",
+					"Guyana",
+					"Nauru",
+					"Netherlands Antilles",
+					"Paraguay",
+					"Peru",
+					"Suriname",
+					"Tonga",
+					"Uruguay",
+					"Vanuatu",
+					"Venezuela"
+			]
+	}
+]
 $(document).ready(function () {
+	const elCardSlider = $('.js-card-wrapper');
+	const elMainSlider = $('.js-carousel-inner');
 	$(function () {
 		// Enable tooltips everywhere
 		
@@ -27,7 +403,7 @@ $(document).ready(function () {
 			bootstrapValidate('#email', 'email:Please enter a valid email.');
 			bootstrapValidate('#repeat_password', 'matches:#password:Password confirmation does not match.');
 		} catch (error) {
-			console.log(error)
+			console.log(error);
 		}
 	
 	
@@ -109,24 +485,21 @@ $(document).ready(function () {
 	 * Get countries of selected continent
 	 */
 	var loadCountryList = function (selectedContinent) {
-		// get data
-		$.getJSON("../data/countries.json", function (data) {
-			var countries = data.find(function (element) {
-				return element.continent == selectedContinent;
-			}).countries;
-	
-			// Sort countries in alphabetical order
-			countries.sort();
-	
-			var options = [];
-			$.each(countries, function (key, val) {
-				options.push("<option value='" + key + "'>" + val + "</option>");
-			});
-	
-			$("#countries-list")
-				.empty()
-				.append(options.join(""));
+		var countries = countriesData.find(function (element) {
+			return element.continent == selectedContinent;
+		}).countries;
+
+		// Sort countries in alphabetical order
+		countries.sort();
+
+		var options = [];
+		$.each(countries, function (key, val) {
+			options.push("<option value='" + key + "'>" + val + "</option>");
 		});
+
+		$("#countries-list")
+			.empty()
+			.append(options.join(""));
 	}
 	
 	// Load first continent when page loads
@@ -148,39 +521,54 @@ $(document).ready(function () {
 	$('#region-list').children('li').click(function (e) {
 		e.preventDefault();
 		
-		if ($(window).width() > 450) {
+		if ($(window).width() > 475) {
 			$(this).siblings().removeClass('active');
 			$(this).addClass('active');
 		} else {
 			if (e.target.matches('.nav-item.active .nav-link') || e.target.matches('.nav-item.active')) {
 				$(this).toggleClass('nav-item--clicked');
 				$(this).siblings().toggleClass('nav-item--show');
-				} else {
-					const thisClone = $(this).clone(true);
-					$('.nav-item.active').before(this)
-					$('.nav-item.active').remove();
-					$('#region-list').children('li').first().removeClass('nav-item--show').addClass('active');
-					$('#region-list').append(thisClone);
-					$(this).removeClass('nav-item--clicked');
-					$(this).siblings().removeClass('nav-item--show');
+			} else {
+				const text = $(this).find('a').text();
+				
+				// $(this).toggleClass('nav-item--clicked');
+				$('.nav-item.active .nav-link').text(text);
+				$('.nav-item.active').removeClass('nav-item--clicked');
+				$('#region-list').children('li').first().removeClass('nav-item--show').addClass('active');
+				// $('#region-list').append(thisClone);
+				$(this).removeClass('nav-item--show');
+				$(this).siblings().removeClass('nav-item--show');
 			}
 		}
 
 		
-		
 		var selectedRegion = $(this).find('a').data('value');
-	
-		if (selectedRegion == '*') {
-			$('.region-text').each(function(index) {
-				console.log($(this).text())
-				return $(this).html(region_texts[index]);
-			});
-		}
-		else {
-			$('.region-text').html(selectedRegion);
+		if ($(window).width() > 650) {
+			setMapBackground(selectedRegion,'.map-bg-box','map-bg-box','');
+		} else {
+			setMapBackground(selectedRegion,'.countries-box','countries-box','-m');
 		}
 	});
 	
+	function setMapBackground(region,boxSelector,initialClass,suffix) {
+		if (region == '*') {
+			$('.region-text').each(function(index) {
+				return $(this).html(region_texts[index]);
+			});
+			showCountries('*')
+			$(boxSelector).css({
+				"background-image": `url('img/src/all-map${suffix}.png')` 
+			});
+		}
+		else {
+			$('.region-text').html(region);
+			showCountries(region)
+			$(boxSelector).css({
+				"background-image": `url('img/src/${region.split(' ').join('').toLowerCase()}-map${suffix}.png')`
+			});
+			$(boxSelector).removeClass().addClass(`${initialClass} map-bg-box--${region.toLowerCase().replace('. ','')}`);
+		}
+	}
 	
 	var priceList = {
 		1: 25, // 1 Gb => $25
@@ -334,6 +722,7 @@ $(document).ready(function () {
 	});
 	
 	$("#country-toggle-btn").click(function (e) {
+		$(this).toggleClass('open');
 		$(".under-select").toggleClass('open');
 		rotateSelectIcon();
 	});
@@ -431,7 +820,6 @@ $(document).ready(function () {
 	//SLIDER////
 
 
-	const elMainSlider = $('.js-carousel-inner');
 	if (elMainSlider.length) {
 		elMainSlider.slick({
 			arrows: false,
@@ -440,7 +828,7 @@ $(document).ready(function () {
 		});
 	}
 
-	const elCardSlider = $('.js-card-wrapper');
+	
 	
 	if (elCardSlider.length) {
 		elCardSlider.slick({
@@ -479,5 +867,51 @@ $(document).ready(function () {
 		});
 	}
 
+
+	/////MAP TAPS////////////
+
+
+
+	const elMapRedirectBox = $('.world-wide-text-wrapper');
+	
+	elMapRedirectBox.click(function() {
+		const topOffset = $('.tab_content-map').offset().top;
+		$("html, body").animate({
+			scrollTop: topOffset - 100
+		}, "slow");
+	});
+
+	showCountries('*');
+
+
+
 });
 
+function showCountries(continent) {
+	const elCountriesBox = $('.countries-box');
+	let countries = [];
+	continent = continent === "N. AMERICA" ? "North America" : continent === "S. AMERICA" ? "South America" : continent; 
+	const filePath = continent === "*" ? 'worldwide' : `regions/${continent.replace(' ','').toLowerCase()}`;
+	
+	
+	if(continent === '*') {
+		countries = [...countriesData[countriesData.length - 1].countries];
+	} else {
+		countries = countriesData.filter(function(f) {
+			if (continent.toUpperCase() === f.continent.toUpperCase()) {
+				return f.countries;
+			}
+		})[0].countries;
+	}
+	countries.sort();
+
+	elCountriesBox.html('');
+	let readyHtml = '';
+	
+	// console.log(countries + 'wefw');
+	countries.forEach(function(country) {
+		const template = `<li><img src="img/${filePath}/${country.replace('\'','').split(' ').join('')}_m.png" width="25" height="17" alt=""><span>${country.toLowerCase()}</span></li>`
+		readyHtml += template;
+	});
+	elCountriesBox.html(readyHtml);
+}

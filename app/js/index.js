@@ -2141,6 +2141,7 @@ $(document).ready(function () {
 
     $('.tab1').click(function (e) {
         e.preventDefault();
+        $('.tab_content-map').show();
 
         $('.bg-img').css({
             "background-image": "url('img/Map1.png')"
@@ -2148,6 +2149,11 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.map-bg-box').removeAttr('style');
+        $('.map-bg-box').removeClass().addClass('map-bg-box');
+        $('.countries-box').removeAttr('style');
+        $('.countries-box').removeClass().addClass('countries-box');
+        showCountries("*")
         $('.tabs').animate({
             scrollLeft: 0
         },300)
@@ -2156,9 +2162,19 @@ $(document).ready(function () {
     $('.tab2').click(function (e) {
         e.preventDefault();
 
+        $('.tab_content-map').show();
         $('.bg-img').css({
             "background-image": "url('img/Map2.png')"
         });
+        if ($(window).width() > 650) {
+            $('.map-bg-box').css({
+                "background-image": "url('img/src/all-map.png')"
+            });
+        } else {
+            $('.countries-box').css({
+                "background-image": "url('img/src/all-map-m.png')"
+            });
+        }
         $('.bg-text-img').css({
             "background-image": "none"
         });
@@ -2176,6 +2192,7 @@ $(document).ready(function () {
         $('.bg-text-img').css({
             "background-image": "none"
         });
+        $('.tab_content-map').hide();
         $('.tabs').animate({
             scrollLeft: 200
         },300)
@@ -2184,6 +2201,7 @@ $(document).ready(function () {
     $('.tab4').click(function (e) {
         e.preventDefault();
 
+        $('.tab_content-map').hide();
         $('.bg-img').css({
             "background-image": "url('img/Mask.png')"
         });
