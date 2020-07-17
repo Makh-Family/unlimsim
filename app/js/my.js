@@ -68,7 +68,8 @@ $(document).ready(function () {
 
     $('.js-basket-item').on('click', function(e) {
       if(e.target.matches('.js-edit-package')) {
-        $('.js-step[data-item="2"]').hide();
+        $('.js-step[data-step="2"]').hide();
+        $('.js-step[data-step="1"]').css('display', 'flex');
         $(`.js-add-service[data-item="${e.target.dataset.item}"]`).trigger('click');
       } else {
         $(this).toggleClass('active');
@@ -90,6 +91,14 @@ $(document).ready(function () {
       }
 
     });
+
+
+    
+    $('.js-btn-confirm-and-pay').on('click', function() {
+      $(this).hide();
+      $('.js-all-wrapper').addClass('payed');
+    });
+
 
   }
 
