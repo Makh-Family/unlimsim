@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Unlim</title>
+
+  <meta name="description" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="icon" href="img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png" />
+
+  <!-- Change the Color of Header Bar in Browsers -->
+  <meta name="theme-color" content="#FF0000" />
+  <meta name="msapplication-navbutton-color" content="#FF0000" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FF0000" />
+
+  <link rel="stylesheet" href="./dist/main.css" />
+</head>
+
+<body class="shopping-card-body basket-body">
+
+  <div class="navbar-overlay"></div>
+
+
+
+
+
+  <!-- ========= Background Blurry Overlay ========= -->
+  <div style="display: none;">
+    <div class="backdrop-image">
+      <img src="img/icons/tu.svg" class="tu-img" />
+    </div>
+
+    <div class="backdrop-overlay"></div>
+  </div>
+  <!-- ========= Background Blurry Overlay ========= -->
+
+  <!-- Search block -->
+  <div class="search-block">
+    <div class="container">
+      <div class="search-wrapper">
+        <form action="/" method="GET" class="search-form">
+          <input type="text" name="search" id="search-input" placeholder="Search keyword and hit enter ..." />
+        </form>
+
+        <button class="search-close ml-auto">
+          <img src="img/icons/close_white.png" alt="" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- End of search block -->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-red sticky-top">
+    <div class="under-nav">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
+            <a href="#section-tab" class="nav-link">Worldwide Plans</a>
+          </li>
+          <li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
+            <a href="#section-tab" class="nav-link">Region Plans</a>
+          </li>
+          <li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
+            <a href="#section-tab" class="nav-link">Country Plans</a>
+          </li>
+          <li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
+            <a href="#section-tab" class="nav-link">Personal Plans</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" /></a>
+
+      <ul class="navbar-nav flex-row extra-bar-toggle">
+        <li class="nav-item mr-3">
+          <a href="#" class="nav-link">
+            <img src="img/icons/search.svg" alt="search" class="search-btn" />
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="dashboard.html" class="nav-link">
+            <img src="img/icons/user.svg" alt="user" class="user-btn" />
+          </a>
+        </li>
+
+        <li class="nav-item ml-3">
+          <a href="#" class="nav-link">
+            <img src="img/icons/basket.svg" alt="user" class="w-22 user-btn" />
+          </a>
+        </li>
+      </ul>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-4">
+          <li class="nav-item drop-down-btn ni-li">
+            <a class="nav-link nav-px-12">
+              <span class="line-top"></span> PLANS
+              <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+            </a>
+            <ul class="nav" style="display: none;">
+              <li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
+                <a href="#section-tab" class="nav-link">Worldwide Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
+                <a href="#section-tab" class="nav-link">Region Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
+                <a href="#section-tab" class="nav-link">Country Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
+                <a href="#section-tab" class="nav-link">Personal Plans</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item ni-li">
+            <a class="nav-link nav-px-12" href="#country-data">
+              <span class="line-top"></span> OUR SERVICES
+            </a>
+          </li>
+          <li class="nav-item ni-li">
+            <a class="nav-link nav-px-12" href="map.html">
+              <span class="line-top"></span> COVERAGE</a>
+          </li>
+          <li class="nav-item ml-2rem">
+            <a href="cooperation.html" class="unlim-btn">COOPERATION</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav mt-4 ml-auto">
+          <li class="nav-item dropdown mr-1">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              USD
+              <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">USD</a>
+              <a class="dropdown-item" href="#">RUB</a>
+              <a class="dropdown-item" href="#">EUR</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown mr-1">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              ENG
+              <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">RUS</a>
+              <a class="dropdown-item" href="#">ENG</a>
+              <a class="dropdown-item" href="#">DEU</a>
+            </div>
+          </li>
+
+          <li class="nav-item mr-1 extra-bar-toggle-large">
+            <a href="#" class="nav-link">
+              <img src="img/icons/search.svg" alt="search" class="search-btn" />
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link extra-bar-toggle-large link-user">
+              <img src="img/icons/user.svg" alt="user" class="user-btn" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="basket.html" class="nav-link extra-bar-toggle-large link-basket">
+              <img src="img/icons/basket.svg" class="w-22 user-btn" />
+              <span class="badge badge-pill">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container js-all-wrapper">
+    <div class="js-opening-title opening-title">
+      <div class="inner-wrapper">
+        <span></span>
+        <h3>Shopping Cart</h3>
+      </div>
+    </div>
+
+    <div class="basic-basket js-basic-basket">
+      <div class="js-card-wrapper">
+
+      </div>
+
+      <div class="subtotal-wrapper d-flex">
+        <div class="line"></div>
+        <span>Subtotal</span>
+        <div class="subtotal-price d-flex">
+          $
+          <span class="subtotal-price-amount js-subtotal-price-amount">350</span>
+          us
+        </div>
+      </div>
+      <button class="rounded-button basket-checkout js-basket-checkout my-3 ml-auto d-block"
+        onclick="$(`.step-button[data-step='2']`).trigger('click')">CHECKOUT</button>
+
+    </div>
+
+
+    <div class="basket-shopping-card js-basket-shopping-card">
+      <div class="payed-text opening-title">
+        <div class="inner-wrapper">
+          <span></span>
+          <h3>Thanks for order</h3>
+        </div>
+      </div>
+      <div style="display: none;" class="my-5 steps-controller align-items-center justify-content-between w-75 mx-auto">
+        <button class="step-button active" type="button" data-step="1">1</button>
+        <div class="step-line"></div>
+        <button class="step-button active" type="button" data-step="2">2</button>
+        <div class="step-line"></div>
+        <button class="step-button" type="button" disabled data-step="3">3</button>
+        <div class="step-line"></div>
+        <button class="step-button" type="button" disabled data-step="4">4</button>
+      </div>
+      <div style="display: none;" data-step="1" class="js-step shopping-card-box row justify-content-between">
+
+        <form class="shopping-card__form col-lg-7 col-md-12">
+          <div class="left-item mb-5">
+            <div class="inner-box">
+              <h5>Location</h5>
+              <div class="item-box plans-block my-3">
+                <button type="button" class="btn btn-show-countries" data-target="#map">?</button>
+                <div class="row">
+                  <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                    <img src="img/icons/icon1-r.png" alt="icon1" width="85" height="50" />
+                  </div>
+
+                  <div class="col-sm-4 bs-select-wrapper" data-type="plan" id="plan-select">
+                    <select class="form-control selectpicker" id="switch-location" name="location"
+                      data-title="Select location" data-width="100%" data-dropup-auto="false">
+                      <option value="worldwide">Worldwide</option>
+                      <option value="region">Region</option>
+                      <option value="country">Country</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-4 bs-select-wrapper" data-type="tariff" id="tariff-select">
+                    <select class="form-control selectpicker" id="switch-tariff" name="tariff" data-title="Select type"
+                      data-width="100%" data-dropup-auto="false">
+                      <option value="start" selected>Unlim START</option>
+                      <option value="pro">Unlim PRO</option>
+                      <option value="max">Unlim MAX</option>
+                      <option value="maxpro">Unlim MAX PRO</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-4 bs-select-wrapper after-plan" data-type="continent" id="region-select">
+                    <select class="form-control selectpicker" name="region" data-title="Select region" data-width="100%"
+                      data-dropup-auto="false">
+                      <!-- <option selected>Select region</option> -->
+                      <option value="Asia">Asia</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Africa">Africa</option>
+                      <option value="Europe">Europe</option>
+                      <option value="N. America">North America</option>
+                      <option value="S. America">South America</option>
+                    </select>
+                  </div>
+
+                  <div class="col-sm-4 bs-select-wrapper after-plan" data-type="country" id="country-select">
+                    <!-- data-size="500" -->
+                    <select class="form-control selectpicker" name="country" data-live-search="true"
+                      data-live-search-style="startsWith" data-title="Select country" data-width="100%"
+                      data-dropup-auto="false">
+                      <!-- <option selected>Select country</option> -->
+                      <optgroup label="A">
+                        <option>ALBANIA</option>
+                        <option>ALGERIA</option>
+                        <option>ANGUILLA</option>
+                        <option>ANTIGUA AND BARBUDA</option>
+                        <option>ARMENIA</option>
+                        <option>AUSTRALIA</option>
+                        <option>AUSTRIA</option>
+                        <option>AZERBAIJAN</option>
+                      </optgroup>
+
+                      <optgroup label="B">
+                        <option>BAHRAIN</option>
+                        <option>BANGLADESH</option>
+                        <option>BARBADOS</option>
+                        <option>BELARUS</option>
+                        <option>BELGIUM</option>
+                        <option>BELIZE</option>
+                        <option>BOSNIA & HERZEGOVINA</option>
+                        <option>BRAZIL</option>
+                        <option>BRUNEI</option>
+                        <option>BULGARIA</option>
+                        <option>BURKINA FASO</option>
+                      </optgroup>
+
+                      <optgroup label="C">
+                        <option>CAMBODIA</option>
+                        <option>CAMEROON</option>
+                        <option>CANADA</option>
+                        <option>CAYMAN ISLANDS</option>
+                        <option>CHAD</option>
+                        <option>CHILE</option>
+                        <option>CHINA</option>
+                        <option>COLOMBIA</option>
+                        <option>CONGO</option>
+                        <option>CONGO DEM REP</option>
+                        <option>COSTA RICA</option>
+                        <option>COTE D'IVOIRE (IVORY COAST)</option>
+                        <option>CROATIA</option>
+                        <option>CURACAO</option>
+                        <option>CYPRUS</option>
+                        <option>CZECH REPUBLIC</option>
+                      </optgroup>
+
+                      <optgroup label="D">
+                        <option>DENMARK</option>
+                        <option>DOMINICA</option>
+                      </optgroup>
+
+                      <optgroup label="E">
+                        <option>ECUADOR</option>
+                        <option>EGYPT</option>
+                        <option>EL SALVADOR</option>
+                        <option>ESTONIA</option>
+                        <option>ETHIOPIA</option>
+                      </optgroup>
+
+                      <optgroup label="F">
+                        <option>FAROE ISLANDS</option>
+                        <option>FIJI</option>
+                        <option>FINLAND</option>
+                        <option>FRANCE</option>
+                        <option>FRENCH GUIANA</option>
+                      </optgroup>
+
+                      <optgroup label="G">
+                        <option>GABON</option>
+                        <option>GEORGIA</option>
+                        <option>GERMANY</option>
+                        <option>GHANA</option>
+                        <option>GIBRALTAR</option>
+                        <option>GREECE</option>
+                        <option>GREENLAND</option>
+                        <option>GRENADA</option>
+                        <option>GUADELOUPE</option>
+                        <option>GUINEA</option>
+                        <option>GUYANA</option>
+                      </optgroup>
+
+                      <optgroup label="H">
+                        <option>HAITI</option>
+                        <option>HAWAII - USA</option>
+                        <option>HONDURAS</option>
+                        <option>HONG KONG</option>
+                        <option>HUNGARY</option>
+                      </optgroup>
+
+                      <optgroup label="I">
+                        <option>ICELAND</option>
+                        <option>INDIA</option>
+                        <option>INDONESIA</option>
+                        <option>IRAN</option>
+                        <option>IRELAND</option>
+                        <option>ISRAEL</option>
+                        <option>ITALY</option>
+                      </optgroup>
+
+                      <optgroup label="J">
+                        <option>JAMAICA</option>
+                        <option>JAPAN</option>
+                        <option>JERSEY ISLAND</option>
+                        <option>JORDAN</option>
+                      </optgroup>
+
+                      <optgroup label="K">
+                        <option>KAZAKHSTAN</option>
+                        <option>KENYA</option>
+                        <option>KUWAIT</option>
+                        <option>KYRGYZSTAN</option>
+                      </optgroup>
+
+                      <optgroup label="L">
+                        <option>LAOS</option>
+                        <option>LATVIA</option>
+                        <option>LIECHTENSTEIN</option>
+                        <option>LITHUANIA</option>
+                        <option>LUXEMBOURG</option>
+                      </optgroup>
+
+                      <optgroup label="M">
+                        <option>MACAU</option>
+                        <option>MACEDONIA</option>
+                        <option>MADAGASCAR</option>
+                        <option>MALAWI</option>
+                        <option>MALAYSIA</option>
+                        <option>MALTA</option>
+                        <option>MARTINIQUE</option>
+                        <option>MEXICO</option>
+                        <option>MOLDOVA</option>
+                        <option>MONGOLIA</option>
+                        <option>MONTENEGRO</option>
+                        <option>MONTSERRAT</option>
+                        <option>MOROCCO</option>
+                        <option>MOZAMBIQUE</option>
+                        <option>MYANMAR</option>
+                      </optgroup>
+
+                      <optgroup label="N">
+                        <option>NAMIBIA</option>
+                        <option>NAURU</option>
+                        <option>NEPAL</option>
+                        <option>NETHERLANDS</option>
+                        <option>NETHERLANDS ANTILLES</option>
+                        <option>NEW ZEALAND</option>
+                        <option>NICARAGUA</option>
+                        <option>NIGERIA</option>
+                        <option>NORTHERN IRELAND</option>
+                        <option>NORWAY</option>
+                      </optgroup>
+
+                      <optgroup label="O">
+                        <option>OMAN</option>
+                      </optgroup>
+
+                      <optgroup label="P">
+                        <option>PAKISTAN</option>
+                        <option>PALESTINE</li>
+                        <option>PANAMA</li>
+                        <option>PAPUA NEW GUINEA</li>
+                        <option>PARAGUAY</option>
+                        <option>PERU</option>
+                        <option>PHILIPPINES</option>
+                        <option>POLAND</option>
+                        <option>PORTUGAL</option>
+                      </optgroup>
+
+                      <optgroup label="Q">
+                        <option>QATAR</option>
+                      </optgroup>
+
+                      <optgroup label="R">
+                        <option>ROMANIA</option>
+                        <option>RUSSIAN FEDERATION</option>
+                        <option>RWANDA</option>
+                      </optgroup>
+
+                      <optgroup label="S">
+                        <option>SAINT KITTS & NEVIS</option>
+                        <option>SAINT MARTIN(FRENCH)</option>
+                        <option>SAUDI ARABIA</option>
+                        <option>SCOTLAND</option>
+                        <option>SENEGAL</option>
+                        <option>SERBIA</option>
+                        <option>SINGAPORE</option>
+                        <option>SINT MAARTEN(DUTCH)</option>
+                        <option>SLOVAKIA</option>
+                        <option>SLOVENIA</option>
+                        <option>SOUTH AFRICA</option>
+                        <option>SOUTH KOREA</option>
+                        <option>SPAIN</option>
+                        <option>SRI LANKA</option>
+                        <option>ST BARTHELEMY</option>
+                        <option>ST LUCIA</option>
+                        <option>ST VINCENT AND THE GRENADINES</option>
+                        <option>SURINAME</option>
+                        <option>SWEDEN</option>
+                        <option>SWITZERLAND</option>
+                      </optgroup>
+
+                      <optgroup label="T">
+                        <option>TAIWAN</option>
+                        <option>TAJIKISTAN</option>
+                        <option>TANZANIA</option>
+                        <option>THAILAND</option>
+                        <option>TONGA</option>
+                        <option>TRINIDAD AND TOBAGO</option>
+                        <option>TUNISIA</option>
+                        <option>TURKEY</option>
+                        <option>TURKS & CAICOS ISLANDS</option>
+                      </optgroup>
+
+                      <optgroup label="U">
+                        <option>UGANDA</option>
+                        <option>UKRAINE</option>
+                        <option>UNITED ARAB EMIRATES</option>
+                        <option>UNITED KINGDOM</option>
+                        <option>UNITED STATES</option>
+                        <option>URUGUAY</option>
+                        <option>UZBEKISTAN</option>
+                      </optgroup>
+
+                      <optgroup label="V">
+                        <option>VANUATU</option>
+                        <option>VENEZUELA</option>
+                        <option>VIETNAM</option>
+                        <option>VIRGIN ISLANDS BRITISH</option>
+                        <option>VIRGIN ISLANDS U.S</option>
+                      </optgroup>
+
+                      <optgroup label="W">
+                        <option>WALES</option>
+                      </optgroup>
+
+                      <optgroup label="Z">
+                        <option>ZAMBIA</option>
+                        <option>ZIMBABWE</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inner-box">
+              <h5>Internet data</h5>
+              <div class="item-box my-3">
+                <div class="row">
+                  <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                    <img src="img/icons/icon2-r.png" alt="icon1" width="30" height="30" />
+                  </div>
+
+                  <div class="col-sm-4 bs-select-wrapper" data-type="gbAmount" id="enter-gb">
+                    <select class="form-control selectpicker" name="gb" data-live-search="true"
+                      data-live-search-placeholder="Custom Gb" data-live-search-style="startsWith" data-title="Enter Gb"
+                      data-width="100%" data-dropup-auto="false">
+                      <!-- <option selected>Enter Gb</option> -->
+                      <option value="1">1 Gb</option>
+                      <option value="3">3 Gb</option>
+                      <option value="5">5 Gb</option>
+                      <option value="10">10 Gb</option>
+                      <option value="15">15 Gb</option>
+                      <option value="20">20 Gb</option>
+                      <option value="30">30 Gb</option>
+                      <option value="40">40 Gb</option>
+                      <option value="50">50 Gb</option>
+                      <option value="70">70 Gb</option>
+                      <option value="100">100 Gb</option>
+                    </select>
+                  </div>
+
+                  <div class="col-sm-4 bs-select-wrapper" data-type="period" id="enter-period">
+                    <select class="form-control selectpicker" name="period" data-title="Enter period" data-width="100%"
+                      data-dropup-auto="false">
+                      <option value="1">1 day</option>
+                      <option value="7">7 days</option>
+                      <option value="14">14 days</option>
+                      <option value="28">28 days</option>
+                      <option value="56">56 days</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inner-box" style="display: none;" id="voice-sms">
+              <h5>Voice / SMS* <span>(*Sending / receiving SMS only by mail</span></h5>
+              <div class="item-box my-3">
+                <div class="row">
+                  <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                    <img src="img/icons/icon5-r.png" alt="icon1" width="42" height="35" />
+                  </div>
+                  <div class="col-sm-4 bs-select-wrapper" data-type="balance" id="enter-balance">
+                    <select class="form-control selectpicker" name="VSbalance" data-live-search="true"
+                      data-live-search-placeholder="Custom Balance" data-live-search-style="startsWith"
+                      data-title="Enter Balance $" data-width="100%" data-dropup-auto="false">
+                      <!-- <option selected>Enter Balance $</option> -->
+                      <option value="1">1 $</option>
+                      <option value="3">3 $</option>
+                      <option value="5">5 $</option>
+                      <option value="10">10 $</option>
+                      <option value="15">15 $</option>
+                      <option value="20">20 $</option>
+                      <option value="30">30 $</option>
+                      <option value="40">40 $</option>
+                      <option value="50">50 $</option>
+                      <option value="70">70 $</option>
+                      <option value="100">100 $</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-4 bs-select-wrapper" data-type="VSperiod" id="VS-period">
+                    <select class="form-control selectpicker" name="VSperiod" data-title="Enter period"
+                      data-width="100%" data-dropup-auto="false">
+                      <option value="1">1 day</option>
+                      <option value="7">7 days</option>
+                      <option value="14">14 days</option>
+                      <option value="28">28 days</option>
+                      <option value="56">56 days</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inner-box" style="display: none;" id="virtual-number">
+              <h5>Virtual number</h5>
+              <div class="item-box my-3">
+                <div class="row">
+                  <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                    <img src="img/icons/icon3-r-list.png" alt="icon1" width="56" height="56" />
+                  </div>
+                  <div class="col-sm-4 bs-select-wrapper" data-type="virtualPeriod">
+                    <select class="form-control selectpicker" name="Vperiod" data-title="Enter period" data-width="100%"
+                      data-dropup-auto="false">
+                      <option value="1">1 month</option>
+                      <option value="3">3 month</option>
+                      <option value="6">6 month</option>
+                      <option value="12">12 month</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-4"></div>
+                  <div class="join-info col-sm-9 ml-auto" style="display: none;">
+                    <div class="location-info">
+                      <span>Country:</span><span class="country-name"></span>
+                      /
+                      <span>Region: </span><span class="region-name"></span>
+                    </div>
+                    <div class="number-info">
+                      <span>Virtual number: </span><span class="virtual-number"></span>
+                    </div>
+                  </div>
+                  <div class="inner-box virtual-inner col-sm-9 ml-auto">
+                    <h5>Please make your choice</h5>
+                    <div class="row">
+                      <div class="col-sm-6 bs-select-wrapper my-3" id="countries-select">
+                        <select class="form-control selectpicker" name="Vcountry" data-live-search="true"
+                          data-live-search-style="startsWith" data-title="Select country" data-width="100%"
+                          data-dropup-auto="false">
+                          <!-- <option selected>Select country</option> -->
+                          <optgroup label="A">
+                            <option>ALBANIA</option>
+                            <option>ALGERIA</option>
+                            <option>ANGUILLA</option>
+                            <option>ANTIGUA AND BARBUDA</option>
+                            <option>ARMENIA</option>
+                            <option>AUSTRALIA</option>
+                            <option>AUSTRIA</option>
+                            <option>AZERBAIJAN</option>
+                          </optgroup>
+
+                          <optgroup label="B">
+                            <option>BAHRAIN</option>
+                            <option>BANGLADESH</option>
+                            <option>BARBADOS</option>
+                            <option>BELARUS</option>
+                            <option>BELGIUM</option>
+                            <option>BELIZE</option>
+                            <option>BOSNIA & HERZEGOVINA</option>
+                            <option>BRAZIL</option>
+                            <option>BRUNEI</option>
+                            <option>BULGARIA</option>
+                            <option>BURKINA FASO</option>
+                          </optgroup>
+
+                          <optgroup label="C">
+                            <option>CAMBODIA</option>
+                            <option>CAMEROON</option>
+                            <option>CANADA</option>
+                            <option>CAYMAN ISLANDS</option>
+                            <option>CHAD</option>
+                            <option>CHILE</option>
+                            <option>CHINA</option>
+                            <option>COLOMBIA</option>
+                            <option>CONGO</option>
+                            <option>CONGO DEM REP</option>
+                            <option>COSTA RICA</option>
+                            <option>COTE D'IVOIRE (IVORY COAST)</option>
+                            <option>CROATIA</option>
+                            <option>CURACAO</option>
+                            <option>CYPRUS</option>
+                            <option>CZECH REPUBLIC</option>
+                          </optgroup>
+
+                          <optgroup label="D">
+                            <option>DENMARK</option>
+                            <option>DOMINICA</option>
+                          </optgroup>
+
+                          <optgroup label="E">
+                            <option>ECUADOR</option>
+                            <option>EGYPT</option>
+                            <option>EL SALVADOR</option>
+                            <option>ESTONIA</option>
+                            <option>ETHIOPIA</option>
+                          </optgroup>
+
+                          <optgroup label="F">
+                            <option>FAROE ISLANDS</option>
+                            <option>FIJI</option>
+                            <option>FINLAND</option>
+                            <option>FRANCE</option>
+                            <option>FRENCH GUIANA</option>
+                          </optgroup>
+
+                          <optgroup label="G">
+                            <option>GABON</option>
+                            <option>GEORGIA</option>
+                            <option>GERMANY</option>
+                            <option>GHANA</option>
+                            <option>GIBRALTAR</option>
+                            <option>GREECE</option>
+                            <option>GREENLAND</option>
+                            <option>GRENADA</option>
+                            <option>GUADELOUPE</option>
+                            <option>GUINEA</option>
+                            <option>GUYANA</option>
+                          </optgroup>
+
+                          <optgroup label="H">
+                            <option>HAITI</option>
+                            <option>HAWAII - USA</option>
+                            <option>HONDURAS</option>
+                            <option>HONG KONG</option>
+                            <option>HUNGARY</option>
+                          </optgroup>
+
+                          <optgroup label="I">
+                            <option>ICELAND</option>
+                            <option>INDIA</option>
+                            <option>INDONESIA</option>
+                            <option>IRAN</option>
+                            <option>IRELAND</option>
+                            <option>ISRAEL</option>
+                            <option>ITALY</option>
+                          </optgroup>
+
+                          <optgroup label="J">
+                            <option>JAMAICA</option>
+                            <option>JAPAN</option>
+                            <option>JERSEY ISLAND</option>
+                            <option>JORDAN</option>
+                          </optgroup>
+
+                          <optgroup label="K">
+                            <option>KAZAKHSTAN</option>
+                            <option>KENYA</option>
+                            <option>KUWAIT</option>
+                            <option>KYRGYZSTAN</option>
+                          </optgroup>
+
+                          <optgroup label="L">
+                            <option>LAOS</option>
+                            <option>LATVIA</option>
+                            <option>LIECHTENSTEIN</option>
+                            <option>LITHUANIA</option>
+                            <option>LUXEMBOURG</option>
+                          </optgroup>
+
+                          <optgroup label="M">
+                            <option>MACAU</option>
+                            <option>MACEDONIA</option>
+                            <option>MADAGASCAR</option>
+                            <option>MALAWI</option>
+                            <option>MALAYSIA</option>
+                            <option>MALTA</option>
+                            <option>MARTINIQUE</option>
+                            <option>MEXICO</option>
+                            <option>MOLDOVA</option>
+                            <option>MONGOLIA</option>
+                            <option>MONTENEGRO</option>
+                            <option>MONTSERRAT</option>
+                            <option>MOROCCO</option>
+                            <option>MOZAMBIQUE</option>
+                            <option>MYANMAR</option>
+                          </optgroup>
+
+                          <optgroup label="N">
+                            <option>NAMIBIA</option>
+                            <option>NAURU</option>
+                            <option>NEPAL</option>
+                            <option>NETHERLANDS</option>
+                            <option>NETHERLANDS ANTILLES</option>
+                            <option>NEW ZEALAND</option>
+                            <option>NICARAGUA</option>
+                            <option>NIGERIA</option>
+                            <option>NORTHERN IRELAND</option>
+                            <option>NORWAY</option>
+                          </optgroup>
+
+                          <optgroup label="O">
+                            <option>OMAN</option>
+                          </optgroup>
+
+                          <optgroup label="P">
+                            <option>PAKISTAN</option>
+                            <option>PALESTINE</li>
+                            <option>PANAMA</li>
+                            <option>PAPUA NEW GUINEA</li>
+                            <option>PARAGUAY</option>
+                            <option>PERU</option>
+                            <option>PHILIPPINES</option>
+                            <option>POLAND</option>
+                            <option>PORTUGAL</option>
+                          </optgroup>
+
+                          <optgroup label="Q">
+                            <option>QATAR</option>
+                          </optgroup>
+
+                          <optgroup label="R">
+                            <option>ROMANIA</option>
+                            <option>RUSSIAN FEDERATION</option>
+                            <option>RWANDA</option>
+                          </optgroup>
+
+                          <optgroup label="S">
+                            <option>SAINT KITTS & NEVIS</option>
+                            <option>SAINT MARTIN(FRENCH)</option>
+                            <option>SAUDI ARABIA</option>
+                            <option>SCOTLAND</option>
+                            <option>SENEGAL</option>
+                            <option>SERBIA</option>
+                            <option>SINGAPORE</option>
+                            <option>SINT MAARTEN(DUTCH)</option>
+                            <option>SLOVAKIA</option>
+                            <option>SLOVENIA</option>
+                            <option>SOUTH AFRICA</option>
+                            <option>SOUTH KOREA</option>
+                            <option>SPAIN</option>
+                            <option>SRI LANKA</option>
+                            <option>ST BARTHELEMY</option>
+                            <option>ST LUCIA</option>
+                            <option>ST VINCENT AND THE GRENADINES</option>
+                            <option>SURINAME</option>
+                            <option>SWEDEN</option>
+                            <option>SWITZERLAND</option>
+                          </optgroup>
+
+                          <optgroup label="T">
+                            <option>TAIWAN</option>
+                            <option>TAJIKISTAN</option>
+                            <option>TANZANIA</option>
+                            <option>THAILAND</option>
+                            <option>TONGA</option>
+                            <option>TRINIDAD AND TOBAGO</option>
+                            <option>TUNISIA</option>
+                            <option>TURKEY</option>
+                            <option>TURKS & CAICOS ISLANDS</option>
+                          </optgroup>
+
+                          <optgroup label="U">
+                            <option>UGANDA</option>
+                            <option>UKRAINE</option>
+                            <option>UNITED ARAB EMIRATES</option>
+                            <option>UNITED KINGDOM</option>
+                            <option>UNITED STATES</option>
+                            <option>URUGUAY</option>
+                            <option>UZBEKISTAN</option>
+                          </optgroup>
+
+                          <optgroup label="V">
+                            <option>VANUATU</option>
+                            <option>VENEZUELA</option>
+                            <option>VIETNAM</option>
+                            <option>VIRGIN ISLANDS BRITISH</option>
+                            <option>VIRGIN ISLANDS U.S</option>
+                          </optgroup>
+
+                          <optgroup label="W">
+                            <option>WALES</option>
+                          </optgroup>
+
+                          <optgroup label="Z">
+                            <option>ZAMBIA</option>
+                            <option>ZIMBABWE</option>
+                          </optgroup>
+                        </select>
+                      </div>
+                      <div class="col-sm-6 bs-select-wrapper my-3" id="regions-list">
+                        <select disabled class="form-control selectpicker" name="Vregion" data-title="Select region"
+                          data-width="100%" data-dropup-auto="false">
+
+                        </select>
+                      </div>
+                      <div class="col-sm-6 bs-select-wrapper my-3" id="prefix-select">
+                        <select disabled class="form-control selectpicker" name="Vprefix" data-title="Select Prefix"
+                          data-width="100%" data-dropup-auto="false">
+                          <option value="Canmore/1587">Canmore (+1587)</option>
+                          <option value="Blackfalds/1587">Blackfalds (+1578)</option>
+                          <option value="Calgary/1587">Calgary (+1578)</option>
+                          <option value="Edson/1587">Edson (+1578)</option>
+                          <option value="Lloydminster/1587">Lloydminster (+1578)</option>
+                          <option value="Medicnine Hat/1587">Medicnine Hat (+1578)</option>
+                          <option value="Olds/1587">Olds (+1578)</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-6 bs-select-wrapper my-3" id="numbers-list">
+                        <select disabled class="form-control selectpicker" name="Vnumber" data-title="Select Number"
+                          data-width="100%" data-dropup-auto="false">
+                          <option value="15872063728">15872063728</option>
+                          <option value="15872063729">15872063729</option>
+                          <option value="15872063730">15872063730</option>
+                          <option value="15872063731">15872063731</option>
+                          <option value="15872063732">15872063732</option>
+                          <option value="15872063733">15872063733</option>
+                          <option value="15872063734">15872063734</option>
+                          <option value="15872063735">15872063735</option>
+                          <option value="15872063736">15872063736</option>
+                          <option value="15872063737">15872063737</option>
+                        </select>
+                      </div>
+                      <button type="button" disabled class="btn-join-to-card py-2 px-5 mt-1 ml-auto mr-3">JOIN</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="inner-box" style="display: none;" id="substitution-number">
+              <h5>Substitution of numbers</h5>
+              <div class="item-box my-3">
+                <div class="row">
+                  <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                    <img src="img/icons/icon4-r.png" alt="icon1" width="36" height="35" />
+                  </div>
+
+                  <div class="col-sm-4 bs-select-wrapper">
+                    <select class="form-control selectpicker" name="subPeriod" data-title="Enter period"
+                      data-width="100%" data-dropup-auto="false">
+                      <option value="1">1 month</option>
+                      <option value="3">3 month</option>
+                      <option value="6">6 month</option>
+                      <option value="12">12 month</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-4 input-placeholder" style="display: none;"></div>
+                  <div class="col-sm-9 ml-auto substitution-join" style="display: none;">
+                    <div class="location-info">
+                      <span>Your virtual number</span><span class="virtual-number"></span>
+                    </div>
+                    <div class="substitution-info">
+                      <span>Your substitution number</span>
+                      <span class="substitution-number"></span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 virtual-number-info">
+                    <span>Your virtual number</span>
+                    <div class="virtual-number-wrapper d-flex align-items-center">
+                      <img src="img/icons/icon3-r.png" width="20" height="20" alt="icon">
+                      <p class="virtual-number">N/A</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9 ml-auto mt-3 substitution-wrapper inner-box">
+                    <h5>Please enter a substitution number</h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <input type="text" class="form-control col-sm-7" id="subNumber" placeholder="Substitution number"
+                        name="subNumber" value="">
+                      <button type="button" disabled
+                        class="btn-join-to-card py-1 px-5 mt-1 btn-substitution-join">JOIN</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inner-box">
+              <h5>Add to plan</h5>
+              <div class="additional-services d-flex my-3 flex-wrap align-items-end justify-content-between">
+                <div class="service__item d-flex flex-column align-items-center">
+                  <img src="img/icons/icon5-r.png" alt="icon1">
+                  <button type="button" data-names="VSbalance,VSperiod" class="btn-service-toggler"
+                    data-target="#voice-sms">
+                    <span>+</span>
+                    <span>Voice and SMS</span>
+                  </button>
+                </div>
+                <div class="services__line"></div>
+                <div class="service__item d-flex flex-column align-items-center">
+                  <img src="img/icons/icon3-r.png" alt="icon1">
+                  <button type="button" data-names="Vperiod,Vregion,Vcountry,Vprefix,Vnumber"
+                    class="btn-service-toggler" data-target="#virtual-number">
+                    <span>+</span>
+                    <span>Virtual number</span>
+                  </button>
+                </div>
+                <div class="services__line"></div>
+                <div class="service__item d-flex flex-column align-items-center">
+                  <img src="img/icons/icon4-r.png" alt="icon1">
+                  <button type="button" data-names="subPeriod,subNumber" class="btn-service-toggler"
+                    data-target="#substitution-number">
+                    <span>+</span>
+                    <span>Substitution of numbers</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tabs my-4 inner-box">
+              <h5>Card selection</h5>
+              <div class="form my-3">
+                <div class="sims-box">
+                  <div class="sim__item">
+                    <input type="radio" checked id="sims-esim" value="eSim" name="simToBeSelected">
+                    <label for="sims-esim">
+                      <div class="circle"></div>
+                      <div class="img-wrapper">
+                        <img src="img/icons/left-sim-r.png" alt="esim"><img src="img/icons/left-sim-hover-r.png"
+                          alt="esim">
+                      </div>
+                      <span>eSim</span>
+                    </label>
+                    <button type="button" class="btn btn-show-sim-info" data-target="#phone-support">?</button>
+                  </div>
+                  <div class="line"></div>
+                  <div class="sim__item">
+                    <input type="radio" id="sims-sim" value="Sim" name="simToBeSelected">
+                    <label for="sims-sim">
+                      <div class="circle"></div>
+                      <div class="img-wrapper">
+                        <img src="img/icons/right-sim-r.png" alt="sim"><img src="img/icons/right-sim-hover-r.png"
+                          alt="sim">
+                      </div>
+                      <span>Sim</span>
+                    </label>
+                    <button type="button" class="btn btn-show-sim-info" data-target="#shipping-info">?</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabs-wrapper">
+              <div class="tab-item" id="phone-support" style="display: none;">
+                <div>
+                  <div class="title-box">
+                    <p>Apple iPhones</p>
+                    <span class="tit-line"></span>
+                  </div>
+
+                  <ul>
+                    <li>iPhone 11</li>
+                    <li>iPhone 11 Pro</li>
+                    <li>iPhone 11 Pro Max</li>
+                    <li>iPhone XS</li>
+                    <li>iPhone XS Max</li>
+                    <li>iPhone XS Max Global</li>
+                    <li>iPhone XR</li>
+                  </ul>
+
+                  <div class="title-box">
+                    <p>Apple iPads</p>
+                    <span class="tit-line"></span>
+                  </div>
+
+                  <ul>
+                    <li>iPad Pro 3rd Gen (12.9 inch, WiFi+Cellular)</li>
+                    <li>iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+Cellular)</li>
+                    <li>iPad mini 5th Gen</li>
+                    <li>iPad Air 3rd Gen</li>
+                  </ul>
+                  <div class="title-box">
+                    <p>Google</p>
+                    <span class="tit-line"></span>
+                  </div>
+
+                  <ul>
+                    <li>Pixel 3</li>
+                    <li>Pixel 3 XL</li>
+                    <li>Pixel 4</li>
+                  </ul>
+                  <div class="title-box">
+                    <p>Samsung</p>
+                    <span class="tit-line"></span>
+                  </div>
+
+                  <ul>
+                    <li>Galaxy Fold LTE</li>
+                    <li>Samsung Galaxy Z Flip</li>
+                    <li>Samsung Galaxy S20, s20+ and S20 Ultra</li>
+                    <li style="list-style: none;">
+                      (Single SIM Nano-SIM and/or eSIM models )
+                    </li>
+                  </ul>
+                  <div class="under-footer">
+                    <ul>
+                      <li>* Not compatible with carrier-locked phone</li>
+                      <li>
+                        * Not compatible with iPhone XR, XS models and 11 models
+                        purchased in Hong Kong, Macau and Mainland China
+                      </li>
+                      <li>
+                        * Not compatible with iPhones with 2 physical SIM card slots
+                      </li>
+                      <li>
+                        * Not compatible with Pixel devices purchased in Australia
+                      </li>
+                      <li>
+                        * Not compatible with devices on Android Q Beta versions
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-item" id="shipping-info" style="display: none;">
+                <div>
+                  <p class="info-text">When you ship with DHL Express – you’re shipping
+                    with specialists in international shipping and courier
+                    delivery services! With our wide range of express
+                    parcel and package services, along with shipping
+                    and tracking solutions to fit your needs – learn how
+                    DHL Express can deliver!</p>
+                  <input type="checkbox" name="dhl" id="dhl-checkbox">
+                  <label class="dhl-checkbox-label" for="dhl-checkbox"><span> </span> <img src="img/icons/dhl.png"
+                      alt="dhl"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="shopping-card__card js-shopping-card__card col-lg-4 col-md-12">
+          <div class="item">
+            <div class="top1">
+              <img src="img/logo.svg" alt="logo">
+              <span class="right-span">
+                <div class="text tariff-name js-tariff-name">PRO</div>
+              </span>
+            </div>
+
+            <h1><span class="let  gb-amount-big js-gb-amount-big">3</span> Gb</h1>
+            <div class="top2">
+              <h4><span class="plan-name js-plan-name">worldwide plan</span><span class="sim-type"><span
+                    class="sim-name js-sim-name">eSim</span></span></h4>
+              <span class="line"></span>
+            </div>
+            <div class="top3">
+              <h3 class="my-3">Included in your plan:</h3>
+              <div class="included-item" id="internet-data-box">
+                <div class="img-wrapper">
+                  <img src="img/icons/icon2.png" alt="icon1">
+                </div>
+                <div class="item-content d-flex ml-auto justify-content-between">
+                  <div class="content-left">
+                    <h3 class="item-name">Internet data</h3>
+                    <p class="item-period"><span class="gb-amount">1Gb</span>/<span class="day-amount">7 days</span></p>
+                  </div>
+                  <div class="content-right">
+                    $ <span class="price-amount internet-price-amount">25</span> us
+                  </div>
+                </div>
+              </div>
+              <div style="display: none;" class="included-item" id="voice-sms-box">
+                <div class="img-wrapper">
+                  <img src="img/icons/icon5.png" alt="icon1">
+                </div>
+                <div class="item-content d-flex ml-auto justify-content-between">
+                  <div class="content-left">
+                    <h3 class="item-name">Voice / sms</h3>
+                    <p class="item-period"><span class="day-amount vs-day-amount">7 days</span></p>
+                  </div>
+                  <div class="content-right">
+                    $ <span class="price-amount js-vs-price">1 000</span> us
+                  </div>
+                </div>
+              </div>
+              <div style="display: none;" class="included-item" id="virtual-number-box">
+                <div class="img-wrapper">
+                  <img width="auto" height="100%" src="img/icons/icon3.png" alt="icon1">
+                </div>
+                <div class="item-content d-flex ml-auto justify-content-between">
+                  <div class="content-left">
+                    <h3 class="item-name">virtual number</h3>
+                    <p class="item-period"><span class="day-amount v-day-amount js-v-day-amount">1 month</span></p>
+                  </div>
+                  <div class="content-right">
+                    $ <span class="price-amount js-vn-price">500</span> us
+                  </div>
+                </div>
+              </div>
+              <div style="display: none;" class="included-item" id="substitution-number-box">
+                <div class="img-wrapper">
+                  <img src="img/icons/icon4.png" alt="icon1">
+                </div>
+                <div class="item-content d-flex ml-auto justify-content-between">
+                  <div class="content-left">
+                    <h3 class="item-name">substitution of
+                      number</h3>
+                    <p class="item-period"><span class="day-amount js-day-amount">1 month</span></p>
+                  </div>
+                  <div class="content-right">
+                    $ <span class="js-price-amount">25</span> us
+                  </div>
+                </div>
+              </div>
+              <div class="included-item" id="sim-type-box">
+                <div class="img-wrapper">
+                  <img class="sim-img" src="img/icons/left-sim.png" alt="icon1">
+                </div>
+                <div class="item-content d-flex ml-auto justify-content-between">
+                  <div class="content-left d-flex align-items-baseline">
+                    <h3 class="item-name sim-name js-sim-name">eSim</h3>
+                    <span class="sim-price-status">free</span>
+                    <img width="45" height="10" src="img/icons/dhl.png" class="ml-2 js-dhl-img" style="display: none;"
+                      alt="dhl">
+                  </div>
+                  <div class="content-right">
+                    $ <span data-free="yes" class="price-amount js-price-amount">0</span> us
+                  </div>
+                </div>
+              </div>
+              <span class="line"></span>
+              <div class="total-price mt-3">$ <span class="total-price-amount js-total-price-amount">1550</span> us
+              </div>
+              <button style="display: none;" type="button" class="btn-checkout mt-3"
+                data-approve="yes">Approved</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div data-step="2" class="js-step display-none reg-sign justify-content-between row ">
+        <div class="col-lg-7 col-md-12">
+          <div data-step="2" data-step-inside="true" class="js-step reg-sign-wrapper">
+            <div data-active="true" class="opening-title form-title">
+              <div class="inner-wrapper">
+                <span></span>
+                <h3>Email / Password <p>for your account</p>
+                </h3>
+              </div>
+              <button style="display: none;" class="edit-btn js-edit-btn" data-step="2">
+                Edit
+              </button>
+            </div>
+            <div style="display: none;" class="js-confirmation-box confirmation-box">
+              <div class="d-flex align-items-center">
+                <img src="img/icons/mail.svg" width="20" height="15" alt="mail">
+                <div class="js-mail-text">info@agrodell.com</div>
+                <div class="is-confirmed d-flex">
+                  <div class="status-text">
+                    confirmed
+                  </div>
+                  <div class="confirm-img">
+                    <img src="img/icons/confirmed.svg" alt="confirm">
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3 d-flex align-items-center">
+                <img src="img/icons/phone.svg" width="17" height="18" alt="mail">
+                <div class="js-number-text">
+                  +38 (063) 851-52-52
+                </div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="form-tabs-wrapper">
+                <button type="button" class="form-tabs-btn active" data-target="#reg-form">Registration</button>
+                <button type="button" class="form-tabs-btn" data-target="#sign-form">Sign in</button>
+              </div>
+              <div class="reg-sing-forms-wrapper">
+                <form id="reg-form" class="reg__form my-4">
+                  <label class="col-lg-12 d-block">
+                    <span>Email Address</span>
+                    <input required type="email" value="info@agrodell.com" name="regEmail" placeholder="Email"
+                      class="d-block input w-100">
+                  </label>
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <span>Password</span>
+                    <input value="123456789" required type="password" name="password" class="d-block input w-100">
+                  </label>
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <span>Repeat Password</span>
+                    <input value="123456789" required type="password" name="repeatedPassword"
+                      class="d-block input w-100">
+                  </label>
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <span>Country Number</span>
+                    <span class="arrow-down"></span>
+                    <select required class="form-control" id="switch-countrycode" name="countryCode"
+                      data-title="Select country">
+                      <option value="ukraine:380">Ukraine +380</option>
+                      <option value="russia:7">Russia +7</option>
+                      <option value="uzbekistan:998">Uzbekistan +998</option>
+                    </select>
+                  </label>
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <input value="0638515252" id="telnumber" required type="tel" name="telNumber"
+                      class="d-block input w-100">
+                  </label>
+                  <div style="display: none;" class="verification-wrapper w-100 align-items-center">
+                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                      <span>Verification Number</span>
+                      <input value="123456789" id="verifition-code" type="password" name="verificationCode"
+                        class="d-block input w-100">
+                    </label>
+                    <p class="col-lg-6 col-md-6 col-sm-12">Please enter verification number from your email </p>
+                  </div>
+                  <div class="d-flex flex-wrap mb-4 confirm-wrapper align-items-center">
+                    <p class="col-lg-8 col-sm-12">In order to continue registration you need to confirm the email.
+                      Please confirm your Email.</p>
+                    <button type="submit" id="regFormSubmit" class="ml-auto confirm-mail-btn rounded-button">Confirm
+                      Email</button>
+                  </div>
+                </form>
+                <form id="sign-form" style="display: none;" class="sign__form my-4">
+                  <div class="w-100 mb-4 radio-wrapper js-radio-wrapper">
+                    <input checked data-target=".js-email-input-wrapper" value="email" type="radio" name="signInType"
+                      id="emailtoggler">
+                    <label for="emailtoggler"><span></span><span>Email</span></label>
+                    <input type="radio" data-target=".js-phone-input-wrapper" value="tel" name="signInType"
+                      id="phonetoggler">
+                    <label for="phonetoggler"><span></span><span>Phone</span></label>
+
+                  </div>
+                  <label class="js-email-input-wrapper col-lg-6 col-md-6 col-sm-12">
+                    <span>Email Address</span>
+                    <input required type="email" value="info@agrodell.com" name="signInEmail" placeholder="Email"
+                      class="d-block input w-100">
+                  </label>
+                  <label style="display: none;"
+                    class="js-temporary-password-wrapper temporary-password-wrapper col-lg-12 col-md-12 col-sm-12">
+                    <span>Enter temporary password</span>
+                    <input required type="password" value="79622200620" name="temporaryPassword" id="temporary-password"
+                      placeholder="Temporary password" class="d-block input col-lg-6 col-md-6 col-sm-12">
+                    <p>Please enter temporary password
+                      from your email</p>
+                  </label>
+                  <label style="display: none;" class="js-phone-input-wrapper col-lg-6 col-md-6 col-sm-12">
+                    <span>Phone number</span>
+                    <input required type="tel" value="79622200620" name="signInPhone" id="signIn-phone-input"
+                      placeholder="Phone number" class="d-block input w-100">
+                  </label>
+                  <label class="js-password-input-wrapper col-lg-6 col-md-6 col-sm-12">
+                    <span>Password</span>
+                    <input value="123456789" required type="password" name="password" class="d-block input w-100">
+                  </label>
+                  <div class="d-flex flex-wrap mb-4 ml-auto confirm-wrapper align-items-baseline">
+                    <button type="button" class="forgot-password">Forgot password</button>
+                    <button type="submit" id="signInSubmit" class="ml-auto rounded-button" data-forgot="no"
+                      data-confirm="yes">Continue</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="display-none js-step" data-step="3">
+            <div data-active="false" class="opening-title form-title">
+              <div class="inner-wrapper">
+                <span></span>
+                <h3>Billing / Shipping Information</h3>
+              </div>
+              <button style="display: none;" class="edit-btn js-edit-btn" data-step="3">
+                Edit
+              </button>
+            </div>
+            <div style="display: none;" class="confirmation-box billing-info-box">
+              <div class="info-wrapper col-lg-4 col-sm-12">
+                <h3>Billing</h3>
+                <div class="d-flex">
+                  <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                  <div class="info-box">
+                    <div class="js-customer-name-text">Denys Nemo</div>
+                    <div class="js-cimpany-name">LCC "Agrodell"</div>
+                  </div>
+                </div>
+                <div class="my-3 d-flex">
+                  <img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
+                  <div class="js-address-text">
+                    Pirogov, 45 St., apt. 54
+                    Vinnytsya / Vinnyts`ka
+                    21000 Ukraine
+                  </div>
+                </div>
+              </div>
+              <div class="info-wrapper col-lg-4 col-sm-12">
+                <h3>Shipping</h3>
+                <div class="d-flex">
+                  <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
+                  <div class="info-box">
+                    <div class="js-billing-address-text">Use billing address</div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-wrapper col-lg-4 col-sm-12">
+                <h3>Company</h3>
+                <div class="d-flex">
+                  <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
+                  <div class="info-box">
+                    <div><img src="img/icons/dhl.png" alt="dhl"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="step-content">
+              <form id="billing-form" class="reg__form my-4">
+                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                  <span>First Name</span>
+                  <input required type="text" value="Denys" name="firstname" placeholder="First Name"
+                    class="d-block input w-100">
+                </label>
+                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                  <span>Last Name</span>
+                  <input value="Nemo" required type="text" name="lastname" class="d-block input w-100">
+                </label>
+                <label class="col-lg-12 d-block">
+                  <span>Company Name</span>
+                  <input value="LCC 'Agrodell'" required type="text" name="companyname" class="d-block input w-100">
+                </label>
+                <label class="col-lg-12 d-block">
+                  <span>Country</span>
+                  <span class="arrow-down"></span>
+                  <select required class="form-control" id="switch-country" name="country" data-title="Select country">
+                    <option value="ukraine">Ukraine </option>
+                    <option value="russia">Russia </option>
+                    <option value="uzbekistan">Uzbekistan </option>
+                  </select>
+                </label>
+                <label class="col-lg-4 col-sm-12 d-block">
+                  <span>City</span>
+                  <span class="arrow-down"></span>
+                  <select required class="form-control" id="switch-city" name="city" data-title="Select city">
+                    <option value="Vinnytsya">Vinnytsya </option>
+                    <option value="Kiev">Kiev </option>
+                    <option value="Donbass">Donbass </option>
+                  </select>
+                </label>
+                <label class="col-lg-4 col-sm-6 d-block">
+                  <span>State</span>
+                  <span class="arrow-down"></span>
+                  <select required class="form-control" id="switch-state" name="state" data-title="Select state">
+                    <option value="Vinnyts'ka">Vinnyts'ka</option>
+                    <option value="Kiev">Kiev</option>
+                    <option value="Donbass">Donbass</option>
+                  </select>
+                </label>
+                <label class="col-lg-4 col-sm-6 d-block">
+                  <span>Postcode</span>
+                  <input value="21000" required type="number" name="postcode" class="d-block input w-100">
+                </label>
+                <div class="flex-column align-items-start w-100 mb-4 radio-wrapper js-radio-wrapper">
+                  <input data-target=".js-billing-address-input-wrapper" value="billing" type="radio" name="billingType"
+                    id="billingAddress">
+                  <label for="billingAddress"><span></span><span>Use billing address</span></label>
+                  <input checked type="radio" data-target=".js-dhl-input-wrapper" value="dhl" name="billingType"
+                    id="dhltoggler">
+                  <label for="dhltoggler"><span></span><span><img src="img/icons/dhl.png" alt="dhl"></span></label>
+
+                </div>
+                <div style="display: none;"
+                  class="js-billing-address-input-wrapper billing-address-input-wrapper w-100">
+                  <h3 class="w-100">Shipping</h3>
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <span>First Name</span>
+                    <input type="text" value="Shwaine" name="firstname" placeholder="First Name"
+                      class="d-block input w-100">
+                  </label>
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <span>Last Name</span>
+                    <input value="Gette" type="text" name="lastname" class="d-block input w-100">
+                  </label>
+                  <label class="col-lg-12 d-block">
+                    <span>Company Name</span>
+                    <input type="text" name="companyname" class="d-block input w-100">
+                  </label>
+                  <label class="col-lg-12 d-block">
+                    <span>Address</span>
+                    <input value="Roza Luksenberg, 69 St., apt. 69" type="text" name="companyname"
+                      class="d-block input w-100">
+                  </label>
+                  <label class="col-lg-12 d-block">
+                    <span>Country</span>
+                    <span class="arrow-down"></span>
+                    <select class="form-control" id="switch-billing-country" name="country" data-title="Select country">
+                      <option value="germany">Germany</option>
+                      <option value="russia">Russia </option>
+                      <option value="uzbekistan">Uzbekistan </option>
+                    </select>
+                  </label>
+                  <label class="col-lg-4 col-sm-12 d-block">
+                    <span>City</span>
+                    <span class="arrow-down"></span>
+                    <select class="form-control" id="switch-billing-city" name="city" data-title="Select city">
+                      <option value="Berlin">Berlin </option>
+                      <option value="Kiev">Kiev </option>
+                      <option value="Donbass">Donbass </option>
+                    </select>
+                  </label>
+                  <label class="col-lg-4 col-sm-6 d-block">
+                    <span>State</span>
+                    <span class="arrow-down"></span>
+                    <select class="form-control" id="switch-billing-state" name="state" data-title="Select state">
+                      <option value="Marienfelde">Marienfelde</option>
+                      <option value="Kiev">Kiev</option>
+                      <option value="Donbass">Donbass</option>
+                    </select>
+                  </label>
+                  <label class="col-lg-4 col-sm-6 d-block">
+                    <span>Postcode</span>
+                    <input value="21000" type="number" name="postcode" class="d-block input w-100">
+                  </label>
+                  <div class="d-flex flex-column align-items-start w-100 mb-4 radio-wrapper js-radio-wrapper">
+                    <input checked value="billing" type="checkbox" name="billingtoggler"
+                      data-target=".js-billing-address-input-wrapper" id="billingAddressToggler">
+                    <label for="billingAddressToggler"><span></span><span>Use billing address</span></label>
+                  </div>
+                  <label class="col-lg-4 col-md-4 col-sm-6 d-block">
+                    <span>Delivery</span>
+                    <span class="arrow-down"></span>
+                    <select class="form-control" id="switch-method" name="shipping-method" data-title="Select country">
+                      <option value="dhl">DHL</option>
+                      <option value="dhl2">DHL2 </option>
+                      <option value="dhl3">DHL3 </option>
+                    </select>
+                  </label>
+                  <div class="shipping-price">$ <span>25</span> us</div>
+                </div>
+                <div class="w-100 button-wrapper">
+                  <button type="button"
+                    class="shipping-continue-btn js-shipping-continue-btn rounded-button">Countinue</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+          <div class="js-step display-none" data-step="4">
+            <div data-active="false" class="opening-title form-title">
+              <div class="inner-wrapper">
+                <span></span>
+                <h3 class="d-flex align-items-baseline">Payment
+                  <div class="ml-3 payment-methods-wrapper d-flex align-items-end">
+                    <img width="27" height="18" src="img/icons/visa.svg" alt="icon1">
+                    <img width="27" height="18" src="img/icons/mastercard.svg" alt="icon2">
+                    <img width="27" height="18" src="img/icons/gpay.svg" alt="icon3">
+                    <img width="27" height="18" src="img/icons/apple-pay.svg" alt="icon4">
+                  </div>
+                </h3>
+              </div>
+              <button style="display: none;" class="edit-btn js-edit-btn" data-step="4">Edit</button>
+            </div>
+            <div style="display: none;" class="payment-info-box confirmation-box billing-info-box">
+              <div class="info-wrapper w-100">
+                <div class="d-flex">
+                  <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                  <div class="info-box">
+                    <div class="js-customer-name-text">Denys Nemo</div>
+                  </div>
+                </div>
+                <div class="my-3 d-flex">
+                  <img src="img/icons/card-r.svg" width="20" height="13" alt="mail">
+                  <div class="js-card-text">
+                    85845-5662-3242-5487
+                  </div>
+                  <div class="js-card-expered-date">
+                    10/25
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="step-content">
+              <form id="payment-card-form" class="reg__form my-4">
+                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                  <span>First Name</span>
+                  <input required type="text" name="firstname" placeholder="Enter your Name"
+                    class="d-block input w-100">
+                </label>
+                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                  <span>Last Name</span>
+                  <input required type="text" name="lastname" placeholder="Enter your Last Name"
+                    class="d-block input w-100">
+                </label>
+                <div class="card-input-wrapper w-100">
+                  <label class="d-block">
+                    <img src="img/icons/card-r.svg" alt="card">
+                    <input id="cardnumber" required type="text" name="cardnumber" autocomplete="on"
+                      class="d-block input w-100">
+                  </label>
+                  <label class="d-block">
+                    <input id="carddate" required type="text" name="carddate" placeholder="MM/YY" autocomplete="on"
+                      class="d-block input w-100">
+                  </label>
+                  <label class="d-block">
+                    <input required maxlength="3" type="password" name="cardcode" placeholder="CVC" autocomplete="on"
+                      class="d-block input w-100">
+                  </label>
+                </div>
+                <div class="w-100 button-wrapper">
+                  <button type="button" class="payment-btn js-payment-btn rounded-button">Countinue</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="reg-sign__card js-reg-sign__card col-lg-4 col-md-12 shopping-card__card">
+          <div class="opening-title mb-3">
+            <div class="inner-wrapper">
+              <span></span>
+              <h3>Order Summary</h3>
+            </div>
+          </div>
+          <div class="item">
+            <div class="top1">
+              <img src="img/logo.svg" alt="logo">
+              <span class="right-span">
+                <div class="text tariff-name">PRO</div>
+              </span>
+            </div>
+
+            <h1><span class="let js-package-amount">3</span> pc</h1>
+
+            <div class="top3">
+              <div class="basket-items-wrapper">
+                
+              </div>
+              <span class="line"></span>
+              <form class="discount-form my-3 w-100 justify-content-between align-items-center">
+                <input type="text" required placeholder="Discount Code" name="discountCode"
+                  class="py-1 px-3 discount-input input">
+                <button class="btn-discount py-1 px-3" type="submit">Apply</button>
+              </form>
+              <button class="btn-gift-card-togger">Have a Gift Card?</button>
+              <form style="display: none;" class="giftcard-form my-3 w-100 justify-content-between align-items-center">
+                <input required type="text" placeholder="Gift Card" name="giftCard"
+                  class="py-1 px-3 discount-input input">
+                <button disabled class="btn-gift-card py-1 px-3" type="submit">Apply</button>
+              </form>
+              <div style="display: none"
+                class="subtotal-wrapper discount-info justify-content-between align-items-center">
+                <span class="d-block">Discount</span>
+                <div><span class="js-discount-amount">0</span> %</div>
+              </div>
+              <div class="subtotal-wrapper justify-content-between align-items-center">
+                <span class="d-block">Subtotal</span>
+                <div class="total-price m-0">$ <span
+                    class="total-price-amount js-total-price-amount js-subtotal-amount">1550</span> us</div>
+              </div>
+              <div class="total-price mt-3">
+                $ <span class="total-price-amount js-total-price-amount">1550</span> us
+              </div>
+              <button type="button" style="display: none;" class="rounded-button js-btn-confirm-and-pay mt-3" tabindex="0">Сonfirm and Pay</button>
+              <div class="payed-card-box">
+                <img src="img/icons/map-g.svg" alt="map">
+                <span>Congratulations
+                  Payment was successful</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="after-payment-box">
+        <div class="after__img-wrapper">
+          <img src="img/icons/confirmed.svg" alt="confirmed">
+        </div>
+        <span class="after__text">Congratulations.
+          Payment was successful.
+        </span>
+        <div class="after__buttons-wrapper">
+          <a href="index.html" class="rounded-button">Plans</a>
+          <a href="dashboard.html" class="rounded-button">Account</a>
+        </div>
+      </div>
+    </div>
+    <div class="list-wrapper">
+      <div style="display: none;" class="basket-list js-basket-list">
+        <div class="basket-line">
+          <div class="basket-item">Package</div>
+          <div class="basket-item">Plan</div>
+          <div class="basket-item">Quantity/Period</div>
+          <div class="basket-item">Services</div>
+          <div class="basket-item">Pay </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: none;" class="js-subtotal-wrapper">
+      <div class="subtotal-wrapper d-flex">
+        <div class="line"></div>
+        <span>Subtotal</span>
+        <div class="subtotal-price d-flex">
+          $
+          <span class="subtotal-price-amount js-subtotal-price-amount">350</span>
+          us
+        </div>
+      </div>
+      <button class="rounded-button basket-checkout js-basket-checkout my-3 ml-auto d-block"
+        onclick="$(`.step-button[data-step='2']`).trigger('click')">CHECKOUT</button>
+    </div>
+  </div>
+
+  .
+
+  <div class="tab_content-map">
+    <div class="map-bg">
+      <div class="map-bg-box"></div>
+      <div class="container">
+        <div class="mab-bg__title">
+          <span></span>
+          <h3>Included Countries</h3>
+        </div>
+        <ul class="countries-box" data-continent="*">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer__top">
+      <div class="container">
+        <nav class="footer__navbar">
+          <ul class="navbar-nav mx-auto d-flex flex-row justify-content-around align-items-center w-75 flex-wrap">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Support
+                <svg class="svg-inline--fa fa-angle-down fa-w-10 select-icon" aria-hidden="true" focusable="false"
+                  data-prefix="fas" data-icon="angle-down" width="10" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512" data-fa-i2svg="">
+                  <path fill="#fff"
+                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+                  </path>
+                </svg>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Link1</a>
+                <a class="dropdown-item" href="#">Link2</a>
+                <a class="dropdown-item" href="#">Link3</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Brand</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item download-app">
+              <a class="nav-link p-2 px-3" href="#">Download App</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__line w-50 mx-auto my-4"></div>
+        <div class="footer__contact d-flex justify-content-between align-items-start flex-wrap">
+          <a href="#" class="contact-link text-white text-uppercase">
+            <span>contact</span>
+          </a>
+          <div class="d-flex align-items-start">
+            <img src="img/icons/whatsapp.png" alt="whatsapp">
+            <span class="text-white">+49 36628 60335 <span>(Whatsapp)</span></span>
+          </div>
+          <div class="d-flex align-items-start">
+            <img src="img/icons/mail.png" alt="mail">
+            <span class="text-white d-block">
+              <a href="mailto:info@unlimsim.com" class="d-block text-white">info@unlimsim.com
+              </a>
+              <a href="mailto:help@unlimsim.com" class="d-block text-white">help@unlimsim.com
+              </a>
+            </span>
+          </div>
+          <div class="d-flex align-items-start">
+            <img src="img/icons/location.png" alt="location">
+            <span class="text-white d-block">
+              Germany: 07937 Zeulenroda Triebes, <br>
+              August-Bebel-Str. 8
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer-bottom text-white">
+          <div class="footer-el-1 d-flex flex-wrap align-items-center">
+            <span class="small-text">Copyright ©2020 UNLIMSIM. All rights reserved.</span>
+            <a href="#">Terms & Conditions</a>
+            <div class="footer__bottom-line"></div>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-el-3">
+            <a href="#"><img src="img/icons/pay-2.svg" alt="" /></a>
+            <a href="#"><img src="img/icons/pay-3.svg" alt="" /></a>
+            <a href="#"><img src="img/icons/pay-4.svg" alt="" /></a>
+            <a href="#"><img src="img/icons/pay-1.svg" alt="" /></a>
+          </div>
+          <div class="footer-el-2">
+            <a href="#"><img src="img/icons/fb.svg" alt="fb" /></a>
+            <a href="#"><img src="img/icons/in.svg" alt="in" /></a>
+            <a href="#"><img src="img/icons/ig.svg" alt="ig" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="nav" id="region-list" style="display: none;">
+      <li data-order="1" class="nav-item active">
+        <a href="#" class="nav-link" data-value="*"> ALL </a>
+      </li>
+      <li data-order="3" class="nav-item">
+        <a href="#" class="nav-link" data-value="ASIA"> ASIA </a>
+      </li>
+      <li data-order="4" class="nav-item">
+        <a href="#" class="nav-link" data-value="AFRICA"> AFRICA </a>
+      </li>
+      <li data-order="5" class="nav-item">
+        <a href="#" class="nav-link" data-value="EUROPE"> EUROPE </a>
+      </li>
+      <li data-order="6" class="nav-item">
+        <a href="#" class="nav-link" data-value="OCEANIA"> OCEANIA </a>
+      </li>
+      <li data-order="7" class="nav-item">
+        <a href="#" class="nav-link" data-value="N. AMERICA"> NORTH AMERICA </a>
+      </li>
+      <li data-order="8" class="nav-item">
+        <a href="#" class="nav-link" data-value="S. AMERICA"> SOUTH AMERICA </a>
+      </li>
+    </ul>
+
+  </footer>
+
+  <script src="dist/main.js"></script>
+</body>
+
+</html>
