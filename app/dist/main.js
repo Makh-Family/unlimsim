@@ -26439,25 +26439,7 @@ $(document).ready(function () {
 		}
 	});
 	
-	function setMapBackground(region,boxSelector,initialClass,suffix) {
-		if (region == '*') {
-			$('.region-text').each(function(index) {
-				return $(this).html(region_texts[index]);
-			});
-			showCountries('*')
-			$(boxSelector).css({
-				"background-image": `url('img/src/all-map${suffix}.png')` 
-			});
-		}
-		else {
-			$('.region-text').html(region);
-			showCountries(region)
-			$(boxSelector).css({
-				"background-image": `url('img/src/${region.split(' ').join('').toLowerCase()}-map${suffix}.png')`
-			});
-			$(boxSelector).removeClass().addClass(`${initialClass} map-bg-box--${region.toLowerCase().replace('. ','')}`);
-		}
-	}
+	
 	
 	var priceList = {
 		1: 25, // 1 Gb => $25
@@ -26620,9 +26602,9 @@ $(document).ready(function () {
 		var selected_country = $(this).text();
 		$('#chosen_country').val(selected_country)
 	
-		if (selected_country.length > 10) {
-			selected_country = $.trim(selected_country).substring(0, 8) + "...";
-		}
+		// if (selected_country.length > 10) {
+		// 	selected_country = $.trim(selected_country).substring(0, 8) + "...";
+		// }
 	
 		$('.country_text').html(selected_country)
 		$('.map-country-list').children('li').removeClass('active')
@@ -26777,12 +26759,14 @@ $(document).ready(function () {
 });
 
 function showCountries(continent) {
+	console.log(continent)
 	const elCountriesBox = $('.countries-box');
 	let countries = [];
 	continent = continent === "N. AMERICA" ? "North America" : continent === "S. AMERICA" ? "South America" : continent; 
 	const filePath = continent === "*" ? 'worldwide' : `regions/${continent.replace(' ','').toLowerCase()}`;
 	
 	
+
 	if(continent === '*') {
 		countries = [...countriesData[countriesData.length - 1].countries];
 	} else {
@@ -26803,6 +26787,26 @@ function showCountries(continent) {
 		readyHtml += template;
 	});
 	elCountriesBox.html(readyHtml);
+}
+
+function setMapBackground(region,boxSelector,initialClass,suffix) {
+	if (region == '*') {
+		$('.region-text').each(function(index) {
+			return $(this).html(region_texts[index]);
+		});
+		showCountries('*')
+		$(boxSelector).css({
+			"background-image": `url('img/src/all-map${suffix}.png')` 
+		});
+	}
+	else {
+		$('.region-text').html(region);
+		showCountries(region)
+		$(boxSelector).css({
+			"background-image": `url('img/src/${region.split(' ').join('').toLowerCase()}-map${suffix}.png')`
+		});
+		$(boxSelector).removeClass().addClass(`${initialClass} map-bg-box--${region.toLowerCase().replace('. ','')}`);
+	}
 }
 /*!
  * Bootstrap-select v1.12.13 (https://github.com/heimrichhannot/bootstrap-select)
