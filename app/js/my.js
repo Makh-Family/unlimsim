@@ -13,6 +13,7 @@ $(document).ready(function () {
 
   if (localStorage.getItem('basket')) {
     basket = [...JSON.parse(localStorage.getItem('basket'))];
+    console.log(basket.length);
     $('.badge-pill').text(basket.length);
   }
   
@@ -63,6 +64,9 @@ $(document).ready(function () {
       $('.js-basic-basket').hide();
       $('.js-basket-shopping-card').show()
       $('.js-basket-list').hide();
+      $('.js-step[data-step="2"]').show().removeClass('display-none');
+      $('.js-step[data-step="1"]').hide().addClass('display-none');
+      $('.js-subtotal-wrapper').hide();
     });
 
 

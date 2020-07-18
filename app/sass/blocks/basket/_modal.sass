@@ -11,6 +11,7 @@
     display: flex
     align-items: center
     margin-top: 150px
+    
 
   .modal-body
     padding: 0 !important
@@ -192,3 +193,30 @@
     span
       &::before
         opacity: 1
+
+
+
+@media only screen and (max-width: 600px)
+  .basket-modal
+    .modal-dialog
+      width: 80%
+      margin-right: auto
+      margin-left: auto
+      .modal-content
+        width: 100%
+      .tabs
+        overflow: unset
+
+@media only screen and (max-width: 500px)
+  .basket-modal
+    .modal-dialog
+      width: 95%
+
+@media only screen and (max-width: 350px)
+  .basket-modal
+    .sims-box
+      flex-direction: column
+      .line
+        display: none
+      .sim__item
+        margin-bottom: 20px

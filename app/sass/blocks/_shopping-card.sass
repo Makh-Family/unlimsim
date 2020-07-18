@@ -1,3 +1,6 @@
+.hidden
+  display: none !important
+
 .shopping-card-body
   min-height: 100vh
 
@@ -752,7 +755,7 @@
       width: 10%
       input
         border-left: none
-        border-right: none
+        padding-left: 5px
         border-top-left-radius: 0 !important
         border-bottom-left-radius: 0 !important
         min-width: 30px
@@ -1010,6 +1013,12 @@
   .reg-sign__card
     border-left: 1px solid #707070
 
+.js-card-wrapper
+  .slick-slide
+    > div
+      display: flex
+      justify-content: center
+
 //end of payed condition
 
 
@@ -1106,3 +1115,61 @@
   .shopping-card__card
     flex: 0 0 100%
     max-width: 100%
+
+@media (max-width: 768px) 
+  .step-line
+    width: 80px
+
+
+@media (max-width: 575px)
+  .card-input-wrapper
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    label
+      input
+        border: 1px solid #707070 !important
+        
+      &:first-child
+        width: 100%
+        input
+          border-right-width: 1px
+          border-radius: 0.5rem !important
+      &:nth-child(2)
+        width: 45%
+        input
+          width: 100%
+          border-radius: 0.5rem !important
+          padding-right: 15px
+          padding-left: 15px
+      &:nth-child(3)
+        width: 45%
+        input
+          border-radius: 0.5rem !important
+          padding-right: 15px
+          padding-left: 15px
+        
+  .step-line
+    width: 40px
+  .btn-show-countries
+    top: unset
+    transform: none
+    right: 0
+    bottom: 0
+  .tabs
+    overflow: unset !important
+  .service__item
+    margin-bottom: 20px
+  .services__line
+    display: none
+  .substitution-wrapper 
+    .d-flex
+      flex-wrap: wrap
+
+
+@media (max-width: 350px)
+  .discount-form,
+  .giftcard-form
+    flex-direction: column
+    input
+      margin-bottom: 15px

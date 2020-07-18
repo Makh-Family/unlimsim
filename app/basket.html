@@ -1216,259 +1216,199 @@
         </div>
 
       </div>
-      <div data-step="2" class="js-step display-none reg-sign justify-content-between row ">
-        <div class="col-lg-7 col-md-12">
-          <div data-step="2" data-step-inside="true" class="js-step reg-sign-wrapper">
-            <div data-active="true" class="opening-title form-title">
-              <div class="inner-wrapper">
-                <span></span>
-                <h3>Email / Password <p>for your account</p>
-                </h3>
+      <div data-step="2" class="js-step display-none">
+        <div class="reg-sign justify-content-between row">
+          <div class="col-lg-7 col-md-12">
+            <div data-step="2" data-step-inside="true" class="js-step reg-sign-wrapper">
+              <div data-active="true" class="opening-title form-title">
+                <div class="inner-wrapper">
+                  <span></span>
+                  <h3>Email / Password <p>for your account</p>
+                  </h3>
+                </div>
+                <button style="display: none;" class="edit-btn js-edit-btn" data-step="2">
+                  Edit
+                </button>
               </div>
-              <button style="display: none;" class="edit-btn js-edit-btn" data-step="2">
-                Edit
-              </button>
-            </div>
-            <div style="display: none;" class="js-confirmation-box confirmation-box">
-              <div class="d-flex align-items-center">
-                <img src="img/icons/mail.svg" width="20" height="15" alt="mail">
-                <div class="js-mail-text">info@agrodell.com</div>
-                <div class="is-confirmed d-flex">
-                  <div class="status-text">
-                    confirmed
+              <div style="display: none;" class="js-confirmation-box confirmation-box">
+                <div class="d-flex align-items-center">
+                  <img src="img/icons/mail.svg" width="20" height="15" alt="mail">
+                  <div class="js-mail-text">info@agrodell.com</div>
+                  <div class="is-confirmed d-flex">
+                    <div class="status-text">
+                      confirmed
+                    </div>
+                    <div class="confirm-img">
+                      <img src="img/icons/confirmed.svg" alt="confirm">
+                    </div>
                   </div>
-                  <div class="confirm-img">
-                    <img src="img/icons/confirmed.svg" alt="confirm">
+                </div>
+                <div class="mb-3 d-flex align-items-center">
+                  <img src="img/icons/phone.svg" width="17" height="18" alt="mail">
+                  <div class="js-number-text">
+                    +38 (063) 851-52-52
                   </div>
                 </div>
               </div>
-              <div class="mb-3 d-flex align-items-center">
-                <img src="img/icons/phone.svg" width="17" height="18" alt="mail">
-                <div class="js-number-text">
-                  +38 (063) 851-52-52
+              <div class="step-content">
+                <div class="form-tabs-wrapper">
+                  <button type="button" class="form-tabs-btn active" data-target="#reg-form">Registration</button>
+                  <button type="button" class="form-tabs-btn" data-target="#sign-form">Sign in</button>
                 </div>
-              </div>
-            </div>
-            <div class="step-content">
-              <div class="form-tabs-wrapper">
-                <button type="button" class="form-tabs-btn active" data-target="#reg-form">Registration</button>
-                <button type="button" class="form-tabs-btn" data-target="#sign-form">Sign in</button>
-              </div>
-              <div class="reg-sing-forms-wrapper">
-                <form id="reg-form" class="reg__form my-4">
-                  <label class="col-lg-12 d-block">
-                    <span>Email Address</span>
-                    <input required type="email" value="info@agrodell.com" name="regEmail" placeholder="Email"
-                      class="d-block input w-100">
-                  </label>
-                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                    <span>Password</span>
-                    <input value="123456789" required type="password" name="password" class="d-block input w-100">
-                  </label>
-                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                    <span>Repeat Password</span>
-                    <input value="123456789" required type="password" name="repeatedPassword"
-                      class="d-block input w-100">
-                  </label>
-                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                    <span>Country Number</span>
-                    <span class="arrow-down"></span>
-                    <select required class="form-control" id="switch-countrycode" name="countryCode"
-                      data-title="Select country">
-                      <option value="ukraine:380">Ukraine +380</option>
-                      <option value="russia:7">Russia +7</option>
-                      <option value="uzbekistan:998">Uzbekistan +998</option>
-                    </select>
-                  </label>
-                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                    <input value="0638515252" id="telnumber" required type="tel" name="telNumber"
-                      class="d-block input w-100">
-                  </label>
-                  <div style="display: none;" class="verification-wrapper w-100 align-items-center">
-                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                      <span>Verification Number</span>
-                      <input value="123456789" id="verifition-code" type="password" name="verificationCode"
+                <div class="reg-sing-forms-wrapper">
+                  <form id="reg-form" class="reg__form my-4">
+                    <label class="col-lg-12 d-block">
+                      <span>Email Address</span>
+                      <input required type="email" value="info@agrodell.com" name="regEmail" placeholder="Email"
                         class="d-block input w-100">
                     </label>
-                    <p class="col-lg-6 col-md-6 col-sm-12">Please enter verification number from your email </p>
-                  </div>
-                  <div class="d-flex flex-wrap mb-4 confirm-wrapper align-items-center">
-                    <p class="col-lg-8 col-sm-12">In order to continue registration you need to confirm the email.
-                      Please confirm your Email.</p>
-                    <button type="submit" id="regFormSubmit" class="ml-auto confirm-mail-btn rounded-button">Confirm
-                      Email</button>
-                  </div>
-                </form>
-                <form id="sign-form" style="display: none;" class="sign__form my-4">
-                  <div class="w-100 mb-4 radio-wrapper js-radio-wrapper">
-                    <input checked data-target=".js-email-input-wrapper" value="email" type="radio" name="signInType"
-                      id="emailtoggler">
-                    <label for="emailtoggler"><span></span><span>Email</span></label>
-                    <input type="radio" data-target=".js-phone-input-wrapper" value="tel" name="signInType"
-                      id="phonetoggler">
-                    <label for="phonetoggler"><span></span><span>Phone</span></label>
-
-                  </div>
-                  <label class="js-email-input-wrapper col-lg-6 col-md-6 col-sm-12">
-                    <span>Email Address</span>
-                    <input required type="email" value="info@agrodell.com" name="signInEmail" placeholder="Email"
-                      class="d-block input w-100">
-                  </label>
-                  <label style="display: none;"
-                    class="js-temporary-password-wrapper temporary-password-wrapper col-lg-12 col-md-12 col-sm-12">
-                    <span>Enter temporary password</span>
-                    <input required type="password" value="79622200620" name="temporaryPassword" id="temporary-password"
-                      placeholder="Temporary password" class="d-block input col-lg-6 col-md-6 col-sm-12">
-                    <p>Please enter temporary password
-                      from your email</p>
-                  </label>
-                  <label style="display: none;" class="js-phone-input-wrapper col-lg-6 col-md-6 col-sm-12">
-                    <span>Phone number</span>
-                    <input required type="tel" value="79622200620" name="signInPhone" id="signIn-phone-input"
-                      placeholder="Phone number" class="d-block input w-100">
-                  </label>
-                  <label class="js-password-input-wrapper col-lg-6 col-md-6 col-sm-12">
-                    <span>Password</span>
-                    <input value="123456789" required type="password" name="password" class="d-block input w-100">
-                  </label>
-                  <div class="d-flex flex-wrap mb-4 ml-auto confirm-wrapper align-items-baseline">
-                    <button type="button" class="forgot-password">Forgot password</button>
-                    <button type="submit" id="signInSubmit" class="ml-auto rounded-button" data-forgot="no"
-                      data-confirm="yes">Continue</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="display-none js-step" data-step="3">
-            <div data-active="false" class="opening-title form-title">
-              <div class="inner-wrapper">
-                <span></span>
-                <h3>Billing / Shipping Information</h3>
-              </div>
-              <button style="display: none;" class="edit-btn js-edit-btn" data-step="3">
-                Edit
-              </button>
-            </div>
-            <div style="display: none;" class="confirmation-box billing-info-box">
-              <div class="info-wrapper col-lg-4 col-sm-12">
-                <h3>Billing</h3>
-                <div class="d-flex">
-                  <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
-                  <div class="info-box">
-                    <div class="js-customer-name-text">Denys Nemo</div>
-                    <div class="js-cimpany-name">LCC "Agrodell"</div>
-                  </div>
-                </div>
-                <div class="my-3 d-flex">
-                  <img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
-                  <div class="js-address-text">
-                    Pirogov, 45 St., apt. 54
-                    Vinnytsya / Vinnyts`ka
-                    21000 Ukraine
-                  </div>
-                </div>
-              </div>
-              <div class="info-wrapper col-lg-4 col-sm-12">
-                <h3>Shipping</h3>
-                <div class="d-flex">
-                  <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
-                  <div class="info-box">
-                    <div class="js-billing-address-text">Use billing address</div>
-                  </div>
-                </div>
-              </div>
-              <div class="info-wrapper col-lg-4 col-sm-12">
-                <h3>Company</h3>
-                <div class="d-flex">
-                  <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
-                  <div class="info-box">
-                    <div><img src="img/icons/dhl.png" alt="dhl"></div>
-                  </div>
+                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                      <span>Password</span>
+                      <input value="123456789" required type="password" name="password" class="d-block input w-100">
+                    </label>
+                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                      <span>Repeat Password</span>
+                      <input value="123456789" required type="password" name="repeatedPassword"
+                        class="d-block input w-100">
+                    </label>
+                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                      <span>Country Number</span>
+                      <span class="arrow-down"></span>
+                      <select required class="form-control" id="switch-countrycode" name="countryCode"
+                        data-title="Select country">
+                        <option value="ukraine:380">Ukraine +380</option>
+                        <option value="russia:7">Russia +7</option>
+                        <option value="uzbekistan:998">Uzbekistan +998</option>
+                      </select>
+                    </label>
+                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                      <input value="0638515252" id="telnumber" required type="tel" name="telNumber"
+                        class="d-block input w-100">
+                    </label>
+                    <div style="display: none;" class="verification-wrapper w-100 align-items-center">
+                      <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                        <span>Verification Number</span>
+                        <input value="123456789" id="verifition-code" type="password" name="verificationCode"
+                          class="d-block input w-100">
+                      </label>
+                      <p class="col-lg-6 col-md-6 col-sm-12">Please enter verification number from your email </p>
+                    </div>
+                    <div class="d-flex flex-wrap mb-4 confirm-wrapper align-items-center">
+                      <p class="col-lg-8 col-sm-12">In order to continue registration you need to confirm the email.
+                        Please confirm your Email.</p>
+                      <button type="submit" id="regFormSubmit" class="ml-auto confirm-mail-btn rounded-button">Confirm
+                        Email</button>
+                    </div>
+                  </form>
+                  <form id="sign-form" style="display: none;" class="sign__form my-4">
+                    <div class="w-100 mb-4 radio-wrapper js-radio-wrapper">
+                      <input checked data-target=".js-email-input-wrapper" value="email" type="radio" name="signInType"
+                        id="emailtoggler">
+                      <label for="emailtoggler"><span></span><span>Email</span></label>
+                      <input type="radio" data-target=".js-phone-input-wrapper" value="tel" name="signInType"
+                        id="phonetoggler">
+                      <label for="phonetoggler"><span></span><span>Phone</span></label>
+  
+                    </div>
+                    <label class="js-email-input-wrapper col-lg-6 col-md-6 col-sm-12">
+                      <span>Email Address</span>
+                      <input required type="email" value="info@agrodell.com" name="signInEmail" placeholder="Email"
+                        class="d-block input w-100">
+                    </label>
+                    <label style="display: none;"
+                      class="js-temporary-password-wrapper temporary-password-wrapper col-lg-12 col-md-12 col-sm-12">
+                      <span>Enter temporary password</span>
+                      <input required type="password" value="79622200620" name="temporaryPassword" id="temporary-password"
+                        placeholder="Temporary password" class="d-block input col-lg-6 col-md-6 col-sm-12">
+                      <p>Please enter temporary password
+                        from your email</p>
+                    </label>
+                    <label style="display: none;" class="js-phone-input-wrapper col-lg-6 col-md-6 col-sm-12">
+                      <span>Phone number</span>
+                      <input required type="tel" value="79622200620" name="signInPhone" id="signIn-phone-input"
+                        placeholder="Phone number" class="d-block input w-100">
+                    </label>
+                    <label class="js-password-input-wrapper col-lg-6 col-md-6 col-sm-12">
+                      <span>Password</span>
+                      <input value="123456789" required type="password" name="password" class="d-block input w-100">
+                    </label>
+                    <div class="d-flex flex-wrap mb-4 ml-auto confirm-wrapper align-items-baseline">
+                      <button type="button" class="forgot-password">Forgot password</button>
+                      <button type="submit" id="signInSubmit" class="ml-auto rounded-button" data-forgot="no"
+                        data-confirm="yes">Continue</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            <div class="step-content">
-              <form id="billing-form" class="reg__form my-4">
-                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                  <span>First Name</span>
-                  <input required type="text" value="Denys" name="firstname" placeholder="First Name"
-                    class="d-block input w-100">
-                </label>
-                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                  <span>Last Name</span>
-                  <input value="Nemo" required type="text" name="lastname" class="d-block input w-100">
-                </label>
-                <label class="col-lg-12 d-block">
-                  <span>Company Name</span>
-                  <input value="LCC 'Agrodell'" required type="text" name="companyname" class="d-block input w-100">
-                </label>
-                <label class="col-lg-12 d-block">
-                  <span>Country</span>
-                  <span class="arrow-down"></span>
-                  <select required class="form-control" id="switch-country" name="country" data-title="Select country">
-                    <option value="ukraine">Ukraine </option>
-                    <option value="russia">Russia </option>
-                    <option value="uzbekistan">Uzbekistan </option>
-                  </select>
-                </label>
-                <label class="col-lg-4 col-sm-12 d-block">
-                  <span>City</span>
-                  <span class="arrow-down"></span>
-                  <select required class="form-control" id="switch-city" name="city" data-title="Select city">
-                    <option value="Vinnytsya">Vinnytsya </option>
-                    <option value="Kiev">Kiev </option>
-                    <option value="Donbass">Donbass </option>
-                  </select>
-                </label>
-                <label class="col-lg-4 col-sm-6 d-block">
-                  <span>State</span>
-                  <span class="arrow-down"></span>
-                  <select required class="form-control" id="switch-state" name="state" data-title="Select state">
-                    <option value="Vinnyts'ka">Vinnyts'ka</option>
-                    <option value="Kiev">Kiev</option>
-                    <option value="Donbass">Donbass</option>
-                  </select>
-                </label>
-                <label class="col-lg-4 col-sm-6 d-block">
-                  <span>Postcode</span>
-                  <input value="21000" required type="number" name="postcode" class="d-block input w-100">
-                </label>
-                <div class="flex-column align-items-start w-100 mb-4 radio-wrapper js-radio-wrapper">
-                  <input data-target=".js-billing-address-input-wrapper" value="billing" type="radio" name="billingType"
-                    id="billingAddress">
-                  <label for="billingAddress"><span></span><span>Use billing address</span></label>
-                  <input checked type="radio" data-target=".js-dhl-input-wrapper" value="dhl" name="billingType"
-                    id="dhltoggler">
-                  <label for="dhltoggler"><span></span><span><img src="img/icons/dhl.png" alt="dhl"></span></label>
-
+            <div class="display-none js-step" data-step="3">
+              <div data-active="false" class="opening-title form-title">
+                <div class="inner-wrapper">
+                  <span></span>
+                  <h3>Billing / Shipping Information</h3>
                 </div>
-                <div style="display: none;"
-                  class="js-billing-address-input-wrapper billing-address-input-wrapper w-100">
-                  <h3 class="w-100">Shipping</h3>
+                <button style="display: none;" class="edit-btn js-edit-btn" data-step="3">
+                  Edit
+                </button>
+              </div>
+              <div style="display: none;" class="confirmation-box billing-info-box">
+                <div class="info-wrapper col-lg-4 col-sm-12">
+                  <h3>Billing</h3>
+                  <div class="d-flex">
+                    <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                    <div class="info-box">
+                      <div class="js-customer-name-text">Denys Nemo</div>
+                      <div class="js-cimpany-name">LCC "Agrodell"</div>
+                    </div>
+                  </div>
+                  <div class="my-3 d-flex">
+                    <img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
+                    <div class="js-address-text">
+                      Pirogov, 45 St., apt. 54
+                      Vinnytsya / Vinnyts`ka
+                      21000 Ukraine
+                    </div>
+                  </div>
+                </div>
+                <div class="info-wrapper col-lg-4 col-sm-12">
+                  <h3>Shipping</h3>
+                  <div class="d-flex">
+                    <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
+                    <div class="info-box">
+                      <div class="js-billing-address-text">Use billing address</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="info-wrapper col-lg-4 col-sm-12">
+                  <h3>Company</h3>
+                  <div class="d-flex">
+                    <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
+                    <div class="info-box">
+                      <div><img src="img/icons/dhl.png" alt="dhl"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-content">
+                <form id="billing-form" class="reg__form my-4">
                   <label class="col-lg-6 col-md-6 col-sm-12 d-block">
                     <span>First Name</span>
-                    <input type="text" value="Shwaine" name="firstname" placeholder="First Name"
+                    <input required type="text" value="Denys" name="firstname" placeholder="First Name"
                       class="d-block input w-100">
                   </label>
                   <label class="col-lg-6 col-md-6 col-sm-12 d-block">
                     <span>Last Name</span>
-                    <input value="Gette" type="text" name="lastname" class="d-block input w-100">
+                    <input value="Nemo" required type="text" name="lastname" class="d-block input w-100">
                   </label>
                   <label class="col-lg-12 d-block">
                     <span>Company Name</span>
-                    <input type="text" name="companyname" class="d-block input w-100">
-                  </label>
-                  <label class="col-lg-12 d-block">
-                    <span>Address</span>
-                    <input value="Roza Luksenberg, 69 St., apt. 69" type="text" name="companyname"
-                      class="d-block input w-100">
+                    <input value="LCC 'Agrodell'" required type="text" name="companyname" class="d-block input w-100">
                   </label>
                   <label class="col-lg-12 d-block">
                     <span>Country</span>
                     <span class="arrow-down"></span>
-                    <select class="form-control" id="switch-billing-country" name="country" data-title="Select country">
-                      <option value="germany">Germany</option>
+                    <select required class="form-control" id="switch-country" name="country" data-title="Select country">
+                      <option value="ukraine">Ukraine </option>
                       <option value="russia">Russia </option>
                       <option value="uzbekistan">Uzbekistan </option>
                     </select>
@@ -1476,8 +1416,8 @@
                   <label class="col-lg-4 col-sm-12 d-block">
                     <span>City</span>
                     <span class="arrow-down"></span>
-                    <select class="form-control" id="switch-billing-city" name="city" data-title="Select city">
-                      <option value="Berlin">Berlin </option>
+                    <select required class="form-control" id="switch-city" name="city" data-title="Select city">
+                      <option value="Vinnytsya">Vinnytsya </option>
                       <option value="Kiev">Kiev </option>
                       <option value="Donbass">Donbass </option>
                     </select>
@@ -1485,159 +1425,221 @@
                   <label class="col-lg-4 col-sm-6 d-block">
                     <span>State</span>
                     <span class="arrow-down"></span>
-                    <select class="form-control" id="switch-billing-state" name="state" data-title="Select state">
-                      <option value="Marienfelde">Marienfelde</option>
+                    <select required class="form-control" id="switch-state" name="state" data-title="Select state">
+                      <option value="Vinnyts'ka">Vinnyts'ka</option>
                       <option value="Kiev">Kiev</option>
                       <option value="Donbass">Donbass</option>
                     </select>
                   </label>
                   <label class="col-lg-4 col-sm-6 d-block">
                     <span>Postcode</span>
-                    <input value="21000" type="number" name="postcode" class="d-block input w-100">
+                    <input value="21000" required type="number" name="postcode" class="d-block input w-100">
                   </label>
-                  <div class="d-flex flex-column align-items-start w-100 mb-4 radio-wrapper js-radio-wrapper">
-                    <input checked value="billing" type="checkbox" name="billingtoggler"
-                      data-target=".js-billing-address-input-wrapper" id="billingAddressToggler">
-                    <label for="billingAddressToggler"><span></span><span>Use billing address</span></label>
+                  <div class="flex-column align-items-start w-100 mb-4 radio-wrapper js-radio-wrapper">
+                    <input data-target=".js-billing-address-input-wrapper" value="billing" type="radio" name="billingType"
+                      id="billingAddress">
+                    <label for="billingAddress"><span></span><span>Use billing address</span></label>
+                    <input checked type="radio" data-target=".js-dhl-input-wrapper" value="dhl" name="billingType"
+                      id="dhltoggler">
+                    <label for="dhltoggler"><span></span><span><img src="img/icons/dhl.png" alt="dhl"></span></label>
+  
                   </div>
-                  <label class="col-lg-4 col-md-4 col-sm-6 d-block">
-                    <span>Delivery</span>
-                    <span class="arrow-down"></span>
-                    <select class="form-control" id="switch-method" name="shipping-method" data-title="Select country">
-                      <option value="dhl">DHL</option>
-                      <option value="dhl2">DHL2 </option>
-                      <option value="dhl3">DHL3 </option>
-                    </select>
+                  <div style="display: none;"
+                    class="js-billing-address-input-wrapper billing-address-input-wrapper w-100">
+                    <h3 class="w-100">Shipping</h3>
+                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                      <span>First Name</span>
+                      <input type="text" value="Shwaine" name="firstname" placeholder="First Name"
+                        class="d-block input w-100">
+                    </label>
+                    <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                      <span>Last Name</span>
+                      <input value="Gette" type="text" name="lastname" class="d-block input w-100">
+                    </label>
+                    <label class="col-lg-12 d-block">
+                      <span>Company Name</span>
+                      <input type="text" name="companyname" class="d-block input w-100">
+                    </label>
+                    <label class="col-lg-12 d-block">
+                      <span>Address</span>
+                      <input value="Roza Luksenberg, 69 St., apt. 69" type="text" name="companyname"
+                        class="d-block input w-100">
+                    </label>
+                    <label class="col-lg-12 d-block">
+                      <span>Country</span>
+                      <span class="arrow-down"></span>
+                      <select class="form-control" id="switch-billing-country" name="country" data-title="Select country">
+                        <option value="germany">Germany</option>
+                        <option value="russia">Russia </option>
+                        <option value="uzbekistan">Uzbekistan </option>
+                      </select>
+                    </label>
+                    <label class="col-lg-4 col-sm-12 d-block">
+                      <span>City</span>
+                      <span class="arrow-down"></span>
+                      <select class="form-control" id="switch-billing-city" name="city" data-title="Select city">
+                        <option value="Berlin">Berlin </option>
+                        <option value="Kiev">Kiev </option>
+                        <option value="Donbass">Donbass </option>
+                      </select>
+                    </label>
+                    <label class="col-lg-4 col-sm-6 d-block">
+                      <span>State</span>
+                      <span class="arrow-down"></span>
+                      <select class="form-control" id="switch-billing-state" name="state" data-title="Select state">
+                        <option value="Marienfelde">Marienfelde</option>
+                        <option value="Kiev">Kiev</option>
+                        <option value="Donbass">Donbass</option>
+                      </select>
+                    </label>
+                    <label class="col-lg-4 col-sm-6 d-block">
+                      <span>Postcode</span>
+                      <input value="21000" type="number" name="postcode" class="d-block input w-100">
+                    </label>
+                    <div class="d-flex flex-column align-items-start w-100 mb-4 radio-wrapper js-radio-wrapper">
+                      <input checked value="billing" type="checkbox" name="billingtoggler"
+                        data-target=".js-billing-address-input-wrapper" id="billingAddressToggler">
+                      <label for="billingAddressToggler"><span></span><span>Use billing address</span></label>
+                    </div>
+                    <label class="col-lg-4 col-md-4 col-sm-6 d-block">
+                      <span>Delivery</span>
+                      <span class="arrow-down"></span>
+                      <select class="form-control" id="switch-method" name="shipping-method" data-title="Select country">
+                        <option value="dhl">DHL</option>
+                        <option value="dhl2">DHL2 </option>
+                        <option value="dhl3">DHL3 </option>
+                      </select>
+                    </label>
+                    <div class="shipping-price">$ <span>25</span> us</div>
+                  </div>
+                  <div class="w-100 button-wrapper">
+                    <button type="button"
+                      class="shipping-continue-btn js-shipping-continue-btn rounded-button">Countinue</button>
+                  </div>
+                </form>
+  
+              </div>
+            </div>
+            <div class="js-step display-none" data-step="4">
+              <div data-active="false" class="opening-title form-title">
+                <div class="inner-wrapper">
+                  <span></span>
+                  <h3 class="d-flex align-items-baseline">Payment
+                    <div class="ml-3 payment-methods-wrapper d-flex align-items-end">
+                      <img width="27" height="18" src="img/icons/visa.svg" alt="icon1">
+                      <img width="27" height="18" src="img/icons/mastercard.svg" alt="icon2">
+                      <img width="27" height="18" src="img/icons/gpay.svg" alt="icon3">
+                      <img width="27" height="18" src="img/icons/apple-pay.svg" alt="icon4">
+                    </div>
+                  </h3>
+                </div>
+                <button style="display: none;" class="edit-btn js-edit-btn" data-step="4">Edit</button>
+              </div>
+              <div style="display: none;" class="payment-info-box confirmation-box billing-info-box">
+                <div class="info-wrapper w-100">
+                  <div class="d-flex">
+                    <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                    <div class="info-box">
+                      <div class="js-customer-name-text">Denys Nemo</div>
+                    </div>
+                  </div>
+                  <div class="my-3 d-flex">
+                    <img src="img/icons/card-r.svg" width="20" height="13" alt="mail">
+                    <div class="js-card-text">
+                      85845-5662-3242-5487
+                    </div>
+                    <div class="js-card-expered-date">
+                      10/25
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-content">
+                <form id="payment-card-form" class="reg__form my-4">
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <span>First Name</span>
+                    <input required type="text" name="firstname" placeholder="Enter your Name"
+                      class="d-block input w-100">
                   </label>
-                  <div class="shipping-price">$ <span>25</span> us</div>
-                </div>
-                <div class="w-100 button-wrapper">
-                  <button type="button"
-                    class="shipping-continue-btn js-shipping-continue-btn rounded-button">Countinue</button>
-                </div>
-              </form>
-
+                  <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                    <span>Last Name</span>
+                    <input required type="text" name="lastname" placeholder="Enter your Last Name"
+                      class="d-block input w-100">
+                  </label>
+                  <div class="card-input-wrapper w-100">
+                    <label class="d-block">
+                      <img src="img/icons/card-r.svg" alt="card">
+                      <input id="cardnumber" required type="text" name="cardnumber" autocomplete="on"
+                        class="d-block input w-100">
+                    </label>
+                    <label class="d-block">
+                      <input id="carddate" required type="text" name="carddate" placeholder="MM/YY" autocomplete="on"
+                        class="d-block input w-100">
+                    </label>
+                    <label class="d-block">
+                      <input required maxlength="3" type="password" name="cardcode" placeholder="CVC" autocomplete="on"
+                        class="d-block input w-100">
+                    </label>
+                  </div>
+                  <div class="w-100 button-wrapper">
+                    <button type="button" class="payment-btn js-payment-btn rounded-button">Countinue</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-          <div class="js-step display-none" data-step="4">
-            <div data-active="false" class="opening-title form-title">
+          <div class="reg-sign__card js-reg-sign__card col-lg-4 col-md-12 shopping-card__card">
+            <div class="opening-title mb-3">
               <div class="inner-wrapper">
                 <span></span>
-                <h3 class="d-flex align-items-baseline">Payment
-                  <div class="ml-3 payment-methods-wrapper d-flex align-items-end">
-                    <img width="27" height="18" src="img/icons/visa.svg" alt="icon1">
-                    <img width="27" height="18" src="img/icons/mastercard.svg" alt="icon2">
-                    <img width="27" height="18" src="img/icons/gpay.svg" alt="icon3">
-                    <img width="27" height="18" src="img/icons/apple-pay.svg" alt="icon4">
-                  </div>
-                </h3>
+                <h3>Order Summary</h3>
               </div>
-              <button style="display: none;" class="edit-btn js-edit-btn" data-step="4">Edit</button>
             </div>
-            <div style="display: none;" class="payment-info-box confirmation-box billing-info-box">
-              <div class="info-wrapper w-100">
-                <div class="d-flex">
-                  <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
-                  <div class="info-box">
-                    <div class="js-customer-name-text">Denys Nemo</div>
-                  </div>
+            <div class="item">
+              <div class="top1">
+                <img src="img/logo.svg" alt="logo">
+                <span class="right-span">
+                  <div class="text tariff-name">PRO</div>
+                </span>
+              </div>
+  
+              <h1><span class="let js-package-amount">3</span> pc</h1>
+  
+              <div class="top3">
+                <div class="basket-items-wrapper">
+                  
                 </div>
-                <div class="my-3 d-flex">
-                  <img src="img/icons/card-r.svg" width="20" height="13" alt="mail">
-                  <div class="js-card-text">
-                    85845-5662-3242-5487
-                  </div>
-                  <div class="js-card-expered-date">
-                    10/25
-                  </div>
+                <span class="line"></span>
+                <form class="discount-form my-3 w-100 justify-content-between align-items-center">
+                  <input type="text" required placeholder="Discount Code" name="discountCode"
+                    class="py-1 px-3 discount-input input">
+                  <button class="btn-discount py-1 px-3" type="submit">Apply</button>
+                </form>
+                <button class="btn-gift-card-togger">Have a Gift Card?</button>
+                <form style="display: none;" class="giftcard-form my-3 w-100 justify-content-between align-items-center">
+                  <input required type="text" placeholder="Gift Card" name="giftCard"
+                    class="py-1 px-3 discount-input input">
+                  <button disabled class="btn-gift-card py-1 px-3" type="submit">Apply</button>
+                </form>
+                <div style="display: none"
+                  class="subtotal-wrapper discount-info justify-content-between align-items-center">
+                  <span class="d-block">Discount</span>
+                  <div><span class="js-discount-amount">0</span> %</div>
                 </div>
-              </div>
-            </div>
-            <div class="step-content">
-              <form id="payment-card-form" class="reg__form my-4">
-                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                  <span>First Name</span>
-                  <input required type="text" name="firstname" placeholder="Enter your Name"
-                    class="d-block input w-100">
-                </label>
-                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                  <span>Last Name</span>
-                  <input required type="text" name="lastname" placeholder="Enter your Last Name"
-                    class="d-block input w-100">
-                </label>
-                <div class="card-input-wrapper w-100">
-                  <label class="d-block">
-                    <img src="img/icons/card-r.svg" alt="card">
-                    <input id="cardnumber" required type="text" name="cardnumber" autocomplete="on"
-                      class="d-block input w-100">
-                  </label>
-                  <label class="d-block">
-                    <input id="carddate" required type="text" name="carddate" placeholder="MM/YY" autocomplete="on"
-                      class="d-block input w-100">
-                  </label>
-                  <label class="d-block">
-                    <input required maxlength="3" type="password" name="cardcode" placeholder="CVC" autocomplete="on"
-                      class="d-block input w-100">
-                  </label>
+                <div class="subtotal-wrapper justify-content-between align-items-center">
+                  <span class="d-block">Subtotal</span>
+                  <div class="total-price m-0">$ <span
+                      class="total-price-amount js-total-price-amount js-subtotal-amount">1550</span> us</div>
                 </div>
-                <div class="w-100 button-wrapper">
-                  <button type="button" class="payment-btn js-payment-btn rounded-button">Countinue</button>
+                <div class="total-price mt-3">
+                  $ <span class="total-price-amount js-total-price-amount">1550</span> us
                 </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="reg-sign__card js-reg-sign__card col-lg-4 col-md-12 shopping-card__card">
-          <div class="opening-title mb-3">
-            <div class="inner-wrapper">
-              <span></span>
-              <h3>Order Summary</h3>
-            </div>
-          </div>
-          <div class="item">
-            <div class="top1">
-              <img src="img/logo.svg" alt="logo">
-              <span class="right-span">
-                <div class="text tariff-name">PRO</div>
-              </span>
-            </div>
-
-            <h1><span class="let js-package-amount">3</span> pc</h1>
-
-            <div class="top3">
-              <div class="basket-items-wrapper">
-                
-              </div>
-              <span class="line"></span>
-              <form class="discount-form my-3 w-100 justify-content-between align-items-center">
-                <input type="text" required placeholder="Discount Code" name="discountCode"
-                  class="py-1 px-3 discount-input input">
-                <button class="btn-discount py-1 px-3" type="submit">Apply</button>
-              </form>
-              <button class="btn-gift-card-togger">Have a Gift Card?</button>
-              <form style="display: none;" class="giftcard-form my-3 w-100 justify-content-between align-items-center">
-                <input required type="text" placeholder="Gift Card" name="giftCard"
-                  class="py-1 px-3 discount-input input">
-                <button disabled class="btn-gift-card py-1 px-3" type="submit">Apply</button>
-              </form>
-              <div style="display: none"
-                class="subtotal-wrapper discount-info justify-content-between align-items-center">
-                <span class="d-block">Discount</span>
-                <div><span class="js-discount-amount">0</span> %</div>
-              </div>
-              <div class="subtotal-wrapper justify-content-between align-items-center">
-                <span class="d-block">Subtotal</span>
-                <div class="total-price m-0">$ <span
-                    class="total-price-amount js-total-price-amount js-subtotal-amount">1550</span> us</div>
-              </div>
-              <div class="total-price mt-3">
-                $ <span class="total-price-amount js-total-price-amount">1550</span> us
-              </div>
-              <button type="button" style="display: none;" class="rounded-button js-btn-confirm-and-pay mt-3" tabindex="0">Сonfirm and Pay</button>
-              <div class="payed-card-box">
-                <img src="img/icons/map-g.svg" alt="map">
-                <span>Congratulations
-                  Payment was successful</span>
+                <button type="button" style="display: none;" class="rounded-button js-btn-confirm-and-pay mt-3" tabindex="0">Сonfirm and Pay</button>
+                <div class="payed-card-box">
+                  <img src="img/icons/map-g.svg" alt="map">
+                  <span>Congratulations
+                    Payment was successful</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1678,7 +1680,7 @@
         </div>
       </div>
       <button class="rounded-button basket-checkout js-basket-checkout my-3 ml-auto d-block"
-        onclick="$(`.step-button[data-step='2']`).trigger('click')">CHECKOUT</button>
+        >CHECKOUT</button>
     </div>
   </div>
 

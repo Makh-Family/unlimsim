@@ -53,6 +53,7 @@ gulp.task('scripts', function() {
 		'node_modules/slick-carousel/slick/slick.js',
 		'app/js/main.js',
 		'app/js/index.js',
+		'app/js/my.js'
 	])
 	// .pipe(babel({
 	// 	presets: ['@babel/env'],
