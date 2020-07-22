@@ -29080,12 +29080,1008 @@ $(document).ready(function () {
     });
 
 });
+function generateBasketItemForm(data,counter) {
+  return `
+  <div class="js-basket-form__item w-100 row" data-item="${counter + 1}">
+    <form class="shopping-card__form col-lg-7 col-md-12">
+      <div class="left-item mb-5">
+        <div class="inner-box">
+          <h5>Location</h5>
+          <div class="item-box plans-block my-3">
+            <button type="button" class="btn btn-show-countries" data-target="#map">?</button>
+            <div class="row">
+              <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                <img src="img/icons/icon1-r.png" alt="icon1" width="85" height="50" />
+              </div>
+
+              <div class="row col-sm-10">
+                <div class="col-sm-6 bs-select-wrapper" data-type="plan" id="plan-select">
+                  <select class="form-control selectpicker" id="switch-location" name="location"
+                    data-title="Select location" data-width="100%" data-dropup-auto="false">
+                    <option value="worldwide">Worldwide</option>
+                    <option value="region">Region</option>
+                    <option value="country">Country</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 bs-select-wrapper" data-type="tariff" id="tariff-select">
+                  <select class="form-control selectpicker" id="switch-tariff" name="tariff" data-title="Select type"
+                    data-width="100%" data-dropup-auto="false">
+                    <option value="start" selected>Unlim START</option>
+                    <option value="pro">Unlim PRO</option>
+                    <option value="max">Unlim MAX</option>
+                    <option value="maxpro">Unlim MAX PRO</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 bs-select-wrapper after-plan" data-type="continent" id="region-select">
+                  <select class="form-control selectpicker" name="region" data-title="Select region" data-width="100%"
+                    data-dropup-auto="false">
+                    <!-- <option selected>Select region</option> -->
+                    <option value="Asia">Asia</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Europe">Europe</option>
+                    <option value="N. America">North America</option>
+                    <option value="S. America">South America</option>
+                  </select>
+                </div>
+
+                <div class="col-sm-6 bs-select-wrapper after-plan" data-type="country" id="country-select">
+                  <!-- data-size="500" -->
+                  <select class="form-control selectpicker" name="country" data-live-search="true"
+                    data-live-search-style="startsWith" data-title="Select country" data-width="100%"
+                    data-dropup-auto="false">
+                    <!-- <option selected>Select country</option> -->
+                    <optgroup label="A">
+                      <option>ALBANIA</option>
+                      <option>ALGERIA</option>
+                      <option>ANGUILLA</option>
+                      <option>ANTIGUA AND BARBUDA</option>
+                      <option>ARMENIA</option>
+                      <option>AUSTRALIA</option>
+                      <option>AUSTRIA</option>
+                      <option>AZERBAIJAN</option>
+                    </optgroup>
+
+                    <optgroup label="B">
+                      <option>BAHRAIN</option>
+                      <option>BANGLADESH</option>
+                      <option>BARBADOS</option>
+                      <option>BELARUS</option>
+                      <option>BELGIUM</option>
+                      <option>BELIZE</option>
+                      <option>BOSNIA & HERZEGOVINA</option>
+                      <option>BRAZIL</option>
+                      <option>BRUNEI</option>
+                      <option>BULGARIA</option>
+                      <option>BURKINA FASO</option>
+                    </optgroup>
+
+                    <optgroup label="C">
+                      <option>CAMBODIA</option>
+                      <option>CAMEROON</option>
+                      <option>CANADA</option>
+                      <option>CAYMAN ISLANDS</option>
+                      <option>CHAD</option>
+                      <option>CHILE</option>
+                      <option>CHINA</option>
+                      <option>COLOMBIA</option>
+                      <option>CONGO</option>
+                      <option>CONGO DEM REP</option>
+                      <option>COSTA RICA</option>
+                      <option>COTE D'IVOIRE (IVORY COAST)</option>
+                      <option>CROATIA</option>
+                      <option>CURACAO</option>
+                      <option>CYPRUS</option>
+                      <option>CZECH REPUBLIC</option>
+                    </optgroup>
+
+                    <optgroup label="D">
+                      <option>DENMARK</option>
+                      <option>DOMINICA</option>
+                    </optgroup>
+
+                    <optgroup label="E">
+                      <option>ECUADOR</option>
+                      <option>EGYPT</option>
+                      <option>EL SALVADOR</option>
+                      <option>ESTONIA</option>
+                      <option>ETHIOPIA</option>
+                    </optgroup>
+
+                    <optgroup label="F">
+                      <option>FAROE ISLANDS</option>
+                      <option>FIJI</option>
+                      <option>FINLAND</option>
+                      <option>FRANCE</option>
+                      <option>FRENCH GUIANA</option>
+                    </optgroup>
+
+                    <optgroup label="G">
+                      <option>GABON</option>
+                      <option>GEORGIA</option>
+                      <option>GERMANY</option>
+                      <option>GHANA</option>
+                      <option>GIBRALTAR</option>
+                      <option>GREECE</option>
+                      <option>GREENLAND</option>
+                      <option>GRENADA</option>
+                      <option>GUADELOUPE</option>
+                      <option>GUINEA</option>
+                      <option>GUYANA</option>
+                    </optgroup>
+
+                    <optgroup label="H">
+                      <option>HAITI</option>
+                      <option>HAWAII - USA</option>
+                      <option>HONDURAS</option>
+                      <option>HONG KONG</option>
+                      <option>HUNGARY</option>
+                    </optgroup>
+
+                    <optgroup label="I">
+                      <option>ICELAND</option>
+                      <option>INDIA</option>
+                      <option>INDONESIA</option>
+                      <option>IRAN</option>
+                      <option>IRELAND</option>
+                      <option>ISRAEL</option>
+                      <option>ITALY</option>
+                    </optgroup>
+
+                    <optgroup label="J">
+                      <option>JAMAICA</option>
+                      <option>JAPAN</option>
+                      <option>JERSEY ISLAND</option>
+                      <option>JORDAN</option>
+                    </optgroup>
+
+                    <optgroup label="K">
+                      <option>KAZAKHSTAN</option>
+                      <option>KENYA</option>
+                      <option>KUWAIT</option>
+                      <option>KYRGYZSTAN</option>
+                    </optgroup>
+
+                    <optgroup label="L">
+                      <option>LAOS</option>
+                      <option>LATVIA</option>
+                      <option>LIECHTENSTEIN</option>
+                      <option>LITHUANIA</option>
+                      <option>LUXEMBOURG</option>
+                    </optgroup>
+
+                    <optgroup label="M">
+                      <option>MACAU</option>
+                      <option>MACEDONIA</option>
+                      <option>MADAGASCAR</option>
+                      <option>MALAWI</option>
+                      <option>MALAYSIA</option>
+                      <option>MALTA</option>
+                      <option>MARTINIQUE</option>
+                      <option>MEXICO</option>
+                      <option>MOLDOVA</option>
+                      <option>MONGOLIA</option>
+                      <option>MONTENEGRO</option>
+                      <option>MONTSERRAT</option>
+                      <option>MOROCCO</option>
+                      <option>MOZAMBIQUE</option>
+                      <option>MYANMAR</option>
+                    </optgroup>
+
+                    <optgroup label="N">
+                      <option>NAMIBIA</option>
+                      <option>NAURU</option>
+                      <option>NEPAL</option>
+                      <option>NETHERLANDS</option>
+                      <option>NETHERLANDS ANTILLES</option>
+                      <option>NEW ZEALAND</option>
+                      <option>NICARAGUA</option>
+                      <option>NIGERIA</option>
+                      <option>NORTHERN IRELAND</option>
+                      <option>NORWAY</option>
+                    </optgroup>
+
+                    <optgroup label="O">
+                      <option>OMAN</option>
+                    </optgroup>
+
+                    <optgroup label="P">
+                      <option>PAKISTAN</option>
+                      <option>PALESTINE</li>
+                      <option>PANAMA</li>
+                      <option>PAPUA NEW GUINEA</li>
+                      <option>PARAGUAY</option>
+                      <option>PERU</option>
+                      <option>PHILIPPINES</option>
+                      <option>POLAND</option>
+                      <option>PORTUGAL</option>
+                    </optgroup>
+
+                    <optgroup label="Q">
+                      <option>QATAR</option>
+                    </optgroup>
+
+                    <optgroup label="R">
+                      <option>ROMANIA</option>
+                      <option>RUSSIAN FEDERATION</option>
+                      <option>RWANDA</option>
+                    </optgroup>
+
+                    <optgroup label="S">
+                      <option>SAINT KITTS & NEVIS</option>
+                      <option>SAINT MARTIN(FRENCH)</option>
+                      <option>SAUDI ARABIA</option>
+                      <option>SCOTLAND</option>
+                      <option>SENEGAL</option>
+                      <option>SERBIA</option>
+                      <option>SINGAPORE</option>
+                      <option>SINT MAARTEN(DUTCH)</option>
+                      <option>SLOVAKIA</option>
+                      <option>SLOVENIA</option>
+                      <option>SOUTH AFRICA</option>
+                      <option>SOUTH KOREA</option>
+                      <option>SPAIN</option>
+                      <option>SRI LANKA</option>
+                      <option>ST BARTHELEMY</option>
+                      <option>ST LUCIA</option>
+                      <option>ST VINCENT AND THE GRENADINES</option>
+                      <option>SURINAME</option>
+                      <option>SWEDEN</option>
+                      <option>SWITZERLAND</option>
+                    </optgroup>
+
+                    <optgroup label="T">
+                      <option>TAIWAN</option>
+                      <option>TAJIKISTAN</option>
+                      <option>TANZANIA</option>
+                      <option>THAILAND</option>
+                      <option>TONGA</option>
+                      <option>TRINIDAD AND TOBAGO</option>
+                      <option>TUNISIA</option>
+                      <option>TURKEY</option>
+                      <option>TURKS & CAICOS ISLANDS</option>
+                    </optgroup>
+
+                    <optgroup label="U">
+                      <option>UGANDA</option>
+                      <option>UKRAINE</option>
+                      <option>UNITED ARAB EMIRATES</option>
+                      <option>UNITED KINGDOM</option>
+                      <option>UNITED STATES</option>
+                      <option>URUGUAY</option>
+                      <option>UZBEKISTAN</option>
+                    </optgroup>
+
+                    <optgroup label="V">
+                      <option>VANUATU</option>
+                      <option>VENEZUELA</option>
+                      <option>VIETNAM</option>
+                      <option>VIRGIN ISLANDS BRITISH</option>
+                      <option>VIRGIN ISLANDS U.S</option>
+                    </optgroup>
+
+                    <optgroup label="W">
+                      <option>WALES</option>
+                    </optgroup>
+
+                    <optgroup label="Z">
+                      <option>ZAMBIA</option>
+                      <option>ZIMBABWE</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="inner-box">
+          <h5>Internet data</h5>
+          <div class="item-box my-3">
+            <div class="row">
+              <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                <img src="img/icons/icon2-r.png" alt="icon1" width="30" height="30" />
+              </div>
+
+              <div class="row col-sm-10">
+                <div class="col-sm-6 bs-select-wrapper" data-type="gbAmount" id="enter-gb">
+                  <select class="form-control selectpicker" name="gb" data-live-search="true"
+                    data-live-search-placeholder="Custom Gb" data-live-search-style="startsWith" data-title="Enter Gb"
+                    data-width="100%" data-dropup-auto="false">
+                    <!-- <option selected>Enter Gb</option> -->
+                    <option value="1">1 Gb</option>
+                    <option value="3">3 Gb</option>
+                    <option value="5">5 Gb</option>
+                    <option value="10">10 Gb</option>
+                    <option value="15">15 Gb</option>
+                    <option value="20">20 Gb</option>
+                    <option value="30">30 Gb</option>
+                    <option value="40">40 Gb</option>
+                    <option value="50">50 Gb</option>
+                    <option value="70">70 Gb</option>
+                    <option value="100">100 Gb</option>
+                  </select>
+                </div>
+
+                <div class="col-sm-6 bs-select-wrapper" data-type="period" id="enter-period">
+                  <select class="form-control selectpicker" name="period" data-title="Enter period" data-width="100%"
+                    data-dropup-auto="false">
+                    <option value="1">1 day</option>
+                    <option value="7">7 days</option>
+                    <option value="14">14 days</option>
+                    <option value="28">28 days</option>
+                    <option value="56">56 days</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="inner-box" style="display: none;" data-service="voice-sms">
+          <h5>Voice / SMS* <span>(*Sending / receiving SMS only by mail</span></h5>
+          <div class="item-box my-3">
+            <div class="row">
+              <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                <img src="img/icons/icon5-r.png" alt="icon1" width="42" height="35" />
+              </div>
+
+              <div class="row col-sm-10">
+                <div class="col-sm-6 bs-select-wrapper" data-type="balance" id="enter-balance">
+                  <select class="form-control selectpicker" name="VSbalance" data-live-search="true"
+                    data-live-search-placeholder="Custom Balance" data-live-search-style="startsWith"
+                    data-title="Enter Balance $" data-width="100%" data-dropup-auto="false">
+                    <!-- <option selected>Enter Balance $</option> -->
+                    <option value="1">1 $</option>
+                    <option value="3">3 $</option>
+                    <option value="5">5 $</option>
+                    <option value="10">10 $</option>
+                    <option value="15">15 $</option>
+                    <option value="20">20 $</option>
+                    <option value="30">30 $</option>
+                    <option value="40">40 $</option>
+                    <option value="50">50 $</option>
+                    <option value="70">70 $</option>
+                    <option value="100">100 $</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 bs-select-wrapper" data-type="VSperiod" id="VS-period">
+                  <select class="form-control selectpicker" name="VSperiod" data-title="Enter period" data-width="100%"
+                    data-dropup-auto="false">
+                    <option value="1">1 day</option>
+                    <option value="7">7 days</option>
+                    <option value="14">14 days</option>
+                    <option value="28">28 days</option>
+                    <option value="56">56 days</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="inner-box" style="display: none;" data-service="virtual-number">
+          <h5>Virtual number</h5>
+          <div class="item-box my-3">
+            <div class="row">
+              <div class="col-sm-2 d-flex justify-content-center align-items-center">
+                <img src="img/icons/icon3-r-list.png" alt="icon1" width="56" height="56" />
+              </div>
+              <div class="col-sm-4 bs-select-wrapper" data-type="virtualPeriod">
+                <select class="form-control selectpicker" name="Vperiod" data-title="Enter period" data-width="100%"
+                  data-dropup-auto="false">
+                  <option value="1">1 month</option>
+                  <option value="3">3 month</option>
+                  <option value="6">6 month</option>
+                  <option value="12">12 month</option>
+                </select>
+              </div>
+              <div class="col-sm-4"></div>
+              <div class="join-info col-sm-9 ml-auto" style="display: none;">
+                <div class="location-info">
+                  <span>Country:</span><span class="country-name"></span>
+                  /
+                  <span>Region: </span><span class="region-name"></span>
+                </div>
+                <div class="number-info">
+                  <span>Virtual number: </span><span class="virtual-number"></span>
+                </div>
+              </div>
+              <div class="inner-box virtual-inner col-sm-9 ml-auto">
+                <h5>Please make your choice</h5>
+                <div class="row">
+                  <div class="col-sm-6 bs-select-wrapper my-3" id="countries-select">
+                    <select class="form-control selectpicker" name="Vcountry" data-live-search="true"
+                      data-live-search-style="startsWith" data-title="Select country" data-width="100%"
+                      data-dropup-auto="false">
+                      <!-- <option selected>Select country</option> -->
+                      <optgroup label="A">
+                        <option>ALBANIA</option>
+                        <option>ALGERIA</option>
+                        <option>ANGUILLA</option>
+                        <option>ANTIGUA AND BARBUDA</option>
+                        <option>ARMENIA</option>
+                        <option>AUSTRALIA</option>
+                        <option>AUSTRIA</option>
+                        <option>AZERBAIJAN</option>
+                      </optgroup>
+
+                      <optgroup label="B">
+                        <option>BAHRAIN</option>
+                        <option>BANGLADESH</option>
+                        <option>BARBADOS</option>
+                        <option>BELARUS</option>
+                        <option>BELGIUM</option>
+                        <option>BELIZE</option>
+                        <option>BOSNIA & HERZEGOVINA</option>
+                        <option>BRAZIL</option>
+                        <option>BRUNEI</option>
+                        <option>BULGARIA</option>
+                        <option>BURKINA FASO</option>
+                      </optgroup>
+
+                      <optgroup label="C">
+                        <option>CAMBODIA</option>
+                        <option>CAMEROON</option>
+                        <option>CANADA</option>
+                        <option>CAYMAN ISLANDS</option>
+                        <option>CHAD</option>
+                        <option>CHILE</option>
+                        <option>CHINA</option>
+                        <option>COLOMBIA</option>
+                        <option>CONGO</option>
+                        <option>CONGO DEM REP</option>
+                        <option>COSTA RICA</option>
+                        <option>COTE D'IVOIRE (IVORY COAST)</option>
+                        <option>CROATIA</option>
+                        <option>CURACAO</option>
+                        <option>CYPRUS</option>
+                        <option>CZECH REPUBLIC</option>
+                      </optgroup>
+
+                      <optgroup label="D">
+                        <option>DENMARK</option>
+                        <option>DOMINICA</option>
+                      </optgroup>
+
+                      <optgroup label="E">
+                        <option>ECUADOR</option>
+                        <option>EGYPT</option>
+                        <option>EL SALVADOR</option>
+                        <option>ESTONIA</option>
+                        <option>ETHIOPIA</option>
+                      </optgroup>
+
+                      <optgroup label="F">
+                        <option>FAROE ISLANDS</option>
+                        <option>FIJI</option>
+                        <option>FINLAND</option>
+                        <option>FRANCE</option>
+                        <option>FRENCH GUIANA</option>
+                      </optgroup>
+
+                      <optgroup label="G">
+                        <option>GABON</option>
+                        <option>GEORGIA</option>
+                        <option>GERMANY</option>
+                        <option>GHANA</option>
+                        <option>GIBRALTAR</option>
+                        <option>GREECE</option>
+                        <option>GREENLAND</option>
+                        <option>GRENADA</option>
+                        <option>GUADELOUPE</option>
+                        <option>GUINEA</option>
+                        <option>GUYANA</option>
+                      </optgroup>
+
+                      <optgroup label="H">
+                        <option>HAITI</option>
+                        <option>HAWAII - USA</option>
+                        <option>HONDURAS</option>
+                        <option>HONG KONG</option>
+                        <option>HUNGARY</option>
+                      </optgroup>
+
+                      <optgroup label="I">
+                        <option>ICELAND</option>
+                        <option>INDIA</option>
+                        <option>INDONESIA</option>
+                        <option>IRAN</option>
+                        <option>IRELAND</option>
+                        <option>ISRAEL</option>
+                        <option>ITALY</option>
+                      </optgroup>
+
+                      <optgroup label="J">
+                        <option>JAMAICA</option>
+                        <option>JAPAN</option>
+                        <option>JERSEY ISLAND</option>
+                        <option>JORDAN</option>
+                      </optgroup>
+
+                      <optgroup label="K">
+                        <option>KAZAKHSTAN</option>
+                        <option>KENYA</option>
+                        <option>KUWAIT</option>
+                        <option>KYRGYZSTAN</option>
+                      </optgroup>
+
+                      <optgroup label="L">
+                        <option>LAOS</option>
+                        <option>LATVIA</option>
+                        <option>LIECHTENSTEIN</option>
+                        <option>LITHUANIA</option>
+                        <option>LUXEMBOURG</option>
+                      </optgroup>
+
+                      <optgroup label="M">
+                        <option>MACAU</option>
+                        <option>MACEDONIA</option>
+                        <option>MADAGASCAR</option>
+                        <option>MALAWI</option>
+                        <option>MALAYSIA</option>
+                        <option>MALTA</option>
+                        <option>MARTINIQUE</option>
+                        <option>MEXICO</option>
+                        <option>MOLDOVA</option>
+                        <option>MONGOLIA</option>
+                        <option>MONTENEGRO</option>
+                        <option>MONTSERRAT</option>
+                        <option>MOROCCO</option>
+                        <option>MOZAMBIQUE</option>
+                        <option>MYANMAR</option>
+                      </optgroup>
+
+                      <optgroup label="N">
+                        <option>NAMIBIA</option>
+                        <option>NAURU</option>
+                        <option>NEPAL</option>
+                        <option>NETHERLANDS</option>
+                        <option>NETHERLANDS ANTILLES</option>
+                        <option>NEW ZEALAND</option>
+                        <option>NICARAGUA</option>
+                        <option>NIGERIA</option>
+                        <option>NORTHERN IRELAND</option>
+                        <option>NORWAY</option>
+                      </optgroup>
+
+                      <optgroup label="O">
+                        <option>OMAN</option>
+                      </optgroup>
+
+                      <optgroup label="P">
+                        <option>PAKISTAN</option>
+                        <option>PALESTINE</li>
+                        <option>PANAMA</li>
+                        <option>PAPUA NEW GUINEA</li>
+                        <option>PARAGUAY</option>
+                        <option>PERU</option>
+                        <option>PHILIPPINES</option>
+                        <option>POLAND</option>
+                        <option>PORTUGAL</option>
+                      </optgroup>
+
+                      <optgroup label="Q">
+                        <option>QATAR</option>
+                      </optgroup>
+
+                      <optgroup label="R">
+                        <option>ROMANIA</option>
+                        <option>RUSSIAN FEDERATION</option>
+                        <option>RWANDA</option>
+                      </optgroup>
+
+                      <optgroup label="S">
+                        <option>SAINT KITTS & NEVIS</option>
+                        <option>SAINT MARTIN(FRENCH)</option>
+                        <option>SAUDI ARABIA</option>
+                        <option>SCOTLAND</option>
+                        <option>SENEGAL</option>
+                        <option>SERBIA</option>
+                        <option>SINGAPORE</option>
+                        <option>SINT MAARTEN(DUTCH)</option>
+                        <option>SLOVAKIA</option>
+                        <option>SLOVENIA</option>
+                        <option>SOUTH AFRICA</option>
+                        <option>SOUTH KOREA</option>
+                        <option>SPAIN</option>
+                        <option>SRI LANKA</option>
+                        <option>ST BARTHELEMY</option>
+                        <option>ST LUCIA</option>
+                        <option>ST VINCENT AND THE GRENADINES</option>
+                        <option>SURINAME</option>
+                        <option>SWEDEN</option>
+                        <option>SWITZERLAND</option>
+                      </optgroup>
+
+                      <optgroup label="T">
+                        <option>TAIWAN</option>
+                        <option>TAJIKISTAN</option>
+                        <option>TANZANIA</option>
+                        <option>THAILAND</option>
+                        <option>TONGA</option>
+                        <option>TRINIDAD AND TOBAGO</option>
+                        <option>TUNISIA</option>
+                        <option>TURKEY</option>
+                        <option>TURKS & CAICOS ISLANDS</option>
+                      </optgroup>
+
+                      <optgroup label="U">
+                        <option>UGANDA</option>
+                        <option>UKRAINE</option>
+                        <option>UNITED ARAB EMIRATES</option>
+                        <option>UNITED KINGDOM</option>
+                        <option>UNITED STATES</option>
+                        <option>URUGUAY</option>
+                        <option>UZBEKISTAN</option>
+                      </optgroup>
+
+                      <optgroup label="V">
+                        <option>VANUATU</option>
+                        <option>VENEZUELA</option>
+                        <option>VIETNAM</option>
+                        <option>VIRGIN ISLANDS BRITISH</option>
+                        <option>VIRGIN ISLANDS U.S</option>
+                      </optgroup>
+
+                      <optgroup label="W">
+                        <option>WALES</option>
+                      </optgroup>
+
+                      <optgroup label="Z">
+                        <option>ZAMBIA</option>
+                        <option>ZIMBABWE</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 bs-select-wrapper my-3" id="regions-list">
+                    <select disabled class="form-control selectpicker" name="Vregion" data-title="Select region"
+                      data-width="100%" data-dropup-auto="false">
+
+                    </select>
+                  </div>
+                  <div class="col-sm-6 bs-select-wrapper my-3" id="prefix-select">
+                    <select disabled class="form-control selectpicker" name="Vprefix" data-title="Select Prefix"
+                      data-width="100%" data-dropup-auto="false">
+                      <option value="Canmore/1587">Canmore (+1587)</option>
+                      <option value="Blackfalds/1587">Blackfalds (+1578)</option>
+                      <option value="Calgary/1587">Calgary (+1578)</option>
+                      <option value="Edson/1587">Edson (+1578)</option>
+                      <option value="Lloydminster/1587">Lloydminster (+1578)</option>
+                      <option value="Medicnine Hat/1587">Medicnine Hat (+1578)</option>
+                      <option value="Olds/1587">Olds (+1578)</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 bs-select-wrapper my-3" id="numbers-list">
+                    <select disabled class="form-control selectpicker" name="Vnumber" data-title="Select Number"
+                      data-width="100%" data-dropup-auto="false">
+                      <option value="15872063728">15872063728</option>
+                      <option value="15872063729">15872063729</option>
+                      <option value="15872063730">15872063730</option>
+                      <option value="15872063731">15872063731</option>
+                      <option value="15872063732">15872063732</option>
+                      <option value="15872063733">15872063733</option>
+                      <option value="15872063734">15872063734</option>
+                      <option value="15872063735">15872063735</option>
+                      <option value="15872063736">15872063736</option>
+                      <option value="15872063737">15872063737</option>
+                    </select>
+                  </div>
+                  <button type="button" disabled class="btn-join-to-card py-2 px-5 mt-1 ml-auto mr-3">JOIN</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="inner-box" style="display: none;" data-service="substitution-number">
+        <h5>Substitution of numbers</h5>
+        <div class="item-box my-3">
+          <div class="row">
+            <div class="col-sm-2 d-flex justify-content-center align-items-center">
+              <img src="img/icons/icon4-r.png" alt="icon1" width="36" height="35" />
+            </div>
+
+            <div class="col-sm-4 bs-select-wrapper">
+              <select class="form-control selectpicker" name="subPeriod" data-title="Enter period" data-width="100%"
+                data-dropup-auto="false">
+                <option value="1">1 month</option>
+                <option value="3">3 month</option>
+                <option value="6">6 month</option>
+                <option value="12">12 month</option>
+              </select>
+            </div>
+            <div class="col-sm-4 input-placeholder" style="display: none;"></div>
+            <div class="col-sm-9 ml-auto substitution-join" style="display: none;">
+              <div class="location-info">
+                <span>Your virtual number</span><span class="virtual-number"></span>
+              </div>
+              <div class="substitution-info">
+                <span>Your substitution number</span>
+                <span class="substitution-number"></span>
+              </div>
+            </div>
+            <div class="col-sm-4 virtual-number-info">
+              <span>Your virtual number</span>
+              <div class="virtual-number-wrapper d-flex align-items-center">
+                <img src="img/icons/icon3-r.png" width="20" height="20" alt="icon">
+                <p class="virtual-number">N/A</p>
+              </div>
+            </div>
+            <div class="col-sm-9 ml-auto mt-3 substitution-wrapper inner-box">
+              <h5>Please enter a substitution number</h5>
+              <div class="d-flex align-items-center justify-content-between">
+                <input type="text" class="form-control col-sm-7" id="subNumber" placeholder="Substitution number"
+                  name="subNumber" value="">
+                <button type="button" disabled
+                  class="btn-join-to-card py-1 px-5 mt-1 btn-substitution-join">JOIN</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="inner-box">
+        <h5>Add to plan</h5>
+        <div class="additional-services d-flex my-3 flex-wrap align-items-end justify-content-between">
+          <div class="service__item d-flex flex-column align-items-center">
+            <img src="img/icons/icon5-r.png" alt="icon1">
+            <button data-item="${counter+1}" type="button" data-names="VSbalance,VSperiod" class="btn-service-toggler"
+              data-target="#voice-sms">
+              <span>+</span>
+              <span>Voice and SMS</span>
+            </button>
+          </div>
+          <div class="services__line"></div>
+          <div class="service__item d-flex flex-column align-items-center">
+            <img src="img/icons/icon3-r.png" alt="icon1">
+            <button data-item="${counter+1}" type="button" data-names="Vperiod,Vregion,Vcountry,Vprefix,Vnumber" class="btn-service-toggler"
+              data-target="#virtual-number">
+              <span>+</span>
+              <span>Virtual number</span>
+            </button>
+          </div>
+          <div class="services__line"></div>
+          <div class="service__item d-flex flex-column align-items-center">
+            <img src="img/icons/icon4-r.png" alt="icon1">
+            <button data-item="${counter+1}" type="button" data-names="subPeriod,subNumber" class="btn-service-toggler"
+              data-target="#substitution-number">
+              <span>+</span>
+              <span>Substitution of numbers</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="tabs my-4 inner-box">
+        <h5>Card selection</h5>
+        <div class="form my-3">
+          <div class="sims-box">
+            <div class="sim__item">
+              <input type="radio" checked id="sims-esim" value="eSim" name="simToBeSelected">
+              <label for="sims-esim">
+                <div class="circle"></div>
+                <div class="img-wrapper">
+                  <img src="img/icons/left-sim-r.png" alt="esim"><img src="img/icons/left-sim-hover-r.png"
+                    alt="esim">
+                </div>
+                <span>eSim</span>
+              </label>
+              <button type="button" class="btn btn-show-sim-info" data-sim="#sims-esim" data-target="#phone-support">?</button>
+            </div>
+            <div class="line"></div>
+            <div class="sim__item">
+              <input type="radio" id="sims-sim" value="Sim" name="simToBeSelected">
+              <label for="sims-sim">
+                <div class="circle"></div>
+                <div class="img-wrapper">
+                  <img src="img/icons/right-sim-r.png" alt="sim"><img src="img/icons/right-sim-hover-r.png"
+                    alt="sim">
+                </div>
+                <span>Sim</span>
+              </label>
+              <button type="button" class="btn btn-show-sim-info" data-sim="#sims-sim" data-target="#shipping-info">?</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabs-wrapper">
+        <div class="tab-item" id="phone-support" style="display: none;">
+          <div>
+            <div class="title-box">
+              <p>Apple iPhones</p>
+              <span class="tit-line"></span>
+            </div>
+
+            <ul>
+              <li>iPhone 11</li>
+              <li>iPhone 11 Pro</li>
+              <li>iPhone 11 Pro Max</li>
+              <li>iPhone XS</li>
+              <li>iPhone XS Max</li>
+              <li>iPhone XS Max Global</li>
+              <li>iPhone XR</li>
+            </ul>
+
+            <div class="title-box">
+              <p>Apple iPads</p>
+              <span class="tit-line"></span>
+            </div>
+
+            <ul>
+              <li>iPad Pro 3rd Gen (12.9 inch, WiFi+Cellular)</li>
+              <li>iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+Cellular)</li>
+              <li>iPad mini 5th Gen</li>
+              <li>iPad Air 3rd Gen</li>
+            </ul>
+            <div class="title-box">
+              <p>Google</p>
+              <span class="tit-line"></span>
+            </div>
+
+            <ul>
+              <li>Pixel 3</li>
+              <li>Pixel 3 XL</li>
+              <li>Pixel 4</li>
+            </ul>
+            <div class="title-box">
+              <p>Samsung</p>
+              <span class="tit-line"></span>
+            </div>
+
+            <ul>
+              <li>Galaxy Fold LTE</li>
+              <li>Samsung Galaxy Z Flip</li>
+              <li>Samsung Galaxy S20, s20+ and S20 Ultra</li>
+              <li style="list-style: none;">
+                (Single SIM Nano-SIM and/or eSIM models )
+              </li>
+            </ul>
+            <div class="under-footer">
+              <ul>
+                <li>* Not compatible with carrier-locked phone</li>
+                <li>
+                  * Not compatible with iPhone XR, XS models and 11 models
+                  purchased in Hong Kong, Macau and Mainland China
+                </li>
+                <li>
+                  * Not compatible with iPhones with 2 physical SIM card slots
+                </li>
+                <li>
+                  * Not compatible with Pixel devices purchased in Australia
+                </li>
+                <li>
+                  * Not compatible with devices on Android Q Beta versions
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-item" id="shipping-info" style="display: none;">
+          <div>
+            <p class="info-text">When you ship with DHL Express – you’re shipping
+              with specialists in international shipping and courier
+              delivery services! With our wide range of express
+              parcel and package services, along with shipping
+              and tracking solutions to fit your needs – learn how
+              DHL Express can deliver!</p>
+            <input type="checkbox" name="dhl" checked id="dhl-checkbox">
+            <label class="dhl-checkbox-label" for="dhl-checkbox"><span> </span> <img src="img/icons/dhl.png"
+                alt="dhl"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <div class="shopping-card__card js-shopping-card__card col-lg-4 col-md-12" data-item="${counter+1}">
+    <div class="item">
+      <div class="top1">
+        <img src="img/logo.svg" alt="logo">
+        <span class="right-span">
+          <div class="text tariff-name js-tariff-name">${data.label == "BUSINESS" ? "PROMAX" : data.label}</div>
+        </span>
+      </div>
+
+      <h1><span class="let  gb-amount-big js-gb-amount-big">${data.amount}</span> Gb</h1>
+      <div class="top2">
+        <h4><span class="plan-name js-plan-name">${data.plan} plan</span><span class="sim-type"><span
+              class="sim-name js-sim-name">${data.simType}</span></span></h4>
+        <span class="line"></span>
+      </div>
+      <div class="top3">
+        <h3 class="my-3 js-included-country-text">Included in your plan:</h3>
+
+        <div class="js-not-sorted-items">
+          <div class="included-item" data-item="${counter+1}" data-label="internet-data-box">
+            <div class="img-wrapper">
+              <img src="img/icons/icon2.png" alt="icon1">
+            </div>
+            <div class="item-content d-flex ml-auto justify-content-between">
+              <div class="content-left">
+                <h3 class="item-name">Internet data</h3>
+                <p class="item-period"><span class="gb-amount">${data.amount}Gb</span>/<span class="day-amount">${data.priceData.days} days</span></p>
+              </div>
+              <div class="content-right">
+                $ <span class="price-amount internet-price-amount">${data.priceData.price}</span> us
+              </div>
+            </div>
+          </div>
+          <div  style="display: none;" class="included-item" data-item="${counter+1}" data-label="voice-sms-box">
+            <div class="img-wrapper">
+              <img src="img/icons/icon5.png" alt="icon1">
+            </div>
+            <div class="item-content d-flex ml-auto justify-content-between">
+              <div class="content-left">
+                <h3 class="item-name">Voice / sms</h3>
+                <p class="item-period"><span class="day-amount js-vs-day-amount">7 days</span></p>
+              </div>
+              <div class="content-right">
+                $ <span class="price-amount js-vs-price">1 000</span> us
+              </div>
+            </div>
+          </div>
+          <div style="display: none;" class="included-item" data-item="${counter+1}" data-label="virtual-number-box">
+            <div class="img-wrapper">
+              <img width="auto" height="100%" src="img/icons/icon3.png" alt="icon1">
+            </div>
+            <div class="item-content d-flex ml-auto justify-content-between">
+              <div class="content-left">
+                <h3 class="item-name">virtual number</h3>
+                <p class="item-period"><span class="day-amount v-day-amount js-v-day-amount">1 month</span></p>
+              </div>
+              <div class="content-right">
+                $ <span class="price-amount">500</span> us
+              </div>
+            </div>
+          </div>
+          <div style="display: none;" class="included-item" data-item="${counter+1}" data-label="substitution-number-box">
+            <div class="img-wrapper">
+              <img src="img/icons/icon4.png" alt="icon1">
+            </div>
+            <div class="item-content d-flex ml-auto justify-content-between">
+              <div class="content-left">
+                <h3 class="item-name">substitution of
+                  number</h3>
+                <p class="item-period"><span class="day-amount js-day-amount js-sub-period">1 month</span></p>
+              </div>
+              <div class="content-right">
+                $ <span class="js-price-amount price-amount">25</span> us
+              </div>
+            </div>
+          </div>
+          <div class="included-item js-sim-type-box">
+            <div class="img-wrapper">
+              <img class="sim-img" src="img/icons/left-sim.png" alt="icon1">
+            </div>
+            <div class="item-content d-flex ml-auto justify-content-between">
+              <div class="content-left d-flex align-items-baseline">
+                <h3 class="item-name sim-name js-sim-name">">${data.simType}</h3>
+                <span class="sim-price-status">free</span>
+                ${data.isDhl ? '<img width="45" height="10" src="img/icons/dhl.png" class="ml-2" alt="dhl">' : ''}
+              </div>
+              <div class="content-right">
+                $ <span data-free="yes" class="price-amount js-price-amount">0</span> us
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <span class="line"></span>
+        <div class="total-price mt-3">$ <span class="total-price-amount js-total-price-amount">${data.priceData.price}</span> us</div>
+        <button style="display: none;" type="button" data-approve="yes" class="btn-checkout mt-3">Approved</button>
+      </div>
+    </div>
+  </div>
+
+</div>`
+}
 let basket = [];
 
 const customer = {}; //details about customer
 
 let cardData;
 
+let newCardData
 
 const elCheckoutBtn = $('.btn-checkout');
 
@@ -29101,43 +30097,82 @@ $(document).ready(function () {
   
   
 
+  $('.btn-basket').on('click', function(e) {
+    e.preventDefault();
 
+    if(basket.length === 1) {
+      window.location.href = 'shopping-card.html';
+    } else {
+      window.location.href = 'basket.html';
+    }
+
+  })
 
 
   if ($('body').hasClass('basket-body')) {
     fillBasket();
 
+    for (let i = 0; i < basket.length; i++) {
+      if(basket[i].includedItems) {
+        for (let j = 0; j < basket[i].includedItems.length; j++) {
+          addService(basket[i].includedItems[j], i+1);
+          setTotalPrice(i+1)
+        }
+      }
+    }
 
     $('.js-add-service ').on('click', function(e) {
       const index = parseInt($(this).attr('data-item'),10);
       const data = basket[index-1];
-      
+
+      $('.js-btn-checkout').attr('data-item', index);
+
       $('.js-basic-basket').hide();
       $('.js-basket-shopping-card').show();
       $('.js-basket-list').show();
       $('.js-step[data-step="1"]').show();
       $('.js-subtotal-wrapper').show();
-      $(`.basket-line[data-item="${index}"]`).hide();
+      $(`.basket-line[data-item="${index}"]`).hide().siblings().show();
       $('.js-shopping-card__card').attr('data-item', index);
+
+      if (customer.dhl == 'on') {
+        $('.js-dhl-img').show();
+      } else {
+        $('.js-dhl-img').hide();
+      }
+
+      $('.shopping-card__form').attr('data-item', index);
+
+      customer.Iprice = parseInt(data.priceData.price, 10);
+      customer.totalPrice = customer.Iprice;
+
       setBasicInPlans(data);
+
+      setInlcludedItems(index);
+
     });
 
     $('.basket-line').on('click', function () {
       const index = parseInt( $(this).attr('data-item'), 10 );
       updateCard(basket[index - 1]);
       
+
+      $('.shopping-card__form').attr('data-item', index);
+
       $(`.basket-line[data-item=${index}]`).hide()
         .siblings().show();
         
-      
+      console.log(basket[index - 1]);
 
       $('.js-shopping-card__card').attr('data-item', index);
 
-      const btns = $('.additional-services').find('.btn-service-toggler');
+      $(`.js-add-service[data-item="${index}"]`).trigger('click');
 
-      //close all services
-      btns.children('span:first-child').text('-');
-      btns.trigger('click');
+      // const btns = $('.additional-services').find('.btn-service-toggler');
+
+      // //close all services
+      // btns.children('span:first-child').text('-');
+      // btns.trigger('click');
       
     });
 
@@ -29167,13 +30202,10 @@ $(document).ready(function () {
         $(this).hide();
         $('.js-total-price-amount').text(customer.totalPrice);
         const index = parseInt( $('.js-shopping-card__card').attr('data-item') );
-
-        $(`.basket-line[data-item="${index}"]`).find('.included-item').addClass('inactive');
+        updateTotalPrice();
+      
+        setTotalPrice(index)
         
-        basket[index - 1].includedItems.forEach(function(i) {
-         $(`.basket-line[data-item="${index}"]`).find(i + '-wrapper').removeClass('inactive');
-        });
-
       }
 
     });
@@ -29183,6 +30215,10 @@ $(document).ready(function () {
     $('.js-btn-confirm-and-pay').on('click', function() {
       $(this).hide();
       $('.js-all-wrapper').addClass('payed');
+      const html = `
+      <span class="plan-paid-text">plan payed <span><img src="img/icons/confirmed.svg" alt=""></span></span>
+      `
+      $('.price-box').html(html);
     });
 
 
@@ -29203,16 +30239,39 @@ $(document).ready(function () {
 
   $('.btn-show-sim-info').click(function (e) {
     const target = e.target.dataset.target;
-    $(target).siblings().hide();
+    const inputTarget = e.target.dataset.sim;
+    $(this).toggleClass('active');
+
+    $(`.btn-show-sim-info:not([data-target="${target}"])`).removeClass('active');
+
+    $(target).siblings().hide()
     $(target).toggle();
+
+    if( $(this).hasClass('active') ) {
+      $(inputTarget).prop('checked', true);
+    }
+
+    if($('#sims-sim').is(':checked')) {
+      $('#dhl-checkbox').prop('checked', true);
+    } else {
+      $('#dhl-checkbox').prop('checked', false);
+    }
+
   });
 
 
   $('.btn-add-to-card').on('click', function () {
-    $('.notification-block').slideDown().show();
+    $('.notification-block').slideDown().addClass('animate-it');
+
+    setTimeout(() => {
+      $('.notification-block').slideUp().removeClass('animate-it');
+    }, 6000);
+
     localStorage.removeItem('card');
     localStorage.setItem('card', JSON.stringify(cardData));
-
+    $('html').animate({
+      scrollTop: 0
+    },'slow');
     const simType = $('#add-to-card-form').serialize();
     cardData.simType = simType.split('=')[1];
     const dhlOn = $('#dhl-form').serialize();
@@ -29229,6 +30288,17 @@ $(document).ready(function () {
 
   });
 
+
+  $('#add-to-card-form').on('change', function(e) {
+    const simType = $(this).serialize().split('=')[1];
+    if(simType == "Sim") {
+      $('#dhl-checkbox').prop('checked', true);
+    } else {
+      $('#dhl-checkbox').prop('checked', false);
+    }
+  });
+
+
   $('.tab_content').on('click', '.btn-buy',function (e) {
     cardData = getCardDetails(e.target);
   });
@@ -29240,8 +30310,13 @@ $(document).ready(function () {
     const elNumbersList = $('#numbers-list');
     const elVirtualInnerBox = $('.virtual-inner');
 
-    const newCardData = JSON.parse(localStorage.getItem('card'));
-
+    newCardData = JSON.parse(localStorage.getItem('card'));
+    customer.totalPrice = 0;
+    customer.totalPrice += parseInt(newCardData.priceData.price, 10);
+    if(!$('body').hasClass('basket-body')) {
+      customer.Iprice = customer.totalPrice;
+      $('.js-total-price-amount').text(customer.Iprice);
+    }
     setTimeout(function() {
       switch(newCardData.plan) {
         case "Worldwide":
@@ -29258,8 +30333,8 @@ $(document).ready(function () {
 
     $('.tab-inner').each(function () {
       $(this).on('click', '.btn-buy', function (e) {
-        $('.notification-block').slideUp().hide();
-        console.log(getCardDetails(e.target));
+        $('.notification-block').slideUp();
+        console.log('btn-buy');
       });
     });
 
@@ -29276,67 +30351,127 @@ $(document).ready(function () {
       $(`#region-list .nav-link[data-value="${continent}"]`).trigger('click');
     });
 
-    $('.btn-service-toggler').click(function (e) {
-      const status = $(this).children('span').first().text();
-      const target = $(this).data('target');
-      const dataNames = $(this).data('names').split(',');
-      const index = parseInt( $('.js-shopping-card__card').attr('data-item'), 10 );
 
-      
 
-      if (status == "+") {
-        $('.btn-checkout').show();
-        $(target).slideDown();
-        $(`${target}-box`).slideDown();
-        $(`${target}-block`).slideDown();
-
-        $(this).css('color', '#ff0000');
-        $(this).children('span').first().text("-");
-        if (target == "#virtual-number" || target == "#substitution-number") {
-          elCheckoutBtn.attr('disabled', true);
-        }
-      } else {
-        dataNames.forEach(function (d) {
-          customer[d] = "";
+    $('.btn-service-toggler')
+      .mouseenter(function() {
+        $(this).siblings('img').css({
+          transform: 'scale(1.2)'
         });
+      })
+      .mouseleave(function() {
+        $(this).siblings('img').css({
+          transform: 'scale(1)'
+        });
+      })
+      .click(function (e) {
+        const status = $(this).children('span').first().text();
+        const target = $(this).data('target');
+        const dataNames = $(this).data('names').split(',');
+        const index = parseInt( $('.js-shopping-card__card').attr('data-item'), 10 );
 
-        $(target).slideUp();
-        $(`${target}-box`).slideUp();
-        $(`${target}-block`).slideUp();
+        toggleCheckbox($(this).children('input'));
 
-        $(this).css('color', '#000');
-        $(this).children('span').first().text("+")
+        if (status == "+") {
+          addService(target, index)
+          
 
-        //hide joined info
-        $('.join-info').hide();
-        $('.virtual-inner').show();
-        $('.substitution-join').hide();
-        $('.virtual-number-info').show();
-        //end of joined info
-        
-        if (target == "#virtual-number" || target == "#substitution-number") {
-          const newsTarget = target == "#virtual-number" ? "#substitution-number" : "#virtual-number"
-          if ($(target).siblings(newsTarget).attr('style') == "display: none;") {
-            elCheckoutBtn.removeAttr('disabled');
-            elCheckoutBtn.show();
+          $(this).css('color', '#ff0000');
+          $(this).children('span').first().text("-");
+          if (target == "#virtual-number" || target == "#substitution-number") {
+            
+            if(target == "#virtual-number") {
+              customer.Vprice = 500;
+            }
+
+            if(target == "#substitution-number") {
+              customer.Sprice = 25;
+            }
+
+
+            elCheckoutBtn.attr('disabled', true);
+          }
+        } else {
+          dataNames.forEach(function (d) {
+            customer[d] = "";
+          });
+
+          if(target == "#virtual-number" && customer.Vprice == 500) {
+            customer.Vprice = 0;
+          }
+
+          if(target == "#substitution-number" && customer.Sprice == 25) {
+            customer.Sprice = 0;
+          }
+
+          if (target == "#voice-sms") {
+
+            $('select[name="VSbalance"]').prop("selectedIndex", -1)
+            $('#enter-balance').selectpicker('refresh');
+          }
+
+          removeService(target, index)
+          $(this).css('color', '#000');
+          $(this).children('span').first().text("+")
+
+          //hide joined info
+          $('.join-info').hide();
+          $('.virtual-inner').show();
+          $('.virtual-number-info').hide();
+          //end of joined info
+          
+          if (target == "#virtual-number" || target == "#substitution-number") {
+            const newsTarget = target == "#virtual-number" ? "#substitution-number" : "#virtual-number"
+            if ($(target).siblings(newsTarget).attr('style') == "display: none;") {
+              elCheckoutBtn.removeAttr('disabled');
+              elCheckoutBtn.show();
+            }
           }
         }
-      }
-      const includedItems = [];
-      const includedItemsBtns = ( $(`.btn-service-toggler:contains('-')`) );
-      
-      includedItemsBtns.each(function(btn) {
-        includedItems.push( $(this).attr('data-target') );
+
+        $('.js-total-price-amount').text(customer.totalPrice);
+
+        
+        const includedItems = [];
+        const includedItemsBtns = $(`.btn-service-toggler:contains('-')`);
+        
+        includedItemsBtns.each(function(btn) {
+          includedItems.push( $(this).attr('data-target') );
+        });
+        
+
+        if ($('body').hasClass('basket-body')) {
+          basket[index - 1].includedItems = includedItems;
+        
+          console.log(basket);
+
+          
+          localStorage.removeItem('basket');
+          localStorage.setItem('basket', JSON.stringify(basket));
+        }
+
+        updateCardInfo(customer);
+
       });
 
-      basket[index - 1].includedItems = includedItems;
-      
-      console.log(basket);
+    $('.js-sorted-items').on('click', function() {
+      console.log('ok')
+      $(this).parent().toggleClass('sorted');
+      $('.js-included-country-text').toggleClass('has-dashed-border');
+    });
 
-      localStorage.removeItem('basket');
-      localStorage.setItem('basket', JSON.stringify(basket));
+    $('.js-included-country-text').on('click', function() {
+      if( !$('.js-items-toggler').hasClass('sorted') ) {
+        $('.js-items-toggler').addClass('sorted');
+        $(this).removeClass('has-dashed-border');
+      }
+    });
 
-    })
+    $('.js-not-sorted-items .included-item').on('click', function() {
+      if( !$(this).parent().parent().hasClass('sorted') ) {
+        $(`.step-button[data-step='1']`).trigger('click');
+      }
+    });
 
     const elPhoneNumberInput = document.getElementById('subNumber');
     const elPhoneNumberInputStepTwo = document.querySelector('#telnumber');
@@ -29363,11 +30498,26 @@ $(document).ready(function () {
         placeholderChar: '_' // defaults to '_'
       });
       IMask(document.querySelector('#carddate'), {
-        mask: '00{/}00',
+        mask: 'MM{/}YY',
+        pattern: 'MM{/}YY',
         lazy: false, // make placeholder always visible
-        placeholderChar: '_' // defaults to '_'
+        placeholderChar: '_',
+        blocks: {
+          MM: {
+            mask: IMask.MaskedRange,
+            from: 01,
+            to: 12
+          },
+          YY: {
+            mask: IMask.MaskedRange,
+            from: 20,
+            to: 30
+          },
+        }
       });
     }
+
+
 
     elPhoneNumberInput.addEventListener('keyup', function (e) {
       if (e.target.value.length == 18 && e.target.value[e.target.value.length - 1] != "_") {
@@ -29375,6 +30525,35 @@ $(document).ready(function () {
       } else {
         $('.btn-substitution-join').attr('disabled', true);
       }
+    });
+
+    $('#cardnumber').on('keyup', function() {
+      if( 
+        $(this).val().length == 19 
+        && 
+        !$(this).val().includes('_') ) {
+        $('#carddate').focus();
+      }
+    });
+
+    $('#carddate').on('keyup', function() {
+      if( 
+        $(this).val().length == 5 
+        && 
+        !$(this).val().includes('_') ) {
+        $('#cardcode').focus();
+      }
+    });
+
+    
+    $('#sub-period').on('click', '.dropdown-item', function(e) {
+      $('#subNumber').removeAttr('disabled');
+    });
+
+    $('#virtual-period').on('click', '.dropdown-item', function (e) {
+      const elSelect = elCountriesList.find('select');
+      elSelect.removeAttr('disabled');
+      elSelect.selectpicker('refresh');
     });
 
     elCountriesList.on('click', '.dropdown-item', function (e) {
@@ -29460,16 +30639,23 @@ $(document).ready(function () {
     //listen to form changes
     $('.shopping-card__form').on('change',function() {
       const formData = decodeURIComponent($(this).serialize()).split('&');
-
       formData.forEach(function (data) {
         const dataArray = data.split('=');
         customer[dataArray[0]] = dataArray[1];
       });
 
       console.log(customer);
+      if( $('body').hasClass('basket-body') ) {
+        const index = $(this).data('item');
+        basket[index - 1].customer = customer;
+      }
 
-      updateCardInfo();
+      // const VSbalance = parseInt(data.VSbalance, 10) || 0;
 
+      // customer.totalPrice +=VSbalance
+
+      updateCardInfo(customer);
+      
       
     });
     //end of listining form changes
@@ -29479,6 +30665,13 @@ $(document).ready(function () {
       $('.tab_content-map').slideToggle();
       $(this).toggleClass('active');
       
+      if( $(this).hasClass('active') ) {
+        const target = $('.tab_content-map').offset().top;
+        $('html').animate({
+          scrollTop: target - 100
+        },'slow');
+      }
+
     });
 
     //steps controller
@@ -29495,10 +30688,14 @@ $(document).ready(function () {
       }
       
       if(step != 4) {
-        $(`.js-step[data-step="${step}"]`).siblings('.js-step').addClass(`display-none`);
+        $(`.js-step[data-step="${step}"]`)
+          .siblings('.js-step')
+          .addClass(`display-none`)
+          .find('.confirmation-box').hide();
       }
 
-      $(`.js-edit-btn[data-step="${step}"]`).show();
+      $(`.js-edit-btn[data-step="${step}"]`)
+        .show();
 
       if ($(this).hasClass('active')) {
         
@@ -29510,12 +30707,14 @@ $(document).ready(function () {
         
       } else {
         $(this).addClass('active');
+
         $(this).siblings(`.step-button`).each(function(btn) {
           if($(this).data('step') <= step) {
             $(this).addClass('active');
             $(this).removeAttr('disabled');
           }
         });
+        
       }
     })
 
@@ -29588,6 +30787,7 @@ $(document).ready(function () {
         moveToStep(4);
         hideStep(4);
         $('.payment-info-box').show();
+        $('.js-step').addClass('completed-step');
       }
     });
 
@@ -29610,6 +30810,7 @@ $(document).ready(function () {
       } else {
         moveToStep(3,true);
         $('.js-edit-btn[data-step="4"]').show();
+        $( $('.js-step[data-step="2"]')[1] ).addClass('completed-step');
       }
     });
 
@@ -29622,6 +30823,7 @@ $(document).ready(function () {
         $(`.step-button[data-step='1']`).trigger('click');
       } else {
         $('.js-all-wrapper').addClass('payed');
+        $('.js-edit-btn').hide();
       }
     }) 
 
@@ -29639,6 +30841,8 @@ $(document).ready(function () {
     $('.js-shipping-continue-btn').on('click', function(e) {
       moveToStep(4);
       hideStep(3);
+
+      $('.js-step[data-step="3"]').addClass('completed-step');
     });
     //end of billing
 
@@ -29648,6 +30852,7 @@ $(document).ready(function () {
       hideStep(4);
       $('.btn-edit').text('Сonfirm and Pay').attr('data-pay',true).css('background-color','red');
       $('.js-btn-confirm-and-pay').show();
+      $('.js-step[data-step="4"]').addClass('completed-step');
     });
 
     //end of payment
@@ -29662,29 +30867,21 @@ $(document).ready(function () {
     $('.discount-form').on('submit', function(e) {
       e.preventDefault();
       $(this).hide();
-      customer.subtotal = customer.totalPrice;
-      customer.totalPrice = +customer.totalPrice * 0.8;
-      $('.js-total-price-amount').text(customer.totalPrice);
-      let discountAmount = $('.js-discount-amount').text();
-      discountAmount = +discountAmount + 20;
-      $('.discount-info').show();
+      if($('body').hasClass('basket-body')) {
+        customer.totalPrice = setTotalPrice();
+        console.log(customer.totalPrice);
+      }
+      applyDiscount(customer.totalPrice, 20);
 
-      $('.js-discount-amount').text(discountAmount);
-      $('.js-subtotal-amount').text(customer.subtotal);
     });
 
     $('.giftcard-form').on('submit', function(e) {
       e.preventDefault();
       $(this).hide();
-
-      customer.totalPrice = +customer.totalPrice * 0.95;
-      let discountAmount = $('.js-discount-amount').text();
-
-      discountAmount = +discountAmount + 5;
-      
-      $('.js-discount-amount').text(discountAmount);
-      $('.discount-info').show();
-      $('.js-total-price-amount').text(customer.totalPrice);
+      if ($('body').hasClass('basket-body')) {
+        customer.totalPrice = setTotalPrice();
+      }
+      applyDiscount(customer.totalPrice, 5);
       $('.btn-gift-card-togger').attr('disabled', true);
     });
 
@@ -29801,6 +30998,7 @@ function setBasicInPlans(data) {
   const periodToBeClicked = getClickableParent('#enter-period',data.priceData.days + ` ${data.priceData.days == "1" ? "day" : "days"}`);
   periodToBeClicked.trigger('click');
 
+  
   $('.js-gb-amount-big').text(data.amount);
   $('.js-gb-amount').text(data.amount + 'Gb');
   $('.js-day-amount').text(`${data.priceData.days} days`);
@@ -29853,8 +31051,8 @@ function fillBasket() {
         </div>
         <div class="top3">
           <h3 class="my-3">Included in your plan:</h3>
-
-          <div class="included-item" id="internet-data-box">
+      <div class="js-not-sorted-items">
+      <div class="included-item" id="internet-data-box">
             <div class="img-wrapper">
               <img src="img/icons/icon2.png" alt="icon1">
             </div>
@@ -29864,7 +31062,7 @@ function fillBasket() {
                 <p class="item-period"><span class="card-gb-amount">${basket[i].amount}Gb</span>/<span class="card-day-amount">${basket[i].priceData.days} days</span></p>
               </div>
               <div class="content-right">
-                $ <span class="price-amount internet-price-amount">${basket[i].priceData.days}</span> us
+                $ <span class="price-amount internet-price-amount">${basket[i].priceData.price}</span> us
               </div>
             </div>
           </div>
@@ -29888,6 +31086,9 @@ function fillBasket() {
           <div class="total-price mt-3">$ <span class="total-price-amount">${basket[i].priceData.price}</span> us</div>
           <button type="button" data-item="${i+1}" class="btn-checkout js-add-service mt-3">Add Services</button>
         </div>
+      
+      </div>
+          
       </div>
     </div>`
     
@@ -29909,7 +31110,7 @@ function fillBasket() {
       </div>
       <div class="basket-item">
         <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-          <div class="included-item" id="internet-data-wrapper">
+          <div class="included-item" data-label="internet-data-wrapper">
             <div class="img-wrapper">
               <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
             </div>
@@ -29917,7 +31118,7 @@ function fillBasket() {
               <h3 class="item-name">Internet data</h3>
             </div>
           </div>
-          <div class="included-item inactive" id="voice-sms-wrapper">
+          <div class="included-item inactive" data-label="voice-sms-block">
             <div class="img-wrapper">
               <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
             </div>
@@ -29925,7 +31126,7 @@ function fillBasket() {
               <h3 class="item-name">Voice and SMS</h3>
             </div>
           </div>
-          <div class="included-item inactive" id="virtual-number-wrapper">
+          <div class="included-item inactive" data-label="virtual-number-block">
             <div class="img-wrapper">
               <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
             </div>
@@ -29933,7 +31134,7 @@ function fillBasket() {
               <h3 class="item-name">Virtual number</h3>
             </div>
           </div>
-          <div class="included-item inactive" id="substitution-number-wrapper">
+          <div class="included-item inactive" data-label="substitution-number-block">
             <div class="img-wrapper">
               <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
             </div>
@@ -29970,7 +31171,7 @@ function fillBasket() {
                 class="sim-name js-sim-name">${basket[i].simType}</span></span></h4>
           <span class="line"></span>
           <div class="included-items-wrapper d-flex align-items-baseline justify-content-around mt-3">
-            <div class="included-item" id="internet-data-box">
+            <div class="included-item" data-label="internet-data-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon2.png" alt="icon1">
               </div>
@@ -29978,7 +31179,7 @@ function fillBasket() {
                 <h3 class="item-name">Internet data</h3>
               </div>
             </div>
-            <div class="included-item inactive" id="voice-sms-box">
+            <div class="included-item inactive" data-label="voice-sms-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon5.png" alt="icon1">
               </div>
@@ -29986,7 +31187,7 @@ function fillBasket() {
                 <h3 class="item-name">Voice and SMS</h3>
               </div>
             </div>
-            <div class="included-item inactive" id="virtual-number-box">
+            <div class="included-item inactive" data-label="virtual-number-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon3.png" alt="icon1">
               </div>
@@ -29994,7 +31195,7 @@ function fillBasket() {
                 <h3 class="item-name">Virtual number</h3>
               </div>
             </div>
-            <div class="included-item inactive" id="substitution-number-box">
+            <div class="included-item inactive" data-label="substitution-number-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon4.png" alt="icon1">
               </div>
@@ -30005,7 +31206,7 @@ function fillBasket() {
           </div>
           <div class="subtotal-box d-flex align-items-center justify-content-between">
             <span>Subtotal</span>
-            <span>$ <span class="js-subtotal-amount">1150</span> us</span>
+            <span>$ <span class="js-subtotal-amount">${basket[i].priceData.price}</span> us</span>
           </div>
           <button data-item="${i+1}" class="rounded-button js-edit-package d-block mx-auto">Edit</button>
         </div>
@@ -30026,7 +31227,7 @@ function fillBasket() {
   elBasketItemsBox.html(chunk);
     
   $('.js-subtotal-price-amount').text(totalPrice);
-  
+  $('.js-final-total-price-amount').text(totalPrice);
   elBasketItemsBox.removeClass('slick-initialized slick-slider');
 
   elBasketItemsBox.slick({
@@ -30064,39 +31265,49 @@ function fillBasket() {
 }
 
 
-function updateCardInfo() {
+function updateCardInfo(data) {
 
-  $('.day-amount').text(customer.VSperiod + ` ${customer.VSperiod == "1" ? "day" : "days"}`);
+  $('.day-amount').text(data.period + ` ${data.period == "1" ? "day" : "days"}`);
+
+  $('.js-vs-day-amount').text(data.VSperiod + ` ${data.VSperiod == "1" ? "day" : "days"}`);
+  $('.js-sub-period').text(data.subPeriod + ' month');
+
+  $('.js-vs-price').text( data.VSbalance )
+
+  $('.gb-amount').text(data.gb + 'Gb')
+
+  try {
+    $('.js-tariff-name').text(data.tariff.toUpperCase());
+  } catch (error) {
+    console.log(error);
+  }
+ 
+  $('.js-sim-name').text(data.simToBeSelected);
   
-  $('.js-vs-price').text( customer.VSbalance )
+  $('.js-plan-name').text(`${data.location} Plan`);
 
-  $('.gb-amount').text(customer.gb + 'Gb')
-
-  $('.js-tariff-name').text(customer.tariff.toUpperCase());
-  $('.js-sim-name').text(customer.simToBeSelected);
-  
-  $('.js-plan-name').text(`${customer.location} Plan`);
-
-  if (customer.simToBeSelected == "Sim") {
+  if (data.simToBeSelected == "Sim") {
     $('.sim-img').attr('src', 'img/icons/right-sim.png');
   } else {
     $('.sim-img').attr('src', 'img/icons/left-sim.png');
   }
 
-  $('.js-v-day-amount').text(customer.Vperiod + ' month')
-  let totalPrice = 0; 
+  $('.js-v-day-amount').text(data.Vperiod + ' month')
+  console.log(data.totalPrice);
 
-  $('.js-price-amount').each(function(e) {
-    totalPrice += parseInt($(this).text().split(' ').join(''),10);
-  });
+  updateTotalPrice();
 
-  if( customer.VSbalance != "" ) {
-    totalPrice += parseInt(customer.VSbalance, 10);
-    customer.totalPrice = totalPrice;
-  }
-  
-  
-  $('.js-total-price-amount').text(totalPrice);
+  $('.js-total-price-amount').text(data.totalPrice);
+  $('.js-total-price-amount-single').text(data.totalPrice);
+}
+
+function updateTotalPrice() {
+  const VSbalance = parseInt(customer.VSbalance, 10) || 0;
+  const Vprice = customer.Vprice || 0;
+  const Iprice = customer.Iprice || 0;
+  const Sprice = customer.Sprice || 0
+
+  customer.totalPrice = VSbalance + Vprice + Iprice + Sprice;
 }
 
 function removeItemFromBasket(btn) {
@@ -30108,7 +31319,7 @@ function removeItemFromBasket(btn) {
     totalPrice += parseInt(b.priceData.price,10);
   });
   $('.js-subtotal-price-amount').text(totalPrice);
-
+  $('.js-final-total-price-amount').text(totalPrice);
   localStorage.removeItem('basket');
   localStorage.setItem('basket', JSON.stringify(basket));
   $(`.basket-line[data-item="${dataItem}"]`).remove();
@@ -30134,4 +31345,83 @@ function updateCard(data) {
 
 }
 
+function toggleCheckbox(checkbox) {
+  if(!checkbox.prop('checked')) {
+    checkbox.prop('checked', true);
+  } else {
+    checkbox.prop('checked', false);
+  }
+}
 
+function setInlcludedItems(itemId) {
+  const elItems = basket[itemId - 1].includedItems || '';
+  if(elItems.length) {
+    $(`.btn-service-toggler:contains('-')`).trigger('click'); 
+    for (let i = 0; i < elItems.length; i++) {
+      $(`.btn-service-toggler:contains('+')[data-target="${elItems[i]}"]`)
+        .trigger('click');      
+    }
+  } else {
+    $(`.btn-service-toggler:contains('-')`).trigger('click'); 
+  }
+}
+
+
+function addService(target, index) {
+  $('.btn-checkout').show();
+  $(target).slideDown();
+  $(`.included-item[data-label=${target.replace('#','')}-box]`).slideDown();
+  $(`.basket-line[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).removeClass('inactive');
+  $(`${target}-block`).removeClass('inactive');
+  $(`.js-basket-item[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).removeClass('inactive');
+}
+
+function removeService(target, index) {
+  $(target).slideUp();
+  $(`.included-item[data-label=${target.replace('#','')}-box]`).slideUp();
+  $(`${target}-box`).slideUp();
+  $(`.basket-line[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).addClass('inactive');
+  $(`.js-basket-item[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).addClass('inactive');
+  $(`${target}-block`).addClass('inactive');
+}
+
+function setTotalPrice(index = false) {
+  
+  if (index) {
+    basket[index - 1].total = customer.totalPrice;
+    $(`.basket-line[data-item="${index}"] .price-amount`).text(customer.totalPrice);
+    
+    let subtotal = 0;
+    basket.forEach(function(b) {
+      const total = b.total ? b.total : parseInt(b.priceData.price, 10);
+      subtotal += total
+    });
+    $(`.js-basket-item[data-item="${index}"] .price-box span`).text(customer.totalPrice)
+    $('.js-subtotal-price-amount').text(subtotal);
+    $('.js-final-total-price-amount').text(subtotal);
+    return subtotal;
+  } else {
+    let subtotal = 0;
+    basket.forEach(function(b) {
+      const total = b.total ? b.total : parseInt(b.priceData.price, 10);
+      subtotal += total
+    });
+    return subtotal;
+  }
+
+}
+
+function applyDiscount(totalPrice, percent) {
+  customer.subtotal = totalPrice;
+  totalPrice = +totalPrice * (1 - percent / 100);
+  $('.js-total-price-amount').text(totalPrice);
+  $('.js-final-total-price-amount').text(totalPrice);
+  let discountAmount = $('.js-discount-amount').text();
+  customer.totalPrice = totalPrice.toFixed(2);
+  discountAmount = +discountAmount + percent;
+  $('.discount-info').show();
+
+  $('.js-discount-amount').text(discountAmount);
+  
+  $('.js-subtotal-amount').text(customer.subtotal);
+}

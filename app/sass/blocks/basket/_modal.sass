@@ -37,6 +37,9 @@
 
 .sims-box
   display: flex
+  width: 90%
+  margin-right: auto
+  margin-left: auto
   justify-content: space-between
   align-items: center
   label 
@@ -51,7 +54,8 @@
   display: flex
   align-items: flex-end
   position: relative
-
+  &:last-child
+    margin-left: -18px
   .btn-show-sim-info
     font-size: 10px
     width: 18px
@@ -67,8 +71,9 @@
     right: -20px
     transition: 0.3s ease
 
-    &:hover
+    &.active
       background: $accent
+      border-color: $accent
 
   label 
     color: #fff
@@ -82,8 +87,24 @@
       img
         &:nth-child(2)
           display: none
-
+    span
+      font-size: 18px
+      font-weight: 600
+      transition: 0.3s ease
           
+
+    &:hover
+      span
+        transform: scale(1.2)
+      .img-wrapper
+        img
+          &:nth-child(1)
+            display: none
+          &:nth-child(2)
+            display: block
+      .circle
+        &::before
+          opacity: 1
 
     .circle
       width: 20px
@@ -119,6 +140,8 @@
             display: none
           &:nth-child(2)
             display: block
+      span
+        transform: scale(1.2)
 
 .action-buttons
   width: 100%
@@ -211,12 +234,29 @@
   .basket-modal
     .modal-dialog
       width: 95%
+      .sims-box
+        width: 100%
+        flex-direction: column
+        .line
+          display: none
+        .sim__item
+          margin-bottom: 20px
 
-@media only screen and (max-width: 350px)
-  .basket-modal
-    .sims-box
-      flex-direction: column
-      .line
-        display: none
-      .sim__item
-        margin-bottom: 20px
+.animate-it
+  a
+    display: block
+    animation: rubberBand 1s 1
+    animation-delay: 0.5s
+    transform-origin: right
+
+@keyframes rubberBand
+  0%
+    transform: scale(1)
+  25%
+    transform: scale(1.2)
+  50%
+    transform: scale(1)
+  75%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)

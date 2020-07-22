@@ -4,6 +4,7 @@ const customer = {}; //details about customer
 
 let cardData;
 
+let newCardData
 
 const elCheckoutBtn = $('.btn-checkout');
 
@@ -19,43 +20,82 @@ $(document).ready(function () {
   
   
 
+  $('.btn-basket').on('click', function(e) {
+    e.preventDefault();
 
+    if(basket.length === 1) {
+      window.location.href = 'shopping-card.html';
+    } else {
+      window.location.href = 'basket.html';
+    }
+
+  })
 
 
   if ($('body').hasClass('basket-body')) {
     fillBasket();
 
+    for (let i = 0; i < basket.length; i++) {
+      if(basket[i].includedItems) {
+        for (let j = 0; j < basket[i].includedItems.length; j++) {
+          addService(basket[i].includedItems[j], i+1);
+          setTotalPrice(i+1)
+        }
+      }
+    }
 
     $('.js-add-service ').on('click', function(e) {
       const index = parseInt($(this).attr('data-item'),10);
       const data = basket[index-1];
-      
+
+      $('.js-btn-checkout').attr('data-item', index);
+
       $('.js-basic-basket').hide();
       $('.js-basket-shopping-card').show();
       $('.js-basket-list').show();
       $('.js-step[data-step="1"]').show();
       $('.js-subtotal-wrapper').show();
-      $(`.basket-line[data-item="${index}"]`).hide();
+      $(`.basket-line[data-item="${index}"]`).hide().siblings().show();
       $('.js-shopping-card__card').attr('data-item', index);
+
+      if (customer.dhl == 'on') {
+        $('.js-dhl-img').show();
+      } else {
+        $('.js-dhl-img').hide();
+      }
+
+      $('.shopping-card__form').attr('data-item', index);
+
+      customer.Iprice = parseInt(data.priceData.price, 10);
+      customer.totalPrice = customer.Iprice;
+
       setBasicInPlans(data);
+
+      setInlcludedItems(index);
+
     });
 
     $('.basket-line').on('click', function () {
       const index = parseInt( $(this).attr('data-item'), 10 );
       updateCard(basket[index - 1]);
       
+
+      $('.shopping-card__form').attr('data-item', index);
+
       $(`.basket-line[data-item=${index}]`).hide()
         .siblings().show();
         
-      
+      console.log(basket[index - 1]);
 
       $('.js-shopping-card__card').attr('data-item', index);
 
-      const btns = $('.additional-services').find('.btn-service-toggler');
+      $(`.js-add-service[data-item="${index}"]`).trigger('click');
 
-      //close all services
-      btns.children('span:first-child').text('-');
-      btns.trigger('click');
+      // const btns = $('.additional-services').find('.btn-service-toggler');
+
+      // //close all services
+      // btns.children('span:first-child').text('-');
+      // btns.trigger('click');
       
     });
 
@@ -85,13 +125,10 @@ $(document).ready(function () {
         $(this).hide();
         $('.js-total-price-amount').text(customer.totalPrice);
         const index = parseInt( $('.js-shopping-card__card').attr('data-item') );
-
-        $(`.basket-line[data-item="${index}"]`).find('.included-item').addClass('inactive');
+        updateTotalPrice();
+      
+        setTotalPrice(index)
         
-        basket[index - 1].includedItems.forEach(function(i) {
-         $(`.basket-line[data-item="${index}"]`).find(i + '-wrapper').removeClass('inactive');
-        });
-
       }
 
     });
@@ -101,6 +138,10 @@ $(document).ready(function () {
     $('.js-btn-confirm-and-pay').on('click', function() {
       $(this).hide();
       $('.js-all-wrapper').addClass('payed');
+      const html = `
+      <span class="plan-paid-text">plan payed <span><img src="img/icons/confirmed.svg" alt=""></span></span>
+      `
+      $('.price-box').html(html);
     });
 
 
@@ -121,16 +162,39 @@ $(document).ready(function () {
 
   $('.btn-show-sim-info').click(function (e) {
     const target = e.target.dataset.target;
-    $(target).siblings().hide();
+    const inputTarget = e.target.dataset.sim;
+    $(this).toggleClass('active');
+
+    $(`.btn-show-sim-info:not([data-target="${target}"])`).removeClass('active');
+
+    $(target).siblings().hide()
     $(target).toggle();
+
+    if( $(this).hasClass('active') ) {
+      $(inputTarget).prop('checked', true);
+    }
+
+    if($('#sims-sim').is(':checked')) {
+      $('#dhl-checkbox').prop('checked', true);
+    } else {
+      $('#dhl-checkbox').prop('checked', false);
+    }
+
   });
 
 
   $('.btn-add-to-card').on('click', function () {
-    $('.notification-block').slideDown().show();
+    $('.notification-block').slideDown().addClass('animate-it');
+
+    setTimeout(() => {
+      $('.notification-block').slideUp().removeClass('animate-it');
+    }, 6000);
+
     localStorage.removeItem('card');
     localStorage.setItem('card', JSON.stringify(cardData));
-
+    $('html').animate({
+      scrollTop: 0
+    },'slow');
     const simType = $('#add-to-card-form').serialize();
     cardData.simType = simType.split('=')[1];
     const dhlOn = $('#dhl-form').serialize();
@@ -147,6 +211,17 @@ $(document).ready(function () {
 
   });
 
+
+  $('#add-to-card-form').on('change', function(e) {
+    const simType = $(this).serialize().split('=')[1];
+    if(simType == "Sim") {
+      $('#dhl-checkbox').prop('checked', true);
+    } else {
+      $('#dhl-checkbox').prop('checked', false);
+    }
+  });
+
+
   $('.tab_content').on('click', '.btn-buy',function (e) {
     cardData = getCardDetails(e.target);
   });
@@ -158,8 +233,13 @@ $(document).ready(function () {
     const elNumbersList = $('#numbers-list');
     const elVirtualInnerBox = $('.virtual-inner');
 
-    const newCardData = JSON.parse(localStorage.getItem('card'));
-
+    newCardData = JSON.parse(localStorage.getItem('card'));
+    customer.totalPrice = 0;
+    customer.totalPrice += parseInt(newCardData.priceData.price, 10);
+    if(!$('body').hasClass('basket-body')) {
+      customer.Iprice = customer.totalPrice;
+      $('.js-total-price-amount').text(customer.Iprice);
+    }
     setTimeout(function() {
       switch(newCardData.plan) {
         case "Worldwide":
@@ -176,8 +256,8 @@ $(document).ready(function () {
 
     $('.tab-inner').each(function () {
       $(this).on('click', '.btn-buy', function (e) {
-        $('.notification-block').slideUp().hide();
-        console.log(getCardDetails(e.target));
+        $('.notification-block').slideUp();
+        console.log('btn-buy');
       });
     });
 
@@ -194,67 +274,127 @@ $(document).ready(function () {
       $(`#region-list .nav-link[data-value="${continent}"]`).trigger('click');
     });
 
-    $('.btn-service-toggler').click(function (e) {
-      const status = $(this).children('span').first().text();
-      const target = $(this).data('target');
-      const dataNames = $(this).data('names').split(',');
-      const index = parseInt( $('.js-shopping-card__card').attr('data-item'), 10 );
 
-      
 
-      if (status == "+") {
-        $('.btn-checkout').show();
-        $(target).slideDown();
-        $(`${target}-box`).slideDown();
-        $(`${target}-block`).slideDown();
-
-        $(this).css('color', '#ff0000');
-        $(this).children('span').first().text("-");
-        if (target == "#virtual-number" || target == "#substitution-number") {
-          elCheckoutBtn.attr('disabled', true);
-        }
-      } else {
-        dataNames.forEach(function (d) {
-          customer[d] = "";
+    $('.btn-service-toggler')
+      .mouseenter(function() {
+        $(this).siblings('img').css({
+          transform: 'scale(1.2)'
         });
+      })
+      .mouseleave(function() {
+        $(this).siblings('img').css({
+          transform: 'scale(1)'
+        });
+      })
+      .click(function (e) {
+        const status = $(this).children('span').first().text();
+        const target = $(this).data('target');
+        const dataNames = $(this).data('names').split(',');
+        const index = parseInt( $('.js-shopping-card__card').attr('data-item'), 10 );
 
-        $(target).slideUp();
-        $(`${target}-box`).slideUp();
-        $(`${target}-block`).slideUp();
+        toggleCheckbox($(this).children('input'));
 
-        $(this).css('color', '#000');
-        $(this).children('span').first().text("+")
+        if (status == "+") {
+          addService(target, index)
+          
 
-        //hide joined info
-        $('.join-info').hide();
-        $('.virtual-inner').show();
-        $('.substitution-join').hide();
-        $('.virtual-number-info').show();
-        //end of joined info
-        
-        if (target == "#virtual-number" || target == "#substitution-number") {
-          const newsTarget = target == "#virtual-number" ? "#substitution-number" : "#virtual-number"
-          if ($(target).siblings(newsTarget).attr('style') == "display: none;") {
-            elCheckoutBtn.removeAttr('disabled');
-            elCheckoutBtn.show();
+          $(this).css('color', '#ff0000');
+          $(this).children('span').first().text("-");
+          if (target == "#virtual-number" || target == "#substitution-number") {
+            
+            if(target == "#virtual-number") {
+              customer.Vprice = 500;
+            }
+
+            if(target == "#substitution-number") {
+              customer.Sprice = 25;
+            }
+
+
+            elCheckoutBtn.attr('disabled', true);
+          }
+        } else {
+          dataNames.forEach(function (d) {
+            customer[d] = "";
+          });
+
+          if(target == "#virtual-number" && customer.Vprice == 500) {
+            customer.Vprice = 0;
+          }
+
+          if(target == "#substitution-number" && customer.Sprice == 25) {
+            customer.Sprice = 0;
+          }
+
+          if (target == "#voice-sms") {
+
+            $('select[name="VSbalance"]').prop("selectedIndex", -1)
+            $('#enter-balance').selectpicker('refresh');
+          }
+
+          removeService(target, index)
+          $(this).css('color', '#000');
+          $(this).children('span').first().text("+")
+
+          //hide joined info
+          $('.join-info').hide();
+          $('.virtual-inner').show();
+          $('.virtual-number-info').hide();
+          //end of joined info
+          
+          if (target == "#virtual-number" || target == "#substitution-number") {
+            const newsTarget = target == "#virtual-number" ? "#substitution-number" : "#virtual-number"
+            if ($(target).siblings(newsTarget).attr('style') == "display: none;") {
+              elCheckoutBtn.removeAttr('disabled');
+              elCheckoutBtn.show();
+            }
           }
         }
-      }
-      const includedItems = [];
-      const includedItemsBtns = ( $(`.btn-service-toggler:contains('-')`) );
-      
-      includedItemsBtns.each(function(btn) {
-        includedItems.push( $(this).attr('data-target') );
+
+        $('.js-total-price-amount').text(customer.totalPrice);
+
+        
+        const includedItems = [];
+        const includedItemsBtns = $(`.btn-service-toggler:contains('-')`);
+        
+        includedItemsBtns.each(function(btn) {
+          includedItems.push( $(this).attr('data-target') );
+        });
+        
+
+        if ($('body').hasClass('basket-body')) {
+          basket[index - 1].includedItems = includedItems;
+        
+          console.log(basket);
+
+          
+          localStorage.removeItem('basket');
+          localStorage.setItem('basket', JSON.stringify(basket));
+        }
+
+        updateCardInfo(customer);
+
       });
 
-      basket[index - 1].includedItems = includedItems;
-      
-      console.log(basket);
+    $('.js-sorted-items').on('click', function() {
+      console.log('ok')
+      $(this).parent().toggleClass('sorted');
+      $('.js-included-country-text').toggleClass('has-dashed-border');
+    });
 
-      localStorage.removeItem('basket');
-      localStorage.setItem('basket', JSON.stringify(basket));
+    $('.js-included-country-text').on('click', function() {
+      if( !$('.js-items-toggler').hasClass('sorted') ) {
+        $('.js-items-toggler').addClass('sorted');
+        $(this).removeClass('has-dashed-border');
+      }
+    });
 
-    })
+    $('.js-not-sorted-items .included-item').on('click', function() {
+      if( !$(this).parent().parent().hasClass('sorted') ) {
+        $(`.step-button[data-step='1']`).trigger('click');
+      }
+    });
 
     const elPhoneNumberInput = document.getElementById('subNumber');
     const elPhoneNumberInputStepTwo = document.querySelector('#telnumber');
@@ -281,11 +421,26 @@ $(document).ready(function () {
         placeholderChar: '_' // defaults to '_'
       });
       IMask(document.querySelector('#carddate'), {
-        mask: '00{/}00',
+        mask: 'MM{/}YY',
+        pattern: 'MM{/}YY',
         lazy: false, // make placeholder always visible
-        placeholderChar: '_' // defaults to '_'
+        placeholderChar: '_',
+        blocks: {
+          MM: {
+            mask: IMask.MaskedRange,
+            from: 01,
+            to: 12
+          },
+          YY: {
+            mask: IMask.MaskedRange,
+            from: 20,
+            to: 30
+          },
+        }
       });
     }
+
+
 
     elPhoneNumberInput.addEventListener('keyup', function (e) {
       if (e.target.value.length == 18 && e.target.value[e.target.value.length - 1] != "_") {
@@ -293,6 +448,35 @@ $(document).ready(function () {
       } else {
         $('.btn-substitution-join').attr('disabled', true);
       }
+    });
+
+    $('#cardnumber').on('keyup', function() {
+      if( 
+        $(this).val().length == 19 
+        && 
+        !$(this).val().includes('_') ) {
+        $('#carddate').focus();
+      }
+    });
+
+    $('#carddate').on('keyup', function() {
+      if( 
+        $(this).val().length == 5 
+        && 
+        !$(this).val().includes('_') ) {
+        $('#cardcode').focus();
+      }
+    });
+
+    
+    $('#sub-period').on('click', '.dropdown-item', function(e) {
+      $('#subNumber').removeAttr('disabled');
+    });
+
+    $('#virtual-period').on('click', '.dropdown-item', function (e) {
+      const elSelect = elCountriesList.find('select');
+      elSelect.removeAttr('disabled');
+      elSelect.selectpicker('refresh');
     });
 
     elCountriesList.on('click', '.dropdown-item', function (e) {
@@ -378,16 +562,23 @@ $(document).ready(function () {
     //listen to form changes
     $('.shopping-card__form').on('change',function() {
       const formData = decodeURIComponent($(this).serialize()).split('&');
-
       formData.forEach(function (data) {
         const dataArray = data.split('=');
         customer[dataArray[0]] = dataArray[1];
       });
 
       console.log(customer);
+      if( $('body').hasClass('basket-body') ) {
+        const index = $(this).data('item');
+        basket[index - 1].customer = customer;
+      }
 
-      updateCardInfo();
+      // const VSbalance = parseInt(data.VSbalance, 10) || 0;
 
+      // customer.totalPrice +=VSbalance
+
+      updateCardInfo(customer);
+      
       
     });
     //end of listining form changes
@@ -397,6 +588,13 @@ $(document).ready(function () {
       $('.tab_content-map').slideToggle();
       $(this).toggleClass('active');
       
+      if( $(this).hasClass('active') ) {
+        const target = $('.tab_content-map').offset().top;
+        $('html').animate({
+          scrollTop: target - 100
+        },'slow');
+      }
+
     });
 
     //steps controller
@@ -413,10 +611,14 @@ $(document).ready(function () {
       }
       
       if(step != 4) {
-        $(`.js-step[data-step="${step}"]`).siblings('.js-step').addClass(`display-none`);
+        $(`.js-step[data-step="${step}"]`)
+          .siblings('.js-step')
+          .addClass(`display-none`)
+          .find('.confirmation-box').hide();
       }
 
-      $(`.js-edit-btn[data-step="${step}"]`).show();
+      $(`.js-edit-btn[data-step="${step}"]`)
+        .show();
 
       if ($(this).hasClass('active')) {
         
@@ -428,12 +630,14 @@ $(document).ready(function () {
         
       } else {
         $(this).addClass('active');
+
         $(this).siblings(`.step-button`).each(function(btn) {
           if($(this).data('step') <= step) {
             $(this).addClass('active');
             $(this).removeAttr('disabled');
           }
         });
+        
       }
     })
 
@@ -506,6 +710,7 @@ $(document).ready(function () {
         moveToStep(4);
         hideStep(4);
         $('.payment-info-box').show();
+        $('.js-step').addClass('completed-step');
       }
     });
 
@@ -528,6 +733,7 @@ $(document).ready(function () {
       } else {
         moveToStep(3,true);
         $('.js-edit-btn[data-step="4"]').show();
+        $( $('.js-step[data-step="2"]')[1] ).addClass('completed-step');
       }
     });
 
@@ -540,6 +746,7 @@ $(document).ready(function () {
         $(`.step-button[data-step='1']`).trigger('click');
       } else {
         $('.js-all-wrapper').addClass('payed');
+        $('.js-edit-btn').hide();
       }
     }) 
 
@@ -557,6 +764,8 @@ $(document).ready(function () {
     $('.js-shipping-continue-btn').on('click', function(e) {
       moveToStep(4);
       hideStep(3);
+
+      $('.js-step[data-step="3"]').addClass('completed-step');
     });
     //end of billing
 
@@ -566,6 +775,7 @@ $(document).ready(function () {
       hideStep(4);
       $('.btn-edit').text('Сonfirm and Pay').attr('data-pay',true).css('background-color','red');
       $('.js-btn-confirm-and-pay').show();
+      $('.js-step[data-step="4"]').addClass('completed-step');
     });
 
     //end of payment
@@ -580,29 +790,21 @@ $(document).ready(function () {
     $('.discount-form').on('submit', function(e) {
       e.preventDefault();
       $(this).hide();
-      customer.subtotal = customer.totalPrice;
-      customer.totalPrice = +customer.totalPrice * 0.8;
-      $('.js-total-price-amount').text(customer.totalPrice);
-      let discountAmount = $('.js-discount-amount').text();
-      discountAmount = +discountAmount + 20;
-      $('.discount-info').show();
+      if($('body').hasClass('basket-body')) {
+        customer.totalPrice = setTotalPrice();
+        console.log(customer.totalPrice);
+      }
+      applyDiscount(customer.totalPrice, 20);
 
-      $('.js-discount-amount').text(discountAmount);
-      $('.js-subtotal-amount').text(customer.subtotal);
     });
 
     $('.giftcard-form').on('submit', function(e) {
       e.preventDefault();
       $(this).hide();
-
-      customer.totalPrice = +customer.totalPrice * 0.95;
-      let discountAmount = $('.js-discount-amount').text();
-
-      discountAmount = +discountAmount + 5;
-      
-      $('.js-discount-amount').text(discountAmount);
-      $('.discount-info').show();
-      $('.js-total-price-amount').text(customer.totalPrice);
+      if ($('body').hasClass('basket-body')) {
+        customer.totalPrice = setTotalPrice();
+      }
+      applyDiscount(customer.totalPrice, 5);
       $('.btn-gift-card-togger').attr('disabled', true);
     });
 
@@ -719,6 +921,7 @@ function setBasicInPlans(data) {
   const periodToBeClicked = getClickableParent('#enter-period',data.priceData.days + ` ${data.priceData.days == "1" ? "day" : "days"}`);
   periodToBeClicked.trigger('click');
 
+  
   $('.js-gb-amount-big').text(data.amount);
   $('.js-gb-amount').text(data.amount + 'Gb');
   $('.js-day-amount').text(`${data.priceData.days} days`);
@@ -771,8 +974,8 @@ function fillBasket() {
         </div>
         <div class="top3">
           <h3 class="my-3">Included in your plan:</h3>
-
-          <div class="included-item" id="internet-data-box">
+      <div class="js-not-sorted-items">
+      <div class="included-item" id="internet-data-box">
             <div class="img-wrapper">
               <img src="img/icons/icon2.png" alt="icon1">
             </div>
@@ -782,7 +985,7 @@ function fillBasket() {
                 <p class="item-period"><span class="card-gb-amount">${basket[i].amount}Gb</span>/<span class="card-day-amount">${basket[i].priceData.days} days</span></p>
               </div>
               <div class="content-right">
-                $ <span class="price-amount internet-price-amount">${basket[i].priceData.days}</span> us
+                $ <span class="price-amount internet-price-amount">${basket[i].priceData.price}</span> us
               </div>
             </div>
           </div>
@@ -806,6 +1009,9 @@ function fillBasket() {
           <div class="total-price mt-3">$ <span class="total-price-amount">${basket[i].priceData.price}</span> us</div>
           <button type="button" data-item="${i+1}" class="btn-checkout js-add-service mt-3">Add Services</button>
         </div>
+      
+      </div>
+          
       </div>
     </div>`
     
@@ -827,7 +1033,7 @@ function fillBasket() {
       </div>
       <div class="basket-item">
         <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-          <div class="included-item" id="internet-data-wrapper">
+          <div class="included-item" data-label="internet-data-wrapper">
             <div class="img-wrapper">
               <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
             </div>
@@ -835,7 +1041,7 @@ function fillBasket() {
               <h3 class="item-name">Internet data</h3>
             </div>
           </div>
-          <div class="included-item inactive" id="voice-sms-wrapper">
+          <div class="included-item inactive" data-label="voice-sms-block">
             <div class="img-wrapper">
               <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
             </div>
@@ -843,7 +1049,7 @@ function fillBasket() {
               <h3 class="item-name">Voice and SMS</h3>
             </div>
           </div>
-          <div class="included-item inactive" id="virtual-number-wrapper">
+          <div class="included-item inactive" data-label="virtual-number-block">
             <div class="img-wrapper">
               <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
             </div>
@@ -851,7 +1057,7 @@ function fillBasket() {
               <h3 class="item-name">Virtual number</h3>
             </div>
           </div>
-          <div class="included-item inactive" id="substitution-number-wrapper">
+          <div class="included-item inactive" data-label="substitution-number-block">
             <div class="img-wrapper">
               <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
             </div>
@@ -888,7 +1094,7 @@ function fillBasket() {
                 class="sim-name js-sim-name">${basket[i].simType}</span></span></h4>
           <span class="line"></span>
           <div class="included-items-wrapper d-flex align-items-baseline justify-content-around mt-3">
-            <div class="included-item" id="internet-data-box">
+            <div class="included-item" data-label="internet-data-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon2.png" alt="icon1">
               </div>
@@ -896,7 +1102,7 @@ function fillBasket() {
                 <h3 class="item-name">Internet data</h3>
               </div>
             </div>
-            <div class="included-item inactive" id="voice-sms-box">
+            <div class="included-item inactive" data-label="voice-sms-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon5.png" alt="icon1">
               </div>
@@ -904,7 +1110,7 @@ function fillBasket() {
                 <h3 class="item-name">Voice and SMS</h3>
               </div>
             </div>
-            <div class="included-item inactive" id="virtual-number-box">
+            <div class="included-item inactive" data-label="virtual-number-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon3.png" alt="icon1">
               </div>
@@ -912,7 +1118,7 @@ function fillBasket() {
                 <h3 class="item-name">Virtual number</h3>
               </div>
             </div>
-            <div class="included-item inactive" id="substitution-number-box">
+            <div class="included-item inactive" data-label="substitution-number-block">
               <div class="img-wrapper">
                 <img src="img/icons/icon4.png" alt="icon1">
               </div>
@@ -923,7 +1129,7 @@ function fillBasket() {
           </div>
           <div class="subtotal-box d-flex align-items-center justify-content-between">
             <span>Subtotal</span>
-            <span>$ <span class="js-subtotal-amount">1150</span> us</span>
+            <span>$ <span class="js-subtotal-amount">${basket[i].priceData.price}</span> us</span>
           </div>
           <button data-item="${i+1}" class="rounded-button js-edit-package d-block mx-auto">Edit</button>
         </div>
@@ -944,7 +1150,7 @@ function fillBasket() {
   elBasketItemsBox.html(chunk);
     
   $('.js-subtotal-price-amount').text(totalPrice);
-  
+  $('.js-final-total-price-amount').text(totalPrice);
   elBasketItemsBox.removeClass('slick-initialized slick-slider');
 
   elBasketItemsBox.slick({
@@ -982,39 +1188,49 @@ function fillBasket() {
 }
 
 
-function updateCardInfo() {
+function updateCardInfo(data) {
 
-  $('.day-amount').text(customer.VSperiod + ` ${customer.VSperiod == "1" ? "day" : "days"}`);
+  $('.day-amount').text(data.period + ` ${data.period == "1" ? "day" : "days"}`);
+
+  $('.js-vs-day-amount').text(data.VSperiod + ` ${data.VSperiod == "1" ? "day" : "days"}`);
+  $('.js-sub-period').text(data.subPeriod + ' month');
+
+  $('.js-vs-price').text( data.VSbalance )
+
+  $('.gb-amount').text(data.gb + 'Gb')
+
+  try {
+    $('.js-tariff-name').text(data.tariff.toUpperCase());
+  } catch (error) {
+    console.log(error);
+  }
+ 
+  $('.js-sim-name').text(data.simToBeSelected);
   
-  $('.js-vs-price').text( customer.VSbalance )
+  $('.js-plan-name').text(`${data.location} Plan`);
 
-  $('.gb-amount').text(customer.gb + 'Gb')
-
-  $('.js-tariff-name').text(customer.tariff.toUpperCase());
-  $('.js-sim-name').text(customer.simToBeSelected);
-  
-  $('.js-plan-name').text(`${customer.location} Plan`);
-
-  if (customer.simToBeSelected == "Sim") {
+  if (data.simToBeSelected == "Sim") {
     $('.sim-img').attr('src', 'img/icons/right-sim.png');
   } else {
     $('.sim-img').attr('src', 'img/icons/left-sim.png');
   }
 
-  $('.js-v-day-amount').text(customer.Vperiod + ' month')
-  let totalPrice = 0; 
+  $('.js-v-day-amount').text(data.Vperiod + ' month')
+  console.log(data.totalPrice);
 
-  $('.js-price-amount').each(function(e) {
-    totalPrice += parseInt($(this).text().split(' ').join(''),10);
-  });
+  updateTotalPrice();
 
-  if( customer.VSbalance != "" ) {
-    totalPrice += parseInt(customer.VSbalance, 10);
-    customer.totalPrice = totalPrice;
-  }
-  
-  
-  $('.js-total-price-amount').text(totalPrice);
+  $('.js-total-price-amount').text(data.totalPrice);
+  $('.js-total-price-amount-single').text(data.totalPrice);
+}
+
+function updateTotalPrice() {
+  const VSbalance = parseInt(customer.VSbalance, 10) || 0;
+  const Vprice = customer.Vprice || 0;
+  const Iprice = customer.Iprice || 0;
+  const Sprice = customer.Sprice || 0
+
+  customer.totalPrice = VSbalance + Vprice + Iprice + Sprice;
 }
 
 function removeItemFromBasket(btn) {
@@ -1026,7 +1242,7 @@ function removeItemFromBasket(btn) {
     totalPrice += parseInt(b.priceData.price,10);
   });
   $('.js-subtotal-price-amount').text(totalPrice);
-
+  $('.js-final-total-price-amount').text(totalPrice);
   localStorage.removeItem('basket');
   localStorage.setItem('basket', JSON.stringify(basket));
   $(`.basket-line[data-item="${dataItem}"]`).remove();
@@ -1052,4 +1268,83 @@ function updateCard(data) {
 
 }
 
+function toggleCheckbox(checkbox) {
+  if(!checkbox.prop('checked')) {
+    checkbox.prop('checked', true);
+  } else {
+    checkbox.prop('checked', false);
+  }
+}
 
+function setInlcludedItems(itemId) {
+  const elItems = basket[itemId - 1].includedItems || '';
+  if(elItems.length) {
+    $(`.btn-service-toggler:contains('-')`).trigger('click'); 
+    for (let i = 0; i < elItems.length; i++) {
+      $(`.btn-service-toggler:contains('+')[data-target="${elItems[i]}"]`)
+        .trigger('click');      
+    }
+  } else {
+    $(`.btn-service-toggler:contains('-')`).trigger('click'); 
+  }
+}
+
+
+function addService(target, index) {
+  $('.btn-checkout').show();
+  $(target).slideDown();
+  $(`.included-item[data-label=${target.replace('#','')}-box]`).slideDown();
+  $(`.basket-line[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).removeClass('inactive');
+  $(`${target}-block`).removeClass('inactive');
+  $(`.js-basket-item[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).removeClass('inactive');
+}
+
+function removeService(target, index) {
+  $(target).slideUp();
+  $(`.included-item[data-label=${target.replace('#','')}-box]`).slideUp();
+  $(`${target}-box`).slideUp();
+  $(`.basket-line[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).addClass('inactive');
+  $(`.js-basket-item[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).addClass('inactive');
+  $(`${target}-block`).addClass('inactive');
+}
+
+function setTotalPrice(index = false) {
+  
+  if (index) {
+    basket[index - 1].total = customer.totalPrice;
+    $(`.basket-line[data-item="${index}"] .price-amount`).text(customer.totalPrice);
+    
+    let subtotal = 0;
+    basket.forEach(function(b) {
+      const total = b.total ? b.total : parseInt(b.priceData.price, 10);
+      subtotal += total
+    });
+    $(`.js-basket-item[data-item="${index}"] .price-box span`).text(customer.totalPrice)
+    $('.js-subtotal-price-amount').text(subtotal);
+    $('.js-final-total-price-amount').text(subtotal);
+    return subtotal;
+  } else {
+    let subtotal = 0;
+    basket.forEach(function(b) {
+      const total = b.total ? b.total : parseInt(b.priceData.price, 10);
+      subtotal += total
+    });
+    return subtotal;
+  }
+
+}
+
+function applyDiscount(totalPrice, percent) {
+  customer.subtotal = totalPrice;
+  totalPrice = +totalPrice * (1 - percent / 100);
+  $('.js-total-price-amount').text(totalPrice);
+  $('.js-final-total-price-amount').text(totalPrice);
+  let discountAmount = $('.js-discount-amount').text();
+  customer.totalPrice = totalPrice.toFixed(2);
+  discountAmount = +discountAmount + percent;
+  $('.discount-info').show();
+
+  $('.js-discount-amount').text(discountAmount);
+  
+  $('.js-subtotal-amount').text(customer.subtotal);
+}

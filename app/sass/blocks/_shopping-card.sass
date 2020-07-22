@@ -12,6 +12,11 @@
 .shopping-card-box
   min-height: 57.2vh
 
+.left-item
+  .row
+    .col-sm-4
+      align-self: center
+
 .opening-title
   position: relative
   margin: 40px auto
@@ -22,8 +27,8 @@
 
   span
     display: block
-    height: 4px
-    width: 60px
+    height: 3px
+    width: 40px
     background: $accent
     margin-bottom: 10px
   
@@ -32,9 +37,13 @@
 
 
 .shopping-card__form
+
+  .bootstrap-select
+    .dropdown-toggle
+      border: 1px solid #707070
   .sims-box
     justify-content: unset
-    
+    width: 100%
     .circle
       border-color: #000000
 
@@ -42,7 +51,9 @@
       label
         span
           color: #000000
-          font-weight: 600
+          font-family: $semibold
+      &:last-child
+        margin-left: 0px
     .line
       background: #000
       margin: 0 20px
@@ -52,6 +63,15 @@
       border-color: #000000
       color: #000000
       &:hover
+        color: #fff
+        transform: scale(1.2)
+        border-color: $accent
+        background: $accent
+      &:focus
+        box-shadow: none
+      &.active
+        transform: scale(1.2)
+        border-color: $accent
         color: #fff
 
   .inner-box
@@ -85,14 +105,14 @@
         font-size: 12px
     .title-box
       font-size: 14px
-      font-weight: 600
+      font-family: $semibold
       text-transform: uppercase
       p
         margin-bottom: 5px
 
     .info-text
       color: #000000 !important
-      font-weight: 600
+      font-family: $semibold
       margin: 0
     .dhl-checkbox-label
       span
@@ -108,6 +128,7 @@
     &:hover
       background: $accent !important
       color: #ffffff !important
+      border-color: $accent
 
   .dropdown-item.selected
     color: $accent !important
@@ -118,6 +139,8 @@
 
 .plans-block
   position: relative
+
+
 
 .btn-show-countries
   position: absolute
@@ -137,20 +160,25 @@
   right: -30px
   transition: 0.3s ease
   z-index: 20
-
+  outline: none !important
   &.active
     background: $accent
     color: #ffffff
+    border-color: $accent
 
   &:hover
     background: $accent
     color: #ffffff
+    border-color: $accent
+  &:focus
+    box-shadow: none
 
 
 .service__item
 
   img
     margin-bottom: 10px
+    transition: 0.3s ease
 
   span
     text-transform: uppercase
@@ -168,6 +196,7 @@
 
   &:hover
     color: $accent
+
 
   span
     &:first-child
@@ -195,10 +224,11 @@
   border: 1px solid $accent
   border-radius: 10px
   font-size: 18px
-  font-weight: 600
+  font-family: $semibold
   transition: 0.3s ease
   background: $accent
   color: #fff
+  padding: 5px 35px
 
   &[disabled]
     border: 1px solid $accent
@@ -215,7 +245,7 @@
   .region-name,
   .virtual-number
     color: $accent
-    font-weight: 600
+    font-family: $semibold
     font-size: 16px
     margin-left: 5px
 
@@ -230,7 +260,7 @@
     margin-bottom: 0
     margin-left: 8px
     color: $accent
-    font-weight: 600
+    font-family: $semibold
 
 .substitution-wrapper
   h5
@@ -245,7 +275,7 @@
     span
       font-size: 14px
     .virtual-number
-      font-weight: 600
+      font-family: $semibold
       margin-left: 5px
   .substitution-info
     display: flex
@@ -255,7 +285,7 @@
       font-size: 16px
     .substitution-number
       color: $accent
-      font-weight: 600
+      font-family: $semibold
 
 
 
@@ -276,7 +306,7 @@
     border-radius: 20px
     color: #fff
     max-width: 350px
-    background: transparent linear-gradient(180deg, rgba(136,135,135,0.839) 0%, rgba(10,10,10,0.91) 100%) 0% 0% no-repeat padding-box
+    background: url('../img/icons/item-bg.png') no-repeat center center / cover, linear-gradient(180deg, rgba(136,135,135,0.839) 0%, rgba(10,10,10,0.91) 100%)
     
     span.line
       width: 65%
@@ -288,7 +318,7 @@
       text-align: center
       color: white
       font-size: 100px
-      font-weight: 600
+      font-family: $semibold
       padding: 0
       margin: 0
       display: flex
@@ -312,7 +342,7 @@
     .top2
       text-align: center
       font-style: italic
-      font-weight: 600
+      font-family: $semibold
       white-space: nowrap
       h4
         display: flex
@@ -332,7 +362,7 @@
         font-size: 22px
         display: block
         transform: skewX(-20deg)
-        border-radius: 10px
+        border-radius: 8px
         span
           display: block
           transform: skewX(20deg)
@@ -341,8 +371,72 @@
       h3
         font-size: 14px
         font-weight: normal
+
+
+
+
+  .total-price
+    font-size: 28px
+    text-align: center
+    font-family: $semibold
+    font-style: italic
+    margin-top: 0 !important
+    span
+      font-size: 52px
+  .btn-checkout
+    padding: 2px 30px
+    background: $accent
+    transition: 0.3s ease
+    border-radius: 15px
+    border: 1px solid transparent
+    font-size: 31px
+    color: #ffffff
+    font-family: $semibold
+    display: block
+    margin-right: auto
+    margin-left: auto
+    margin-top: 0 !important
+    transition: 0.3s ease
+
+    &:hover
+      border-color: #fff
+      transform: scale(1.07)
+      background: rgba(178,0,0,0.8)
+
+    &[disabled]
+      background: #b9b9b9
+      cursor: not-allowed
+  .right-span
+    background-color: red
+    border-radius: 8px
+    margin-left: 10px
+    padding: 0 10px
+    transform: skewX(-20deg)
+    position: relative
+    .text
+      color: white
+      position: relative
+      transform: skewX(20deg)
+      width: 100%
+      height: 100%
+      font-weight: 400
+      display: flex
+      justify-content: center
+      align-items: center
+      align-content: center
+      top: 0
+      font-size: 22px
+      font-style: italic
+//END OF CARD
+
+
+.js-not-sorted-items
   .included-item
     position: relative
+    transition: 0.3s ease
+    // cursor: pointer
+    // &:hover
+    //   transform: scale(1.07)
     .img-wrapper
       position: absolute
       width: 90px
@@ -377,60 +471,14 @@
         color: $accent
       .item-period
         font-size: 12px
+        margin: 0
       .content-right
-        font-weight: 600
+        font-family: $semibold
         font-size: 19px
         white-space: nowrap
         .price-amount
           font-size: 26px
 
-
-  .total-price
-    font-size: 28px
-    text-align: center
-    font-weight: 600
-    font-style: italic
-    span
-      font-size: 52px
-  .btn-checkout
-    padding: 5px 30px
-    background: $accent
-    transition: 0.3s ease
-    border-radius: 15px
-    border: none
-    font-size: 31px
-    color: #ffffff
-    font-weight: 600
-    display: block
-    margin-right: auto
-    margin-left: auto
-    transition: 0.3s ease
-
-    &[disabled]
-      background: #b9b9b9
-      cursor: not-allowed
-  .right-span
-    background-color: red
-    border-radius: 8px
-    margin-left: 10px
-    padding: 0 10px
-    transform: skewX(-20deg)
-    position: relative
-    .text
-      color: white
-      position: relative
-      transform: skewX(20deg)
-      width: 100%
-      height: 100%
-      font-weight: 400
-      display: flex
-      justify-content: center
-      align-items: center
-      align-content: center
-      top: 0
-      font-size: 22px
-      font-style: italic
-//END OF CARD
 
 //steps controller
 
@@ -472,13 +520,14 @@
   border: none
   background: transparent
   font-size: 14px
-  font-weight: 600
+  font-family: $semibold
   padding: 2px 15px
   margin-right: 10px
   transition: 0.3s ease
   border-radius: 20px
   outline: none !important
   border: 2px solid transparent
+  &:hover, 
   &.active
     border: 2px solid $accent
     color: $accent
@@ -504,7 +553,7 @@
     span
       position: absolute
       font-size: 12px
-      font-weight: 600
+      font-family: $semibold
       top: -6px
       line-height: 12px
       left: 30px
@@ -525,6 +574,7 @@
         background-position: center center
 
 .confirm-wrapper
+  margin-left: auto
   padding: 0 15px
   p
     font-size: 12px
@@ -540,7 +590,7 @@
   border: 2px solid $accent
   background: transparent
   color: $accent
-  font-weight: 600
+  font-family: $semibold
   font-size: 18px
   padding: 2px 10px
   border-radius: 15px
@@ -557,11 +607,7 @@
 
 //step-controllers-classes
 
-// .js-step
-//   .opening-title
-//     filter: grayscale(100%)
-//     opacity: 0.7
-  
+
 .display-none
   display: none
   
@@ -579,16 +625,29 @@
     .step-content
       display: none
 
+.completed-step
+  .opening-title
+    filter: grayscale(0) !important
+    opacity: 1 !important
+
+.js-opening-title
+  .inner-wrapper
+    span
+      height: 4px
+      width: 60px      
+
 .edit-btn
   padding: 0
+  padding-left: 15px
   border: none
   position: absolute
   right: 0
   bottom: 5px
-  background: transparent
+  background: linear-gradient(to top, #fff 10%, transparent)
   color: #000
   font-size: 16px
   outline: none !important
+
 //end of controller classes
 
 //payment info box
@@ -714,7 +773,10 @@
   display: block
   margin-left: auto
   margin-bottom: 20px
-
+  transition: 0.3s ease
+  &:hover
+    background: $accent
+    color: #ffffff  
 //end of billing info box
 
 //payment-section
@@ -770,6 +832,7 @@
 //confiramtion-box
 
 .confirmation-box
+  margin-top: -15px
   flex-wrap: wrap
   img
     margin-right: 15px
@@ -836,29 +899,7 @@
     h3
       font-size: 24px
 
-  .included-item
-    width: 25%
-    display: flex
-    flex-direction: column
-    align-items: center
-    .img-wrapper
-      transform: none
-      position: unset
-      width: auto
-      height: auto
-      background: none
-      margin-bottom: 10px
-      img
-        transform: none
-        margin: 0
-
-    .item-content
-      .item-name
-        font-size: 12px
-        font-weight: normal
-        text-align: center
-        text-transform: none
-
+  
   .discount-form,
   .giftcard-form
     display: flex
@@ -876,7 +917,7 @@
     border: none
     color: #fff
     font-size: 16px
-    font-weight: 600
+    font-family: $semibold
     transition: 0.3s ease
 
     &:disabled
@@ -894,6 +935,12 @@
     &.active
       border-bottom: 1px dashed #b9b9b9
 
+  .js-not-sorted-items
+    .included-item
+      cursor: pointer
+      transition: 0.3s ease
+      &:hover
+        transform: scale(1.07)
 
   .subtotal-wrapper
     display: flex
@@ -908,19 +955,88 @@
     .d-block
       font-size: 16px
   .btn-edit
-    padding: 2.5px 30px
+    padding: 5px 30px
     background: transparent
     transition: 0.3s ease
     border-radius: 20px
     border: 2px solid #fff
     font-size: 31px
     color: #ffffff
-    font-weight: 600
+    font-family: $semibold
+    line-height: 1.2
     display: block
     margin-right: auto
     margin-left: auto
     transition: 0.3s ease
-    
+
+.has-dashed-border
+  display: inline-block
+  padding-bottom: 3px
+  border-bottom: 1px dashed #b9b9b9
+
+.js-included-country-text
+  cursor: pointer
+
+#country-select,
+#region-select
+  margin-top: 15px
+
+.js-sorted-items
+  .included-item
+    cursor: pointer
+    width: 25%
+    display: flex
+    flex-direction: column
+    align-items: center
+    .img-wrapper
+      transform: none
+      position: unset
+      width: auto
+      height: auto
+      background: none
+      margin-bottom: 10px
+      img
+        transform: none
+        transition: 0.3s ease
+        margin: 0
+    &:hover
+      &:not(.inactive)
+        color: $accent
+        img
+          transform: scale(1.2)
+
+    .item-content
+      .item-name
+        font-size: 12px
+        font-weight: normal
+        text-align: center
+        text-transform: none
+      p
+        margin: 0 !important
+
+.item-name
+  font-family: $default-font !important
+  font-style: normal !important
+  font-size: 12px !important
+
+.js-items-toggler
+  .js-sorted-items
+    display: none !important
+  .js-not-sorted-items
+    display: block !important
+  &.sorted
+    .js-sorted-items
+      display: block !important
+    .js-not-sorted-items
+      display: none !important
+
+
+.confirm-mail-btn
+  transition: 0.3s ease
+  &:hover
+    background: $accent
+    color: #ffffff
+  
 //end of sign in card
 
 
@@ -957,7 +1073,7 @@
   text-align: center
   margin-bottom: 15px
   font-size: 18px
-  font-weight: 600
+  font-family: $semibold
   color: #52BE32
 
 .after__buttons-wrapper
@@ -979,10 +1095,16 @@
     white-space: pre-line
     padding: 0 10px
     font-size: 14px
-    font-weight: 600
-    color: #52BE32
+    font-family: $semibold
+    color: #4A9F00
 
 .payed
+  
+  .js-step
+    .inner-wrapper
+      h3
+        &::after
+          display: none
   .payed-text
     display: flex
   .after-payment-box
@@ -991,13 +1113,31 @@
     display: flex
   .steps-controller
     display: none
-  .btn-edit
+  .btn-edit,
+  .edit-btn
     display: none
   .item
-    .right-span
-      background: #52BE32
+    .plan-paid-text
+      font-size: 12px
+      font-weight: 300
+      font-style: italic
+      span
+        width: 15px
+        height: 15px
+        display: inline-flex
+        background: #4A9F00
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+    pointer-events: none
+    .right-span,.skewed-box
+      background: #4A9F00
+    .total-price
+      color: #4A9F00
+      span
+        color: #fff
   .sim-type 
-    background: #52BE32 !important
+    background: #4A9F00 !important
   .subtotal-wrapper
     display: none
   .discount-form
@@ -1007,9 +1147,9 @@
   .top2,
   .top3
     .line
-      background: #52BE32
+      background: #4A9F00
   .included-item
-    color: #52BE32
+    color: #4A9F00
   .reg-sign__card
     border-left: 1px solid #707070
 
@@ -1020,6 +1160,8 @@
       justify-content: center
 
 //end of payed condition
+
+
 
 
 
@@ -1071,7 +1213,7 @@
       font-size: 22px
   a
     font-size: 17px
-    font-weight: 600
+    font-family: $semibold
     text-decoration: none
 
   img
@@ -1080,7 +1222,7 @@
   
   span.text-white
     font-size: 17px
-    font-weight: 600
+    font-family: $semibold
     span
       font-size: 14px
 
@@ -1156,8 +1298,9 @@
     transform: none
     right: 0
     bottom: 0
-  .tabs
-    overflow: unset !important
+  .shopping-card-body
+    .tabs
+      overflow: unset !important
   .service__item
     margin-bottom: 20px
   .services__line
