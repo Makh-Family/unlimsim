@@ -30115,7 +30115,7 @@ $(document).ready(function () {
     for (let i = 0; i < basket.length; i++) {
       if(basket[i].includedItems) {
         for (let j = 0; j < basket[i].includedItems.length; j++) {
-          addService(basket[i].includedItems[j], i+1);
+          addService(basket[i].includedItems[j], i+1, true);
           setTotalPrice(i+1)
         }
       }
@@ -30123,6 +30123,9 @@ $(document).ready(function () {
 
     $('.js-add-service ').on('click', function(e) {
       const index = parseInt($(this).attr('data-item'),10);
+
+  
+      
       const data = basket[index-1];
 
       $('.js-btn-checkout').attr('data-item', index);
@@ -30152,10 +30155,32 @@ $(document).ready(function () {
 
     });
 
-    $('.basket-line').on('click', function () {
-      const index = parseInt( $(this).attr('data-item'), 10 );
+    $('.basket-line').on('click', '.included-item',  function (e) {
+      const index = parseInt( $(this).attr('data-basket-item'), 10 );
       updateCard(basket[index - 1]);
       
+      const btnTarget = $(this).attr('data-label').replace('-block','');
+
+      const elClickableServiceToggler = $( `.btn-service-toggler[data-target="#${btnTarget}"]` );
+
+      if (basket[index - 1].includedItems) {
+        basket[index - 1].includedItems.push(btnTarget);
+      } else {
+        basket[index - 1].includedItems = [btnTarget];
+      }
+      
+
+      switch(basket[index - 1].plan) {
+        case "Worldwide":
+          setWorldWidePlan(basket[index - 1]);
+          break;
+        case "Region":
+          setRegionPlan(basket[index - 1]);
+          break;
+        case "Country":
+          setCountryPlan(basket[index - 1]);
+          break;
+      }
 
       $('.shopping-card__form').attr('data-item', index);
 
@@ -30168,11 +30193,9 @@ $(document).ready(function () {
 
       $(`.js-add-service[data-item="${index}"]`).trigger('click');
 
-      // const btns = $('.additional-services').find('.btn-service-toggler');
+      elClickableServiceToggler.trigger('click');
 
-      // //close all services
-      // btns.children('span:first-child').text('-');
-      // btns.trigger('click');
+      updateCard(basket[index - 1]);
       
     });
 
@@ -30265,11 +30288,11 @@ $(document).ready(function () {
 
     setTimeout(() => {
       $('.notification-block').slideUp().removeClass('animate-it');
-    }, 6000);
+    }, 8000);
 
     localStorage.removeItem('card');
     localStorage.setItem('card', JSON.stringify(cardData));
-    $('html').animate({
+    $('html, body').animate({
       scrollTop: 0
     },'slow');
     const simType = $('#add-to-card-form').serialize();
@@ -30317,24 +30340,25 @@ $(document).ready(function () {
       customer.Iprice = customer.totalPrice;
       $('.js-total-price-amount').text(customer.Iprice);
     }
-    setTimeout(function() {
-      switch(newCardData.plan) {
-        case "Worldwide":
-          setWorldWidePlan(newCardData);
-          break;
-        case "Region":
-          setRegionPlan(newCardData);
-          break;
-        case "Country":
-          setCountryPlan(newCardData);
-          break;
-      }
-    }, 1500);
+
+    $('#plan-select select, #tariff-select select, #region-select select, #country-select select')
+      .selectpicker('render');
+    
+    switch(newCardData.plan) {
+      case "Worldwide":
+        setWorldWidePlan(newCardData);
+        break;
+      case "Region":
+        setRegionPlan(newCardData);
+        break;
+      case "Country":
+        setCountryPlan(newCardData);
+        break;
+    }
 
     $('.tab-inner').each(function () {
       $(this).on('click', '.btn-buy', function (e) {
         $('.notification-block').slideUp();
-        console.log('btn-buy');
       });
     });
 
@@ -30343,14 +30367,30 @@ $(document).ready(function () {
       if ($(this).text().toUpperCase() == "WORLDWIDE" || $(this).text().toUpperCase() == "COUNTRY") {
         $(`#region-list .nav-link[data-value="*"]`).trigger('click');
       }
+
+      if (  $(this).text().toUpperCase() != "WORLDWIDE" ) {
+        $('#tariff-select').hide();
+      } else {
+        $('#tariff-select').show();
+      }
+      
+
     });
 
     $('#region-select').on('click', '.dropdown-item', function (e) {
       let continent = $(this).text().toUpperCase();
-      continent = continent == "AUSTRALIA" ? "OCEANIA" : (continent == "NORTH AMERICA" || continent == "SOUTH AMERICA") ? continent.split(' ')[0][0] + '. ' + continent.split(' ')[1] : continent
+     
+      continent = continent == "AUSTRALIA" ? "OCEANIA" : (continent == "NORTH AMERICA" || continent == "SOUTH AMERICA") ? continent.split(' ')[0][0] + '. ' + continent.split(' ')[1] : continent;
+      customer.tariff = continent;
       $(`#region-list .nav-link[data-value="${continent}"]`).trigger('click');
+      $('.js-tariff-name').text(continent);
     });
 
+
+    $('#country-select').on('click', '.dropdown-item', function(e) {
+      let country = $(this).text().toUpperCase();
+      $('.js-tariff-name').text(country);
+    })
 
 
     $('.btn-service-toggler')
@@ -30365,6 +30405,7 @@ $(document).ready(function () {
         });
       })
       .click(function (e) {
+
         const status = $(this).children('span').first().text();
         const target = $(this).data('target');
         const dataNames = $(this).data('names').split(',');
@@ -30667,7 +30708,7 @@ $(document).ready(function () {
       
       if( $(this).hasClass('active') ) {
         const target = $('.tab_content-map').offset().top;
-        $('html').animate({
+        $('html, body').animate({
           scrollTop: target - 100
         },'slow');
       }
@@ -30747,18 +30788,21 @@ $(document).ready(function () {
       const texts = ["Forgot password", "Remember password"];
       const target = $('.js-radio-wrapper').children('input:checked').data('target');
       const target2 = $('.js-radio-wrapper').children('input:not(:checked)').data('target');
-
-      if(texts[0] == $(this).text()) {
-        $(this).text(texts[1]);
+      console.log($(this).attr('data-forgot'));
+      if($(this).attr('data-forgot') == "yes") {
+        $(this).text(texts[1]).attr('data-forgot', 'no')
         $(target).addClass('col-lg-12');
         $('.js-password-input-wrapper').hide();
         $(target2).addClass('col-lg-12');
         
         
-        $('#signInSubmit').attr('data-confirm','no');
-        $('#signInSubmit').attr('data-forgot','yes');
+        $('#signInSubmit')
+          .attr('data-confirm','no')
+          .attr('data-forgot','yes')
+          .text('Send')
       } else {
-        $(this).text(texts[0]);
+        $(this).text(texts[0]).attr('data-forgot', 'yes');
+        
         $(target).removeClass('col-lg-12');
         $('.js-password-input-wrapper').show();
         $('.js-temporary-password-wrapper').hide();
@@ -30771,14 +30815,15 @@ $(document).ready(function () {
     $('#signInSubmit').on('click', function(e) {
       e.preventDefault();
 
-      if(e.target.dataset.forgot == 'yes') {
+      if($(this).attr('data-forgot') == 'yes') {
         console.log('yes');
         $('.js-temporary-password-wrapper').show();
         $(this).text('Enter');
         $(this).attr('data-confirm', 'yes');
+        $(this).attr('data-forgot', 'no');
+        return;
       }
-
-      if(e.target.dataset.confirm == 'yes') {
+      if($(this).attr('data-confirm') == 'yes') {
         moveToStep(3,true);
         $('.billing-info-box').show();
         $('.btn-edit').text('Сonfirm and Pay').attr('data-pay',true).css('background-color','red');
@@ -30801,13 +30846,27 @@ $(document).ready(function () {
     //end of email verfication open
     $('#regFormSubmit').on('click', function(e) {
       e.preventDefault();
-      if($(this).text() == "Confirm Email") {
+      if($(this).attr('data-confirm') == "yes") {
         
         $('.verification-wrapper').show();
         $(this).attr('type','submit');
         $(this).text('Continue');
+        $(this).attr('data-confirm', 'no');
         $('.confirm-wrapper p').hide();
+        
       } else {
+
+        const targetStep = $(this).data('step');
+        
+        let elTarget = $(`.js-step[data-step="${targetStep}"] .js-step-content-wrapper`)
+
+        if (targetStep == "2") {
+          elTarget = $(`.js-step[data-step-inside="true"] .js-step-content-wrapper`);
+        }
+        
+        elTarget.removeClass('editing');
+        elTarget.find('.js-return-btn').hide();
+
         moveToStep(3,true);
         $('.js-edit-btn[data-step="4"]').show();
         $( $('.js-step[data-step="2"]')[1] ).addClass('completed-step');
@@ -30830,9 +30889,27 @@ $(document).ready(function () {
     $('.js-edit-btn').on('click', function(e) {
       const targetStep = $(this).data('step');
       const hidden = $(`.js-step[data-step="${targetStep}"]`).hasClass('display-none');
+
       if(hidden) {
         showStep(targetStep);
+        const parentTarget = $(this).parent().next();
+        parentTarget.addClass('editing');
+        
+        parentTarget.find('.js-return-btn').show();
       }
+
+      $('.js-return-btn').on('click', function(e) {
+        const targetStep = $(this).data('step');
+        $(this).hide();
+
+        hideStep(targetStep);
+
+        const parentTarget = $(this).parent().parent();
+
+        parentTarget.removeClass('editing');
+        
+      });
+
     });
 
 
@@ -30841,6 +30918,13 @@ $(document).ready(function () {
     $('.js-shipping-continue-btn').on('click', function(e) {
       moveToStep(4);
       hideStep(3);
+
+        
+      let elTarget = $(`.js-step[data-step="3"] .js-step-content-wrapper`);
+
+      
+      elTarget.removeClass('editing');
+      elTarget.find('.js-return-btn').hide();
 
       $('.js-step[data-step="3"]').addClass('completed-step');
     });
@@ -30853,6 +30937,12 @@ $(document).ready(function () {
       $('.btn-edit').text('Сonfirm and Pay').attr('data-pay',true).css('background-color','red');
       $('.js-btn-confirm-and-pay').show();
       $('.js-step[data-step="4"]').addClass('completed-step');
+        
+      let elTarget = $(`.js-step[data-step="4"] .js-step-content-wrapper`)
+      
+      elTarget.removeClass('editing');
+      elTarget.find('.js-return-btn').hide();
+
     });
 
     //end of payment
@@ -30908,8 +30998,14 @@ $(document).ready(function () {
 ///FUNCTIONS
 
 function hideStep(step) {
-  $(`.js-step[data-step="${step}"]`).addClass('display-none');
-  $(`.js-step[data-step="${step}"]`).find('.confirmation-box').show();
+  let elStepForm = $(`.js-step[data-step="${step}"]`);
+ 
+  if (step == "2") {
+    elStepForm = $(`.js-step[data-step-inside="true"]`);
+  }
+  elStepForm.addClass('display-none');
+
+  elStepForm.find('.confirmation-box').show();
 }
 
 function showStep(step) {
@@ -31110,7 +31206,7 @@ function fillBasket() {
       </div>
       <div class="basket-item">
         <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-          <div class="included-item" data-label="internet-data-wrapper">
+          <div data-basket-item="${i+1}" class="included-item" data-label="internet-data-wrapper">
             <div class="img-wrapper">
               <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
             </div>
@@ -31118,7 +31214,7 @@ function fillBasket() {
               <h3 class="item-name">Internet data</h3>
             </div>
           </div>
-          <div class="included-item inactive" data-label="voice-sms-block">
+          <div data-basket-item="${i+1}" class="included-item inactive" data-label="voice-sms-block">
             <div class="img-wrapper">
               <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
             </div>
@@ -31126,7 +31222,7 @@ function fillBasket() {
               <h3 class="item-name">Voice and SMS</h3>
             </div>
           </div>
-          <div class="included-item inactive" data-label="virtual-number-block">
+          <div data-basket-item="${i+1}" class="included-item inactive" data-label="virtual-number-block">
             <div class="img-wrapper">
               <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
             </div>
@@ -31134,7 +31230,7 @@ function fillBasket() {
               <h3 class="item-name">Virtual number</h3>
             </div>
           </div>
-          <div class="included-item inactive" data-label="substitution-number-block">
+          <div data-basket-item="${i+1}" class="included-item inactive" data-label="substitution-number-block">
             <div class="img-wrapper">
               <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
             </div>
@@ -31276,11 +31372,11 @@ function updateCardInfo(data) {
 
   $('.gb-amount').text(data.gb + 'Gb')
 
-  try {
-    $('.js-tariff-name').text(data.tariff.toUpperCase());
-  } catch (error) {
-    console.log(error);
-  }
+  let tariff = data.tariff ? data.tariff.toUpperCase() : data.label.toUpperCase();
+
+ 
+  $('.js-tariff-name').text(tariff);
+  
  
   $('.js-sim-name').text(data.simToBeSelected);
   
@@ -31334,6 +31430,8 @@ function updateCard(data) {
 
   $('.js-gb-amount-big').text(data.amount)
 
+  $('.js-tariff-name').text(data.label);
+
   if (data.simType == "Sim") {
     $('.sim-img').attr('src', 'img/icons/right-sim.png');
   } else {
@@ -31367,10 +31465,14 @@ function setInlcludedItems(itemId) {
 }
 
 
-function addService(target, index) {
-  $('.btn-checkout').show();
-  $(target).slideDown();
-  $(`.included-item[data-label=${target.replace('#','')}-box]`).slideDown();
+function addService(target, index, isFromBody = false) {
+  
+  if (!isFromBody) {
+    $('.btn-checkout').show();
+    $(target).slideDown();
+    $(`.included-item[data-label=${target.replace('#','')}-box]`).slideDown();
+  }
+
   $(`.basket-line[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).removeClass('inactive');
   $(`${target}-block`).removeClass('inactive');
   $(`.js-basket-item[data-item="${index}"] .included-item[data-label=${target.replace('#','')}-block]`).removeClass('inactive');
@@ -31414,10 +31516,10 @@ function setTotalPrice(index = false) {
 function applyDiscount(totalPrice, percent) {
   customer.subtotal = totalPrice;
   totalPrice = +totalPrice * (1 - percent / 100);
-  $('.js-total-price-amount').text(totalPrice);
-  $('.js-final-total-price-amount').text(totalPrice);
+  $('.js-total-price-amount').text(totalPrice.toFixed(1));
+  $('.js-final-total-price-amount').text(totalPrice.toFixed(1));
   let discountAmount = $('.js-discount-amount').text();
-  customer.totalPrice = totalPrice.toFixed(2);
+  customer.totalPrice = totalPrice.toFixed(1);
   discountAmount = +discountAmount + percent;
   $('.discount-info').show();
 
