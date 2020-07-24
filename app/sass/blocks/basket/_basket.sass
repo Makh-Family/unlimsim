@@ -166,8 +166,11 @@
 .basket-items-wrapper
   .basket-item
     transition: 0.3s ease
-    &:hover
+    &:hover:not(.active)
+      
       transform: scale(1.07)
+  .img-wrapper
+    transform: scale(0.8)
 
 //packege 
 
