@@ -18,12 +18,17 @@ $(document).ready(function () {
     $('.badge-pill').text(basket.length);
   }
   
-  
+  if (!basket.length) {
+    $('.btn-basket').css({
+      'pointer-events' : 'none'
+    }).children('.badge-pill').hide();
+  }
 
   $('.btn-basket').on('click', function(e) {
     e.preventDefault();
 
     if(basket.length === 1) {
+      
       window.location.href = 'shopping-card.html';
     } else {
       window.location.href = 'basket.html';
@@ -256,6 +261,11 @@ $(document).ready(function () {
       localStorage.setItem('basket', JSON.stringify(basket));
       console.log(basket)
     }
+
+    
+    $('.btn-basket').css({
+      'pointer-events' : 'unset'
+    }).children('.badge-pill').show();
 
     $('.badge-pill').text(basket.length);
 
