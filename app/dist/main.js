@@ -30149,7 +30149,18 @@ $(document).ready(function () {
       customer.Iprice = parseInt(data.priceData.price, 10);
       customer.totalPrice = customer.Iprice;
 
-      setBasicInPlans(data);
+      switch(data.plan) {
+        case "Worldwide":
+          setWorldWidePlan(data);
+          break;
+        case "Region":
+          setRegionPlan(data);
+          break;
+        case "Country":
+          setCountryPlan(data);
+          break;
+      }
+
 
       setInlcludedItems(index);
 
@@ -30169,6 +30180,9 @@ $(document).ready(function () {
         basket[index - 1].includedItems = [btnTarget];
       }
       
+
+      $('.js-btn-checkout').attr('data-item', index);
+
 
       switch(basket[index - 1].plan) {
         case "Worldwide":
@@ -30225,8 +30239,21 @@ $(document).ready(function () {
         $(this).hide();
         $('.js-total-price-amount').text(customer.totalPrice);
         const index = parseInt( $('.js-shopping-card__card').attr('data-item') );
+        
         updateTotalPrice();
-      
+        
+        const elParentTarget = $(`.basket-line[data-item="${index}"]`);
+
+        const label = customer.location == "worldwide" ? customer.tariff : customer.location == "region" ? customer.region : customer.location == "country" ? customer.country : "PRO";
+
+        elParentTarget.find('.location-name').text(label.toUpperCase())
+
+        elParentTarget.find('.card-gb-amount').text(basket[index - 1].amount + 'Gb');
+
+        elParentTarget.find('.card-days-amount').text(basket[index - 1].priceData.days + 'days');
+
+        elParentTarget.find('.plan-name').text(basket[index - 1].plan)
+
         setTotalPrice(index)
         
       }
@@ -30341,7 +30368,9 @@ $(document).ready(function () {
       $('.js-total-price-amount').text(customer.Iprice);
     }
 
-    $('#plan-select select, #tariff-select select, #region-select select, #country-select select')
+    $('.js-internet-price-amount-single').text(customer.Iprice)
+
+    $('#plan-select select, #tariff-select select, #region-select select, #country-select select, #enter-gb select, #enter-period select')
       .selectpicker('render');
     
     switch(newCardData.plan) {
@@ -30455,10 +30484,11 @@ $(document).ready(function () {
           $(this).css('color', '#000');
           $(this).children('span').first().text("+")
 
+         
+
           //hide joined info
           $('.join-info').hide();
           $('.virtual-inner').show();
-          $('.virtual-number-info').hide();
           //end of joined info
           
           if (target == "#virtual-number" || target == "#substitution-number") {
@@ -30495,7 +30525,7 @@ $(document).ready(function () {
 
       });
 
-    $('.js-sorted-items').on('click', function() {
+    $('.js-not-sorted-items').on('click', function() {
       console.log('ok')
       $(this).parent().toggleClass('sorted');
       $('.js-included-country-text').toggleClass('has-dashed-border');
@@ -30508,9 +30538,17 @@ $(document).ready(function () {
       }
     });
 
-    $('.js-not-sorted-items .included-item').on('click', function() {
-      if( !$(this).parent().parent().hasClass('sorted') ) {
+    $('.js-sorted-items .included-item').on('click', function() {
+      const isSorted = !$(this).parent().parent().hasClass('sorted');
+      const target = $(this).attr('id').replace('-block', '');
+
+      console.log(target);
+
+      if( isSorted ) {
         $(`.step-button[data-step='1']`).trigger('click');
+
+        $(`.btn-service-toggler[data-target="#${target}"]`).trigger('click');
+
       }
     });
 
@@ -30519,7 +30557,7 @@ $(document).ready(function () {
     
     if (elPhoneNumberInput) {
       IMask(elPhoneNumberInput, {
-        mask: '+{7} (000) 000-00-00',
+        mask: '+{0} (000) 000-00-00',
         lazy: false, // make placeholder always visible
         placeholderChar: '_' // defaults to '_'
       });
@@ -30685,10 +30723,16 @@ $(document).ready(function () {
         customer[dataArray[0]] = dataArray[1];
       });
 
-      console.log(customer);
+      console.log('Current item \n', customer);
       if( $('body').hasClass('basket-body') ) {
         const index = $(this).data('item');
-        basket[index - 1].customer = customer;
+        formData.forEach(function (data) {
+          const dataArray = data.split('=');
+          basket[index - 1][dataArray[0]] = dataArray[1];
+        });
+
+        console.log('Current basket item \n', basket[index - 1]);
+
       }
 
       // const VSbalance = parseInt(data.VSbalance, 10) || 0;
@@ -30735,8 +30779,7 @@ $(document).ready(function () {
           .find('.confirmation-box').hide();
       }
 
-      $(`.js-edit-btn[data-step="${step}"]`)
-        .show();
+
 
       if ($(this).hasClass('active')) {
         
@@ -30831,6 +30874,10 @@ $(document).ready(function () {
         hideStep(3);
         moveToStep(4);
         hideStep(4);
+
+        $(`.js-edit-btn`)
+        .show();
+
         $('.payment-info-box').show();
         $('.js-step').addClass('completed-step');
       }
@@ -30867,8 +30914,10 @@ $(document).ready(function () {
         elTarget.removeClass('editing');
         elTarget.find('.js-return-btn').hide();
 
+        $(`.js-edit-btn[data-step="${2}"]`)
+        .show();
+
         moveToStep(3,true);
-        $('.js-edit-btn[data-step="4"]').show();
         $( $('.js-step[data-step="2"]')[1] ).addClass('completed-step');
       }
     });
@@ -30922,6 +30971,8 @@ $(document).ready(function () {
         
       let elTarget = $(`.js-step[data-step="3"] .js-step-content-wrapper`);
 
+      $(`.js-edit-btn[data-step="${3}"]`)
+        .show();
       
       elTarget.removeClass('editing');
       elTarget.find('.js-return-btn').hide();
@@ -30937,7 +30988,10 @@ $(document).ready(function () {
       $('.btn-edit').text('Сonfirm and Pay').attr('data-pay',true).css('background-color','red');
       $('.js-btn-confirm-and-pay').show();
       $('.js-step[data-step="4"]').addClass('completed-step');
-        
+      
+      $(`.js-edit-btn[data-step="${4}"]`)
+        .show();
+
       let elTarget = $(`.js-step[data-step="4"] .js-step-content-wrapper`)
       
       elTarget.removeClass('editing');
@@ -30990,6 +31044,19 @@ $(document).ready(function () {
   //end of if statement
 
   
+  //shipping method loader
+
+  $('#switch-method').on('change', function(e) {
+    const elShippingPrice = $('.js-shipping-price');
+    const innerHtml = elShippingPrice.html();
+
+    elShippingPrice.html('<img width="30" height="30" src="img/icons/loader.svg" alt="laoder">');
+
+    setTimeout(function() {
+      elShippingPrice.html(innerHtml);
+    }, 2000);
+
+  });
 
 
   
@@ -31062,6 +31129,9 @@ function getCardDetails(btn) {
 
 function setWorldWidePlan(data) {
   setBasicInPlans(data);
+  const typesArray = ["START", "PRO", "MAX", "BUSINESS"];
+  
+  $('#tariff-select').find(`.dropdown-item[data-original-index="${typesArray.indexOf(data.label) + 1}"]`).trigger('click');
 };
 
 function setRegionPlan(data) {
@@ -31085,11 +31155,15 @@ function setCountryPlan(data) {
 
 
 function setBasicInPlans(data) {
-  const typesArray = ["START", "PRO", "MAX", "BUSINESS"];
-  const elBtnToBeClicked = getClickableParent('#plan-select',data.plan);
-  elBtnToBeClicked.trigger('click');
-  $('#tariff-select').find(`.dropdown-item[data-original-index="${typesArray.indexOf(data.label) + 1}"]`).trigger('click');
-  const gbToBeClicked = getClickableParent('#enter-gb',data.amount + ' Gb');
+
+  if (data.plan != "Worldwide") {
+    $('#tariff-select').hide();
+  }
+
+  const elPlanToBeClicked = getClickableParent('#plan-select', data.plan);
+  elPlanToBeClicked.trigger('click');
+
+  const gbToBeClicked = getClickableParent('#enter-gb', data.amount + ' Gb');
   gbToBeClicked.trigger('click');
   const periodToBeClicked = getClickableParent('#enter-period',data.priceData.days + ` ${data.priceData.days == "1" ? "day" : "days"}`);
   periodToBeClicked.trigger('click');
@@ -31255,7 +31329,9 @@ function fillBasket() {
             <div class="skewed-box"><span>${basket[i].label}</span></div>
           </div>
           <div class="basic-info"><span>${basket[i].plan} Plan</span> /  
-            <span>${basket[i].simType}</span></div>
+            <span>${basket[i].simType}</span>
+            ${basket[i].isDhl ? '<img width="45" height="10" src="img/icons/dhl.png" class="ml-2" alt="dhl">' : ''}
+            </div>
         </div>
         <div class="price-box">
           $ <span>${basket[i].priceData.price}</span> us
@@ -31372,10 +31448,11 @@ function updateCardInfo(data) {
 
   $('.gb-amount').text(data.gb + 'Gb')
 
-  let tariff = data.tariff ? data.tariff.toUpperCase() : data.label.toUpperCase();
+  // let tariff = data.tariff ? data.tariff.toUpperCase() : data.label.toUpperCase();
 
+  const tariff = customer.location == "worldwide" ? customer.tariff : customer.location == "region" ? customer.region : customer.location == "country" ? customer.country : "PRO";
  
-  $('.js-tariff-name').text(tariff);
+  $('.js-tariff-name').text(tariff.toUpperCase());
   
  
   $('.js-sim-name').text(data.simToBeSelected);

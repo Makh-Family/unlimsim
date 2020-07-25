@@ -240,7 +240,12 @@
     cursor: not-allowed
   
     
-
+#virtual-number
+  .location-info
+    display: flex
+    flex-wrap: wrap
+    .country-wrapper
+      margin-right: 20px
 
 
 .join-info
@@ -750,7 +755,16 @@
         filter: grayscale(100%)
         opacity: 0.5
 
+
+
+
 //billing info box
+.js-step[data-step="3"]
+  .billing-info-box
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    justify-items: center
+
 .billing-info-box
   display: flex
   .info-wrapper
@@ -758,8 +772,6 @@
     flex-direction: column
     margin: 0
     padding: 0
-    &:nth-child(3)
-      align-items: flex-end
     &:nth-child(2)
       img
         margin-top: 0 !important
@@ -1058,14 +1070,14 @@
 
 .js-items-toggler
   .js-sorted-items
-    display: none !important
-  .js-not-sorted-items
     display: block !important
+  .js-not-sorted-items
+    display: none !important
   &.sorted
     .js-sorted-items
-      display: block !important
-    .js-not-sorted-items
       display: none !important
+    .js-not-sorted-items
+      display: block !important
 
 
 .confirm-mail-btn
@@ -1085,6 +1097,10 @@
   span
     margin-right: auto
     margin-left: auto
+.payed-line
+  display: none
+  width: 1px
+  background: #b9b9b9
 
 .after-payment-box
   display: none
@@ -1136,7 +1152,12 @@
     color: #4A9F00
 
 .payed
-  
+  .payed-line
+    display: block
+  .reg-sign
+    margin-bottom: 20px
+  .reg-sign__card
+    margin-bottom: 0
   .js-step
     .inner-wrapper
       h3
@@ -1187,8 +1208,6 @@
       background: #4A9F00
   .included-item
     color: #4A9F00
-  .reg-sign__card
-    border-left: 1px solid #707070
 
 .js-card-wrapper
   .slick-slide
@@ -1301,6 +1320,12 @@
 
 
 @media (max-width: 575px)
+  .js-step[data-step="3"]
+    .billing-info-box
+      grid-template-columns: 1fr
+      justify-items: start
+      margin-bottom: 25px
+      gap: 10px 0
   .card-input-wrapper
     display: flex
     flex-wrap: wrap

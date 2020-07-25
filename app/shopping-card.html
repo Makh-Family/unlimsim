@@ -60,17 +60,17 @@
     <div class="under-nav">
       <div class="container">
         <ul class="nav">
-          <li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
-            <a href="#section-tab" class="nav-link">Worldwide Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab1" class="nav-link">Worldwide Plans</a>
           </li>
-          <li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
-            <a href="#section-tab" class="nav-link">Region Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab2" class="nav-link">Region Plans</a>
           </li>
-          <li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
-            <a href="#section-tab" class="nav-link">Country Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab3" class="nav-link">Country Plans</a>
           </li>
-          <li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
-            <a href="#section-tab" class="nav-link">Personal Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab4" class="nav-link">Personal Plans</a>
           </li>
         </ul>
       </div>
@@ -608,9 +608,13 @@
                 <div class="col-sm-4"></div>
                 <div class="join-info col-sm-9 ml-auto" style="display: none;">
                   <div class="location-info">
-                    <span>Country:</span><span class="country-name"></span>
-                    /
-                    <span>Region: </span><span class="region-name"></span>
+                    <div class="country-wrapper">
+                      <span>Country:</span><span class="country-name">
+                        /</span>
+                    </div>
+                    <div class="region-wrapper">
+                      <span>Region: </span><span class="region-name"></span>
+                    </div>
                   </div>
                   <div class="number-info">
                     <span>Virtual number: </span><span class="virtual-number"></span>
@@ -1105,7 +1109,6 @@
           </div>
         </div>
       </form>
-
       <div class="shopping-card__card js-shopping-card__card col-lg-4 col-md-12">
         <div class="item">
           <div class="top1">
@@ -1334,7 +1337,7 @@
           
           <div class="js-step-content-wrapper step-content-wrapper">
             <div style="display: none;" class="confirmation-box billing-info-box">
-              <div class="info-wrapper col-lg-4 col-sm-12">
+              <div class="info-wrapper">
                 <h3>Billing</h3>
                 <div class="d-flex">
                   <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
@@ -1352,7 +1355,7 @@
                   </div>
                 </div> 
               </div>
-              <div class="info-wrapper col-lg-4 col-sm-12">
+              <div class="info-wrapper">
                 <h3>Shipping</h3>
                 <div class="d-flex">
                   <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
@@ -1361,7 +1364,7 @@
                   </div>
                 </div>
               </div>
-              <div class="info-wrapper col-lg-4 col-sm-12">
+              <div class="info-wrapper">
                 <h3>Company</h3>
                 <div class="d-flex">
                   <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
@@ -1493,7 +1496,7 @@
                       <option value="dhl3">DHL3 </option>
                     </select>
                   </label>
-                  <div class="shipping-price">$ <span>25</span> us</div>
+                  <div class="shipping-price js-shipping-price">$ <span>25</span> us</div>
                 </div>
                 <div class="w-100 button-wrapper">
                   <button type="button" class="shipping-continue-btn js-shipping-continue-btn rounded-button">Countinue</button>
@@ -1529,7 +1532,7 @@
                     <div class="js-customer-name-text">Denys Nemo</div>
                   </div>
                 </div>
-                <div class="my-3 d-flex">
+                <div class="my-1 d-flex">
                   <img src="img/icons/card-r.svg" width="20" height="13" alt="mail">
                   <div class="js-card-text">
                     85845-5662-3242-5487
@@ -1576,6 +1579,8 @@
 
         </div>
       </div>
+      
+      <div class="payed-line"></div>
 
       <div class="reg-sign__card js-reg-sign__card col-lg-4 col-md-12 shopping-card__card">
         <div class="opening-title mb-3">

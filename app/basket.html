@@ -60,17 +60,17 @@
     <div class="under-nav">
       <div class="container">
         <ul class="nav">
-          <li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
-            <a href="#section-tab" class="nav-link">Worldwide Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab1" class="nav-link">Worldwide Plans</a>
           </li>
-          <li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
-            <a href="#section-tab" class="nav-link">Region Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab2" class="nav-link">Region Plans</a>
           </li>
-          <li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
-            <a href="#section-tab" class="nav-link">Country Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab3" class="nav-link">Country Plans</a>
           </li>
-          <li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
-            <a href="#section-tab" class="nav-link">Personal Plans</a>
+          <li class="nav-item">
+            <a href="index.html#section-tab4" class="nav-link">Personal Plans</a>
           </li>
         </ul>
       </div>
@@ -633,9 +633,13 @@
                   <div class="col-sm-4"></div>
                   <div class="join-info col-sm-9 ml-auto" style="display: none;">
                     <div class="location-info">
-                      <span>Country:</span><span class="country-name"></span>
-                      /
-                      <span>Region: </span><span class="region-name"></span>
+                      <div class="country-wrapper">
+                        <span>Country:</span><span class="country-name">
+                          /</span>
+                      </div>
+                      <div class="region-wrapper">
+                        <span>Region: </span><span class="region-name"></span>
+                      </div>
                     </div>
                     <div class="number-info">
                       <span>Virtual number: </span><span class="virtual-number"></span>
@@ -1532,7 +1536,7 @@
                           <option value="dhl3">DHL3 </option>
                         </select>
                       </label>
-                      <div class="shipping-price">$ <span>25</span> us</div>
+                      <div class="shipping-price js-shipping-price">$ <span>25</span> us</div>
                     </div>
                     <div class="w-100 button-wrapper">
                       <button type="button"
@@ -1567,7 +1571,7 @@
                         <div class="js-customer-name-text">Denys Nemo</div>
                       </div>
                     </div>
-                    <div class="my-3 d-flex">
+                    <div class="my-1 d-flex">
                       <img src="img/icons/card-r.svg" width="20" height="13" alt="mail">
                       <div class="js-card-text">
                         85845-5662-3242-5487
