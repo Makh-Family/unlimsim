@@ -45,6 +45,7 @@
     .dropdown-toggle
       border: 1px solid #707070
   .sims-box
+    transform: scale(0.8) translateX(-13%)
     justify-content: unset
     width: 100%
     .circle
@@ -231,7 +232,7 @@
   transition: 0.3s ease
   background: $accent
   color: #fff
-  padding: 5px 35px
+  padding: 1px 25px
 
   &[disabled]
     border: 1px solid $accent
@@ -246,6 +247,20 @@
     flex-wrap: wrap
     .country-wrapper
       margin-right: 20px
+  .bs-select-wrapper,
+  .join-info
+    padding-left: 0
+  .bs-select-wrapper[data-type="virtualPeriod"]
+    padding-right: 0
+  #regions-list,
+  #numbers-list
+    padding-left: 15px
+
+#substitution-number
+  .bs-select-wrapper,
+  .substitution-wrapper,
+  .substitution-join
+    padding-left: 0
 
 
 .join-info
@@ -256,6 +271,7 @@
     font-family: $semibold
     font-size: 16px
     margin-left: 5px
+
 
 .virtual-number-info
   span
@@ -393,7 +409,9 @@
     span
       font-size: 52px
   .btn-checkout
-    padding: 2px 30px
+    padding: 5px 30px
+    padding-bottom: 10px
+    line-height: 1
     background: $accent
     transition: 0.3s ease
     border-radius: 15px
@@ -407,7 +425,8 @@
     margin-top: 0 !important
     transition: 0.3s ease
 
-    &:hover
+    &:hover:not([disabled])
+      
       border-color: #fff
       transform: scale(1.07)
       background: rgba(178,0,0,0.8)
@@ -545,7 +564,8 @@
 
 //reg-form
 .reg__form,
-.sign__form
+.sign__form,
+.shipping-billing-wrapper
   margin-bottom: 0 !important
   display: flex
   align-items: center
@@ -687,50 +707,50 @@
 //sign in form
 
 .radio-wrapper
-    display: flex
-    align-items: center
-    padding: 0 15px
-    input
-      height: 0
-      width: 0
-      opacity: 0
-      &:checked + label
-        span
-          &:first-child
-            &::before
-              opacity: 1   
-    label
-      position: relative
-      margin: 0
-      margin-right: 15px
-    span
-      font-size: 14px
-      transition: 0.3 ease
-      background: transparent
-      &:nth-child(1)
-        width: 10px
-        height: 10px
-        border: 1px solid #000
-        border-radius: 50%
+  display: flex
+  align-items: center
+  padding: 0 15px
+  input
+    height: 0
+    width: 0
+    opacity: 0
+    &:checked + label
+      span
+        &:first-child
+          &::before
+            opacity: 1
+  label
+    position: relative
+    margin: 0
+    margin-right: 15px
+  span
+    font-size: 14px
+    transition: 0.3 ease
+    background: transparent
+    &:nth-child(1)
+      width: 10px
+      height: 10px
+      border: 1px solid #000
+      border-radius: 50%
+      top: 50%
+      transform: translateY(-30%)
+      left: 0
+      &::before
+        position: absolute
         top: 50%
-        transform: translateY(-30%)
-        left: 0
-        &::before
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
-          display: block
-          width: 5px
-          content: ''
-          height: 5px
-          background: $accent
-          border-radius: 50%
-          opacity: 0
-          transition: 0.3s ease
-      &:nth-child(2)
-        padding-left: 15px
-        position: unset
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: block
+        width: 5px
+        content: ''
+        height: 5px
+        background: $accent
+        border-radius: 50%
+        opacity: 0
+        transition: 0.3s ease
+    &:nth-child(2)
+      padding-left: 15px
+      position: unset
         
 .forgot-password
   padding: 0
@@ -866,7 +886,7 @@
     color: #fff
 
 .payment-intro
-  margin-top: -20px
+  margin-top: 5px
   img
     margin: 0 15px
 //end of payment section
@@ -875,7 +895,7 @@
 //confiramtion-box
 
 .confirmation-box
-  margin-top: -15px
+  margin-top: 5px
   flex-wrap: wrap
   img
     margin-right: 15px
@@ -916,7 +936,6 @@
   overflow: hidden
   margin: 0
   align-items: flex-start
-  margin-bottom: 25px
   h3
     font-size: 24px
 
@@ -1152,6 +1171,12 @@
     color: #4A9F00
 
 .payed
+  .billing-info-box
+    .info-wrapper
+      &:not(:first-child)
+        justify-self: end
+  .js-basket-item
+    pointer-events: none
   .payed-line
     display: block
   .reg-sign
@@ -1175,6 +1200,12 @@
   .edit-btn
     display: none
   .item
+    h1
+      &::before
+        background: #4A9F00 !important
+    .included-item,
+    .js-included-country-text
+      pointer-events: none
     .plan-paid-text
       font-size: 12px
       font-weight: 300
@@ -1187,7 +1218,7 @@
         align-items: center
         justify-content: center
         border-radius: 50%
-    pointer-events: none
+        pointer-events: none
     .right-span,.skewed-box
       background: #4A9F00
     .total-price
