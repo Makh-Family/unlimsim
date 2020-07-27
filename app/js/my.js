@@ -189,19 +189,13 @@ $(document).ready(function () {
       $(this).hide();
       $('.js-all-wrapper').addClass('payed');
       const html = `
-      <span class="plan-paid-text">plan payed <span><img src="img/icons/confirmed.svg" alt=""></span></span>
-      `
+        <span class="plan-paid-text">plan payed <span><img src="img/icons/confirmed.svg" alt=""></span></span>
+      `;
       $('.price-box').html(html);
     });
 
 
   }
-
-
-
-
-
-
 
 
 
@@ -420,7 +414,7 @@ $(document).ready(function () {
           //end of joined info
 
           if (target == "#virtual-number" || target == "#substitution-number") {
-            const newsTarget = target == "#virtual-number" ? "#substitution-number" : "#virtual-number"
+            const newsTarget = target == "#virtual-number" ? "#substitution-number" : "#virtual-number";
             if ($(target).siblings(newsTarget).attr('style') == "display: none;") {
               elCheckoutBtn.removeAttr('disabled');
               elCheckoutBtn.show();
@@ -534,8 +528,7 @@ $(document).ready(function () {
 
     $('#cardnumber').on('keyup', function () {
       if (
-        $(this).val().length == 19
-        &&
+        $(this).val().length == 19 &&
         !$(this).val().includes('_')) {
         $('#carddate').focus();
       }
@@ -543,8 +536,7 @@ $(document).ready(function () {
 
     $('#carddate').on('keyup', function () {
       if (
-        $(this).val().length == 5
-        &&
+        $(this).val().length == 5 &&
         !$(this).val().includes('_')) {
         $('#cardcode').focus();
       }
@@ -570,7 +562,7 @@ $(document).ready(function () {
         let chunk = ''
         regions.forEach(function (reg) {
           const template = `
-        <option value="${reg.name}">${reg.name}</option>`;
+            <option value="${reg.name}">${reg.name}</option>`;
           chunk += template;
         });
         const elSelect = elRegionsList.find('select');
@@ -594,7 +586,7 @@ $(document).ready(function () {
 
     elNumbersList.on('click', '.dropdown-item', function (e) {
       const elActiveOption = elNumbersList.find('.filter-option');
-      const formattedNumber = formatPhoneNumber(elActiveOption.text())
+      const formattedNumber = formatPhoneNumber(elActiveOption.text());
       elActiveOption.text(formattedNumber);
       $('.btn-join-to-card').removeAttr('disabled');
       $('.btn-substitution-join').attr('disabled', true)
@@ -607,7 +599,8 @@ $(document).ready(function () {
         const dataArray = data.split('=');
         customer[dataArray[0]] = dataArray[1];
       });
-      const elJoinInfo = $('.join-info')
+
+      const elJoinInfo = $('.join-info');
 
       elVirtualInnerBox.hide();
 
@@ -836,7 +829,7 @@ $(document).ready(function () {
 
         const targetStep = $(this).data('step');
 
-        let elTarget = $(`.js-step[data-step="${targetStep}"] .js-step-content-wrapper`)
+        let elTarget = $(`.js-step[data-step="${targetStep}"] .js-step-content-wrapper`);
 
         if (targetStep == "2") {
           elTarget = $(`.js-step[data-step-inside="true"] .js-step-content-wrapper`);
@@ -1074,7 +1067,7 @@ function getCardDetails(btn) {
       price: $(btn).prev().find('span').text(),
       days: $(btn).prev().text().split(' ').join('').split('/')[1][0]
     }
-  }
+  };
   console.log(data);
   return data;
 }
@@ -1212,7 +1205,7 @@ function fillBasket() {
       </div>
           
       </div>
-    </div>`
+    </div>`;
 
     const listTemplate = `
     <div class="basket-line js-basket-line" data-item="${i + 1}">
@@ -1270,7 +1263,7 @@ function fillBasket() {
         $ <span class="price-amount">${basket[i].priceData.price}</span> us
       </div>
     </div>
-    `
+    `;
 
     const packagesCard = `
     <div data-item="${i + 1}" class="basket-item flex-wrap js-basket-item">
@@ -1335,7 +1328,7 @@ function fillBasket() {
           <button data-item="${i + 1}" class="rounded-button js-edit-package d-block mx-auto">Edit</button>
         </div>
       </div>
-    </div>`
+    </div>`;
 
     packageChunk += packagesCard;
     listChunk += listTemplate;
@@ -1358,8 +1351,7 @@ function fillBasket() {
     arrows: true,
     slidesToShow: 3,
     infinite: false,
-    responsive: [
-      {
+    responsive: [{
         breakpoint: 992,
         settings: {
           slidesToShow: 2
@@ -1399,8 +1391,7 @@ function refreshSlider(selector) {
     arrows: true,
     slidesToShow: 3,
     infinite: false,
-    responsive: [
-      {
+    responsive: [{
         breakpoint: 992,
         settings: {
           slidesToShow: 2
@@ -1691,4 +1682,3 @@ function fillBilling() {
   $('.js-billing-address-text').text(shippingMethod);
 
 }
-
