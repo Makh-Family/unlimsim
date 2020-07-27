@@ -36,6 +36,7 @@
 		"bootstrap-autocomplete": "^2.3.5",
 		"bootstrap-select": "^1.13.17",
 		"bootstrap-validate": "^2.2.0",
+		"gulp-cli": "^2.3.0",
 		"imask": "^6.0.5",
 		"jquery": "^3.5.0",
 		"slick-carousel": "^1.8.1"

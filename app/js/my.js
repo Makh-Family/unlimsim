@@ -453,6 +453,10 @@ $(document).ready(function () {
       if (isClickable) {
         $(this).next().toggleClass('sorted');
         $(this).toggleClass('has-dashed-border');
+      } else {
+        $('.js-included-country-text').css({
+          'cursor': 'unset'
+        });
       }
 
     });
@@ -463,6 +467,10 @@ $(document).ready(function () {
       const target = $(this).attr('id').replace('-block', '');
 
       console.log(target);
+
+      $('.js-included-country-text').css({
+        'cursor': 'unset'
+      });
 
       if (isSorted) {
         $(`.step-button[data-step='1']`).trigger('click');
@@ -850,6 +858,9 @@ $(document).ready(function () {
     $('.btn-edit').on('click', function (e) {
       if ($(this).attr('data-pay') !== "true") {
         $(`.step-button[data-step='1']`).trigger('click');
+        $('.js-included-country-text').css({
+          'cursor': 'unset'
+        });
       } else {
         $('.js-all-wrapper').addClass('payed');
         $('.js-edit-btn').hide();
@@ -1022,24 +1033,18 @@ function updateInputsByChoice(parent) {
   if (useBilling) {
     $(target).hide();
     $('#billingAddressToggler').prop('checked', true);
+
+    $('.js-billing-info-item').hide();
   } else {
+    $('.js-billing-info-item').show();
     $(target).show();
     elBillingTypeInput.parent().hide();
     $('#billingAddressToggler').prop('checked', false);
   }
-
-  // if (visibleType == '.js-billing-address-input-wrapper') {
-  //   $('input[data-target=".js-billing-address-input-wrapper"]').parent().hide();
-  // } else {
-  //   $('input[data-target=".js-billing-address-input-wrapper"]').parent().show();
-  //   $('#billingAddressToggler').prop('checked', true);
-  //   $('#dhltoggler').prop('checked', true);
-  // }
 }
 
 
 $('#billingAddressToggler').on('click', function () {
-  console.log($(this).val());
 
   if ($(this).not(':checked') && $('#billingAddress').not(':checked')) {
     $('.js-billing-address-input-wrapper').hide();
@@ -1352,30 +1357,30 @@ function fillBasket() {
     slidesToShow: 3,
     infinite: false,
     responsive: [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 770,
-        settings: {
-          slidesToShow: 1,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1
-        }
-      },
-      {
-        breakpoint: 350,
-        settings: {
-          arrows: false,
-          slidesToShow: 1
-        }
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2
       }
+    },
+    {
+      breakpoint: 770,
+      settings: {
+        slidesToShow: 1,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 350,
+      settings: {
+        arrows: false,
+        slidesToShow: 1
+      }
+    }
     ]
   });
 }
@@ -1392,30 +1397,30 @@ function refreshSlider(selector) {
     slidesToShow: 3,
     infinite: false,
     responsive: [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 770,
-        settings: {
-          slidesToShow: 1,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1
-        }
-      },
-      {
-        breakpoint: 350,
-        settings: {
-          arrows: false,
-          slidesToShow: 1
-        }
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2
       }
+    },
+    {
+      breakpoint: 770,
+      settings: {
+        slidesToShow: 1,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 350,
+      settings: {
+        arrows: false,
+        slidesToShow: 1
+      }
+    }
     ]
   });
 }
@@ -1639,15 +1644,43 @@ function openOneCard(index, thisOne) {
 function fillBilling() {
 
   const useBilling = $('#billingAddress').is(':checked');
-  let formTarget = '';
 
+
+
+  const billingData = getFormData('#billing-form');
+  const shippingData = getFormData('#shipping-form');
+
+
+
+  $('.js-customer-name-text').text(`${billingData.firstname} ${billingData.lastname}`);
+
+  $('.js-shipping-name-text').text(`${shippingData.firstname} ${shippingData.lastname}`)
+
+  let billingAddress = `
+    ${billingData.city} / ${billingData.state} ${billingData.postcode} ${billingData.country}
+  `
+
+
+  let shippingAddress = addresstext = `
+  ${shippingData.shippingAddress}
+  ${shippingData.city} / ${shippingData.state} ${shippingData.postcode} ${shippingData.country}
+`
+
+
+  $('.js-address-text').text(addresstext);
   if (useBilling) {
-    formTarget = '#billing-form';
+    $('.js-shipping-address-text').text('Use billing address');
   } else {
-    formTarget = '#shipping-form';
+    $('.js-shipping-address-text').text(shippingAddress);
   }
 
-  const formData = decodeURIComponent($(formTarget).serialize()).split('&');
+
+}
+
+
+function getFormData(target) {
+  const formData = decodeURIComponent($(target).serialize()).split('&');
+
   let formJsonData = {};
 
   formData.forEach(function (data) {
@@ -1655,30 +1688,12 @@ function fillBilling() {
     formJsonData[dataArray[0]] = dataArray[1];
   });
 
-  console.log(formJsonData);
+  return formJsonData;
+}
 
-  $('.js-customer-name-text').text(`${formJsonData.firstname} ${formJsonData.lastname}`);
-
-  let addresstext = ''
-
-  let shippingMethod = ''
-
-  if (useBilling) {
-    addresstext = `
-        ${formJsonData.city} / ${formJsonData.state} ${formJsonData.postcode} ${formJsonData.country}
-      `
-    shippingMethod = 'Use billing address'
-  } else {
-    addresstext = `
-        ${formJsonData.shippingAddress}
-        ${formJsonData.city} / ${formJsonData.state} ${formJsonData.postcode} ${formJsonData.country}
-      `
-    shippingMethod = 'Not use billing address'
-  }
-
-
-
-  $('.js-address-text').text(addresstext);
-  $('.js-billing-address-text').text(shippingMethod);
-
+function turnOnSortedMode() {
+  $('.js-items-toggler').removeClass('sorted');
+  $('.js-included-country-text').css({
+    'cursor': 'pointer'
+  });
 }

@@ -85,10 +85,8 @@
 
 .list-wrapper
   width: 100%
-  overflow-x: auto
 .basket-list
   min-width: 930px
-  overflow: hidden
 
 .basket-line
   position: relative
@@ -102,8 +100,9 @@
     &:last-child
       justify-content: flex-end
   .remove-btn
-    left: 5px
-    top: 5px
+    left: -25px
+    top: 50%
+    transform: translateY(-50%)
     z-index: 15
 
 
@@ -281,8 +280,18 @@
   height: 0
 
 @media only screen and (max-width: 992px)
+  .basket-list
+    overflow: hidden
+  .list-wrapper
+    overflow-x: auto
   .notification-block
     top: 63px
+  .basket-line
+    .remove-btn
+      left: 5px
+      top: 5px
+      transform: translateY(0)
+      z-index: 15
 
 @media only screen and (max-width: 575px)
   .notification-block
