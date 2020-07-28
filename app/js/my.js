@@ -1657,6 +1657,7 @@ function fillBilling() {
   $('.js-shipping-name-text').text(`${shippingData.firstname} ${shippingData.lastname}`)
 
   let billingAddress = `
+    ${billingData.billingAddress}
     ${billingData.city} / ${billingData.state} ${billingData.postcode} ${billingData.country}
   `
 
@@ -1685,6 +1686,7 @@ function fillBilling() {
     `
 
     $('.js-shipping-address-text').html(html);
+    $('.js-shipping-company-name').text(shippingData.companyname);
   }
 
 
