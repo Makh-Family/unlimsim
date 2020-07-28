@@ -9,12 +9,12 @@ const gulp = require('gulp'),
 	// rename = require('gulp-rename'),
 	autoprefixer = require('gulp-autoprefixer'),
 	notify = require('gulp-notify');
-	// pipeline = require('readable-stream').pipeline,
-	// gutil = require('gulp-util'),
-	// rsync = require('gulp-rsync'),
-	// imageResize = require('gulp-image-resize'),
-	// imagemin = require('gulp-imagemin'),
-	// del = require('del');
+// pipeline = require('readable-stream').pipeline,
+// gutil = require('gulp-util'),
+// rsync = require('gulp-rsync'),
+// imageResize = require('gulp-image-resize'),
+// imagemin = require('gulp-imagemin'),
+// del = require('del');
 
 
 // Local Server
@@ -45,17 +45,16 @@ gulp.task('styles', function () {
 // JS
 gulp.task('scripts', function () {
 	return gulp.src([
-			'node_modules/jquery/dist/jquery.js',
-			'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-			'node_modules/imask/dist/imask.js',
-			'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
-			'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
-			'node_modules/slick-carousel/slick/slick.js',
-			'app/js/main.js',
-			'app/js/index.js',
-			'app/js/helpers.js',
-			'app/js/my.js'
-		])
+		'node_modules/jquery/dist/jquery.js',
+		'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+		'node_modules/imask/dist/imask.js',
+		'node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js',
+		'node_modules/bootstrap-validate/dist/bootstrap-validate.js',
+		'node_modules/slick-carousel/slick/slick.js',
+		'app/js/main.js',
+		'app/js/index.js',
+		'app/js/my.js'
+	])
 		.pipe(concat('main.js'))
 		.pipe(terser()) // minifies es6+ js code
 		.pipe(gulp.dest('app/dist'))
