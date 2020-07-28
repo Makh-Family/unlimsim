@@ -788,6 +788,14 @@
     grid-template-columns: 1.5fr 1.3fr 1fr
     justify-items: center
 
+.js-address-text
+  span
+    &:first-child
+      white-space: nowrap
+.js-shipping-address-text
+  span
+    display: block
+    white-space: nowrap
 .billing-info-box
   display: flex
   .info-wrapper
@@ -801,8 +809,9 @@
       margin-left: 30px
       font-size: 16px
     .billing-info-item
+      height: 52px
       img
-        margin-top: 10px
+        margin-top: 5px
     .d-flex
       img
         margin-top: 10px

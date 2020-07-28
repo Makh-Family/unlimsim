@@ -1661,17 +1661,30 @@ function fillBilling() {
   `
 
 
-  let shippingAddress = addresstext = `
+  let shippingAddress = `
   ${shippingData.shippingAddress}
   ${shippingData.city} / ${shippingData.state} ${shippingData.postcode} ${shippingData.country}
 `
+  const detailedBilling = billingAddress.slice(0, billingAddress.indexOf('St') + 4);
+  const mainBilling = billingAddress.slice(billingAddress.indexOf('St') + 4, billingAddress.length);
 
 
-  $('.js-address-text').text(addresstext);
+  $('.js-address-text').children('.js-address-sec').text(mainBilling);
+
+  $('.js-address-text').children('span:first-child').text(detailedBilling);
+
   if (useBilling) {
     $('.js-shipping-address-text').text('Use billing address');
   } else {
-    $('.js-shipping-address-text').text(shippingAddress);
+    const detailedShipping = shippingAddress.slice(0, shippingAddress.indexOf('St') + 4);
+    const mainShipping = shippingAddress.slice(shippingAddress.indexOf('St') + 4, shippingAddress.length);
+
+    const html = `
+    <span>${detailedShipping}</span>
+    ${mainShipping}
+    `
+
+    $('.js-shipping-address-text').html(html);
   }
 
 
