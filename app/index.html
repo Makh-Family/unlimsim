@@ -19,12 +19,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="#FF0000" />
 
   <link rel="stylesheet" href="./dist/main.css" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" /> -->
 </head>
 
 <body>
 
   <div class="navbar-overlay"></div>
+
+  <div class="notification-block" style="display: none;">
+    <div class="container">
+      <a href="shopping-card.html">Plan has been added to cart</a>
+    </div>
+  </div>
+
+
 
   <!-- ========= Background Blurry Overlay ========= -->
   <div style="display: none;">
@@ -95,7 +102,7 @@
         </li>
 
         <li class="nav-item ml-3">
-          <a href="#" class="nav-link">
+          <a href="basket.html" class="nav-link btn-basket">
             <img src="img/icons/basket.svg" alt="user" class="w-22 user-btn" />
           </a>
         </li>
@@ -176,9 +183,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link extra-bar-toggle-large link-basket">
+            <a href="basket.html" class="nav-link extra-bar-toggle-large link-basket btn-basket">
               <img src="img/icons/basket.svg" class="w-22 user-btn" />
-              <span class="badge badge-pill">1</span>
+              <span class="badge badge-pill">0</span>
             </a>
           </li>
         </ul>
@@ -294,7 +301,7 @@
                               <em>$ <span>25</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -329,7 +336,7 @@
                               <em>$ <span>70</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -364,7 +371,7 @@
                               <em>$ <span>85</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -400,7 +407,7 @@
                               <em>$ <span>99</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -490,7 +497,7 @@
                               <em>$ <span>25</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -525,7 +532,7 @@
                               <em>$ <span>70</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -560,7 +567,7 @@
                               <em>$ <span>85</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -595,7 +602,7 @@
                               <em>$ <span>90</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -869,7 +876,7 @@
                               <em>$ <span>25</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -904,7 +911,7 @@
                               <em>$ <span>70</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -939,7 +946,7 @@
                               <em>$ <span>85</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -974,7 +981,7 @@
                               <em>$ <span>90</span> us / 7 days </em>
                             </h2>
 
-                            <a href="#" class="btn-buy">BUY</a>
+                            <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
                             <p class="my-2">YOU CAN ALSO ADD:</p>
                             <div class="top3">
                               <div class="box-item">
@@ -1363,7 +1370,7 @@
                         <div class="item-box my-3">
                           <div class="row">
                             <div class="col-sm-2 d-flex justify-content-center align-items-center">
-                              <img src="img/icons/icon3.png" alt="icon1" width="56" height="56" />
+                              <img src="img/icons/icon3.png" alt="icon1" width="34" height="34" />
                             </div>
                             <div class="col-sm-4 bs-select-wrapper">
                               <!-- data-size="7" -->
@@ -1424,7 +1431,7 @@
                             <label class="form-check-label" for="materialUnchecked">
                               <img src="img/icons/left-sim.png" width="37" height="37" alt="left" />
                               eSim
-                              <span class="pop"><a style="color: azure;" href="#!" data-toggle="modal" data-target="#exampleModal">?</a></span>
+                              <span class="pop"><a style="color: azure;" href="#" data-toggle="modal" data-target="#exampleModal">?</a></span>
                             </label>
                           </div>
                           <div class="form-check right-form">
@@ -1436,7 +1443,7 @@
                             <label class="form-check-label" for="materialUnchecked1">
                               <img src="img/icons/right-sim.png" width="50" height="37" alt="left" />
                               Sim
-                              <span class="pop"><a style="color: azure;" href="#!" data-toggle="modal" data-target="#exampleModal"> ? </a></span>
+                              <span class="pop"><a style="color: azure;" href="#" data-toggle="modal" data-target="#exampleModal"> ? </a></span>
                             </label>
                           </div>
                         </div>
@@ -1778,6 +1785,122 @@
   </div>
 
 
+  <!-- Modal for prebasket notification -->
+
+    <div class="modal fade basket-modal modal-add" id="basketModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="tabs">
+            <div class="red-line"></div>
+            <h3 class="basket-modal__title">Please make your choice</h3>
+            <form class="form" id="add-to-card-form">
+              <div class="sims-box">
+                <div class="sim__item">
+                  <input type="radio" checked id="sims-esim" value="eSim" name="simToBeSelected">
+                  <label for="sims-esim"><div class="circle"></div>
+                    <div class="img-wrapper">
+                      <img src="img/icons/left-sim.png" alt="esim"><img src="img/icons/left-sim-hover.png" alt="esim">
+                    </div>
+                    <span>eSim</span></label>
+                  <button type="button" class="btn btn-show-sim-info" data-target="#phone-support" data-sim="#sims-esim">?</button>
+                </div>
+                <div class="line"></div>
+                <div class="sim__item">
+                  <input value="Sim" type="radio" id="sims-sim" name="simToBeSelected">
+                  <label for="sims-sim"><div class="circle"></div>
+                    <div class="img-wrapper">
+                      <img src="img/icons/right-sim.png" alt="sim"><img src="img/icons/right-sim-hover.png" alt="sim">
+                    </div>
+                    <span>Sim</span></label>
+                  <button type="button" class="btn btn-show-sim-info" data-target="#shipping-info" data-sim="#sims-sim">?</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tabs-wrapper">
+            <div class="tab-item" id="phone-support" style="display: none;">
+              <div class="modal-body">
+                <div class="title-box">
+                  <p>Apple iPhones</p>
+                  <span class="tit-line"></span>
+                </div>
+      
+                <ul>
+                  <li>iPhone 11</li>
+                  <li>iPhone 11 Pro</li>
+                  <li>iPhone 11 Pro Max</li>
+                  <li>iPhone XS</li>
+                  <li>iPhone XS Max</li>
+                  <li>iPhone XS Max Global</li>
+                  <li>iPhone XR</li>
+                </ul>
+      
+                <div class="title-box">
+                  <p>Apple iPads</p>
+                  <span class="tit-line"></span>
+                </div>
+      
+                <ul>
+                  <li>iPad Pro 3rd Gen (12.9 inch, WiFi+Cellular)</li>
+                  <li>iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+Cellular)</li>
+                  <li>iPad mini 5th Gen</li>
+                  <li>iPad Air 3rd Gen</li>
+                </ul>
+                <div class="title-box">
+                  <p>Google</p>
+                  <span class="tit-line"></span>
+                </div>
+      
+                <ul>
+                  <li>Pixel 3</li>
+                  <li>Pixel 3 XL</li>
+                  <li>Pixel 4</li>
+                </ul>
+                <div class="title-box">
+                  <p>Samsung</p>
+                  <span class="tit-line"></span>
+                </div>
+      
+                <ul>
+                  <li>Galaxy Fold LTE</li>
+                  <li>Samsung Galaxy Z Flip</li>
+                  <li>Samsung Galaxy S20, s20+ and S20 Ultra</li>
+                  <li style="list-style: none;">
+                    (Single SIM Nano-SIM and/or eSIM models )
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-item" id="shipping-info" style="display: none;">
+              <div class="modal-body">
+                <div class="title-box">
+                  <p>Info Shipping</p>
+                  <span class="tit-line"></span>
+                </div>
+                <p class="info-text">When you ship with DHL Express – you’re shipping 
+                  with specialists in international shipping and courier 
+                  delivery services! With our wide range of express 
+                  parcel and package services, along with shipping 
+                  and tracking solutions to fit your needs – learn how 
+                  DHL Express can deliver!</p>
+                <form id="dhl-form">
+                  <input type="checkbox" name="dhl" id="dhl-checkbox">
+                  <label class="dhl-checkbox-label" for="dhl-checkbox"><span> </span> <img src="img/icons/dhl.png" alt="dhl"></label>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class="action-buttons">
+            <button type="button" class="btn-add-to-card" data-dismiss="modal">add to card</button>
+            <button type="button" class="btn-close-modal" data-dismiss="modal">cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- End of prebasket modal -->
+
 
   <!-- Modal for app store -->
   <div class="modal fade" id="appStoreModal" tabindex="-1" role="dialog" aria-labelledby="appStoreModalLabel"
@@ -1807,7 +1930,7 @@
   <!-- Modal: Compatible devices -->
   <div class="modal fade modal-add" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="margin-top: 100px;">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">

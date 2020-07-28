@@ -1,0 +1,262 @@
+.basket-modal
+
+  &.show
+    display: flex !important
+    align-items: flex-start
+
+  .tabs
+    margin-bottom: 30px
+
+  .modal-dialog
+    display: flex
+    align-items: center
+    margin-top: 150px
+    
+
+  .modal-body
+    padding: 0 !important
+
+  .modal-content
+    width: 400px
+    padding: 25px
+    border-radius: 15px !important;
+    background: linear-gradient(#a39f9f, #303030);
+    .red-line
+      height: 3px
+      width: 60px
+      margin: 0 auto
+      background: $accent
+      margin-bottom: 10px
+
+.basket-modal__title
+  color: #fff
+  font-size: 24px
+  text-align: center
+  font-weight: 600
+  margin-bottom: 35px
+
+.sims-box
+  display: flex
+  width: 90%
+  margin-right: auto
+  margin-left: auto
+  justify-content: space-between
+  align-items: center
+  label 
+    margin: 0
+  .line
+    width: 3px
+    height: 35px
+    margin: 0
+    background: #fff
+
+.sim__item
+  display: flex
+  align-items: flex-end
+  position: relative
+  &:last-child
+    margin-left: -18px
+  .btn-show-sim-info
+    font-size: 10px
+    width: 18px
+    height: 18px
+    line-height: 9px
+    position: absolute
+    color: #ffffff
+    text-align: center
+    border: 1px solid #fff
+    padding: 0
+    border-radius: 50%
+    top: 0
+    right: -20px
+    transition: 0.3s ease
+
+    &.active
+      background: $accent
+      border-color: $accent
+
+  label 
+    color: #fff
+    display: flex
+    align-items: flex-end
+
+    img
+      margin-right: 10px
+
+    .img-wrapper
+      img
+        &:nth-child(2)
+          display: none
+    span
+      font-size: 18px
+      font-weight: 600
+      transition: 0.3s ease
+          
+
+    &:hover
+      span
+        transform: scale(1.2)
+      .img-wrapper
+        img
+          &:nth-child(1)
+            display: none
+          &:nth-child(2)
+            display: block
+      .circle
+        &::before
+          opacity: 1
+
+    .circle
+      width: 20px
+      height: 20px
+      border: 2px solid #ffffff
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-right: 10px
+      &::before
+        display: block
+        width: 10px
+        height: 10px
+        background: $accent
+        content: ''
+        border-radius: 50%
+        transition: 0.3s ease
+        opacity: 0
+        
+  input
+    width: 0
+    height: 0
+    opacity: 0
+
+    &:checked + label 
+      .circle
+        &::before
+          opacity: 1
+      .img-wrapper
+        img
+          &:nth-child(1)
+            display: none
+          &:nth-child(2)
+            display: block
+      span
+        transform: scale(1.2)
+
+.action-buttons
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+  button
+    display: block
+    width: 45%
+    border: 1px solid #fff
+    border-radius: 20px
+    text-transform: uppercase
+    background: transparent
+    color: #ffffff
+    padding: 5px 0
+    transition: 0.3s ease
+
+    &:hover, &:focus
+      background: $accent
+
+  .btn-add-to-card
+    background: #fff
+    color: $accent
+    font-weight: 600
+
+    &:hover, &:focus
+      background: $accent
+      color: #ffffff
+
+
+#shipping-info
+  .title-box
+    p
+      text-transform: uppercase
+      font-weight: 600
+    .tit-line
+      width: 60% !important
+  .info-text
+    color: #ffffff
+  
+
+.dhl-checkbox-label
+  display: flex
+  margin-bottom: 30px
+  span
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    border: 2px solid #ffffff
+    background: transparent
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 10px
+
+    &::before
+      display: block
+      width: 10px
+      height: 10px
+      content: ''
+      border-radius: 50%
+      background: $accent
+      opacity: 0
+      transition: 0.3s ease
+
+#dhl-checkbox
+  height: 0
+  width: 0
+  opacity: 0
+
+  &:checked + label
+    span
+      &::before
+        opacity: 1
+
+
+
+@media only screen and (max-width: 600px)
+  .basket-modal
+    .modal-dialog
+      width: 80%
+      margin-right: auto
+      margin-left: auto
+      .modal-content
+        width: 100%
+      .tabs
+        overflow: unset
+
+@media only screen and (max-width: 500px)
+  .basket-modal
+    .modal-dialog
+      width: 95%
+      .sims-box
+        width: 100%
+        flex-direction: column
+        .line
+          display: none
+        .sim__item
+          margin-bottom: 20px
+
+.animate-it
+  a
+    display: block
+    animation: rubberBand 1s 1
+    animation-delay: 0.5s
+    transform-origin: right
+
+@keyframes rubberBand
+  0%
+    transform: scale(1)
+  25%
+    transform: scale(1.2)
+  50%
+    transform: scale(1)
+  75%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)
