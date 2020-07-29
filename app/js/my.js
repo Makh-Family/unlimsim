@@ -313,13 +313,13 @@ $(document).ready(function () {
       });
     });
 
-    $('#plan-select').on('click', '.dropdown-item', function (e) {
+    $('#plan-select').on('click', function (e) {
 
-      if ($(this).text().toUpperCase() == "WORLDWIDE" || $(this).text().toUpperCase() == "COUNTRY") {
+      if ($(this).find('select').val().toUpperCase() == "WORLDWIDE" || $(this).find('select').val().toUpperCase() == "COUNTRY") {
         $(`#region-list .nav-link[data-value="*"]`).trigger('click');
       }
 
-      if ($(this).text().toUpperCase() != "WORLDWIDE") {
+      if ($(this).find('select').val().toUpperCase() != "WORLDWIDE") {
         $('#tariff-select').hide();
       } else {
         $('#tariff-select').show();
@@ -328,8 +328,8 @@ $(document).ready(function () {
 
     });
 
-    $('#region-select').on('click', '.dropdown-item', function (e) {
-      let continent = $(this).text().toUpperCase();
+    $('#region-select').on('click', function (e) {
+      let continent = $(this).find('select').val().toUpperCase();
 
       continent = continent == "OCEANIA" ? "OCEANIA" : (continent == "NORTH AMERICA" || continent == "SOUTH AMERICA") ? continent.split(' ')[0][0] + '. ' + continent.split(' ')[1] : continent;
       customer.tariff = continent;
@@ -338,8 +338,8 @@ $(document).ready(function () {
     });
 
 
-    $('#country-select').on('click', '.dropdown-item', function (e) {
-      let country = $(this).text().toUpperCase();
+    $('#country-select').on('click', function (e) {
+      let country = $(this).find('select').val().toUpperCase();
       $('.js-tariff-name').text(country);
     })
 
