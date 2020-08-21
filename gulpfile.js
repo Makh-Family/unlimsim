@@ -34,10 +34,10 @@ gulp.task('browser-sync', function () {
 gulp.task('styles', function () {
 	return gulp.src('app/sass/main.sass')
 		.pipe(sass({
-			outputStyle: 'compressed'
+			// outputStyle: 'compressed'
 		}).on("error", notify.onError()))
 		.pipe(autoprefixer())
-		.pipe(cleancss()) // Opt., comment out when debugging
+		// .pipe(cleancss()) // Opt., comment out when debugging
 		.pipe(gulp.dest('app/dist'))
 		.pipe(browserSync.stream())
 });
@@ -56,7 +56,7 @@ gulp.task('scripts', function () {
 		'app/js/my.js'
 	])
 		.pipe(concat('main.js'))
-		.pipe(terser()) // minifies es6+ js code
+		// .pipe(terser()) // minifies es6+ js code
 		.pipe(gulp.dest('app/dist'))
 		.pipe(browserSync.reload({
 			stream: true
