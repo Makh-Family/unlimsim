@@ -56,7 +56,7 @@
   <!-- End of search block -->
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-red sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-red">
     <div class="under-nav">
       <div class="container">
         <ul class="nav">
@@ -142,28 +142,31 @@
 
         <ul class="navbar-nav mt-4 ml-auto">
           <li class="nav-item dropdown mr-1">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              USD
+            <a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span></span>&#36;USD
               <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">USD</a>
-              <a class="dropdown-item" href="#">RUB</a>
-              <a class="dropdown-item" href="#">EUR</a>
+            <div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item active" href="#"><span>&#36;</span>USD</a>
+              <a class="dropdown-item" href="#"><span>&#8381;</span>RUB</a>
+              <a class="dropdown-item" href="#"><span>&#8364;</span>EUR</a>
             </div>
           </li>
 
           <li class="nav-item dropdown mr-1">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
+            <a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               ENG
               <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">RUS</a>
-              <a class="dropdown-item" href="#">ENG</a>
-              <a class="dropdown-item" href="#">DEU</a>
+            <div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#"><img width="20" height="12"
+                  src="img/regions/europe/RussianFederation_m.png" alt="">RUS</a>
+              <a class="dropdown-item active" href="#"><img width="20" height="12"
+                  src="img/regions/europe/UnitedKingdom_m.png" alt="">ENG</a>
+              <a class="dropdown-item" href="#"><img width="20" height="12" src="img/regions/europe/Germany_m.png"
+                  alt="">DEU</a>
             </div>
           </li>
 
