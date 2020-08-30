@@ -99,7 +99,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="dashboard.html" class="nav-link">
+          <a href="#" data-toggle="modal" data-target="#predashboard-modal" class="nav-link">
             <img src="img/icons/user.svg" alt="user" class="user-btn" />
           </a>
         </li>
@@ -184,7 +184,8 @@
           </li>
 
           <li class="nav-item">
-            <a href="dashboard.html" class="nav-link extra-bar-toggle-large link-user">
+            <a href="#" data-toggle="modal" data-target="#predashboard-modal"
+              class="nav-link extra-bar-toggle-large link-user">
               <img src="img/icons/user.svg" alt="user" class="user-btn" />
             </a>
           </li>
@@ -1862,6 +1863,129 @@
 
   </footer>
 
+
+  <!-- Modal for predashboard actions -->
+
+  <div class="modal fade modal-add basket-modal" id="predashboard-modal" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="inner-modal-header">
+            <img src="img/icons/map.svg" class="d-block mt-1 mx-auto" alt="map" width="160" height="95">
+            <h5 class="modal-title" id="exampleModalLabel">Connect to
+              <div class="skewed-box">
+                <span>
+                  <img src="img/logo.svg" width="60" height="15" alt="logo">
+                </span>
+              </div> world
+            </h5>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-tabs-wrapper">
+            <div class="w-100 fancy">
+              <button type="button" class="form-tabs-btn active" data-target="#sign-form">Sign in</button>
+              <button type="button" class="form-tabs-btn" data-target="#reg-form">Registration</button>
+            </div>
+
+          </div>
+          <div class="reg-sing-forms-wrapper">
+            <form id="reg-form" class="reg__form my-4" style="display: none;">
+              <label class="col-lg-12 d-block">
+                <span>Email Address</span>
+                <input required="" type="email" value="info@agrodell.com" name="regEmail" placeholder="Email"
+                  class="d-block input w-100">
+              </label>
+              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
+                <span>Password</span>
+                <input value="123456789" required="" type="password" name="password" class="d-block input w-100">
+              </label>
+              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
+                <span>Repeat Password</span>
+                <input value="123456789" required="" type="password" name="repeatedPassword"
+                  class="d-block input w-100">
+              </label>
+              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
+                <span>Country Number</span>
+                <span class="arrow-down"></span>
+                <select required="" class="form-control" id="switch-countrycode" name="countryCode"
+                  data-title="Select country">
+                  <option value="ukraine:380">Ukraine +380</option>
+                  <option value="russia:7">Russia +7</option>
+                  <option value="uzbekistan:998">Uzbekistan +998</option>
+                </select>
+              </label>
+              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
+                <input value="0638515252" id="telnumber" required="" type="tel" name="telNumber"
+                  class="d-block input w-100">
+              </label>
+              <div style="display: none;" class="verification-wrapper w-100 align-items-center">
+                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                  <span>Verification Number</span>
+                  <input value="123456789" id="verifition-code" type="password" name="verificationCode"
+                    class="d-block input w-100">
+                </label>
+                <p class="col-lg-6 col-md-6 col-sm-12">Please enter verification number from your email </p>
+              </div>
+              <div class="d-flex flex-wrap mb-4 confirm-wrapper align-items-center">
+                <p class="col-lg-8 col-sm-12">In order to continue registration you need to confirm the email.
+                  Please confirm your Email.</p>
+                <button type="submit" data-step="2" data-confirm="yes" id="regFormSubmit"
+                  class="ml-auto confirm-mail-btn rounded-button">Confirm Email</button>
+              </div>
+            </form>
+            <form id="sign-form" class="sign__form my-4">
+              <div class="w-100 mb-4 radio-wrapper js-radio-wrapper">
+                <input checked="" data-target=".js-email-input-wrapper" value="email" type="radio" name="signInType"
+                  id="emailtoggler">
+                <label for="emailtoggler"><span></span><span>Email</span></label>
+                <input type="radio" data-target=".js-phone-input-wrapper" value="tel" name="signInType"
+                  id="phonetoggler">
+                <label for="phonetoggler"><span></span><span>Phone</span></label>
+
+              </div>
+              <label class="js-email-input-wrapper col-lg-12 col-md-12 col-sm-12">
+                <span>Email Address</span>
+                <input required="" type="email" value="info@agrodell.com" name="signInEmail" placeholder="Email"
+                  class="d-block input w-100">
+              </label>
+              <label style="display: none;" class="js-phone-input-wrapper col-lg-12 col-md-12 col-sm-12">
+                <span>Phone number</span>
+                <input required="" type="tel" value="79622200620" name="signInPhone" id="signIn-phone-input"
+                  placeholder="Phone number" class="d-block input w-100">
+              </label>
+              <label style="display: none;"
+                class="js-temporary-password-wrapper temporary-password-wrapper col-lg-12 col-md-12 col-sm-12">
+                <span>Enter temporary password</span>
+                <input required="" type="password" value="79622200620" name="temporaryPassword" id="temporary-password"
+                  placeholder="Temporary password" class="d-block input col-lg-12 col-md-12 col-sm-12">
+                <p>Please enter temporary password
+                  from your email</p>
+              </label>
+              <label class="js-password-input-wrapper col-lg-12 col-md-12 col-sm-12">
+                <span>Password</span>
+                <input value="123456789" required="" type="password" name="password" class="d-block input w-100">
+              </label>
+              <div class="d-flex flex-wrap mb-4 ml-auto confirm-wrapper align-items-baseline">
+                <button type="button" data-forgot="yes" class="forgot-password">Forgot password</button>
+                <button type="submit" id="signInSubmit" class="ml-auto rounded-button" data-forgot="no"
+                  data-confirm="yes">Continue</button>
+              </div>
+              <div class="fancy sign-in-button-wrapper w-100">
+                <button type="submit" class="rounded-button">Sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End of predashboard actions -->
 
   <!-- Modal for prebasket notification -->
 
