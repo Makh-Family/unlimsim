@@ -25,7 +25,7 @@
     background: linear-gradient(#a39f9f,#303030)
     border-radius: 15px
   .modal-content
-    padding: 30px
+    padding: 0
     border: none
     background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
   .modal-header
@@ -44,6 +44,13 @@
       transform: scale(1.1)
   .inner-modal-header
     width: 100%
+    padding: 30px
+    padding-bottom: 0
+  .form-tabs-wrapper
+    padding: 0 30px
+  #sign-form
+    padding: 0 30px
+    padding-bottom: 30px
   .modal-title
     margin-top: 25px
     margin-bottom: 25px
@@ -127,4 +134,116 @@
   button
     padding: 3px 20px
 
+.reg-info
+  margin-top: 25px
 
+.reg-step
+  margin-bottom: 25px
+  display: flex
+  justify-content: space-evenly
+
+.step-info-content
+  align-self: flex-end  
+
+.step-order
+  display: flex
+  align-items: center
+  width: 80px
+  position: relative
+  h3
+    text-align: center
+    margin: 0 auto
+    width: 30px
+    height: 30px
+    line-height: 22px
+    font-size: 19px
+    color: #fff
+    font-family: $semibold
+    border: 2px solid #fff
+    border-radius: 50%
+  span > p
+    padding-left: 30px
+    text-transform: uppercase
+    font-size: 14px
+    margin: 0
+    line-height: 40px
+
+.order-info
+  width: 110px
+  height: 40px
+  position: absolute
+  bottom: 0
+  left: -50px
+  &.right
+    right: -40px
+    left: unset
+    p
+      height: 40px
+      padding-left: 20px
+      padding-right: 20px
+      line-height: 20px
+  span
+    padding: 0
+    height: 40px
+    padding-right: 5px
+  a
+    display: block
+    text-transform: uppercase
+    padding-left: 30px
+    line-height: 1
+    max-height: 100%
+    color: #ffffff
+    font-size: 14px
+    text-decoration: none
+    img
+      filter: invert(1)
+    p
+      border-bottom: 1px dashed #ddd
+      margin: 0
+
+
+.step-info-content
+  width: 110px
+  color: #fff
+  font-size: 12px
+  strong
+    text-transform: uppercase
+
+.step-img
+  &:first-child
+    align-self: flex-end
+  h3
+    font-size: 12px
+    color: white
+    strong
+      text-transform: uppercase
+
+.second-step
+  h3
+    margin-bottom: 20px
+
+.choose-plan-link-wrapper
+  text-align: center
+  margin-bottom: 25px
+  a
+    background: $accent
+    border: none
+    font-size: 18px
+    font-family: $semibold
+    display: inline-block
+    padding: 10px 15px
+    line-height: 1
+    text-decoration: none
+    transition: 0.3s ease
+    &:hover
+      transform: scale(1.1)
+      background: $darkerred
+
+  &::after,
+  &::before
+    background: #fff
+  
+.choose-plan-box
+  transition: 0.3s ease
+  &:hover
+    transform: skewX(-20deg) scale(1.1)

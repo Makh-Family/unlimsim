@@ -1889,55 +1889,78 @@
           <div class="form-tabs-wrapper">
             <div class="w-100 fancy">
               <button type="button" class="form-tabs-btn active" data-target="#sign-form">Sign in</button>
-              <button type="button" class="form-tabs-btn" data-target="#reg-form">Registration</button>
+              <button type="button" class="form-tabs-btn" data-target=".reg-info">Registration</button>
             </div>
 
           </div>
           <div class="reg-sing-forms-wrapper">
-            <form id="reg-form" class="reg__form my-4" style="display: none;">
-              <label class="col-lg-12 d-block">
-                <span>Email Address</span>
-                <input required="" type="email" value="info@agrodell.com" name="regEmail" placeholder="Email"
-                  class="d-block input w-100">
-              </label>
-              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
-                <span>Password</span>
-                <input value="123456789" required="" type="password" name="password" class="d-block input w-100">
-              </label>
-              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
-                <span>Repeat Password</span>
-                <input value="123456789" required="" type="password" name="repeatedPassword"
-                  class="d-block input w-100">
-              </label>
-              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
-                <span>Country Number</span>
-                <span class="arrow-down"></span>
-                <select required="" class="form-control" id="switch-countrycode" name="countryCode"
-                  data-title="Select country">
-                  <option value="ukraine:380">Ukraine +380</option>
-                  <option value="russia:7">Russia +7</option>
-                  <option value="uzbekistan:998">Uzbekistan +998</option>
-                </select>
-              </label>
-              <label class="col-lg-6 col-md-12 col-sm-12 d-block">
-                <input value="0638515252" id="telnumber" required="" type="tel" name="telNumber"
-                  class="d-block input w-100">
-              </label>
-              <div style="display: none;" class="verification-wrapper w-100 align-items-center">
-                <label class="col-lg-6 col-md-6 col-sm-12 d-block">
-                  <span>Verification Number</span>
-                  <input value="123456789" id="verifition-code" type="password" name="verificationCode"
-                    class="d-block input w-100">
-                </label>
-                <p class="col-lg-6 col-md-6 col-sm-12">Please enter verification number from your email </p>
+            <div class="reg-info" style="display: none;">
+              <div class="reg-step">
+                <div class="step-order">
+                  <h3>1</h3>
+                  <div class="order-info choose-plan-box skewed-box">
+                    <span>
+                      <a href="#section-tab" class="choose-plan-link" data-dismiss="modal">
+                        <p>
+                          Choose plan <img width="15" height="15" src="img/icons/arrow-down-svg.svg" alt="arrow down">
+                        </p>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+                <div class="step-img">
+                  <img src="img/icons/sample-card.png" width="88" height="128" alt="sample car">
+                </div>
+                <div class="step-info-content">
+                  <strong>Choose</strong> a suitable package from the
+                  provided plans or create a personal one.
+                </div>
               </div>
-              <div class="d-flex flex-wrap mb-4 confirm-wrapper align-items-center">
-                <p class="col-lg-8 col-sm-12">In order to continue registration you need to confirm the email.
-                  Please confirm your Email.</p>
-                <button type="submit" data-step="2" data-confirm="yes" id="regFormSubmit"
-                  class="ml-auto confirm-mail-btn rounded-button">Confirm Email</button>
+              <div class="reg-step">
+                <div class="step-img">
+                  <h3><strong>Fill</strong> the form</h3>
+                  <img src="img/icons/sample-form.png" width="120" height="70" alt="sample car">
+                </div>
+                <div class="step-img">
+                  <img src="img/icons/sample-card2.png" width="74" height="107" alt="sample car">
+                </div>
+                <div class="step-order second-step">
+                  <h3>2</h3>
+                  <div class="order-info skewed-box right">
+                    <span>
+                      <p>
+                        enter data
+                      </p>
+                    </span>
+                  </div>
+                </div>
               </div>
-            </form>
+              <div class="reg-step">
+                <div class="step-order">
+                  <h3>3</h3>
+                  <div class="order-info skewed-box">
+                    <span>
+                      <p>
+                        pay plan
+                      </p>
+                    </span>
+                  </div>
+                </div>
+                <div class="step-img">
+                  <img src="img/icons/sample-card.png" width="88" height="128" alt="sample car">
+                </div>
+                <div class="step-info-content">
+                  <strong>Сheck</strong> the data
+                  before payment
+                  <strong>and pay</strong> for the
+                  selected plan
+                </div>
+              </div>
+              <div class="fancy choose-plan-link-wrapper">
+                <a href="#section-tab" data-dismiss="modal" class="choose-plan-link-big rounded-button">Choose a
+                  plan</a>
+              </div>
+            </div>
             <form id="sign-form" class="sign__form my-4">
               <div class="w-100 mb-4 radio-wrapper js-radio-wrapper">
                 <input checked="" data-target=".js-email-input-wrapper" value="email" type="radio" name="signInType"
