@@ -1,48 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="56.006" height="46" viewBox="0 0 56.006 46">
-  <g id="Сгруппировать_833" data-name="Сгруппировать 833" transform="translate(-563.117 -187.5)">
-    <g id="Banner_1_Gb" data-name="Banner 1 Gb" transform="translate(563.617 193.758)">
-      <rect id="Background" width="25.477" height="37.133" rx="3" transform="translate(0 0)" fill="#fff" stroke="#787878" stroke-width="1"/>
-      <g id="Button_-BUY-_Active" data-name="Button -BUY- Active" transform="translate(4.643 32.197)">
-        <g id="Прямоугольник_1582" data-name="Прямоугольник 1582" transform="translate(0 0)" fill="#787878" stroke="#787878" stroke-linejoin="round" stroke-width="0.5">
-          <rect width="15.897" height="2.042" rx="1.021" stroke="none"/>
-          <rect x="0.25" y="0.25" width="15.397" height="1.542" rx="0.771" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="59.57" height="46" viewBox="0 0 59.57 46">
+  <g id="Сгруппировать_1009" data-name="Сгруппировать 1009" transform="translate(-560.955 -133.5)">
+    <g id="Banner_1_Gb" data-name="Banner 1 Gb" transform="translate(561.455 139)">
+      <rect id="Background" width="25.57" height="37.269" rx="3" transform="translate(0 0.5)" fill="#fff" stroke="red" stroke-width="1"/>
+      <g id="Button_-BUY-_Active" data-name="Button -BUY- Active" transform="translate(4.66 32.314)">
+        <g id="Прямоугольник_1582" data-name="Прямоугольник 1582" transform="translate(0 0)" fill="red" stroke="red" stroke-linejoin="round" stroke-width="0.5">
+          <rect width="15.956" height="2.05" rx="1.025" stroke="none"/>
+          <rect x="0.25" y="0.25" width="15.456" height="1.55" rx="0.775" fill="none"/>
         </g>
       </g>
-      <g id="Position" transform="translate(4.119 23.473)">
-        <line id="Линия_31" data-name="Линия 31" x2="17.272" transform="translate(0)" fill="none" stroke="#787878" stroke-width="0.5"/>
+      <g id="Position" transform="translate(4.134 23.559)">
+        <line id="Линия_31" data-name="Линия 31" x2="17.335" transform="translate(0)" fill="none" stroke="red" stroke-width="0.5"/>
       </g>
-      <rect id="Прямоугольник_2120" data-name="Прямоугольник 2120" width="15.665" height="2.611" rx="1.305" transform="translate(4.787 2.341)" fill="#787878"/>
-      <rect id="Прямоугольник_2122" data-name="Прямоугольник 2122" width="15.665" height="0.87" rx="0.435" transform="translate(4.787 25.837)" fill="#787878"/>
-      <rect id="Прямоугольник_2123" data-name="Прямоугольник 2123" width="13.924" height="0.87" rx="0.435" transform="translate(5.657 27.578)" fill="#787878"/>
-      <rect id="Прямоугольник_2124" data-name="Прямоугольник 2124" width="10.443" height="0.87" rx="0.435" transform="translate(7.398 29.319)" fill="#787878"/>
-      <g id="Прямоугольник_2121" data-name="Прямоугольник 2121" transform="translate(2.176 6.692)" fill="none" stroke="#707070" stroke-width="0.5">
-        <rect width="20.886" height="14.794" rx="2" stroke="none"/>
-        <rect x="0.25" y="0.25" width="20.386" height="14.294" rx="1.75" fill="none"/>
+      <rect id="Прямоугольник_2120" data-name="Прямоугольник 2120" width="15.722" height="2.62" rx="1.31" transform="translate(4.804 2.349)" fill="red"/>
+      <rect id="Прямоугольник_2122" data-name="Прямоугольник 2122" width="15.722" height="0.873" rx="0.437" transform="translate(4.804 25.932)" fill="red"/>
+      <rect id="Прямоугольник_2123" data-name="Прямоугольник 2123" width="13.975" height="0.873" rx="0.437" transform="translate(5.678 27.679)" fill="red"/>
+      <rect id="Прямоугольник_2124" data-name="Прямоугольник 2124" width="10.481" height="0.873" rx="0.437" transform="translate(7.425 29.426)" fill="red"/>
+      <g id="Прямоугольник_2121" data-name="Прямоугольник 2121" transform="translate(2.184 6.716)" fill="none" stroke="red" stroke-width="0.5">
+        <rect width="20.963" height="14.849" rx="2" stroke="none"/>
+        <rect x="0.25" y="0.25" width="20.463" height="14.349" rx="1.75" fill="none"/>
       </g>
-      <text id="_1Gb" data-name="1Gb" transform="translate(3.917 15.822)" fill="#787878" font-size="9" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">1</tspan><tspan y="0" font-size="7">Gb</tspan></text>
+      <text id="_1Gb" data-name="1Gb" transform="translate(3.931 15.843)" fill="red" font-size="9" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">1</tspan><tspan y="0" font-size="8">Gb</tspan></text>
     </g>
-    <g id="Banner_1_Gb-2" data-name="Banner 1 Gb" transform="translate(593.147 193.758)">
-      <rect id="Background-2" data-name="Background" width="25.477" height="37.133" rx="3" transform="translate(0 0)" fill="#fff" stroke="#787878" stroke-width="1"/>
-      <g id="Button_-BUY-_Active-2" data-name="Button -BUY- Active" transform="translate(4.643 32.197)">
-        <g id="Прямоугольник_1582-2" data-name="Прямоугольник 1582" transform="translate(0 0)" fill="#787878" stroke="#787878" stroke-linejoin="round" stroke-width="0.5">
-          <rect width="15.897" height="2.042" rx="1.021" stroke="none"/>
-          <rect x="0.25" y="0.25" width="15.397" height="1.542" rx="0.771" fill="none"/>
+    <g id="Banner_1_Gb-2" data-name="Banner 1 Gb" transform="translate(594.455 139)">
+      <rect id="Background-2" data-name="Background" width="25.57" height="37.269" rx="3" transform="translate(0 0)" fill="#fff" stroke="red" stroke-width="1"/>
+      <g id="Button_-BUY-_Active-2" data-name="Button -BUY- Active" transform="translate(4.66 32.314)">
+        <g id="Прямоугольник_1582-2" data-name="Прямоугольник 1582" transform="translate(0 0)" fill="red" stroke="red" stroke-linejoin="round" stroke-width="0.5">
+          <rect width="15.956" height="2.05" rx="1.025" stroke="none"/>
+          <rect x="0.25" y="0.25" width="15.456" height="1.55" rx="0.775" fill="none"/>
         </g>
       </g>
-      <g id="Position-2" data-name="Position" transform="translate(4.119 23.473)">
-        <line id="Линия_31-2" data-name="Линия 31" x2="17.272" transform="translate(0)" fill="none" stroke="#787878" stroke-width="0.5"/>
+      <g id="Position-2" data-name="Position" transform="translate(4.134 23.559)">
+        <line id="Линия_31-2" data-name="Линия 31" x2="17.335" transform="translate(0)" fill="none" stroke="red" stroke-width="0.5"/>
       </g>
-      <rect id="Прямоугольник_2120-2" data-name="Прямоугольник 2120" width="15.665" height="2.611" rx="1.305" transform="translate(4.787 2.341)" fill="#787878"/>
-      <rect id="Прямоугольник_2122-2" data-name="Прямоугольник 2122" width="15.665" height="0.87" rx="0.435" transform="translate(4.787 25.837)" fill="#787878"/>
-      <rect id="Прямоугольник_2123-2" data-name="Прямоугольник 2123" width="13.924" height="0.87" rx="0.435" transform="translate(5.657 27.578)" fill="#787878"/>
-      <rect id="Прямоугольник_2124-2" data-name="Прямоугольник 2124" width="10.443" height="0.87" rx="0.435" transform="translate(7.398 29.319)" fill="#787878"/>
-      <g id="Прямоугольник_2121-2" data-name="Прямоугольник 2121" transform="translate(2.176 6.692)" fill="none" stroke="#707070" stroke-width="0.5">
-        <rect width="20.886" height="14.794" rx="2" stroke="none"/>
-        <rect x="0.25" y="0.25" width="20.386" height="14.294" rx="1.75" fill="none"/>
+      <rect id="Прямоугольник_2120-2" data-name="Прямоугольник 2120" width="15.722" height="2.62" rx="1.31" transform="translate(4.804 2.349)" fill="red"/>
+      <rect id="Прямоугольник_2122-2" data-name="Прямоугольник 2122" width="15.722" height="0.873" rx="0.437" transform="translate(4.804 25.932)" fill="red"/>
+      <rect id="Прямоугольник_2123-2" data-name="Прямоугольник 2123" width="13.975" height="0.873" rx="0.437" transform="translate(5.678 27.679)" fill="red"/>
+      <rect id="Прямоугольник_2124-2" data-name="Прямоугольник 2124" width="10.481" height="0.873" rx="0.437" transform="translate(7.425 29.426)" fill="red"/>
+      <g id="Прямоугольник_2121-2" data-name="Прямоугольник 2121" transform="translate(2.184 6.716)" fill="none" stroke="red" stroke-width="0.5">
+        <rect width="20.963" height="14.849" rx="2" stroke="none"/>
+        <rect x="0.25" y="0.25" width="20.463" height="14.349" rx="1.75" fill="none"/>
       </g>
-      <text id="_1Gb-2" data-name="1Gb" transform="translate(3.917 15.822)" fill="#787878" font-size="9" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">1</tspan><tspan y="0" font-size="7">Gb</tspan></text>
+      <text id="_1Gb-2" data-name="1Gb" transform="translate(3.931 15.843)" fill="red" font-size="9" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">1</tspan><tspan y="0" font-size="8">Gb</tspan></text>
     </g>
-    <g id="Banner_1_Gb-3" data-name="Banner 1 Gb" transform="translate(576.149 188)">
+    <g id="Banner_1_Gb-3" data-name="Banner 1 Gb" transform="translate(576.148 134)">
       <rect id="Background-3" data-name="Background" width="30.874" height="45" rx="3" transform="translate(0 0)" fill="#fff" stroke="red" stroke-width="1"/>
       <g id="Button_-BUY-_Active-3" data-name="Button -BUY- Active" transform="translate(5.626 39.018)">
         <g id="Прямоугольник_1582-3" data-name="Прямоугольник 1582" transform="translate(0 0)" fill="red" stroke="red" stroke-linejoin="round" stroke-width="0.5">

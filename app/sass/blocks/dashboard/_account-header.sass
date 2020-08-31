@@ -1,0 +1,122 @@
+.my-profile
+  width: 130px
+  display: flex
+  align-items: center
+  position: relative
+  &:hover
+    .profile-img
+      background: $accent
+      color: #ffffff
+      img[alt="arrow-down"]
+        filter: invert(1 )
+    .profile-actions
+      opacity: 1
+      pointer-events: unset
+
+.profile-img
+  display: flex
+  position: relative
+  z-index: 10
+  width: 100%
+  height: 30px
+  background: transparent
+  border: 1px solid $accent
+  color: #000
+  border-radius: 15px
+  align-items: center
+  justify-content: space-evenly
+  
+  img[alt="arrow-down"]
+    filter: invert(0)
+  span
+    font-size: 14px
+    font-family: $semibold
+    line-height: 1
+
+.user-img-wrapper
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  background: #fff
+  display: flex
+  align-items: center
+  justify-content: center
+  img
+    width: 100%
+    height: 100%
+
+.profile-actions
+  pointer-events: none
+  opacity: 0
+  transition: 0.3s ease
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 9
+  width: 100%
+  height: 110px
+  background: #fff
+  border: 2px solid $accent
+  border-radius: 15px 15px 5px 5px
+
+.inner-actions-wrapper
+  margin-top: 36px
+  padding: 0 15px 10px 15px
+  a
+    color: #000000
+    font-size: 14px
+    text-decoration: none
+    display: flex
+    align-items: center
+    .img-wrapper
+      margin-right: 9px
+      width: 16px
+      height: 16px
+      display: flex
+      align-items: center
+      justify-content: center
+
+  .line
+    margin: 5px 0
+    background: #878787
+
+.account-menu
+  a
+    .img-wrapper
+      width: 80px
+      height: 45px
+      display: flex
+      align-items: center
+      justify-content: center
+    h4
+      font-size: 16px
+      font-family: $semibold
+      border: none !important
+
+.profile-balance
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  justify-content: center
+  p
+    font-size: 17px
+    font-family: $semibold
+    font-style: italic
+    margin-bottom: 7px
+    span
+      font-size: 18px
+      color: #787878
+      font-style: normal
+    strong
+      font-size: 31px
+
+.recharge-link
+  background: $accent
+  color: #fff
+  font-size: 12px
+  transition: 0.3s ease
+  border: none
+  &:hover
+    text-decoration: none
+    background: $darkerred
+    color: #fff

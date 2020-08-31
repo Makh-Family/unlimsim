@@ -193,7 +193,75 @@
   </nav>
 
   <div class="container">
+    <div class="profile-header">
+      <div class="my-profile ml-auto">
+        <div class="profile-img">
+          <div class="user-img-wrapper">
+            <img src="img/icons/user-r.svg" alt="user-r">
+          </div>
+          <span>My Profile</span>
+          <img src="img/icons/arrow-down.svg" width="20" height="20" alt="arrow-down">
+        </div>
+        <div class="profile-actions">
+          <div class="inner-actions-wrapper">
+            <a href="account-view.html">
+              <div class="img-wrapper">
+                <img src="img/icons/profile-view.svg" alt="profile-view">
+              </div>
+              <span>View</span>
+            </a>
+            <span class="line"></span>
+            <a href="index.html">
+              <div class="img-wrapper">
+                <img src="img/icons/profile-logout.svg" alt="log out">
+              </div>
+              <span>Logout</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-lg-9 col-md-12">
+          <div
+            class="red-hovered-nav account-menu my-4 flex-wrap ml-auto d-flex w-75 align-items-center justify-content-between">
+            <a href="account-dashboard-empty.html">
+              <div class="img-wrapper">
+                <img src="img/icons/dashboard.svg" alt="dashboard">
+              </div>
+              <h4>Dashboard</h4>
+            </a>
+            <a href="account-plans.html" class="active">
+              <div class="img-wrapper">
+                <img src="img/icons/plans.svg" alt="plans">
+              </div>
+              <h4>Plans</h4>
+            </a>
+            <a href="#" class="inactive-link">
+              <div class="img-wrapper">
+                <img src="img/icons/usage-status.svg" alt="usage status">
+              </div>
+              <h4>Usage status</h4>
+            </a>
+            <a href="account-recharge.html">
+              <div class="img-wrapper">
+                <img src="img/icons/recharge.svg" alt="recharge">
+              </div>
+              <h4>Recharge</h4>
+            </a>
+
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-12">
+          <div class="profile-balance my-4 ml-aut">
+            <p><span>Balance:</span> $ <strong>2 050</strong>us</p>
+            <a href="account-recharge.html" class="rounded-button recharge-link">Recharge</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <div class="row">
@@ -379,8 +447,8 @@
           </div>
         </div>
 
-        <div class="plans-nav my-4 mx-auto d-flex w-75 align-items-center justify-content-between">
-          <a href="#worldwide-plan">
+        <div class="red-hovered-nav my-4 mx-auto d-flex w-75 align-items-center justify-content-between">
+          <a href="#worldwide-plan" class="active">
             <img src="img/icons/world-r.png" alt="planname">
             <h4>Worldwide Plan</h4>
           </a>

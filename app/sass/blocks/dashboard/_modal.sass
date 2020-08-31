@@ -18,7 +18,7 @@
 .fancy:after
   left: 0.5em
   margin-right: -50%
-#predashboard-modal
+.predashboard-modal
   .modal-dialog
     width: 320px
     overflow: hidden
@@ -27,7 +27,7 @@
   .modal-content
     padding: 0
     border: none
-    background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
+    background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%) !important
   .modal-header
     padding: 0
   .close
@@ -247,3 +247,17 @@
   transition: 0.3s ease
   &:hover
     transform: skewX(-20deg) scale(1.1)
+  
+.share-modal
+  .inner-modal-header
+    padding: 20px
+  .modal-title
+    text-transform: none !important
+    font-family: $semibold
+    flex-direction: row !important
+    font-size: 17px
+    white-space: nowrap
+  .social-links-wrapper
+    width: 70%
+    margin: 0 auto 25px auto
+    justify-content: space-between

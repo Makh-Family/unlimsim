@@ -26,6 +26,14 @@ $("body").bind("click", function (evt) {
   }
 });
 
+//edit name
+
+$(".js-change-username").on("click", function () {
+  const target = $(".change-name-form");
+  $(target).toggle();
+  $(target).prev().toggle();
+});
+
 //widen plans block
 $(".js-widen-btn").on("click", function () {
   const target = $(this).data("target");
