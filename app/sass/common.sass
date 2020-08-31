@@ -8,6 +8,7 @@
 body
 	font-size: 16px
 	min-width: 320px
+	margin-top: 100px
 	position: relative
 	line-height: 1.65
 	font-family: $default-font
@@ -15,6 +16,13 @@ body
 	color: $text
 	background-image: url('../img/src/map.png')
 	background-attachment: fixed
+	&.main-page
+		margin-top: 77px
+		.container-md
+			max-width: 960px
+		.tab_content
+			.container
+				max-width: 960px
 
 input, textarea
 	border: #666 1px solid
@@ -32,6 +40,16 @@ h1, h2, h3, h4, h5, h6
 
 button
 	outline: none !important
+
+.visually-hidden
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
 
 .white-space-nowrap
 	white-space: nowrap
@@ -670,6 +688,9 @@ footer
 				width: 150px
 		.d-flex
 			flex-direction: row
+			> div
+				&:not(:last-child)
+					margin-right: 15px
 		&-input
 			border: 1px solid #707070
 			padding: .5rem .75rem

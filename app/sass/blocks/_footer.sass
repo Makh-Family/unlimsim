@@ -1,0 +1,84 @@
+.footer__top
+  background: $accent
+  padding: 30px 0
+
+.footer__navbar
+  max-width: 960px
+  margin: 0 auto
+  .nav-item
+    .nav-link
+      font-size: 18px
+  
+  .download-app
+    border: 2px solid #ffffff
+    border-radius: 15px
+    transition: 0.3s ease
+
+    &:hover
+      background: #fff
+      a
+        color: $accent !important
+
+.footer__line
+  height: 2px
+  background: #fff
+
+.footer__contact
+  .contact-link
+    display: block
+    padding: 0 10px
+    border: 2px solid #ffffff
+    transform: skew(-15deg,-15deg) rotate(15deg)
+    border-radius: 10px
+    transition: 0.3s ease
+
+    &:hover
+      background: #fff
+      span
+        color: $accent
+
+    span
+      display: block
+      transform: skew(15deg,15deg) rotate(-15deg) scaleX(1.1)
+      font-weight: bold
+      font-size: 22px
+  a
+    font-size: 17px
+    font-family: $semibold
+    text-decoration: none
+
+  img
+    margin-right: 10px
+    margin-top: 5px
+  
+  span.text-white
+    font-size: 17px
+    font-family: $semibold
+    span
+      font-size: 14px
+
+
+.footer__bottom
+  padding: 30px 0
+  background: #B20000
+
+  .footer__bottom-line
+    width: 2px
+    height: 14px
+    margin: 0 5px
+    margin-top: 3px
+    background: #fff
+
+  .footer-el-1
+    .small-text
+      margin-right: 5px
+      display: block
+      font-size: 12px
+    a
+      color: #ffffff
+      text-decoration: underline
+      font-size: 12px
+  .footer-el-2
+    a
+      img
+        filter: invert(1)

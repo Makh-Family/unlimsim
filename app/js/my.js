@@ -768,71 +768,6 @@ $(document).ready(function () {
       }
     });
 
-    $(".js-edit-btn").on("click", function (e) {
-      const targetStep = $(this).data("step");
-      const hidden = $(`.js-step[data-step="${targetStep}"]`).hasClass(
-        "display-none"
-      );
-
-      if (hidden) {
-        showStep(targetStep);
-        const parentTarget = $(this).parent().next();
-        parentTarget.addClass("editing");
-
-        parentTarget.find(".js-return-btn").show();
-      }
-
-      $(".js-return-btn").on("click", function (e) {
-        const targetStep = $(this).data("step");
-        $(this).hide();
-
-        hideStep(targetStep);
-
-        const parentTarget = $(this).parent().parent();
-
-        parentTarget.removeClass("editing");
-      });
-    });
-
-    //billing
-
-    $(".js-shipping-continue-btn").on("click", function (e) {
-      moveToStep(4);
-      hideStep(3);
-
-      fillBilling();
-
-      let elTarget = $(`.js-step[data-step="3"] .js-step-content-wrapper`);
-
-      elTarget.removeClass("editing");
-      elTarget.find(".js-return-btn").hide();
-
-      $('.js-step[data-step="3"]').addClass("completed-step");
-    });
-    //end of billing
-
-    //payment
-    $(".js-payment-btn").on("click", function (e) {
-      hideStep(4);
-      $(".btn-edit")
-        .text("Сonfirm and Pay")
-        .attr("data-pay", true)
-        .css("background-color", "red");
-      $(".js-btn-confirm-and-pay").show();
-      $('.js-step[data-step="4"]').addClass("completed-step");
-
-      $(`.js-edit-btn`).show();
-
-      let elTarget = $(`.js-step[data-step="4"] .js-step-content-wrapper`);
-
-      elTarget.removeClass("editing");
-      elTarget.find(".js-return-btn").hide();
-
-      $(".js-items-toggler").removeClass("sorted");
-    });
-
-    //end of payment
-
     //step-2
 
     $(".btn-gift-card-togger").on("click", function () {
@@ -909,6 +844,28 @@ $(document).ready(function () {
     updateInputsByChoice(this);
   });
 
+  //payment
+  $(".js-payment-btn").on("click", function (e) {
+    hideStep(4);
+    $(".btn-edit")
+      .text("Сonfirm and Pay")
+      .attr("data-pay", true)
+      .css("background-color", "red");
+    $(".js-btn-confirm-and-pay").show();
+    $('.js-step[data-step="4"]').addClass("completed-step");
+
+    $(`.js-edit-btn`).show();
+
+    let elTarget = $(`.js-step[data-step="4"] .js-step-content-wrapper`);
+
+    elTarget.removeClass("editing");
+    elTarget.find(".js-return-btn").hide();
+
+    $(".js-items-toggler").removeClass("sorted");
+  });
+
+  //end of payment
+
   $(".forgot-password").on("click", function (e) {
     const texts = ["Forgot password", "Remember password"];
     const target = $(".js-radio-wrapper")
@@ -971,6 +928,49 @@ $(document).ready(function () {
       $(".js-items-toggler").removeClass("sorted");
     }
   });
+
+  $(".js-edit-btn").on("click", function (e) {
+    const targetStep = $(this).data("step");
+    const hidden = $(`.js-step[data-step="${targetStep}"]`).hasClass(
+      "display-none"
+    );
+
+    if (hidden) {
+      showStep(targetStep);
+      const parentTarget = $(this).parent().next();
+      parentTarget.addClass("editing");
+
+      parentTarget.find(".js-return-btn").show();
+    }
+
+    $(".js-return-btn").on("click", function (e) {
+      const targetStep = $(this).data("step");
+      $(this).hide();
+
+      hideStep(targetStep);
+
+      const parentTarget = $(this).parent().parent();
+
+      parentTarget.removeClass("editing");
+    });
+  });
+
+  //billing
+
+  $(".js-shipping-continue-btn").on("click", function (e) {
+    moveToStep(4);
+    hideStep(3);
+
+    fillBilling();
+
+    let elTarget = $(`.js-step[data-step="3"] .js-step-content-wrapper`);
+
+    elTarget.removeClass("editing");
+    elTarget.find(".js-return-btn").hide();
+
+    $('.js-step[data-step="3"]').addClass("completed-step");
+  });
+  //end of billing
 });
 
 ///FUNCTIONS
