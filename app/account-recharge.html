@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="./dist/main.css" />
 </head>
 
-<body>
+<body class="shopping-card-body basket-body">
 
   <div class="navbar-overlay"></div>
 
@@ -57,6 +57,9 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-red">
+
+    <div class="dropdown-overlay js-dropdown-overlay"></div>
+
     <div class="under-nav">
       <div class="container">
         <ul class="nav">
@@ -200,7 +203,7 @@
             <img src="img/icons/user-r.svg" alt="user-r">
           </div>
           <span>My Profile</span>
-          <img src="img/icons/arrow-down.svg" width="12" height="12" alt="arrow-down">
+          <img src="img/icons/arrow-down.svg" width="20" height="20" alt="arrow-down">
         </div>
         <div class="profile-actions">
           <div class="inner-actions-wrapper">
@@ -225,7 +228,7 @@
         <div class="col-lg-9 col-md-12">
           <div
             class="red-hovered-nav account-menu my-4 flex-wrap ml-auto d-flex w-75 align-items-center justify-content-between">
-            <a href="account-dashboard.html" class="active">
+            <a href="account-dashboard-empty.html">
               <div class="img-wrapper">
                 <img src="img/icons/dashboard.svg" alt="dashboard">
               </div>
@@ -243,7 +246,7 @@
               </div>
               <h4>Usage status</h4>
             </a>
-            <a href="account-recharge.html">
+            <a href="account-recharge.html" class="active">
               <div class="img-wrapper">
                 <img src="img/icons/recharge.svg" alt="recharge">
               </div>
@@ -263,359 +266,348 @@
       </div>
     </div>
 
+
     <div class="row">
-
       <div class="col-lg-9 col-md-12">
-        <div class="dashboard-box">
-          <div class="dashboard-box__top">
+        <div class="payment-balance-wrapper">
 
-            <div class="opening-title">
-              <span></span>
-              <h3>Dashboard</h3>
-            </div>
-
-            <div class="dashboard-box__name">
-              <div class="img-wrapper">
-                <img src="img/icons/user-red.svg" width="15" height="15" alt="user">
+          <div class="collapse show tab-wrapper balance-wrapper">
+            <div class="tab-content dashboard-box">
+              <div class="dashboard-box__top">
+                <div class="opening-title">
+                  <span></span>
+                  <h3>Recharge</h3>
+                </div>
               </div>
-              <div class="name-wrapper">
-                <p>Denys Nemo</p>
-                <form class="change-name-form">
-                  <input type="text" class="input py-1 px-2" required>
+              <div class="row justify-content-around">
+                <div class="col-4 left-recharge">
+
+                  <div class="d-flex align-items-center left-recharge-balance justify-content-end">
+                    <p class="mr-3">Current Balance:</p>
+                    <p class="balance-amount">
+                      $ <strong>2 050</strong> us
+                    </p>
+                  </div>
+
+                  <div class="recharge-inputs">
+
+                    <div class="inner-inputs-wrapper">
+                      <div class="input-box selected-method">
+                        <div class="custom-control custom-radio">
+                          <input checked type="radio" id="pay-from-balance" name="payment-type"
+                            class="custom-control-input">
+                          <label class="custom-control-label" for="pay-from-balance">Pay from balance</label>
+                        </div>
+                        <div class="invoice">
+                          <p>Invoice</p>
+                          <p class="invoice-amount">
+                            $<strong>0</strong>us
+                          </p>
+                        </div>
+                        <div class="total">
+                          <p>Total:</p>
+                          <p class="total-amount">
+                            $<strong>0</strong>us
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="input-box">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="top-up-balance" name="payment-type" class="custom-control-input">
+                          <label class="custom-control-label" for="top-up-balance">Top up balance</label>
+                        </div>
+                        <form id="top-up-balance" class="top-up-balance-form">
+                          <input type="number" class="py-1 px-3 mx-auto d-block my-3 input top-up-balance-input"
+                            placeholder="Enter the amount" required>
+                        </form>
+                        <div class="total">
+                          <p>Total:</p>
+                          <p class="total-amount js-total-amount">
+                            $<strong>0</strong>us
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="button" data-target=".tab-wrapper"
+                      class="ml-auto px-4 d-block rounded-button pay-btn js-pay-btn">PAY</button>
+
+                  </div>
+
+                </div>
+                <div class="col-7">
+                  <div class="billing-box">
+                    <div class="opening-title form-title">
+                      <div class="inner-wrapper">
+                        <span></span>
+                        <h3>Billing / Shipping Information</h3>
+                      </div>
+                    </div>
+                    <div class="js-step-content-wrapper step-content-wrapper">
+                      <div class="confirmation-box billing-info-box">
+                        <div class="info-wrapper">
+                          <h3>Billing</h3>
+                          <div class="d-flex">
+                            <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                            <div class="info-box">
+                              <div class="js-customer-name-text">Denys Nemo</div>
+                              <div class="js-company-name">LCC "Agrodell"</div>
+                            </div>
+                          </div>
+                          <div class="my-3 d-flex">
+                            <img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
+                            <div class="js-address-text">
+                              <span>
+                                Pirogov, 45 St.,</span>
+                              <span class="js-address-sec"> apt. 54
+                                Vinnytsya / Vinnyts'ka 21000 Ukraine
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <h3>Shipping</h3>
+                          <div style="display: none;" class="billing-info-item mb-3 js-billing-info-item">
+                            <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                            <div class="info-box">
+                              <div class="js-shipping-name-text">Shwaine Gette</div>
+                              <div class="js-shipping-company-name"></div>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
+                            <div class="info-box">
+                              <div class="js-shipping-address-text">Use billing address</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <h3>Company</h3>
+                          <div class="d-flex">
+                            <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
+                            <div class="info-box">
+                              <div><img src="img/icons/dhl.png" alt="dhl"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <button data-step="3" style="display: none;"
+                          class="js-return-btn return-btn rounded-button">Return</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button data-toggle="collapse" data-target=".tab-wrapper" type="button" class="tab-side-button-wrapper">
+              <div class="link-with-arrow">
+                <div class="img-wrapper">
+                  <img src="img/icons/arrow-right.svg" alt="arrow right">
+                </div>
+                <span>Payment methods</span>
+              </div>
+            </button>
+          </div>
+
+
+          <div class="collapse tab-wrapper payment-wrapper">
+            <div class="tab-content dashboard-box">
+              <div class="dashboard-box__top">
+                <div class="opening-title">
+                  <span></span>
+                  <h3>Recharge</h3>
+                </div>
+              </div>
+
+
+              <div class="collapse show payment-toggle-collapse">
+                <p class="mb-0">Please select the payment methods below</p>
+                <div class="payment-methods-wrapper">
+                  <div class="img-wrapper"><img src="img/icons/visa-d.svg" alt="visa"></div>
+                  <div class="img-wrapper"><img src="img/icons/master-card.svg" alt="mastercard"></div>
+                  <div class="img-wrapper"><img src="img/icons/g-pay.svg" alt="gpay"></div>
+                  <div class="img-wrapper"><img src="img/icons/a-pay.svg" alt="apple-pay"></div>
+                  <div class="img-wrapper"><img src="img/icons/paypal.svg" alt="paypal"></div>
+                  <div class="img-wrapper"><img src="img/icons/webmoney.svg" alt="webmoney"></div>
+                  <div class="img-wrapper"><img src="img/icons/qiwi.svg" alt="qiwi"></div>
+                  <div class="img-wrapper"><img src="img/icons/wallet-one.svg" alt="wallet-one"></div>
+                  <div class="img-wrapper"><img src="img/icons/yandex-money.svg" alt="yandex-money"></div>
+                </div>
+                <form class="card-form">
+                  <label class="custom-select-arrow">
+                    <span class="arrow-down"></span>
+                    <select required="" class="form-control" id="switch-payment-method" name="payment-method">
+                      <option selected value="visa/mastercard">Cards (VISA / MASTER CARD)</option>
+                      <option value="invoice">Invoice</option>
+                      <option value="apple">Apple Pay</option>
+                      <option value="google">Google Pay</option>
+                      <option value="paypal">PayPal</option>
+                      <option value="webmoney">Web Money</option>
+                      <option value="qiwi">Qiwi</option>
+                      <option value="walletone">Wallet One</option>
+                      <option value="yandex">Yandex Money</option>
+                    </select>
+                  </label>
+                  <div class="line"></div>
+                  <div class="step-content">
+                    <div class="payment-intro">
+                      <img src="img/icons/account-r.svg" width="18" height="18" alt="account">
+                      <span>Enter cardholder details</span>
+                    </div>
+                    <div class="reg__form my-4">
+                      <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                        <span>First Name</span>
+                        <input required autocomplete="cc-given-name" type="text" name="firstname"
+                          placeholder="Enter your Name" class="d-block input w-100">
+                      </label>
+                      <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                        <span>Last Name</span>
+                        <input required autocomplete="cc-family-name" type="text" name="lastname"
+                          placeholder="Enter your Last Name" class="d-block input w-100">
+                      </label>
+                      <div class="card-input-wrapper w-100">
+                        <label class="d-block">
+                          <img src="img/icons/card-r.svg" alt="card">
+                          <input id="cardnumber" autocomplete="cc-number" required type="text" name="cardnumber"
+                            autocomplete="on" class="d-block input w-100">
+                        </label>
+                        <label class="d-block">
+                          <input id="carddate" autocomplete="cc-exp" required type="text" name="carddate"
+                            placeholder="MM/YY" autocomplete="on" class="d-block input w-100">
+                        </label>
+                        <label class="d-block">
+                          <input required autocomplete="cc-csc" maxlength="3" type="password" name="cardcode"
+                            placeholder="CVC" autocomplete="on" class="d-block input w-100">
+                        </label>
+                      </div>
+                      <div class="w-100 button-wrapper">
+                        <button type="button" data-toggle="collapse" data-target=".payment-toggle-collapse"
+                          class="payment-btn js-payment-btn rounded-button">PAY</button>
+                      </div>
+                    </div>
+                  </div>
                 </form>
-                <button type="button" class="btn js-change-username change-username"><img src="img/icons/pencil.svg"
-                    alt="pencil"></button>
-              </div>
-            </div>
 
-            <div class="sim-basic-info">
-              <div class="info-top">
-                <img src="img/icons/esim.svg" width="12" height="12" alt="esim">
-                <div class="sim-type">
-                  eSim
-                </div>
-                number
-                <div class="sim-number">
-                  +1587 206-37-28
-                </div>
-              </div>
-              <div class="info-bottom">
-                <div class="activation">
-                  Activation: 04.07.2020
-                </div>
-                /
-                <div class="expiration">
-                  Expiration: 04.07.2021
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row dashboard__content">
-            <div class="col-lg-4 section-tab">
-              <div class="dashboard-card">
-                <div class="card-top">
-                  <span>Your services plan</span>
-                  <button type="button" data-toggle="modal" data-target="#share-modal">
-                    <img src="img/icons/share.svg" alt="share">
-                  </button>
-                  <div class="plan-type-wrapper">
-                    <img src="img/icons/logo-b.svg" width="56" height="14" alt="logo">
-                    <div class="skewed-box">
-                      <span>Personal</span>
+                <div class="billing-box">
+                  <div class="opening-title form-title">
+                    <div class="inner-wrapper">
+                      <span></span>
+                      <button class="w-100 d-flex border-0 bg-transparent link-with-arrow" data-toggle="collapse"
+                        data-target=".billing-info-collapse">
+                        <h3>Billing / Shipping Information</h3>
+                        <div class="img-wrapper ml-1">
+                          <img src="img/icons/arrow-right.svg" alt="arrow right">
+                        </div>
+                        <div class="line"></div>
+                        <a href="account-view.html" class="collapse billing-info-collapse edit-link">
+                          Edit
+                        </a>
+                      </button>
+
+                    </div>
+                  </div>
+                  <div class="billing-info-collapse collapse js-step-content-wrapper step-content-wrapper">
+                    <div class="confirmation-box billing-info-box">
+                      <div class="info-wrapper">
+                        <h3>Billing</h3>
+                        <div class="d-flex">
+                          <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                          <div class="info-box">
+                            <div class="js-customer-name-text">Denys Nemo</div>
+                            <div class="js-company-name">LCC "Agrodell"</div>
+                          </div>
+                        </div>
+                        <div class="my-3 d-flex">
+                          <img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
+                          <div class="js-address-text">
+                            <span>
+                              Pirogov, 45 St.,</span>
+                            <span class="js-address-sec"> apt. 54
+                              Vinnytsya / Vinnyts'ka 21000 Ukraine
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="info-wrapper">
+                        <h3>Shipping</h3>
+                        <div style="display: none;" class="billing-info-item mb-3 js-billing-info-item">
+                          <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                          <div class="info-box">
+                            <div class="js-shipping-name-text">Shwaine Gette</div>
+                            <div class="js-shipping-company-name"></div>
+                          </div>
+                        </div>
+                        <div class="d-flex">
+                          <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
+                          <div class="info-box">
+                            <div class="js-shipping-address-text">Use billing address</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="info-wrapper">
+                        <h3>Company</h3>
+                        <div class="d-flex">
+                          <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
+                          <div class="info-box">
+                            <div><img src="img/icons/dhl.png" alt="dhl"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <button data-step="3" style="display: none;"
+                        class="js-return-btn return-btn rounded-button">Return</button>
                     </div>
                   </div>
                 </div>
-                <div class="plan-name">
-                  Worldwide Plan
-                </div>
-                <div class="included-items-wrapper">
-                  <a href="account-add-plan.html" class="included-item">
+              </div>
+
+              <div class="collapse payment-toggle-collapse">
+                <div class="payed-box">
+                  <div class="payed-box-content">
+
                     <div class="img-wrapper">
-                      <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
+                      <img src="img/icons/map-g.svg" width="175" height="103" alt="map">
                     </div>
-                    <div class="item-content">
-                      <h3 class="item-name">Internet data</h3>
+
+                    <div class="payed-message">
+                      <p>
+                        Thank you,<br> the <mark>balance</mark> has been successfully credited.
+                      </p>
+                      <p class="payment-amount">$<strong>10 000</strong></p>
                     </div>
-                  </a>
-                  <a href="account-add-plan.html" class="included-item inactive">
-                    <div class="img-wrapper">
-                      <img src="img/icons/icon5-r.png" width="24" height="20" alt="icon1">
-                    </div>
-                    <div class="item-content">
-                      <h3 class="item-name">Voice and SMS</h3>
-                    </div>
-                  </a>
-                  <a href="account-add-plan.html" class="included-item inactive">
-                    <div class="img-wrapper">
-                      <img src="img/icons/icon3-r.png" width="21" height="21" alt="icon1">
-                    </div>
-                    <div class="item-content">
-                      <h3 class="item-name">Virtual number</h3>
-                    </div>
-                  </a>
-                  <a href="account-add-plan.html" class="included-item inactive">
-                    <div class="img-wrapper">
-                      <img src="img/icons/icon4-r.png" width="18" height="18" alt="icon1">
-                    </div>
-                    <div class="item-content">
-                      <h3 class="item-name">Substitution of numbers</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="total-wrapper d-flex justify-content-between align-items-center">
-                  <span>Total:</span>
-                  <span>$ <strong>1 575</strong> us</span>
-                </div>
-                <div class="plan-time flex-wrap d-flex justify-content-between align-items-center">
-                  <div>
-                    <span>Activation Plan:</span>
-                    <span>04.07.2020</span>
+
                   </div>
-                  <div>
-                    <span>Expiration Plan:</span>
-                    <span>04.08.2020</span>
+
+                  <div class="payed-links-wrapper">
+                    <button type="button" class="rounded-button" data-toggle="collapse"
+                      data-target=".payment-toggle-collapse">Recharge</button>
+                    <a href="account-dashboard.html" class="rounded-button">Dashboard</a>
                   </div>
                 </div>
               </div>
 
             </div>
-
-            <div class="col-lg-8">
-              <div class="dashboard-list">
-                <div class="list-header list-line">
-                  <p>Name services</p>
-                  <p>Quantity</p>
-                  <p>Available</p>
-                  <p>Residue</p>
-                  <p>Expiration</p>
+            <button data-toggle="collapse" data-target=".tab-wrapper" type="button" class="tab-side-button-wrapper">
+              <div class="link-with-arrow">
+                <div class="img-wrapper">
+                  <img src="img/icons/arrow-right.svg" alt="arrow right">
                 </div>
-                <div class="list-line">
-                  <div class="plan-name">
-                    <div class="img-wrapper">
-                      <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
-                    </div>
-                    <p>Internet Data</p>
-                  </div>
-                  <div class="quantity line-item">1 Gb</div>
-                  <div class="available line-item">500 Mb</div>
-                  <div class="residue line-item">5 days</div>
-                  <div class="expiration line-item">10.07.2020</div>
-                  <button data-toggle="collapse" data-target=".internet-data-box" class="btn p-0 renew-btn js-renew-btn"
-                    type="button" tabindex="0">
-                    Renew
-                  </button>
-                </div>
-                <a href="account-add-plan.html" class="mt-3 ml-3 device-settings-link link-with-arrow">
-                  <div class="img-wrapper">
-                    <img src="img/icons/arrow-right.svg" alt="arrow right">
-                  </div>
-                  <span>Add services</span>
-                </a>
+                <span>Balance</span>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="trended-plans plan-wrapper">
-          <div class="opening-title">
-            <span></span>
-            <h3>Trend plans</h3>
-          </div>
-          <div class="trended-plans-slider section-tab">
-            <div class="js-carousel">
-              <div class="slide js-dashboard-slider active">
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">PRO</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">3</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Worldwide Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>70</span> us / 7 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">ASIA</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">10</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Region Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>250</span> us / 28 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">CANADA</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">5</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Country Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>170</span> us / 14 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">N.AMERICA</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">24</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Region Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>750</span> us / 56 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">PRO</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">3</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Worldwide Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>70</span> us / 7 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">ASIA</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">10</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Region Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>250</span> us / 28 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">CANADA</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">5</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Country Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>170</span> us / 14 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-                <div class="item">
-                  <div class="top1">
-                    <img src="img/logo.svg" alt="logo" />
-                    <span class="right-span">
-                      <div class="text">N.AMERICA</div>
-                    </span>
-                  </div>
-
-                  <h1><span class="let">24</span> Gb</h1>
-                  <div class="top2">
-                    <h4><em>INTERNET DATA</em></h4>
-                    <span class="line"></span>
-                    <p class="small-card-plan-name">Region Plan</p>
-                  </div>
-
-                  <h2>
-                    <em>$ <span>750</span> us / 56 days </em>
-                  </h2>
-
-                  <button type="button" class="btn-buy" data-toggle="modal" data-target="#basketModal">BUY</button>
-                </div>
-              </div>
-            </div>
-            <a href="account-add-plan.html" class="mt-3 link-with-arrow">
-              <div class="img-wrapper">
-                <img src="img/icons/arrow-right.svg" alt="arrow right">
-              </div>
-              <span>All plans</span>
-            </a>
+            </button>
           </div>
         </div>
 
       </div>
-
       <div class="col-lg-3 col-md-6 col-sm-12 list-plans-wrapper">
 
-        <div data-sticky-wrap data-margin-top="270" class="list-plans box-with-fancy-header">
+        <div data-margin-top="270" data-sticky-wrap class="list-plans box-with-fancy-header">
           <div class="opening-title">
             <span></span>
-            <h3 class="with-line">List Plans</h3>
+            <h3 class="with-line">Amount</h3>
           </div>
-          <p>
-            Please select a plan or service to renew
+          <p class="side-payment-amount">
+            $ <strong>10 000</strong> us
           </p>
-          <a href="account-plans.html" class="rounded-button">Go To Plans</a>
         </div>
 
         <div class="dashboard-additional-services">
@@ -678,44 +670,8 @@
 
       </div>
     </div>
-
   </div>
 
-  </div>
-  </div>
-
-  <div class="modal fade modal-add share-modal predashboard-modal basket-modal" id="share-modal" tabindex="-1"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="inner-modal-header">
-            <img src="img/icons/map.svg" class="d-block mt-1 mx-auto" alt="map" width="160" height="95">
-            <h5 class="modal-title" id="exampleModalLabel">Share
-              <div class="skewed-box">
-                <span>
-                  <img src="img/logo.svg" width="60" height="15" alt="logo">
-                </span>
-              </div>
-              with your friends
-            </h5>
-          </div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="d-flex social-links-wrapper">
-            <a href="#"><img src="img/icons/wh.svg" alt="wh"></a>
-            <a href="#"><img src="img/icons/tg.svg" alt="tg"></a>
-            <a href="#"><img class="inverted-filter" src="img/icons/fb.svg" alt="fb"></a>
-            <a href="#"><img class="inverted-filter" src="img/icons/in.svg" alt="in"></a>
-            <a href="#"><img class="inverted-filter" src="img/icons/ig.svg" alt="ig"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <footer>
     <div class="footer__top">
@@ -809,29 +765,6 @@
       </div>
     </div>
 
-    <ul class="nav" id="region-list" style="display: none;">
-      <li data-order="1" class="nav-item active">
-        <a href="#" class="nav-link" data-value="*"> ALL </a>
-      </li>
-      <li data-order="3" class="nav-item">
-        <a href="#" class="nav-link" data-value="ASIA"> ASIA </a>
-      </li>
-      <li data-order="4" class="nav-item">
-        <a href="#" class="nav-link" data-value="AFRICA"> AFRICA </a>
-      </li>
-      <li data-order="5" class="nav-item">
-        <a href="#" class="nav-link" data-value="EUROPE"> EUROPE </a>
-      </li>
-      <li data-order="6" class="nav-item">
-        <a href="#" class="nav-link" data-value="OCEANIA"> OCEANIA </a>
-      </li>
-      <li data-order="7" class="nav-item">
-        <a href="#" class="nav-link" data-value="N. AMERICA"> NORTH AMERICA </a>
-      </li>
-      <li data-order="8" class="nav-item">
-        <a href="#" class="nav-link" data-value="S. AMERICA"> SOUTH AMERICA </a>
-      </li>
-    </ul>
 
   </footer>
 

@@ -43,46 +43,93 @@
 
 	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-red">
-		<div class="container">
 
+		<div class="dropdown-overlay js-dropdown-overlay"></div>
+
+		<div class="under-nav">
+			<div class="container">
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Worldwide Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Region Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Country Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Personal Plans</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent"
 				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt=""></a>
+			<a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" /></a>
 
 			<ul class="navbar-nav flex-row extra-bar-toggle">
 				<li class="nav-item mr-3">
 					<a href="#" class="nav-link">
-						<img src="img/icons/search.svg" alt="search" class="search-btn">
+						<img src="img/icons/search.svg" alt="search" class="search-btn" />
 					</a>
 				</li>
 
 				<li class="nav-item">
 					<a href="dashboard.html" class="nav-link">
-						<img src="img/icons/user.svg" alt="user" class="user-btn">
+						<img src="img/icons/user.svg" alt="user" class="user-btn" />
+					</a>
+				</li>
+
+				<li class="nav-item ml-3">
+					<a href="#" class="nav-link">
+						<img src="img/icons/basket.svg" alt="user" class="w-22 user-btn" />
 					</a>
 				</li>
 			</ul>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto mt-4">
-					<li class="nav-item active">
-						<a class="nav-link" href="countries.html">WORLDWIDE DATA</a>
+				<ul class="navbar-nav ml-auto mt-4">
+					<li class="nav-item drop-down-btn ni-li">
+						<a class="nav-link nav-px-12">
+							<span class="line-top"></span> PLANS
+							<img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+						</a>
+						<ul class="nav" style="display: none;">
+							<li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
+								<a href="#section-tab" class="nav-link">Worldwide Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
+								<a href="#section-tab" class="nav-link">Region Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
+								<a href="#section-tab" class="nav-link">Country Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
+								<a href="#section-tab" class="nav-link">Personal Plans</a>
+							</li>
+						</ul>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="index.html#country-data">COUNTRY DATA</a>
+					<li class="nav-item ni-li">
+						<a class="nav-link nav-px-12" href="#country-data">
+							<span class="line-top"></span> OUR SERVICES
+						</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="map.html">MAP COVERAGE</a>
+					<li class="nav-item ni-li">
+						<a class="nav-link nav-px-12" href="map.html">
+							<span class="line-top"></span> COVERAGE</a>
 					</li>
 					<li class="nav-item ml-2rem">
 						<a href="cooperation.html" class="unlim-btn">COOPERATION</a>
 					</li>
 				</ul>
 
-				<ul class="navbar-nav mt-4">
+				<ul class="navbar-nav mt-4 ml-auto">
 					<li class="nav-item dropdown mr-1">
 						<a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -114,13 +161,19 @@
 
 					<li class="nav-item mr-1 extra-bar-toggle-large">
 						<a href="#" class="nav-link">
-							<img src="img/icons/search.svg" alt="search" class="search-btn">
+							<img src="img/icons/search.svg" alt="search" class="search-btn" />
 						</a>
 					</li>
 
 					<li class="nav-item">
-						<a href="dashboard.html" class="nav-link extra-bar-toggle-large">
-							<img src="img/icons/user.svg" alt="user" class="user-btn">
+						<a href="dashboard.html" class="nav-link extra-bar-toggle-large link-user">
+							<img src="img/icons/user.svg" alt="user" class="user-btn" />
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="basket.html" class="nav-link extra-bar-toggle-large link-basket">
+							<img src="img/icons/basket.svg" class="w-22 user-btn" />
+							<span class="badge badge-pill">0</span>
 						</a>
 					</li>
 				</ul>

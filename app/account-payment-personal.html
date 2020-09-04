@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Unlim</title>
+
+  <meta name="description" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="icon" href="img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png" />
+
+  <!-- Change the Color of Header Bar in Browsers -->
+  <meta name="theme-color" content="#FF0000" />
+  <meta name="msapplication-navbutton-color" content="#FF0000" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FF0000" />
+
+  <link rel="stylesheet" href="./dist/main.css" />
+</head>
+
+<body class="shopping-card-body basket-body">
+
+  <div class="navbar-overlay"></div>
+
+
+
+
+
+  <!-- ========= Background Blurry Overlay ========= -->
+  <div style="display: none;">
+    <div class="backdrop-image">
+      <img src="img/icons/tu.svg" class="tu-img" />
+    </div>
+
+    <div class="backdrop-overlay"></div>
+  </div>
+  <!-- ========= Background Blurry Overlay ========= -->
+
+  <!-- Search block -->
+  <div class="search-block">
+    <div class="container">
+      <div class="search-wrapper">
+        <form action="/" method="GET" class="search-form">
+          <input type="text" name="search" id="search-input" placeholder="Search keyword and hit enter ..." />
+        </form>
+
+        <button class="search-close ml-auto">
+          <img src="img/icons/close_white.png" alt="" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- End of search block -->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-red">
+
+    <div class="dropdown-overlay js-dropdown-overlay"></div>
+
+    <div class="under-nav">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="index.html#section-tab" class="nav-link">Worldwide Plans</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#section-tab" class="nav-link">Region Plans</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#section-tab" class="nav-link">Country Plans</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#section-tab" class="nav-link">Personal Plans</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" /></a>
+
+      <ul class="navbar-nav flex-row extra-bar-toggle">
+        <li class="nav-item mr-3">
+          <a href="#" class="nav-link">
+            <img src="img/icons/search.svg" alt="search" class="search-btn" />
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="dashboard.html" class="nav-link">
+            <img src="img/icons/user.svg" alt="user" class="user-btn" />
+          </a>
+        </li>
+
+        <li class="nav-item ml-3">
+          <a href="#" class="nav-link">
+            <img src="img/icons/basket.svg" alt="user" class="w-22 user-btn" />
+          </a>
+        </li>
+      </ul>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-4">
+          <li class="nav-item drop-down-btn ni-li">
+            <a class="nav-link nav-px-12">
+              <span class="line-top"></span> PLANS
+              <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+            </a>
+            <ul class="nav" style="display: none;">
+              <li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
+                <a href="#section-tab" class="nav-link">Worldwide Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
+                <a href="#section-tab" class="nav-link">Region Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
+                <a href="#section-tab" class="nav-link">Country Plans</a>
+              </li>
+              <li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
+                <a href="#section-tab" class="nav-link">Personal Plans</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item ni-li">
+            <a class="nav-link nav-px-12" href="#country-data">
+              <span class="line-top"></span> OUR SERVICES
+            </a>
+          </li>
+          <li class="nav-item ni-li">
+            <a class="nav-link nav-px-12" href="map.html">
+              <span class="line-top"></span> COVERAGE</a>
+          </li>
+          <li class="nav-item ml-2rem">
+            <a href="cooperation.html" class="unlim-btn">COOPERATION</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav mt-4 ml-auto">
+          <li class="nav-item dropdown mr-1">
+            <a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span></span>&#36;USD
+              <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+            </a>
+            <div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item active" href="#"><span>&#36;</span>USD</a>
+              <a class="dropdown-item" href="#"><span>&#8381;</span>RUB</a>
+              <a class="dropdown-item" href="#"><span>&#8364;</span>EUR</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown mr-1">
+            <a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ENG
+              <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+            </a>
+            <div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#"><img width="20" height="12"
+                  src="img/regions/europe/RussianFederation_m.png" alt="">RUS</a>
+              <a class="dropdown-item active" href="#"><img width="20" height="12"
+                  src="img/regions/europe/UnitedKingdom_m.png" alt="">ENG</a>
+              <a class="dropdown-item" href="#"><img width="20" height="12" src="img/regions/europe/Germany_m.png"
+                  alt="">DEU</a>
+            </div>
+          </li>
+
+          <li class="nav-item mr-1 extra-bar-toggle-large">
+            <a href="#" class="nav-link">
+              <img src="img/icons/search.svg" alt="search" class="search-btn" />
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link extra-bar-toggle-large link-user">
+              <img src="img/icons/user.svg" alt="user" class="user-btn" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="basket.html" class="nav-link extra-bar-toggle-large link-basket">
+              <img src="img/icons/basket.svg" class="w-22 user-btn" />
+              <span class="badge badge-pill">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="profile-header">
+      <div class="my-profile ml-auto">
+        <div class="profile-img">
+          <div class="user-img-wrapper">
+            <img src="img/icons/user-r.svg" alt="user-r">
+          </div>
+          <span>My Profile</span>
+          <img src="img/icons/arrow-down.svg" width="20" height="20" alt="arrow-down">
+        </div>
+        <div class="profile-actions">
+          <div class="inner-actions-wrapper">
+            <a href="account-view.html">
+              <div class="img-wrapper">
+                <img src="img/icons/profile-view.svg" alt="profile-view">
+              </div>
+              <span>View</span>
+            </a>
+            <span class="line"></span>
+            <a href="index.html">
+              <div class="img-wrapper">
+                <img src="img/icons/profile-logout.svg" alt="log out">
+              </div>
+              <span>Logout</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-9 col-md-12">
+          <div
+            class="red-hovered-nav account-menu my-4 flex-wrap ml-auto d-flex w-75 align-items-center justify-content-between">
+            <a href="account-dashboard-empty.html">
+              <div class="img-wrapper">
+                <img src="img/icons/dashboard.svg" alt="dashboard">
+              </div>
+              <h4>Dashboard</h4>
+            </a>
+            <a href="account-plans.html">
+              <div class="img-wrapper">
+                <img src="img/icons/plans.svg" alt="plans">
+              </div>
+              <h4>Plans</h4>
+            </a>
+            <a href="#" class="inactive-link">
+              <div class="img-wrapper">
+                <img src="img/icons/usage-status.svg" alt="usage status">
+              </div>
+              <h4>Usage status</h4>
+            </a>
+            <a href="account-recharge.html" class="active">
+              <div class="img-wrapper">
+                <img src="img/icons/recharge.svg" alt="recharge">
+              </div>
+              <h4>Recharge</h4>
+            </a>
+
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-12">
+          <div class="profile-balance my-4 ml-aut">
+            <p><span>Balance:</span> $ <strong>2 050</strong>us</p>
+            <a href="account-recharge.html" class="rounded-button recharge-link">Recharge</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-9 col-md-12">
+        <div class="payment-balance-wrapper">
+
+          <div class="collapse show tab-wrapper balance-wrapper">
+            <div class="tab-content dashboard-box">
+              <div class="dashboard-box__top">
+                <div class="opening-title">
+                  <span></span>
+                  <h3>Recharge</h3>
+                </div>
+              </div>
+              <div class="row justify-content-around">
+                <div class="col-4 left-recharge">
+
+                  <div class="d-flex align-items-center left-recharge-balance justify-content-end">
+                    <p class="mr-3">Current Balance:</p>
+                    <p class="balance-amount">
+                      $ <strong>2 050</strong> us
+                    </p>
+                  </div>
+
+                  <div class="recharge-inputs">
+
+                    <div class="inner-inputs-wrapper">
+                      <div class="input-box selected-method">
+                        <div class="custom-control custom-radio">
+                          <input checked type="radio" id="pay-from-balance" name="payment-type"
+                            class="custom-control-input">
+                          <label class="custom-control-label" for="pay-from-balance">Pay from balance</label>
+                        </div>
+                        <div class="invoice">
+                          <p>Invoice</p>
+                          <p class="invoice-amount">
+                            $<strong>0</strong>us
+                          </p>
+                        </div>
+                        <div class="total">
+                          <p>Total:</p>
+                          <p class="total-amount">
+                            $<strong>0</strong>us
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="input-box">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="top-up-balance" name="payment-type" class="custom-control-input">
+                          <label class="custom-control-label" for="top-up-balance">Top up balance</label>
+                        </div>
+                        <form id="top-up-balance" class="top-up-balance-form">
+                          <input type="number" class="py-1 px-3 mx-auto d-block my-3 input top-up-balance-input"
+                            placeholder="Enter the amount" required>
+                        </form>
+                        <div class="total">
+                          <p>Total:</p>
+                          <p class="total-amount js-total-amount">
+                            $<strong>0</strong>us
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="button" data-target=".tab-wrapper"
+                      class="ml-auto px-4 d-block rounded-button pay-btn js-pay-btn">PAY</button>
+
+                  </div>
+
+                </div>
+                <div class="col-7">
+                  <div class="billing-box">
+                    <div class="opening-title form-title">
+                      <div class="inner-wrapper">
+                        <span></span>
+                        <h3>Billing / Shipping Information</h3>
+                      </div>
+                    </div>
+                    <div class="js-step-content-wrapper step-content-wrapper">
+                      <div class="confirmation-box billing-info-box">
+                        <div class="info-wrapper">
+                          <h3>Billing</h3>
+                          <div class="d-flex">
+                            <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                            <div class="info-box">
+                              <div class="js-customer-name-text">Denys Nemo</div>
+                              <div class="js-company-name">LCC "Agrodell"</div>
+                            </div>
+                          </div>
+                          <div class="my-3 d-flex">
+                            <img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
+                            <div class="js-address-text">
+                              <span>
+                                Pirogov, 45 St.,</span>
+                              <span class="js-address-sec"> apt. 54
+                                Vinnytsya / Vinnyts'ka 21000 Ukraine
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <h3>Shipping</h3>
+                          <div style="display: none;" class="billing-info-item mb-3 js-billing-info-item">
+                            <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                            <div class="info-box">
+                              <div class="js-shipping-name-text">Shwaine Gette</div>
+                              <div class="js-shipping-company-name"></div>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
+                            <div class="info-box">
+                              <div class="js-shipping-address-text">Use billing address</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <h3>Company</h3>
+                          <div class="d-flex">
+                            <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
+                            <div class="info-box">
+                              <div><img src="img/icons/dhl.png" alt="dhl"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <button data-step="3" style="display: none;"
+                          class="js-return-btn return-btn rounded-button">Return</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button data-toggle="collapse" data-target=".tab-wrapper" type="button" class="tab-side-button-wrapper">
+              <div class="link-with-arrow">
+                <div class="img-wrapper">
+                  <img src="img/icons/arrow-right.svg" alt="arrow right">
+                </div>
+                <span>Payment methods</span>
+              </div>
+            </button>
+          </div>
+
+
+          <div class="collapse tab-wrapper payment-wrapper">
+            <div class="tab-content dashboard-box">
+              <div class="dashboard-box__top">
+                <div class="opening-title">
+                  <span></span>
+                  <h3>Recharge</h3>
+                </div>
+              </div>
+
+
+              <div class="collapse show payment-toggle-collapse">
+                <p class="mb-0">Please select the payment methods below</p>
+                <div class="payment-methods-wrapper">
+                  <div class="img-wrapper"><img src="img/icons/visa-d.svg" alt="visa"></div>
+                  <div class="img-wrapper"><img src="img/icons/master-card.svg" alt="mastercard"></div>
+                  <div class="img-wrapper"><img src="img/icons/g-pay.svg" alt="gpay"></div>
+                  <div class="img-wrapper"><img src="img/icons/a-pay.svg" alt="apple-pay"></div>
+                  <div class="img-wrapper"><img src="img/icons/paypal.svg" alt="paypal"></div>
+                  <div class="img-wrapper"><img src="img/icons/webmoney.svg" alt="webmoney"></div>
+                  <div class="img-wrapper"><img src="img/icons/qiwi.svg" alt="qiwi"></div>
+                  <div class="img-wrapper"><img src="img/icons/wallet-one.svg" alt="wallet-one"></div>
+                  <div class="img-wrapper"><img src="img/icons/yandex-money.svg" alt="yandex-money"></div>
+                </div>
+                <form class="card-form">
+                  <label class="custom-select-arrow">
+                    <span class="arrow-down"></span>
+                    <select required="" class="form-control" id="switch-payment-method" name="payment-method">
+                      <option selected value="visa/mastercard">Cards (VISA / MASTER CARD)</option>
+                      <option value="invoice">Invoice</option>
+                      <option value="apple">Apple Pay</option>
+                      <option value="google">Google Pay</option>
+                      <option value="paypal">PayPal</option>
+                      <option value="webmoney">Web Money</option>
+                      <option value="qiwi">Qiwi</option>
+                      <option value="walletone">Wallet One</option>
+                      <option value="yandex">Yandex Money</option>
+                    </select>
+                  </label>
+                  <div class="line"></div>
+                  <div class="step-content">
+                    <div class="payment-intro">
+                      <img src="img/icons/account-r.svg" width="18" height="18" alt="account">
+                      <span>Enter cardholder details</span>
+                    </div>
+                    <div class="reg__form my-4">
+                      <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                        <span>First Name</span>
+                        <input required autocomplete="cc-given-name" type="text" name="firstname"
+                          placeholder="Enter your Name" class="d-block input w-100">
+                      </label>
+                      <label class="col-lg-6 col-md-6 col-sm-12 d-block">
+                        <span>Last Name</span>
+                        <input required autocomplete="cc-family-name" type="text" name="lastname"
+                          placeholder="Enter your Last Name" class="d-block input w-100">
+                      </label>
+                      <div class="card-input-wrapper w-100">
+                        <label class="d-block">
+                          <img src="img/icons/card-r.svg" alt="card">
+                          <input id="cardnumber" autocomplete="cc-number" required type="text" name="cardnumber"
+                            autocomplete="on" class="d-block input w-100">
+                        </label>
+                        <label class="d-block">
+                          <input id="carddate" autocomplete="cc-exp" required type="text" name="carddate"
+                            placeholder="MM/YY" autocomplete="on" class="d-block input w-100">
+                        </label>
+                        <label class="d-block">
+                          <input required autocomplete="cc-csc" maxlength="3" type="password" name="cardcode"
+                            placeholder="CVC" autocomplete="on" class="d-block input w-100">
+                        </label>
+                      </div>
+                      <div class="w-100 button-wrapper">
+                        <button type="button" data-toggle="collapse" data-target=".payment-toggle-collapse"
+                          class="payment-btn  js-payment-btn rounded-button">PAY</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+                <div class="billing-box">
+                  <div class="opening-title form-title">
+                    <div class="inner-wrapper">
+                      <span></span>
+                      <button class="w-100 d-flex border-0 bg-transparent link-with-arrow" data-toggle="collapse"
+                        data-target=".billing-info-collapse">
+                        <h3>Billing / Shipping Information</h3>
+                        <div class="img-wrapper ml-1">
+                          <img src="img/icons/arrow-right.svg" alt="arrow right">
+                        </div>
+                        <div class="line"></div>
+                        <a href="account-view.html" class="collapse billing-info-collapse edit-link">
+                          Edit
+                        </a>
+                      </button>
+
+                    </div>
+                  </div>
+                  <div class="billing-info-collapse collapse js-step-content-wrapper step-content-wrapper">
+                    <div class="confirmation-box billing-info-box">
+                      <div class="info-wrapper">
+                        <h3>Billing</h3>
+                        <div class="d-flex">
+                          <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                          <div class="info-box">
+                            <div class="js-customer-name-text">Denys Nemo</div>
+                            <div class="js-company-name">LCC "Agrodell"</div>
+                          </div>
+                        </div>
+                        <div class="my-3 d-flex">
+                          <img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
+                          <div class="js-address-text">
+                            <span>
+                              Pirogov, 45 St.,</span>
+                            <span class="js-address-sec"> apt. 54
+                              Vinnytsya / Vinnyts'ka 21000 Ukraine
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="info-wrapper">
+                        <h3>Shipping</h3>
+                        <div style="display: none;" class="billing-info-item mb-3 js-billing-info-item">
+                          <img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+                          <div class="info-box">
+                            <div class="js-shipping-name-text">Shwaine Gette</div>
+                            <div class="js-shipping-company-name"></div>
+                          </div>
+                        </div>
+                        <div class="d-flex">
+                          <img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
+                          <div class="info-box">
+                            <div class="js-shipping-address-text">Use billing address</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="info-wrapper">
+                        <h3>Company</h3>
+                        <div class="d-flex">
+                          <img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
+                          <div class="info-box">
+                            <div><img src="img/icons/dhl.png" alt="dhl"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <button data-step="3" style="display: none;"
+                        class="js-return-btn return-btn rounded-button">Return</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collapse payment-toggle-collapse">
+                <div class="payed-box">
+                  <div class="payed-box-content">
+
+                    <div class="img-wrapper">
+                      <img src="img/icons/map-g.svg" width="175" height="103" alt="map">
+                    </div>
+
+                    <div class="payed-message">
+                      <p>
+                        Thank you,
+                        your order has
+                        been paid
+                      </p>
+                      <p class="payment-amount">$<strong>10 000</strong></p>
+                      <p class="mt-3">Balance: $475</p>
+                    </div>
+
+                  </div>
+
+                  <div class="payed-links-wrapper">
+                    <button type="button" class="rounded-button" data-toggle="collapse"
+                      data-target=".payment-toggle-collapse">Recharge</button>
+                    <a href="account-dashboard.html" class="rounded-button">Dashboard</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button data-toggle="collapse" data-target=".tab-wrapper" type="button" class="tab-side-button-wrapper">
+              <div class="link-with-arrow">
+                <div class="img-wrapper">
+                  <img src="img/icons/arrow-right.svg" alt="arrow right">
+                </div>
+                <span>Balance</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 list-plans-wrapper">
+
+        <div data-margin-top="270" data-sticky-wrap
+          class="list-plans w-100 shopping-card__card-list shopping-card__card box-with-fancy-header">
+          <div class="item">
+            <div class="top1">
+              <img src="img/logo.svg" alt="logo">
+              <span class="right-span">
+                <div class="text tariff-name">personal</div>
+              </span>
+            </div>
+
+            <h1><span class="let gb-amount-big js-gb-amount-big">3</span> Gb</h1>
+            <div class="top2">
+              <h4><span class="plan-name js-plan-name">Worldwide Plan</span><span class="sim-type"><span
+                    class="sim-name js-sim-name">eSim</span></span></h4>
+              <span class="line"></span>
+            </div>
+            <div class="top3">
+              <h3 class="my-3 js-included-country-text" style="cursor: pointer;">Included in your plan:</h3>
+
+              <div class="js-items-toggler">
+                <div class="js-sorted-items">
+                  <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
+                    <div class="included-item" id="internet-data-block">
+                      <div class="img-wrapper">
+                        <img src="img/icons/icon2.png" alt="icon1">
+                      </div>
+                      <div class="item-content">
+                        <h3 class="item-name">Internet data</h3>
+                      </div>
+                    </div>
+                    <div class="inactive included-item" id="voice-sms-block">
+                      <div class="img-wrapper">
+                        <img src="img/icons/icon5.png" alt="icon1">
+                      </div>
+                      <div class="item-content">
+                        <h3 class="item-name">Voice and SMS</h3>
+                      </div>
+                    </div>
+                    <div class="inactive included-item" id="virtual-number-block">
+                      <div class="img-wrapper">
+                        <img src="img/icons/icon3.png" alt="icon1">
+                      </div>
+                      <div class="item-content">
+                        <h3 class="item-name">Virtual number</h3>
+                      </div>
+                    </div>
+                    <div class="inactive included-item" id="substitution-number-block">
+                      <div class="img-wrapper">
+                        <img src="img/icons/icon4.png" alt="icon1">
+                      </div>
+                      <div class="item-content">
+                        <h3 class="item-name">Substitution of numbers</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="line"></span>
+              <form class="discount-form my-3 w-100 justify-content-between align-items-center">
+                <input type="text" required="" placeholder="Discount Code" name="discountCode"
+                  class="py-1 px-3 discount-input input">
+                <button class="btn-discount py-1 px-3" type="submit">Apply</button>
+              </form>
+              <button class="btn-gift-card-togger">Have a Gift Card?</button>
+              <form style="display: none;" class="giftcard-form my-3 w-100 justify-content-between align-items-center">
+                <input required="" type="text" placeholder="Gift Card" name="giftCard"
+                  class="py-1 px-3 discount-input input">
+                <button disabled="" class="btn-gift-card py-1 px-3" type="submit">Apply</button>
+              </form>
+              <div style="display: none"
+                class="subtotal-wrapper discount-info justify-content-between align-items-center">
+                <span class="d-block">Discount</span>
+                <div><span class="js-discount-amount">0</span> %</div>
+              </div>
+              <div class="subtotal-wrapper justify-content-between align-items-center">
+                <span class="d-block">Subtotal</span>
+                <div class="total-price m-0">$ <span
+                    class="total-price-amount js-total-price-amount js-subtotal-amount">70</span> us</div>
+              </div>
+              <div class="total-price mt-3">
+                $ <span class="total-price-amount js-total-price-amount">70</span> us</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-additional-services">
+          <h3>Additional Service +</h3>
+          <div class="additional-services__content">
+            <p>Buy additional services and get 2 or more days to use them</p>
+            <div class="img-wrapper">
+              <img src="img/icons/add-service-img.png" alt="additional-services" width="80" height="100">
+            </div>
+          </div>
+          <a href="#" disabled class="rounded-button">Order</a>
+        </div>
+
+        <div class="box-with-fancy-header device-info">
+          <div class="opening-title">
+            <span></span>
+            <h3 class="with-line">Device info</h3>
+          </div>
+          <div class="device-info__top">
+            <div class="content">
+              <h3 class="phone-name">
+                Apple Inc Apple iPhone 11
+                Pro MAX (A1920)
+              </h3>
+              <div class="device-details-wrapper">
+                <div class="device-details">
+                  <div class="detail-name">Support 4G:</div>
+                  <div class="detail-info">1800/2600 MHz</div>
+                </div>
+                <div class="device-details">
+                  <div class="detail-name">MAIN SIM</div>
+                </div>
+              </div>
+            </div>
+            <div class="img-wrapper">
+              <img src="img/icons/phone-r.svg" width="47" height="83" alt="phone">
+            </div>
+          </div>
+          <div class="device-details-wrapper device-info__bottom">
+            <div class="device-details">
+              <div class="detail-name">Type</div>
+              <div class="detail-info">4G</div>
+            </div>
+            <div class="device-details">
+              <div class="detail-name">PUK1 code:</div>
+              <div class="detail-info">64324370</div>
+            </div>
+            <div class="device-details">
+              <div class="detail-name">ICC:</div>
+              <div class="detail-info">8838103942618430787</div>
+            </div>
+          </div>
+          <a href="#" class="device-settings-link link-with-arrow">
+            <div class="img-wrapper">
+              <img src="img/icons/arrow-right.svg" alt="arrow right">
+            </div>
+            <span>Device Setting</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer__top">
+      <div class="container">
+        <nav class="footer__navbar">
+          <ul class="navbar-nav mx-auto d-flex flex-row justify-content-around align-items-center w-75 flex-wrap">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Support
+                <svg class="svg-inline--fa fa-angle-down fa-w-10 select-icon" aria-hidden="true" focusable="false"
+                  data-prefix="fas" data-icon="angle-down" width="10" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512" data-fa-i2svg="">
+                  <path fill="#fff"
+                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+                  </path>
+                </svg>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Link1</a>
+                <a class="dropdown-item" href="#">Link2</a>
+                <a class="dropdown-item" href="#">Link3</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Brand</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item download-app">
+              <a class="nav-link p-2 px-3" href="#">Download App</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__line w-50 mx-auto my-4"></div>
+        <div class="footer__contact d-flex justify-content-between align-items-start flex-wrap">
+          <a href="#" class="contact-link text-white text-uppercase">
+            <span>contact</span>
+          </a>
+          <div class="d-flex align-items-start">
+            <img src="img/icons/whatsapp.png" alt="whatsapp">
+            <span class="text-white">+49 36628 60335 <span>(Whatsapp)</span></span>
+          </div>
+          <div class="d-flex align-items-start">
+            <img src="img/icons/mail.png" alt="mail">
+            <span class="text-white d-block">
+              <a href="mailto:info@unlimsim.com" class="d-block text-white">info@unlimsim.com
+              </a>
+              <a href="mailto:help@unlimsim.com" class="d-block text-white">help@unlimsim.com
+              </a>
+            </span>
+          </div>
+          <div class="d-flex align-items-start">
+            <img src="img/icons/location.png" alt="location">
+            <span class="text-white d-block">
+              Germany: 07937 Zeulenroda Triebes, <br>
+              August-Bebel-Str. 8
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer-bottom text-white">
+          <div class="footer-el-1 d-flex flex-wrap align-items-center">
+            <span class="small-text">Copyright ©2020 UNLIMSIM. All rights reserved.</span>
+            <a href="#">Terms & Conditions</a>
+            <div class="footer__bottom-line"></div>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-el-3">
+            <a href="#"><img src="img/icons/pay-2.svg" alt="" /></a>
+            <a href="#"><img src="img/icons/pay-3.svg" alt="" /></a>
+            <a href="#"><img src="img/icons/pay-4.svg" alt="" /></a>
+            <a href="#"><img src="img/icons/pay-1.svg" alt="" /></a>
+          </div>
+          <div class="footer-el-2">
+            <a href="#"><img src="img/icons/fb.svg" alt="fb" /></a>
+            <a href="#"><img src="img/icons/in.svg" alt="in" /></a>
+            <a href="#"><img src="img/icons/ig.svg" alt="ig" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </footer>
+
+  <script src="dist/main.js"></script>
+</body>
+
+</html>

@@ -24,8 +24,25 @@ body
 			.container
 				max-width: 960px
 
+.smaller-cointainer
+	max-width: 960px
+
 .inverted-filter
 	filter: invert(1)
+
+.with-line
+	display: flex
+	align-items: baseline
+	white-space: nowrap
+	width: 100%
+	&::after 
+		content: ''
+		display: inline-block
+		width: 100%
+		margin-left: 10px
+		height: 1px
+		background: #787878
+
 
 input, textarea
 	border: #666 1px solid

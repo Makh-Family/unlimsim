@@ -4,7 +4,8 @@
 .shopping-card-body
   min-height: 100vh
   margin-top: 100px
-
+  .container.js-all-wrapper
+    max-width: 960px
   .filter-option
     font-size: 14px
 
@@ -412,6 +413,10 @@
     margin-top: 0 !important
     span
       font-size: 52px
+    &.m-0
+      font-size: 20px
+      .js-subtotal-amount
+        font-size: 30px
   .btn-checkout
     padding: 5px 30px
     padding-bottom: 10px
@@ -993,75 +998,75 @@
       font-size: 24px
 
   
-  .discount-form,
-  .giftcard-form
-    display: flex
+.discount-form,
+.giftcard-form
+  display: flex
 
-  .discount-input
-    border-radius: 5px
+.discount-input
+  border-radius: 5px
 
-    &::placeholder
-      color: #b9bb9b
+  &::placeholder
+    color: #b9bb9b
 
-  .btn-discount,
-  .btn-gift-card
-    border-radius: 5px
-    background: $accent
-    border: none
-    color: #fff
+.btn-discount,
+.btn-gift-card
+  border-radius: 5px
+  background: $accent
+  border: none
+  color: #fff
+  font-size: 16px
+  font-family: $semibold
+  transition: 0.3s ease
+
+  &:disabled
+    opacity: 0.8
+    cursor: not-allowed
+
+.btn-gift-card-togger
+  background: transparent
+  border: none
+  color: #b9b9b9
+  outline: none
+  padding: 0
+  font-size: 12px
+  margin: 10px 0
+  &.active
+    border-bottom: 1px dashed #b9b9b9
+
+.js-not-sorted-items
+  
+  .included-item
+    cursor: pointer
+    transition: 0.3s ease
+    &:hover
+      transform: scale(1.07)
+
+.subtotal-wrapper
+  display: flex
+  border-top: 1px solid #b9b9b9
+  color: #b9b9b9
+  div
+    font-weight: normal
+    font-style: normal
+    font-size: 13px
+    span
+      font-size: 24px
+  .d-block
     font-size: 16px
-    font-family: $semibold
-    transition: 0.3s ease
-
-    &:disabled
-      opacity: 0.8
-      cursor: not-allowed
-
-  .btn-gift-card-togger
-    background: transparent
-    border: none
-    color: #b9b9b9
-    outline: none
-    padding: 0
-    font-size: 12px
-    margin: 10px 0
-    &.active
-      border-bottom: 1px dashed #b9b9b9
-
-  .js-not-sorted-items
-    
-    .included-item
-      cursor: pointer
-      transition: 0.3s ease
-      &:hover
-        transform: scale(1.07)
-
-  .subtotal-wrapper
-    display: flex
-    border-top: 1px solid #b9b9b9
-    color: #b9b9b9
-    div
-      font-weight: normal
-      font-style: normal
-      font-size: 13px
-      span
-        font-size: 24px
-    .d-block
-      font-size: 16px
-  .btn-edit
-    padding: 1px 30px
-    background: transparent
-    transition: 0.3s ease
-    border-radius: 20px
-    border: 2px solid #fff
-    font-size: 31px
-    color: #ffffff
-    font-family: $semibold
-    line-height: 1.2
-    display: block
-    margin-right: auto
-    margin-left: auto
-    transition: 0.3s ease
+.btn-edit
+  padding: 1px 30px
+  background: transparent
+  transition: 0.3s ease
+  border-radius: 20px
+  border: 2px solid #fff
+  font-size: 31px
+  color: #ffffff
+  font-family: $semibold
+  line-height: 1.2
+  display: block
+  margin-right: auto
+  margin-left: auto
+  transition: 0.3s ease
 
 .has-dashed-border
   display: inline-block

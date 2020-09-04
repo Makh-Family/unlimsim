@@ -129,6 +129,7 @@ $(document).ready(function () {
           "click"
         );
       } else {
+        $(".inner-recharge-plans-list").css("max-height", "260px");
         $(this).toggleClass("active");
       }
     });
@@ -273,13 +274,98 @@ $(document).ready(function () {
     cardData = getCardDetails(e.target);
   });
 
-  if ($("body").hasClass("shopping-card-body")) {
-    const elRegionsList = $("#regions-list");
-    const elPrefixList = $("#prefix-select");
-    const elCountriesList = $("#countries-select");
-    const elNumbersList = $("#numbers-list");
-    const elVirtualInnerBox = $(".virtual-inner");
+  const elRegionsList = $("#regions-list");
+  const elPrefixList = $("#prefix-select");
+  const elCountriesList = $("#countries-select");
+  const elNumbersList = $("#numbers-list");
+  const elVirtualInnerBox = $(".virtual-inner");
 
+  elCountriesList.on("click", ".dropdown-item", function (e) {
+    const selectedCountry = $(this).text();
+    $.getJSON("../data/regions.json", function (regionsList) {
+      const regions = regionsList.filter(function (country) {
+        return country.countryName.toUpperCase() == selectedCountry;
+      })[0].regions;
+      let chunk = "";
+      regions.forEach(function (reg) {
+        const template = `
+          <option value="${reg.name}">${reg.name}</option>`;
+        chunk += template;
+      });
+      const elSelect = elRegionsList.find("select");
+      elSelect.html(chunk);
+      elSelect.removeAttr("disabled");
+      elSelect.selectpicker("refresh");
+    });
+  });
+
+  elRegionsList.on("click", ".dropdown-item", function (e) {
+    const elSelect = elPrefixList.find("select");
+    elSelect.removeAttr("disabled");
+    elSelect.selectpicker("refresh");
+  });
+
+  elPrefixList.on("click", ".dropdown-item", function (e) {
+    const elSelect = elNumbersList.find("select");
+    elSelect.removeAttr("disabled");
+    elSelect.selectpicker("refresh");
+  });
+
+  elNumbersList.on("click", ".dropdown-item", function (e) {
+    const elActiveOption = elNumbersList.find(".filter-option");
+    const formattedNumber = formatPhoneNumber(elActiveOption.text());
+    elActiveOption.text(formattedNumber);
+    $(".btn-join-to-card").removeAttr("disabled");
+    $(".btn-substitution-join").attr("disabled", true);
+  });
+
+  const elPhoneNumberInput = document.getElementById("subNumber");
+  const elPhoneNumberInputStepTwo = document.querySelector("#telnumber");
+
+  try {
+    IMask(elPhoneNumberInput, {
+      mask: "+{0} (000) 000-00-00",
+      lazy: false, // make placeholder always visible
+      placeholderChar: "_", // defaults to '_'
+    });
+    IMask(elPhoneNumberInputStepTwo, {
+      mask: "(000) 000-00-00",
+      lazy: false, // make placeholder always visible
+      placeholderChar: "_", // defaults to '_'
+    });
+    IMask(document.querySelector("#signIn-phone-input"), {
+      mask: "+{7} (000) 000-00-00",
+      lazy: false, // make placeholder always visible
+      placeholderChar: "_", // defaults to '_'
+    });
+    IMask(document.querySelector("#cardnumber"), {
+      mask: "0000-0000-0000-0000",
+      lazy: false, // make placeholder always visible
+      placeholderChar: "_", // defaults to '_'
+    });
+    IMask(document.querySelector("#carddate"), {
+      mask: "MM{/}YY",
+      pattern: "MM{/}YY",
+      lazy: false, // make placeholder always visible
+      placeholderChar: "_",
+      blocks: {
+        MM: {
+          mask: IMask.MaskedRange,
+          from: 01,
+          to: 12,
+        },
+        YY: {
+          mask: IMask.MaskedRange,
+          from: 20,
+          to: 30,
+        },
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  if ($("body").hasClass("shopping-card-body")) {
     newCardData = JSON.parse(localStorage.getItem("card"));
     customer.totalPrice = 0;
     customer.totalPrice += parseInt(newCardData.priceData.price, 10);
@@ -346,106 +432,6 @@ $(document).ready(function () {
       $(".js-tariff-name").text(country);
     });
 
-    $(".btn-service-toggler")
-      .mouseenter(function () {
-        $(this).siblings("img").css({
-          transform: "scale(1.2)",
-        });
-      })
-      .mouseleave(function () {
-        $(this).siblings("img").css({
-          transform: "scale(1)",
-        });
-      })
-      .click(function (e) {
-        const status = $(this).children("span").first().text();
-        const target = $(this).data("target");
-        const dataNames = $(this).data("names").split(",");
-        const index = parseInt(
-          $(".js-shopping-card__card").attr("data-item"),
-          10
-        );
-
-        toggleCheckbox($(this).children("input"));
-
-        if (status == "+") {
-          addService(target, index);
-
-          $(this).css("color", "#ff0000");
-          $(this).children("span").first().text("-");
-          if (target == "#virtual-number" || target == "#substitution-number") {
-            if (target == "#virtual-number") {
-              customer.Vprice = 500;
-            }
-
-            if (target == "#substitution-number") {
-              customer.Sprice = 25;
-            }
-
-            elCheckoutBtn.attr("disabled", true);
-          }
-        } else {
-          dataNames.forEach(function (d) {
-            customer[d] = "";
-          });
-
-          if (target == "#virtual-number" && customer.Vprice == 500) {
-            customer.Vprice = 0;
-          }
-
-          if (target == "#substitution-number" && customer.Sprice == 25) {
-            customer.Sprice = 0;
-          }
-
-          if (target == "#voice-sms") {
-            $('select[name="VSbalance"]').prop("selectedIndex", -1);
-            $("#enter-balance").selectpicker("refresh");
-          }
-
-          removeService(target, index);
-          $(this).css("color", "#000");
-          $(this).children("span").first().text("+");
-
-          //hide joined info
-          $(".join-info").hide();
-          $(".virtual-inner").show();
-          //end of joined info
-
-          if (target == "#virtual-number" || target == "#substitution-number") {
-            const newsTarget =
-              target == "#virtual-number"
-                ? "#substitution-number"
-                : "#virtual-number";
-            if (
-              $(target).siblings(newsTarget).attr("style") == "display: none;"
-            ) {
-              elCheckoutBtn.removeAttr("disabled");
-              elCheckoutBtn.show();
-            }
-          }
-        }
-
-        $(".js-total-price-amount").text(customer.totalPrice);
-
-        const includedItems = [];
-        const includedItemsBtns = $(`.btn-service-toggler:contains('-')`);
-
-        includedItemsBtns.each(function (btn) {
-          includedItems.push($(this).attr("data-target"));
-        });
-
-        if ($("body").hasClass("basket-body")) {
-          basket[index - 1].includedItems = includedItems;
-
-          console.log(basket);
-
-          localStorage.removeItem("basket");
-          localStorage.setItem("basket", JSON.stringify(basket));
-        }
-
-        updateCardInfo(customer);
-      });
-
     $(".js-included-country-text").on("click", function () {
       const isClickable = $(this).next().hasClass("js-items-toggler");
 
@@ -476,51 +462,7 @@ $(document).ready(function () {
       }
     });
 
-    const elPhoneNumberInput = document.getElementById("subNumber");
-    const elPhoneNumberInputStepTwo = document.querySelector("#telnumber");
-
-    if (elPhoneNumberInput) {
-      IMask(elPhoneNumberInput, {
-        mask: "+{0} (000) 000-00-00",
-        lazy: false, // make placeholder always visible
-        placeholderChar: "_", // defaults to '_'
-      });
-      IMask(elPhoneNumberInputStepTwo, {
-        mask: "(000) 000-00-00",
-        lazy: false, // make placeholder always visible
-        placeholderChar: "_", // defaults to '_'
-      });
-      IMask(document.querySelector("#signIn-phone-input"), {
-        mask: "+{7} (000) 000-00-00",
-        lazy: false, // make placeholder always visible
-        placeholderChar: "_", // defaults to '_'
-      });
-      IMask(document.querySelector("#cardnumber"), {
-        mask: "0000-0000-0000-0000",
-        lazy: false, // make placeholder always visible
-        placeholderChar: "_", // defaults to '_'
-      });
-      IMask(document.querySelector("#carddate"), {
-        mask: "MM{/}YY",
-        pattern: "MM{/}YY",
-        lazy: false, // make placeholder always visible
-        placeholderChar: "_",
-        blocks: {
-          MM: {
-            mask: IMask.MaskedRange,
-            from: 01,
-            to: 12,
-          },
-          YY: {
-            mask: IMask.MaskedRange,
-            from: 20,
-            to: 30,
-          },
-        },
-      });
-    }
-
-    elPhoneNumberInput.addEventListener("keyup", function (e) {
+    $("#subNumber").on("keyup", function (e) {
       if (
         e.target.value.length == 18 &&
         e.target.value[e.target.value.length - 1] != "_"
@@ -551,45 +493,6 @@ $(document).ready(function () {
       const elSelect = elCountriesList.find("select");
       elSelect.removeAttr("disabled");
       elSelect.selectpicker("refresh");
-    });
-
-    elCountriesList.on("click", ".dropdown-item", function (e) {
-      const selectedCountry = $(this).text();
-      $.getJSON("../data/regions.json", function (regionsList) {
-        const regions = regionsList.filter(function (country) {
-          return country.countryName.toUpperCase() == selectedCountry;
-        })[0].regions;
-        let chunk = "";
-        regions.forEach(function (reg) {
-          const template = `
-            <option value="${reg.name}">${reg.name}</option>`;
-          chunk += template;
-        });
-        const elSelect = elRegionsList.find("select");
-        elSelect.html(chunk);
-        elSelect.removeAttr("disabled");
-        elSelect.selectpicker("refresh");
-      });
-    });
-
-    elRegionsList.on("click", ".dropdown-item", function (e) {
-      const elSelect = elPrefixList.find("select");
-      elSelect.removeAttr("disabled");
-      elSelect.selectpicker("refresh");
-    });
-
-    elPrefixList.on("click", ".dropdown-item", function (e) {
-      const elSelect = elNumbersList.find("select");
-      elSelect.removeAttr("disabled");
-      elSelect.selectpicker("refresh");
-    });
-
-    elNumbersList.on("click", ".dropdown-item", function (e) {
-      const elActiveOption = elNumbersList.find(".filter-option");
-      const formattedNumber = formatPhoneNumber(elActiveOption.text());
-      elActiveOption.text(formattedNumber);
-      $(".btn-join-to-card").removeAttr("disabled");
-      $(".btn-substitution-join").attr("disabled", true);
     });
 
     $(".btn-join-to-card").on("click", function () {
@@ -770,39 +673,6 @@ $(document).ready(function () {
 
     //step-2
 
-    $(".btn-gift-card-togger").on("click", function () {
-      $(".giftcard-form").toggle();
-      $(this).toggleClass("active");
-    });
-
-    $(".discount-form").on("submit", function (e) {
-      e.preventDefault();
-      $(this).hide();
-      if ($("body").hasClass("basket-body")) {
-        customer.totalPrice = setTotalPrice();
-        console.log(customer.totalPrice);
-      }
-      applyDiscount(customer.totalPrice, 20);
-    });
-
-    $(".giftcard-form").on("submit", function (e) {
-      e.preventDefault();
-      $(this).hide();
-      if ($("body").hasClass("basket-body")) {
-        customer.totalPrice = setTotalPrice();
-      }
-      applyDiscount(customer.totalPrice, 5);
-      $(".btn-gift-card-togger").attr("disabled", true);
-    });
-
-    $(".discount-input").on("keyup", function () {
-      if ($(this).val().length > 0) {
-        $(".btn-gift-card").removeAttr("disabled");
-      } else {
-        $(".btn-gift-card").attr("disabled", true);
-      }
-    });
-
     //end of step2
   }
   //end of if statement
@@ -830,6 +700,39 @@ $(document).ready(function () {
   });
 
   //reg-sign-togller
+
+  $(".discount-form").on("submit", function (e) {
+    e.preventDefault();
+    $(this).hide();
+    if ($("body").hasClass("basket-body")) {
+      customer.totalPrice = setTotalPrice();
+      console.log(customer.totalPrice);
+    }
+    applyDiscount(customer.totalPrice, 20);
+  });
+
+  $(".giftcard-form").on("submit", function (e) {
+    e.preventDefault();
+    $(this).hide();
+    if ($("body").hasClass("basket-body")) {
+      customer.totalPrice = setTotalPrice();
+    }
+    applyDiscount(customer.totalPrice, 5);
+    $(".btn-gift-card-togger").attr("disabled", true);
+  });
+
+  $(".btn-gift-card-togger").on("click", function () {
+    $(".giftcard-form").toggle();
+    $(this).toggleClass("active");
+  });
+
+  $(".discount-input").on("keyup", function () {
+    if ($(this).val().length > 0) {
+      $(".btn-gift-card").removeAttr("disabled");
+    } else {
+      $(".btn-gift-card").attr("disabled", true);
+    }
+  });
 
   $(".form-tabs-btn").on("click", function () {
     console.log("hi");
@@ -865,6 +768,106 @@ $(document).ready(function () {
   });
 
   //end of payment
+
+  $(".btn-service-toggler")
+    .mouseenter(function () {
+      $(this).siblings("img").css({
+        transform: "scale(1.2)",
+      });
+    })
+    .mouseleave(function () {
+      $(this).siblings("img").css({
+        transform: "scale(1)",
+      });
+    })
+    .click(function (e) {
+      const status = $(this).children("span").first().text();
+      const target = $(this).data("target");
+      const dataNames = $(this).data("names").split(",");
+      const index = parseInt(
+        $(".js-shopping-card__card").attr("data-item"),
+        10
+      );
+
+      toggleCheckbox($(this).children("input"));
+
+      if (status == "+") {
+        addService(target, index);
+
+        $(this).css("color", "#ff0000");
+        $(this).children("span").first().text("-");
+        if (target == "#virtual-number" || target == "#substitution-number") {
+          if (target == "#virtual-number") {
+            customer.Vprice = 500;
+          }
+
+          if (target == "#substitution-number") {
+            customer.Sprice = 25;
+          }
+
+          elCheckoutBtn.attr("disabled", true);
+        }
+      } else {
+        dataNames.forEach(function (d) {
+          customer[d] = "";
+        });
+
+        if (target == "#virtual-number" && customer.Vprice == 500) {
+          customer.Vprice = 0;
+        }
+
+        if (target == "#substitution-number" && customer.Sprice == 25) {
+          customer.Sprice = 0;
+        }
+
+        if (target == "#voice-sms") {
+          $('select[name="VSbalance"]').prop("selectedIndex", -1);
+          $("#enter-balance").selectpicker("refresh");
+        }
+
+        removeService(target, index);
+        $(this).css("color", "#000");
+        $(this).children("span").first().text("+");
+
+        //hide joined info
+        $(".join-info").hide();
+        $(".virtual-inner").show();
+        //end of joined info
+
+        if (target == "#virtual-number" || target == "#substitution-number") {
+          const newsTarget =
+            target == "#virtual-number"
+              ? "#substitution-number"
+              : "#virtual-number";
+          if (
+            $(target).siblings(newsTarget).attr("style") == "display: none;"
+          ) {
+            elCheckoutBtn.removeAttr("disabled");
+            elCheckoutBtn.show();
+          }
+        }
+      }
+
+      $(".js-total-price-amount").text(customer.totalPrice);
+
+      const includedItems = [];
+      const includedItemsBtns = $(`.btn-service-toggler:contains('-')`);
+
+      includedItemsBtns.each(function (btn) {
+        includedItems.push($(this).attr("data-target"));
+      });
+
+      if ($("body").hasClass("basket-body")) {
+        basket[index - 1].includedItems = includedItems;
+
+        console.log(basket);
+
+        localStorage.removeItem("basket");
+        localStorage.setItem("basket", JSON.stringify(basket));
+      }
+
+      updateCardInfo(customer);
+    });
 
   $(".forgot-password").on("click", function (e) {
     const texts = ["Forgot password", "Remember password"];
