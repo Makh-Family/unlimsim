@@ -686,6 +686,7 @@
   border: none
   position: absolute
   right: 0
+  top: 0
   bottom: 5px
   background: linear-gradient(to top, #fff 10%, transparent)
   color: #000
@@ -1300,10 +1301,9 @@
 @media (max-width: 575px)
   .js-step[data-step="3"]
     .billing-info-box
-      grid-template-columns: 1fr
-      justify-items: start
+      display: flex
+      flex-direction: column
       margin-bottom: 25px
-      gap: 10px 0
   .card-input-wrapper
     display: flex
     flex-wrap: wrap
@@ -1350,9 +1350,16 @@
       flex-wrap: wrap
 
 
-@media (max-width: 350px)
+@media (max-width: 360px)
   .discount-form,
   .giftcard-form
     flex-direction: column
     input
       margin-bottom: 15px
+  .form-title
+    overflow: visible
+    .inner-wrapper
+      h3
+        white-space: normal
+        &::after
+          display: none

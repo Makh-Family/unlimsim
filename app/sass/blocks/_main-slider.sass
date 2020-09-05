@@ -78,12 +78,13 @@
 		background-repeat: no-repeat
 		position: absolute
 		background-color: transparent
-		right: -5%
+		right: 0
 		z-index: 2000
 		font-size: 0
 		padding: 0
 		border: none
 		outline: none
+		transform: translateX(100%)
 	.slick-prev
 		outline: none
 		display: block
@@ -98,8 +99,9 @@
 		border: none
 		font-size: 0
 		position: absolute
-		left: -5%
+		left: 0
 		z-index: 2000
+		transform: translateX(-100%)
 	
 
 .js-cards-indicators
@@ -146,6 +148,11 @@
 			font-size: 52px
 
 @media screen and ( max-width: 1020px )
+	.js-card-wrapper
+		.slick-prev
+			transform: translateX(100%)
+		.slick-next
+			transform: translateX(-100%)
 	.under-nav .container ul
 		justify-content: space-around
 	.ni-li:hover, .search-btn:hover
@@ -213,13 +220,13 @@
 	.slider-caption
 		h1
 			font-size: 25px
-	.js-card-wrapper
-		.slick-next
-			right: 5px
-		.slick-prev
-			left: 5px
+	
 
 @media screen and ( max-width: 575px )
+	.js-card-wrapper
+		.slick-prev,
+		.slick-next
+			display: none !important
 	div.last-tab .right-item .under-text
 		flex-direction: column
 		align-items: center
@@ -260,12 +267,6 @@
 		h1
 			font-size: 18px
 			line-height: 1.3
-	
-	.js-card-wrapper
-		.slick-next
-			right: -8px
-		.slick-prev
-			left: -8px
 
 @media screen and ( max-width: 330px )
 	.section-tab .slide div.item .top1 span.right-span
