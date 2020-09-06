@@ -1267,7 +1267,7 @@ div.last-tab {
     .wrapper-tab {
 
         .tabs {
-            .container {
+            .container-md {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -1415,6 +1415,7 @@ div.last-tab {
                     transition: 0.3s ease;
                     opacity: 0;
                     pointer-events: none;
+
                     div.row {
                         height: 500px;
                         margin: 0 !important;
@@ -1944,6 +1945,7 @@ div.last-tab {
                     transform: skewX(-20deg);
                     position: relative;
                     overflow: hidden;
+
                     div.text {
                         color: white;
                         position: relative;

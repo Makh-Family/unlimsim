@@ -1,3 +1,4 @@
+
 .navbar-overlay
   opacity: 0
   position: fixed
@@ -24,8 +25,17 @@
   &.navbar-toggler
     border: none
 
-.navbar
+nav.navbar  
+  position: fixed
+  width: 100%
+  top: 0
   z-index: 2000
+  .nav-link
+    font-size: 14px
+
+.nav-item
+  .unlim-btn
+    font-size: 18px
 
 .overflow-hidden
   overflow: hidden
@@ -33,7 +43,70 @@
 .nav-link 
   cursor: pointer
 
+.js-custom-dropdown
+  &.dropdown-menu
+    display: flex
+    justify-content: flex-end
+    border: none
+    border-radius: 0
+    left: 100%
+    background: transparent
+    transform: translateX(-100%)
+    margin-top: 15px
+    transition: 0.3s ease
+    transition-delay: 0.3s
+    opacity: 0
+    pointer-events: none
+    &.show
+      opacity: 1
+      pointer-events: unset   
+
+    a
+      color: white
+      padding: 4px 7px
+      border: 1px solid transparent
+      border-radius: 5px
+      text-align: center
+      line-height: 1
+      display: flex
+      align-items: center
+      &.active
+        background: transparent
+        border: 1px solid #fff
+      span,img
+        margin-right: 5px
+      &:not(:last-child)
+        margin-right: 10px
+      &:hover, &:focus
+        border: 1px solid #fff
+        background: transparent
+
+.dropdown-overlay
+  position: absolute
+  top: 100%
+  background: #C90000
+  height: 50px
+  width: 100%
+  left: 0
+  display: none
+
 @media screen and ( max-width: 992px )
+  .dropdown-overlay
+    display: none !important
+  .js-custom-dropdown
+    &.dropdown-menu
+      margin: 0
+      transform: translateX(0)
+      height: 0
+      overflow: hidden
+      transition-delay: 0
+      .dropdown-item
+        font-size: 14px
+        img
+          width: 15px
+          height: 8px
+    &.show
+      height: 25px
   .nav-link
     &:hover
       span.line-top

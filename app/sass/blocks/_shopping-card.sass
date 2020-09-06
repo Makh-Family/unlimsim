@@ -3,7 +3,9 @@
 
 .shopping-card-body
   min-height: 100vh
-
+  margin-top: 100px
+  .container.js-all-wrapper
+    max-width: 960px
   .filter-option
     font-size: 14px
 
@@ -411,6 +413,10 @@
     margin-top: 0 !important
     span
       font-size: 52px
+    &.m-0
+      font-size: 20px
+      .js-subtotal-amount
+        font-size: 30px
   .btn-checkout
     padding: 5px 30px
     padding-bottom: 10px
@@ -680,6 +686,7 @@
   border: none
   position: absolute
   right: 0
+  top: 0
   bottom: 5px
   background: linear-gradient(to top, #fff 10%, transparent)
   color: #000
@@ -956,17 +963,20 @@
   overflow: hidden
   margin: 0
   align-items: flex-start
+  .inner-wrapper
+    width: 100%
   h3
     font-size: 24px
+    width: 100%
+    white-space: nowrap
 
     &::after
       content: ""
       display: inline-block
-      vertical-align: bottom
       width: 100%
-      margin-right: -100%
-      margin-left: 20px
-      border-top: 1px solid #b9b9b9
+      height: 1px
+      background: #b9b9b9
+      margin-left: 5px
     p
       display: inline-block
       font-size: 18px
@@ -989,75 +999,75 @@
       font-size: 24px
 
   
-  .discount-form,
-  .giftcard-form
-    display: flex
+.discount-form,
+.giftcard-form
+  display: flex
 
-  .discount-input
-    border-radius: 5px
+.discount-input
+  border-radius: 5px
 
-    &::placeholder
-      color: #b9bb9b
+  &::placeholder
+    color: #b9bb9b
 
-  .btn-discount,
-  .btn-gift-card
-    border-radius: 5px
-    background: $accent
-    border: none
-    color: #fff
+.btn-discount,
+.btn-gift-card
+  border-radius: 5px
+  background: $accent
+  border: none
+  color: #fff
+  font-size: 16px
+  font-family: $semibold
+  transition: 0.3s ease
+
+  &:disabled
+    opacity: 0.8
+    cursor: not-allowed
+
+.btn-gift-card-togger
+  background: transparent
+  border: none
+  color: #b9b9b9
+  outline: none
+  padding: 0
+  font-size: 12px
+  margin: 10px 0
+  &.active
+    border-bottom: 1px dashed #b9b9b9
+
+.js-not-sorted-items
+  
+  .included-item
+    cursor: pointer
+    transition: 0.3s ease
+    &:hover
+      transform: scale(1.07)
+
+.subtotal-wrapper
+  display: flex
+  border-top: 1px solid #b9b9b9
+  color: #b9b9b9
+  div
+    font-weight: normal
+    font-style: normal
+    font-size: 13px
+    span
+      font-size: 24px
+  .d-block
     font-size: 16px
-    font-family: $semibold
-    transition: 0.3s ease
-
-    &:disabled
-      opacity: 0.8
-      cursor: not-allowed
-
-  .btn-gift-card-togger
-    background: transparent
-    border: none
-    color: #b9b9b9
-    outline: none
-    padding: 0
-    font-size: 12px
-    margin: 10px 0
-    &.active
-      border-bottom: 1px dashed #b9b9b9
-
-  .js-not-sorted-items
-    
-    .included-item
-      cursor: pointer
-      transition: 0.3s ease
-      &:hover
-        transform: scale(1.07)
-
-  .subtotal-wrapper
-    display: flex
-    border-top: 1px solid #b9b9b9
-    color: #b9b9b9
-    div
-      font-weight: normal
-      font-style: normal
-      font-size: 13px
-      span
-        font-size: 24px
-    .d-block
-      font-size: 16px
-  .btn-edit
-    padding: 1px 30px
-    background: transparent
-    transition: 0.3s ease
-    border-radius: 20px
-    border: 2px solid #fff
-    font-size: 31px
-    color: #ffffff
-    font-family: $semibold
-    line-height: 1.2
-    display: block
-    margin-right: auto
-    margin-left: auto
-    transition: 0.3s ease
+.btn-edit
+  padding: 1px 30px
+  background: transparent
+  transition: 0.3s ease
+  border-radius: 20px
+  border: 2px solid #fff
+  font-size: 31px
+  color: #ffffff
+  font-family: $semibold
+  line-height: 1.2
+  display: block
+  margin-right: auto
+  margin-left: auto
+  transition: 0.3s ease
 
 .has-dashed-border
   display: inline-block
@@ -1277,92 +1287,6 @@
 
 
 
-/////////FOOOTER/////////////
-  ///////////////////////
-
-.footer__top
-  background: $accent
-  padding: 30px 0
-
-.footer__navbar
-  .nav-item
-    .nav-link
-      font-size: 18px
-  
-  .download-app
-    border: 2px solid #ffffff
-    border-radius: 15px
-    transition: 0.3s ease
-
-    &:hover
-      background: #fff
-      a
-        color: $accent !important
-
-.footer__line
-  height: 2px
-  background: #fff
-
-.footer__contact
-  .contact-link
-    display: block
-    padding: 0 10px
-    border: 2px solid #ffffff
-    transform: skew(-15deg,-15deg) rotate(15deg)
-    border-radius: 10px
-    transition: 0.3s ease
-
-    &:hover
-      background: #fff
-      span
-        color: $accent
-
-    span
-      display: block
-      transform: skew(15deg,15deg) rotate(-15deg) scaleX(1.1)
-      font-weight: bold
-      font-size: 22px
-  a
-    font-size: 17px
-    font-family: $semibold
-    text-decoration: none
-
-  img
-    margin-right: 10px
-    margin-top: 5px
-  
-  span.text-white
-    font-size: 17px
-    font-family: $semibold
-    span
-      font-size: 14px
-
-
-.footer__bottom
-  padding: 30px 0
-  background: #B20000
-
-  .footer__bottom-line
-    width: 2px
-    height: 14px
-    margin: 0 5px
-    margin-top: 3px
-    background: #fff
-
-  .footer-el-1
-    .small-text
-      margin-right: 5px
-      display: block
-      font-size: 12px
-    a
-      color: #ffffff
-      text-decoration: underline
-      font-size: 12px
-  .footer-el-2
-    a
-      img
-        filter: invert(1)
-
 
 @media (max-width: 992px) 
   .shopping-card__card
@@ -1377,10 +1301,9 @@
 @media (max-width: 575px)
   .js-step[data-step="3"]
     .billing-info-box
-      grid-template-columns: 1fr
-      justify-items: start
+      display: flex
+      flex-direction: column
       margin-bottom: 25px
-      gap: 10px 0
   .card-input-wrapper
     display: flex
     flex-wrap: wrap
@@ -1427,9 +1350,16 @@
       flex-wrap: wrap
 
 
-@media (max-width: 350px)
+@media (max-width: 360px)
   .discount-form,
   .giftcard-form
     flex-direction: column
     input
       margin-bottom: 15px
+  .form-title
+    overflow: visible
+    .inner-wrapper
+      h3
+        white-space: normal
+        &::after
+          display: none

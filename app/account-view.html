@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Unlim</title>
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+	<!-- Change the Color of Header Bar in Browsers -->
+	<meta name="theme-color" content="#FF0000">
+	<meta name="msapplication-navbutton-color" content="#FF0000">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#FF0000">
+
+	<link rel="stylesheet" href="dist/main.css">
+
+</head>
+
+<body>
+	<div class="navbar-overlay"></div>
+	<!-- Search block -->
+	<div class="search-block">
+		<div class="container">
+			<div class="search-wrapper">
+				<form action="/" method="GET" class="search-form">
+					<input type="text" name="search" id="search-input" placeholder="Search keyword and hit enter ...">
+				</form>
+
+				<button class="search-close ml-auto"><img src="img/icons/close_white.png" alt=""></button>
+			</div>
+		</div>
+	</div>
+	<!-- End of search block -->
+
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-red">
+
+		<div class="dropdown-overlay js-dropdown-overlay"></div>
+
+		<div class="under-nav">
+			<div class="container">
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Worldwide Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Region Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Country Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Personal Plans</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" /></a>
+
+			<ul class="navbar-nav flex-row extra-bar-toggle">
+				<li class="nav-item mr-3">
+					<a href="#" class="nav-link">
+						<img src="img/icons/search.svg" alt="search" class="search-btn" />
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="dashboard.html" class="nav-link">
+						<img src="img/icons/user.svg" alt="user" class="user-btn" />
+					</a>
+				</li>
+
+				<li class="nav-item ml-3">
+					<a href="#" class="nav-link">
+						<img src="img/icons/basket.svg" alt="user" class="w-22 user-btn" />
+					</a>
+				</li>
+			</ul>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto mt-4">
+					<li class="nav-item drop-down-btn ni-li">
+						<a class="nav-link nav-px-12">
+							<span class="line-top"></span> PLANS
+							<img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+						</a>
+						<ul class="nav" style="display: none;">
+							<li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
+								<a href="#section-tab" class="nav-link">Worldwide Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
+								<a href="#section-tab" class="nav-link">Region Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
+								<a href="#section-tab" class="nav-link">Country Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
+								<a href="#section-tab" class="nav-link">Personal Plans</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item ni-li">
+						<a class="nav-link nav-px-12" href="#country-data">
+							<span class="line-top"></span> OUR SERVICES
+						</a>
+					</li>
+					<li class="nav-item ni-li">
+						<a class="nav-link nav-px-12" href="map.html">
+							<span class="line-top"></span> COVERAGE</a>
+					</li>
+					<li class="nav-item ml-2rem">
+						<a href="cooperation.html" class="unlim-btn">COOPERATION</a>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav mt-4 ml-auto">
+					<li class="nav-item dropdown mr-1">
+						<a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span></span>&#36;USD
+							<img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+						</a>
+						<div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item active" href="#"><span>&#36;</span>USD</a>
+							<a class="dropdown-item" href="#"><span>&#8381;</span>RUB</a>
+							<a class="dropdown-item" href="#"><span>&#8364;</span>EUR</a>
+						</div>
+					</li>
+
+					<li class="nav-item dropdown mr-1">
+						<a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							ENG
+							<img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+						</a>
+						<div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#"><img width="20" height="12"
+									src="img/regions/europe/RussianFederation_m.png" alt="">RUS</a>
+							<a class="dropdown-item active" href="#"><img width="20" height="12"
+									src="img/regions/europe/UnitedKingdom_m.png" alt="">ENG</a>
+							<a class="dropdown-item" href="#"><img width="20" height="12" src="img/regions/europe/Germany_m.png"
+									alt="">DEU</a>
+						</div>
+					</li>
+
+					<li class="nav-item mr-1 extra-bar-toggle-large">
+						<a href="#" class="nav-link">
+							<img src="img/icons/search.svg" alt="search" class="search-btn" />
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a href="dashboard.html" class="nav-link extra-bar-toggle-large link-user">
+							<img src="img/icons/user.svg" alt="user" class="user-btn" />
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="basket.html" class="nav-link extra-bar-toggle-large link-basket">
+							<img src="img/icons/basket.svg" class="w-22 user-btn" />
+							<span class="badge badge-pill">0</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- End of navbar -->
+
+	<!-- Content -->
+
+	<div class="container">
+		<div class="profile-header">
+			<div class="my-profile ml-auto">
+				<div class="profile-img">
+					<div class="user-img-wrapper">
+						<img src="img/icons/user-r.svg" alt="user-r">
+					</div>
+					<span>My Profile</span>
+					<img src="img/icons/arrow-down.svg" width="12" height="12" alt="arrow-down">
+				</div>
+				<div class="profile-actions">
+					<div class="inner-actions-wrapper">
+						<a href="account-view.html">
+							<div class="img-wrapper">
+								<img src="img/icons/profile-view.svg" alt="profile-view">
+							</div>
+							<span>View</span>
+						</a>
+						<span class="line"></span>
+						<a href="index.html">
+							<div class="img-wrapper">
+								<img src="img/icons/profile-logout.svg" alt="log out">
+							</div>
+							<span>Logout</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-9 col-md-12">
+					<div
+						class="red-hovered-nav account-menu my-4 flex-wrap ml-auto d-flex w-75 align-items-center justify-content-between">
+						<a href="account-dashboard.html">
+							<div class="img-wrapper">
+								<img src="img/icons/dashboard.svg" alt="dashboard">
+							</div>
+							<h4>Dashboard</h4>
+						</a>
+						<a href="account-plans.html">
+							<div class="img-wrapper">
+								<img src="img/icons/plans.svg" alt="plans">
+							</div>
+							<h4>Plans</h4>
+						</a>
+						<a href="#" class="inactive-link">
+							<div class="img-wrapper">
+								<img src="img/icons/usage-status.svg" alt="usage status">
+							</div>
+							<h4>Usage status</h4>
+						</a>
+						<a href="account-recharge.html">
+							<div class="img-wrapper">
+								<img src="img/icons/recharge.svg" alt="recharge">
+							</div>
+							<h4>Recharge</h4>
+						</a>
+
+						<div class="line"></div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-sm-12">
+					<div class="profile-balance my-4 ml-aut">
+						<p><span>Balance:</span> $ <strong>2 050</strong>us</p>
+						<a href="account-recharge.html" class="rounded-button recharge-link">Recharge</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="profile-view">
+			<div class="opening-title">
+				<span></span>
+				<h3>My Profile</h3>
+			</div>
+			<div class="profie-view__content row">
+				<div class="col-lg-3 col-md-4 col-sm-12">
+					<div class="profile__card">
+						<div class="profile-header">
+							<form class="profile-img-wrapper">
+								<div class="inner-img-wrapper">
+									<img src="img/icons/user.svg" class="default-user-img" alt="user" width="45" height="45">
+								</div>
+								<label for="change-img">
+									<img src="img/icons/camera-r.svg" alt="camera">
+								</label>
+								<input id="change-img" type="file" class="visually-hidden">
+							</form>
+							<div class="profile-names">
+								<h4 class="profile-username">Denys Nemo
+								</h4>
+								<p class="profile-company-name">LCC "Agrodell"</p>
+							</div>
+						</div>
+						<div class="profile-contact-details">
+							<div>
+								<img src="img/icons/phone.svg" width="12" height="12" alt="phone">
+								<a href="tel:+380638515252">+38 (063) 851-52-52</a>
+							</div>
+							<div>
+								<img src="img/icons/mail.svg" width="12" height="12" alt="phone">
+								<a href="mailto:info@agrodell.com">info@agrodell.com</a>
+							</div>
+						</div>
+						<div class="profile-plans">
+							<div class="current-plans">
+								<p>Current Plans</p>
+								<p><strong>52</strong>PCS</p>
+							</div>
+							<div class="old-plans">
+								<p>Old Plans</p>
+								<p><strong>150</strong>PCS</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="profile-details col-lg-9 col-md-8 col-sm-12">
+					<div data-step="2" data-step-inside="true" class="js-step reg-sign-wrapper display-none completed-step">
+						<div data-active="true" class="opening-title form-title">
+							<div class="inner-wrapper">
+								<span></span>
+								<h3>Email / Password <p>for your account</p>
+								</h3>
+							</div>
+							<button class="edit-btn js-edit-btn" data-step="2">
+								Edit
+							</button>
+						</div>
+						<div class="js-step-content-wrapper step-content-wrapper">
+							<div class="js-confirmation-box confirmation-box">
+								<div class="d-flex align-items-center">
+									<img src="img/icons/mail.svg" width="20" height="15" alt="mail">
+									<div class="js-mail-text">info@agrodell.com</div>
+									<div class="is-confirmed d-flex">
+										<div class="status-text">
+											confirmed
+										</div>
+										<div class="confirm-img">
+											<img src="img/icons/confirmed.svg" alt="confirm">
+										</div>
+									</div>
+								</div>
+								<div class="mb-3 d-flex align-items-center">
+									<img src="img/icons/phone.svg" width="17" height="18" alt="mail">
+									<div class="js-number-text">
+										+38 (063) 851-52-52
+									</div>
+								</div>
+								<button data-step="2" style="display: none;"
+									class="js-return-btn return-btn rounded-button">Return</button>
+							</div>
+							<div class="step-content">
+								<div class="form-tabs-wrapper">
+									<button type="button" class="form-tabs-btn active" data-target="#reg-form">Registration</button>
+									<button type="button" class="form-tabs-btn" data-target="#sign-form">Sign in</button>
+								</div>
+								<div class="reg-sing-forms-wrapper">
+									<form id="reg-form" class="reg__form my-4">
+										<label class="col-lg-12 d-block">
+											<span>Email Address</span>
+											<input required="" type="email" value="info@agrodell.com" name="regEmail" placeholder="Email"
+												class="d-block input w-100">
+										</label>
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<span>Password</span>
+											<input value="123456789" required="" autocomplete="new-password" type="password" name="password"
+												class="d-block input w-100">
+										</label>
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<span>Repeat Password</span>
+											<input value="123456789" autocomplete="on" required="" type="password" autocomplete="new-password"
+												name="repeatedPassword" class="d-block input w-100">
+										</label>
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<span>Country Number</span>
+											<span class="arrow-down"></span>
+											<select required="" class="form-control" id="switch-countrycode" name="countryCode"
+												data-title="Select country">
+												<option value="ukraine:380">Ukraine +380</option>
+												<option value="russia:7">Russia +7</option>
+												<option value="uzbekistan:998">Uzbekistan +998</option>
+											</select>
+										</label>
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<input value="0638515252" id="telnumber" required="" type="tel" name="telNumber"
+												class="d-block input w-100">
+										</label>
+										<div class="verification-wrapper w-100 align-items-center">
+											<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+												<span>Verification Number</span>
+												<input value="123456789" id="verifition-code" type="password" name="verificationCode"
+													class="d-block input w-100">
+											</label>
+											<p class="col-lg-6 col-md-6 col-sm-12">Please enter verification number from your email </p>
+										</div>
+										<div class="d-flex flex-wrap mb-4 confirm-wrapper align-items-center">
+											<p class="col-lg-8 col-sm-12" style="display: none;">In order to continue registration you need to
+												confirm the email.
+												Please confirm your Email.</p>
+											<button data-confirm="no" type="submit" id="regFormSubmit" data-step="2"
+												class="ml-auto confirm-mail-btn rounded-button">Continue</button>
+										</div>
+									</form>
+									<form id="sign-form" style="display: none;" class="sign__form my-4">
+										<div class="w-100 mb-4 radio-wrapper js-radio-wrapper">
+											<input checked="" data-target=".js-email-input-wrapper" value="email" type="radio"
+												name="signInType" id="emailtoggler">
+											<label for="emailtoggler"><span></span><span>Email</span></label>
+											<input type="radio" data-target=".js-phone-input-wrapper" value="tel" name="signInType"
+												id="phonetoggler">
+											<label for="phonetoggler"><span></span><span>Phone</span></label>
+
+										</div>
+										<label class="js-email-input-wrapper col-lg-6 col-md-6 col-sm-12">
+											<span>Email Address</span>
+											<input required="" type="email" value="info@agrodell.com" name="signInEmail" placeholder="Email"
+												class="d-block input w-100">
+										</label>
+										<label style="display: none;" class="js-phone-input-wrapper col-lg-6 col-md-6 col-sm-12">
+											<span>Phone number</span>
+											<input required="" type="tel" value="79622200620" name="signInPhone" id="signIn-phone-input"
+												placeholder="Phone number" class="d-block input w-100">
+										</label>
+										<label style="display: none;"
+											class="js-temporary-password-wrapper temporary-password-wrapper col-lg-12 col-md-12 col-sm-12">
+											<span>Enter temporary password</span>
+											<input required="" type="password" autocomplete="new-password" value="79622200620"
+												name="temporaryPassword" id="temporary-password" placeholder="Temporary password"
+												class="d-block input col-lg-6 col-md-6 col-sm-12">
+											<p>Please enter temporary password
+												from your email</p>
+										</label>
+										<label class="js-password-input-wrapper col-lg-6 col-md-6 col-sm-12">
+											<span>Password</span>
+											<input value="123456789" autocomplete="new-password" required="" type="password" name="password"
+												class="d-block input w-100">
+										</label>
+										<div class="d-flex flex-wrap mb-4 ml-auto confirm-wrapper align-items-baseline">
+											<button type="button" data-forgot="yes" class="forgot-password">Forgot password</button>
+											<button type="submit" id="signInSubmit" class="ml-auto rounded-button" data-forgot="no"
+												data-confirm="yes">Continue</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="js-step display-none completed-step" data-step="3">
+						<div data-active="false" class="opening-title form-title">
+							<div class="inner-wrapper">
+								<span></span>
+								<h3>Billing / Shipping Information</h3>
+							</div>
+							<button class="edit-btn js-edit-btn" data-step="3">
+								Edit
+							</button>
+						</div>
+						<div class="js-step-content-wrapper step-content-wrapper">
+							<div class="confirmation-box billing-info-box">
+								<div class="info-wrapper">
+									<h3>Billing</h3>
+									<div class="d-flex">
+										<img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+										<div class="info-box">
+											<div class="js-customer-name-text">Denys Nemo</div>
+											<div class="js-company-name">LCC "Agrodell"</div>
+										</div>
+									</div>
+									<div class="my-3 d-flex">
+										<img src="img/icons/location-r.svg" width="12" height="18" alt="mail">
+										<div class="js-address-text">
+											<span>
+												Pirogov, 45 St.,</span>
+											<span class="js-address-sec"> apt. 54
+												Vinnytsya / Vinnyts'ka 21000 Ukraine
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="info-wrapper">
+									<h3>Shipping</h3>
+									<div style="display: none;" class="billing-info-item mb-3 js-billing-info-item">
+										<img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+										<div class="info-box">
+											<div class="js-shipping-name-text">Shwaine Gette</div>
+											<div class="js-shipping-company-name"></div>
+										</div>
+									</div>
+									<div class="d-flex">
+										<img src="img/icons/shipping-r.svg" width="12" height="25 " alt="mail">
+										<div class="info-box">
+											<div class="js-shipping-address-text">Use billing address</div>
+										</div>
+									</div>
+								</div>
+								<div class="info-wrapper">
+									<h3>Company</h3>
+									<div class="d-flex">
+										<img src="img/icons/track-r.svg" width="21" height="13" alt="mail">
+										<div class="info-box">
+											<div><img src="img/icons/dhl.png" alt="dhl"></div>
+										</div>
+									</div>
+								</div>
+								<button data-step="3" style="display: none;"
+									class="js-return-btn return-btn rounded-button">Return</button>
+							</div>
+							<div class="step-content">
+
+								<div class="my-4 shipping-billing-wrapper">
+									<form id="billing-form" class="reg__form">
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<span>First Name</span>
+											<input required="" type="text" value="Denys" name="firstname" placeholder="First Name"
+												class="d-block input w-100">
+										</label>
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<span>Last Name</span>
+											<input value="Nemo" required="" type="text" name="lastname" class="d-block input w-100">
+										</label>
+										<label class="col-lg-12 d-block">
+											<span>Company Name</span>
+											<input value="LCC 'Agrodell'" required="" type="text" name="companyname"
+												class="d-block input w-100">
+										</label>
+										<label class="col-lg-12 d-block">
+											<span>Address</span>
+											<input value="Pirogov, 45 St., apt. 54" type="text" name="billingAddress"
+												class="d-block input w-100">
+										</label>
+										<label class="col-lg-12 d-block">
+											<span>Country</span>
+											<span class="arrow-down"></span>
+											<select required="" class="form-control" id="switch-country" name="country"
+												data-title="Select country">
+												<option value="Ukraine">Ukraine </option>
+												<option value="Russia">Russia </option>
+												<option value="Uzbekistan">Uzbekistan </option>
+											</select>
+										</label>
+										<label class="col-lg-4 col-sm-12 d-block">
+											<span>City</span>
+											<span class="arrow-down"></span>
+											<select required="" class="form-control" id="switch-city" name="city" data-title="Select city">
+												<option value="Vinnytsya">Vinnytsya </option>
+												<option value="Kiev">Kiev </option>
+												<option value="Donbass">Donbass </option>
+											</select>
+										</label>
+										<label class="col-lg-4 col-sm-6 d-block">
+											<span>State</span>
+											<span class="arrow-down"></span>
+											<select required="" class="form-control" id="switch-state" name="state" data-title="Select state">
+												<option value="Vinnyts'ka">Vinnyts'ka</option>
+												<option value="Kiev">Kiev</option>
+												<option value="Donbass">Donbass</option>
+											</select>
+										</label>
+										<label class="col-lg-4 col-sm-6 d-block">
+											<span>Postcode</span>
+											<input value="21000" required="" type="number" name="postcode" class="d-block input w-100">
+										</label>
+									</form>
+									<div class="flex-column align-items-start w-100 mb-1 radio-wrapper js-radio-wrapper">
+										<input checked="" data-target=".js-billing-address-input-wrapper" value="billing" type="checkbox"
+											name="withBillingAddress" id="billingAddress">
+										<label for="billingAddress"><span></span><span>Use billing address</span></label>
+										<input checked="" type="checkbox" value="dhl" name="byDhl" id="dhltoggler">
+										<label for="dhltoggler"><span></span><span><img src="img/icons/dhl.png" alt="dhl"></span></label>
+
+									</div>
+									<form id="shipping-form" style="display: none;"
+										class="js-billing-address-input-wrapper billing-address-input-wrapper w-100">
+										<h3 class="w-100">Shipping</h3>
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<span>First Name</span>
+											<input type="text" value="Shwaine" name="firstname" placeholder="First Name"
+												class="d-block input w-100">
+										</label>
+										<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+											<span>Last Name</span>
+											<input value="Gette" type="text" name="lastname" class="d-block input w-100">
+										</label>
+										<label class="col-lg-12 d-block">
+											<span>Company Name</span>
+											<input type="text" name="companyname" class="d-block input w-100">
+										</label>
+										<label class="col-lg-12 d-block">
+											<span>Address</span>
+											<input value="Roza Luksenberg, 69 St., apt. 69" type="text" name="shippingAddress"
+												class="d-block input w-100">
+										</label>
+										<label class="col-lg-12 d-block">
+											<span>Country</span>
+											<span class="arrow-down"></span>
+											<select class="form-control" id="switch-billing-country" name="country"
+												data-title="Select country">
+												<option value="Germany">Germany</option>
+												<option value="Russia">Russia </option>
+												<option value="Uzbekistan">Uzbekistan </option>
+											</select>
+										</label>
+										<label class="col-lg-4 col-sm-12 d-block">
+											<span>City</span>
+											<span class="arrow-down"></span>
+											<select class="form-control" id="switch-billing-city" name="city" data-title="Select city">
+												<option value="Berlin">Berlin </option>
+												<option value="Kiev">Kiev </option>
+												<option value="Donbass">Donbass </option>
+											</select>
+										</label>
+										<label class="col-lg-4 col-sm-6 d-block">
+											<span>State</span>
+											<span class="arrow-down"></span>
+											<select class="form-control" id="switch-billing-state" name="state" data-title="Select state">
+												<option value="Marienfelde">Marienfelde</option>
+												<option value="Kiev">Kiev</option>
+												<option value="Donbass">Donbass</option>
+											</select>
+										</label>
+										<label class="col-lg-4 col-sm-6 d-block">
+											<span>Postcode</span>
+											<input value="21000" type="number" name="postcode" class="d-block input w-100">
+										</label>
+										<div class="d-flex flex-column align-items-start w-100 mb-4 radio-wrapper js-radio-wrapper">
+											<input value="billing" type="checkbox" name="billingtoggler"
+												data-target=".js-billing-address-input-wrapper" id="billingAddressToggler">
+											<label for="billingAddressToggler"><span></span><span>Use billing address</span></label>
+										</div>
+										<label class="col-lg-4 col-md-4 col-sm-6 d-block">
+											<span>Delivery</span>
+											<span class="arrow-down"></span>
+											<select class="form-control" id="switch-method" name="shipping-method"
+												data-title="Select country">
+												<option value="dhl">DHL</option>
+												<option value="dhl2">DHL2 </option>
+												<option value="dhl3">DHL3 </option>
+											</select>
+										</label>
+										<div class="shipping-price js-shipping-price">$ <span>25</span> us</div>
+									</form>
+									<div class="w-100 button-wrapper">
+										<button type="button"
+											class="shipping-continue-btn js-shipping-continue-btn rounded-button">Countinue</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="js-step display-none completed-step" data-step="4">
+						<div data-active="false" class="opening-title form-title">
+							<div class="inner-wrapper">
+								<span></span>
+								<h3 class="d-flex align-items-baseline">Payment
+									<div class="ml-3 payment-methods-wrapper d-flex align-items-end">
+										<img width="27" height="18" src="img/icons/visa.svg" alt="icon1">
+										<img width="27" height="18" src="img/icons/mastercard.svg" alt="icon2">
+										<img width="27" height="18" src="img/icons/gpay.svg" alt="icon3">
+										<img width="27" height="18" src="img/icons/apple-pay.svg" alt="icon4">
+									</div>
+								</h3>
+							</div>
+							<button class="edit-btn js-edit-btn" data-step="4">Edit</button>
+						</div>
+						<div class="js-step-content-wrapper step-content-wrapper">
+							<div class="payment-info-box confirmation-box billing-info-box">
+								<div class="info-wrapper w-100">
+									<div class="d-flex">
+										<img src="img/icons/account-r.svg" width="18" height="18" alt="mail">
+										<div class="info-box">
+											<div class="js-customer-name-text">Denys Nemo</div>
+										</div>
+									</div>
+									<div class="my-1 d-flex">
+										<img src="img/icons/card-r.svg" width="20" height="13" alt="mail">
+										<div class="js-card-text">
+											85845-5662-3242-5487
+										</div>
+										<div class="js-card-expered-date">
+											10/25
+										</div>
+									</div>
+								</div>
+								<button data-step="4" style="display: none;"
+									class="js-return-btn return-btn rounded-button">Return</button>
+							</div>
+							<div class="step-content">
+								<div class="payment-intro">
+									<img src="img/icons/account-r.svg" width="18" height="18" alt="account">
+									<span>Enter cardholder details</span>
+								</div>
+								<form id="payment-card-form" class="reg__form my-4">
+									<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+										<span>First Name</span>
+										<input required="" type="text" name="firstname" placeholder="Enter your Name"
+											class="d-block input w-100">
+									</label>
+									<label class="col-lg-6 col-md-6 col-sm-12 d-block">
+										<span>Last Name</span>
+										<input required="" type="text" name="lastname" placeholder="Enter your Last Name"
+											class="d-block input w-100">
+									</label>
+									<div class="card-input-wrapper w-100">
+										<label class="d-block">
+											<img src="img/icons/card-r.svg" alt="card">
+											<input id="cardnumber" required="" type="text" name="cardnumber" autocomplete="on"
+												class="d-block input w-100">
+										</label>
+										<label class="d-block">
+											<input id="carddate" required="" type="text" name="carddate" placeholder="MM/YY" autocomplete="on"
+												class="d-block input w-100">
+										</label>
+										<label class="d-block">
+											<input required="" maxlength="3" type="password" name="cardcode" placeholder="CVC"
+												autocomplete="new-password" class="d-block input w-100">
+										</label>
+									</div>
+									<div class="w-100 button-wrapper">
+										<button type="button" class="payment-btn js-payment-btn rounded-button">Countinue</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<footer>
+		<div class="footer__top">
+			<div class="container">
+				<nav class="footer__navbar">
+					<ul class="navbar-nav mx-auto d-flex flex-row justify-content-around align-items-center w-75 flex-wrap">
+						<li class="nav-item">
+							<a class="nav-link" href="#">About</span></a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Support
+								<svg class="svg-inline--fa fa-angle-down fa-w-10 select-icon" aria-hidden="true" focusable="false"
+									data-prefix="fas" data-icon="angle-down" width="10" role="img" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 320 512" data-fa-i2svg="">
+									<path fill="#fff"
+										d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+									</path>
+								</svg>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Link1</a>
+								<a class="dropdown-item" href="#">Link2</a>
+								<a class="dropdown-item" href="#">Link3</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Careers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Brand</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Blog</a>
+						</li>
+						<li class="nav-item download-app">
+							<a class="nav-link p-2 px-3" href="#">Download App</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="footer__line w-50 mx-auto my-4"></div>
+				<div class="footer__contact d-flex justify-content-between align-items-start flex-wrap">
+					<a href="#" class="contact-link text-white text-uppercase">
+						<span>contact</span>
+					</a>
+					<div class="d-flex align-items-start">
+						<img src="img/icons/whatsapp.png" alt="whatsapp">
+						<span class="text-white">+49 36628 60335 <span>(Whatsapp)</span></span>
+					</div>
+					<div class="d-flex align-items-start">
+						<img src="img/icons/mail.png" alt="mail">
+						<span class="text-white d-block">
+							<a href="mailto:info@unlimsim.com" class="d-block text-white">info@unlimsim.com
+							</a>
+							<a href="mailto:help@unlimsim.com" class="d-block text-white">help@unlimsim.com
+							</a>
+						</span>
+					</div>
+					<div class="d-flex align-items-start">
+						<img src="img/icons/location.png" alt="location">
+						<span class="text-white d-block">
+							Germany: 07937 Zeulenroda Triebes, <br>
+							August-Bebel-Str. 8
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<div class="container">
+				<div class="footer-bottom text-white">
+					<div class="footer-el-1 d-flex flex-wrap align-items-center">
+						<span class="small-text">Copyright ©2020 UNLIMSIM. All rights reserved.</span>
+						<a href="#">Terms & Conditions</a>
+						<div class="footer__bottom-line"></div>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div class="footer-el-3">
+						<a href="#"><img src="img/icons/pay-2.svg" alt="" /></a>
+						<a href="#"><img src="img/icons/pay-3.svg" alt="" /></a>
+						<a href="#"><img src="img/icons/pay-4.svg" alt="" /></a>
+						<a href="#"><img src="img/icons/pay-1.svg" alt="" /></a>
+					</div>
+					<div class="footer-el-2">
+						<a href="#"><img src="img/icons/fb.svg" alt="fb" /></a>
+						<a href="#"><img src="img/icons/in.svg" alt="in" /></a>
+						<a href="#"><img src="img/icons/ig.svg" alt="ig" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<ul class="nav" id="region-list" style="display: none;">
+			<li data-order="1" class="nav-item active">
+				<a href="#" class="nav-link" data-value="*"> ALL </a>
+			</li>
+			<li data-order="3" class="nav-item">
+				<a href="#" class="nav-link" data-value="ASIA"> ASIA </a>
+			</li>
+			<li data-order="4" class="nav-item">
+				<a href="#" class="nav-link" data-value="AFRICA"> AFRICA </a>
+			</li>
+			<li data-order="5" class="nav-item">
+				<a href="#" class="nav-link" data-value="EUROPE"> EUROPE </a>
+			</li>
+			<li data-order="6" class="nav-item">
+				<a href="#" class="nav-link" data-value="OCEANIA"> OCEANIA </a>
+			</li>
+			<li data-order="7" class="nav-item">
+				<a href="#" class="nav-link" data-value="N. AMERICA"> NORTH AMERICA </a>
+			</li>
+			<li data-order="8" class="nav-item">
+				<a href="#" class="nav-link" data-value="S. AMERICA"> SOUTH AMERICA </a>
+			</li>
+		</ul>
+
+	</footer>
+
+
+	<!-- JS Files -->
+	<script src="dist/main.js"></script>
+</body>
+
+</html>
