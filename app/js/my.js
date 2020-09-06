@@ -398,23 +398,23 @@ $(document).ready(function () {
       });
     });
 
-    $("#plan-select").on("click", ".dropdown-item", function (e) {
+    $("#plan-select").on("click", function (e) {
       if (
-        $(this).text().toUpperCase() == "WORLDWIDE" ||
-        $(this).text().toUpperCase() == "COUNTRY"
+        $(this).find("select").val().toUpperCase() == "WORLDWIDE" ||
+        $(this).find("select").val().toUpperCase() == "COUNTRY"
       ) {
         $(`#region-list .nav-link[data-value="*"]`).trigger("click");
       }
 
-      if ($(this).text().toUpperCase() != "WORLDWIDE") {
+      if ($(this).find("select").val().toUpperCase() != "WORLDWIDE") {
         $("#tariff-select").hide();
       } else {
         $("#tariff-select").show();
       }
     });
 
-    $("#region-select").on("click", ".dropdown-item", function (e) {
-      let continent = $(this).text().toUpperCase();
+    $("#region-select").on("click", function (e) {
+      let continent = $(this).find("select").val().toUpperCase();
 
       continent =
         continent == "OCEANIA"
@@ -427,10 +427,110 @@ $(document).ready(function () {
       $(".js-tariff-name").text(continent);
     });
 
-    $("#country-select").on("click", ".dropdown-item", function (e) {
-      let country = $(this).text().toUpperCase();
+    $("#country-select").on("click", function (e) {
+      let country = $(this).find("select").val().toUpperCase();
       $(".js-tariff-name").text(country);
     });
+
+    $(".btn-service-toggler")
+      .mouseenter(function () {
+        $(this).siblings("img").css({
+          transform: "scale(1.2)",
+        });
+      })
+      .mouseleave(function () {
+        $(this).siblings("img").css({
+          transform: "scale(1)",
+        });
+      })
+      .click(function (e) {
+        const status = $(this).children("span").first().text();
+        const target = $(this).data("target");
+        const dataNames = $(this).data("names").split(",");
+        const index = parseInt(
+          $(".js-shopping-card__card").attr("data-item"),
+          10
+        );
+
+        toggleCheckbox($(this).children("input"));
+
+        if (status == "+") {
+          addService(target, index);
+
+          $(this).css("color", "#ff0000");
+          $(this).children("span").first().text("-");
+          if (target == "#virtual-number" || target == "#substitution-number") {
+            if (target == "#virtual-number") {
+              customer.Vprice = 500;
+            }
+
+            if (target == "#substitution-number") {
+              customer.Sprice = 25;
+            }
+
+            elCheckoutBtn.attr("disabled", true);
+          }
+        } else {
+          dataNames.forEach(function (d) {
+            customer[d] = "";
+          });
+
+          if (target == "#virtual-number" && customer.Vprice == 500) {
+            customer.Vprice = 0;
+          }
+
+          if (target == "#substitution-number" && customer.Sprice == 25) {
+            customer.Sprice = 0;
+          }
+
+          if (target == "#voice-sms") {
+            $('select[name="VSbalance"]').prop("selectedIndex", -1);
+            $("#enter-balance").selectpicker("refresh");
+          }
+
+          removeService(target, index);
+          $(this).css("color", "#000");
+          $(this).children("span").first().text("+");
+
+          //hide joined info
+          $(".join-info").hide();
+          $(".virtual-inner").show();
+          //end of joined info
+
+          if (target == "#virtual-number" || target == "#substitution-number") {
+            const newsTarget =
+              target == "#virtual-number"
+                ? "#substitution-number"
+                : "#virtual-number";
+            if (
+              $(target).siblings(newsTarget).attr("style") == "display: none;"
+            ) {
+              elCheckoutBtn.removeAttr("disabled");
+              elCheckoutBtn.show();
+            }
+          }
+        }
+
+        $(".js-total-price-amount").text(customer.totalPrice);
+
+        const includedItems = [];
+        const includedItemsBtns = $(`.btn-service-toggler:contains('-')`);
+
+        includedItemsBtns.each(function (btn) {
+          includedItems.push($(this).attr("data-target"));
+        });
+
+        if ($("body").hasClass("basket-body")) {
+          basket[index - 1].includedItems = includedItems;
+
+          console.log(basket);
+
+          localStorage.removeItem("basket");
+          localStorage.setItem("basket", JSON.stringify(basket));
+        }
+
+        updateCardInfo(customer);
+      });
 
     $(".js-included-country-text").on("click", function () {
       const isClickable = $(this).next().hasClass("js-items-toggler");
