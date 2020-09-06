@@ -108,6 +108,7 @@
   .sim-number
     font-family: $semibold
   .info-bottom
+    white-space: nowrap
     font-size: 10px
   .info-top
     img,
@@ -125,6 +126,7 @@
     border-radius: 2px
 
 .dashboard-box
+  overflow: hidden
   .col-lg-4
     flex: 0 0 30%
     max-width: 30%
@@ -135,6 +137,7 @@
 .dashboard-card
   border-radius: 10px
   padding: 10px 15px
+  max-width: 210px
   background: rgba(135, 135, 135, 0.11)
   .card-top
     font-size: 12px
@@ -364,6 +367,7 @@
 
 .list-plans
   overflow: hidden
+  max-width: 360px
   &[data-sticky-wrap]
     background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,1) 0,rgba(10,10,10,1) 100%)
     z-index: 4
@@ -523,7 +527,7 @@
                         
         
   .basket-line
-    grid-template-columns: 2fr 1.5fr 2fr 2fr 1fr 1fr 1fr
+    grid-template-columns: 1.7fr 2fr 2fr 2fr 1fr 1fr 1fr
     &:nth-child(2n+1):not(.owner-list-header)
       background: rgba(135, 135, 135, 0.11)
   .basket-item
@@ -534,6 +538,13 @@
         font-size: 14px
         strong
           font-size: 18px
+    .name-wrapper
+      max-width: 110px
+      p
+        width: 80px
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
     .included-items-wrapper
       width: 100%
       padding: 0 5px
@@ -545,6 +556,7 @@
     .location-name-wrapper
       margin-left: 5px
     .location-name
+      max-width: 85px
       font-size: 15px
     .sim-type-wrapper
       margin-left: 5px
@@ -719,3 +731,53 @@
       font-size: 20px !important
     .d-block
       font-size: 22px
+
+@media screen and ( max-width: 1370px )
+  .profile-header + .row
+    flex-direction: column
+    .col-lg-9
+      width: 100% !important
+      flex: 0 0 100%
+      max-width: 100%
+  .list-plans-wrapper
+    margin-top: 25px
+    padding-left: 15px
+    padding-right: 15px
+  .owners-list
+    transform: translateX(0)
+    min-width: auto
+  .inner-owner-list-wrapper
+    overflow-x: auto
+    .owner-list-header,
+    .inner-owner-box
+      min-width: 950px
+    .location-name-wrapper
+      // width: 70px
+  .basket-line .remove-btn 
+    left: -20px
+    top: 10px
+
+@media screen and ( max-width: 992px )
+  .trended-plans .trended-plans-slider
+    padding: 0 0 !important
+  .dashboard__content
+    flex-wrap: nowrap
+    .section-tab
+      flex: unset
+      max-width: 230px
+    .col-lg-8
+      padding-left: 0 !important
+      flex: unset
+      max-width: 100%
+      width: 100%
+
+@media screen and ( max-width: 768px )
+  .dashboard__content
+    flex-wrap: wrap
+    flex-direction: column-reverse
+
+@media screen and ( max-width: 768px )
+  .dashboard-box__top
+    display: flex
+    flex-wrap: wrap
+
