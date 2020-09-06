@@ -289,3 +289,56 @@
     font-size: 10px !important
   .recharge-plans-list
     border-bottom: 1px solid #787878
+
+@media screen and ( max-width: 992px )
+  .dashboard-box .left-recharge
+    .inner-inputs-wrapper
+      display: flex
+      width: 100%
+      justify-content: space-between
+      flex-wrap: wrap
+      .input-box
+        min-width: 220px
+        margin-bottom: 0
+        margin-bottom: 10px
+  .payment-wrapper .custom-select-arrow 
+    min-width: 220px
+    width: 50%
+    select
+      padding-right: 35px
+  .payment-methods-wrapper
+    flex-wrap: wrap
+    .img-wrapper
+      margin-bottom: 5px
+  .tab-wrapper 
+    flex-direction: column-reverse
+    .tab-content
+      width: 100%
+    .recharge-inputs
+      display: flex
+      align-items: flex-end
+      flex-wrap: wrap
+      margin-top: 15px
+      margin-bottom: 20px
+      .pay-btn
+        margin-top: 15px
+    .col-4,
+    .col-7
+      max-width: 100%
+      flex: unset
+  .tab-side-button-wrapper
+    transform: translateX(0) translateY(15px) !important
+    width: 250px
+    min-height: 55px
+    .link-with-arrow
+      margin-top: -13px
+      transform: none !important
+      position: static
+  
+
+@media screen and ( max-width: 524px )
+  .tab-content
+    .billing-info-box
+      display: flex
+      flex-direction: column
+    

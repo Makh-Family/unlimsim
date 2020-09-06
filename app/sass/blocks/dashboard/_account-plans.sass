@@ -251,3 +251,48 @@ button[data-target="#plans-list-collapse"]
       color: #fff
       padding: 1px 15px
       margin: 0 auto
+
+@media screen and ( max-width: 1370px )
+  .list-plans-wrapper
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 100%
+    flex: unset
+    max-width: 100%
+    >span
+      width: 290px
+      order: 3
+    
+  .list-plans
+    margin-bottom: 20px
+    
+  .dashboard-additional-services
+    order: 2
+  .device-info
+    order: 1
+  .dashboard-additional-services,
+  .device-info
+    margin: 0
+    margin-bottom: 20px
+    max-width: 290px
+
+@media screen and ( max-width: 992px )
+  .widened 
+    .js-dashboard-slider
+      max-height: 580px
+      overflow-y: auto
+      align-content: unset !important
+      justify-content: space-around
+      .item
+        margin-bottom: 20px !important
+        margin-right: 0 !important
+        margin-left: 0 !important
+      
+
+@media screen and ( max-width: 768px )
+  .red-hovered-nav
+    width: 100% !important
+    flex-wrap: wrap
+  
