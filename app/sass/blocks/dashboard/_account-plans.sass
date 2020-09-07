@@ -37,6 +37,9 @@
 .js-dashboard-slider,
 .js-dashboard-box-slider
   flex-wrap: wrap
+  .slick-disabled
+    opacity: 0
+    pointer-events: none
   .slick-prev,
   .slick-next
     font-size: 0
@@ -68,13 +71,15 @@
     margin-bottom: 20px
   .widen-btn
     transform: rotate(180deg)
+    
 
 .section-tab .js-carousel .js-dashboard-slider
   div.item
     height: auto
     border: none
     padding: 10px
-    padding-bottom: 15px
+    padding-bottom: 20px
+    padding-top: 20px
     background: url(../img/icons/item-bg.png) no-repeat center center,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
     border-radius: 15px
     img[alt="logo"]
@@ -184,6 +189,8 @@ button[data-target="#plans-list-collapse"]
     justify-content: center
     transition: 0.3s ease
 
+
+
 .plans-wrapper
   padding-right: 30px
 
@@ -199,6 +206,10 @@ button[data-target="#plans-list-collapse"]
 
 .plans-list-wrapper
   padding-right: 20px
+  button[data-target="#plans-list-collapse"]
+    transform: rotate(180deg)
+    &.collapsed
+      transform: rotate(0)
   .js-basket-item
     position: relative
     padding-left: 35px
@@ -235,13 +246,17 @@ button[data-target="#plans-list-collapse"]
   width: 100%
   min-width: unset
   transform: translateX(0)
+  .widen-btn
+    transform: rotate(180deg)
+  .widen-btn.collapsed
+    transform: rotate(0)
   .inner-owner-list
     padding: 0
   .owner-list-header
     margin-left: 0
-    grid-template-columns: 2fr 1.5fr 2.5fr 1.5fr 1fr 1.2fr
+    grid-template-columns: 1.6fr 2fr 1.5fr 1fr 1fr 1.2fr
   .js-owner-line
-    grid-template-columns: 2fr 1.5fr 2.5fr 1.5fr 1fr 1.2fr
+    grid-template-columns: 1.6fr 2fr 1.5fr 1fr 1fr 1.2fr
   .basket-item
     .rounded-button
       font-size: 16px

@@ -1,8 +1,6 @@
 .footer__top
   background: $accent
   padding: 30px 0
-  z-index: 6
-  position: relative
 
 .footer__navbar
   max-width: 960px
@@ -26,12 +24,16 @@
   background: #fff
 
 .footer__contact
+  width: 95%
+  margin: 0 auto
+  justify-content: space-around !important
   .contact-link
     display: block
-    padding: 0 10px
+    padding: 5px 10px
     border: 2px solid #ffffff
-    transform: skew(-15deg,-15deg) rotate(15deg)
+    transform: skewX(-20deg)
     border-radius: 10px
+    line-height: 1
     transition: 0.3s ease
 
     &:hover
@@ -41,7 +43,7 @@
 
     span
       display: block
-      transform: skew(15deg,15deg) rotate(-15deg) scaleX(1.1)
+      transform: skewX(20deg)
       font-weight: bold
       font-size: 22px
   a
@@ -85,7 +87,13 @@
       img
         filter: invert(1)
 
+#appStoreModal
+  margin-top: 100px
+
 @media (max-width: 576px)
+  .footer__contact
+    width: 100%
+    justify-content: space-between !important
   .footer__top
     .navbar-nav
       width: 100% !important

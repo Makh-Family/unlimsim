@@ -59,7 +59,7 @@
     display: flex
     font-style: italic
     font-family: $semibold
-    text-transform: unset
+    text-transform: unset !important
     flex-direction: row !important
     .skewed-box
       margin-right: 10px
@@ -68,7 +68,7 @@
       background: transparent
       line-height: 1
       border: 2px solid $accent
-      padding: 5px 7px
+      padding: 5px 5px
       span
         display: flex
         align-items: center
@@ -251,6 +251,11 @@
     transform: skewX(-20deg) scale(1.1)
   
 .share-modal
+  align-items: center !important
+  .modal-dialog
+    margin-top: 0
+  .modal-content
+    padding-bottom: 20px
   .inner-modal-header
     padding: 20px
   .modal-title
@@ -261,5 +266,5 @@
     white-space: nowrap
   .social-links-wrapper
     width: 70%
-    margin: 0 auto 25px auto
+    margin: 0 auto
     justify-content: space-between
