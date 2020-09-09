@@ -58,7 +58,6 @@ gulp.task("scripts", function () {
         "node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js",
         "node_modules/bootstrap-validate/dist/bootstrap-validate.js",
         "node_modules/slick-carousel/slick/slick.js",
-        "node_modules/sticky-js/src/sticky.js",
         "app/js/main.js",
         "app/js/index.js",
         "app/js/my.js",

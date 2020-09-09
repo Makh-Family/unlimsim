@@ -209,6 +209,8 @@
       display: block
       width: 14px
       height: 14px
+      min-height: 14px
+      min-width: 14px
       font-size: 12px
       line-height: 10px
       text-align: center
@@ -1299,6 +1301,21 @@
 
 
 @media (max-width: 575px)
+  #virtual-number .bs-select-wrapper,
+  #substitution-number .bs-select-wrapper, #substitution-number .substitution-join, #substitution-number .substitution-wrapper,
+  #virtual-number .join-info
+    padding-left: 15px
+  #virtual-number .bs-select-wrapper[data-type=virtualPeriod]
+    padding-right: 15px
+  .opening-title.form-title
+    overflow: visible
+    h3::after
+      display: none
+    .edit-btn
+      background: transparent
+      padding: 0
+      top: 100%
+
   .js-step[data-step="3"]
     .billing-info-box
       display: flex
@@ -1342,7 +1359,11 @@
     .tabs
       overflow: unset !important
   .service__item
-    margin-bottom: 20px
+    width: 26%
+    button
+      span
+        font-size: 10px
+        margin: 0 !important
   .services__line
     display: none
   .substitution-wrapper 

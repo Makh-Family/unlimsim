@@ -137,7 +137,7 @@
 .dashboard-card
   border-radius: 10px
   padding: 10px 15px
-  max-width: 210px
+  max-width: 300px
   background: rgba(135, 135, 135, 0.11)
   .card-top
     font-size: 12px
@@ -247,6 +247,9 @@
 
 .dashboard-list
   width: 93%
+  .renew-box
+    .link-with-arrow
+      display: none
   .join-info
     .price-text
     p
@@ -368,6 +371,8 @@
 .list-plans
   overflow: hidden
   max-width: 360px
+  position: sticky
+  top: 270px
   &[data-sticky-wrap]
     background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,1) 0,rgba(10,10,10,1) 100%)
     z-index: 4
@@ -553,6 +558,8 @@
     .included-items-wrapper
       width: 100%
       padding-right: 10px
+      .item-content
+        display: none
     .plan-name
       font-size: 14px
     img[alt="logo"]
@@ -567,6 +574,7 @@
       margin-left: 5px
       border-radius: 5px
       padding: 3px 5px
+      border-radius: 6px !important
     .renew-button
       border: none
       background: transparent
@@ -578,6 +586,8 @@
 .btn-rotate
   transform: rotate(180deg)
 
+.show-more-btn
+  display: none
 
 .dashboard-virtual-number
   font-size: 10px
@@ -737,6 +747,13 @@
     .d-block
       font-size: 22px
 
+.mobile-opening-title,
+.mobile-list-line,
+.mobile-title-header
+  display: none
+.list-line .plan-name button[data-target="#dashboard-internet-data"]
+  display: none
+
 @media screen and ( max-width: 1370px )
   .profile-header + .row
     flex-direction: column
@@ -748,6 +765,8 @@
     margin-top: 25px
     padding-left: 15px
     padding-right: 15px
+  .list-plans
+    position: static
   .owners-list
     transform: translateX(0)
     min-width: auto
@@ -756,8 +775,6 @@
     .owner-list-header,
     .inner-owner-box
       min-width: 950px
-    .location-name-wrapper
-      // width: 70px
   .basket-line .remove-btn 
     left: -20px
     top: 10px
@@ -791,3 +808,393 @@
   .dashboard-card
     margin-top: 20px
 
+@media screen and(min-width: 450px)
+  .dashboard__content
+    .widen-btn-wrapper
+      display: none
+      
+  .dashboard-list
+    &.collapse
+      display: block
+      height: auto !important
+      visibility: visible
+
+@media screen and ( max-width: 450px )
+  .btn-show-countries
+    top: 0
+  .plans-wrapper 
+    padding-right: 15px !important
+  .owners-list:not(.personal-plans-list)
+    .inner-owner-list-wrapper
+      overflow-x: auto
+    .owner-list-header,
+    .inner-owner-box
+      border-top: 2px solid #b9b9b9
+      min-width: unset
+    .owner-list-header
+      display: none !important
+    .inner-owner-list
+      &.widened-owner-list
+        max-height: unset
+    .mobile-title-header
+      display: block
+      h4
+        font-size: 12px
+        font-family: $semibold
+    .basket-line
+      padding: 10px
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      align-items: flex-start
+      .item-content
+        display: block !important
+        text-align: center
+        color: red
+        
+      .basket-item
+        display: none
+        .plan-name
+          font-size: 16px
+          margin-right: 5px
+        &:nth-child(2)
+          order: 1
+          display: flex
+        &:nth-child(3)
+          display: flex
+          margin-right: 50px
+          order: 2
+          img
+            width: 60px
+            height: 14px
+        &:nth-child(4)
+          margin-top: 20px
+          order: 3
+        &:nth-child(5)
+          order: 5
+          width: 100%
+          margin: 15px 0
+          padding: 8px 0
+          border-top: 1px solid #787878
+          border-bottom: 1px solid #787878
+          a
+            width: 20%
+            &:hover
+              text-decoration: none
+          .included-items-wrapper
+            .img-wrapper
+              display: flex
+              justify-content: center
+              align-items: center
+              margin-bottom: 5px
+        &:nth-child(6)
+          order: 4
+          margin-top: 20px
+          font-style: italic
+        &:nth-child(7)
+          order: 6
+          width: 100%
+          p
+            margin: 0 auto
+            font-size: 20px
+            strong
+              font-size: 30px
+        &:nth-child(8)
+          order: 7
+          width: 80%
+          margin: 0 auto
+          margin-top: 10px
+          flex-wrap: wrap
+          align-items: baseline
+          justify-content: center
+          .show-more-btn
+            margin: 0 10px
+          .show-more-btn,
+          button
+            display: block
+            font-size: 20px
+            padding: 5px 35px
+            line-height: 1
+            margin-bottom: 15px
+
+          .renew-button
+            margin-left: 10px
+            margin-right: 10px
+            background: $accent
+            border-radius: 15px
+            border: 2px solid $accent
+            .img-wrapper
+              display: none
+            span
+              border: none
+              color: #fff
+              font-size: 20px
+    .inner-owner-list
+      padding-left: 0
+    .remove-btn
+      left: unset
+      right: 10px
+      top: 17px
+      width: 15px
+      height: 15px
+      background-image: url("../img/icons/arrow-down-g.svg")
+      background-size: contain
+      background-position: center center
+      background-repeat: no-repeat
+      img
+        display: none
+
+
+  .dashboard-list-actions
+    width: 90%
+    display: flex
+    margin: 0 auto
+    flex-wrap: wrap
+    align-items: baseline
+    justify-content: space-between
+    button
+      font-size: 14px
+      padding: 3px 20px
+      white-space: nowrap
+      &:first-child
+        margin-bottom: 10px
+  .list-plans-wrapper
+    .list-plans,
+    .device-info,
+    .dashboard-additional-services
+      position: static
+      width: 100%
+      max-width: 100%
+      order: 1
+  .mobile-opening-title
+    display: block
+    margin: 10px auto
+    h3
+      font-size: 20px
+    span
+      height: 2px
+      margin-bottom: 0
+  .dashboard-box__top
+    .opening-title
+      display: none
+    .dashboard-box__name
+      margin-bottom: 10px
+    .sim-basic-info>div
+      justify-content: flex-start
+  .dashboard__content
+    flex-direction: column
+    .widen-btn-wrapper
+      border: none
+      margin-top: 0
+      button
+        transform: rotate(180deg)
+        &.collapsed
+          transform: rotate(0)
+    .col-lg-8
+      padding: 0
+    .section-tab
+      max-width: 100%
+    .dashboard-card
+      margin: 0 auto 15px auto
+      width: 310px
+      max-width: 100%
+      button[data-target="#share-modal"]
+        width: 35px
+        height: 35px
+        img
+          width: 18px
+          height: 18px
+          max-width: 18px
+          max-height: 18px
+        &::before
+          width: 28px
+          height: 28px
+      .card-top>span 
+        font-size: 17px
+        color: #787878
+      .included-items-wrapper
+        margin: 10px
+        .img-wrapper
+          width: auto
+        .item-name
+          font-size: 10px !important
+      .plan-type-wrapper
+        img
+          width: 90px
+          height: 21px
+        span
+          font-size: 25px
+          line-height: 1
+          padding: 3px 10px
+          font-style: italic
+          font-weight: 300
+      .total-wrapper
+        align-items: baseline !important
+        span
+          font-size: 20px
+          strong
+            font-size: 40px
+      .plan-time
+        span
+          font-size: 14px
+  
+  .dashboard-list
+    width: 100%
+    padding-left: 15px
+    padding-right: 15px
+    &.show
+      margin-bottom: 15px
+    .list-header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 8px 0
+      background: transparent
+      border-radius: 0
+      p
+        display: none
+        &:first-child,
+        &:last-child
+          display: block
+          margin-left: 0
+    .quantity,
+    .residue,
+    .expiration,
+    .renew-btn
+      display: none
+    .renew-box
+      &.renewed-mobile
+        .link-with-arrow
+          display: flex
+        .add-to-pay-btn
+          display: none
+        .list-line-title
+          span:first-child
+            display: flex
+        form
+          display: none !important
+      .link-with-arrow
+        font-style: italic
+        font-family: $semibold
+        font-size: 18px
+        margin-top: 0 !important
+        flex-direction: row-reverse
+        margin-bottom: 15px
+        display: none
+        color: #000
+        span 
+          margin-right: 5px
+      .list-line
+        display: none
+      form
+        flex-direction: column
+        .col-lg-6,
+        .col-sm-6
+          padding: 0
+      .mobile-list-line
+        .content
+          padding: 10px 15px
+          padding-bottom: 0
+          background: #f2f2f2
+          border-radius: 5px
+      .price-text
+        p
+          font-size: 18px
+          font-style: italic
+          text-align: center
+          font-family: $semibold
+          span
+            font-size: 33px
+      .add-to-pay-btn
+        width: 100%
+        margin-bottom: 15px
+        font-size: 20px
+
+    .list-line
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-wrap: wrap
+      .multi-collapse
+        width: 100%
+        margin-left: 0
+      .plan-name
+        button[data-target="#dashboard-internet-data"]
+          display: inline-flex
+  #dashboard-internet-data
+    width: 100%
+  #dashboard-voice-sms,
+  #dashboard-substitution-number
+    > p
+      display: none
+    .content__item
+      p
+        margin-bottom: 1rem
+  #service-substitution-number
+    form
+      .virtual-inner
+        width: 100%
+        .col-12
+          padding: 0
+  .mobile-list-line
+    display: block
+    width: 100%
+    & +.location-info, 
+      display: none
+      & + .number-info
+        display: none
+      
+    .list-line-title
+      margin-bottom: 0
+      display: flex
+      align-items: center
+      span
+        font-size: 14px
+        font-family: $semibold
+        &:first-child
+          display: none
+          margin-right: 5px
+          width: 15px
+          height: 15px
+          align-items: center
+          background: #52BE32
+          justify-content: center
+          border-radius: 50%
+    .rounded-button
+      background: $accent
+      color: #fff
+      margin-bottom: 15px
+    .content
+      display: flex
+      align-items: center
+      justify-content: space-between
+    .content__item
+      width: 28%
+      &:not(:last-child)
+        p
+          border-right: 1px solid #707070
+      h4
+        display: inline-block
+        font-size: 14px
+        font-family: $semibold
+        color: #787878
+        margin-bottom: 0
+      p
+        font-size: 18px !important
+        font-family: $semibold
+        font-style: normal
+        margin-bottom: 1rem
+
+    
+@media screen and ( max-width: 360px )
+  .owners-list:not(.personal-plans-list) 
+    .basket-line 
+      .basket-item
+        &:nth-child(3)
+          margin-right: 25px
+          img
+            width: 45px
+  .location-name-wrapper
+    max-width: 60px
+    .location-name
+      font-size: 13px !important

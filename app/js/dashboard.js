@@ -1,4 +1,20 @@
 // gloabl variables
+jQuery.event.special.touchstart = {
+  setup: function (_, ns, handle) {
+    this.addEventListener("touchstart", handle, {
+      passive: !ns.includes("noPreventDefault"),
+    });
+  },
+};
+
+jQuery.event.special.touchmove = {
+  setup: function (_, ns, handle) {
+    this.addEventListener("touchmove", handle, {
+      passive: !ns.includes("noPreventDefault"),
+    });
+  },
+};
+
 const dashboardSlider = {
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -32,15 +48,39 @@ const dashboardBoxSlider = {
   infinite: false,
 };
 
-const stickyPlansList = new Sticky(".list-plans");
-
-console.log(stickyPlansList);
 $(document).ready(function () {
   const target = getUrlParams()["target"];
 
   if ($(".shopping-card__form").length) {
     $(`.btn-service-toggler[data-target="${target}"]`).trigger("click");
   }
+
+  $('.btn-buy[data-purpose="add-plan"]').on("click", function () {
+    const data = getItemDetails($(this).parent());
+    const elPlansWrapper = $(".visible-plan-list");
+    const id =
+      elPlansWrapper.children.length +
+      $("#plans-list-collapse").children().length +
+      1;
+    const itemClone = getItemClone(data, id);
+
+    if (elPlansWrapper.children().length == 2) {
+      itemClone.prependTo(elPlansWrapper);
+      elPlansWrapper
+        .children()
+        .eq(1)
+        .detach()
+        .prependTo("#plans-list-collapse");
+    } else {
+      itemClone.prependTo(elPlansWrapper);
+    }
+    if ($(window).width() <= 450) {
+      const offset = $(".list-plans").offset();
+      $("body, html").animate({
+        scrollTop: offset.top,
+      });
+    }
+  });
 });
 
 $(window).on("beforeunload", function () {
@@ -97,17 +137,6 @@ $(".js-widen-btn").on("click", function () {
   }
 });
 
-$(".js-add-to-pay-btn").on("click", function () {
-  const target = $(this).data("js-target");
-  const incItemTarget = $(this).data("target");
-
-  const relatedRenewBtn = $(this).parent().parent().parent().prev();
-
-  relatedRenewBtn.prop("disabled", true);
-
-  $(target).addClass("renewed");
-});
-
 $(".js-change-btn").bind("click", function () {
   $("#predashboard-virtual-number").collapse("hide");
 });
@@ -125,15 +154,6 @@ $(".js-renew-btn").on("click", function () {
     target.removeClass("d-none");
     $(".empty-services-wrapper").addClass("d-none");
   }
-  setTimeout(() => {
-    stickyPlansList.update();
-  }, 500);
-});
-
-$(".js-owner-line").on("click", function () {
-  const slideNumber = $(this).data("item");
-  console.log(slideNumber);
-  sliderDashboardBox.slick("slickGoTo", slideNumber - 1);
 });
 
 $(".js-recharge-all-btn").on("click", function () {
@@ -188,23 +208,6 @@ $(".js-payment-btn").on("click", function () {
   $(".shopping-card__card-list").addClass("payed");
 });
 
-$('.btn-buy[data-purpose="add-plan"]').on("click", function () {
-  const data = getItemDetails($(this).parent());
-  const elPlansWrapper = $(".visible-plan-list");
-  const id =
-    elPlansWrapper.children.length +
-    $("#plans-list-collapse").children().length +
-    1;
-  const itemClone = getItemClone(data, id);
-
-  if (elPlansWrapper.children().length == 2) {
-    itemClone.prependTo(elPlansWrapper);
-    elPlansWrapper.children().eq(1).detach().prependTo("#plans-list-collapse");
-  } else {
-    itemClone.prependTo(elPlansWrapper);
-  }
-});
-
 const sliderDashboard = $(".js-dashboard-slider").slick(dashboardSlider);
 
 const sliderDashboardBox = $(".js-dashboard-box-slider").slick(
@@ -226,10 +229,76 @@ function removeItemFromOwnerList(el) {
   $(`.visible-content[data-item="${itemNumber}"]`).remove();
   $(`.js-basket-item[data-item="${itemNumber}"]`).remove();
   sliderDashboardBox.slick("slickRemove", itemNumber - 1);
+}
 
-  setTimeout(() => {
-    stickyPlansList.update();
-  }, 300);
+///responsive
+
+if ($(window).width() <= 450) {
+  $(".js-mobile-exp").prepend("Exp. ");
+  $('.plan-name button[data-toggle="collapse"]').bind("click", function () {
+    const target = $(this).data("target");
+    $(target).next().collapse("hide");
+    $(this)
+      .parent()
+      .parent()
+      .parent()
+      .find(".mobile-list-line .js-renew-btn")
+      .show();
+  });
+
+  $(".js-show-more").on("click", function () {
+    const slideNumber = $(this).parent().parent().data("item");
+    sliderDashboardBox.slick("slickGoTo", slideNumber - 1);
+
+    $("body, html").animate({
+      scrollTop: $(".dashboard-box").offset().top - 40,
+    });
+  });
+
+  $(".js-renew-btn").bind("click", function () {
+    $(this).hide();
+  });
+
+  $(".js-add-to-pay-btn").on("click", function () {
+    const elParent = $(this).parent().parent().parent();
+    elParent.addClass("renewed-mobile");
+  });
+
+  $(".js-remove-item").on("click", function (e) {
+    const elsSiblings = $(this).siblings(".basket-item");
+    $(".owners-list .inner-owner-list").addClass("widened-owner-list");
+    elsSiblings.each(function (i) {
+      if (i == 1 || i == 0) {
+      } else {
+        $(this).toggleClass("d-flex");
+      }
+    });
+  });
+
+  $(".tab-content .billing-box .opening-title").on("click", function () {
+    if (!$(this).find(".link-with-arrow").length) {
+      $(this).next().toggleClass("d-flex");
+    }
+  });
+} else {
+  $(".js-add-to-pay-btn").on("click", function () {
+    const target = $(this).data("js-target");
+
+    const relatedRenewBtn = $(this).parent().parent().parent().prev();
+
+    relatedRenewBtn.prop("disabled", true);
+
+    $(target).addClass("renewed");
+  });
+
+  $(".js-owner-line").on("click", function () {
+    const slideNumber = $(this).data("item");
+    sliderDashboardBox.slick("slickGoTo", slideNumber - 1);
+  });
+
+  $(".js-remove-item").on("click", function () {
+    removeItemFromOwnerList($(this));
+  });
 }
 
 function getUrlParams() {

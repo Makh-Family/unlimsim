@@ -3,12 +3,18 @@
   display: flex
   align-items: center
   position: relative
+  &.active
+    .profile-img
+      background: $accent
+      color: #ffffff
+      img[alt="arrow-down"]
+        filter: invert(1)
   &:hover
     .profile-img
       background: $accent
       color: #ffffff
       img[alt="arrow-down"]
-        filter: invert(1 )
+        filter: invert(1)
     .profile-actions
       opacity: 1
       pointer-events: unset
@@ -121,9 +127,77 @@
     background: $darkerred
     color: #fff
 
+
+
 @media screen and ( max-width: 992px )
   .profile__card
     max-width: 250px
+    margin-right: auto
+    margin-left: auto
   .account-menu
     margin-bottom: 0 !important
     width: 100% !important
+
+
+@media screen and ( max-width: 450px )
+  .account-menu.red-hovered-nav
+    margin-top: -15px !important
+    .line
+      margin-top: 5px
+      margin-bottom: 20px
+    a
+      .img-wrapper
+        width: 60px
+        height: 35px
+        img
+          max-width: 100%
+          max-height: 100%
+      h4
+        font-size: 12px
+        font-family: $semibold
+        border: none !important
+  .my-profile
+    width: 100px
+    margin-right: auto
+    margin-left: unset !important
+    .profile-img
+      height: 25px
+    span
+      font-weight: normal
+      font-family: $default-font
+      font-size: 12px
+      + img
+        width: 8px
+        height: 8px
+    .user-img-wrapper
+      width: 15px
+      height: 15px
+  .profile-header
+    >.row
+      flex-direction: column-reverse
+      .profile-balance 
+        transform: translateY(-30px)
+        margin: 0 !important
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        flex-direction: row
+        p
+          font-size: 10px
+          margin-bottom: 7px
+          span
+            font-size: 12px
+          strong
+            font-size: 17px
+      .recharge-link
+        width: 12px
+        height: 12px
+        font-size: 0
+        border-radius: 50%
+        padding: 0
+        margin-left: 5px
+        background-image: url('../img/icons/arrow-right.svg')
+        background-size: 35%
+        background-position: 55% center
+        background-repeat: no-repeat
+

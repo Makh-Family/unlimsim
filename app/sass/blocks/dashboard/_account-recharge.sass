@@ -349,3 +349,72 @@
       display: flex
       flex-direction: column
     
+@media screen and ( max-width: 400px )
+  .payed-box 
+    .payed-box-content
+      flex-direction: column
+      align-items: flex-start
+      width: 100%
+      .img-wrapper
+        margin: 0 auto
+    .payed-links-wrapper
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 90%
+      margin: 0 auto
+      button
+        padding: 3px 25px
+      a
+        padding: 3px 25px
+        background: $accent
+        color: #fff
+        border: 2px solid $accent
+        transition: 0.3s ease
+        &:hover
+          background: $darkerred
+          color: #fff
+          text-decoration: none
+  .payed-message
+    display: inline-block
+    width: 220px
+    margin-top: 15px
+  .tab-side-button-wrapper
+    width: 100%
+  .dashboard-box .left-recharge .inner-inputs-wrapper .input-box
+    max-width: 100%
+    width: 100%
+  #top-up-balance
+    input
+      width: 100%
+  .pay-btn,
+  .payment-btn
+    width: 100%
+  .tab-content
+    .billing-box
+      .link-with-arrow
+        .img-wrapper,
+        .line
+          display: none !important
+      .step-content-wrapper:not(.collapse)
+        display: none
+      .edit-link
+        transform: translateY(25px)
+      .opening-title
+        user-select: none
+        overflow: visible
+        cursor: pointer
+        justify-content: unset
+        flex-direction: row
+        align-items: center
+        &::after
+          width: 15px
+          height: 15px
+          display: block
+          border-radius: 50%
+          content: ''
+          background-image: url("../img/icons/arrow-right.svg")
+          background-position: center center
+          background-repeat: no-repeat
+          background-size: 30%
+          background-color: $accent

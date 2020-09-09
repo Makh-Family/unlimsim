@@ -11,6 +11,12 @@ const elCheckoutBtn = $(".btn-checkout");
 $(document).ready(function () {
   $("body").removeClass("preload");
 
+  elCheckoutBtn.on("click", function () {
+    $("body, html").animate({
+      scrollTop: 0,
+    });
+  });
+
   if (localStorage.getItem("basket")) {
     basket = [...JSON.parse(localStorage.getItem("basket"))];
     console.log(basket.length);
@@ -774,7 +780,7 @@ $(document).ready(function () {
         transform: "scale(1)",
       });
     })
-    .click(function (e) {
+    .on("click", function (e) {
       const status = $(this).children("span").first().text();
       const target = $(this).data("target");
       const dataNames = $(this).data("names").split(",");

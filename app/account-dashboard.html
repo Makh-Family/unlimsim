@@ -269,6 +269,10 @@
     <div class="row">
 
       <div class="col-lg-9 col-md-12">
+        <div class="opening-title mobile-opening-title">
+          <span></span>
+          <h3>Dashboard</h3>
+        </div>
         <div class="js-dashboard-box-slider">
 
           <div class="dashboard-box">
@@ -382,11 +386,15 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="widen-btn-wrapper">
+                  <button type="button" data-toggle="collapse"
+                    class="btn widen-btn collapsed mobile-widen-dashboard-list" data-target=".dashboard-list"><img
+                      src="img/icons/arrow-down-g.svg" alt="arrow"></button>
+                </div>
               </div>
 
               <div class="col-lg-8">
-                <div class="dashboard-list">
+                <div class="dashboard-list collapse">
                   <div class="list-header list-line">
                     <p>Name services</p>
                     <p>Quantity</p>
@@ -596,11 +604,15 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="widen-btn-wrapper">
+                  <button type="button" data-toggle="collapse"
+                    class="btn widen-btn collapsed mobile-widen-dashboard-list" data-target=".dashboard-list"><img
+                      src="img/icons/arrow-down-g.svg" alt="arrow"></button>
+                </div>
               </div>
 
               <div class="col-lg-8">
-                <div class="dashboard-list">
+                <div class="dashboard-list collapse">
                   <div class="list-header list-line">
                     <p>Name services</p>
                     <p>Quantity</p>
@@ -810,11 +822,15 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="widen-btn-wrapper">
+                  <button type="button" data-toggle="collapse"
+                    class="btn widen-btn collapsed mobile-widen-dashboard-list" data-target=".dashboard-list"><img
+                      src="img/icons/arrow-down-g.svg" alt="arrow"></button>
+                </div>
               </div>
 
               <div class="col-lg-8">
-                <div class="dashboard-list">
+                <div class="dashboard-list collapse">
                   <div class="list-header list-line">
                     <p>Name services</p>
                     <p>Quantity</p>
@@ -1023,11 +1039,15 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="widen-btn-wrapper">
+                  <button type="button" data-toggle="collapse"
+                    class="btn widen-btn collapsed mobile-widen-dashboard-list" data-target=".dashboard-list"><img
+                      src="img/icons/arrow-down-g.svg" alt="arrow"></button>
+                </div>
               </div>
 
               <div class="col-lg-8">
-                <div class="dashboard-list">
+                <div class="dashboard-list collapse">
                   <div class="list-header list-line">
                     <p>Name services</p>
                     <p>Quantity</p>
@@ -1237,11 +1257,15 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="widen-btn-wrapper">
+                  <button type="button" data-toggle="collapse"
+                    class="btn widen-btn collapsed mobile-widen-dashboard-list" data-target=".dashboard-list"><img
+                      src="img/icons/arrow-down-g.svg" alt="arrow"></button>
+                </div>
               </div>
 
               <div class="col-lg-8">
-                <div class="dashboard-list">
+                <div class="dashboard-list collapse">
                   <div class="list-header list-line">
                     <p>Name services</p>
                     <p>Quantity</p>
@@ -1451,11 +1475,15 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="widen-btn-wrapper">
+                  <button type="button" data-toggle="collapse"
+                    class="btn widen-btn collapsed mobile-widen-dashboard-list" data-target=".dashboard-list"><img
+                      src="img/icons/arrow-down-g.svg" alt="arrow"></button>
+                </div>
               </div>
 
               <div class="col-lg-8">
-                <div class="dashboard-list">
+                <div class="dashboard-list collapse">
                   <div class="list-header list-line">
                     <p>Name services</p>
                     <p>Quantity</p>
@@ -1561,7 +1589,9 @@
 
 
         <div class="basket-list owners-list js-owner-list">
-
+          <div class="mobile-title-header">
+            <h4>Other packages</h4>
+          </div>
 
           <div class="inner-owner-list-wrapper">
             <div class="basket-line owner-list-header">
@@ -1576,8 +1606,8 @@
             <div class="inner-owner-box">
               <div class="inner-owner-list">
                 <div class="basket-line js-owner-line" data-item="1">
-                  <button onclick="removeItemFromOwnerList($(this));" data-item="1"
-                    class="remove-btn js-remove-item"><img src="img/icons/close.svg" alt="remove"></button>
+                  <button data-item="1" class="remove-btn js-remove-item"><img src="img/icons/close.svg"
+                      alt="remove"></button>
                   <div class="dashboard-box__name basket-item">
                     <div class="img-wrapper">
                       <img src="img/icons/user-red.svg" width="15" height="15" alt="user">
@@ -1601,38 +1631,48 @@
                   </div>
                   <div class="basket-item">
                     <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-                      <a href="account-add-plan.html" class="included-item" data-label="internet-data-wrapper">
+                      <a href="account-add-plan.html class=" included-item">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
+                          <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Internet data</h3>
                         </div>
                       </a>
-                      <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive"
-                        data-label="voice-sms-block">
+                      <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
+                          <img src="img/icons/icon5-r.png" width="24" height="20" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Voice and SMS</h3>
                         </div>
                       </a>
-                      <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive"
-                        data-label="virtual-number-block">
+                      <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
+                          <img src="img/icons/icon3-r.png" width="21" height="21" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Virtual number</h3>
                         </div>
                       </a>
-                      <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive"
-                        data-label="substitution-number-block">
+                      <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
+                          <img src="img/icons/icon4-r.png" width="18" height="18" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Substitution of numbers</h3>
                         </div>
                       </a>
                     </div>
                   </div>
-                  <div class="basket-item">
+                  <div class="basket-item js-mobile-exp">
                     25.09.2020
                   </div>
                   <div class="basket-item pay-amount">
                     <p>$ <strong>150</strong> us</p>
                   </div>
                   <div class="basket-item">
+                    <button type="button" class="rounded-button show-more-btn js-show-more">More</button>
                     <button type="button" class="renew-button link-with-arrow">
                       <div class="img-wrapper">
                         <img src="img/icons/arrow-right.svg" alt="arrow right">
@@ -1643,8 +1683,8 @@
                 </div>
 
                 <div class="basket-line js-owner-line" data-item="2">
-                  <button onclick="removeItemFromOwnerList($(this));" data-item="2"
-                    class="remove-btn js-remove-item"><img src="img/icons/close.svg" alt="remove"></button>
+                  <button data-item="2" class="remove-btn js-remove-item"><img src="img/icons/close.svg"
+                      alt="remove"></button>
                   <div class="dashboard-box__name basket-item">
                     <div class="img-wrapper">
                       <img src="img/icons/user-red.svg" width="15" height="15" alt="user">
@@ -1668,38 +1708,48 @@
                   </div>
                   <div class="basket-item">
                     <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-                      <a href="account-add-plan.html" class="included-item" data-label="internet-data-wrapper">
+                      <a href="account-add-plan.html class=" included-item">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
+                          <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Internet data</h3>
                         </div>
                       </a>
-                      <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive"
-                        data-label="voice-sms-block">
+                      <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
+                          <img src="img/icons/icon5-r.png" width="24" height="20" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Voice and SMS</h3>
                         </div>
                       </a>
-                      <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive"
-                        data-label="virtual-number-block">
+                      <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
+                          <img src="img/icons/icon3-r.png" width="21" height="21" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Virtual number</h3>
                         </div>
                       </a>
-                      <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive"
-                        data-label="substitution-number-block">
+                      <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive">
                         <div class="img-wrapper">
-                          <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
+                          <img src="img/icons/icon4-r.png" width="18" height="18" alt="icon1">
+                        </div>
+                        <div class="item-content">
+                          <h3 class="item-name">Substitution of numbers</h3>
                         </div>
                       </a>
                     </div>
                   </div>
-                  <div class="basket-item">
+                  <div class="basket-item js-mobile-exp">
                     25.09.2020
                   </div>
                   <div class="basket-item pay-amount">
                     <p>$ <strong>150</strong> us</p>
                   </div>
                   <div class="basket-item">
+                    <button type="button" class="rounded-button show-more-btn js-show-more">More</button>
                     <button type="button" class="renew-button link-with-arrow">
                       <div class="img-wrapper">
                         <img src="img/icons/arrow-right.svg" alt="arrow right">
@@ -1711,8 +1761,8 @@
 
                 <div class="collapse" id="owner-list-collapse">
                   <div class="basket-line js-owner-line" data-item="3">
-                    <button onclick="removeItemFromOwnerList($(this));" data-item="3"
-                      class="remove-btn js-remove-item"><img src="img/icons/close.svg" alt="remove"></button>
+                    <button data-item="3" class="remove-btn js-remove-item"><img src="img/icons/close.svg"
+                        alt="remove"></button>
                     <div class="dashboard-box__name basket-item">
                       <div class="img-wrapper">
                         <img src="img/icons/user-red.svg" width="15" height="15" alt="user">
@@ -1736,38 +1786,48 @@
                     </div>
                     <div class="basket-item">
                       <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-                        <a href="account-add-plan.html" class="included-item" data-label="internet-data-wrapper">
+                        <a href="account-add-plan.html class=" included-item">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
+                            <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Internet data</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive"
-                          data-label="voice-sms-block">
+                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
+                            <img src="img/icons/icon5-r.png" width="24" height="20" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Voice and SMS</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive"
-                          data-label="virtual-number-block">
+                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
+                            <img src="img/icons/icon3-r.png" width="21" height="21" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Virtual number</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive"
-                          data-label="substitution-number-block">
+                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
+                            <img src="img/icons/icon4-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Substitution of numbers</h3>
                           </div>
                         </a>
                       </div>
                     </div>
-                    <div class="basket-item">
+                    <div class="basket-item js-mobile-exp">
                       25.09.2020
                     </div>
                     <div class="basket-item pay-amount">
                       <p>$ <strong>150</strong> us</p>
                     </div>
                     <div class="basket-item">
+                      <button type="button" class="rounded-button show-more-btn js-show-more">More</button>
                       <button type="button" class="renew-button link-with-arrow">
                         <div class="img-wrapper">
                           <img src="img/icons/arrow-right.svg" alt="arrow right">
@@ -1777,8 +1837,8 @@
                     </div>
                   </div>
                   <div class="basket-line js-owner-line" data-item="4">
-                    <button onclick="removeItemFromOwnerList($(this));" data-item="4"
-                      class="remove-btn js-remove-item"><img src="img/icons/close.svg" alt="remove"></button>
+                    <button data-item="4" class="remove-btn js-remove-item"><img src="img/icons/close.svg"
+                        alt="remove"></button>
                     <div class="dashboard-box__name basket-item">
                       <div class="img-wrapper">
                         <img src="img/icons/user-red.svg" width="15" height="15" alt="user">
@@ -1802,38 +1862,48 @@
                     </div>
                     <div class="basket-item">
                       <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-                        <a href="account-add-plan.html" class="included-item" data-label="internet-data-wrapper">
+                        <a href="account-add-plan.html class=" included-item">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
+                            <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Internet data</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive"
-                          data-label="voice-sms-block">
+                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
+                            <img src="img/icons/icon5-r.png" width="24" height="20" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Voice and SMS</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive"
-                          data-label="virtual-number-block">
+                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
+                            <img src="img/icons/icon3-r.png" width="21" height="21" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Virtual number</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive"
-                          data-label="substitution-number-block">
+                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
+                            <img src="img/icons/icon4-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Substitution of numbers</h3>
                           </div>
                         </a>
                       </div>
                     </div>
-                    <div class="basket-item">
+                    <div class="basket-item js-mobile-exp">
                       25.09.2020
                     </div>
                     <div class="basket-item pay-amount">
                       <p>$ <strong>150</strong> us</p>
                     </div>
                     <div class="basket-item">
+                      <button type="button" class="rounded-button show-more-btn js-show-more">More</button>
                       <button type="button" class="renew-button link-with-arrow">
                         <div class="img-wrapper">
                           <img src="img/icons/arrow-right.svg" alt="arrow right">
@@ -1844,8 +1914,8 @@
                   </div>
 
                   <div class="basket-line js-owner-line" data-item="5">
-                    <button onclick="removeItemFromOwnerList($(this));" data-item="5"
-                      class="remove-btn js-remove-item"><img src="img/icons/close.svg" alt="remove"></button>
+                    <button data-item="5" class="remove-btn js-remove-item"><img src="img/icons/close.svg"
+                        alt="remove"></button>
                     <div class="dashboard-box__name basket-item">
                       <div class="img-wrapper">
                         <img src="img/icons/user-red.svg" width="15" height="15" alt="user">
@@ -1869,38 +1939,48 @@
                     </div>
                     <div class="basket-item">
                       <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-                        <a href="account-add-plan.html" class="included-item" data-label="internet-data-wrapper">
+                        <a href="account-add-plan.html class=" included-item">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
+                            <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Internet data</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive"
-                          data-label="voice-sms-block">
+                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
+                            <img src="img/icons/icon5-r.png" width="24" height="20" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Voice and SMS</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive"
-                          data-label="virtual-number-block">
+                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
+                            <img src="img/icons/icon3-r.png" width="21" height="21" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Virtual number</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive"
-                          data-label="substitution-number-block">
+                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
+                            <img src="img/icons/icon4-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Substitution of numbers</h3>
                           </div>
                         </a>
                       </div>
                     </div>
-                    <div class="basket-item">
+                    <div class="basket-item js-mobile-exp">
                       25.09.2020
                     </div>
                     <div class="basket-item pay-amount">
                       <p>$ <strong>150</strong> us</p>
                     </div>
                     <div class="basket-item">
+                      <button type="button" class="rounded-button show-more-btn js-show-more">More</button>
                       <button type="button" class="renew-button link-with-arrow">
                         <div class="img-wrapper">
                           <img src="img/icons/arrow-right.svg" alt="arrow right">
@@ -1910,8 +1990,8 @@
                     </div>
                   </div>
                   <div class="basket-line js-owner-line" data-item="6">
-                    <button onclick="removeItemFromOwnerList($(this));" data-item="6"
-                      class="remove-btn js-remove-item"><img src="img/icons/close.svg" alt="remove"></button>
+                    <button data-item="6" class="remove-btn js-remove-item"><img src="img/icons/close.svg"
+                        alt="remove"></button>
                     <div class="dashboard-box__name basket-item">
                       <div class="img-wrapper">
                         <img src="img/icons/user-red.svg" width="15" height="15" alt="user">
@@ -1935,38 +2015,48 @@
                     </div>
                     <div class="basket-item">
                       <div class="included-items-wrapper d-flex align-items-baseline justify-content-around">
-                        <a href="account-add-plan.html" class="included-item" data-label="internet-data-wrapper">
+                        <a href="account-add-plan.html class=" included-item">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon2-r.png" width="20" height="20" alt="icon1">
+                            <img src="img/icons/icon2-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Internet data</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive"
-                          data-label="voice-sms-block">
+                        <a href="account-add-plan.html?target=#voice-sms" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon5-r.png" width="30" height="25" alt="icon1">
+                            <img src="img/icons/icon5-r.png" width="24" height="20" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Voice and SMS</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive"
-                          data-label="virtual-number-block">
+                        <a href="account-add-plan.html?target=#virtual-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon3-r.png" width="26" height="26" alt="icon1">
+                            <img src="img/icons/icon3-r.png" width="21" height="21" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Virtual number</h3>
                           </div>
                         </a>
-                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive"
-                          data-label="substitution-number-block">
+                        <a href="account-add-plan.html?target=#substitution-number" class="included-item inactive">
                           <div class="img-wrapper">
-                            <img src="img/icons/icon4-r.png" width="23" height="22" alt="icon1">
+                            <img src="img/icons/icon4-r.png" width="18" height="18" alt="icon1">
+                          </div>
+                          <div class="item-content">
+                            <h3 class="item-name">Substitution of numbers</h3>
                           </div>
                         </a>
                       </div>
                     </div>
-                    <div class="basket-item">
+                    <div class="basket-item js-mobile-exp">
                       25.09.2020
                     </div>
                     <div class="basket-item pay-amount">
                       <p>$ <strong>150</strong> us</p>
                     </div>
                     <div class="basket-item">
+                      <button type="button" class="rounded-button show-more-btn js-show-more">More</button>
                       <button type="button" class="renew-button link-with-arrow">
                         <div class="img-wrapper">
                           <img src="img/icons/arrow-right.svg" alt="arrow right">
