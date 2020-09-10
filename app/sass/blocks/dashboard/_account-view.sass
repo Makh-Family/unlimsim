@@ -14,12 +14,27 @@
 
 .profie-view__content
   align-items: flex-start
+  >.col-lg-3
+    flex: 0 0 23%
+    max-width: 23%
 
 .profile__card
   margin-bottom: 25px
   border-radius: 10px
+  max-width: 230px
+  min-width: 220px
   background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
   padding: 20px
+
+.profile-details
+  flex: 0 0 77%
+  max-width: 77%
+  border-radius: 10px
+  background: #fff
+  border: 1px solid rgba(135, 135, 135, 0.84)
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16)
+  padding: 30px
+
 
 .profile-img-wrapper
   display: flex
@@ -93,3 +108,23 @@ label[for="change-img"]
       strong
         font-size: 22px
         margin-right: 5px
+
+  
+@media screen and ( max-width: 1200px )
+  
+  .profile-details
+    flex: 0 0 70%
+    max-width: unset
+    margin-left: auto
+
+  
+@media screen and ( max-width: 992px )
+  .profile-details
+    flex: 0 0 65%
+
+@media screen and ( max-width: 776px )
+  .profie-view__content>.col-lg-3
+    max-width: unset
+    flex: unset
+  .profile-details
+    flex: 0 0 100%

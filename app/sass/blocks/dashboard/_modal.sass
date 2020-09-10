@@ -132,8 +132,17 @@
           
 .sign-in-button-wrapper
   text-align: center
+  a
+    display: inline-block
+    transition: 0.3s ease
+    &:hover
+      text-decoration: none
+      transform: scale(1.1)
   button
     padding: 3px 20px
+    transition: 0.3s ease
+    &:hover
+      transform: scale(1.1)
 
 .reg-info
   margin-top: 25px

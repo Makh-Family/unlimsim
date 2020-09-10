@@ -30933,7 +30933,12 @@ const dashboardBoxSlider = {
 };
 
 $(document).ready(function () {
+  $("body, html").scrollTop(0);
   const target = getUrlParams()["target"];
+
+  if ($(".list-plans").height() >= 200) {
+    $(".list-plans").addClass("position-static");
+  }
 
   if ($(".shopping-card__form").length) {
     $(`.btn-service-toggler[data-target="${target}"]`).trigger("click");
@@ -30967,10 +30972,6 @@ $(document).ready(function () {
   });
 });
 
-$(window).on("beforeunload", function () {
-  $(window).scrollTop(0);
-});
-
 $(".js-custom-dropdown-toggler").on("click", function () {
   if (!$(this).next().hasClass("show")) {
     controlDropdownOverlay("open");
@@ -30999,6 +31000,8 @@ $(".js-change-username")
   .on("click", function () {
     $(this).hide();
     $(this).next().show();
+    const currentName = $(this).text();
+    $(this).next().children("input").val(currentName);
   });
 
 $(".js-change-username").on("click", function () {

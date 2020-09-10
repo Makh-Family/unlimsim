@@ -119,10 +119,12 @@
 
 .change-name-form
   display: none
+  width: 250px
+  height: 22px
   input
     font-size: 12px
-    height: 20px
-    width: 100px
+    height: 100%
+    width: 100%
     border-radius: 2px
 
 .dashboard-box
@@ -373,6 +375,12 @@
   max-width: 360px
   position: sticky
   top: 270px
+  .visible-content 
+    img[alt=logo]
+      width: 62px!important
+      height: 20px!important
+    .d-flex .skewed-box span
+      font-size: 18px
   &[data-sticky-wrap]
     background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,1) 0,rgba(10,10,10,1) 100%)
     z-index: 4
@@ -471,7 +479,7 @@
       grid-template-columns: 1fr 1.5fr
 
 .link-with-arrow
-  display: flex
+  display: inline-flex
   align-items: center
   &:hover
     text-decoration: none
@@ -489,7 +497,7 @@
     margin-right: 5px
     img
       width: 10px
-      height: 5px
+      height: 7px
 
 .dashboard-personal-plan
   max-width: 960px
