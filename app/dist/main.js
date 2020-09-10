@@ -30519,7 +30519,6 @@ function fillBasket() {
       {
         breakpoint: 350,
         settings: {
-          arrows: false,
           slidesToShow: 1,
         },
       },
@@ -30921,7 +30920,6 @@ const dashboardSlider = {
     {
       breakpoint: 500,
       settings: {
-        arrows: false,
         slidesToShow: 1,
       },
     },

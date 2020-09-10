@@ -224,9 +224,10 @@
 
 @media screen and ( max-width: 575px )
 	.js-card-wrapper
-		.slick-prev,
+		.slick-prev
+			transform: translateX(-50%)
 		.slick-next
-			display: none !important
+			transform: translateX(50%)
 	div.last-tab .right-item .under-text
 		flex-direction: column
 		align-items: center

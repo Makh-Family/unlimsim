@@ -1437,7 +1437,6 @@ function fillBasket() {
       {
         breakpoint: 350,
         settings: {
-          arrows: false,
           slidesToShow: 1,
         },
       },

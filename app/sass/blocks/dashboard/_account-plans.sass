@@ -312,6 +312,11 @@ button[data-target="#plans-list-collapse"]
     flex-wrap: wrap
   
 @media screen and ( max-width: 450px )
+  .js-dashboard-slider
+    .slick-prev
+      left: 8px
+    .slick-next
+      right: 8px
   .plan-wrapper
     padding: 20px 10px
   .ordinary-plan-wrapper .section-tab .js-carousel .js-dashboard-slider,
@@ -320,7 +325,8 @@ button[data-target="#plans-list-collapse"]
       height: auto
       border: none
       padding: 10px
-      min-width: 200px
+      min-width: 250px
+      max-width: 250px
       padding-bottom: 20px
       padding-top: 20px
       background: url(../img/icons/item-bg.png) no-repeat center center,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
@@ -360,3 +366,12 @@ button[data-target="#plans-list-collapse"]
         width: 150px
         height: 40px
         z-index: 100
+
+@media screen and ( max-width: 375px )
+  .red-hovered-nav
+    a
+      width: 21%
+      text-align: center
+      h4
+        font-size: 14px
+        white-space: normal

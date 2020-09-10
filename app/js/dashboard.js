@@ -35,7 +35,6 @@ const dashboardSlider = {
     {
       breakpoint: 500,
       settings: {
-        arrows: false,
         slidesToShow: 1,
       },
     },

@@ -820,6 +820,10 @@
       visibility: visible
 
 @media screen and ( max-width: 450px )
+  .change-name-form
+    width: 250px
+    input
+      width: 100%
   .btn-show-countries
     top: 0
   .plans-wrapper 
@@ -946,18 +950,21 @@
 
 
   .dashboard-list-actions
-    width: 90%
+    width: 100%
     display: flex
     margin: 0 auto
     flex-wrap: wrap
     align-items: baseline
-    justify-content: space-between
+    justify-content: center
     button
       font-size: 14px
       padding: 3px 20px
       white-space: nowrap
+      margin-right: 5px
+      margin-left: 5px
       &:first-child
         margin-bottom: 10px
+    
   .list-plans-wrapper
     .list-plans,
     .device-info,
@@ -1186,7 +1193,7 @@
         margin-bottom: 1rem
 
     
-@media screen and ( max-width: 360px )
+@media screen and ( max-width: 375px )
   .owners-list:not(.personal-plans-list) 
     .basket-line 
       .basket-item
