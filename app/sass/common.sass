@@ -8,6 +8,7 @@
 body
 	font-size: 16px
 	min-width: 320px
+	margin-top: 100px
 	position: relative
 	line-height: 1.65
 	font-family: $default-font
@@ -15,6 +16,53 @@ body
 	color: $text
 	background-image: url('../img/src/map.png')
 	background-attachment: fixed
+	&.main-page
+		margin-top: 77px
+		.container-md
+			max-width: 960px
+		.tab_content
+			.container
+				max-width: 960px
+
+.preload *
+	-webkit-transition: none !important
+	-moz-transition: none !important
+	-ms-transition: none !important
+	-o-transition: none !important
+
+
+
+@media screen and ( max-width: 992px )
+	body
+		&.main-page
+			margin-top: 64px
+
+@media (max-width: 575.98px)
+	body
+		margin-top: 80px
+		&.main-page
+			margin-top: 58px
+
+
+.smaller-cointainer
+	max-width: 960px
+
+.inverted-filter
+	filter: invert(1)
+
+.with-line
+	display: flex
+	align-items: baseline
+	white-space: nowrap
+	width: 100%
+	&::after 
+		content: ''
+		display: inline-block
+		width: 100%
+		margin-left: 10px
+		height: 1px
+		background: #787878
+
 
 input, textarea
 	border: #666 1px solid
@@ -32,6 +80,16 @@ h1, h2, h3, h4, h5, h6
 
 button
 	outline: none !important
+
+.visually-hidden
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
 
 .white-space-nowrap
 	white-space: nowrap
@@ -431,7 +489,10 @@ button
 	&:hover
 		text-decoration: none
 		color: #FFF
-			
+
+footer
+	margin-top: 50px
+
 .footer
 	background-color: $accent
 	color: #FFF
@@ -656,7 +717,7 @@ button
 .map
 	&-filter
 		div[class^="map-item-"]
-			margin-right: 1.5rem
+		margin-right: 1.5rem
 		div.map-item-5
 			margin-right: 0
 		.map-item-1
@@ -667,6 +728,9 @@ button
 				width: 150px
 		.d-flex
 			flex-direction: row
+			> div
+				&:not(:last-child)
+					margin-right: 15px
 		&-input
 			border: 1px solid #707070
 			padding: .5rem .75rem
@@ -882,7 +946,7 @@ b, strong
 
 // Update bootstrap dropdown toggle icon
 .dropdown-toggle::after
-    display: none
+	display: none
 
 .close-instructions
 	display: block

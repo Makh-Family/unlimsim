@@ -1,0 +1,420 @@
+.filled-button
+  background: $accent
+  color: #fff
+  border: none
+  transition: 0.3s ease
+  padding: 3px 15px
+  &:hover
+    background: $darkerred
+    color: #ffffff !important
+    text-decoration: none
+
+.tab-content
+  width: 92%
+  margin-bottom: 0
+  position: relative
+  z-index: 2
+  .billing-box
+    .opening-title
+      span
+        height: 2px
+        margin-bottom: 5px
+      h3
+        font-size: 20px
+        &::after
+          display: none
+  .billing-info-box
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: 1fr 1fr
+    grid-column-gap: 10px
+    .info-wrapper:first-child
+      grid-area: 1 / 1 / 3 / 2
+  .payment-btn
+    background: $accent
+    color: #ffffff
+    border: none
+    padding: 2px 15px
+    font-size: 16px
+    transition: 0.3s ease
+    &:hover
+      background: $darkerred
+  .line
+    background: #787878
+  .card-form
+    .step-content
+      margin-top: 10px
+  .billing-box
+    .opening-title
+      h3
+        width: unset
+    .edit-link
+      margin-left: auto
+      color: #000000
+  button.bg-transparent
+    padding: 0
+    &.collapsed
+      .line
+        display: none
+
+.tab-wrapper
+  display: flex
+
+.tab-side-button-wrapper
+  max-height: 340px
+  min-height: 250px
+  width: 8%
+  position: relative
+  border: 1px solid rgba(135,135,135,.84)
+  border-radius: 10px
+  transform: translateX(-15px)
+  background: rgba(135, 135, 135, 0.2)
+  z-index: 1
+  .link-with-arrow
+    display: flex
+    flex-direction: row-reverse
+    align-items: flex-end
+    justify-content: center
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform-origin: 0 0
+    transform: rotate(270deg) translateY(-35%)
+    border: none
+    background: transparent
+    span
+      white-space: nowrap
+      font-size: 20px
+      font-family: $semibold
+      line-height: 1
+    .img-wrapper
+      margin-right: 0
+      margin-left: 5px
+    
+.payment-wrapper
+  flex-direction: row-reverse
+  .tab-side-button-wrapper
+    transform: translateX(15px)
+    .link-with-arrow
+      transform: rotate(270deg) translateY(-70%)
+  .custom-select-arrow
+    width: 40%
+
+.left-recharge
+
+.left-recharge-balance
+  p
+    margin-bottom: 0
+  .mr-3
+    font-size: 14px
+    color: #787878
+    font-family: $semibold
+  .balance-amount
+    font-size: 10px
+    font-style: italic
+    strong
+      font-size: 18px
+
+.recharge-inputs
+  .pay-btn
+    background: $accent
+    font-size: 16px
+    color: #fff
+    border: none
+    transition: 0.3s ease
+    &:hover
+      background: $darkerred
+      
+
+.input-box
+  border-radius: 10px
+  padding: 15px
+  background: rgba(135, 135, 135, 0.2)
+  margin-bottom: 20px
+  p
+    opacity: 0.5
+    transition: 0.3s ease
+  &.selected-method
+    p
+      opacity: 1
+  .custom-control-label
+    font-family: $semibold
+  .invoice,.total
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-family: $semibold
+    
+    p
+      margin-bottom: 0
+      &:first-child
+        color: #787878
+  .invoice
+    margin: 10px 0
+    p
+      font-size: 14px
+    .invoice-amount
+      font-style: italic
+      font-size: 10px
+      strong
+        font-size: 18px
+  .total
+    p
+      font-size: 18px
+    .total-amount
+      font-style: italic
+      font-size: 13px
+      overflow: auto
+      strong
+        font-size: 24px
+  .top-up-balance-input
+    font-size: 14px
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+      -webkit-appearance: none
+      margin: 0
+
+    &[type=number]
+      -moz-appearance: textfield
+
+  input::placeholder
+    color: #787878
+
+      
+
+
+.custom-control-label:before
+  border: 2px solid black
+.custom-control-input:checked~.custom-control-label::before
+  color: #fff
+  border-color: black
+  background-color: white
+.custom-radio .custom-control-input:checked~.custom-control-label::after 
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='red'/%3e%3c/svg%3e")
+  background-size: 65%
+
+.payment-methods-wrapper
+  display: flex
+  align-items: center
+  margin: 15px 0
+  .img-wrapper
+    line-height: 0
+    height: 18px
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 5px
+    border-radius: 3px
+    border: 0.5px solid rgba(0, 0, 0, 0.7)
+    &:not(:last-child)
+      margin-right: 8px
+    img
+      margin-right: 0
+  
+
+#switch-payment-method
+  width: 100%
+  appearance: none
+
+.custom-select-arrow
+  position: relative
+  .arrow-down
+    display: block
+    position: absolute
+    height: 20px
+    padding: 3px
+    width: 30px
+    border-left: 1px solid #b9b9b9
+    top: 50%
+    transform: translateY(-50%)
+    right: 3px
+    left: unset
+    z-index: 1
+    pointer-events: none
+    background-image: url(../img/icons/arrow-down.svg)
+    background-repeat: no-repeat
+    background-position: center center
+
+.payed-box
+  .payed-box-content
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 40px auto
+    width: 60%
+    .img-wrapper
+      margin-right: 20px
+    .payed-message
+      p
+        font-size: 20px
+        font-family: $semibold
+        line-height: 1.2
+        &:first-child
+          border-bottom: 3px solid #52BE32
+          padding-bottom: 10px
+          margin-bottom: 10px
+        &:last-child
+          strong
+            font-size: 30px
+        mark
+          padding: 0
+          color: #52BE32
+          text-transform: uppercase
+          background: transparent
+  .payed-links-wrapper
+    button
+      padding: 3px 10px
+      font-size: 16px
+    a
+      font-size: 16px
+      border: none
+      &:hover
+        color: red
+
+.payment-toggle-collapse
+  .w-100.button-wrapper
+    border-bottom: 1px solid #707070
+    margin-bottom: 20px
+    button
+      margin-bottom: 20px
+  
+.side-payment-amount
+  margin-bottom: 0
+  font-size: 22px
+  text-align: center
+  font-style: italic
+  strong
+    font-size: 30px
+
+.shopping-card__card-list
+  flex: unset
+  max-width: 290px
+  padding: 0
+  .tariff-name
+    text-transform: uppercase
+  .item-name
+    font-size: 10px !important
+  .recharge-plans-list
+    border-bottom: 1px solid #787878
+
+@media screen and ( max-width: 992px )
+  .dashboard-box .left-recharge
+    .inner-inputs-wrapper
+      display: flex
+      width: 100%
+      justify-content: space-between
+      flex-wrap: wrap
+      .input-box
+        min-width: 220px
+        margin-bottom: 0
+        margin-bottom: 10px
+  .payment-wrapper .custom-select-arrow 
+    min-width: 220px
+    width: 50%
+    select
+      padding-right: 35px
+  .payment-methods-wrapper
+    flex-wrap: wrap
+    .img-wrapper
+      margin-bottom: 5px
+  .tab-wrapper 
+    flex-direction: column-reverse
+    .tab-content
+      width: 100%
+    .recharge-inputs
+      display: flex
+      align-items: flex-end
+      flex-wrap: wrap
+      margin-top: 15px
+      margin-bottom: 20px
+      .pay-btn
+        margin-top: 15px
+    .col-4,
+    .col-7
+      max-width: 100%
+      flex: unset
+  .tab-side-button-wrapper
+    transform: translateX(0) translateY(15px) !important
+    width: 250px
+    min-height: 55px
+    .link-with-arrow
+      margin-top: -13px
+      transform: none !important
+      position: static
+  
+
+@media screen and ( max-width: 524px )
+  .tab-content
+    .billing-info-box
+      display: flex
+      flex-direction: column
+    
+@media screen and ( max-width: 400px )
+  .payed-box 
+    .payed-box-content
+      flex-direction: column
+      align-items: flex-start
+      width: 100%
+      .img-wrapper
+        margin: 0 auto
+    .payed-links-wrapper
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 90%
+      margin: 0 auto
+      button
+        padding: 3px 25px
+      a
+        padding: 3px 25px
+        background: $accent
+        color: #fff
+        border: 2px solid $accent
+        transition: 0.3s ease
+        &:hover
+          background: $darkerred
+          color: #fff
+          text-decoration: none
+  .payed-message
+    display: inline-block
+    width: 220px
+    margin-top: 15px
+  .tab-side-button-wrapper
+    width: 100%
+  .dashboard-box .left-recharge .inner-inputs-wrapper .input-box
+    max-width: 100%
+    width: 100%
+  #top-up-balance
+    input
+      width: 100%
+  .pay-btn,
+  .payment-btn
+    width: 100%
+  .tab-content
+    .billing-box
+      .link-with-arrow
+        .img-wrapper,
+        .line
+          display: none !important
+      .step-content-wrapper:not(.collapse)
+        display: none
+      .edit-link
+        transform: translateY(25px)
+      .opening-title
+        user-select: none
+        overflow: visible
+        cursor: pointer
+        justify-content: unset
+        flex-direction: row
+        align-items: center
+        &::after
+          width: 15px
+          height: 15px
+          display: block
+          border-radius: 50%
+          content: ''
+          background-image: url("../img/icons/arrow-right.svg")
+          background-position: center center
+          background-repeat: no-repeat
+          background-size: 30%
+          background-color: $accent
