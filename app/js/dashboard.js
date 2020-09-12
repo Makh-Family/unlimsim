@@ -60,24 +60,32 @@ $(document).ready(function () {
   }
 
   $('.btn-buy[data-purpose="add-plan"]').on("click", function () {
+    if ($(this).data("added")) return;
+
     const data = getItemDetails($(this).parent());
     const elPlansWrapper = $(".visible-plan-list");
+
     const id =
       elPlansWrapper.children.length +
       $("#plans-list-collapse").children().length +
       1;
     const itemClone = getItemClone(data, id);
-
+    $(this)
+      .attr("data-added", true)
+      .attr("data-item", id)
+      .text("Added")
+      .addClass("active");
     if (elPlansWrapper.children().length == 2) {
-      itemClone.prependTo(elPlansWrapper);
       elPlansWrapper
         .children()
         .eq(1)
         .detach()
         .prependTo("#plans-list-collapse");
+      itemClone.prependTo(elPlansWrapper);
     } else {
       itemClone.prependTo(elPlansWrapper);
     }
+
     if ($(window).width() <= 450) {
       const offset = $(".list-plans").offset();
       $("body, html").animate({
@@ -95,11 +103,11 @@ $(".js-custom-dropdown-toggler").on("click", function () {
   }
 });
 
-$(".js-custom-dropdown a").bind("click", function (e) {
+$(".js-custom-dropdown a").on("click", function (e) {
   controlDropdownOverlay("close");
 });
 
-$("body").bind("click", function (evt) {
+$("body").on("click", function (evt) {
   if (
     !evt.target.matches(".dropdown-item") &&
     !evt.target.matches(".js-custom-dropdown-toggler")
@@ -139,11 +147,11 @@ $(".js-widen-btn").on("click", function () {
   }
 });
 
-$(".js-change-btn").bind("click", function () {
+$(".js-change-btn").on("click", function () {
   $("#predashboard-virtual-number").collapse("hide");
 });
 
-$(".js-renewal-btn").bind("click", function () {
+$(".js-renewal-btn").on("click", function () {
   $('.js-renew-btn[data-target=".predashboard-virtual-number"]').prop(
     "disabled",
     true
@@ -216,28 +224,11 @@ const sliderDashboardBox = $(".js-dashboard-box-slider").slick(
   dashboardBoxSlider
 );
 
-function controlDropdownOverlay(action) {
-  if (action == "open") {
-    $(".js-dropdown-overlay").slideDown();
-  } else {
-    $(".js-dropdown-overlay").slideUp();
-  }
-}
-
-function removeItemFromOwnerList(el) {
-  const itemNumber = el.data("item");
-
-  $(`.js-owner-line[data-item="${itemNumber}"]`).remove();
-  $(`.visible-content[data-item="${itemNumber}"]`).remove();
-  $(`.js-basket-item[data-item="${itemNumber}"]`).remove();
-  sliderDashboardBox.slick("slickRemove", itemNumber - 1);
-}
-
 ///responsive
 
 if ($(window).width() <= 450) {
   $(".js-mobile-exp").prepend("Exp. ");
-  $('.plan-name button[data-toggle="collapse"]').bind("click", function () {
+  $('.plan-name button[data-toggle="collapse"]').on("click", function () {
     const target = $(this).data("target");
     $(target).next().collapse("hide");
     $(this)
@@ -257,7 +248,7 @@ if ($(window).width() <= 450) {
     });
   });
 
-  $(".js-renew-btn").bind("click", function () {
+  $(".js-renew-btn").on("click", function () {
     $(this).hide();
   });
 
@@ -301,6 +292,25 @@ if ($(window).width() <= 450) {
   $(".js-remove-item").on("click", function () {
     removeItemFromOwnerList($(this));
   });
+}
+
+function controlDropdownOverlay(action) {
+  if (action == "open") {
+    $(".js-dropdown-overlay").slideDown();
+  } else {
+    $(".js-dropdown-overlay").slideUp();
+  }
+}
+
+function removeItemFromOwnerList(el) {
+  const itemNumber = el.data("item");
+  const elRelatedBtn = $(`.btn-buy[data-item="${el.data("item")}"]`);
+  elRelatedBtn.attr("data-added", false).text("buy").removeClass("active");
+
+  $(`.js-owner-line[data-item="${itemNumber}"]`).remove();
+  $(`.visible-content[data-item="${itemNumber}"]`).remove();
+  $(`.js-basket-item[data-item="${itemNumber}"]`).remove();
+  sliderDashboardBox.slick("slickRemove", itemNumber - 1);
 }
 
 function getUrlParams() {
