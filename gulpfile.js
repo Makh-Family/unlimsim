@@ -4,18 +4,18 @@ const gulp = require("gulp"),
   concat = require("gulp-concat"),
   terser = require("gulp-terser"),
   cleancss = require("gulp-clean-css"),
-  sourcemaps = require("gulp-sourcemaps");
-// uglify = require('gulp-uglify'),
-// babel = require('gulp-babel'),
-// rename = require('gulp-rename'),
-(autoprefixer = require("gulp-autoprefixer")),
-  (notify = require("gulp-notify"));
-// pipeline = require('readable-stream').pipeline,
-// gutil = require('gulp-util'),
-// rsync = require('gulp-rsync'),
-// imageResize = require('gulp-image-resize'),
-// imagemin = require('gulp-imagemin'),
-// del = require('del');
+  sourcemaps = require("gulp-sourcemaps"),
+  // uglify = require('gulp-uglify'),
+  // babel = require('gulp-babel'),
+  // rename = require('gulp-rename'),
+  autoprefixer = require("gulp-autoprefixer"),
+  notify = require("gulp-notify");
+  // pipeline = require('readable-stream').pipeline,
+  // gutil = require('gulp-util'),
+  // rsync = require('gulp-rsync'),
+  // imageResize = require('gulp-image-resize'),
+  // imagemin = require('gulp-imagemin'),
+  // del = require('del');
 
 // Local Server
 gulp.task("browser-sync", function () {
@@ -37,11 +37,11 @@ gulp.task("styles", function () {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        outputStyle: "compressed",
+        // outputStyle: "compressed",
       }).on("error", notify.onError())
     )
     .pipe(autoprefixer())
-    .pipe(cleancss()) // Opt., comment out when debugging
+    // .pipe(cleancss()) // Opt., comment out when debugging
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("app/dist"))
     .pipe(browserSync.stream());
@@ -51,28 +51,28 @@ gulp.task("styles", function () {
 gulp.task("scripts", function () {
   return (
     gulp
-      .src([
-        "node_modules/jquery/dist/jquery.js",
-        "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
-        "node_modules/imask/dist/imask.js",
-        "node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js",
-        "node_modules/bootstrap-validate/dist/bootstrap-validate.js",
-        "node_modules/slick-carousel/slick/slick.js",
-        "app/js/main.js",
-        "app/js/index.js",
-        "app/js/my.js",
-        "app/js/dashboard.js",
-      ])
-      .pipe(sourcemaps.init())
-      .pipe(concat("main.js"))
-      // .pipe(terser()) // minifies es6+ js code
-      .pipe(sourcemaps.write("."))
-      .pipe(gulp.dest("app/dist"))
-      .pipe(
-        browserSync.reload({
-          stream: true,
-        })
-      )
+    .src([
+      "node_modules/jquery/dist/jquery.js",
+      "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+      "node_modules/imask/dist/imask.js",
+      "node_modules/bootstrap-autocomplete/dist/latest/bootstrap-autocomplete.js",
+      "node_modules/bootstrap-validate/dist/bootstrap-validate.js",
+      "node_modules/slick-carousel/slick/slick.js",
+      "app/js/main.js",
+      "app/js/index.js",
+      "app/js/my.js",
+      "app/js/dashboard.js",
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(concat("main.js"))
+    // .pipe(terser()) // minifies es6+ js code
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("app/dist"))
+    .pipe(
+      browserSync.reload({
+        stream: true,
+      })
+    )
   );
 });
 
