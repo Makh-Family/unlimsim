@@ -360,6 +360,89 @@ $(document).ready(function () {
     console.log(error);
   }
 
+  $("#plan-select").on("click", function (e) {
+    if (
+      $(this).find("select").val().toUpperCase() == "WORLDWIDE" ||
+      $(this).find("select").val().toUpperCase() == "COUNTRY"
+    ) {
+      $(`#region-list .nav-link[data-value="*"]`).trigger("click");
+    }
+
+    if ($(this).find("select").val().toUpperCase() != "WORLDWIDE") {
+      $("#tariff-select").hide();
+    } else {
+      $("#tariff-select").show();
+    }
+  });
+
+  $("#country-select").on("click", function (e) {
+    let country = $(this).find("select").val().toUpperCase();
+    $(".js-tariff-name").text(country);
+  });
+
+  $(".js-included-country-text").on("click", function () {
+    const isClickable = $(this).next().hasClass("js-items-toggler");
+
+    if (isClickable) {
+      $(this).next().toggleClass("sorted");
+      $(this).toggleClass("has-dashed-border");
+    } else {
+      $(".js-included-country-text").css({
+        cursor: "unset",
+      });
+    }
+  });
+
+  $(".js-sorted-items .included-item").on("click", function () {
+    const isSorted = !$(this).parent().parent().hasClass("sorted");
+    const target = $(this).attr("id").replace("-block", "");
+
+    console.log(target);
+
+    $(".js-included-country-text").css({
+      cursor: "unset",
+    });
+
+    if (isSorted) {
+      $(`.step-button[data-step='1']`).trigger("click");
+
+      $(`.btn-service-toggler[data-target="#${target}"]`).trigger("click");
+    }
+  });
+
+  $("#subNumber").on("keyup", function (e) {
+    if (
+      e.target.value.length == 18 &&
+      e.target.value[e.target.value.length - 1] != "_"
+    ) {
+      $(".btn-substitution-join").removeAttr("disabled");
+    } else {
+      $(".btn-substitution-join").attr("disabled", true);
+    }
+  });
+
+  $("#cardnumber").on("keyup", function () {
+    if ($(this).val().length == 19 && !$(this).val().includes("_")) {
+      $("#carddate").focus();
+    }
+  });
+
+  $("#carddate").on("keyup", function () {
+    if ($(this).val().length == 5 && !$(this).val().includes("_")) {
+      $("#cardcode").focus();
+    }
+  });
+
+  $("#sub-period").on("click", ".dropdown-item", function (e) {
+    $("#subNumber").removeAttr("disabled");
+  });
+
+  $("#virtual-period").on("click", ".dropdown-item", function (e) {
+    const elSelect = elCountriesList.find("select");
+    elSelect.removeAttr("disabled");
+    elSelect.selectpicker("refresh");
+  });
+
   if ($("body").hasClass("shopping-card-body")) {
     if (localStorage.getItem("card")) {
       newCardData = JSON.parse(localStorage.getItem("card"));
@@ -393,89 +476,6 @@ $(document).ready(function () {
       $(this).on("click", ".btn-buy", function (e) {
         $(".notification-block").slideUp();
       });
-    });
-
-    $("#plan-select").on("click", function (e) {
-      if (
-        $(this).find("select").val().toUpperCase() == "WORLDWIDE" ||
-        $(this).find("select").val().toUpperCase() == "COUNTRY"
-      ) {
-        $(`#region-list .nav-link[data-value="*"]`).trigger("click");
-      }
-
-      if ($(this).find("select").val().toUpperCase() != "WORLDWIDE") {
-        $("#tariff-select").hide();
-      } else {
-        $("#tariff-select").show();
-      }
-    });
-
-    $("#country-select").on("click", function (e) {
-      let country = $(this).find("select").val().toUpperCase();
-      $(".js-tariff-name").text(country);
-    });
-
-    $(".js-included-country-text").on("click", function () {
-      const isClickable = $(this).next().hasClass("js-items-toggler");
-
-      if (isClickable) {
-        $(this).next().toggleClass("sorted");
-        $(this).toggleClass("has-dashed-border");
-      } else {
-        $(".js-included-country-text").css({
-          cursor: "unset",
-        });
-      }
-    });
-
-    $(".js-sorted-items .included-item").on("click", function () {
-      const isSorted = !$(this).parent().parent().hasClass("sorted");
-      const target = $(this).attr("id").replace("-block", "");
-
-      console.log(target);
-
-      $(".js-included-country-text").css({
-        cursor: "unset",
-      });
-
-      if (isSorted) {
-        $(`.step-button[data-step='1']`).trigger("click");
-
-        $(`.btn-service-toggler[data-target="#${target}"]`).trigger("click");
-      }
-    });
-
-    $("#subNumber").on("keyup", function (e) {
-      if (
-        e.target.value.length == 18 &&
-        e.target.value[e.target.value.length - 1] != "_"
-      ) {
-        $(".btn-substitution-join").removeAttr("disabled");
-      } else {
-        $(".btn-substitution-join").attr("disabled", true);
-      }
-    });
-
-    $("#cardnumber").on("keyup", function () {
-      if ($(this).val().length == 19 && !$(this).val().includes("_")) {
-        $("#carddate").focus();
-      }
-    });
-
-    $("#carddate").on("keyup", function () {
-      if ($(this).val().length == 5 && !$(this).val().includes("_")) {
-        $("#cardcode").focus();
-      }
-    });
-
-    $("#sub-period").on("click", ".dropdown-item", function (e) {
-      $("#subNumber").removeAttr("disabled");
-    });
-
-    $("#virtual-period").on("click", ".dropdown-item", function (e) {
-      const elSelect = elCountriesList.find("select");
-      elSelect.removeAttr("disabled");
-      elSelect.selectpicker("refresh");
     });
 
     $(".btn-join-to-card").on("click", function () {
