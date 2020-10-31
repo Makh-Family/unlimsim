@@ -443,6 +443,50 @@ $(document).ready(function () {
     elSelect.selectpicker("refresh");
   });
 
+  $(".btn-join-to-card").on("click", function () {
+    const formData = decodeURIComponent(
+      $(".shopping-card__form").serialize()
+    ).split("&");
+    formData.forEach(function (data) {
+      const dataArray = data.split("=");
+      customer[dataArray[0]] = dataArray[1];
+    });
+
+    const elJoinInfo = $(".join-info");
+
+    elVirtualInnerBox.hide();
+
+    elJoinInfo.find(".country-name").text(customer.Vcountry);
+    elJoinInfo.find(".region-name").text(customer.Vregion);
+    $(".virtual-number").text(formatPhoneNumber(customer.Vnumber));
+    elJoinInfo.show();
+    if ($(this).hasClass("btn-substitution-join")) {
+      $(".virtual-number-info").hide();
+      $(".substitution-join").show();
+      $(".substitution-number").text(customer.subNumber);
+      $(".substitution-wrapper").hide();
+      $(".input-placeholder").show();
+    }
+    $(".btn-checkout").removeAttr("disabled");
+  });
+
+  $('select[name="period"]').on("change", function () {
+    const data = $(this).val();
+    const vsPeriodToBeClicked = getClickableParent(
+      "#VS-period",
+      data + ` ${data == "1" ? "day" : "days"}`
+    );
+    vsPeriodToBeClicked.trigger("click");
+  });
+
+  $("#dhl-checkbox").on("change", function () {
+    if ($(this).is(":checked")) {
+      $(".js-dhl-img").show();
+    } else {
+      $(".js-dhl-img").hide();
+    }
+  });
+
   if ($("body").hasClass("shopping-card-body")) {
     if (localStorage.getItem("card")) {
       newCardData = JSON.parse(localStorage.getItem("card"));
@@ -476,50 +520,6 @@ $(document).ready(function () {
       $(this).on("click", ".btn-buy", function (e) {
         $(".notification-block").slideUp();
       });
-    });
-
-    $(".btn-join-to-card").on("click", function () {
-      const formData = decodeURIComponent(
-        $(".shopping-card__form").serialize()
-      ).split("&");
-      formData.forEach(function (data) {
-        const dataArray = data.split("=");
-        customer[dataArray[0]] = dataArray[1];
-      });
-
-      const elJoinInfo = $(".join-info");
-
-      elVirtualInnerBox.hide();
-
-      elJoinInfo.find(".country-name").text(customer.Vcountry);
-      elJoinInfo.find(".region-name").text(customer.Vregion);
-      $(".virtual-number").text(formatPhoneNumber(customer.Vnumber));
-      elJoinInfo.show();
-      if ($(this).hasClass("btn-substitution-join")) {
-        $(".virtual-number-info").hide();
-        $(".substitution-join").show();
-        $(".substitution-number").text(customer.subNumber);
-        $(".substitution-wrapper").hide();
-        $(".input-placeholder").show();
-      }
-      $(".btn-checkout").removeAttr("disabled");
-    });
-
-    $('select[name="period"]').on("change", function () {
-      const data = $(this).val();
-      const vsPeriodToBeClicked = getClickableParent(
-        "#VS-period",
-        data + ` ${data == "1" ? "day" : "days"}`
-      );
-      vsPeriodToBeClicked.trigger("click");
-    });
-
-    $("#dhl-checkbox").on("change", function () {
-      if ($(this).is(":checked")) {
-        $(".js-dhl-img").show();
-      } else {
-        $(".js-dhl-img").hide();
-      }
     });
 
     //steps controller
