@@ -1,0 +1,386 @@
+.plan-wrapper
+  &:not(.trended-plans)
+    .item
+      min-width: 200px
+  .js-carousel
+    padding: 0
+  .opening-title
+    margin: 0
+    margin-bottom: 20px
+    align-items: unset
+    span
+      height: 2px
+      margin-bottom: 5px
+    h3
+      font-size: 18px
+      font-family: $semibold
+      display: flex
+      align-items: baseline
+      white-space: nowrap
+      &::after
+        content: ''
+        display: inline-block
+        width: 100%
+        margin-left: 10px
+        height: 1px
+        background: #787878
+  
+.trended-plans
+  background: rgba(135, 135, 135, 0.1)
+  padding: 20px 30px
+  border: 1px solid #787878
+  border-radius: 10px
+  
+  .trended-plans-slider
+    padding: 0 40px
+    .link-with-arrow
+      display: inline-flex
+      transform: translateX(-35px)
+
+.js-dashboard-slider,
+.js-dashboard-box-slider
+  flex-wrap: wrap
+  .slick-disabled
+    opacity: 0
+    pointer-events: none
+  .slick-prev,
+  .slick-next
+    font-size: 0
+    padding: 0
+    position: absolute
+    top: 50%
+    left: 0
+    z-index: 3
+    display: block
+    transform: translateY(-50%) translateX(-35%)
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-color: #fff
+    background-image: url("../img/icons/arrow-l-g.svg")
+    background-repeat: no-repeat
+    background-size: 30%
+    background-position: center center
+    border: 1px solid #707070
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.16))
+  .slick-next
+    background-image: url("../img/icons/arrow-r-g.svg")
+    right: 0
+    left: unset
+    transform: translateY(-50%) translateX(35%)
+
+.widened
+  .item
+    margin-bottom: 20px
+  .widen-btn
+    transform: rotate(180deg)
+    
+
+.section-tab .js-carousel .js-dashboard-slider
+  div.item
+    height: auto
+    border: none
+    padding: 10px
+    padding-bottom: 20px
+    padding-top: 20px
+    background: url(../img/icons/item-bg.png) no-repeat center center,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
+    border-radius: 15px
+    img[alt="logo"]
+      width: 48px
+      height: 12px
+    .right-span
+      padding: 0 6px
+      .text
+        text-transform: uppercase
+        line-height: 1
+        padding: 2px 0
+        font-size: 17px !important
+    h1
+      font-size: 51px
+      .let
+        font-size: 65px
+    .top2
+      .small-card-plan-name
+        text-align: center
+        font-size: 12px
+        color: #fff
+        font-weight: 300
+      h4
+        font-size: 10px
+      .line
+        width: 95px
+        margin-top: 5px
+      + h2
+        font-size: 13px
+        span
+          font-size: 25px
+    .btn-buy
+      font-size: 16px
+      margin-bottom: 0
+      width: 120px
+      height: 30px
+      text-transform: uppercase
+      &.active
+        background: $accent
+        color: #ffffff
+        border-color: $accent
+
+.ordinary-plan-wrapper .section-tab .js-carousel .js-dashboard-slider
+  div.item
+    max-width: 230px
+    img[alt="logo"]
+      width: 60px
+      height: 15px
+      .text
+        font-size: 18px !important
+    h1
+      font-size: 70px
+      .let
+        font-size: 87px
+    .top2
+      .small-card-plan-name
+        font-size: 13px
+      .line
+        width: 120px
+      + h2
+        font-size: 16px
+        span
+          font-size: 32px
+    .btn-buy
+      font-size: 16px
+      margin-bottom: 0
+      width: 120px
+      height: 30px
+
+.red-hovered-nav
+  a
+    text-decoration: none
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    img
+      margin-bottom: 5px
+      filter: grayscale(1)
+      opacity: 0.7
+      transition: 0.3s ease
+    h4
+      white-space: nowrap
+      font-weight: normal
+      font-size: 14px
+      color: #787878
+      transition: 0.3s ease
+      padding-bottom: 3px
+      border-bottom: 1px solid transparent
+    &:hover,
+    &.active
+      img
+        filter: grayscale(0)
+        opacity: 1
+      h4
+        color: $accent
+        border-color: $accent 
+      
+button[data-target="#plans-list-collapse"]
+  filter: brightness(2)
+
+.widen-btn-wrapper
+  width: 100%
+  border-top: 1px solid #787878
+  margin: 20px 0
+  button
+    margin: 0 auto
+    display: block
+    width: 16px
+    height: 16px
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: 0.3s ease
+
+
+
+.plans-wrapper
+  padding-right: 30px
+
+.location-name
+  text-transform: uppercase
+
+.plans-with-remove-btn
+  padding-right: 0
+  padding-left: 0
+  .opening-title,
+  .service-list-wrapper
+    padding: 0 20px
+
+.plans-list-wrapper
+  padding-right: 20px
+  button[data-target="#plans-list-collapse"]
+    transform: rotate(180deg)
+    &.collapsed
+      transform: rotate(0)
+  .js-basket-item
+    position: relative
+    padding-left: 35px
+  .remove-btn
+    left: 12px
+    filter: invert(1)
+
+  .top2
+    h4
+      display: flex
+      align-items: center
+    .plan-name
+      font-size: 18px
+    .sim-type
+      font-size: 18px
+  .visible-content
+    img[alt="logo"]
+      width: 60px !important
+      + .skewed-box
+        max-width: 95px
+        overflow: hidden
+        margin-left: 10px
+  .included-items-wrapper
+    .img-wrapper
+      height: 25px
+      margin-bottom: 10px
+      img
+        max-height: 100%
+    .item-content
+      h3
+        font-size: 11px !important
+
+.personal-plans-list
+  width: 100%
+  min-width: unset
+  transform: translateX(0)
+  .widen-btn
+    transform: rotate(180deg)
+  .widen-btn.collapsed
+    transform: rotate(0)
+  .inner-owner-list
+    padding: 0
+  .owner-list-header
+    margin-left: 0
+    grid-template-columns: 1.6fr 2fr 1.5fr 1fr 1fr 1.2fr
+  .js-owner-line
+    grid-template-columns: 1.6fr 2fr 1.5fr 1fr 1fr 1.2fr
+  .basket-item
+    .rounded-button
+      font-size: 16px
+      text-transform: uppercase
+      background: $accent
+      border: none
+      color: #fff
+      padding: 1px 15px
+      margin: 0 auto
+
+@media screen and ( max-width: 1370px )
+  .list-plans-wrapper
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 100%
+    flex: unset
+    max-width: 100%
+    >span
+      width: 290px
+      order: 3
+    
+  .list-plans
+    margin-bottom: 20px
+    
+  .dashboard-additional-services
+    order: 2
+  .device-info
+    order: 1
+  .dashboard-additional-services,
+  .device-info
+    margin: 0
+    margin-bottom: 20px
+    max-width: 290px
+
+@media screen and ( max-width: 992px )
+  .widened 
+    .js-dashboard-slider
+      max-height: 580px
+      overflow-y: auto
+      align-content: unset !important
+      justify-content: space-around
+      .item
+        margin-bottom: 20px !important
+        margin-right: 0 !important
+        margin-left: 0 !important
+      
+
+@media screen and ( max-width: 768px )
+  .red-hovered-nav
+    width: 100% !important
+    flex-wrap: wrap
+  
+@media screen and ( max-width: 450px )
+  .js-dashboard-slider
+    .slick-prev
+      left: 8px
+    .slick-next
+      right: 8px
+  .plan-wrapper
+    padding: 20px 10px
+  .ordinary-plan-wrapper .section-tab .js-carousel .js-dashboard-slider,
+  .section-tab .js-carousel .js-dashboard-slider
+    div.item
+      height: auto
+      border: none
+      padding: 10px
+      min-width: 250px
+      max-width: 250px
+      padding-bottom: 20px
+      padding-top: 20px
+      background: url(../img/icons/item-bg.png) no-repeat center center,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
+      border-radius: 15px
+      img[alt="logo"]
+        width: 100px
+        height: 24px
+      .right-span
+        padding: 0 6px
+        .text
+          text-transform: uppercase
+          line-height: 1
+          padding: 2px 0
+          font-size: 22px !important
+      h1
+        font-size: 70px
+        .let
+          font-size: 100px
+      .top2
+        .small-card-plan-name
+          text-align: center
+          font-size: 20px
+          color: #fff
+          font-weight: 300
+        h4
+          font-size: 20px
+        .line
+          width: 75%
+          margin-top: 5px
+        + h2
+          font-size: 20px
+          span
+            font-size: 30px
+      .btn-buy
+        font-size: 20px
+        margin-bottom: 0
+        width: 150px
+        height: 40px
+        z-index: 100
+
+@media screen and ( max-width: 375px )
+  .red-hovered-nav
+    a
+      width: 21%
+      text-align: center
+      h4
+        font-size: 14px
+        white-space: normal

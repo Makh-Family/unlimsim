@@ -13,9 +13,9 @@
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
 
-	<!-- Change the Color of Header Bar in Browsers --> 
-	<meta name="theme-color" content="#FF0000"> 
-	<meta name="msapplication-navbutton-color" content="#FF0000"> 
+	<!-- Change the Color of Header Bar in Browsers -->
+	<meta name="theme-color" content="#FF0000">
+	<meta name="msapplication-navbutton-color" content="#FF0000">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#FF0000">
 
 	<link rel="stylesheet" href="dist/main.css">
@@ -27,103 +27,163 @@
 	<div class="navbar-overlay"></div>
 
 	<!-- Search block -->
-    <div class="search-block">
-        <div class="container">
+	<div class="search-block">
+		<div class="container">
 			<div class="search-wrapper">
 				<form action="/" method="GET" class="search-form">
 					<input type="text" name="search" id="search-input" placeholder="Search keyword and hit enter ...">
 				</form>
-		
+
 				<button class="search-close ml-auto"><img src="img/icons/close_white.png" alt=""></button>
 			</div>
 		</div>
-    </div>
+	</div>
 	<!-- End of search block -->
-	
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-red sticky-top">
-        <div class="container">
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" 
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-red">
+
+		<div class="dropdown-overlay js-dropdown-overlay"></div>
+
+		<div class="under-nav">
+			<div class="container">
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Worldwide Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Region Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Country Plans</a>
+					</li>
+					<li class="nav-item">
+						<a href="index.html#section-tab" class="nav-link">Personal Plans</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			
-			<a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt=""></a>
+
+			<a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" /></a>
 
 			<ul class="navbar-nav flex-row extra-bar-toggle">
 				<li class="nav-item mr-3">
 					<a href="#" class="nav-link">
-						<img src="img/icons/search.svg" alt="search" class="search-btn">
+						<img src="img/icons/search.svg" alt="search" class="search-btn" />
 					</a>
 				</li>
-				
+
 				<li class="nav-item">
 					<a href="dashboard.html" class="nav-link">
-						<img src="img/icons/user.svg" alt="user" class="user-btn">
+						<img src="img/icons/user.svg" alt="user" class="user-btn" />
+					</a>
+				</li>
+
+				<li class="nav-item ml-3">
+					<a href="#" class="nav-link">
+						<img src="img/icons/basket.svg" alt="user" class="w-22 user-btn" />
 					</a>
 				</li>
 			</ul>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mt-4">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="countries.html">WORLDWIDE DATA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#country-data">COUNTRY DATA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="map.html">MAP COVERAGE</a>
-                    </li>
-                    <li class="nav-item ml-2rem">
-                        <a href="cooperation.html" class="unlim-btn">COOPERATION</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav mt-4">
-                    <li class="nav-item dropdown mr-1">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            USD <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="">
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">USD</a>
-                            <a class="dropdown-item" href="#">RUB</a>
-                            <a class="dropdown-item" href="#">EUR</a>
-                        </div>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto mt-4">
+					<li class="nav-item drop-down-btn ni-li">
+						<a class="nav-link nav-px-12">
+							<span class="line-top"></span> PLANS
+							<img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+						</a>
+						<ul class="nav" style="display: none;">
+							<li class="nav-item" onclick="$('.tab.tab1').trigger('click');">
+								<a href="#section-tab" class="nav-link">Worldwide Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab2').trigger('click');">
+								<a href="#section-tab" class="nav-link">Region Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab3').trigger('click');">
+								<a href="#section-tab" class="nav-link">Country Plans</a>
+							</li>
+							<li class="nav-item" onclick="$('.tab.tab4').trigger('click');">
+								<a href="#section-tab" class="nav-link">Personal Plans</a>
+							</li>
+						</ul>
 					</li>
-					
-                    <li class="nav-item dropdown mr-1">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ENG <img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="">
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">RUS</a>
-                            <a class="dropdown-item" href="#">ENG</a>
-                            <a class="dropdown-item" href="#">DEU</a>
-                        </div>
-					</li>
-					
-                    <li class="nav-item mr-1 extra-bar-toggle-large">
-                        <a href="#" class="nav-link">
-							<img src="img/icons/search.svg" alt="search" class="search-btn">
+					<li class="nav-item ni-li">
+						<a class="nav-link nav-px-12" href="#country-data">
+							<span class="line-top"></span> OUR SERVICES
 						</a>
 					</li>
-					
-                    <li class="nav-item">
-                        <a href="dashboard.html" class="nav-link extra-bar-toggle-large">
-                            <img src="img/icons/user.svg" alt="user" class="user-btn">
-                        </a>
-                    </li>
-                </ul>
+					<li class="nav-item ni-li">
+						<a class="nav-link nav-px-12" href="map.html">
+							<span class="line-top"></span> COVERAGE</a>
+					</li>
+					<li class="nav-item ml-2rem">
+						<a href="cooperation.html" class="unlim-btn">COOPERATION</a>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav mt-4 ml-auto">
+					<li class="nav-item dropdown mr-1">
+						<a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span></span>&#36;USD
+							<img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+						</a>
+						<div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item active" href="#"><span>&#36;</span>USD</a>
+							<a class="dropdown-item" href="#"><span>&#8381;</span>RUB</a>
+							<a class="dropdown-item" href="#"><span>&#8364;</span>EUR</a>
+						</div>
+					</li>
+
+					<li class="nav-item dropdown mr-1">
+						<a class="nav-link js-custom-dropdown-toggler" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							ENG
+							<img src="img/icons/down-arrow.svg" class="drowdown-icon" alt="" />
+						</a>
+						<div class="dropdown-menu js-custom-dropdown" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#"><img width="20" height="12"
+									src="img/regions/europe/RussianFederation_m.png" alt="">RUS</a>
+							<a class="dropdown-item active" href="#"><img width="20" height="12"
+									src="img/regions/europe/UnitedKingdom_m.png" alt="">ENG</a>
+							<a class="dropdown-item" href="#"><img width="20" height="12" src="img/regions/europe/Germany_m.png"
+									alt="">DEU</a>
+						</div>
+					</li>
+
+					<li class="nav-item mr-1 extra-bar-toggle-large">
+						<a href="#" class="nav-link">
+							<img src="img/icons/search.svg" alt="search" class="search-btn" />
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a href="dashboard.html" class="nav-link extra-bar-toggle-large link-user">
+							<img src="img/icons/user.svg" alt="user" class="user-btn" />
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="basket.html" class="nav-link extra-bar-toggle-large link-basket">
+							<img src="img/icons/basket.svg" class="w-22 user-btn" />
+							<span class="badge badge-pill">0</span>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
-    </nav>
+	</nav>
 	<!-- End of navbar -->
-	
 
-    <!-- Main content -->
+
+	<!-- Main content -->
 	<div class="container unlim">
 		<div class="row justify-content-center">
 			<div class="unlim-wrapper col-lg-4 col-md-5 col-sm-12">
@@ -139,7 +199,8 @@
 			<div class="col-lg-8 col-md-7 col-sm-12">
 				<div class="mb-80px">
 					<span class="red-line mb-2"></span>
-					<h3 class="unlim-headline"><span class="period_index">1</span> GB Worldwide data (valid for <span class="period_val">30</span> days)</h3>
+					<h3 class="unlim-headline"><span class="period_index">1</span> GB Worldwide data (valid for <span
+							class="period_val">30</span> days)</h3>
 
 					<p class="mt-2 mt-md-3 mt-lg-5">Number of periods</p>
 					<select name="periods" id="no_periods_select" class="form-control mw-190">
@@ -154,12 +215,12 @@
 						<p class="text-red-italic mb-0 mr-3">
 							$ <span class="big-price" id="sale_price">25</span> <span class="text-dark">us/month</span>
 						</p>
-					
+
 						<p class="strike text-dark mb-0">
 							$ <span class="big-price" id="actual_price">30</span> <span class="text-dark">us/month</span>
 						</p>
 					</div>
-	
+
 					<a href="buy-form.html" class="buy-link-red">BUY IT NOW</a>
 				</div>
 			</div>
@@ -206,7 +267,8 @@
 				<!-- Step 1 -->
 				<div class="instruction-step">
 					<div class="instruction-text">
-						<span class="red-border">1</span> Go to <span class="semibold"> Settings > Cellular / Mobile Data > Add Cellular Plan / Add Data Plan</span>
+						<span class="red-border">1</span> Go to <span class="semibold"> Settings > Cellular / Mobile Data > Add
+							Cellular Plan / Add Data Plan</span>
 					</div>
 					<div class="instruction-image">
 						<img src="./img/instructions/ios-1a.jpg" alt="">
@@ -237,7 +299,8 @@
 				<!-- Step 4 -->
 				<div class="instruction-step">
 					<div class="instruction-text">
-						<span class="red-border">4</span> Choose <span class="semibold"> Secondary Label.</span> Name the label <span class="semibold">"UNLIM"</span>
+						<span class="red-border">4</span> Choose <span class="semibold"> Secondary Label.</span> Name the label
+						<span class="semibold">"UNLIM"</span>
 					</div>
 					<div class="instruction-image">
 						<img src="./img/instructions/ios-4a.jpg" alt="">
@@ -257,7 +320,8 @@
 				<!-- Step 5 -->
 				<div class="instruction-step">
 					<div class="instruction-text">
-						<span class="red-border">5</span> Go to <span class="semibold"> Settings > Mobile Data > Mobile Data > Select Flexiroam</span>
+						<span class="red-border">5</span> Go to <span class="semibold"> Settings > Mobile Data > Mobile Data >
+							Select Flexiroam</span>
 					</div>
 					<div class="instruction-image">
 						<img src="./img/instructions/ios-5a.jpg" alt="">
@@ -289,7 +353,7 @@
 			<div class="offset-2 col-8">
 				<div class="text-center"><i>No data found</i></div>
 			</div>
-			
+
 			<!-- Close instruction -->
 			<div class="col-12">
 				<a href="#" class="text-center mt-5 close-instructions">
@@ -301,78 +365,123 @@
 	</div>
 
 	<!-- Footer -->
-	<div class="container-fluid footer mt-5 pb-3">
-		<div class="row">
-			<div class="container mt-5">
-				<div class="d-flex mb-2">
-					<h4>CONTACT US</h4>
-				</div>
-
-				<div class="row">
-					<!-- WhatsApp -->
-					<div class="col-lg-3 col-sm-6 mb-3">
-						<p class="font-weight-semibold">WhatsApp</p>
-						<p>+49 36628 60335</p>
+	<footer>
+		<div class="footer__top">
+			<div class="container">
+				<nav class="footer__navbar">
+					<ul class="navbar-nav mx-auto d-flex flex-row justify-content-around align-items-center w-75 flex-wrap">
+						<li class="nav-item">
+							<a class="nav-link" href="#">About</span></a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Support
+								<svg class="svg-inline--fa fa-angle-down fa-w-10 select-icon" aria-hidden="true" focusable="false"
+									data-prefix="fas" data-icon="angle-down" width="10" role="img" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 320 512" data-fa-i2svg="">
+									<path fill="#fff"
+										d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+									</path>
+								</svg>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Link1</a>
+								<a class="dropdown-item" href="#">Link2</a>
+								<a class="dropdown-item" href="#">Link3</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Careers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Brand</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Blog</a>
+						</li>
+						<li class="nav-item download-app">
+							<a class="nav-link p-2 px-3" href="#">Download App</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="footer__line w-50 mx-auto my-4"></div>
+				<div class="footer__contact d-flex justify-content-between align-items-start flex-wrap">
+					<a href="#" class="contact-link text-white text-uppercase">
+						<span>contact</span>
+					</a>
+					<div class="d-flex align-items-start">
+						<img src="img/icons/whatsapp.png" alt="whatsapp">
+						<span class="text-white">+49 36628 60335 <span>(Whatsapp)</span></span>
 					</div>
-
-					<!-- Email -->
-					<div class="col-lg-3 col-sm-6 mb-3">
-						<p class="font-weight-semibold">Email</p>
-						<p>info@unlimsim.com</p>
-						<p>help@unlimsim.com</p>
+					<div class="d-flex align-items-start">
+						<img src="img/icons/mail.png" alt="mail">
+						<span class="text-white d-block">
+							<a href="mailto:info@unlimsim.com" class="d-block text-white">info@unlimsim.com
+							</a>
+							<a href="mailto:help@unlimsim.com" class="d-block text-white">help@unlimsim.com
+							</a>
+						</span>
 					</div>
-
-					<div class="col-lg-6 col-sm-12 mb-3">
-						<p class="font-weight-semibold">Address</p>
-						<p>Germany: 07937 Zeulenroda Triebes, August-Bebel-Str. 8</p>
-					</div>
-				</div>
-
-				<!-- Mobile Apps -->
-				<div class="row">
-					<div class="offset-lg-3 col-lg-9 col-sm-12">
-						<p class="font-weight-semibold mb-2">Mobile App</p>
-						
-						<!-- Download mobile app -->
-						<div class="app_grid">
-							<button class="apple_btn" data-toggle="modal" data-target="#appStoreModal">
-								<span class="icon">
-									<img src="./img/icons/apple-store.svg" alt="ios">
-								</span>
-								<span class="title">App Store</span>
-								<span class="subtitle">Available now on the</span>
-							</button>
-
-							<button class="play_store_btn" data-toggle="modal" data-target="#appStoreModal">
-								<span class="icon">
-									<img src="./img/icons/google-play.svg" alt="android">
-								</span>
-								<span class="title">Google Play</span>
-								<span class="subtitle">Get in on</span>
-							</button>
-						</div>
-					</div>	
-				</div>
-
-				<div class="footer-bottom mt-5">
-					<div class="footer-el-1">
-						<span class="small-text"> © 2020 UNLIM </span>
-					</div>
-					<div class="footer-el-2">
-						<a href="#"><img src="img/icons/fb.svg" alt=""></a>
-						<a href="#"><img src="img/icons/in.svg" alt=""></a>
-						<a href="#"><img src="img/icons/ig.svg" alt=""></a>
-					</div>
-					<div class="footer-el-3">
-						<a href="#"><img src="img/icons/pay-2.svg" alt=""></a>
-						<a href="#"><img src="img/icons/pay-3.svg" alt=""></a>
-						<a href="#"><img src="img/icons/pay-4.svg" alt=""></a>
-						<a href="#"><img src="img/icons/pay-1.svg" alt=""></a>
+					<div class="d-flex align-items-start">
+						<img src="img/icons/location.png" alt="location">
+						<span class="text-white d-block">
+							Germany: 07937 Zeulenroda Triebes, <br>
+							August-Bebel-Str. 8
+						</span>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<div class="footer__bottom">
+			<div class="container">
+				<div class="footer-bottom text-white">
+					<div class="footer-el-1 d-flex flex-wrap align-items-center">
+						<span class="small-text">Copyright ©2020 UNLIMSIM. All rights reserved.</span>
+						<a href="#">Terms & Conditions</a>
+						<div class="footer__bottom-line"></div>
+						<a href="#">Privacy Policy</a>
+					</div>
+					<div class="footer-el-3">
+						<a href="#"><img src="img/icons/pay-2.svg" alt="" /></a>
+						<a href="#"><img src="img/icons/pay-3.svg" alt="" /></a>
+						<a href="#"><img src="img/icons/pay-4.svg" alt="" /></a>
+						<a href="#"><img src="img/icons/pay-1.svg" alt="" /></a>
+					</div>
+					<div class="footer-el-2">
+						<a href="#"><img src="img/icons/fb.svg" alt="fb" /></a>
+						<a href="#"><img src="img/icons/in.svg" alt="in" /></a>
+						<a href="#"><img src="img/icons/ig.svg" alt="ig" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<ul class="nav" id="region-list" style="display: none;">
+			<li data-order="1" class="nav-item active">
+				<a href="#" class="nav-link" data-value="*"> ALL </a>
+			</li>
+			<li data-order="3" class="nav-item">
+				<a href="#" class="nav-link" data-value="ASIA"> ASIA </a>
+			</li>
+			<li data-order="4" class="nav-item">
+				<a href="#" class="nav-link" data-value="AFRICA"> AFRICA </a>
+			</li>
+			<li data-order="5" class="nav-item">
+				<a href="#" class="nav-link" data-value="EUROPE"> EUROPE </a>
+			</li>
+			<li data-order="6" class="nav-item">
+				<a href="#" class="nav-link" data-value="OCEANIA"> OCEANIA </a>
+			</li>
+			<li data-order="7" class="nav-item">
+				<a href="#" class="nav-link" data-value="N. AMERICA"> NORTH AMERICA </a>
+			</li>
+			<li data-order="8" class="nav-item">
+				<a href="#" class="nav-link" data-value="S. AMERICA"> SOUTH AMERICA </a>
+			</li>
+		</ul>
+
+	</footer>
 
 	<script src="dist/main.js"></script>
 

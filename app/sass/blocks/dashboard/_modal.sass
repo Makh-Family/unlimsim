@@ -1,0 +1,279 @@
+.fancy
+  // text-align: center
+
+.fancy:before,
+.fancy:after
+  background-color: $accent
+  content: ""
+  display: inline-block
+  height: 1px
+  position: relative
+  vertical-align: middle
+  width: 50%
+
+.fancy:before
+  right: 0.5em
+  margin-left: -50%
+
+.fancy:after
+  left: 0.5em
+  margin-right: -50%
+.predashboard-modal
+  .modal-dialog
+    width: 320px
+    overflow: hidden
+    background: linear-gradient(#a39f9f,#303030)
+    border-radius: 15px
+  .modal-content
+    padding: 0
+    border: none
+    background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%) !important
+  .modal-header
+    padding: 0
+  .close
+    text-shadow: none
+    opacity: 1
+    position: absolute
+    right: 25px
+    top: 10px
+    padding: 0
+    margin: 0
+    display: block
+    transition: 0.3s ease
+    &:hover
+      transform: scale(1.1)
+  .inner-modal-header
+    width: 100%
+    padding: 30px
+    padding-bottom: 0
+  .form-tabs-wrapper
+    padding: 0 30px
+  #sign-form
+    padding: 0 30px
+    padding-bottom: 30px
+  .modal-title
+    white-space: nowrap
+    margin-top: 25px
+    margin-bottom: 25px
+    font-size: 17px
+    display: flex
+    font-style: italic
+    font-family: $semibold
+    text-transform: unset !important
+    flex-direction: row !important
+    .skewed-box
+      margin-right: 10px
+      margin-left: 10px
+      display: inline-block
+      background: transparent
+      line-height: 1
+      border: 2px solid $accent
+      padding: 5px 5px
+      span
+        display: flex
+        align-items: center
+  .temporary-password-wrapper
+    flex-direction: column
+  .rounded-button,
+    color: #fff
+    border-color: #fff
+  .form-tabs-btn
+    color: #fff
+    &:hover,
+    &.active
+      background: $accent
+  .modal-body
+    #signInSubmit[data-forgot="no"]
+      display: none
+    #signInSubmit[data-forgot="yes"]
+      display: block
+    .forgot-password
+      color: #fff
+    .temporary-password-wrapper
+      margin-bottom: 0
+    #temporary-password + p
+      color: #fff
+      margin: 10px 0
+      padding: 0
+    label
+      padding: 0
+      input
+        background: #787878
+        color: #fff
+        padding-top: 10px
+        padding-bottom: 10px
+        border-color: #fff
+      span
+        background: linear-gradient(#535353 0%, #6f6f6f 51.87%, #787878 100%)
+        color: #fff
+        padding: 0 3px
+    .radio-wrapper
+      input:checked + label
+        span:last-child
+          transform: scale(1.08)
+
+      label
+        cursor: pointer
+        &:hover
+          span
+            &:firt-child
+              &::before
+                opacity: 1
+            &:last-child
+              transform: scale(1.08)
+        span
+          display: block
+          transition: 0.3s ease
+          background: transparent
+          padding-left: 0
+          border-color: #fff
+          &:nth-child(2)
+            padding-left: 15px
+          
+.sign-in-button-wrapper
+  text-align: center
+  a
+    display: inline-block
+    transition: 0.3s ease
+    &:hover
+      text-decoration: none
+      transform: scale(1.1)
+  button
+    padding: 3px 20px
+    transition: 0.3s ease
+    &:hover
+      transform: scale(1.1)
+
+.reg-info
+  margin-top: 25px
+
+.reg-step
+  margin-bottom: 25px
+  display: flex
+  justify-content: space-evenly
+
+.step-info-content
+  align-self: flex-end  
+
+.step-order
+  display: flex
+  align-items: center
+  width: 80px
+  position: relative
+  h3
+    text-align: center
+    margin: 0 auto
+    width: 30px
+    height: 30px
+    line-height: 22px
+    font-size: 19px
+    color: #fff
+    font-family: $semibold
+    border: 2px solid #fff
+    border-radius: 50%
+  span > p
+    padding-left: 30px
+    text-transform: uppercase
+    font-size: 14px
+    margin: 0
+    line-height: 40px
+
+.order-info
+  width: 110px
+  height: 40px
+  position: absolute
+  bottom: 0
+  left: -50px
+  &.right
+    right: -40px
+    left: unset
+    p
+      height: 40px
+      padding-left: 20px
+      padding-right: 20px
+      line-height: 20px
+  span
+    white-space: normal
+    padding: 0
+    height: 40px
+    padding-right: 5px
+  a
+    display: block
+    text-transform: uppercase
+    padding-left: 30px
+    line-height: 1
+    max-height: 100%
+    color: #ffffff
+    font-size: 14px
+    text-decoration: none
+    img
+      filter: invert(1)
+    p
+      border-bottom: 1px dashed #ddd
+      margin: 0
+
+
+.step-info-content
+  width: 110px
+  color: #fff
+  font-size: 12px
+  strong
+    text-transform: uppercase
+
+.step-img
+  &:first-child
+    align-self: flex-end
+  h3
+    font-size: 12px
+    color: white
+    strong
+      text-transform: uppercase
+
+.second-step
+  h3
+    margin-bottom: 20px
+
+.choose-plan-link-wrapper
+  text-align: center
+  margin-bottom: 25px
+  a
+    background: $accent
+    border: none
+    font-size: 18px
+    font-family: $semibold
+    display: inline-block
+    padding: 10px 15px
+    line-height: 1
+    text-decoration: none
+    transition: 0.3s ease
+    &:hover
+      transform: scale(1.1)
+      background: $darkerred
+
+  &::after,
+  &::before
+    background: #fff
+  
+.choose-plan-box
+  transition: 0.3s ease
+  &:hover
+    transform: skewX(-20deg) scale(1.1)
+  
+.share-modal
+  align-items: center !important
+  .modal-dialog
+    margin-top: 0
+  .modal-content
+    padding-bottom: 20px
+  .inner-modal-header
+    padding: 20px
+  .modal-title
+    text-transform: none !important
+    font-family: $semibold
+    flex-direction: row !important
+    font-size: 17px
+    white-space: nowrap
+  .social-links-wrapper
+    width: 70%
+    margin: 0 auto
+    justify-content: space-between

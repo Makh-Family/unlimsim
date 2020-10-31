@@ -1,0 +1,1215 @@
+.dashboard-box
+  border-radius: 10px
+  padding: 20px
+  margin-bottom: 20px
+  background: #fff
+  border: 1px solid rgba(135, 135, 135, 0.84)
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16)
+
+.dashboard-box__top
+  display: grid
+  grid-template-columns: 1fr 1.5fr 1fr
+  .opening-title
+    margin: 0
+    align-items: flex-start
+    h3
+      font-size: 20px
+    span
+      height: 2px
+      margin-bottom: 2px
+
+.dashboard__content
+  margin-top: 10px
+  >.col-lg-8
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.recharge-plans-list
+  .visible-content
+    &:not(:last-child)
+      margin-bottom: 10px
+  .skewed-box
+    padding: 2px 9px
+  .location-name
+    line-height: 1
+    font-style: italic
+  .inner-recharge-plans-list
+    max-height: 216px
+    overflow: auto
+    &::-webkit-scrollbar
+      width: 8px
+      padding-right: 8px
+                        
+
+    &::-webkit-scrollbar-track
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.0)
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.0)
+                        
+
+    &::-webkit-scrollbar-thumb
+      border-radius: 10px
+      background-color: grey
+      outline: 1px solid transparent
+
+.dashboard-list-actions
+  align-self: flex-end
+  button
+    font-size: 12px
+    transition: 0.3s ease
+    &:hover
+      background: red
+      color: #fff
+  .recharge-btn
+    background: $accent
+    border-color: $accent
+    color: #fff
+    &:hover
+      background: $darkerred
+      border-color: $darkerred
+
+.dashboard-box__name
+  display: flex
+  align-items: center
+  .img-wrapper
+    width: 20px
+    height: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-right: 5px
+  .name-wrapper
+    display: flex
+    align-items: flex-end
+    p
+      margin-bottom: 0
+      font-size: 14px
+      border-bottom: 1px dashed #787878
+    .change-username
+      padding: 0
+      width: 18px
+      height: 18px
+      display: flex
+      align-items: center
+      justify-content: center
+      border-bottom: 1px solid $accent
+      margin-left: 5px
+      border-radius: 0
+      img
+        width: 12px
+        height: 12px
+ 
+.sim-basic-info
+  >div
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    font-size: 12px
+  .sim-number
+    font-family: $semibold
+  .info-bottom
+    white-space: nowrap
+    font-size: 10px
+  .info-top
+    img,
+    .sim-type
+      margin-right: 5px
+    .sim-number
+      margin-left: 5px
+
+.change-name-form
+  display: none
+  width: 250px
+  height: 22px
+  input
+    font-size: 12px
+    height: 100%
+    width: 100%
+    border-radius: 2px
+
+.dashboard-box
+  overflow: hidden
+  .col-lg-4
+    flex: 0 0 30%
+    max-width: 30%
+  .col-lg-8
+    flex: 0 0 70%
+    max-width: 70%
+
+.dashboard-card
+  border-radius: 10px
+  padding: 10px 15px
+  max-width: 300px
+  background: rgba(135, 135, 135, 0.11)
+  .card-top
+    font-size: 12px
+    margin-bottom: 10px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    >span
+      margin-bottom: 10px
+    button
+      margin-bottom: 10px
+      width: 26px
+      height: 26px
+      display: flex
+      padding: 0
+      position: relative
+      align-items: center
+      justify-content: center
+      border: 1.8px solid transparent
+      transition: 0.3s ease
+      border-radius: 50%
+      &:hover
+        border-color: $accent
+        img
+          filter: brightness(0) invert(1)
+        &::before
+          opacity: 1
+      &::before
+        position: absolute
+        display: block
+        content: ''
+        width: 18px
+        height: 18px
+        opacity: 0
+        transition: 0.3s ease
+        background: red
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 1
+        border-radius: 50%
+      img
+        position: relative
+        z-index: 2
+        width: 12px
+        height: 12px
+
+  .plan-name
+    font-size: 16px
+    font-family: $semibold
+
+  .included-items-wrapper
+    border: 1px solid #787878
+    border-right: none
+    border-left: none
+    display: flex
+    margin: 10px 0
+    .included-item
+      text-decoration: none
+      display: flex
+      flex-direction: column
+      align-items: center
+      transition: 0.3s ease
+      &.inactive:hover
+        transform: scale(1.1)
+        filter: grayscale(0)
+        opacity: 1
+    .img-wrapper
+      width: 40px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+    .item-name
+      font-size: 9px !important
+      text-align: center
+      color: red
+      line-height: 1.5
+  .plan-type-wrapper
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    span
+      font-size: 18px
+      text-transform: uppercase
+  .total-wrapper
+    span
+      font-size: 14px
+      &:last-child
+        font-family: $semibold
+        font-style: italic
+      strong
+        font-size: 26px
+  .plan-time
+    >div
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: space-between
+    span
+      font-size: 12px
+      color: #787878
+
+
+
+.dashboard-list
+  width: 93%
+  .renew-box
+    .link-with-arrow
+      display: none
+  .join-info
+    .price-text
+    p
+      display: block !important
+      margin-bottom: 0
+      font-size: 14px !important
+      font-style: italic
+      span
+        font-size: 26px !important
+
+.list-header
+  padding: 8px 0
+  background: rgba(135, 135, 135, 0.11)
+  border-radius: 5px
+  p
+    font-size: 12px
+    text-align: center
+    margin-bottom: 0
+    color: #787878
+    font-family: $semibold
+    &:first-child
+      text-align: left
+      margin-left: 30px
+
+.list-line
+  position: relative
+  display: grid
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr
+  align-items: center
+  &:not(.list-header)
+    border-bottom: 1px solid #B9B9B9
+  .multi-collapse
+    grid-column-start: 1
+    grid-column-end: 6
+    width: 60%
+    margin-left: 40px
+    .text-danger
+      font-family: $semibold
+    p
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 4px
+      line-height: 1
+      span 
+        &:first-child
+          font-size: 10px
+        &:last-child
+          font-size: 12px
+      strong
+        font-size: 10px
+  .plan-name
+    display: flex
+    align-items: center
+    button[data-toggle="collapse"]
+      border: none
+      background: transparent
+      width: 15px
+      height: 15px
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      margin: 0
+      padding: 0
+    p
+      margin-bottom: 0
+      font-size: 14px
+      span
+        font-size: 14px
+      img
+        filter: invert(1)
+        width: 12px
+        height: 6px
+        margin-left: 4px
+      .subtitle
+        display: block
+        font-size: 11px
+        
+    .img-wrapper
+      width: 40px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+  .line-item
+    font-size: 12px
+    text-align: center
+  .available
+    font-size: 14px
+    color: red
+    font-family: $semibold
+
+.list-plans-wrapper
+  padding: 0
+
+.box-with-fancy-header
+  padding: 20px
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16)
+  background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,.839) 0,rgba(10,10,10,.91) 100%)
+  border-radius: 10px
+  color: #ffffff
+  margin-bottom: 20px
+  .opening-title
+    align-items: flex-start
+    margin: 0
+    margin-bottom: 20px
+    h3
+      font-size: 18px
+    span
+      height: 2px
+      margin-bottom: 3px
+      width: 25px
+    .with-line
+      margin: 0
+      &::after
+        background: #fff
+        height: 2px
+
+.list-plans
+  overflow: hidden
+  max-width: 360px
+  position: sticky
+  top: 270px
+  .visible-content 
+    img[alt=logo]
+      width: 62px!important
+      height: 20px!important
+    .d-flex .skewed-box span
+      font-size: 18px
+  &[data-sticky-wrap]
+    background: url(../img/icons/item-bg.png) no-repeat center center/cover,linear-gradient(180deg,rgba(136,135,135,1) 0,rgba(10,10,10,1) 100%)
+    z-index: 4
+  .discount-input
+    font-size: 11px
+    + button
+      font-size: 13px
+  .btn-gift-card-togger
+    margin: 5px 0
+    &.collapsed
+      border-bottom: 1px dashed #b9b9b9
+  .select-all-btn
+    font-size: 12px !important
+    margin-bottom: 15px
+    padding: 3px 10px !important
+    margin-top: 0
+  p
+    font-size: 22px
+    font-weight: 300
+    margin-bottom: 25px
+    line-height: 1.2
+  .rounded-button
+    background: $accent
+    color: #fff
+    margin-top: 5px
+    padding: 3px 20px
+    line-height: 1
+    transition: 0.3s ease
+    border: none
+    font-size: 20px
+    &:hover
+      background: $darkerred
+      text-decoration: none
+      
+
+.dashboard-additional-services
+  padding: 20px
+  margin-top: 20px
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16)
+  background: url(../img/icons/additional-services.png) no-repeat center center/cover,linear-gradient(180deg,rgb(255, 0, 0) 0,rgb(255, 0, 0) 100%)
+  border-radius: 10px
+  margin-bottom: 20px
+  color: #ffffff
+  .rounded-button
+    background: #fff
+    color: $accent
+    font-size: 15px
+    font-family: $semibold
+    border: none
+    &:hover
+      text-decoration: none
+  h3
+    font-size: 18px
+    font-family: $semibold
+  .additional-services__content
+    margin-bottom: 5px
+    display: flex
+    align-items: center
+    p
+      font-size: 13px
+      margin-bottom: 0
+      padding-right: 10px
+      line-height: 1.3
+
+.device-info
+  background: #fff
+  border: 1px solid rgba(5, 3, 3, 0.84)
+  color: #000
+  .with-line
+    &::after
+      background: #000 !important
+  .device-info__top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .device-details-wrapper
+      padding-right: 20px
+
+  .phone-name
+    font-size: 14px
+    padding-right: 20px
+    font-family: $semibold
+  .device-details-wrapper
+    font-size: 14px
+    line-height: 1.3
+  .device-details
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .detail-name
+      white-space: nowrap
+  .device-info__bottom
+    margin: 15px 0
+    .device-details
+      display: grid
+      grid-template-columns: 1fr 1.5fr
+
+.link-with-arrow
+  display: inline-flex
+  align-items: center
+  &:hover
+    text-decoration: none
+  span
+    color: #000
+    font-size: 14px
+  .img-wrapper
+    width: 12px
+    height: 12px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: $accent
+    border-radius: 50%
+    margin-right: 5px
+    img
+      width: 10px
+      height: 7px
+
+.dashboard-personal-plan
+  max-width: 960px
+  margin-left: auto
+  margin-right: unset !important
+
+.dashboard-tab_content-map
+  position: relative
+  z-index: 5
+
+.owner-list-header
+  margin-left: 25px
+  .basket-item
+    font-size: 12px
+    font-style: italic
+
+.owners-list
+  min-width: 955px
+  transform: translateX(-120px)
+  margin-bottom: 20px
+  .inner-owner-list
+    overflow: visible
+    padding-left: 25px
+    max-height: 255px
+    overflow-y: auto
+    &::-webkit-scrollbar
+      width: 8px
+      padding-right: 8px
+                        
+
+    &::-webkit-scrollbar-track
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.0)
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.0)
+                        
+
+    &::-webkit-scrollbar-thumb
+      border-radius: 10px
+      background-color: grey
+      outline: 1px solid transparent
+                        
+        
+  .basket-line
+    grid-template-columns: 1.7fr 2fr 2fr 2fr 1fr 1fr 1fr
+    &:nth-child(2n+1):not(.owner-list-header)
+      background: rgba(135, 135, 135, 0.11)
+    .basket-item
+      &:nth-child(5)
+        justify-content: center
+  .basket-item
+    &:nth-child(5)
+      justify-content: center
+    &.pay-amount
+      p
+        margin: 0
+        margin-left: auto
+        font-size: 14px
+        strong
+          font-size: 18px
+    .name-wrapper
+      max-width: 110px
+      p
+        width: 80px
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+    .included-items-wrapper
+      width: 100%
+      padding-right: 10px
+      .item-content
+        display: none
+    .plan-name
+      font-size: 14px
+    img[alt="logo"]
+      width: 55px
+      height: 11px
+    .location-name-wrapper
+      margin-left: 5px
+    .location-name
+      max-width: 85px
+      font-size: 15px
+    .sim-type-wrapper
+      margin-left: 5px
+      border-radius: 5px
+      padding: 3px 5px
+      border-radius: 6px !important
+    .renew-button
+      border: none
+      background: transparent
+      margin: 0
+      span
+        font-size: 12px
+        border-bottom: 1px dashed #707070
+
+.btn-rotate
+  transform: rotate(180deg)
+
+.show-more-btn
+  display: none
+
+.dashboard-virtual-number
+  font-size: 10px
+  .location-info
+    display: flex
+  .country-wrapper
+    margin-right: 10px
+  .country-name,
+  .region-name,
+  .virtual-number
+    font-size: 12px
+
+.renew-btn
+  position: absolute
+  top: 21px
+  right: 0
+  display: block
+  transform: translate(100%, -50%)
+  font-size: 10px
+  border-bottom: 1px dashed #707070
+  transition: 0.3s ease
+  &:hover
+    color: $accent
+
+.renew-box
+  grid-column-start: 1
+  grid-column-end: 6
+  .confirmed-box
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translate(150%, -50%)
+    border-radius: 50%
+    transition: 0.3s ease
+    opacity: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 15px
+    height: 15px
+    background: #52BE32
+
+  &.renewed
+    display: block !important
+    + .join-info 
+      display: none
+    >.row
+      display: none
+    .confirmed-box
+      opacity: 1
+
+
+  .list-line
+    padding: 5px 0
+    background: rgba(135,135,135,.11)
+    border-radius: 5px
+    margin-bottom: 10px
+    margin-top: 10px
+    border-bottom: none
+    .plan-name
+      font-size: 14px
+      margin-left: 30px
+      font-family: $semibold
+  .price-text
+    p
+      margin-bottom: 0
+      font-size: 14px
+      font-style: italic
+      span
+        font-size: 26px
+  .row
+    margin: 0
+  .w-50
+    width: 56% !important
+  .bootstrap-select 
+    &.form-control
+      height: 30px !important
+    .dropdown-toggle
+      border: 1px solid #707070
+      height: 30px !important
+      line-height: 18px
+      span
+        font-size: 14px
+      .bs-caret
+        img
+          display: unset
+
+.add-to-pay-btn
+  background: red
+  color: #fff
+  border: none
+  font-size: 16px
+  padding: 3px 10px
+  white-space: nowrap
+  &:hover
+    color: #ffffff
+    background: $darkerred
+
+.predashboard-virtual-number
+  margin-bottom: 10px
+  display: flex
+
+.change-btn
+  background: #fff
+  border: 1px solid red
+  color: red
+
+#service-virtual-number
+  .inner-box.virtual-inner
+    h5
+      padding-left: 15px
+      font-size: 12px
+      margin: 12px 0
+      margin-bottom: 0
+      font-weight: 400
+      display: flex
+      align-items: flex-end
+      white-space: nowrap
+      &::after
+        width: 100px
+        display: inline-block
+        height: 1px
+        background: #B9B9B9
+        background: 
+        content: ''
+        margin-left: 10px
+  
+
+.substitution-number-box
+  .inner-box.virtual-inner
+    h5
+      padding-left: 15px
+      font-size: 12px
+      margin: 12px 0
+      font-weight: 400
+      display: flex
+      align-items: flex-end
+      white-space: nowrap
+
+
+.service-list-wrapper
+  .subtotal-wrapper
+    .d-block
+      margin: 0
+      font-size: 13px
+  .total-price
+    margin-top: 0 !important
+    span
+      margin: 0
+    span:last-child
+      font-size: 17px
+      font-style: italic
+    .js-total-price-amount
+      font-size: 31px !important
+    .js-subtotal-amount
+      font-size: 20px !important
+    .d-block
+      font-size: 22px
+
+.mobile-opening-title,
+.mobile-list-line,
+.mobile-title-header
+  display: none
+.list-line .plan-name button[data-target="#dashboard-internet-data"]
+  display: none
+
+@media screen and ( max-width: 1370px )
+  .profile-header + .row
+    flex-direction: column
+    .col-lg-9
+      width: 100% !important
+      flex: 0 0 100%
+      max-width: 100%
+  .list-plans-wrapper
+    margin-top: 25px
+    padding-left: 15px
+    padding-right: 15px
+  .list-plans
+    position: static
+  .owners-list
+    transform: translateX(0)
+    min-width: auto
+  .inner-owner-list-wrapper
+    overflow-x: auto
+    .owner-list-header,
+    .inner-owner-box
+      min-width: 950px
+  .basket-line .remove-btn 
+    left: -20px
+    top: 10px
+
+@media screen and ( max-width: 992px )
+  .trended-plans .trended-plans-slider
+    padding: 0 0 !important
+  .dashboard__content
+    flex-wrap: nowrap
+    .section-tab
+      flex: unset
+      max-width: 230px
+    .col-lg-8
+      padding-left: 0 !important
+      flex: unset
+      max-width: 100%
+      width: 100%
+
+@media screen and ( max-width: 768px )
+  .dashboard__content
+    flex-wrap: wrap
+    flex-direction: column-reverse
+
+@media screen and ( max-width: 768px )
+  .dashboard-box__top
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    .opening-title
+      width: 100%
+  .dashboard-card
+    margin-top: 20px
+
+@media screen and(min-width: 450px)
+  .dashboard__content
+    .widen-btn-wrapper
+      display: none
+      
+  .dashboard-list
+    &.collapse
+      display: block
+      height: auto !important
+      visibility: visible
+
+@media screen and ( max-width: 450px )
+  .change-name-form
+    width: 250px
+    input
+      width: 100%
+  .btn-show-countries
+    top: 0
+  .plans-wrapper 
+    padding-right: 15px !important
+  .owners-list:not(.personal-plans-list)
+    .inner-owner-list-wrapper
+      overflow-x: auto
+    .owner-list-header,
+    .inner-owner-box
+      border-top: 2px solid #b9b9b9
+      min-width: unset
+    .owner-list-header
+      display: none !important
+    .inner-owner-list
+      &.widened-owner-list
+        max-height: unset
+    .mobile-title-header
+      display: block
+      h4
+        font-size: 12px
+        font-family: $semibold
+    .basket-line
+      padding: 10px
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      align-items: flex-start
+      .item-content
+        display: block !important
+        text-align: center
+        color: red
+        
+      .basket-item
+        display: none
+        .plan-name
+          font-size: 16px
+          margin-right: 5px
+        &:nth-child(2)
+          order: 1
+          display: flex
+        &:nth-child(3)
+          display: flex
+          margin-right: 50px
+          order: 2
+          img
+            width: 60px
+            height: 14px
+        &:nth-child(4)
+          margin-top: 20px
+          order: 3
+        &:nth-child(5)
+          order: 5
+          width: 100%
+          margin: 15px 0
+          padding: 8px 0
+          border-top: 1px solid #787878
+          border-bottom: 1px solid #787878
+          a
+            width: 20%
+            &:hover
+              text-decoration: none
+          .included-items-wrapper
+            .img-wrapper
+              display: flex
+              justify-content: center
+              align-items: center
+              margin-bottom: 5px
+        &:nth-child(6)
+          order: 4
+          margin-top: 20px
+          font-style: italic
+        &:nth-child(7)
+          order: 6
+          width: 100%
+          p
+            margin: 0 auto
+            font-size: 20px
+            strong
+              font-size: 30px
+        &:nth-child(8)
+          order: 7
+          width: 80%
+          margin: 0 auto
+          margin-top: 10px
+          flex-wrap: wrap
+          align-items: baseline
+          justify-content: center
+          .show-more-btn
+            margin: 0 10px
+          .show-more-btn,
+          button
+            display: block
+            font-size: 20px
+            padding: 5px 35px
+            line-height: 1
+            margin-bottom: 15px
+
+          .renew-button
+            margin-left: 10px
+            margin-right: 10px
+            background: $accent
+            border-radius: 15px
+            border: 2px solid $accent
+            .img-wrapper
+              display: none
+            span
+              border: none
+              color: #fff
+              font-size: 20px
+    .inner-owner-list
+      padding-left: 0
+    .remove-btn
+      left: unset
+      right: 10px
+      top: 17px
+      width: 15px
+      height: 15px
+      background-image: url("../img/icons/arrow-down-g.svg")
+      background-size: contain
+      background-position: center center
+      background-repeat: no-repeat
+      img
+        display: none
+
+
+  .dashboard-list-actions
+    width: 100%
+    display: flex
+    margin: 0 auto
+    flex-wrap: wrap
+    align-items: baseline
+    justify-content: center
+    button
+      font-size: 14px
+      padding: 3px 20px
+      white-space: nowrap
+      margin-right: 5px
+      margin-left: 5px
+      &:first-child
+        margin-bottom: 10px
+    
+  .list-plans-wrapper
+    .list-plans,
+    .device-info,
+    .dashboard-additional-services
+      position: static
+      width: 100%
+      max-width: 100%
+      order: 1
+  .mobile-opening-title
+    display: block
+    margin: 10px auto
+    h3
+      font-size: 20px
+    span
+      height: 2px
+      margin-bottom: 0
+  .dashboard-box__top
+    .opening-title
+      display: none
+    .dashboard-box__name
+      margin-bottom: 10px
+    .sim-basic-info>div
+      justify-content: flex-start
+  .dashboard__content
+    flex-direction: column
+    .widen-btn-wrapper
+      border: none
+      margin-top: 0
+      button
+        transform: rotate(180deg)
+        &.collapsed
+          transform: rotate(0)
+    .col-lg-8
+      padding: 0
+    .section-tab
+      max-width: 100%
+    .dashboard-card
+      margin: 0 auto 15px auto
+      width: 310px
+      max-width: 100%
+      button[data-target="#share-modal"]
+        width: 35px
+        height: 35px
+        img
+          width: 18px
+          height: 18px
+          max-width: 18px
+          max-height: 18px
+        &::before
+          width: 28px
+          height: 28px
+      .card-top>span 
+        font-size: 17px
+        color: #787878
+      .included-items-wrapper
+        margin: 10px
+        .img-wrapper
+          width: auto
+        .item-name
+          font-size: 10px !important
+      .plan-type-wrapper
+        img
+          width: 90px
+          height: 21px
+        span
+          font-size: 25px
+          line-height: 1
+          padding: 3px 10px
+          font-style: italic
+          font-weight: 300
+      .total-wrapper
+        align-items: baseline !important
+        span
+          font-size: 20px
+          strong
+            font-size: 40px
+      .plan-time
+        span
+          font-size: 14px
+  
+  .dashboard-list
+    width: 100%
+    padding-left: 15px
+    padding-right: 15px
+    &.show
+      margin-bottom: 15px
+    .list-header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 8px 0
+      background: transparent
+      border-radius: 0
+      p
+        display: none
+        &:first-child,
+        &:last-child
+          display: block
+          margin-left: 0
+    .quantity,
+    .residue,
+    .expiration,
+    .renew-btn
+      display: none
+    .renew-box
+      &.renewed-mobile
+        .link-with-arrow
+          display: flex
+        .add-to-pay-btn
+          display: none
+        .list-line-title
+          span:first-child
+            display: flex
+        form
+          display: none !important
+      .link-with-arrow
+        font-style: italic
+        font-family: $semibold
+        font-size: 18px
+        margin-top: 0 !important
+        flex-direction: row-reverse
+        margin-bottom: 15px
+        display: none
+        color: #000
+        span 
+          margin-right: 5px
+      .list-line
+        display: none
+      form
+        flex-direction: column
+        .col-lg-6,
+        .col-sm-6
+          padding: 0
+      .mobile-list-line
+        .content
+          padding: 10px 15px
+          padding-bottom: 0
+          background: #f2f2f2
+          border-radius: 5px
+      .price-text
+        p
+          font-size: 18px
+          font-style: italic
+          text-align: center
+          font-family: $semibold
+          span
+            font-size: 33px
+      .add-to-pay-btn
+        width: 100%
+        margin-bottom: 15px
+        font-size: 20px
+
+    .list-line
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-wrap: wrap
+      .multi-collapse
+        width: 100%
+        margin-left: 0
+      .plan-name
+        button[data-target="#dashboard-internet-data"]
+          display: inline-flex
+  #dashboard-internet-data
+    width: 100%
+  #dashboard-voice-sms,
+  #dashboard-substitution-number
+    > p
+      display: none
+    .content__item
+      p
+        margin-bottom: 1rem
+  #service-substitution-number
+    form
+      .virtual-inner
+        width: 100%
+        .col-12
+          padding: 0
+  .mobile-list-line
+    display: block
+    width: 100%
+    & +.location-info, 
+      display: none
+      & + .number-info
+        display: none
+      
+    .list-line-title
+      margin-bottom: 0
+      display: flex
+      align-items: center
+      span
+        font-size: 14px
+        font-family: $semibold
+        &:first-child
+          display: none
+          margin-right: 5px
+          width: 15px
+          height: 15px
+          align-items: center
+          background: #52BE32
+          justify-content: center
+          border-radius: 50%
+    .rounded-button
+      background: $accent
+      color: #fff
+      margin-bottom: 15px
+    .content
+      display: flex
+      align-items: center
+      justify-content: space-between
+    .content__item
+      width: 28%
+      &:not(:last-child)
+        p
+          border-right: 1px solid #707070
+      h4
+        display: inline-block
+        font-size: 14px
+        font-family: $semibold
+        color: #787878
+        margin-bottom: 0
+      p
+        font-size: 18px !important
+        font-family: $semibold
+        font-style: normal
+        margin-bottom: 1rem
+
+    
+@media screen and ( max-width: 375px )
+  .owners-list:not(.personal-plans-list) 
+    .basket-line 
+      .basket-item
+        &:nth-child(3)
+          margin-right: 25px
+          img
+            width: 45px
+  .location-name-wrapper
+    max-width: 60px
+    .location-name
+      font-size: 13px !important
