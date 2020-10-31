@@ -51,6 +51,17 @@ $(document).ready(function () {
   $("body, html").scrollTop(0);
   const target = getUrlParams()["target"];
 
+  const tabUrl = window.location.href.split("-")[1];
+  console.log(tabUrl);
+  if (tabUrl.search("tab") !== -1) {
+    setTimeout(() => {
+      $(`.tab.${tabUrl}`).trigger("click");
+      $("body, html").animate({
+        scrollTop: $("#section-tab").offset().top - 200,
+      });
+    }, 1500);
+  }
+
   if ($(".list-plans").height() >= 200) {
     $(".list-plans").addClass("position-static");
   }
