@@ -25887,927 +25887,976 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 }));
 
-const countriesData = [{
-	"continent": "Africa",
-	"countries": [
-		"Algeria",
-		"Burkina Faso",
-		"Cameroon",
-		"Chad",
-		"Congo",
-		"Congo Dem Rep",
-		"Cote d'Ivoire (Ivory Coast)",
-		"Egypt",
-		"Ethiopia",
-		"Gabon",
-		"Ghana",
-		"Guinea",
-		"Kenya",
-		"Madagascar",
-		"Malawi",
-		"Morocco",
-		"Mozambique",
-		"Namibia",
-		"Nigeria",
-		"Rwanda",
-		"Senegal",
-		"South Africa",
-		"Tanzania",
-		"Tunisia",
-		"Uganda",
-		"Zambia",
-		"Zimbabwe"
-	]
-},
-{
-	"continent": "Asia",
-	"countries": [
-		"Bahrain",
-		"Bangladesh",
-		"Brunei",
-		"Cambodia",
-		"China",
-		"Hong Kong",
-		"India",
-		"Indonesia",
-		"Iran",
-		"Israel",
-		"Japan",
-		"Jordan",
-		"Kazakhstan",
-		"Kuwait",
-		"Kyrgyzstan",
-		"Laos",
-		"Macau",
-		"Malaysia",
-		"Mongolia",
-		"Myanmar",
-		"Nepal",
-		"Oman",
-		"Pakistan",
-		"Palestine",
-		"Philippines",
-		"Qatar",
-		"Saudi Arabia",
-		"Singapore",
-		"South Korea",
-		"Sri Lanka",
-		"Taiwan",
-		"Tajikistan",
-		"Thailand",
-		"Turkey",
-		"United Arab Emirates",
-		"Uzbekistan",
-		"Vietnam"
-	]
-},
-{
-	"continent": "Europe",
-	"countries": [
-		"Albania",
-		"Armenia",
-		"Austria",
-		"Azerbaijan",
-		"Belarus",
-		"Belgium",
-		"Bosnia & Herzegovina",
-		"Bulgaria",
-		"Croatia",
-		"Cyprus",
-		"Czech Republic",
-		"Denmark",
-		"Estonia",
-		"Faroe Islands",
-		"Finland",
-		"France",
-		"Georgia",
-		"Germany",
-		"Gibraltar",
-		"Greece",
-		"Hungary",
-		"Iceland",
-		"Ireland",
-		"Italy",
-		"Jersey Island",
-		"Latvia",
-		"Liechtenstein",
-		"Lithuania",
-		"Luxembourg",
-		"Macedonia",
-		"Malta",
-		"Moldova",
-		"Montenegro",
-		"Netherlands",
-		"Northern Ireland",
-		"Norway",
-		"Poland",
-		"Portugal",
-		"Romania",
-		"Russian Federation",
-		"Scotland",
-		"Serbia",
-		"Slovakia",
-		"Slovenia",
-		"Spain",
-		"Sweden",
-		"Switzerland",
-		"Ukraine",
-		"United Kingdom",
-		"Wales"
-	]
-},
-{
-	"continent": "Oceania",
-	"countries": [
-		"Australia",
-		"Fiji",
-		"New Zealand",
-		"Papua New Guinea"
-	]
-},
-{
-	"continent": "North America",
-	"countries": [
-		"Anguilla",
-		"Antigua And Barbuda",
-		"Barbados",
-		"Belize",
-		"Canada",
-		"Cayman Islands",
-		"Costa Rica",
-		"Dominica",
-		"El Salvador",
-		"Greenland",
-		"Grenada",
-		"Guadeloupe",
-		"Haiti",
-		"Hawaii - USA",
-		"Honduras",
-		"Jamaica",
-		"Martinique",
-		"Mexico",
-		"Montserrat",
-		"Nicaragua",
-		"Panama",
-		"Saint Kitts & Nevis",
-		"Saint Martin(French)",
-		"Sint Maarten(Dutch)",
-		"St Barthelemy",
-		"St Lucia",
-		"St Vincent And the Grenadines",
-		"Trinidad And Tobago",
-		"Turks & Caicos Islands",
-		"United States",
-		"Virgin Islands British",
-		"Virgin Islands U.S"
-	]
-},
-{
-	"continent": "South America",
-	"countries": [
-		"Brazil",
-		"Chile",
-		"Colombia",
-		"Curacao",
-		"Ecuador",
-		"French Guiana",
-		"Guyana",
-		"Nauru",
-		"Netherlands Antilles",
-		"Paraguay",
-		"Peru",
-		"Suriname",
-		"Tonga",
-		"Uruguay",
-		"Vanuatu",
-		"Venezuela"
-	]
-},
-{
-	"continent": "All",
-	"countries": [
-		"Algeria",
-		"Burkina Faso",
-		"Cameroon",
-		"Chad",
-		"Congo",
-		"Congo Dem Rep",
-		"Cote d'Ivoire (Ivory Coast)",
-		"Egypt",
-		"Ethiopia",
-		"Gabon",
-		"Ghana",
-		"Guinea",
-		"Kenya",
-		"Madagascar",
-		"Malawi",
-		"Morocco",
-		"Mozambique",
-		"Namibia",
-		"Nigeria",
-		"Rwanda",
-		"Senegal",
-		"South Africa",
-		"Tanzania",
-		"Tunisia",
-		"Uganda",
-		"Zambia",
-		"Zimbabwe",
+const countriesData = [
+  {
+    continent: "Africa",
+    countries: [
+      "Algeria",
+      "Burkina Faso",
+      "Cameroon",
+      "Chad",
+      "Congo",
+      "Congo Dem Rep",
+      "Cote d'Ivoire (Ivory Coast)",
+      "Egypt",
+      "Ethiopia",
+      "Gabon",
+      "Ghana",
+      "Guinea",
+      "Kenya",
+      "Madagascar",
+      "Malawi",
+      "Morocco",
+      "Mozambique",
+      "Namibia",
+      "Nigeria",
+      "Rwanda",
+      "Senegal",
+      "South Africa",
+      "Tanzania",
+      "Tunisia",
+      "Uganda",
+      "Zambia",
+      "Zimbabwe",
+    ],
+  },
+  {
+    continent: "Asia",
+    countries: [
+      "Bahrain",
+      "Bangladesh",
+      "Brunei",
+      "Cambodia",
+      "China",
+      "Hong Kong",
+      "India",
+      "Indonesia",
+      "Iran",
+      "Israel",
+      "Japan",
+      "Jordan",
+      "Kazakhstan",
+      "Kuwait",
+      "Kyrgyzstan",
+      "Laos",
+      "Macau",
+      "Malaysia",
+      "Mongolia",
+      "Myanmar",
+      "Nepal",
+      "Oman",
+      "Pakistan",
+      "Palestine",
+      "Philippines",
+      "Qatar",
+      "Saudi Arabia",
+      "Singapore",
+      "South Korea",
+      "Sri Lanka",
+      "Taiwan",
+      "Tajikistan",
+      "Thailand",
+      "Turkey",
+      "United Arab Emirates",
+      "Uzbekistan",
+      "Vietnam",
+    ],
+  },
+  {
+    continent: "Europe",
+    countries: [
+      "Albania",
+      "Armenia",
+      "Austria",
+      "Azerbaijan",
+      "Belarus",
+      "Belgium",
+      "Bosnia & Herzegovina",
+      "Bulgaria",
+      "Croatia",
+      "Cyprus",
+      "Czech Republic",
+      "Denmark",
+      "Estonia",
+      "Faroe Islands",
+      "Finland",
+      "France",
+      "Georgia",
+      "Germany",
+      "Gibraltar",
+      "Greece",
+      "Hungary",
+      "Iceland",
+      "Ireland",
+      "Italy",
+      "Jersey Island",
+      "Latvia",
+      "Liechtenstein",
+      "Lithuania",
+      "Luxembourg",
+      "Macedonia",
+      "Malta",
+      "Moldova",
+      "Montenegro",
+      "Netherlands",
+      "Northern Ireland",
+      "Norway",
+      "Poland",
+      "Portugal",
+      "Romania",
+      "Russian Federation",
+      "Scotland",
+      "Serbia",
+      "Slovakia",
+      "Slovenia",
+      "Spain",
+      "Sweden",
+      "Switzerland",
+      "Ukraine",
+      "United Kingdom",
+      "Wales",
+    ],
+  },
+  {
+    continent: "Oceania",
+    countries: ["Australia", "Fiji", "New Zealand", "Papua New Guinea"],
+  },
+  {
+    continent: "North America",
+    countries: [
+      "Anguilla",
+      "Antigua And Barbuda",
+      "Barbados",
+      "Belize",
+      "Canada",
+      "Cayman Islands",
+      "Costa Rica",
+      "Dominica",
+      "El Salvador",
+      "Greenland",
+      "Grenada",
+      "Guadeloupe",
+      "Haiti",
+      "Hawaii - USA",
+      "Honduras",
+      "Jamaica",
+      "Martinique",
+      "Mexico",
+      "Montserrat",
+      "Nicaragua",
+      "Panama",
+      "Saint Kitts & Nevis",
+      "Saint Martin(French)",
+      "Sint Maarten(Dutch)",
+      "St Barthelemy",
+      "St Lucia",
+      "St Vincent And the Grenadines",
+      "Trinidad And Tobago",
+      "Turks & Caicos Islands",
+      "United States",
+      "Virgin Islands British",
+      "Virgin Islands U.S",
+    ],
+  },
+  {
+    continent: "South America",
+    countries: [
+      "Brazil",
+      "Chile",
+      "Colombia",
+      "Curacao",
+      "Ecuador",
+      "French Guiana",
+      "Guyana",
+      "Nauru",
+      "Netherlands Antilles",
+      "Paraguay",
+      "Peru",
+      "Suriname",
+      "Tonga",
+      "Uruguay",
+      "Vanuatu",
+      "Venezuela",
+    ],
+  },
+  {
+    continent: "All",
+    countries: [
+      "Algeria",
+      "Burkina Faso",
+      "Cameroon",
+      "Chad",
+      "Congo",
+      "Congo Dem Rep",
+      "Cote d'Ivoire (Ivory Coast)",
+      "Egypt",
+      "Ethiopia",
+      "Gabon",
+      "Ghana",
+      "Guinea",
+      "Kenya",
+      "Madagascar",
+      "Malawi",
+      "Morocco",
+      "Mozambique",
+      "Namibia",
+      "Nigeria",
+      "Rwanda",
+      "Senegal",
+      "South Africa",
+      "Tanzania",
+      "Tunisia",
+      "Uganda",
+      "Zambia",
+      "Zimbabwe",
 
-		"Bahrain",
-		"Bangladesh",
-		"Brunei",
-		"Cambodia",
-		"China",
-		"Hong Kong",
-		"India",
-		"Indonesia",
-		"Iran",
-		"Israel",
-		"Japan",
-		"Jordan",
-		"Kazakhstan",
-		"Kuwait",
-		"Kyrgyzstan",
-		"Laos",
-		"Macau",
-		"Malaysia",
-		"Mongolia",
-		"Myanmar",
-		"Nepal",
-		"Oman",
-		"Pakistan",
-		"Palestine",
-		"Philippines",
-		"Qatar",
-		"Saudi Arabia",
-		"Singapore",
-		"South Korea",
-		"Sri Lanka",
-		"Taiwan",
-		"Tajikistan",
-		"Thailand",
-		"Turkey",
-		"United Arab Emirates",
-		"Uzbekistan",
-		"Vietnam",
+      "Bahrain",
+      "Bangladesh",
+      "Brunei",
+      "Cambodia",
+      "China",
+      "Hong Kong",
+      "India",
+      "Indonesia",
+      "Iran",
+      "Israel",
+      "Japan",
+      "Jordan",
+      "Kazakhstan",
+      "Kuwait",
+      "Kyrgyzstan",
+      "Laos",
+      "Macau",
+      "Malaysia",
+      "Mongolia",
+      "Myanmar",
+      "Nepal",
+      "Oman",
+      "Pakistan",
+      "Palestine",
+      "Philippines",
+      "Qatar",
+      "Saudi Arabia",
+      "Singapore",
+      "South Korea",
+      "Sri Lanka",
+      "Taiwan",
+      "Tajikistan",
+      "Thailand",
+      "Turkey",
+      "United Arab Emirates",
+      "Uzbekistan",
+      "Vietnam",
 
-		"Albania",
-		"Armenia",
-		"Austria",
-		"Azerbaijan",
-		"Belarus",
-		"Belgium",
-		"Bosnia & Herzegovina",
-		"Bulgaria",
-		"Croatia",
-		"Cyprus",
-		"Czech Republic",
-		"Denmark",
-		"Estonia",
-		"Faroe Islands",
-		"Finland",
-		"France",
-		"Georgia",
-		"Germany",
-		"Gibraltar",
-		"Greece",
-		"Hungary",
-		"Iceland",
-		"Ireland",
-		"Italy",
-		"Jersey Island",
-		"Latvia",
-		"Liechtenstein",
-		"Lithuania",
-		"Luxembourg",
-		"Macedonia",
-		"Malta",
-		"Moldova",
-		"Montenegro",
-		"Netherlands",
-		"Northern Ireland",
-		"Norway",
-		"Poland",
-		"Portugal",
-		"Romania",
-		"Russian Federation",
-		"Scotland",
-		"Serbia",
-		"Slovakia",
-		"Slovenia",
-		"Spain",
-		"Sweden",
-		"Switzerland",
-		"Ukraine",
-		"United Kingdom",
-		"Wales",
+      "Albania",
+      "Armenia",
+      "Austria",
+      "Azerbaijan",
+      "Belarus",
+      "Belgium",
+      "Bosnia & Herzegovina",
+      "Bulgaria",
+      "Croatia",
+      "Cyprus",
+      "Czech Republic",
+      "Denmark",
+      "Estonia",
+      "Faroe Islands",
+      "Finland",
+      "France",
+      "Georgia",
+      "Germany",
+      "Gibraltar",
+      "Greece",
+      "Hungary",
+      "Iceland",
+      "Ireland",
+      "Italy",
+      "Jersey Island",
+      "Latvia",
+      "Liechtenstein",
+      "Lithuania",
+      "Luxembourg",
+      "Macedonia",
+      "Malta",
+      "Moldova",
+      "Montenegro",
+      "Netherlands",
+      "Northern Ireland",
+      "Norway",
+      "Poland",
+      "Portugal",
+      "Romania",
+      "Russian Federation",
+      "Scotland",
+      "Serbia",
+      "Slovakia",
+      "Slovenia",
+      "Spain",
+      "Sweden",
+      "Switzerland",
+      "Ukraine",
+      "United Kingdom",
+      "Wales",
 
-		"Australia",
-		"Fiji",
-		"New Zealand",
-		"Papua New Guinea",
+      "Australia",
+      "Fiji",
+      "New Zealand",
+      "Papua New Guinea",
 
-		"Anguilla",
-		"Antigua And Barbuda",
-		"Barbados",
-		"Belize",
-		"Canada",
-		"Cayman Islands",
-		"Costa Rica",
-		"Dominica",
-		"El Salvador",
-		"Greenland",
-		"Grenada",
-		"Guadeloupe",
-		"Haiti",
-		"Hawaii - USA",
-		"Honduras",
-		"Jamaica",
-		"Martinique",
-		"Mexico",
-		"Montserrat",
-		"Nicaragua",
-		"Panama",
-		"Saint Kitts & Nevis",
-		"Saint Martin(French)",
-		"Sint Maarten(Dutch)",
-		"St Barthelemy",
-		"St Lucia",
-		"St Vincent And the Grenadines",
-		"Trinidad And Tobago",
-		"Turks & Caicos Islands",
-		"United States",
-		"Virgin Islands British",
-		"Virgin Islands U.S",
+      "Anguilla",
+      "Antigua And Barbuda",
+      "Barbados",
+      "Belize",
+      "Canada",
+      "Cayman Islands",
+      "Costa Rica",
+      "Dominica",
+      "El Salvador",
+      "Greenland",
+      "Grenada",
+      "Guadeloupe",
+      "Haiti",
+      "Hawaii - USA",
+      "Honduras",
+      "Jamaica",
+      "Martinique",
+      "Mexico",
+      "Montserrat",
+      "Nicaragua",
+      "Panama",
+      "Saint Kitts & Nevis",
+      "Saint Martin(French)",
+      "Sint Maarten(Dutch)",
+      "St Barthelemy",
+      "St Lucia",
+      "St Vincent And the Grenadines",
+      "Trinidad And Tobago",
+      "Turks & Caicos Islands",
+      "United States",
+      "Virgin Islands British",
+      "Virgin Islands U.S",
 
-		"Brazil",
-		"Chile",
-		"Colombia",
-		"Curacao",
-		"Ecuador",
-		"French Guiana",
-		"Guyana",
-		"Nauru",
-		"Netherlands Antilles",
-		"Paraguay",
-		"Peru",
-		"Suriname",
-		"Tonga",
-		"Uruguay",
-		"Vanuatu",
-		"Venezuela"
-	]
-}
+      "Brazil",
+      "Chile",
+      "Colombia",
+      "Curacao",
+      "Ecuador",
+      "French Guiana",
+      "Guyana",
+      "Nauru",
+      "Netherlands Antilles",
+      "Paraguay",
+      "Peru",
+      "Suriname",
+      "Tonga",
+      "Uruguay",
+      "Vanuatu",
+      "Venezuela",
+    ],
+  },
 ];
 
 $(document).ready(function () {
-	const elCardSlider = $('.js-card-wrapper');
-	const elMainSlider = $('.js-carousel-inner');
-
-	$(function () {
-		// Enable tooltips everywhere
-
-		if ($('[data-toggle="tooltip"]').length) {
-			$('[data-toggle="tooltip"]').tooltip()
-		}
-
-		// iMask for phone fields
-		const elPhoneNumberInput = document.getElementById('phone_number');
-		if (elPhoneNumberInput) {
-			IMask(elPhoneNumberInput, {
-				mask: '+{7} (000) 000-00-00',
-				lazy: false, // make placeholder always visible
-				placeholderChar: '_' // defaults to '_'
-			});
-		}
-
-
-		// Required & Optional Fields
-		var requiredFields = ['#email', '#first_name', '#last_name', '#password', '#repeat_password', '#city', '#country'];
-		var optionalFields = ['#address', '#address_detail', '#post_code', '#phone_number'];
-
-		try {
-			bootstrapValidate(requiredFields, 'required:This field is required.');
-			bootstrapValidate('#email', 'email:Please enter a valid email.');
-			bootstrapValidate('#repeat_password', 'matches:#password:Password confirmation does not match.');
-		} catch (error) {
-			console.log(error);
-		}
-
-
-		// Validate the form
-		$('#buy-form').on("change", function () {
-			var isFormValid = true;
-
-			for (var i = 0; i < requiredFields.length; i++) {
-				const selector = requiredFields[i];
-
-				if (!$(selector).val()) { // if empty
-					isFormValid = false;
-				}
-			}
-
-			if (isFormValid) {
-				$('.img-filter').css('filter', 'grayscale(0)');
-				$('.img-filter').css('opacity', '1');
-			} else {
-				$('.img-filter').css('filter', 'grayscale(1)');
-				$('.img-filter').css('opacity', '0.5');
-			}
-		});
-	});
-
-
-	/**
-	 * Adding an automatic offset to the scroll position from URL hash
-	 */
-	var hash = window.location.hash;
-
-	if (hash && hash != '#' && hash.length > 3) {
-		var target = $(hash);
-
-		if (target.length) {
-			setTimeout(function () {
-				$('html, body').stop().animate({
-					scrollTop: target.offset().top - 100
-				}, 500, 'swing');
-			}, 500);
-		}
-	}
-
-
-	/**
-	 * When link clicked, navigate to element smoothly
-	 */
-	$("a[href^='#']:not([href='#'])").click(function (e) {
-		e.preventDefault();
-		var target = this.hash;
-
-		if (target) {
-			$('html, body').animate({
-				scrollTop: $(target).offset().top - 100
-			}, 500, 'swing');
-		}
-	});
-
-
-	// scroll to top on press footer logo
-	$('.footer-logo').click(function () {
-		$("html, body").animate({
-			scrollTop: 0
-		}, "slow");
-	});
-
-
-	// Set blurry overlay background
-	setTimeout(function () {
-		$('.backdrop-image').css('display', 'none')
-		$('.backdrop-overlay').css('display', 'none')
-	}, 5000);
-
-	// Set blurry overlay background
-	$('.backdrop-overlay').click(function () {
-		$('.backdrop-image').css('display', 'none')
-		$('.backdrop-overlay').css('display', 'none')
-	});
-
-	/**
-	 * Get countries of selected continent
-	 */
-	var loadCountryList = function (selectedContinent) {
-		var countries = countriesData.find(function (element) {
-			return element.continent == selectedContinent;
-		}).countries;
-
-		// Sort countries in alphabetical order
-		countries.sort();
-
-		var options = [];
-		$.each(countries, function (key, val) {
-			options.push("<option value='" + key + "'>" + val + "</option>");
-		});
-
-		$("#countries-list")
-			.empty()
-			.append(options.join(""));
-	}
-
-	// Load first continent when page loads
-	loadCountryList('All');
-
-	$('#continent-list').children().click(function () {
-		var selectedContinent = $(this).text();
-
-		$(this).siblings().removeClass('active');
-		$(this).addClass('active');
-
-		loadCountryList(selectedContinent);
-	});
-
-	var region_texts = $('.region-text').map(function () {
-		return $(this).text();
-	}).get();
-
-	$('#region-list').children('li').click(function (e) {
-		e.preventDefault();
-
-		if ($(window).width() > 475) {
-			$(this).siblings().removeClass('active');
-			$(this).addClass('active');
-		} else {
-			if (e.target.matches('.nav-item.active .nav-link') || e.target.matches('.nav-item.active')) {
-				$(this).toggleClass('nav-item--clicked');
-				$(this).siblings().toggleClass('nav-item--show');
-			} else {
-				const text = $(this).find('a').text();
-
-				// $(this).toggleClass('nav-item--clicked');
-				$('.nav-item.active .nav-link').text(text);
-				$('.nav-item.active').removeClass('nav-item--clicked');
-				$('#region-list').children('li').first().removeClass('nav-item--show').addClass('active');
-				// $('#region-list').append(thisClone);
-				$(this).removeClass('nav-item--show');
-				$(this).siblings().removeClass('nav-item--show');
-			}
-		}
-
-
-		var selectedRegion = $(this).find('a').data('value');
-		if ($(window).width() > 650) {
-			setMapBackground(selectedRegion, '.map-bg-box', 'map-bg-box', '');
-		} else {
-			setMapBackground(selectedRegion, '.countries-box', 'countries-box', '-m');
-		}
-	});
-
-
-
-	var priceList = {
-		1: 25, // 1 Gb => $25
-		2: 50,
-		3: 70,
-		4: 80,
-		5: 85
-	};
-
-	var changeTarifPrice = function (val, obj) {
-		val = val.replace(/[^0-9]/g, ''); // remove all chars except numbers
-
-		var price = 0;
-
-		if (val > 0 && val <= 5) {
-			price = priceList[val];
-		} else if (val > 5 && val <= 100) {
-			price = 85 + 17 * (val - 5);
-		}
-
-		obj.closest('.ptw').find('.big-price').html(price);
-
-		if (price) {
-			obj.closest('.ptw').find('.buy-link').removeClass('disabled');
-		} else {
-			obj.closest('.ptw').find('.buy-link').addClass('disabled');
-		}
-	}
-
-	// Changing value of price
-	$('.tarif').keyup(function () {
-		var $this = $(this);
-		changeTarifPrice($this.val(), $this); // value in GB
-	});
-
-	// Search box autocomplete
-	$('.tarif').autoComplete({
-		minLength: 1,
-		resolverSettings: {
-			url: '../data/tarif-amount.json'
-		}
-	}).on('autocomplete.select', function (evt, item) {
-		changeTarifPrice(item, $(this)); // value in GB
-	});
-
-	$(".tarif").blur(function () {
-		var this$ = $(this);
-
-		setTimeout(function () {
-			if (this$.val() && !this$.val().includes('GB')) {
-				this$.val(this$.val() + ' GB');
-			}
-		}, 100);
-	});
-
-	$('.toggle-ios').click(function () {
-		$(this).toggleClass('active');
-		$('.toggle-android').removeClass('active');
-
-		$('#instruction-ios').toggle();
-		$('#instruction-android').hide();
-	});
-
-	$('.toggle-android').click(function () {
-		$(this).toggleClass('active');
-		$('.toggle-ios').removeClass('active');
-
-		$('#instruction-android').toggle();
-		$('#instruction-ios').hide();
-	});
-
-	$('.close-instructions').click(function (e) {
-		e.preventDefault();
-
-		$('.toggle-android').removeClass('active');
-		$('.toggle-ios').removeClass('active');
-
-		$('#instruction-android').hide();
-		$('#instruction-ios').hide();
-	});
-
-
-	$('#no_periods_select').on("change", function () {
-		var index = $(this).val();
-		var price = index * 30;
-
-		$('.period_val').html(index * 30);
-		$('.period_index').html(index);
-
-		$('#actual_price').html(price);
-		$('#sale_price').html(Math.round(price * 0.83));
-	});
-
-
-	// Search block
-	$('.search-btn').click(function () {
-		$('.search-block').css("left", "0");
-		$('#search-input').focus();
-	})
-
-	$('.search-close').click(function () {
-		$('.search-block').css("left", "100%")
-	})
-
-
-	// 
-	var degree = 180;
-
-	$('#table-toggler').click(function () {
-		$('#dashboard-table').slideToggle("slow");
-		$('.arrow').css("transform", "rotate(" + degree + "deg)")
-		degree += 180;
-	});
-
-	$('#edit-button').click(function () {
-		$('#contact-information').slideToggle();
-		$('#dashboard-container').toggleClass('filter-gray');
-
-		$('#dashboard-table').hide(); // this is optional
-	});
-
-	$('#submit-button').click(function (e) {
-		e.preventDefault();
-
-		// scroll to top
-		$('html, body').animate({
-			scrollTop: 0
-		}, 400, 'swing');
-
-		$('#contact-information').slideUp();
-		$('#dashboard-container').removeClass('filter-gray');
-	});
-
-	/**
-	 * START COUNTRY PLAN
-	 */
-
-	function rotateSelectIcon() {
-		var degree = 0;
-
-		degree = $(".under-select").hasClass('open') ? 180 : 0;
-
-		$(".select-icon").css({
-			'transform': `rotateZ(${degree}deg)`
-		});
-	}
-
-	$('#chosen_country').focus(function () {
-		$(".under-select").addClass('open');
-		rotateSelectIcon();
-	});
-
-	$("#country-toggle-btn").click(function (e) {
-		$(this).toggleClass('open');
-		$(".under-select").toggleClass('open');
-		rotateSelectIcon();
-	});
-
-	$('#map-coverage').on('click', 'li', function () {
-		var selected_country = $(this).text();
-		$('#chosen_country').val(selected_country)
-
-		// if (selected_country.length > 10) {
-		// 	selected_country = $.trim(selected_country).substring(0, 8) + "...";
-		// }
-
-		$('.country_text').html(selected_country)
-		$('.map-country-list').children('li').removeClass('active')
-		$(this).addClass('active')
-
-		$(".under-select").removeClass('open');
-		rotateSelectIcon();
-	});
-
-	// Get list of countries from html
-	var list_of_countries = $('.map-country-list li').not('.let').map(function () {
-		return $(this).text();
-	}).get();
-
-	$('#chosen_country').keyup(function () {
-		var typed_val = $(this).val().toUpperCase();
-		var $results = $('#search-results').empty();
-
-		// If typed value is null
-		if (!typed_val) {
-			$('.map-country-list').show();
-			$results.hide();
-
-			return;
-		}
-
-		// Hide list of countries in alphabetical order
-		$('.map-country-list').hide();
-
-		list_of_countries.forEach(function (country) {
-			if (country.startsWith(typed_val)) {
-				$results.append('<li>' + country + '</li>');
-			}
-		});
-
-		// Show search results
-		$results.show();
-	});
-
-	/**
-	 * END OF COUNTRY PLAN
-	 */
-
-
-	// Update progress bar
-	$('#progress-bar').css('width', function () {
-		return $(this).data('value') + "%";
-	});
-
-	// Reference link on press question mark in form input
-	$('.input-inline-icon').click(function () {
-		var url = $(this).data("url");
-		window.open(url, '_blank');
-	});
-
-
-	// Read a page's GET URL variables and return them as an associative array.
-	function getUrlParams() {
-		var vars = [],
-			hash;
-		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-		for (var i = 0; i < hashes.length; i++) {
-			hash = hashes[i].split('=');
-			vars.push(hash[0]);
-			vars[hash[0]] = hash[1];
-		}
-		return vars;
-	}
-
-	// If query parameter has been provided, display overlay pop-up
-	var query = getUrlParams()["display"];
-
-	if (query == 'thankyou') {
-		$(".backdrop-image").prependTo("body");
-		$(".backdrop-overlay").prependTo("body");
-	}
-
-
-
-
-
-
-
-	//SLIDER////
-
-
-	if (elMainSlider.length) {
-		elMainSlider.slick({
-			arrows: false,
-			dots: true,
-			dotsClass: 'js-carousel-indicators'
-		});
-	}
-
-
-
-	if (elCardSlider.length) {
-		elCardSlider.slick({
-			arrows: true,
-			dots: true,
-			slidesToShow: 3,
-			dotsClass: 'js-cards-indicators',
-			infinite: false,
-			responsive: [{
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 2
-				}
-			},
-			{
-				breakpoint: 770,
-				settings: {
-					slidesToShow: 1,
-				}
-			},
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 1
-				}
-			},
-			{
-				breakpoint: 350,
-				settings: {
-					arrows: false,
-					slidesToShow: 1
-				}
-			}
-			]
-		});
-	}
-
-
-	/////MAP TAPS////////////
-
-
-
-	const elMapRedirectBox = $('.world-wide-text-wrapper');
-
-	elMapRedirectBox.click(function () {
-		const topOffset = $('.tab_content-map').offset().top;
-		$("html, body").animate({
-			scrollTop: topOffset - 100
-		}, "slow");
-	});
-
-	showCountries('*');
-
-
-
+  const elCardSlider = $(".js-card-wrapper");
+  const elMainSlider = $(".js-carousel-inner");
+
+  $(function () {
+    // Enable tooltips everywhere
+
+    if ($('[data-toggle="tooltip"]').length) {
+      $('[data-toggle="tooltip"]').tooltip();
+    }
+
+    // iMask for phone fields
+    const elPhoneNumberInput = document.getElementById("phone_number");
+    if (elPhoneNumberInput) {
+      IMask(elPhoneNumberInput, {
+        mask: "+{7} (000) 000-00-00",
+        lazy: false, // make placeholder always visible
+        placeholderChar: "_", // defaults to '_'
+      });
+    }
+
+    // Required & Optional Fields
+    var requiredFields = [
+      "#email",
+      "#first_name",
+      "#last_name",
+      "#password",
+      "#repeat_password",
+      "#city",
+      "#country",
+    ];
+    var optionalFields = [
+      "#address",
+      "#address_detail",
+      "#post_code",
+      "#phone_number",
+    ];
+
+    try {
+      bootstrapValidate(requiredFields, "required:This field is required.");
+      bootstrapValidate("#email", "email:Please enter a valid email.");
+      bootstrapValidate(
+        "#repeat_password",
+        "matches:#password:Password confirmation does not match."
+      );
+    } catch (error) {
+      console.log(error);
+    }
+
+    // Validate the form
+    $("#buy-form").on("change", function () {
+      var isFormValid = true;
+
+      for (var i = 0; i < requiredFields.length; i++) {
+        const selector = requiredFields[i];
+
+        if (!$(selector).val()) {
+          // if empty
+          isFormValid = false;
+        }
+      }
+
+      if (isFormValid) {
+        $(".img-filter").css("filter", "grayscale(0)");
+        $(".img-filter").css("opacity", "1");
+      } else {
+        $(".img-filter").css("filter", "grayscale(1)");
+        $(".img-filter").css("opacity", "0.5");
+      }
+    });
+  });
+
+  /**
+   * Adding an automatic offset to the scroll position from URL hash
+   */
+  var hash = window.location.hash;
+
+  if (hash && hash != "#" && hash.length > 3) {
+    var target = $(hash);
+
+    if (target.length) {
+      setTimeout(function () {
+        $("html, body")
+          .stop()
+          .animate(
+            {
+              scrollTop: target.offset().top - 100,
+            },
+            500,
+            "swing"
+          );
+      }, 500);
+    }
+  }
+
+  /**
+   * When link clicked, navigate to element smoothly
+   */
+  $("a[href^='#']:not([href='#'])").click(function (e) {
+    e.preventDefault();
+    var target = this.hash;
+
+    if (target) {
+      $("html, body").animate(
+        {
+          scrollTop: $(target).offset().top - 100,
+        },
+        500,
+        "swing"
+      );
+    }
+  });
+
+  // scroll to top on press footer logo
+  $(".footer-logo").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      "slow"
+    );
+  });
+
+  // Set blurry overlay background
+  setTimeout(function () {
+    $(".backdrop-image").css("display", "none");
+    $(".backdrop-overlay").css("display", "none");
+  }, 5000);
+
+  // Set blurry overlay background
+  $(".backdrop-overlay").click(function () {
+    $(".backdrop-image").css("display", "none");
+    $(".backdrop-overlay").css("display", "none");
+  });
+
+  /**
+   * Get countries of selected continent
+   */
+  var loadCountryList = function (selectedContinent) {
+    var countries = countriesData.find(function (element) {
+      return element.continent == selectedContinent;
+    }).countries;
+
+    // Sort countries in alphabetical order
+    countries.sort();
+
+    var options = [];
+    $.each(countries, function (key, val) {
+      options.push("<option value='" + key + "'>" + val + "</option>");
+    });
+
+    $("#countries-list").empty().append(options.join(""));
+  };
+
+  // Load first continent when page loads
+  loadCountryList("All");
+
+  $("#continent-list")
+    .children()
+    .click(function () {
+      var selectedContinent = $(this).text();
+
+      $(this).siblings().removeClass("active");
+      $(this).addClass("active");
+
+      loadCountryList(selectedContinent);
+    });
+
+  var region_texts = $(".region-text")
+    .map(function () {
+      return $(this).text();
+    })
+    .get();
+
+  $("#region-list")
+    .children("li")
+    .click(function (e) {
+      e.preventDefault();
+
+      if ($(window).width() > 475) {
+        $(this).siblings().removeClass("active");
+        $(this).addClass("active");
+      } else {
+        if (
+          e.target.matches(".nav-item.active .nav-link") ||
+          e.target.matches(".nav-item.active")
+        ) {
+          $(this).toggleClass("nav-item--clicked");
+          $(this).siblings().toggleClass("nav-item--show");
+        } else {
+          const text = $(this).find("a").text();
+
+          // $(this).toggleClass('nav-item--clicked');
+          $(".nav-item.active .nav-link").text(text);
+          $(".nav-item.active").removeClass("nav-item--clicked");
+          $("#region-list")
+            .children("li")
+            .first()
+            .removeClass("nav-item--show")
+            .addClass("active");
+          // $('#region-list').append(thisClone);
+          $(this).removeClass("nav-item--show");
+          $(this).siblings().removeClass("nav-item--show");
+        }
+      }
+
+      var selectedRegion = $(this).find("a").data("value");
+      if ($(window).width() > 650) {
+        setMapBackground(selectedRegion, ".map-bg-box", "map-bg-box", "");
+      } else {
+        setMapBackground(
+          selectedRegion,
+          ".countries-box",
+          "countries-box",
+          "-m"
+        );
+      }
+    });
+
+  var priceList = {
+    1: 25, // 1 Gb => $25
+    2: 50,
+    3: 70,
+    4: 80,
+    5: 85,
+  };
+
+  var changeTarifPrice = function (val, obj) {
+    val = val.replace(/[^0-9]/g, ""); // remove all chars except numbers
+
+    var price = 0;
+
+    if (val > 0 && val <= 5) {
+      price = priceList[val];
+    } else if (val > 5 && val <= 100) {
+      price = 85 + 17 * (val - 5);
+    }
+
+    obj.closest(".ptw").find(".big-price").html(price);
+
+    if (price) {
+      obj.closest(".ptw").find(".buy-link").removeClass("disabled");
+    } else {
+      obj.closest(".ptw").find(".buy-link").addClass("disabled");
+    }
+  };
+
+  // Changing value of price
+  $(".tarif").keyup(function () {
+    var $this = $(this);
+    changeTarifPrice($this.val(), $this); // value in GB
+  });
+
+  // Search box autocomplete
+  $(".tarif")
+    .autoComplete({
+      minLength: 1,
+      resolverSettings: {
+        url: "../data/tarif-amount.json",
+      },
+    })
+    .on("autocomplete.select", function (evt, item) {
+      changeTarifPrice(item, $(this)); // value in GB
+    });
+
+  $(".tarif").blur(function () {
+    var this$ = $(this);
+
+    setTimeout(function () {
+      if (this$.val() && !this$.val().includes("GB")) {
+        this$.val(this$.val() + " GB");
+      }
+    }, 100);
+  });
+
+  $(".toggle-ios").click(function () {
+    $(this).toggleClass("active");
+    $(".toggle-android").removeClass("active");
+
+    $("#instruction-ios").toggle();
+    $("#instruction-android").hide();
+  });
+
+  $(".toggle-android").click(function () {
+    $(this).toggleClass("active");
+    $(".toggle-ios").removeClass("active");
+
+    $("#instruction-android").toggle();
+    $("#instruction-ios").hide();
+  });
+
+  $(".close-instructions").click(function (e) {
+    e.preventDefault();
+
+    $(".toggle-android").removeClass("active");
+    $(".toggle-ios").removeClass("active");
+
+    $("#instruction-android").hide();
+    $("#instruction-ios").hide();
+  });
+
+  $("#no_periods_select").on("change", function () {
+    var index = $(this).val();
+    var price = index * 30;
+
+    $(".period_val").html(index * 30);
+    $(".period_index").html(index);
+
+    $("#actual_price").html(price);
+    $("#sale_price").html(Math.round(price * 0.83));
+  });
+
+  // Search block
+  $(".search-btn").click(function () {
+    $(".search-block").css("left", "0");
+    $("#search-input").focus();
+  });
+
+  $(".search-close").click(function () {
+    $(".search-block").css("left", "100%");
+  });
+
+  //
+  var degree = 180;
+
+  $("#table-toggler").click(function () {
+    $("#dashboard-table").slideToggle("slow");
+    $(".arrow").css("transform", "rotate(" + degree + "deg)");
+    degree += 180;
+  });
+
+  $("#edit-button").click(function () {
+    $("#contact-information").slideToggle();
+    $("#dashboard-container").toggleClass("filter-gray");
+
+    $("#dashboard-table").hide(); // this is optional
+  });
+
+  $("#submit-button").click(function (e) {
+    e.preventDefault();
+
+    // scroll to top
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      400,
+      "swing"
+    );
+
+    $("#contact-information").slideUp();
+    $("#dashboard-container").removeClass("filter-gray");
+  });
+
+  /**
+   * START COUNTRY PLAN
+   */
+
+  function rotateSelectIcon() {
+    var degree = 0;
+
+    degree = $(".under-select").hasClass("open") ? 180 : 0;
+
+    $(".select-icon").css({
+      transform: `rotateZ(${degree}deg)`,
+    });
+  }
+
+  $("#chosen_country").focus(function () {
+    $(".under-select").addClass("open");
+    rotateSelectIcon();
+  });
+
+  $("#country-toggle-btn").click(function (e) {
+    $(this).toggleClass("open");
+    $(".under-select").toggleClass("open");
+    rotateSelectIcon();
+  });
+
+  $("#map-coverage").on("click", "li", function () {
+    var selected_country = $(this).text();
+    $("#chosen_country").val(selected_country);
+
+    // if (selected_country.length > 10) {
+    // 	selected_country = $.trim(selected_country).substring(0, 8) + "...";
+    // }
+
+    $(".country_text").html(selected_country);
+    $(".map-country-list").children("li").removeClass("active");
+    $(this).addClass("active");
+
+    $(".under-select").removeClass("open");
+    rotateSelectIcon();
+  });
+
+  // Get list of countries from html
+  var list_of_countries = $(".map-country-list li")
+    .not(".let")
+    .map(function () {
+      return $(this).text();
+    })
+    .get();
+
+  $("#chosen_country").keyup(function () {
+    var typed_val = $(this).val().toUpperCase();
+    var $results = $("#search-results").empty();
+
+    // If typed value is null
+    if (!typed_val) {
+      $(".map-country-list").show();
+      $results.hide();
+
+      return;
+    }
+
+    // Hide list of countries in alphabetical order
+    $(".map-country-list").hide();
+
+    list_of_countries.forEach(function (country) {
+      if (country.startsWith(typed_val)) {
+        $results.append("<li>" + country + "</li>");
+      }
+    });
+
+    // Show search results
+    $results.show();
+  });
+
+  /**
+   * END OF COUNTRY PLAN
+   */
+
+  // Update progress bar
+  $("#progress-bar").css("width", function () {
+    return $(this).data("value") + "%";
+  });
+
+  // Reference link on press question mark in form input
+  $(".input-inline-icon").click(function () {
+    var url = $(this).data("url");
+    window.open(url, "_blank");
+  });
+
+  // Read a page's GET URL variables and return them as an associative array.
+  function getUrlParams(sign) {
+    var vars = [],
+      hash;
+    var hashes = window.location.href
+      .slice(window.location.href.indexOf("?") + 1)
+      .split("&");
+    for (var i = 0; i < hashes.length; i++) {
+      hash = hashes[i].split(sign);
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+    }
+    return vars;
+  }
+
+  // If query parameter has been provided, display overlay pop-up
+  var query = getUrlParams("=")["display"];
+
+  if (query == "thankyou") {
+    $(".backdrop-image").prependTo("body");
+    $(".backdrop-overlay").prependTo("body");
+  }
+
+  
+
+  //SLIDER////
+
+  if (elMainSlider.length) {
+    elMainSlider.slick({
+      arrows: false,
+      dots: true,
+      dotsClass: "js-carousel-indicators",
+    });
+  }
+
+  if (elCardSlider.length) {
+    elCardSlider.slick({
+      arrows: true,
+      dots: true,
+      slidesToShow: 3,
+      dotsClass: "js-cards-indicators",
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 770,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+        {
+          breakpoint: 350,
+          settings: {
+            arrows: false,
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
+  }
+
+  /////MAP TAPS////////////
+
+  const elMapRedirectBox = $(".world-wide-text-wrapper");
+
+  elMapRedirectBox.click(function () {
+    const topOffset = $(".tab_content-map").offset().top;
+    $("html, body").animate(
+      {
+        scrollTop: topOffset - 100,
+      },
+      "slow"
+    );
+  });
+
+  showCountries("*");
 });
 
 function showCountries(continent) {
-	console.log(continent)
-	const elCountriesBox = $('.countries-box');
-	let countries = [];
-	continent = continent === "N. AMERICA" ? "North America" : continent === "S. AMERICA" ? "South America" : continent;
-	const filePath = continent === "*" ? 'worldwide' : `regions/${continent.replace(' ', '').toLowerCase()}`;
+  console.log(continent);
+  const elCountriesBox = $(".countries-box");
+  let countries = [];
+  continent =
+    continent === "N. AMERICA"
+      ? "North America"
+      : continent === "S. AMERICA"
+      ? "South America"
+      : continent;
+  const filePath =
+    continent === "*"
+      ? "worldwide"
+      : `regions/${continent.replace(" ", "").toLowerCase()}`;
 
+  if (continent === "*") {
+    countries = [...countriesData[countriesData.length - 1].countries];
+  } else {
+    countries = countriesData.filter(function (f) {
+      if (continent.toUpperCase() === f.continent.toUpperCase()) {
+        return f.countries;
+      }
+    })[0].countries;
+  }
+  countries.sort();
 
+  elCountriesBox.html("");
+  let readyHtml = "";
 
-	if (continent === '*') {
-		countries = [...countriesData[countriesData.length - 1].countries];
-	} else {
-		countries = countriesData.filter(function (f) {
-			if (continent.toUpperCase() === f.continent.toUpperCase()) {
-				return f.countries;
-			}
-		})[0].countries;
-	}
-	countries.sort();
-
-	elCountriesBox.html('');
-	let readyHtml = '';
-
-	// console.log(countries + 'wefw');
-	countries.forEach(function (country) {
-		const template = `<li><img src="img/${filePath}/${country.replace('\'', '').split(' ').join('')}_m.png" width="25" height="17" alt=""><span>${country.toLowerCase()}</span></li>`
-		readyHtml += template;
-	});
-	elCountriesBox.html(readyHtml);
+  // console.log(countries + 'wefw');
+  countries.forEach(function (country) {
+    const template = `<li><img src="img/${filePath}/${country
+      .replace("'", "")
+      .split(" ")
+      .join(
+        ""
+      )}_m.png" width="25" height="17" alt=""><span>${country.toLowerCase()}</span></li>`;
+    readyHtml += template;
+  });
+  elCountriesBox.html(readyHtml);
 }
 
 function setMapBackground(region, boxSelector, initialClass, suffix) {
-	if (region == '*') {
-		$('.region-text').each(function (index) {
-			return $(this).html(region_texts[index]);
-		});
-		showCountries('*')
-		$(boxSelector).css({
-			"background-image": `url('img/src/all-map${suffix}.png')`
-		});
-	} else {
-		$('.region-text').html(region);
-		showCountries(region)
-		$(boxSelector).css({
-			"background-image": `url('img/src/${region.split(' ').join('').toLowerCase()}-map${suffix}.png')`
-		});
-		$(boxSelector).removeClass().addClass(`${initialClass} map-bg-box--${region.toLowerCase().replace('. ', '')}`);
-	}
+  if (region == "*") {
+    $(".region-text").each(function (index) {
+      return $(this).html(region_texts[index]);
+    });
+    showCountries("*");
+    $(boxSelector).css({
+      "background-image": `url('img/src/all-map${suffix}.png')`,
+    });
+  } else {
+    $(".region-text").html(region);
+    showCountries(region);
+    $(boxSelector).css({
+      "background-image": `url('img/src/${region
+        .split(" ")
+        .join("")
+        .toLowerCase()}-map${suffix}.png')`,
+    });
+    $(boxSelector)
+      .removeClass()
+      .addClass(
+        `${initialClass} map-bg-box--${region.toLowerCase().replace(". ", "")}`
+      );
+  }
 }
+
 /*!
  * Bootstrap-select v1.12.13 (https://github.com/heimrichhannot/bootstrap-select)
  *
@@ -29477,15 +29526,6 @@ $(document).ready(function () {
       });
     });
 
-    // $('#plan-select').on('click', function (e) {
-
-    //   if ($(this).find('select').val().toUpperCase() == "WORLDWIDE" || $(this).find('select').val().toUpperCase() == "COUNTRY") {
-    //     $(`#region-list .nav-link[data-value="*"]`).trigger('click');
-    //   }
-
-    //   if ($(this).find('select').val().toUpperCase() != "WORLDWIDE") {
-    //     $('#tariff-select').hide();
-
     $("#plan-select").on("click", function (e) {
       if (
         $(this).find("select").val().toUpperCase() == "WORLDWIDE" ||
@@ -29499,129 +29539,6 @@ $(document).ready(function () {
       } else {
         $("#tariff-select").show();
       }
-    });
-
-    $("#region-select").on("click", function (e) {
-      let continent = $(this).find("select").val().toUpperCase();
-
-      continent =
-        continent == "OCEANIA"
-          ? "OCEANIA"
-          : continent == "NORTH AMERICA" || continent == "SOUTH AMERICA"
-          ? continent.split(" ")[0][0] + ". " + continent.split(" ")[1]
-          : continent;
-      customer.tariff = continent;
-      $(`#region-list .nav-link[data-value="${continent}"]`).trigger("click");
-      $(".js-tariff-name").text(continent);
-    });
-
-    $("#country-select").on("click", function (e) {
-      let country = $(this).find("select").val().toUpperCase();
-      $(".js-tariff-name").text(country);
-    });
-
-    $(".btn-service-toggler")
-      .mouseenter(function () {
-        $(this).siblings("img").css({
-          transform: "scale(1.2)",
-        });
-      })
-      .mouseleave(function () {
-        $(this).siblings("img").css({
-          transform: "scale(1)",
-        });
-      })
-      .click(function (e) {
-        const status = $(this).children("span").first().text();
-        const target = $(this).data("target");
-        const dataNames = $(this).data("names").split(",");
-        const index = parseInt(
-          $(".js-shopping-card__card").attr("data-item"),
-          10
-        );
-
-        toggleCheckbox($(this).children("input"));
-
-        if (status == "+") {
-          addService(target, index);
-
-          $(this).css("color", "#ff0000");
-          $(this).children("span").first().text("-");
-          if (target == "#virtual-number" || target == "#substitution-number") {
-            if (target == "#virtual-number") {
-              customer.Vprice = 500;
-            }
-
-            if (target == "#substitution-number") {
-              customer.Sprice = 25;
-            }
-
-            elCheckoutBtn.attr("disabled", true);
-          }
-        } else {
-          dataNames.forEach(function (d) {
-            customer[d] = "";
-          });
-
-          if (target == "#virtual-number" && customer.Vprice == 500) {
-            customer.Vprice = 0;
-          }
-
-          if (target == "#substitution-number" && customer.Sprice == 25) {
-            customer.Sprice = 0;
-          }
-
-          if (target == "#voice-sms") {
-            $('select[name="VSbalance"]').prop("selectedIndex", -1);
-            $("#enter-balance").selectpicker("refresh");
-          }
-
-          removeService(target, index);
-          $(this).css("color", "#000");
-          $(this).children("span").first().text("+");
-
-          //hide joined info
-          $(".join-info").hide();
-          $(".virtual-inner").show();
-          //end of joined info
-
-          if (target == "#virtual-number" || target == "#substitution-number") {
-            const newsTarget =
-              target == "#virtual-number"
-                ? "#substitution-number"
-                : "#virtual-number";
-            if (
-              $(target).siblings(newsTarget).attr("style") == "display: none;"
-            ) {
-              elCheckoutBtn.removeAttr("disabled");
-              elCheckoutBtn.show();
-            }
-          }
-        }
-
-        $(".js-total-price-amount").text(customer.totalPrice);
-
-        const includedItems = [];
-        const includedItemsBtns = $(`.btn-service-toggler:contains('-')`);
-
-        includedItemsBtns.each(function (btn) {
-          includedItems.push($(this).attr("data-target"));
-        });
-
-        if ($("body").hasClass("basket-body")) {
-          basket[index - 1].includedItems = includedItems;
-
-          console.log(basket);
-
-          localStorage.removeItem("basket");
-          localStorage.setItem("basket", JSON.stringify(basket));
-        }
-
-        updateCardInfo(customer);
-      });
-
-    $(".js-included-country-text").on("click", function () {
-      const isClickable = $(this).next().hasClass("js-items-toggler");
     });
 
     $("#country-select").on("click", function (e) {
@@ -29831,6 +29748,7 @@ $(document).ready(function () {
     //end of step2
   }
   //end of if statement
+
   $("#region-select").on("click", function (e) {
     let continent = $(this).find("select").val().toUpperCase();
 
@@ -31066,6 +30984,17 @@ const dashboardBoxSlider = {
 $(document).ready(function () {
   $("body, html").scrollTop(0);
   const target = getUrlParams()["target"];
+
+  const tabUrl = window.location.href.split("-")[1];
+  console.log(tabUrl);
+  if (tabUrl.search("tab") !== -1) {
+    setTimeout(() => {
+      $(`.tab.${tabUrl}`).trigger("click");
+      $("body, html").animate({
+        scrollTop: $("#section-tab").offset().top - 200,
+      });
+    }, 1500);
+  }
 
   if ($(".list-plans").height() >= 200) {
     $(".list-plans").addClass("position-static");
