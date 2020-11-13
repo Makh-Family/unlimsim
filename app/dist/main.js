@@ -30984,8 +30984,8 @@ const dashboardBoxSlider = {
 $(document).ready(function () {
   $("body, html").scrollTop(0);
   const target = getUrlParams()["target"];
-
-  const tabUrl = window.location.href.split("-")[1];
+  const locArr = window.location.href.split("-");
+  const tabUrl = locArr[locArr.length - 1];
   console.log(tabUrl);
   if (tabUrl.search("tab") !== -1) {
     setTimeout(() => {
