@@ -594,6 +594,11 @@
 .btn-rotate
   transform: rotate(180deg)
 
+.basket-line .remove-btn
+    width: 26px
+    height: 26px
+    left: -30px
+
 .show-more-btn
   display: none
 
@@ -783,13 +788,22 @@
     .owner-list-header,
     .inner-owner-box
       min-width: 950px
-  .basket-line .remove-btn 
-    left: -20px
-    top: 10px
+  .basket-line .remove-btn
+    width: 26px
+    height: 26px
+    display: flex
+    align-items: center
+    justify-content: center
+    left: -30px
+    top: 20px
 
 @media screen and ( max-width: 992px )
   .trended-plans .trended-plans-slider
     padding: 0 0 !important
+  
+  .basket-line .remove-btn
+    top: 10px
+
   .dashboard__content
     flex-wrap: nowrap
     .section-tab
